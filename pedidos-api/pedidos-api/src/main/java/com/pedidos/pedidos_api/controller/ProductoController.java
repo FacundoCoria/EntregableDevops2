@@ -2,6 +2,7 @@ package com.pedidos.pedidos_api.controller;
 
 import com.pedidos.pedidos_api.model.Producto;
 import com.pedidos.pedidos_api.repository.ProductoRepository;
+import com.pedidos.pedidos_api.service.ProductoMetricsService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -11,9 +12,12 @@ import java.util.List;
 public class ProductoController {
 
     private final ProductoRepository productoRepository;
+    private final ProductoMetricsService productoMetricsService;
 
-    public ProductoController(ProductoRepository productoRepository) {
+    public ProductoController(ProductoRepository productoRepository,
+                              ProductoMetricsService productoMetricsService) {
         this.productoRepository = productoRepository;
+        this.productoMetricsService = productoMetricsService;
     }
 
     @GetMapping
@@ -28,7 +32,9 @@ public class ProductoController {
 
     @PostMapping
     public Producto crearProducto(@RequestBody Producto producto) {
-        return productoRepository.save(producto);
+        Producto guardado = productoRepository.save(producto);
+        productoMetricsService.registrarOperacion("crear");
+        return guardado;
     }
 
     @PutMapping("/{id}")
@@ -41,17 +47,31 @@ public class ProductoController {
                 .orElse(null);
 
         if (existente == null) {
+            productoMetricsService.registrarError("modificar");
             return null;
         }
+
+        Double precioAnterior = existente.getPrecio();
 
         existente.setNombre(producto.getNombre());
         existente.setPrecio(producto.getPrecio());
 
-        return productoRepository.save(existente);
+        Producto guardado = productoRepository.save(existente);
+
+        productoMetricsService.registrarOperacion("modificar");
+        productoMetricsService.registrarCambioPrecio(
+                guardado.getNombre(), precioAnterior, guardado.getPrecio());
+
+        return guardado;
     }
 
     @DeleteMapping("/{id}")
     public void eliminarProducto(@PathVariable Long id) {
+        if (!productoRepository.existsById(id)) {
+            productoMetricsService.registrarError("eliminar");
+            return;
+        }
         productoRepository.deleteById(id);
+        productoMetricsService.registrarOperacion("eliminar");
     }
 }

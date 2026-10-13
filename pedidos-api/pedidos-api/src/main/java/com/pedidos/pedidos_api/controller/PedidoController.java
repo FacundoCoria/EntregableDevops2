@@ -39,14 +39,18 @@ public class PedidoController {
         return pedidoRepository.findById(id).orElse(null);
     }
 
-   @PostMapping
+    @PostMapping
     public Pedido crearPedido(@RequestBody Pedido pedido) {
 
-        Producto producto = productoRepository
-                .findById(pedido.getProducto().getId())
-                .orElse(null);
+        Producto producto = null;
+        if (pedido.getProducto() != null && pedido.getProducto().getId() != null) {
+            producto = productoRepository
+                    .findById(pedido.getProducto().getId())
+                    .orElse(null);
+        }
 
         if (producto == null) {
+            pedidoMetricsService.registrarError("crear", "producto_inexistente");
             return null;
         }
 
@@ -65,8 +69,12 @@ public class PedidoController {
 
         Pedido pedidoGuardado = pedidoRepository.save(pedido);
 
+        // Conteo por producto + monto + estado inicial + espera
         pedidoMetricsService.registrarPedido(
-                producto.getNombre()
+                producto.getNombre(),
+                pedidoGuardado.getPrecioUnitario(),
+                pedidoGuardado.getEstado(),
+                pedidoGuardado.getMinutosEspera()
         );
 
         return pedidoGuardado;
@@ -82,18 +90,41 @@ public class PedidoController {
                 .orElse(null);
 
         if (existente == null) {
+            pedidoMetricsService.registrarError("modificar", "pedido_inexistente");
             return null;
         }
+
+        String estadoAnterior = existente.getEstado();
+        Integer esperaAnterior = existente.getMinutosEspera();
 
         existente.setCliente(pedido.getCliente());
         existente.setEstado(pedido.getEstado());
         existente.setMinutosEspera(pedido.getMinutosEspera());
 
-        return pedidoRepository.save(existente);
+        Pedido guardado = pedidoRepository.save(existente);
+
+        String nombreProducto = guardado.getProducto() != null
+                ? guardado.getProducto().getNombre()
+                : "sin_producto";
+
+        pedidoMetricsService.registrarCambioEstado(
+                nombreProducto, estadoAnterior, guardado.getEstado());
+
+        if (guardado.getMinutosEspera() != null
+                && !guardado.getMinutosEspera().equals(esperaAnterior)) {
+            pedidoMetricsService.registrarEspera(nombreProducto, guardado.getMinutosEspera());
+        }
+
+        return guardado;
     }
 
     @DeleteMapping("/{id}")
     public void eliminarPedido(@PathVariable Long id) {
+        if (!pedidoRepository.existsById(id)) {
+            pedidoMetricsService.registrarError("eliminar", "pedido_inexistente");
+            return;
+        }
         pedidoRepository.deleteById(id);
+        pedidoMetricsService.registrarEliminacion();
     }
 }
