@@ -66,7 +66,9 @@ public class PedidoController {
         Pedido pedidoGuardado = pedidoRepository.save(pedido);
 
         pedidoMetricsService.registrarPedido(
-                producto.getNombre()
+                producto.getNombre(),
+                pedidoGuardado.getEstado(),
+                pedidoGuardado.getMinutosEspera()
         );
 
         return pedidoGuardado;

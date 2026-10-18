@@ -1,3 +1,4 @@
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -31,3 +32,14 @@ spec:
                 configMapKeyRef:
                   name: pedidos-config
                   key: api_title
+
+          # Monta el almacenamiento persistente dentro del contenedor
+          volumeMounts:
+            - name: pedidos-h2-storage
+              mountPath: /data
+
+      # Define el volumen persistente de Kubernetes
+      volumes:
+        - name: pedidos-h2-storage
+          persistentVolumeClaim:
+            claimName: pedidos-h2-pvc
