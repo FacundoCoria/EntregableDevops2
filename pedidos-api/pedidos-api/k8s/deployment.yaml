@@ -1,44 +1,44 @@
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: pedidos-api
 spec:
   replicas: 1
-
   selector:
     matchLabels:
       app: pedidos-api
       version: v1
-
   template:
     metadata:
       labels:
         app: pedidos-api
         version: v1
-
     spec:
+      securityContext:
+        fsGroup: 10001
       containers:
         - name: pedidos
           image: pedidos-api:v1
           imagePullPolicy: Never
-
+          securityContext:
+            runAsNonRoot: true
+            runAsUser: 10001
+            runAsGroup: 10001
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+                - ALL
           ports:
             - containerPort: 8080
-
           env:
             - name: API_TITLE
               valueFrom:
                 configMapKeyRef:
                   name: pedidos-config
                   key: api_title
-
-          # Monta el almacenamiento persistente dentro del contenedor
           volumeMounts:
             - name: pedidos-h2-storage
               mountPath: /data
-
-      # Define el volumen persistente de Kubernetes
       volumes:
         - name: pedidos-h2-storage
           persistentVolumeClaim:
