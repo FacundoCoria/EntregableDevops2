@@ -1,0 +1,15 @@
+KubeLinter 0.8.3
+
+/work/k8s/tests/latest.yaml: (object: <no namespace>/test-latest /v1, Kind=Pod) The container "nginx" is using an invalid container image, "nginx:latest". Please use images that are not blocked by the `BlockList` criteria : [".*:(latest)$" "^[^:]*$" "(.*/[^:]+)$"] (check: latest-tag, remediation: Use a container image with a specific tag other than latest.)
+
+/work/k8s/tests/latest.yaml: (object: <no namespace>/test-latest /v1, Kind=Pod) container "nginx" does not have a read-only root file system (check: no-read-only-root-fs, remediation: Set readOnlyRootFilesystem to true in the container securityContext.)
+
+/work/k8s/tests/latest.yaml: (object: <no namespace>/test-latest /v1, Kind=Pod) container "nginx" is not set to runAsNonRoot (check: run-as-non-root, remediation: Set runAsUser to a non-zero number and runAsNonRoot to true in your pod or container securityContext. Refer to https://kubernetes.io/docs/tasks/configure-pod-container/security-context/ for details.)
+
+/work/k8s/tests/resources.yaml: (object: <no namespace>/test-resources /v1, Kind=Pod) container "nginx" does not have a read-only root file system (check: no-read-only-root-fs, remediation: Set readOnlyRootFilesystem to true in the container securityContext.)
+
+/work/k8s/tests/resources.yaml: (object: <no namespace>/test-resources /v1, Kind=Pod) container "nginx" has cpu request 0 (check: unset-cpu-requirements, remediation: Set CPU requests for your container based on its requirements. Refer to https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#requests-and-limits for details.)
+
+/work/k8s/tests/resources.yaml: (object: <no namespace>/test-resources /v1, Kind=Pod) container "nginx" has memory limit 0 (check: unset-memory-requirements, remediation: Set memory limits for your container based on its requirements. Refer to https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#requests-and-limits for details.)
+
+Error: found 6 lint errors

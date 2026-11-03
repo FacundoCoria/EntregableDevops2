@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: test-latest
+spec:
+  containers:
+    - name: nginx
+      image: nginx:latest
+      resources:
+        requests:
+          cpu: "100m"
+          memory: "64Mi"
+        limits:
+          cpu: "200m"
+          memory: "128Mi"
+      securityContext:
+        runAsNonRoot: false
+
+# Error from server: error when creating "k8s\\tests\\latest.yaml": admission webhook "validate.kyverno.svc-fail" denied the request:
+
+# resource Pod/default/test-latest was blocked due to the following policies
+
+# deny-latest-images:
+#  check-container-images: 'validation failure: No se permite utilizar imagenes con la etiqueta latest.'
+# disallow-root-containers:
+#  check-run-as-non-root: 'validation failure: Todos los contenedores deben ejecutarse con runAsNonRoot: true.'
