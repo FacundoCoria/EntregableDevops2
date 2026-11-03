@@ -1,0 +1,211 @@
+﻿docker : Unable to find image 'semgrep/semgrep:latest' locally
+En línea: 1 Carácter: 1
++ docker run --rm -v "${PWD}:/src" semgrep/semgrep semgrep scan --confi ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Unable to find ...latest' locally:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+latest: Pulling from semgrep/semgrep
+5d35e74d7c68: Pulling fs layer
+c2bad043d386: Pulling fs layer
+d00fa809875c: Pulling fs layer
+cd5d0e806f47: Pulling fs layer
+e27848103812: Pulling fs layer
+f2fcae456309: Pulling fs layer
+248709850098: Pulling fs layer
+bd9ddc54bea9: Pulling fs layer
+db43e654f745: Pulling fs layer
+e884d1f7bde9: Pulling fs layer
+df7030e308c5: Pulling fs layer
+850766837198: Pulling fs layer
+608b4d261b6e: Pulling fs layer
+5e76960310b5: Pulling fs layer
+5e9b4a97f639: Pulling fs layer
+4eeb491ca76f: Download complete
+5d35e74d7c68: Download complete
+cd5d0e806f47: Download complete
+c2bad043d386: Download complete
+e27848103812: Download complete
+bd9ddc54bea9: Download complete
+df7030e308c5: Download complete
+608b4d261b6e: Download complete
+248709850098: Download complete
+f2fcae456309: Download complete
+db43e654f745: Download complete
+d00fa809875c: Download complete
+5e76960310b5: Download complete
+5e9b4a97f639: Download complete
+5e9b4a97f639: Pull complete
+850766837198: Download complete
+e27848103812: Pull complete
+f2fcae456309: Pull complete
+bd9ddc54bea9: Pull complete
+248709850098: Pull complete
+db43e654f745: Pull complete
+e884d1f7bde9: Download complete
+e884d1f7bde9: Pull complete
+d00fa809875c: Pull complete
+c2bad043d386: Pull complete
+5e76960310b5: Pull complete
+cd5d0e806f47: Pull complete
+850766837198: Pull complete
+df7030e308c5: Pull complete
+608b4d261b6e: Pull complete
+5d35e74d7c68: Pull complete
+Digest: sha256:3db5c7af55eb1f512eac0abf0ab69a97b52c74b5e9a27314c221aee1a78d7ab2
+Status: Downloaded newer image for semgrep/semgrep:latest
+               
+               
+ÔöîÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÉ
+Ôöé Scan Status Ôöé
+ÔööÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÿ
+  Scanning 37 files tracked by git with 1074 Code rules:
+                                                                                                                       
+ 
+  Language      Rules   Files          Origin      Rules                                                               
+ 
+ ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ        
+ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ                                                              
+ 
+  <multilang>      48      37          Community    1074                                                               
+ 
+  yaml             35       9                                                                                          
+ 
+  java            118       8                                                                                          
+ 
+  dockerfile        6       1                                                                                          
+ 
+  bash              4       1                                                                                          
+ 
+                                                                                                                       
+ 
+                   
+                   
+ÔöîÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÉ
+Ôöé 7 Code Findings Ôöé
+ÔööÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÿ
+                   
+    /src/Dockerfile
+   ÔØ»ÔØ»ÔØ▒ dockerfile.security.missing-user-entrypoint.missing-user-entrypoint
+          ÔØ░ÔØ░ Blocking ÔØ▒ÔØ▒
+          By not specifying a USER, a program in the container may run as 'root'. This is a security hazard.
+          If an attacker can control a process running as root, they may have control over the container.   
+          Ensure that the last USER in a Dockerfile is a USER other than 'root'.                            
+          Details: https://sg.run/k281                                                                      
+                                                                                                            
+           ÔûÂÔûÂÔöå Autofix ÔûÂ USER non-root ENTRYPOINT ["java", "-jar", "app.jar"]
+            9Ôöå ENTRYPOINT ["java", "-jar", "app.jar"]
+                            
+    /src/k8s/deployment.yaml
+     ÔØ▒ yaml.kubernetes.security.run-as-non-root.run-as-non-root
+          ÔØ░ÔØ░ Blocking ÔØ▒ÔØ▒
+          When running containers in Kubernetes, it's important to ensure that they  are properly secured to  
+          prevent privilege escalation attacks.  One potential vulnerability is when a container is allowed to
+          run  applications as the root user, which could allow an attacker to gain  access to sensitive      
+          resources. To mitigate this risk, it's recommended to  add a `securityContext` to the container,    
+          with the parameter `runAsNonRoot`  set to `true`. This will ensure that the container runs as a non-
+          root user,  limiting the damage that could be caused by any potential attacks. By  adding a         
+          `securityContext` to the container in your Kubernetes pod, you can  help to ensure that your        
+          containerized applications are more secure and  less vulnerable to privilege escalation attacks.    
+          Details: https://sg.run/dgP5                                                                        
+                                                                                                              
+           ÔûÂÔûÂÔöå Autofix ÔûÂ spec: securityContext: runAsNonRoot: true #
+           20Ôöå spec:
+   
+    ÔØ»ÔØ▒ yaml.kubernetes.security.allow-privilege-escalation-no-securitycontext.allow-privilege-escalation-no-
+       securitycontext                                                                                      
+          ÔØ░ÔØ░ Blocking ÔØ▒ÔØ▒
+          In Kubernetes, each pod runs in its own isolated environment with its own set of security policies. 
+          However, certain container images may contain `setuid` or `setgid` binaries that could allow an     
+          attacker to perform privilege escalation and gain access to sensitive resources. To mitigate this   
+          risk, it's recommended to add a `securityContext` to the container in the pod, with the parameter   
+          `allowPrivilegeEscalation` set to `false`. This will prevent the container from running any         
+          privileged processes and limit the impact of any potential attacks. By adding a `securityContext` to
+          your Kubernetes pod, you can help to ensure that your containerized applications are more secure and
+          less vulnerable to privilege escalation attacks.                                                    
+          Details: https://sg.run/eleR                                                                        
+                                                                                                              
+           ÔûÂÔûÂÔöå Autofix ÔûÂ securityContext: allowPrivilegeEscalation: false name
+           22Ôöå - name: pedidos
+                                                   
+    /src/monitoring/grafana/grafana-deployment.yaml
+     ÔØ▒ yaml.kubernetes.security.run-as-non-root.run-as-non-root
+          ÔØ░ÔØ░ Blocking ÔØ▒ÔØ▒
+          When running containers in Kubernetes, it's important to ensure that they  are properly secured to  
+          prevent privilege escalation attacks.  One potential vulnerability is when a container is allowed to
+          run  applications as the root user, which could allow an attacker to gain  access to sensitive      
+          resources. To mitigate this risk, it's recommended to  add a `securityContext` to the container,    
+          with the parameter `runAsNonRoot`  set to `true`. This will ensure that the container runs as a non-
+          root user,  limiting the damage that could be caused by any potential attacks. By  adding a         
+          `securityContext` to the container in your Kubernetes pod, you can  help to ensure that your        
+          containerized applications are more secure and  less vulnerable to privilege escalation attacks.    
+          Details: https://sg.run/dgP5                                                                        
+                                                                                                              
+           ÔûÂÔûÂÔöå Autofix ÔûÂ spec: securityContext: runAsNonRoot: true #
+           14Ôöå spec:
+   
+    ÔØ»ÔØ▒ yaml.kubernetes.security.allow-privilege-escalation-no-securitycontext.allow-privilege-escalation-no-
+       securitycontext                                                                                      
+          ÔØ░ÔØ░ Blocking ÔØ▒ÔØ▒
+          In Kubernetes, each pod runs in its own isolated environment with its own set of security policies. 
+          However, certain container images may contain `setuid` or `setgid` binaries that could allow an     
+          attacker to perform privilege escalation and gain access to sensitive resources. To mitigate this   
+          risk, it's recommended to add a `securityContext` to the container in the pod, with the parameter   
+          `allowPrivilegeEscalation` set to `false`. This will prevent the container from running any         
+          privileged processes and limit the impact of any potential attacks. By adding a `securityContext` to
+          your Kubernetes pod, you can help to ensure that your containerized applications are more secure and
+          less vulnerable to privilege escalation attacks.                                                    
+          Details: https://sg.run/eleR                                                                        
+                                                                                                              
+           ÔûÂÔûÂÔöå Autofix ÔûÂ securityContext: allowPrivilegeEscalation: false name
+           16Ôöå - name: grafana
+                                                         
+    /src/monitoring/prometheus/prometheus-deployment.yaml
+     ÔØ▒ yaml.kubernetes.security.run-as-non-root.run-as-non-root
+          ÔØ░ÔØ░ Blocking ÔØ▒ÔØ▒
+          When running containers in Kubernetes, it's important to ensure that they  are properly secured to  
+          prevent privilege escalation attacks.  One potential vulnerability is when a container is allowed to
+          run  applications as the root user, which could allow an attacker to gain  access to sensitive      
+          resources. To mitigate this risk, it's recommended to  add a `securityContext` to the container,    
+          with the parameter `runAsNonRoot`  set to `true`. This will ensure that the container runs as a non-
+          root user,  limiting the damage that could be caused by any potential attacks. By  adding a         
+          `securityContext` to the container in your Kubernetes pod, you can  help to ensure that your        
+          containerized applications are more secure and  less vulnerable to privilege escalation attacks.    
+          Details: https://sg.run/dgP5                                                                        
+                                                                                                              
+           ÔûÂÔûÂÔöå Autofix ÔûÂ spec: securityContext: runAsNonRoot: true #
+           14Ôöå spec:
+   
+    ÔØ»ÔØ▒ yaml.kubernetes.security.allow-privilege-escalation-no-securitycontext.allow-privilege-escalation-no-
+       securitycontext                                                                                      
+          ÔØ░ÔØ░ Blocking ÔØ▒ÔØ▒
+          In Kubernetes, each pod runs in its own isolated environment with its own set of security policies. 
+          However, certain container images may contain `setuid` or `setgid` binaries that could allow an     
+          attacker to perform privilege escalation and gain access to sensitive resources. To mitigate this   
+          risk, it's recommended to add a `securityContext` to the container in the pod, with the parameter   
+          `allowPrivilegeEscalation` set to `false`. This will prevent the container from running any         
+          privileged processes and limit the impact of any potential attacks. By adding a `securityContext` to
+          your Kubernetes pod, you can help to ensure that your containerized applications are more secure and
+          less vulnerable to privilege escalation attacks.                                                    
+          Details: https://sg.run/eleR                                                                        
+                                                                                                              
+           ÔûÂÔûÂÔöå Autofix ÔûÂ securityContext: allowPrivilegeEscalation: false name
+           16Ôöå - name: prometheus
+
+                
+                
+ÔöîÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÉ
+Ôöé Scan Summary Ôöé
+ÔööÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÿ
+Ô£à Scan completed successfully.
+ ÔÇó Findings: 7 (7 blocking)
+ ÔÇó Rules run: 208
+ ÔÇó Targets scanned: 37
+ ÔÇó Parsed lines: ~99.5%
+ ÔÇó Scan skipped: 
+   Ôùª Files larger than  files 1.0 MB: 1
+   Ôùª Files matching .semgrepignore patterns: 1
+ ÔÇó For a detailed list of skipped files and lines, run semgrep with the --verbose flag
+Ran 208 rules on 37 files: 7 findings.
+
+A new version of Semgrep is available. See https://semgrep.dev/docs/upgrading
