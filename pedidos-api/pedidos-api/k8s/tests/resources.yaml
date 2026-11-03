@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: test-resources
+spec:
+  containers:
+    - name: nginx
+      image: nginx:1.27
+      securityContext:
+        runAsNonRoot: true
+
+# Error from server: error when creating "k8s\\tests\\resources.yaml": admission webhook "validate.kyverno.svc-fail" denied the request:
+
+# resource Pod/default/test-resources was blocked due to the following policies
+
+# disallow-root-containers:
+#  check-run-as-non-root: 'validation failure: Todos los contenedores deben ejecutarse con runAsNonRoot: true.'
+# require-container-resources:
+#  check-container-resources: 'validation failure: Todos los contenedores deben definir requests y limits de CPU y memoria.'
