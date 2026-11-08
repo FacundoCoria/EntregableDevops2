@@ -122,13 +122,13 @@ spec:
             deny:
               conditions:
                 any:
-                  - key: "{{ element.securityContext.runAsNonRoot || 'false' }}"
+                  - key: "{{ element.securityContext.runAsNonRoot || `false` }}"
                     operator: NotEquals
-                    value: "true"
+                    value: true
           - list: "request.object.spec.initContainers || `[]`"
             deny:
               conditions:
                 any:
-                  - key: "{{ element.securityContext.runAsNonRoot || 'false' }}"
+                  - key: "{{ element.securityContext.runAsNonRoot || `false` }}"
                     operator: NotEquals
-                    value: "true"
+                    value: true
