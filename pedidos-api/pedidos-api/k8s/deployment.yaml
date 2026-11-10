@@ -1,3 +1,4 @@
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -18,8 +19,15 @@ spec:
         fsGroup: 10001
       containers:
         - name: pedidos
-          image: pedidos-api:v1
-          imagePullPolicy: Never
+          image: facundocoria/pedidos-api:1.0
+          imagePullPolicy: Always
+          resources:
+            requests:
+              cpu: "25m"
+              memory: "128Mi"
+            limits:
+              cpu: "250m"
+              memory: "256Mi"
           securityContext:
             runAsNonRoot: true
             runAsUser: 10001

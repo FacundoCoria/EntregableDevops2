@@ -14,13 +14,22 @@ spec:
     spec:
       containers:
         - name: grafana
-          image: grafana/grafana
+          image: grafana/grafana:11.6.0
           ports:
             - containerPort: 3000
+
+          resources:
+            requests:
+              cpu: "25m"
+              memory: "128Mi"
+            limits:
+              cpu: "250m"
+              memory: "256Mi"
 
           securityContext:
             runAsNonRoot: true
             runAsUser: 472
+            runAsGroup: 472
             allowPrivilegeEscalation: false
             capabilities:
               drop:
