@@ -1,5 +1,10 @@
 # Métricas de monitoreo — API de Pedidos
 
+Guía operativa del Laboratorio 4: [inicio, tráfico, acceso y limpieza](scripts/l4/GUIA.md).
+[Estado y evidencias vigentes](reports/ESTADO-EVIDENCIAS-L4.md), incluida la
+comparación de seguridad y los límites de reproducción. Este README conserva
+su alcance de métricas; el informe integrador final sigue pendiente (B06).
+
 La API utiliza **Micrometer y Prometheus** para registrar métricas relacionadas con la creación de pedidos y sus tiempos de espera. Estas métricas permiten visualizar el comportamiento de la aplicación mediante dashboards en Grafana.
 
 ## Métricas disponibles

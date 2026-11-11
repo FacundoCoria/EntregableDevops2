@@ -1,0 +1,177 @@
+apiVersion: v1
+items:
+- apiVersion: policies.kyverno.io/v1
+  kind: ValidatingPolicy
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"policies.kyverno.io/v1","kind":"ValidatingPolicy","metadata":{"annotations":{},"name":"l4-deny-latest-images"},"spec":{"autogen":{"validatingAdmissionPolicy":{"enabled":false}},"evaluation":{"admission":{"enabled":true},"background":{"enabled":true}},"failurePolicy":"Fail","matchConstraints":{"namespaceSelector":{"matchLabels":{"kubernetes.io/metadata.name":"laboratorio4"}},"resourceRules":[{"apiGroups":[""],"apiVersions":["v1"],"operations":["CREATE","UPDATE"],"resources":["pods"]}]},"validationActions":["Deny"],"validations":[{"expression":"(object.spec.containers + (has(object.spec.initContainers) ? object.spec.initContainers : [])).all(c, c.image.contains('@sha256:') || (c.image.split('/')[c.image.split('/').size()-1].contains(':') \u0026\u0026 !c.image.endsWith(':latest')))","message":"Imagenes con etiqueta explicita distinta de latest o digest SHA256."}]}}
+    creationTimestamp: "2026-11-11T13:26:12Z"
+    generation: 1
+    name: l4-deny-latest-images
+    resourceVersion: "22381"
+    uid: 7252aacd-0030-47e2-9e72-1bd881cb97b9
+  spec:
+    autogen:
+      validatingAdmissionPolicy:
+        enabled: false
+    evaluation:
+      admission:
+        enabled: true
+      background:
+        enabled: true
+    failurePolicy: Fail
+    matchConstraints:
+      namespaceSelector:
+        matchLabels:
+          kubernetes.io/metadata.name: laboratorio4
+      resourceRules:
+      - apiGroups:
+        - ""
+        apiVersions:
+        - v1
+        operations:
+        - CREATE
+        - UPDATE
+        resources:
+        - pods
+    validationActions:
+    - Deny
+    validations:
+    - expression: '(object.spec.containers + (has(object.spec.initContainers) ? object.spec.initContainers
+        : [])).all(c, c.image.contains(''@sha256:'') || (c.image.split(''/'')[c.image.split(''/'').size()-1].contains('':'')
+        && !c.image.endsWith('':latest'')))'
+      message: Imagenes con etiqueta explicita distinta de latest o digest SHA256.
+- apiVersion: policies.kyverno.io/v1
+  kind: ValidatingPolicy
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"policies.kyverno.io/v1","kind":"ValidatingPolicy","metadata":{"annotations":{},"name":"l4-disallow-privileged-containers"},"spec":{"autogen":{"validatingAdmissionPolicy":{"enabled":false}},"evaluation":{"admission":{"enabled":true},"background":{"enabled":true}},"failurePolicy":"Fail","matchConstraints":{"namespaceSelector":{"matchLabels":{"kubernetes.io/metadata.name":"laboratorio4"}},"resourceRules":[{"apiGroups":[""],"apiVersions":["v1"],"operations":["CREATE","UPDATE"],"resources":["pods"]}]},"validationActions":["Deny"],"validations":[{"expression":"(object.spec.containers + (has(object.spec.initContainers) ? object.spec.initContainers : [])).all(c, !has(c.securityContext) || !has(c.securityContext.privileged) || !c.securityContext.privileged)","message":"No se permiten contenedores privilegiados."}]}}
+    creationTimestamp: "2026-11-11T13:26:12Z"
+    generation: 1
+    name: l4-disallow-privileged-containers
+    resourceVersion: "22386"
+    uid: 6b989c73-7ac6-4894-ba81-f4c51b77000d
+  spec:
+    autogen:
+      validatingAdmissionPolicy:
+        enabled: false
+    evaluation:
+      admission:
+        enabled: true
+      background:
+        enabled: true
+    failurePolicy: Fail
+    matchConstraints:
+      namespaceSelector:
+        matchLabels:
+          kubernetes.io/metadata.name: laboratorio4
+      resourceRules:
+      - apiGroups:
+        - ""
+        apiVersions:
+        - v1
+        operations:
+        - CREATE
+        - UPDATE
+        resources:
+        - pods
+    validationActions:
+    - Deny
+    validations:
+    - expression: '(object.spec.containers + (has(object.spec.initContainers) ? object.spec.initContainers
+        : [])).all(c, !has(c.securityContext) || !has(c.securityContext.privileged)
+        || !c.securityContext.privileged)'
+      message: No se permiten contenedores privilegiados.
+- apiVersion: policies.kyverno.io/v1
+  kind: ValidatingPolicy
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"policies.kyverno.io/v1","kind":"ValidatingPolicy","metadata":{"annotations":{},"name":"l4-disallow-root-containers"},"spec":{"autogen":{"validatingAdmissionPolicy":{"enabled":false}},"evaluation":{"admission":{"enabled":true},"background":{"enabled":true}},"failurePolicy":"Fail","matchConstraints":{"namespaceSelector":{"matchLabels":{"kubernetes.io/metadata.name":"laboratorio4"}},"resourceRules":[{"apiGroups":[""],"apiVersions":["v1"],"operations":["CREATE","UPDATE"],"resources":["pods"]}]},"validationActions":["Deny"],"validations":[{"expression":"(object.spec.containers + (has(object.spec.initContainers) ? object.spec.initContainers : [])).all(c, (has(c.securityContext) \u0026\u0026 has(c.securityContext.runAsNonRoot) ? c.securityContext.runAsNonRoot : (has(object.spec.securityContext) \u0026\u0026 has(object.spec.securityContext.runAsNonRoot) \u0026\u0026 object.spec.securityContext.runAsNonRoot)) \u0026\u0026 (has(c.securityContext) \u0026\u0026 has(c.securityContext.runAsUser) ? c.securityContext.runAsUser != 0 : (!has(object.spec.securityContext) || !has(object.spec.securityContext.runAsUser) || object.spec.securityContext.runAsUser != 0)))","message":"runAsNonRoot efectivo debe ser true y runAsUser no puede ser 0."}]}}
+    creationTimestamp: "2026-11-11T13:26:12Z"
+    generation: 1
+    name: l4-disallow-root-containers
+    resourceVersion: "22383"
+    uid: c7d17034-ef9f-46a9-99fa-f72defbc99f7
+  spec:
+    autogen:
+      validatingAdmissionPolicy:
+        enabled: false
+    evaluation:
+      admission:
+        enabled: true
+      background:
+        enabled: true
+    failurePolicy: Fail
+    matchConstraints:
+      namespaceSelector:
+        matchLabels:
+          kubernetes.io/metadata.name: laboratorio4
+      resourceRules:
+      - apiGroups:
+        - ""
+        apiVersions:
+        - v1
+        operations:
+        - CREATE
+        - UPDATE
+        resources:
+        - pods
+    validationActions:
+    - Deny
+    validations:
+    - expression: '(object.spec.containers + (has(object.spec.initContainers) ? object.spec.initContainers
+        : [])).all(c, (has(c.securityContext) && has(c.securityContext.runAsNonRoot)
+        ? c.securityContext.runAsNonRoot : (has(object.spec.securityContext) && has(object.spec.securityContext.runAsNonRoot)
+        && object.spec.securityContext.runAsNonRoot)) && (has(c.securityContext) &&
+        has(c.securityContext.runAsUser) ? c.securityContext.runAsUser != 0 : (!has(object.spec.securityContext)
+        || !has(object.spec.securityContext.runAsUser) || object.spec.securityContext.runAsUser
+        != 0)))'
+      message: runAsNonRoot efectivo debe ser true y runAsUser no puede ser 0.
+- apiVersion: policies.kyverno.io/v1
+  kind: ValidatingPolicy
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"policies.kyverno.io/v1","kind":"ValidatingPolicy","metadata":{"annotations":{},"name":"l4-require-container-resources"},"spec":{"autogen":{"validatingAdmissionPolicy":{"enabled":false}},"evaluation":{"admission":{"enabled":true},"background":{"enabled":true}},"failurePolicy":"Fail","matchConstraints":{"namespaceSelector":{"matchLabels":{"kubernetes.io/metadata.name":"laboratorio4"}},"resourceRules":[{"apiGroups":[""],"apiVersions":["v1"],"operations":["CREATE","UPDATE"],"resources":["pods"]}]},"validationActions":["Deny"],"validations":[{"expression":"(object.spec.containers + (has(object.spec.initContainers) ? object.spec.initContainers : [])).all(c, has(c.resources) \u0026\u0026 has(c.resources.requests) \u0026\u0026 has(c.resources.limits) \u0026\u0026 ['cpu','memory'].all(k, k in c.resources.requests \u0026\u0026 k in c.resources.limits))","message":"Cada contenedor requiere requests y limits de CPU y memoria."}]}}
+    creationTimestamp: "2026-11-11T13:26:12Z"
+    generation: 1
+    name: l4-require-container-resources
+    resourceVersion: "22382"
+    uid: afae975a-fb17-4eed-b0c4-a2d60e7d51a0
+  spec:
+    autogen:
+      validatingAdmissionPolicy:
+        enabled: false
+    evaluation:
+      admission:
+        enabled: true
+      background:
+        enabled: true
+    failurePolicy: Fail
+    matchConstraints:
+      namespaceSelector:
+        matchLabels:
+          kubernetes.io/metadata.name: laboratorio4
+      resourceRules:
+      - apiGroups:
+        - ""
+        apiVersions:
+        - v1
+        operations:
+        - CREATE
+        - UPDATE
+        resources:
+        - pods
+    validationActions:
+    - Deny
+    validations:
+    - expression: '(object.spec.containers + (has(object.spec.initContainers) ? object.spec.initContainers
+        : [])).all(c, has(c.resources) && has(c.resources.requests) && has(c.resources.limits)
+        && [''cpu'',''memory''].all(k, k in c.resources.requests && k in c.resources.limits))'
+      message: Cada contenedor requiere requests y limits de CPU y memoria.
+kind: List
+metadata:
+  resourceVersion: ""

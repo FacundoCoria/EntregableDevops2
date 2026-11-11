@@ -1,0 +1,9 @@
+# Scripts must work after checkout on Linux and Windows.
+*.sh text eol=lf
+*.py text eol=lf
+Jenkinsfile* text eol=lf
+# Original evidence keeps its exact bytes and recorded SHA256.
+/reports/** -text -whitespace
+/pedidos-api/pedidos-api/reports/** -text -whitespace
+# Official Semgrep rules retain upstream bytes and whitespace.
+/pedidos-api/pedidos-api/security/semgrep/*.yaml -whitespace

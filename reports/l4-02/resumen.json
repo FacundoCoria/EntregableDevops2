@@ -1,0 +1,193 @@
+{
+  "createdAt": "2026-11-10T23:20:08.983887988Z",
+  "imageIdDocker": "sha256:5a76e0b66f7bf62d97788dee808402bbac40f6936b4508b0079cf2566bad5279",
+  "imageIdTrivy": "sha256:1cb073e6aa69c2f35d61a2cbeb5816e06e5e54daed81f4cad580992102e22b72",
+  "counts": {
+    "HIGH": 7,
+    "MEDIUM": 25,
+    "LOW": 16,
+    "CRITICAL": 4
+  },
+  "totalFindings": 52,
+  "uniqueVulnerabilityIDs": 41,
+  "dive": {
+    "sizeBytes": 346863490,
+    "inefficientBytes": 5465165,
+    "efficiencyScore": 0.9867319042427901,
+    "fileReference": [
+      {
+        "count": 2,
+        "sizeBytes": 2950076,
+        "file": "/var/log/lastlog"
+      },
+      {
+        "count": 2,
+        "sizeBytes": 1364285,
+        "file": "/var/cache/debconf/templates.dat"
+      },
+      {
+        "count": 2,
+        "sizeBytes": 408717,
+        "file": "/var/log/dpkg.log"
+      },
+      {
+        "count": 2,
+        "sizeBytes": 323296,
+        "file": "/var/log/faillog"
+      },
+      {
+        "count": 2,
+        "sizeBytes": 241990,
+        "file": "/var/lib/dpkg/status"
+      },
+      {
+        "count": 2,
+        "sizeBytes": 42377,
+        "file": "/var/log/apt/history.log"
+      },
+      {
+        "count": 2,
+        "sizeBytes": 32768,
+        "file": "/tmp/hsperfdata_root/65"
+      },
+      {
+        "count": 2,
+        "sizeBytes": 28161,
+        "file": "/var/cache/debconf/config.dat"
+      },
+      {
+        "count": 3,
+        "sizeBytes": 21973,
+        "file": "/var/cache/ldconfig/aux-cache"
+      },
+      {
+        "count": 3,
+        "sizeBytes": 21616,
+        "file": "/etc/ld.so.cache"
+      },
+      {
+        "count": 2,
+        "sizeBytes": 12960,
+        "file": "/var/log/apt/eipp.log.xz"
+      },
+      {
+        "count": 2,
+        "sizeBytes": 10046,
+        "file": "/var/log/alternatives.log"
+      },
+      {
+        "count": 2,
+        "sizeBytes": 2027,
+        "file": "/var/lib/apt/extended_states"
+      },
+      {
+        "count": 2,
+        "sizeBytes": 1899,
+        "file": "/etc/passwd"
+      },
+      {
+        "count": 2,
+        "sizeBytes": 1031,
+        "file": "/etc/shadow"
+      },
+      {
+        "count": 2,
+        "sizeBytes": 910,
+        "file": "/etc/group"
+      },
+      {
+        "count": 2,
+        "sizeBytes": 761,
+        "file": "/etc/gshadow"
+      },
+      {
+        "count": 2,
+        "sizeBytes": 230,
+        "file": "/var/lib/dpkg/triggers/File"
+      },
+      {
+        "count": 2,
+        "sizeBytes": 21,
+        "file": "/etc/subgid"
+      },
+      {
+        "count": 2,
+        "sizeBytes": 21,
+        "file": "/etc/subuid"
+      },
+      {
+        "count": 2,
+        "sizeBytes": 0,
+        "file": "/var/lib/dpkg/triggers/Lock"
+      },
+      {
+        "count": 2,
+        "sizeBytes": 0,
+        "file": "/var/lib/dpkg/lock"
+      },
+      {
+        "count": 2,
+        "sizeBytes": 0,
+        "file": "/var/lib/dpkg/triggers/Unincorp"
+      }
+    ]
+  },
+  "layers": [
+    {
+      "index": 0,
+      "id": "blobs",
+      "digestId": "sha256:297a592b66593a3dddc39e7970a718cc1cbb04c8a9b904009b33eb623dafc588",
+      "sizeBytes": 78092943,
+      "command": "#(nop) ADD file:ba52f9eec2a5a7de74e9a460017725370755c2d4814dd746bde7507601befb53 in / "
+    },
+    {
+      "index": 1,
+      "id": "blobs",
+      "digestId": "sha256:7fd3048f98a5dfc642633dfed9ef69a4b259229c84c06ab6cf80a5d38f937a23",
+      "sizeBytes": 42837090,
+      "command": "RUN /bin/sh -c set -eux;     apt-get update;     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl         wget         gnupg         fontconfig         ca-certificates p11-kit         tzdata         locales     ;     echo \"en_US.UTF-8 UTF-8\" >> /etc/locale.gen;     locale-gen en_US.UTF-8;     rm -rf /var/lib/apt/lists/* # buildkit"
+    },
+    {
+      "index": 2,
+      "id": "blobs",
+      "digestId": "sha256:dbf3ead19384ebbdd74e555d9410103db94ee0840adc3d2183df3850d5fd6c41",
+      "sizeBytes": 165625294,
+      "command": "RUN /bin/sh -c set -eux;     ARCH=\"$(dpkg --print-architecture)\";     case \"${ARCH}\" in        amd64)          ESUM='a535a1df9c6284d9618872984e026ae0352d1f7e9e0605425c0e6114f47351dd';          BINARY_URL='https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.13%2B9/OpenJDK21U-jre_x64_linux_hotspot_21.0.13_9.tar.gz';          ;;        arm64)          ESUM='b1734db7ade49c3f6acc6ae06233b8c2dd90e3e2f00f67000ae1c972aaa64d8c';          BINARY_URL='https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.13%2B9/OpenJDK21U-jre_aarch64_linux_hotspot_21.0.13_9.tar.gz';          ;;        ppc64el)          ESUM='4994d5bf70a58b683c86158dc1c19c973551cc225956893f91008c6180469c6c';          BINARY_URL='https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.13%2B9/OpenJDK21U-jre_ppc64le_linux_hotspot_21.0.13_9.tar.gz';          ;;        s390x)          ESUM='f4722f400e7fce6e6d80c86d5ef68d0007694670a0a2b0bb569ad0e83dd5f996';          BINARY_URL='https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.13%2B9/OpenJDK21U-jre_s390x_linux_hotspot_21.0.13_9.tar.gz';          ;;        *)          echo \"Unsupported arch: ${ARCH}\";          exit 1;          ;;     esac;     wget --progress=dot:giga -O /tmp/openjdk.tar.gz ${BINARY_URL};     wget --progress=dot:giga -O /tmp/openjdk.tar.gz.sig ${BINARY_URL}.sig;     export GNUPGHOME=\"$(mktemp -d)\";     gpg --batch --keyserver keyserver.ubuntu.com --recv-keys 3B04D753C9050D9A5D343F39843C48A565F8F04B;     gpg --batch --verify /tmp/openjdk.tar.gz.sig /tmp/openjdk.tar.gz;     rm -rf \"${GNUPGHOME}\" /tmp/openjdk.tar.gz.sig;     echo \"${ESUM} */tmp/openjdk.tar.gz\" | sha256sum -c -;     mkdir -p \"$JAVA_HOME\";     tar --extract         --file /tmp/openjdk.tar.gz         --directory \"$JAVA_HOME\"         --strip-components 1         --no-same-owner     ;     rm -f /tmp/openjdk.tar.gz;     find \"$JAVA_HOME/lib\" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf;     ldconfig;     java -Xshare:dump; # buildkit"
+    },
+    {
+      "index": 3,
+      "id": "blobs",
+      "digestId": "sha256:aaa722f602fb9ae492932f13fa5c56897f36982f918494c480e8180ae8a2a821",
+      "sizeBytes": 0,
+      "command": "RUN /bin/sh -c set -eux;     echo \"Verifying install ...\";     echo \"java --version\"; java --version;     echo \"Complete.\" # buildkit"
+    },
+    {
+      "index": 4,
+      "id": "blobs",
+      "digestId": "sha256:93c138625a791c0a58dfb74fcccf6c676d9ed11aec2d1e444764582395795a0e",
+      "sizeBytes": 5977,
+      "command": "COPY --chmod=755 entrypoint.sh /__cacert_entrypoint.sh # buildkit"
+    },
+    {
+      "index": 5,
+      "id": "blobs",
+      "digestId": "sha256:9c4b45330bf8fb1ff6bb5c412f0a307049c3bced95886f83e100142f91d0150c",
+      "sizeBytes": 0,
+      "command": "WORKDIR /app"
+    },
+    {
+      "index": 6,
+      "id": "blobs",
+      "digestId": "sha256:e8a1f3a28b9c8d4bb85e0d94218207f9ddb722c4c1081a706785594b3a50b0ca",
+      "sizeBytes": 3245291,
+      "command": "RUN /bin/sh -c groupadd --gid 10001 appgroup     && useradd --uid 10001 --gid appgroup --no-create-home --shell /usr/sbin/nologin usuario     && mkdir /data && chown 10001:10001 /data # buildkit"
+    },
+    {
+      "index": 7,
+      "id": "blobs",
+      "digestId": "sha256:cd371cd6365e0753fffabacf9838e974b3b641955103c057397047f6c700922d",
+      "sizeBytes": 57056895,
+      "command": "COPY --chown=10001:10001 /workspace/target/pedidos-api-0.0.1-SNAPSHOT.jar app.jar # buildkit"
+    }
+  ]
+}

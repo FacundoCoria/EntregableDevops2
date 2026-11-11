@@ -1,0 +1,54 @@
+# Valores comunes; replicas admite 0 (pausa) o 1, siempre con Recreate.
+environment: lab
+apiTitle: Pedidos - Laboratorio 4
+storageClassName: ''
+components:
+  api:
+    replicas: 1
+    image: pedidos-api:l4-01
+    imagePullPolicy: IfNotPresent
+    port: 8080
+    uid: 10001
+    resources:
+      requests:
+        cpu: 250m
+        memory: 384Mi
+      limits:
+        cpu: '1'
+        memory: 768Mi
+    storageSize: 1Gi
+    mountPath: /data
+  prometheus:
+    replicas: 1
+    image: prom/prometheus:v3.16.0@sha256:e04987641b57704f408e31f6373ba4138ecf27cb4a165d24aabb6c38fddd0f06
+    imagePullPolicy: IfNotPresent
+    port: 9090
+    uid: 65534
+    resources:
+      requests:
+        cpu: 100m
+        memory: 128Mi
+      limits:
+        cpu: 500m
+        memory: 512Mi
+    storageSize: 1Gi
+    mountPath: /prometheus
+  grafana:
+    replicas: 1
+    image: grafana/grafana:13.0.12@sha256:28476aa8096cd8d0f658a05a443b605fffb450e57f444335216175d604cfd23d
+    imagePullPolicy: IfNotPresent
+    port: 3000
+    uid: 472
+    resources:
+      requests:
+        cpu: 100m
+        memory: 512Mi
+      limits:
+        cpu: 500m
+        memory: 1Gi
+    storageSize: 1Gi
+    mountPath: /var/lib/grafana
+
+observability:
+  # Named node only; no discovery or access to other nodes.
+  nodeName: minikube

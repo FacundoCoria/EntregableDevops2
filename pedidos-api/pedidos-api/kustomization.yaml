@@ -1,0 +1,17 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - k8s/configmap.yaml
+  - k8s/h2-persistente.yaml
+  - k8s/deployment.yaml
+  - k8s/service.yaml
+  - monitoring/prometheus/prometheus-deployment.yaml
+  - monitoring/prometheus/prometheus-service.yaml
+  - monitoring/prometheus/prometheus-pvc.yaml
+  - monitoring/grafana/grafana-deployment.yaml
+  - monitoring/grafana/grafana-service.yaml
+  - monitoring/grafana/grafana-pvc.yaml
+configMapGenerator:
+  - name: prometheus-config
+    files:
+      - prometheus.yml=monitoring/prometheus/prometheus.yml

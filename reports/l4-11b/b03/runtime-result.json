@@ -1,0 +1,81 @@
+{
+  "result": "PASS",
+  "health": {
+    "api": {
+      "groups": [
+        "liveness",
+        "readiness"
+      ],
+      "status": "UP"
+    },
+    "prometheus": "Prometheus Server is Ready.\n",
+    "grafana": {
+      "database": "ok",
+      "version": "13.0.12",
+      "commit": "fd417469e2a53ee3dc8158a36bc46bfd752d129c"
+    }
+  },
+  "targets": [
+    {
+      "discoveredLabels": {
+        "__address__": "kubernetes.default.svc:443",
+        "__always_scrape_classic_histograms__": "false",
+        "__convert_classic_histograms_to_nhcb__": "false",
+        "__metrics_path__": "/api/v1/nodes/minikube/proxy/metrics/resource",
+        "__scheme__": "https",
+        "__scrape_interval__": "5s",
+        "__scrape_native_histograms__": "false",
+        "__scrape_timeout__": "5s",
+        "job": "kubelet-resource"
+      },
+      "labels": {
+        "instance": "kubernetes.default.svc:443",
+        "job": "kubelet-resource"
+      },
+      "scrapePool": "kubelet-resource",
+      "scrapeUrl": "https://kubernetes.default.svc:443/api/v1/nodes/minikube/proxy/metrics/resource",
+      "globalUrl": "https://kubernetes.default.svc:443/api/v1/nodes/minikube/proxy/metrics/resource",
+      "lastError": "",
+      "lastScrape": "2026-11-11T18:39:43.205093372Z",
+      "lastScrapeDuration": 0.218564486,
+      "health": "up",
+      "scrapeInterval": "5s",
+      "scrapeTimeout": "5s"
+    },
+    {
+      "discoveredLabels": {
+        "__address__": "l4-b03-check-pedidos-api:18081",
+        "__always_scrape_classic_histograms__": "false",
+        "__convert_classic_histograms_to_nhcb__": "false",
+        "__metrics_path__": "/actuator/prometheus",
+        "__scheme__": "http",
+        "__scrape_interval__": "5s",
+        "__scrape_native_histograms__": "false",
+        "__scrape_timeout__": "5s",
+        "job": "pedidos-api",
+        "namespace": "laboratorio4",
+        "release": "l4-b03-check"
+      },
+      "labels": {
+        "instance": "l4-b03-check-pedidos-api:18081",
+        "job": "pedidos-api",
+        "namespace": "laboratorio4",
+        "release": "l4-b03-check"
+      },
+      "scrapePool": "pedidos-api",
+      "scrapeUrl": "http://l4-b03-check-pedidos-api:18081/actuator/prometheus",
+      "globalUrl": "http://l4-b03-check-pedidos-api:18081/actuator/prometheus",
+      "lastError": "",
+      "lastScrape": "2026-11-11T18:39:46.997754875Z",
+      "lastScrapeDuration": 0.056956698,
+      "health": "up",
+      "scrapeInterval": "5s",
+      "scrapeTimeout": "5s"
+    }
+  ],
+  "urls": {
+    "api": "http://127.0.0.1:52519",
+    "prometheus": "http://127.0.0.1:52520",
+    "grafana": "http://127.0.0.1:52521"
+  }
+}

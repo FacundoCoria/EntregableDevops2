@@ -1,0 +1,1 @@
+ERROR: Jenkins existente solo se admite en el entorno principal

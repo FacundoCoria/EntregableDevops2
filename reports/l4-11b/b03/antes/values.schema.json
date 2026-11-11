@@ -1,0 +1,265 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "environment",
+    "apiTitle",
+    "storageClassName",
+    "components",
+    "observability"
+  ],
+  "properties": {
+    "environment": {
+      "type": "string",
+      "minLength": 1
+    },
+    "apiTitle": {
+      "type": "string",
+      "minLength": 1
+    },
+    "storageClassName": {
+      "type": "string"
+    },
+    "components": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "api",
+        "grafana",
+        "prometheus"
+      ],
+      "properties": {
+        "api": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "image",
+            "imagePullPolicy",
+            "port",
+            "uid",
+            "resources",
+            "storageSize",
+            "mountPath"
+          ],
+          "properties": {
+            "image": {
+              "type": "string",
+              "pattern": "^.+:[^/]+$",
+              "not": {
+                "pattern": ":latest($|@)"
+              }
+            },
+            "imagePullPolicy": {
+              "enum": [
+                "Never",
+                "IfNotPresent"
+              ]
+            },
+            "port": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 65535,
+              "const": 8080,
+              "description": "Contrato fijo de la imagen y su configuracion."
+            },
+            "uid": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "resources": {
+              "type": "object",
+              "required": [
+                "requests",
+                "limits"
+              ],
+              "properties": {
+                "requests": {
+                  "type": "object",
+                  "required": [
+                    "cpu",
+                    "memory"
+                  ]
+                },
+                "limits": {
+                  "type": "object",
+                  "required": [
+                    "cpu",
+                    "memory"
+                  ]
+                }
+              }
+            },
+            "storageSize": {
+              "type": "string",
+              "minLength": 1
+            },
+            "mountPath": {
+              "type": "string",
+              "pattern": "^/",
+              "const": "/data",
+              "description": "Contrato fijo de la imagen y su configuracion."
+            }
+          }
+        },
+        "prometheus": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "image",
+            "imagePullPolicy",
+            "port",
+            "uid",
+            "resources",
+            "storageSize",
+            "mountPath"
+          ],
+          "properties": {
+            "image": {
+              "type": "string",
+              "pattern": "^.+:[^/]+$",
+              "not": {
+                "pattern": ":latest($|@)"
+              }
+            },
+            "imagePullPolicy": {
+              "enum": [
+                "Never",
+                "IfNotPresent"
+              ]
+            },
+            "port": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 65535,
+              "const": 9090,
+              "description": "Contrato fijo de la imagen y su configuracion."
+            },
+            "uid": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "resources": {
+              "type": "object",
+              "required": [
+                "requests",
+                "limits"
+              ],
+              "properties": {
+                "requests": {
+                  "type": "object",
+                  "required": [
+                    "cpu",
+                    "memory"
+                  ]
+                },
+                "limits": {
+                  "type": "object",
+                  "required": [
+                    "cpu",
+                    "memory"
+                  ]
+                }
+              }
+            },
+            "storageSize": {
+              "type": "string",
+              "minLength": 1
+            },
+            "mountPath": {
+              "type": "string",
+              "pattern": "^/",
+              "const": "/prometheus",
+              "description": "Contrato fijo de la imagen y su configuracion."
+            }
+          }
+        },
+        "grafana": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "image",
+            "imagePullPolicy",
+            "port",
+            "uid",
+            "resources",
+            "storageSize",
+            "mountPath"
+          ],
+          "properties": {
+            "image": {
+              "type": "string",
+              "pattern": "^.+:[^/]+$",
+              "not": {
+                "pattern": ":latest($|@)"
+              }
+            },
+            "imagePullPolicy": {
+              "enum": [
+                "Never",
+                "IfNotPresent"
+              ]
+            },
+            "port": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 65535,
+              "const": 3000,
+              "description": "Contrato fijo de la imagen y su configuracion."
+            },
+            "uid": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "resources": {
+              "type": "object",
+              "required": [
+                "requests",
+                "limits"
+              ],
+              "properties": {
+                "requests": {
+                  "type": "object",
+                  "required": [
+                    "cpu",
+                    "memory"
+                  ]
+                },
+                "limits": {
+                  "type": "object",
+                  "required": [
+                    "cpu",
+                    "memory"
+                  ]
+                }
+              }
+            },
+            "storageSize": {
+              "type": "string",
+              "minLength": 1
+            },
+            "mountPath": {
+              "type": "string",
+              "pattern": "^/",
+              "const": "/var/lib/grafana",
+              "description": "Contrato fijo de la imagen y su configuracion."
+            }
+          }
+        }
+      }
+    },
+    "observability": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "nodeName"
+      ],
+      "properties": {
+        "nodeName": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9.-]*$"
+        }
+      }
+    }
+  }
+}

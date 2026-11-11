@@ -1,0 +1,15 @@
+NAME: l4-b03-check
+LAST DEPLOYED: Wed Nov 11 15:39:05 2026
+NAMESPACE: laboratorio4
+STATUS: deployed
+REVISION: 1
+DESCRIPTION: Install complete
+TEST SUITE: None
+NOTES:
+Entorno: b03. Los servicios son privados del cluster.
+Acceso local (mantener cada comando activo en su terminal):
+kubectl --context minikube -n laboratorio4 port-forward svc/l4-b03-check-pedidos-api 18080:18081 --address 127.0.0.1
+API: http://127.0.0.1:18080/actuator/health
+PVC retenidos al desinstalar: revisar datos antes de eliminarlos manualmente.
+
+exit=0

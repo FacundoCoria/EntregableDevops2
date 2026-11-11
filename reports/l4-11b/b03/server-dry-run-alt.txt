@@ -1,0 +1,18 @@
+serviceaccount/l4-b03-check-pedidos-prometheus created (server dry run)
+configmap/l4-b03-check-pedidos-api created (server dry run)
+configmap/l4-b03-check-pedidos-prometheus created (server dry run)
+configmap/l4-b03-check-pedidos-grafana-provisioning created (server dry run)
+configmap/l4-b03-check-pedidos-grafana-dashboard created (server dry run)
+persistentvolumeclaim/l4-b03-check-pedidos-api created (server dry run)
+persistentvolumeclaim/l4-b03-check-pedidos-grafana created (server dry run)
+persistentvolumeclaim/l4-b03-check-pedidos-prometheus created (server dry run)
+clusterrole.rbac.authorization.k8s.io/laboratorio4-l4-b03-check-pedidos-node-metrics created (server dry run)
+clusterrolebinding.rbac.authorization.k8s.io/laboratorio4-l4-b03-check-pedidos-node-metrics created (server dry run)
+service/l4-b03-check-pedidos-api created (server dry run)
+service/l4-b03-check-pedidos-grafana created (server dry run)
+service/l4-b03-check-pedidos-prometheus created (server dry run)
+deployment.apps/l4-b03-check-pedidos-api created (server dry run)
+deployment.apps/l4-b03-check-pedidos-grafana created (server dry run)
+deployment.apps/l4-b03-check-pedidos-prometheus created (server dry run)
+
+exit=0

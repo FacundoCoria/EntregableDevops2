@@ -1,0 +1,33 @@
+{
+    "apiVersion": "rbac.authorization.k8s.io/v1",
+    "kind": "ClusterRole",
+    "metadata": {
+        "annotations": {
+            "meta.helm.sh/release-name": "l4",
+            "meta.helm.sh/release-namespace": "laboratorio4"
+        },
+        "creationTimestamp": "2026-11-11T01:23:58Z",
+        "labels": {
+            "app.kubernetes.io/managed-by": "Helm"
+        },
+        "name": "laboratorio4-l4-pedidos-node-metrics",
+        "resourceVersion": "15982",
+        "uid": "4f4cf009-1d2d-4d16-b9fd-f0d3265f6c7c"
+    },
+    "rules": [
+        {
+            "apiGroups": [
+                ""
+            ],
+            "resourceNames": [
+                "minikube"
+            ],
+            "resources": [
+                "nodes/proxy"
+            ],
+            "verbs": [
+                "get"
+            ]
+        }
+    ]
+}

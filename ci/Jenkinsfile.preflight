@@ -1,0 +1,45 @@
+// Diagnostico inicial L4-09. No es el pipeline integrador final.
+pipeline {
+    agent any
+    options {
+        skipDefaultCheckout(true)
+        disableConcurrentBuilds()
+        timeout(time: 5, unit: 'MINUTES')
+    }
+    stages {
+        stage('Herramientas') {
+            steps {
+                sh '''
+                    set -eu
+                    mkdir -p preflight
+                    {
+                        id
+                        java -version 2>&1
+                        for tool in git docker helm kubectl mvn python3 semgrep snyk; do
+                            if command -v "$tool"; then :; else echo "$tool: pendiente"; fi
+                        done
+                    } > preflight/herramientas.txt
+                    cat preflight/herramientas.txt
+                '''
+            }
+        }
+        stage('Clonacion de referencia') {
+            steps {
+                dir('fuente-referencia') {
+                    git branch: 'main', url: 'https://github.com/FacundoCoria/EntregableDevops2.git'
+                    sh 'git rev-parse HEAD > ../preflight/commit-remoto.txt'
+                }
+            }
+        }
+        stage('Acceso a Docker') {
+            steps {
+                sh 'docker version > preflight/docker.txt && cat preflight/docker.txt'
+            }
+        }
+    }
+    post {
+        always {
+            archiveArtifacts artifacts: 'preflight/*.txt', allowEmptyArchive: true
+        }
+    }
+}

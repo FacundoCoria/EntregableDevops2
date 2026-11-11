@@ -1,0 +1,54 @@
+The push refers to repository [docker.io/brunovitola/pedidos-api-l4]
+0626d3cc316c: Waiting
+771b03f5a03d: Waiting
+7c8d2409cb04: Waiting
+ddc306c5cceb: Waiting
+ddc306c5cceb: Waiting
+0626d3cc316c: Waiting
+771b03f5a03d: Waiting
+7c8d2409cb04: Waiting
+ddc306c5cceb: Waiting
+0626d3cc316c: Waiting
+771b03f5a03d: Waiting
+7c8d2409cb04: Waiting
+ddc306c5cceb: Waiting
+0626d3cc316c: Waiting
+771b03f5a03d: Waiting
+7c8d2409cb04: Waiting
+ddc306c5cceb: Waiting
+0626d3cc316c: Waiting
+771b03f5a03d: Waiting
+7c8d2409cb04: Waiting
+ddc306c5cceb: Waiting
+0626d3cc316c: Waiting
+771b03f5a03d: Waiting
+7c8d2409cb04: Waiting
+ddc306c5cceb: Waiting
+0626d3cc316c: Waiting
+771b03f5a03d: Waiting
+7c8d2409cb04: Waiting
+ddc306c5cceb: Waiting
+0626d3cc316c: Waiting
+771b03f5a03d: Waiting
+7c8d2409cb04: Waiting
+5374b0422788: Waiting
+8ce225f7e131: Waiting
+ddc306c5cceb: Waiting
+0626d3cc316c: Layer already exists
+771b03f5a03d: Waiting
+7c8d2409cb04: Layer already exists
+ddc306c5cceb: Waiting
+771b03f5a03d: Waiting
+5374b0422788: Waiting
+8ce225f7e131: Waiting
+13c61d793de9: Waiting
+771b03f5a03d: Layer already exists
+05e72d3e67a3: Waiting
+5374b0422788: Waiting
+8ce225f7e131: Waiting
+ddc306c5cceb: Layer already exists
+8ce225f7e131: Layer already exists
+13c61d793de9: Layer already exists
+05e72d3e67a3: Layer already exists
+5374b0422788: Layer already exists
+l4-7-0f47780b51b3: digest: sha256:48b65d95763c2a1eb6727f9b22b78fc27509f79b62a7b87903cea87a4aee41d9 size: 2052

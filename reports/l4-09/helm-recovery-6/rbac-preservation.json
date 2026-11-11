@@ -1,0 +1,12 @@
+{
+  "clusterrole": {
+    "unchanged": true,
+    "resourceVersionBefore": "15982",
+    "resourceVersionAfter": "15982"
+  },
+  "clusterrolebinding": {
+    "unchanged": true,
+    "resourceVersionBefore": "15983",
+    "resourceVersionAfter": "15983"
+  }
+}

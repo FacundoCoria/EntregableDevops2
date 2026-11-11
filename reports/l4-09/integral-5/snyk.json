@@ -1,0 +1,3171 @@
+{
+  "vulnerabilities": [
+    {
+      "id": "SNYK-JAVA-CHQOSLOGBACK-19882330",
+      "title": "Directory Traversal",
+      "CVSSv3": "CVSS:3.1/AV:L/AC:H/PR:H/UI:R/S:C/C:H/I:L/A:L",
+      "credit": [
+        "Unknown"
+      ],
+      "semver": {
+        "vulnerable": [
+          "[0.9.14,1.6.3)"
+        ]
+      },
+      "exploit": "Not Defined",
+      "fixedIn": [
+        "1.6.3"
+      ],
+      "patches": [],
+      "insights": {
+        "triageAdvice": null
+      },
+      "language": "java",
+      "severity": "medium",
+      "cvssScore": 5.9,
+      "functions": [],
+      "malicious": false,
+      "isDisputed": false,
+      "moduleName": "ch.qos.logback:logback-classic",
+      "references": [
+        {
+          "url": "https://github.com/qos-ch/logback/commit/761821bfaacac3a0ad44fa546cfc814429bf9312",
+          "title": "GitHub Commit"
+        },
+        {
+          "url": "https://logback.qos.ch/news.html%231.6.3",
+          "title": "Release Notes"
+        }
+      ],
+      "cvssDetails": [
+        {
+          "assigner": "Red Hat",
+          "severity": "medium",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:L",
+          "cvssV3BaseScore": 6.5,
+          "modificationTime": "2026-09-01T05:31:20.346600Z"
+        }
+      ],
+      "cvssSources": [
+        {
+          "type": "primary",
+          "vector": "CVSS:4.0/AV:L/AC:L/AT:P/PR:H/UI:P/VC:H/VI:L/VA:L/SC:H/SI:L/SA:L",
+          "assigner": "Snyk",
+          "severity": "medium",
+          "baseScore": 5.9,
+          "cvssVersion": "4.0",
+          "modificationTime": "2026-10-03T14:04:31.990605Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:L/AC:H/PR:H/UI:R/S:C/C:H/I:L/A:L",
+          "assigner": "Snyk",
+          "severity": "medium",
+          "baseScore": 6.4,
+          "cvssVersion": "3.1",
+          "modificationTime": "2026-10-03T14:04:31.990605Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:L",
+          "assigner": "Red Hat",
+          "severity": "medium",
+          "baseScore": 6.5,
+          "cvssVersion": "3.1",
+          "modificationTime": "2026-09-01T05:31:20.346600Z"
+        }
+      ],
+      "description": "## Overview\n[ch.qos.logback:logback-classic](https://mvnrepository.com/artifact/ch.qos.logback/logback-classic) is a reliable, generic, fast and flexible logging library for Java.\n\nAffected versions of this package are vulnerable to Directory Traversal in `MDCBasedDiscriminator`, used by `SiftingAppender`, which takes an MDC value as the discriminating key without removing path separators, so the value reaches the nested `FileAppender` path unsanitized. An attacker can direct log output to a file outside the intended directory by supplying an MDC value containing `/` or `\\` path segments. This requires a configuration whose `SiftingAppender` discriminates on MDC and whose nested `FileAppender` interpolates the discriminating key into its file path, with that MDC value populated from attacker-influenced input.\n\n**Note:** This is a bypass of the fix for the vulnerability described in [CVE-2025-11226](https://security.snyk.io/vuln/SNYK-JAVA-CHQOSLOGBACK-13169722).\n\n## Details\n\nA Directory Traversal attack (also known as path traversal) aims to access files and directories that are stored outside the intended folder. By manipulating files with \"dot-dot-slash (../)\" sequences and its variations, or by using absolute file paths, it may be possible to access arbitrary files and directories stored on file system, including application source code, configuration, and other critical system files.\n\nDirectory Traversal vulnerabilities can be generally divided into two types:\n\n- **Information Disclosure**: Allows the attacker to gain information about the folder structure or read the contents of sensitive files on the system.\n\n`st` is a module for serving static files on web pages, and contains a [vulnerability of this type](https://snyk.io/vuln/npm:st:20140206). In our example, we will serve files from the `public` route.\n\nIf an attacker requests the following URL from our server, it will in turn leak the sensitive private key of the root user.\n\n```\ncurl http://localhost:8080/public/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/root/.ssh/id_rsa\n```\n**Note** `%2e` is the URL encoded version of `.` (dot).\n\n- **Writing arbitrary files**: Allows the attacker to create or replace existing files. This type of vulnerability is also known as `Zip-Slip`. \n\nOne way to achieve this is by using a malicious `zip` archive that holds path traversal filenames. When each filename in the zip archive gets concatenated to the target extraction folder, without validation, the final path ends up outside of the target folder. If an executable or a configuration file is overwritten with a file containing malicious code, the problem can turn into an arbitrary code execution issue quite easily.\n\nThe following is an example of a `zip` archive with one benign file and one malicious file. Extracting the malicious file will result in traversing out of the target folder, ending up in `/root/.ssh/` overwriting the `authorized_keys` file:\n\n```\n2018-04-15 22:04:29 .....           19           19  good.txt\n2018-04-15 22:04:42 .....           20           20  ../../../../../../root/.ssh/authorized_keys\n```\n\n## Remediation\nUpgrade `ch.qos.logback:logback-classic` to version 1.6.3 or higher.\n## References\n- [GitHub Commit](https://github.com/qos-ch/logback/commit/761821bfaacac3a0ad44fa546cfc814429bf9312)\n- [Release Notes](https://logback.qos.ch/news.html#1.6.3)\n",
+      "epssDetails": {
+        "percentile": "0.24106",
+        "probability": "0.00332",
+        "modelVersion": "v2026.06.15"
+      },
+      "identifiers": {
+        "CVE": [
+          "CVE-2026-19880"
+        ],
+        "CWE": [
+          "CWE-22"
+        ]
+      },
+      "packageName": "ch.qos.logback:logback-classic",
+      "proprietary": false,
+      "creationTime": "2026-09-17T09:20:28.009091Z",
+      "functions_new": [],
+      "alternativeIds": [],
+      "disclosureTime": "2026-08-14T16:51:34.793000Z",
+      "exploitDetails": {
+        "sources": [],
+        "maturityLevels": [
+          {
+            "type": "secondary",
+            "level": "Not Defined",
+            "format": "CVSSv3"
+          },
+          {
+            "type": "primary",
+            "level": "Not Defined",
+            "format": "CVSSv4"
+          }
+        ]
+      },
+      "packageManager": "maven",
+      "mavenModuleName": {
+        "groupId": "ch.qos.logback",
+        "artifactId": "logback-classic"
+      },
+      "publicationTime": "2026-09-17T09:20:28.220612Z",
+      "severityBasedOn": "CVSS",
+      "modificationTime": "2026-10-03T14:04:31.990605Z",
+      "socialTrendAlert": false,
+      "severityWithCritical": "medium",
+      "from": [
+        "com.pedidos:pedidos-api@0.0.1-SNAPSHOT",
+        "org.springframework.boot:spring-boot-starter-actuator@4.1.1",
+        "org.springframework.boot:spring-boot-starter@4.1.1",
+        "org.springframework.boot:spring-boot-starter-logging@4.1.1",
+        "ch.qos.logback:logback-classic@1.5.38"
+      ],
+      "upgradePath": [],
+      "isUpgradable": false,
+      "isPatchable": false,
+      "name": "ch.qos.logback:logback-classic",
+      "version": "1.5.38"
+    },
+    {
+      "id": "SNYK-JAVA-CHQOSLOGBACK-20824362",
+      "title": "Directory Traversal",
+      "CVSSv3": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:L",
+      "credit": [
+        "Unknown"
+      ],
+      "semver": {
+        "vulnerable": [
+          "[0.9.14,1.6.5)"
+        ]
+      },
+      "exploit": "Not Defined",
+      "fixedIn": [
+        "1.6.5"
+      ],
+      "patches": [],
+      "insights": {
+        "triageAdvice": null
+      },
+      "language": "java",
+      "severity": "medium",
+      "cvssScore": 6.3,
+      "functions": [],
+      "malicious": false,
+      "isDisputed": false,
+      "moduleName": "ch.qos.logback:logback-classic",
+      "references": [
+        {
+          "url": "https://github.com/qos-ch/logback/releases/tag/v_1.6.5",
+          "title": "GitHub Release"
+        },
+        {
+          "url": "https://logback.qos.ch/news.html%231.6.5",
+          "title": "logback.qos.ch"
+        }
+      ],
+      "cvssDetails": [
+        {
+          "assigner": "Red Hat",
+          "severity": "medium",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:L",
+          "cvssV3BaseScore": 5.6,
+          "modificationTime": "2026-10-03T06:05:52.893547Z"
+        }
+      ],
+      "cvssSources": [
+        {
+          "type": "primary",
+          "vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:L/VI:L/VA:L/SC:N/SI:N/SA:N",
+          "assigner": "Snyk",
+          "severity": "medium",
+          "baseScore": 6.3,
+          "cvssVersion": "4.0",
+          "modificationTime": "2026-10-11T08:47:33.856867Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:L",
+          "assigner": "Snyk",
+          "severity": "medium",
+          "baseScore": 5.6,
+          "cvssVersion": "3.1",
+          "modificationTime": "2026-10-11T08:47:33.856867Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:L",
+          "assigner": "Red Hat",
+          "severity": "medium",
+          "baseScore": 5.6,
+          "cvssVersion": "3.1",
+          "modificationTime": "2026-10-03T06:05:52.893547Z"
+        }
+      ],
+      "description": "## Overview\n[ch.qos.logback:logback-classic](https://mvnrepository.com/artifact/ch.qos.logback/logback-classic) is a reliable, generic, fast and flexible logging library for Java.\n\nAffected versions of this package are vulnerable to Directory Traversal via unsanitized input in the `MDCDiscriminator` process. An attacker can create or append log files outside the intended directory by supplying crafted values, such as through HTTP headers, that influence the log file path. This is only exploitable if `SiftingAppender` is active and unsanitized data is used by `MDCDiscriminator`.\r\n \r\n## Workaround \r\nThis vulnerability can be mitigated by sanitizing relevant data provided by the user.\n\n## Details\n\nA Directory Traversal attack (also known as path traversal) aims to access files and directories that are stored outside the intended folder. By manipulating files with \"dot-dot-slash (../)\" sequences and its variations, or by using absolute file paths, it may be possible to access arbitrary files and directories stored on file system, including application source code, configuration, and other critical system files.\n\nDirectory Traversal vulnerabilities can be generally divided into two types:\n\n- **Information Disclosure**: Allows the attacker to gain information about the folder structure or read the contents of sensitive files on the system.\n\n`st` is a module for serving static files on web pages, and contains a [vulnerability of this type](https://snyk.io/vuln/npm:st:20140206). In our example, we will serve files from the `public` route.\n\nIf an attacker requests the following URL from our server, it will in turn leak the sensitive private key of the root user.\n\n```\ncurl http://localhost:8080/public/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/root/.ssh/id_rsa\n```\n**Note** `%2e` is the URL encoded version of `.` (dot).\n\n- **Writing arbitrary files**: Allows the attacker to create or replace existing files. This type of vulnerability is also known as `Zip-Slip`. \n\nOne way to achieve this is by using a malicious `zip` archive that holds path traversal filenames. When each filename in the zip archive gets concatenated to the target extraction folder, without validation, the final path ends up outside of the target folder. If an executable or a configuration file is overwritten with a file containing malicious code, the problem can turn into an arbitrary code execution issue quite easily.\n\nThe following is an example of a `zip` archive with one benign file and one malicious file. Extracting the malicious file will result in traversing out of the target folder, ending up in `/root/.ssh/` overwriting the `authorized_keys` file:\n\n```\n2018-04-15 22:04:29 .....           19           19  good.txt\n2018-04-15 22:04:42 .....           20           20  ../../../../../../root/.ssh/authorized_keys\n```\n\n## Remediation\nUpgrade `ch.qos.logback:logback-classic` to version 1.6.5 or higher.\n## References\n- [GitHub Release](https://github.com/qos-ch/logback/releases/tag/v_1.6.5)\n- [logback.qos.ch](https://logback.qos.ch/news.html#1.6.5)\n",
+      "epssDetails": {
+        "percentile": "0.24106",
+        "probability": "0.00332",
+        "modelVersion": "v2026.06.15"
+      },
+      "identifiers": {
+        "CVE": [
+          "CVE-2026-104721"
+        ],
+        "CWE": [
+          "CWE-22"
+        ]
+      },
+      "packageName": "ch.qos.logback:logback-classic",
+      "proprietary": false,
+      "creationTime": "2026-10-11T08:45:05.798486Z",
+      "functions_new": [],
+      "alternativeIds": [],
+      "disclosureTime": "2026-10-02T14:26:31Z",
+      "exploitDetails": {
+        "sources": [],
+        "maturityLevels": [
+          {
+            "type": "secondary",
+            "level": "Not Defined",
+            "format": "CVSSv3"
+          },
+          {
+            "type": "primary",
+            "level": "Not Defined",
+            "format": "CVSSv4"
+          }
+        ]
+      },
+      "packageManager": "maven",
+      "mavenModuleName": {
+        "groupId": "ch.qos.logback",
+        "artifactId": "logback-classic"
+      },
+      "publicationTime": "2026-10-11T08:45:06.025380Z",
+      "severityBasedOn": "CVSS",
+      "modificationTime": "2026-10-11T08:47:33.856867Z",
+      "socialTrendAlert": false,
+      "severityWithCritical": "medium",
+      "from": [
+        "com.pedidos:pedidos-api@0.0.1-SNAPSHOT",
+        "org.springframework.boot:spring-boot-starter-actuator@4.1.1",
+        "org.springframework.boot:spring-boot-starter@4.1.1",
+        "org.springframework.boot:spring-boot-starter-logging@4.1.1",
+        "ch.qos.logback:logback-classic@1.5.38"
+      ],
+      "upgradePath": [],
+      "isUpgradable": false,
+      "isPatchable": false,
+      "name": "ch.qos.logback:logback-classic",
+      "version": "1.5.38"
+    },
+    {
+      "id": "SNYK-JAVA-NETMINIDEV-21715438",
+      "title": "Improper Neutralization",
+      "CVSSv3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N/E:P",
+      "credit": [
+        "Yu Bao"
+      ],
+      "semver": {
+        "vulnerable": [
+          "[,2.6.1)"
+        ]
+      },
+      "exploit": "Proof of Concept",
+      "fixedIn": [
+        "2.6.1"
+      ],
+      "patches": [],
+      "insights": {
+        "triageAdvice": null
+      },
+      "language": "java",
+      "severity": "medium",
+      "cvssScore": 6.9,
+      "functions": [],
+      "malicious": false,
+      "isDisputed": false,
+      "moduleName": "net.minidev:json-smart",
+      "references": [
+        {
+          "url": "https://github.com/netplex/json-smart-v2/blob/v2.6.0/json-smart/src/main/java/net/minidev/json/parser/JSONParserBase.java",
+          "title": "github.com"
+        },
+        {
+          "url": "https://github.com/netplex/json-smart-v2/commit/e0b5afeb3bb4f5f969c233c60e9aeca0a6338d7e",
+          "title": "GitHub Commit"
+        },
+        {
+          "url": "https://github.com/netplex/json-smart-v2/issues/302",
+          "title": "GitHub Issue"
+        },
+        {
+          "url": "https://github.com/netplex/json-smart-v2/pull/305",
+          "title": "GitHub PR"
+        },
+        {
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=2556274",
+          "title": "Red Hat Bugzilla Bug"
+        },
+        {
+          "url": "https://github.com/netplex/json-smart-v2/blob/ebf7cf8cf0dccef246cd1ed0d052074d787a2de4/json-smart/src/main/java/net/minidev/json/parser/JSONParserBase.java%23L229-L240",
+          "title": "Vulnerable Code"
+        }
+      ],
+      "cvssDetails": [
+        {
+          "assigner": "NVD",
+          "severity": "medium",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+          "cvssV3BaseScore": 5.3,
+          "modificationTime": "2026-10-20T18:30:37.177195Z"
+        },
+        {
+          "assigner": "Red Hat",
+          "severity": "medium",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+          "cvssV3BaseScore": 5.3,
+          "modificationTime": "2026-10-21T07:30:17.137393Z"
+        }
+      ],
+      "cvssSources": [
+        {
+          "type": "primary",
+          "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N/E:P",
+          "assigner": "Snyk",
+          "severity": "medium",
+          "baseScore": 6.9,
+          "cvssVersion": "4.0",
+          "modificationTime": "2026-11-08T17:41:54.865837Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N/E:P",
+          "assigner": "Snyk",
+          "severity": "medium",
+          "baseScore": 5.3,
+          "cvssVersion": "3.1",
+          "modificationTime": "2026-11-08T17:41:54.865837Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+          "assigner": "NVD",
+          "severity": "medium",
+          "baseScore": 5.3,
+          "cvssVersion": "3.1",
+          "modificationTime": "2026-10-20T18:30:37.177195Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+          "assigner": "Red Hat",
+          "severity": "medium",
+          "baseScore": 5.3,
+          "cvssVersion": "3.1",
+          "modificationTime": "2026-10-21T07:30:17.137393Z"
+        }
+      ],
+      "description": "## Overview\n[net.minidev:json-smart](https://github.com/netplex/json-smart-v1) is a Java JSON parser.\n\nAffected versions of this package are vulnerable to Improper Neutralization via the `parseInner` function in the `JSONParserBase` parser. An attacker can evade `JSONValue.parseStrict` or `isValidJsonStrict` by sending a valid JSON value followed by a literal `0x1A` character and malformed content; `parseInner` mistakes the character for end-of-input and skips the trailing-data check. Applications that rely on these strict-validation methods can accept input that downstream parsers such as Jackson or Gson interpret differently.\n## Remediation\nUpgrade `net.minidev:json-smart` to version 2.6.1 or higher.\n## References\n- [github.com](https://github.com/netplex/json-smart-v2/blob/v2.6.0/json-smart/src/main/java/net/minidev/json/parser/JSONParserBase.java)\n- [GitHub Commit](https://github.com/netplex/json-smart-v2/commit/e0b5afeb3bb4f5f969c233c60e9aeca0a6338d7e)\n- [GitHub Issue](https://github.com/netplex/json-smart-v2/issues/302)\n- [GitHub PR](https://github.com/netplex/json-smart-v2/pull/305)\n- [Red Hat Bugzilla Bug](https://bugzilla.redhat.com/show_bug.cgi?id=2556274)\n- [Vulnerable Code](https://github.com/netplex/json-smart-v2/blob/ebf7cf8cf0dccef246cd1ed0d052074d787a2de4/json-smart/src/main/java/net/minidev/json/parser/JSONParserBase.java#L229-L240)\n",
+      "epssDetails": {
+        "percentile": "0.38731",
+        "probability": "0.00449",
+        "modelVersion": "v2026.06.15"
+      },
+      "identifiers": {
+        "CVE": [
+          "CVE-2026-113602"
+        ],
+        "CWE": [
+          "CWE-1286",
+          "CWE-147"
+        ]
+      },
+      "packageName": "net.minidev:json-smart",
+      "proprietary": false,
+      "creationTime": "2026-10-26T08:35:59.795629Z",
+      "functions_new": [],
+      "alternativeIds": [],
+      "disclosureTime": "2026-10-20T15:40:29Z",
+      "exploitDetails": {
+        "sources": [
+          "Snyk"
+        ],
+        "maturityLevels": [
+          {
+            "type": "secondary",
+            "level": "Proof of Concept",
+            "format": "CVSSv3"
+          },
+          {
+            "type": "primary",
+            "level": "Proof of Concept",
+            "format": "CVSSv4"
+          }
+        ]
+      },
+      "packageManager": "maven",
+      "mavenModuleName": {
+        "groupId": "net.minidev",
+        "artifactId": "json-smart"
+      },
+      "publicationTime": "2026-10-26T08:35:59.976744Z",
+      "severityBasedOn": "CVSS",
+      "modificationTime": "2026-11-08T17:41:54.865837Z",
+      "socialTrendAlert": false,
+      "severityWithCritical": "medium",
+      "from": [
+        "com.pedidos:pedidos-api@0.0.1-SNAPSHOT",
+        "org.springframework.boot:spring-boot-starter-actuator-test@4.1.1",
+        "org.springframework.boot:spring-boot-starter-test@4.1.1",
+        "net.minidev:json-smart@2.6.0"
+      ],
+      "upgradePath": [],
+      "isUpgradable": false,
+      "isPatchable": false,
+      "name": "net.minidev:json-smart",
+      "version": "2.6.0"
+    },
+    {
+      "id": "SNYK-JAVA-ORGGLASSFISHJAXB-20883142",
+      "title": "XML External Entity (XXE) Injection",
+      "CVSSv3": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:L",
+      "credit": [
+        "Huzaifa Sidhpurwala"
+      ],
+      "semver": {
+        "vulnerable": [
+          "[4.0.0-M4,]"
+        ]
+      },
+      "exploit": "Not Defined",
+      "fixedIn": [],
+      "patches": [],
+      "insights": {
+        "triageAdvice": null
+      },
+      "language": "java",
+      "severity": "high",
+      "cvssScore": 8.3,
+      "functions": [],
+      "malicious": false,
+      "isDisputed": false,
+      "moduleName": "org.glassfish.jaxb:jaxb-core",
+      "references": [
+        {
+          "url": "https://github.com/eclipse-ee4j/jaxb-ri/commit/abf8c9707046d78bd3b7e834596feb3d3c21dbcb",
+          "title": "GitHub Commit"
+        },
+        {
+          "url": "https://github.com/eclipse-ee4j/jaxb-ri/commit/c08fde59",
+          "title": "GitHub Commit"
+        },
+        {
+          "url": "https://github.com/eclipse-ee4j/jaxb-ri/pull/2013",
+          "title": "GitHub PR"
+        },
+        {
+          "url": "https://gitlab.eclipse.org/security/cve-assignment/-/work_items/310",
+          "title": "GitLab Work Item"
+        }
+      ],
+      "cvssDetails": [],
+      "cvssSources": [
+        {
+          "type": "primary",
+          "vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:N/VA:L/SC:N/SI:N/SA:N",
+          "assigner": "Snyk",
+          "severity": "high",
+          "baseScore": 8.3,
+          "cvssVersion": "4.0",
+          "modificationTime": "2026-10-13T14:40:59.053810Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:L",
+          "assigner": "Snyk",
+          "severity": "medium",
+          "baseScore": 6.5,
+          "cvssVersion": "3.1",
+          "modificationTime": "2026-10-13T14:40:59.053810Z"
+        }
+      ],
+      "description": "## Overview\n\nAffected versions of this package are vulnerable to XML External Entity (XXE) Injection in the `createParserFactory` and `createDocumentBuilderFactory` methods of the `XmlFactory` class, which set only `XMLConstants.FEATURE_SECURE_PROCESSING` on the factory and leave `disallow-doctype-decl`, `external-general-entities`, `external-parameter-entities`, and `load-external-dtd` at their defaults. An attacker can read local files out of band by submitting XML containing an external entity declaration to an application that unmarshals untrusted documents. Exploitation depends on the JAXP implementation in use, because secure processing alone does not block external entity resolution on every implementation.\n\n## Details\nXXE Injection is a type of attack against an application that parses XML input.\nXML is a markup language that defines a set of rules for encoding documents in a format that is both human-readable and machine-readable. By default, many XML processors allow specification of an external entity, a URI that is dereferenced and evaluated during XML processing. When an XML document is being parsed, the parser can make a request and include the content at the specified URI inside of the XML document.\n\nAttacks can include disclosing local files, which may contain sensitive data such as passwords or private user data, using file: schemes or relative paths in the system identifier.\n\nFor example, below is a sample XML document, containing an XML element- username.\n\n```\n<xml>\n<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?>\n   <username>John</username>\n</xml>\n```\n\nAn external XML entity - `xxe`, is defined using a system identifier and present within a DOCTYPE header. These entities can access local or remote content. For example the below code contains an external XML entity that would fetch the content of  `/etc/passwd` and display it to the user rendered by `username`.\n\n```\n<xml>\n<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?>\n<!DOCTYPE foo [\n   <!ENTITY xxe SYSTEM \"file:///etc/passwd\" >]>\n   <username>&xxe;</username>\n</xml>\n```\n\nOther XXE Injection attacks can access local resources that may not stop returning data, possibly impacting application availability and leading to Denial of Service.\n\n## Remediation\nA fix was pushed into the `master` branch but not yet published.\n## References\n- [GitHub Commit](https://github.com/eclipse-ee4j/jaxb-ri/commit/abf8c9707046d78bd3b7e834596feb3d3c21dbcb)\n- [GitHub Commit](https://github.com/eclipse-ee4j/jaxb-ri/commit/c08fde59)\n- [GitHub PR](https://github.com/eclipse-ee4j/jaxb-ri/pull/2013)\n- [GitLab Work Item](https://gitlab.eclipse.org/security/cve-assignment/-/work_items/310)\n",
+      "epssDetails": {
+        "percentile": "0.17041",
+        "probability": "0.00265",
+        "modelVersion": "v2026.06.15"
+      },
+      "identifiers": {
+        "CVE": [
+          "CVE-2026-92877"
+        ],
+        "CWE": [
+          "CWE-611"
+        ]
+      },
+      "packageName": "org.glassfish.jaxb:jaxb-core",
+      "proprietary": false,
+      "creationTime": "2026-10-13T14:40:58.767662Z",
+      "functions_new": [],
+      "alternativeIds": [],
+      "disclosureTime": "2026-10-12T14:44:11.378000Z",
+      "exploitDetails": {
+        "sources": [],
+        "maturityLevels": [
+          {
+            "type": "secondary",
+            "level": "Not Defined",
+            "format": "CVSSv3"
+          },
+          {
+            "type": "primary",
+            "level": "Not Defined",
+            "format": "CVSSv4"
+          }
+        ]
+      },
+      "packageManager": "maven",
+      "mavenModuleName": {
+        "groupId": "org.glassfish.jaxb",
+        "artifactId": "jaxb-core"
+      },
+      "publicationTime": "2026-10-13T14:40:58.917729Z",
+      "severityBasedOn": "CVSS",
+      "modificationTime": "2026-10-13T14:40:59.053810Z",
+      "socialTrendAlert": false,
+      "severityWithCritical": "high",
+      "from": [
+        "com.pedidos:pedidos-api@0.0.1-SNAPSHOT",
+        "org.springframework.boot:spring-boot-starter-data-jpa@4.1.1",
+        "org.springframework.boot:spring-boot-data-jpa@4.1.1",
+        "org.springframework.boot:spring-boot-hibernate@4.1.1",
+        "org.hibernate.orm:hibernate-core@7.4.5.Final",
+        "org.glassfish.jaxb:jaxb-runtime@4.0.9",
+        "org.glassfish.jaxb:jaxb-core@4.0.9"
+      ],
+      "upgradePath": [],
+      "isUpgradable": false,
+      "isPatchable": false,
+      "name": "org.glassfish.jaxb:jaxb-core",
+      "version": "4.0.9"
+    },
+    {
+      "id": "SNYK-JAVA-ORGOBJENESIS-21755439",
+      "title": "Symbolic Name not Mapping to Correct Object",
+      "CVSSv3": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:L/I:L/A:L",
+      "credit": [
+        "Unknown"
+      ],
+      "semver": {
+        "vulnerable": [
+          "[,3.6)"
+        ]
+      },
+      "exploit": "Not Defined",
+      "fixedIn": [
+        "3.6"
+      ],
+      "patches": [],
+      "insights": {
+        "triageAdvice": null
+      },
+      "language": "java",
+      "severity": "low",
+      "cvssScore": 2,
+      "functions": [],
+      "malicious": false,
+      "isDisputed": false,
+      "moduleName": "org.objenesis:objenesis",
+      "references": [
+        {
+          "url": "https://github.com/easymock/objenesis/security/advisories/GHSA-743r-26gf-97ff",
+          "title": "GitHub Advisory"
+        },
+        {
+          "url": "https://github.com/easymock/objenesis",
+          "title": "github.com"
+        },
+        {
+          "url": "https://github.com/easymock/objenesis/commit/40f90f435a06b16af74a7398f0007faeaa52c00c",
+          "title": "GitHub Commit"
+        },
+        {
+          "url": "https://github.com/easymock/objenesis/blob/fb36e5c377ed1bf57a18386fa79d2eed4ddfcfac/main/src/main/java/org/objenesis/ObjenesisBase.java%23L92-L95",
+          "title": "Vulnerable Code"
+        }
+      ],
+      "cvssDetails": [
+        {
+          "assigner": "NVD",
+          "severity": "medium",
+          "cvssV3Vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:L/I:L/A:L",
+          "cvssV3BaseScore": 4.5,
+          "modificationTime": "2026-10-27T01:15:29.358631Z"
+        },
+        {
+          "assigner": "Red Hat",
+          "severity": "medium",
+          "cvssV3Vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:L/I:L/A:L",
+          "cvssV3BaseScore": 4.5,
+          "modificationTime": "2026-10-27T07:32:06.707457Z"
+        }
+      ],
+      "cvssSources": [
+        {
+          "type": "primary",
+          "vector": "CVSS:4.0/AV:L/AC:H/AT:P/PR:L/UI:N/VC:L/VI:L/VA:L/SC:N/SI:N/SA:N",
+          "assigner": "Snyk",
+          "severity": "low",
+          "baseScore": 2,
+          "cvssVersion": "4.0",
+          "modificationTime": "2026-10-27T15:27:13.863414Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:L/I:L/A:L",
+          "assigner": "Snyk",
+          "severity": "medium",
+          "baseScore": 4.5,
+          "cvssVersion": "3.1",
+          "modificationTime": "2026-10-27T15:27:13.863414Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:L/I:L/A:L",
+          "assigner": "NVD",
+          "severity": "medium",
+          "baseScore": 4.5,
+          "cvssVersion": "3.1",
+          "modificationTime": "2026-10-27T01:15:29.358631Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:L/I:L/A:L",
+          "assigner": "Red Hat",
+          "severity": "medium",
+          "baseScore": 4.5,
+          "cvssVersion": "3.1",
+          "modificationTime": "2026-10-27T07:32:06.707457Z"
+        }
+      ],
+      "description": "## Overview\n\nAffected versions of this package are vulnerable to Symbolic Name not Mapping to Correct Object through the `getInstantiatorOf` process. An attacker can cause objects from one class loader to be substituted into another by exploiting instantiator caching keyed on class name, potentially leading to unexpected behavior, data corruption, or application crashes by introducing wrong-class objects.\n## Remediation\nUpgrade `org.objenesis:objenesis` to version 3.6 or higher.\n## References\n- [GitHub Advisory](https://github.com/easymock/objenesis/security/advisories/GHSA-743r-26gf-97ff)\n- [github.com](https://github.com/easymock/objenesis)\n- [GitHub Commit](https://github.com/easymock/objenesis/commit/40f90f435a06b16af74a7398f0007faeaa52c00c)\n- [Vulnerable Code](https://github.com/easymock/objenesis/blob/fb36e5c377ed1bf57a18386fa79d2eed4ddfcfac/main/src/main/java/org/objenesis/ObjenesisBase.java#L92-L95)\n",
+      "epssDetails": {
+        "percentile": "0.02926",
+        "probability": "0.00135",
+        "modelVersion": "v2026.06.15"
+      },
+      "identifiers": {
+        "CVE": [
+          "CVE-2026-116486"
+        ],
+        "CWE": [
+          "CWE-386"
+        ],
+        "GHSA": [
+          "GHSA-743r-26gf-97ff"
+        ]
+      },
+      "packageName": "org.objenesis:objenesis",
+      "proprietary": false,
+      "creationTime": "2026-10-27T15:27:13.515331Z",
+      "functions_new": [],
+      "alternativeIds": [],
+      "disclosureTime": "2026-10-26T16:48:39.065000Z",
+      "exploitDetails": {
+        "sources": [],
+        "maturityLevels": [
+          {
+            "type": "secondary",
+            "level": "Not Defined",
+            "format": "CVSSv3"
+          },
+          {
+            "type": "primary",
+            "level": "Not Defined",
+            "format": "CVSSv4"
+          }
+        ]
+      },
+      "packageManager": "maven",
+      "mavenModuleName": {
+        "groupId": "org.objenesis",
+        "artifactId": "objenesis"
+      },
+      "publicationTime": "2026-10-27T15:27:13.679087Z",
+      "severityBasedOn": "CVSS",
+      "modificationTime": "2026-10-27T15:27:13.863414Z",
+      "socialTrendAlert": false,
+      "severityWithCritical": "low",
+      "from": [
+        "com.pedidos:pedidos-api@0.0.1-SNAPSHOT",
+        "org.springframework.boot:spring-boot-starter-actuator-test@4.1.1",
+        "org.springframework.boot:spring-boot-starter-test@4.1.1",
+        "org.mockito:mockito-core@5.23.0",
+        "org.objenesis:objenesis@3.3"
+      ],
+      "upgradePath": [],
+      "isUpgradable": false,
+      "isPatchable": false,
+      "name": "org.objenesis:objenesis",
+      "version": "3.3"
+    },
+    {
+      "id": "SNYK-JAVA-ORGOW2ASM-21715439",
+      "title": "Inefficient Algorithmic Complexity",
+      "CVSSv3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+      "credit": [
+        "Eric Bruneton"
+      ],
+      "semver": {
+        "vulnerable": [
+          "[3.0,9.11)"
+        ]
+      },
+      "exploit": "Not Defined",
+      "fixedIn": [
+        "9.11"
+      ],
+      "patches": [],
+      "insights": {
+        "triageAdvice": null
+      },
+      "language": "java",
+      "severity": "medium",
+      "cvssScore": 6.8,
+      "functions": [],
+      "malicious": false,
+      "isDisputed": false,
+      "moduleName": "org.ow2.asm:asm",
+      "references": [
+        {
+          "url": "https://gitlab.ow2.org/asm/asm/-/commit/ab68bbd2521359b7c8cd3517c6331ced3d817ed0",
+          "title": "GitLab Commit"
+        },
+        {
+          "url": "https://gitlab.ow2.org/asm/asm/-/blob/ASM_9_10_1/asm/src/main/java/org/objectweb/asm/MethodWriter.java%23L1595",
+          "title": "gitlab.ow2.org"
+        },
+        {
+          "url": "https://gitlab.ow2.org/asm/asm/-/merge_requests/463",
+          "title": "gitlab.ow2.org"
+        },
+        {
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=2552253",
+          "title": "Red Hat Bugzilla Bug"
+        }
+      ],
+      "cvssDetails": [
+        {
+          "assigner": "Red Hat",
+          "severity": "medium",
+          "cvssV3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+          "cvssV3BaseScore": 5.5,
+          "modificationTime": "2026-10-20T06:22:51.943997Z"
+        },
+        {
+          "assigner": "NVD",
+          "severity": "medium",
+          "cvssV3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+          "cvssV3BaseScore": 5.5,
+          "modificationTime": "2026-10-14T19:41:27.293648Z"
+        }
+      ],
+      "cvssSources": [
+        {
+          "type": "primary",
+          "vector": "CVSS:4.0/AV:L/AC:L/AT:N/PR:N/UI:P/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+          "assigner": "Snyk",
+          "severity": "medium",
+          "baseScore": 6.8,
+          "cvssVersion": "4.0",
+          "modificationTime": "2026-10-27T02:01:39.889548Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+          "assigner": "Snyk",
+          "severity": "medium",
+          "baseScore": 5.5,
+          "cvssVersion": "3.1",
+          "modificationTime": "2026-10-27T02:01:39.889548Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+          "assigner": "Red Hat",
+          "severity": "medium",
+          "baseScore": 5.5,
+          "cvssVersion": "3.1",
+          "modificationTime": "2026-10-20T06:22:51.943997Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+          "assigner": "NVD",
+          "severity": "medium",
+          "baseScore": 5.5,
+          "cvssVersion": "3.1",
+          "modificationTime": "2026-10-14T19:41:27.293648Z"
+        }
+      ],
+      "description": "## Overview\n\nAffected versions of this package are vulnerable to Inefficient Algorithmic Complexity via the `computeAllFrames` method in `MethodWriter`. An attacker can exhaust CPU and tie up class-file transformation threads for an unbounded time by supplying crafted class files for processing with `ClassWriter.COMPUTE_FRAMES`; their methods make frame computation’s fixpoint algorithm converge slowly.\n## Remediation\nUpgrade `org.ow2.asm:asm` to version 9.11 or higher.\n## References\n- [GitLab Commit](https://gitlab.ow2.org/asm/asm/-/commit/ab68bbd2521359b7c8cd3517c6331ced3d817ed0)\n- [gitlab.ow2.org](https://gitlab.ow2.org/asm/asm/-/blob/ASM_9_10_1/asm/src/main/java/org/objectweb/asm/MethodWriter.java#L1595)\n- [gitlab.ow2.org](https://gitlab.ow2.org/asm/asm/-/merge_requests/463)\n- [Red Hat Bugzilla Bug](https://bugzilla.redhat.com/show_bug.cgi?id=2552253)\n",
+      "epssDetails": {
+        "percentile": "0.06319",
+        "probability": "0.00170",
+        "modelVersion": "v2026.06.15"
+      },
+      "identifiers": {
+        "CVE": [
+          "CVE-2026-110261"
+        ],
+        "CWE": [
+          "CWE-407",
+          "CWE-606"
+        ]
+      },
+      "packageName": "org.ow2.asm:asm",
+      "proprietary": false,
+      "creationTime": "2026-10-26T08:50:41.029995Z",
+      "functions_new": [],
+      "alternativeIds": [],
+      "disclosureTime": "2026-10-14T14:16:33Z",
+      "exploitDetails": {
+        "sources": [],
+        "maturityLevels": [
+          {
+            "type": "secondary",
+            "level": "Not Defined",
+            "format": "CVSSv3"
+          },
+          {
+            "type": "primary",
+            "level": "Not Defined",
+            "format": "CVSSv4"
+          }
+        ]
+      },
+      "packageManager": "maven",
+      "mavenModuleName": {
+        "groupId": "org.ow2.asm",
+        "artifactId": "asm"
+      },
+      "publicationTime": "2026-10-26T08:50:41.223630Z",
+      "severityBasedOn": "CVSS",
+      "modificationTime": "2026-10-27T02:01:39.889548Z",
+      "socialTrendAlert": false,
+      "severityWithCritical": "medium",
+      "from": [
+        "com.pedidos:pedidos-api@0.0.1-SNAPSHOT",
+        "org.springframework.boot:spring-boot-starter-actuator-test@4.1.1",
+        "org.springframework.boot:spring-boot-starter-test@4.1.1",
+        "net.minidev:json-smart@2.6.0",
+        "net.minidev:accessors-smart@2.6.0",
+        "org.ow2.asm:asm@9.7.1"
+      ],
+      "upgradePath": [],
+      "isUpgradable": false,
+      "isPatchable": false,
+      "name": "org.ow2.asm:asm",
+      "version": "9.7.1"
+    },
+    {
+      "id": "SNYK-JAVA-ORGOW2ASM-21715442",
+      "title": "Memory Allocation with Excessive Size Value",
+      "CVSSv3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+      "credit": [
+        "Yu Bao"
+      ],
+      "semver": {
+        "vulnerable": [
+          "[5.0,9.11)"
+        ]
+      },
+      "exploit": "Not Defined",
+      "fixedIn": [
+        "9.11"
+      ],
+      "patches": [],
+      "insights": {
+        "triageAdvice": null
+      },
+      "language": "java",
+      "severity": "medium",
+      "cvssScore": 6.8,
+      "functions": [],
+      "malicious": false,
+      "isDisputed": false,
+      "moduleName": "org.ow2.asm:asm",
+      "references": [
+        {
+          "url": "https://gitlab.ow2.org/asm/asm/-/commit/eb5fa95bb0670eaec2ecf9b8a3a501b48e5a967c",
+          "title": "GitLab Commit"
+        },
+        {
+          "url": "https://gitlab.ow2.org/asm/asm/-/blob/ASM_9_10_1/asm/src/main/java/org/objectweb/asm/ClassReader.java%23L3497",
+          "title": "gitlab.ow2.org"
+        },
+        {
+          "url": "https://gitlab.ow2.org/asm/asm/-/merge_requests/456",
+          "title": "gitlab.ow2.org"
+        },
+        {
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=2552305",
+          "title": "Red Hat Bugzilla Bug"
+        }
+      ],
+      "cvssDetails": [
+        {
+          "assigner": "Red Hat",
+          "severity": "medium",
+          "cvssV3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+          "cvssV3BaseScore": 5.5,
+          "modificationTime": "2026-10-20T06:23:26.945242Z"
+        },
+        {
+          "assigner": "NVD",
+          "severity": "medium",
+          "cvssV3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+          "cvssV3BaseScore": 5.5,
+          "modificationTime": "2026-10-14T19:41:19.331117Z"
+        }
+      ],
+      "cvssSources": [
+        {
+          "type": "primary",
+          "vector": "CVSS:4.0/AV:L/AC:L/AT:N/PR:N/UI:P/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+          "assigner": "Snyk",
+          "severity": "medium",
+          "baseScore": 6.8,
+          "cvssVersion": "4.0",
+          "modificationTime": "2026-10-27T02:01:39.890408Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+          "assigner": "Snyk",
+          "severity": "medium",
+          "baseScore": 5.5,
+          "cvssVersion": "3.1",
+          "modificationTime": "2026-10-27T02:01:39.890408Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+          "assigner": "Red Hat",
+          "severity": "medium",
+          "baseScore": 5.5,
+          "cvssVersion": "3.1",
+          "modificationTime": "2026-10-20T06:23:26.945242Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+          "assigner": "NVD",
+          "severity": "medium",
+          "baseScore": 5.5,
+          "cvssVersion": "3.1",
+          "modificationTime": "2026-10-14T19:41:19.331117Z"
+        }
+      ],
+      "description": "## Overview\n\nAffected versions of this package are vulnerable to Memory Allocation with Excessive Size Value via `readBootstrapMethodsAttribute()` in `ClassReader`. When an application parses an attacker-supplied class file, a crafted BootstrapMethods attribute with an unchecked declared length can trigger an allocation of roughly 2 GB from a file of about 100 bytes, causing an `OutOfMemoryError` that crashes the JVM or the thread processing the class.\n## Remediation\nUpgrade `org.ow2.asm:asm` to version 9.11 or higher.\n## References\n- [GitLab Commit](https://gitlab.ow2.org/asm/asm/-/commit/eb5fa95bb0670eaec2ecf9b8a3a501b48e5a967c)\n- [gitlab.ow2.org](https://gitlab.ow2.org/asm/asm/-/blob/ASM_9_10_1/asm/src/main/java/org/objectweb/asm/ClassReader.java#L3497)\n- [gitlab.ow2.org](https://gitlab.ow2.org/asm/asm/-/merge_requests/456)\n- [Red Hat Bugzilla Bug](https://bugzilla.redhat.com/show_bug.cgi?id=2552305)\n",
+      "epssDetails": {
+        "percentile": "0.06318",
+        "probability": "0.00170",
+        "modelVersion": "v2026.06.15"
+      },
+      "identifiers": {
+        "CVE": [
+          "CVE-2026-110257"
+        ],
+        "CWE": [
+          "CWE-770",
+          "CWE-789"
+        ]
+      },
+      "packageName": "org.ow2.asm:asm",
+      "proprietary": false,
+      "creationTime": "2026-10-26T08:53:01.698562Z",
+      "functions_new": [],
+      "alternativeIds": [],
+      "disclosureTime": "2026-10-14T14:16:30Z",
+      "exploitDetails": {
+        "sources": [],
+        "maturityLevels": [
+          {
+            "type": "secondary",
+            "level": "Not Defined",
+            "format": "CVSSv3"
+          },
+          {
+            "type": "primary",
+            "level": "Not Defined",
+            "format": "CVSSv4"
+          }
+        ]
+      },
+      "packageManager": "maven",
+      "mavenModuleName": {
+        "groupId": "org.ow2.asm",
+        "artifactId": "asm"
+      },
+      "publicationTime": "2026-10-26T08:53:01.869904Z",
+      "severityBasedOn": "CVSS",
+      "modificationTime": "2026-10-27T02:01:39.890408Z",
+      "socialTrendAlert": false,
+      "severityWithCritical": "medium",
+      "from": [
+        "com.pedidos:pedidos-api@0.0.1-SNAPSHOT",
+        "org.springframework.boot:spring-boot-starter-actuator-test@4.1.1",
+        "org.springframework.boot:spring-boot-starter-test@4.1.1",
+        "net.minidev:json-smart@2.6.0",
+        "net.minidev:accessors-smart@2.6.0",
+        "org.ow2.asm:asm@9.7.1"
+      ],
+      "upgradePath": [],
+      "isUpgradable": false,
+      "isPatchable": false,
+      "name": "org.ow2.asm:asm",
+      "version": "9.7.1"
+    },
+    {
+      "id": "SNYK-JAVA-ORGOW2ASM-21715445",
+      "title": "Uncontrolled Recursion",
+      "CVSSv3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+      "credit": [
+        "Eric Bruneton"
+      ],
+      "semver": {
+        "vulnerable": [
+          "[3.0,9.11)"
+        ]
+      },
+      "exploit": "Not Defined",
+      "fixedIn": [
+        "9.11"
+      ],
+      "patches": [],
+      "insights": {
+        "triageAdvice": null
+      },
+      "language": "java",
+      "severity": "medium",
+      "cvssScore": 6.8,
+      "functions": [],
+      "malicious": false,
+      "isDisputed": false,
+      "moduleName": "org.ow2.asm:asm",
+      "references": [
+        {
+          "url": "https://gitlab.ow2.org/asm/asm/-/commit/8f87fc0317a4c5ee8f538bcbb641928def25dbd6",
+          "title": "GitLab Commit"
+        },
+        {
+          "url": "https://gitlab.ow2.org/asm/asm/-/blob/ASM_9_10_1/asm/src/main/java/org/objectweb/asm/signature/SignatureReader.java%23L151",
+          "title": "gitlab.ow2.org"
+        },
+        {
+          "url": "https://gitlab.ow2.org/asm/asm/-/merge_requests/465",
+          "title": "gitlab.ow2.org"
+        },
+        {
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=2552264",
+          "title": "Red Hat Bugzilla Bug"
+        }
+      ],
+      "cvssDetails": [
+        {
+          "assigner": "Red Hat",
+          "severity": "medium",
+          "cvssV3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+          "cvssV3BaseScore": 5.5,
+          "modificationTime": "2026-10-20T06:22:44.207578Z"
+        },
+        {
+          "assigner": "NVD",
+          "severity": "medium",
+          "cvssV3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+          "cvssV3BaseScore": 5.5,
+          "modificationTime": "2026-10-14T19:41:35.045190Z"
+        }
+      ],
+      "cvssSources": [
+        {
+          "type": "primary",
+          "vector": "CVSS:4.0/AV:L/AC:L/AT:N/PR:N/UI:P/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+          "assigner": "Snyk",
+          "severity": "medium",
+          "baseScore": 6.8,
+          "cvssVersion": "4.0",
+          "modificationTime": "2026-10-27T02:01:39.891070Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+          "assigner": "Snyk",
+          "severity": "medium",
+          "baseScore": 5.5,
+          "cvssVersion": "3.1",
+          "modificationTime": "2026-10-27T02:01:39.891070Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+          "assigner": "Red Hat",
+          "severity": "medium",
+          "baseScore": 5.5,
+          "cvssVersion": "3.1",
+          "modificationTime": "2026-10-20T06:22:44.207578Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+          "assigner": "NVD",
+          "severity": "medium",
+          "baseScore": 5.5,
+          "cvssVersion": "3.1",
+          "modificationTime": "2026-10-14T19:41:35.045190Z"
+        }
+      ],
+      "description": "## Overview\n\nAffected versions of this package are vulnerable to Uncontrolled Recursion via the `parseType` method in `SignatureReader`. An attacker can trigger a `StackOverflowError` and disrupt class transformation by supplying a crafted class file with a `Signature` attribute containing deeply nested generic type arguments.\n## Remediation\nUpgrade `org.ow2.asm:asm` to version 9.11 or higher.\n## References\n- [GitLab Commit](https://gitlab.ow2.org/asm/asm/-/commit/8f87fc0317a4c5ee8f538bcbb641928def25dbd6)\n- [gitlab.ow2.org](https://gitlab.ow2.org/asm/asm/-/blob/ASM_9_10_1/asm/src/main/java/org/objectweb/asm/signature/SignatureReader.java#L151)\n- [gitlab.ow2.org](https://gitlab.ow2.org/asm/asm/-/merge_requests/465)\n- [Red Hat Bugzilla Bug](https://bugzilla.redhat.com/show_bug.cgi?id=2552264)\n",
+      "epssDetails": {
+        "percentile": "0.06318",
+        "probability": "0.00170",
+        "modelVersion": "v2026.06.15"
+      },
+      "identifiers": {
+        "CVE": [
+          "CVE-2026-110263"
+        ],
+        "CWE": [
+          "CWE-674",
+          "CWE-770"
+        ]
+      },
+      "packageName": "org.ow2.asm:asm",
+      "proprietary": false,
+      "creationTime": "2026-10-26T08:55:49.731008Z",
+      "functions_new": [],
+      "alternativeIds": [],
+      "disclosureTime": "2026-10-14T14:16:34Z",
+      "exploitDetails": {
+        "sources": [],
+        "maturityLevels": [
+          {
+            "type": "secondary",
+            "level": "Not Defined",
+            "format": "CVSSv3"
+          },
+          {
+            "type": "primary",
+            "level": "Not Defined",
+            "format": "CVSSv4"
+          }
+        ]
+      },
+      "packageManager": "maven",
+      "mavenModuleName": {
+        "groupId": "org.ow2.asm",
+        "artifactId": "asm"
+      },
+      "publicationTime": "2026-10-26T08:55:49.904017Z",
+      "severityBasedOn": "CVSS",
+      "modificationTime": "2026-10-27T02:01:39.891070Z",
+      "socialTrendAlert": false,
+      "severityWithCritical": "medium",
+      "from": [
+        "com.pedidos:pedidos-api@0.0.1-SNAPSHOT",
+        "org.springframework.boot:spring-boot-starter-actuator-test@4.1.1",
+        "org.springframework.boot:spring-boot-starter-test@4.1.1",
+        "net.minidev:json-smart@2.6.0",
+        "net.minidev:accessors-smart@2.6.0",
+        "org.ow2.asm:asm@9.7.1"
+      ],
+      "upgradePath": [],
+      "isUpgradable": false,
+      "isPatchable": false,
+      "name": "org.ow2.asm:asm",
+      "version": "9.7.1"
+    },
+    {
+      "id": "SNYK-JAVA-ORGOW2ASM-21715448",
+      "title": "Memory Allocation with Excessive Size Value",
+      "CVSSv3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+      "credit": [
+        "Eric Bruneton"
+      ],
+      "semver": {
+        "vulnerable": [
+          "[3.0,9.11)"
+        ]
+      },
+      "exploit": "Not Defined",
+      "fixedIn": [
+        "9.11"
+      ],
+      "patches": [],
+      "insights": {
+        "triageAdvice": null
+      },
+      "language": "java",
+      "severity": "medium",
+      "cvssScore": 6.8,
+      "functions": [],
+      "malicious": false,
+      "isDisputed": false,
+      "moduleName": "org.ow2.asm:asm",
+      "references": [
+        {
+          "url": "https://gitlab.ow2.org/asm/asm/-/commit/4dabfe0aef14f8cccb0617640a4add8fbcc4ed36",
+          "title": "GitLab Commit"
+        },
+        {
+          "url": "https://gitlab.ow2.org/asm/asm/-/blob/ASM_9_10_1/asm/src/main/java/org/objectweb/asm/Label.java%23L568",
+          "title": "gitlab.ow2.org"
+        },
+        {
+          "url": "https://gitlab.ow2.org/asm/asm/-/merge_requests/458",
+          "title": "gitlab.ow2.org"
+        },
+        {
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=2552308",
+          "title": "Red Hat Bugzilla Bug"
+        }
+      ],
+      "cvssDetails": [
+        {
+          "assigner": "Red Hat",
+          "severity": "medium",
+          "cvssV3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+          "cvssV3BaseScore": 5.5,
+          "modificationTime": "2026-10-20T06:22:39.941169Z"
+        },
+        {
+          "assigner": "NVD",
+          "severity": "medium",
+          "cvssV3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+          "cvssV3BaseScore": 5.5,
+          "modificationTime": "2026-10-14T19:41:29.194992Z"
+        }
+      ],
+      "cvssSources": [
+        {
+          "type": "primary",
+          "vector": "CVSS:4.0/AV:L/AC:L/AT:N/PR:N/UI:P/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+          "assigner": "Snyk",
+          "severity": "medium",
+          "baseScore": 6.8,
+          "cvssVersion": "4.0",
+          "modificationTime": "2026-10-27T02:01:39.891726Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+          "assigner": "Snyk",
+          "severity": "medium",
+          "baseScore": 5.5,
+          "cvssVersion": "3.1",
+          "modificationTime": "2026-10-27T02:01:39.891726Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+          "assigner": "Red Hat",
+          "severity": "medium",
+          "baseScore": 5.5,
+          "cvssVersion": "3.1",
+          "modificationTime": "2026-10-20T06:22:39.941169Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+          "assigner": "NVD",
+          "severity": "medium",
+          "baseScore": 5.5,
+          "cvssVersion": "3.1",
+          "modificationTime": "2026-10-14T19:41:29.194992Z"
+        }
+      ],
+      "description": "## Overview\n\nAffected versions of this package are vulnerable to Memory Allocation with Excessive Size Value via the `addSubroutineRetSuccessors()` method in the `Label` class. An attacker can crash the JVM by supplying a crafted invalid class file with multiple `RET` instructions for one `JSR` while ASM processes the subroutine.\n\n**Notes**\n\n- The attacker must get a user to load or process the crafted class file.\n## Remediation\nUpgrade `org.ow2.asm:asm` to version 9.11 or higher.\n## References\n- [GitLab Commit](https://gitlab.ow2.org/asm/asm/-/commit/4dabfe0aef14f8cccb0617640a4add8fbcc4ed36)\n- [gitlab.ow2.org](https://gitlab.ow2.org/asm/asm/-/blob/ASM_9_10_1/asm/src/main/java/org/objectweb/asm/Label.java#L568)\n- [gitlab.ow2.org](https://gitlab.ow2.org/asm/asm/-/merge_requests/458)\n- [Red Hat Bugzilla Bug](https://bugzilla.redhat.com/show_bug.cgi?id=2552308)\n",
+      "epssDetails": {
+        "percentile": "0.06319",
+        "probability": "0.00170",
+        "modelVersion": "v2026.06.15"
+      },
+      "identifiers": {
+        "CVE": [
+          "CVE-2026-110258"
+        ],
+        "CWE": [
+          "CWE-770",
+          "CWE-789"
+        ]
+      },
+      "packageName": "org.ow2.asm:asm",
+      "proprietary": false,
+      "creationTime": "2026-10-26T08:58:07.836646Z",
+      "functions_new": [],
+      "alternativeIds": [],
+      "disclosureTime": "2026-10-14T14:16:31Z",
+      "exploitDetails": {
+        "sources": [],
+        "maturityLevels": [
+          {
+            "type": "secondary",
+            "level": "Not Defined",
+            "format": "CVSSv3"
+          },
+          {
+            "type": "primary",
+            "level": "Not Defined",
+            "format": "CVSSv4"
+          }
+        ]
+      },
+      "packageManager": "maven",
+      "mavenModuleName": {
+        "groupId": "org.ow2.asm",
+        "artifactId": "asm"
+      },
+      "publicationTime": "2026-10-26T08:58:07.995152Z",
+      "severityBasedOn": "CVSS",
+      "modificationTime": "2026-10-27T02:01:39.891726Z",
+      "socialTrendAlert": false,
+      "severityWithCritical": "medium",
+      "from": [
+        "com.pedidos:pedidos-api@0.0.1-SNAPSHOT",
+        "org.springframework.boot:spring-boot-starter-actuator-test@4.1.1",
+        "org.springframework.boot:spring-boot-starter-test@4.1.1",
+        "net.minidev:json-smart@2.6.0",
+        "net.minidev:accessors-smart@2.6.0",
+        "org.ow2.asm:asm@9.7.1"
+      ],
+      "upgradePath": [],
+      "isUpgradable": false,
+      "isPatchable": false,
+      "name": "org.ow2.asm:asm",
+      "version": "9.7.1"
+    },
+    {
+      "id": "SNYK-JAVA-ORGOW2ASM-21715452",
+      "title": "Inefficient Algorithmic Complexity",
+      "CVSSv3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+      "credit": [
+        "Yu Bao"
+      ],
+      "semver": {
+        "vulnerable": [
+          "[3.0,9.11)"
+        ]
+      },
+      "exploit": "Not Defined",
+      "fixedIn": [
+        "9.11"
+      ],
+      "patches": [],
+      "insights": {
+        "triageAdvice": null
+      },
+      "language": "java",
+      "severity": "medium",
+      "cvssScore": 6.8,
+      "functions": [],
+      "malicious": false,
+      "isDisputed": false,
+      "moduleName": "org.ow2.asm:asm",
+      "references": [
+        {
+          "url": "https://gitlab.ow2.org/asm/asm/-/commit/91057c98239d994aed5e46434e34e00d593c0daf",
+          "title": "GitLab Commit"
+        },
+        {
+          "url": "https://gitlab.ow2.org/asm/asm/-/blob/ASM_9_10_1/asm/src/main/java/org/objectweb/asm/MethodWriter.java%23L1662",
+          "title": "gitlab.ow2.org"
+        },
+        {
+          "url": "https://gitlab.ow2.org/asm/asm/-/merge_requests/461",
+          "title": "gitlab.ow2.org"
+        },
+        {
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=2552285",
+          "title": "Red Hat Bugzilla Bug"
+        }
+      ],
+      "cvssDetails": [
+        {
+          "assigner": "Red Hat",
+          "severity": "medium",
+          "cvssV3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+          "cvssV3BaseScore": 5.5,
+          "modificationTime": "2026-10-20T06:22:46.458678Z"
+        },
+        {
+          "assigner": "NVD",
+          "severity": "medium",
+          "cvssV3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+          "cvssV3BaseScore": 5.5,
+          "modificationTime": "2026-10-14T19:41:24.740424Z"
+        }
+      ],
+      "cvssSources": [
+        {
+          "type": "primary",
+          "vector": "CVSS:4.0/AV:L/AC:L/AT:N/PR:N/UI:P/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+          "assigner": "Snyk",
+          "severity": "medium",
+          "baseScore": 6.8,
+          "cvssVersion": "4.0",
+          "modificationTime": "2026-10-27T02:01:39.893260Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+          "assigner": "Snyk",
+          "severity": "medium",
+          "baseScore": 5.5,
+          "cvssVersion": "3.1",
+          "modificationTime": "2026-10-27T02:01:39.893260Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+          "assigner": "Red Hat",
+          "severity": "medium",
+          "baseScore": 5.5,
+          "cvssVersion": "3.1",
+          "modificationTime": "2026-10-20T06:22:46.458678Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+          "assigner": "NVD",
+          "severity": "medium",
+          "baseScore": 5.5,
+          "cvssVersion": "3.1",
+          "modificationTime": "2026-10-14T19:41:24.740424Z"
+        }
+      ],
+      "description": "## Overview\n\nAffected versions of this package are vulnerable to Inefficient Algorithmic Complexity via the `computeAllFrames()` and `computeMaxStackAndLocal()` methods in `MethodWriter`. When ASM processes a crafted class file with thousands of overlapping exception handlers using `COMPUTE_FRAMES` or `COMPUTE_MAXS`, it allocates excessive `Edge` objects, causing an `OutOfMemoryError` that crashes the JVM.\n## Remediation\nUpgrade `org.ow2.asm:asm` to version 9.11 or higher.\n## References\n- [GitLab Commit](https://gitlab.ow2.org/asm/asm/-/commit/91057c98239d994aed5e46434e34e00d593c0daf)\n- [gitlab.ow2.org](https://gitlab.ow2.org/asm/asm/-/blob/ASM_9_10_1/asm/src/main/java/org/objectweb/asm/MethodWriter.java#L1662)\n- [gitlab.ow2.org](https://gitlab.ow2.org/asm/asm/-/merge_requests/461)\n- [Red Hat Bugzilla Bug](https://bugzilla.redhat.com/show_bug.cgi?id=2552285)\n",
+      "epssDetails": {
+        "percentile": "0.07085",
+        "probability": "0.00176",
+        "modelVersion": "v2026.06.15"
+      },
+      "identifiers": {
+        "CVE": [
+          "CVE-2026-110260"
+        ],
+        "CWE": [
+          "CWE-407",
+          "CWE-770"
+        ]
+      },
+      "packageName": "org.ow2.asm:asm",
+      "proprietary": false,
+      "creationTime": "2026-10-26T09:00:41.246483Z",
+      "functions_new": [],
+      "alternativeIds": [],
+      "disclosureTime": "2026-10-14T14:16:32Z",
+      "exploitDetails": {
+        "sources": [],
+        "maturityLevels": [
+          {
+            "type": "secondary",
+            "level": "Not Defined",
+            "format": "CVSSv3"
+          },
+          {
+            "type": "primary",
+            "level": "Not Defined",
+            "format": "CVSSv4"
+          }
+        ]
+      },
+      "packageManager": "maven",
+      "mavenModuleName": {
+        "groupId": "org.ow2.asm",
+        "artifactId": "asm"
+      },
+      "publicationTime": "2026-10-26T09:00:41.423951Z",
+      "severityBasedOn": "CVSS",
+      "modificationTime": "2026-10-27T02:01:39.893260Z",
+      "socialTrendAlert": false,
+      "severityWithCritical": "medium",
+      "from": [
+        "com.pedidos:pedidos-api@0.0.1-SNAPSHOT",
+        "org.springframework.boot:spring-boot-starter-actuator-test@4.1.1",
+        "org.springframework.boot:spring-boot-starter-test@4.1.1",
+        "net.minidev:json-smart@2.6.0",
+        "net.minidev:accessors-smart@2.6.0",
+        "org.ow2.asm:asm@9.7.1"
+      ],
+      "upgradePath": [],
+      "isUpgradable": false,
+      "isPatchable": false,
+      "name": "org.ow2.asm:asm",
+      "version": "9.7.1"
+    }
+  ],
+  "ok": false,
+  "dependencyCount": 130,
+  "org": "pela311",
+  "policy": "# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.\nversion: v1.25.1\nignore: {}\npatch: {}\n",
+  "isPrivate": true,
+  "licensesPolicy": {
+    "severities": {},
+    "orgLicenseRules": {
+      "AGPL-1.0": {
+        "licenseType": "AGPL-1.0",
+        "severity": "high",
+        "instructions": ""
+      },
+      "AGPL-3.0": {
+        "licenseType": "AGPL-3.0",
+        "severity": "high",
+        "instructions": ""
+      },
+      "Artistic-1.0": {
+        "licenseType": "Artistic-1.0",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "Artistic-2.0": {
+        "licenseType": "Artistic-2.0",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "CDDL-1.0": {
+        "licenseType": "CDDL-1.0",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "CPOL-1.02": {
+        "licenseType": "CPOL-1.02",
+        "severity": "high",
+        "instructions": ""
+      },
+      "EPL-1.0": {
+        "licenseType": "EPL-1.0",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "GPL-2.0": {
+        "licenseType": "GPL-2.0",
+        "severity": "high",
+        "instructions": ""
+      },
+      "GPL-3.0": {
+        "licenseType": "GPL-3.0",
+        "severity": "high",
+        "instructions": ""
+      },
+      "LGPL-2.0": {
+        "licenseType": "LGPL-2.0",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "LGPL-2.1": {
+        "licenseType": "LGPL-2.1",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "LGPL-3.0": {
+        "licenseType": "LGPL-3.0",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "MPL-1.1": {
+        "licenseType": "MPL-1.1",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "MPL-2.0": {
+        "licenseType": "MPL-2.0",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "MS-RL": {
+        "licenseType": "MS-RL",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "SimPL-2.0": {
+        "licenseType": "SimPL-2.0",
+        "severity": "high",
+        "instructions": ""
+      }
+    }
+  },
+  "packageManager": "maven",
+  "ignoreSettings": {
+    "adminOnly": false,
+    "reasonRequired": false,
+    "disregardFilesystemIgnores": false,
+    "autoApproveIgnores": false,
+    "approvalWorkflowEnabled": false
+  },
+  "summary": "10 vulnerable dependency paths",
+  "remediation": {
+    "unresolved": [
+      {
+        "id": "SNYK-JAVA-CHQOSLOGBACK-19882330",
+        "title": "Directory Traversal",
+        "CVSSv3": "CVSS:3.1/AV:L/AC:H/PR:H/UI:R/S:C/C:H/I:L/A:L",
+        "credit": [
+          "Unknown"
+        ],
+        "semver": {
+          "vulnerable": [
+            "[0.9.14,1.6.3)"
+          ]
+        },
+        "exploit": "Not Defined",
+        "fixedIn": [
+          "1.6.3"
+        ],
+        "patches": [],
+        "insights": {
+          "triageAdvice": null
+        },
+        "language": "java",
+        "severity": "medium",
+        "cvssScore": 5.9,
+        "functions": [],
+        "malicious": false,
+        "isDisputed": false,
+        "moduleName": "ch.qos.logback:logback-classic",
+        "references": [
+          {
+            "url": "https://github.com/qos-ch/logback/commit/761821bfaacac3a0ad44fa546cfc814429bf9312",
+            "title": "GitHub Commit"
+          },
+          {
+            "url": "https://logback.qos.ch/news.html%231.6.3",
+            "title": "Release Notes"
+          }
+        ],
+        "cvssDetails": [
+          {
+            "assigner": "Red Hat",
+            "severity": "medium",
+            "cvssV3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:L",
+            "cvssV3BaseScore": 6.5,
+            "modificationTime": "2026-09-01T05:31:20.346600Z"
+          }
+        ],
+        "cvssSources": [
+          {
+            "type": "primary",
+            "vector": "CVSS:4.0/AV:L/AC:L/AT:P/PR:H/UI:P/VC:H/VI:L/VA:L/SC:H/SI:L/SA:L",
+            "assigner": "Snyk",
+            "severity": "medium",
+            "baseScore": 5.9,
+            "cvssVersion": "4.0",
+            "modificationTime": "2026-10-03T14:04:31.990605Z"
+          },
+          {
+            "type": "secondary",
+            "vector": "CVSS:3.1/AV:L/AC:H/PR:H/UI:R/S:C/C:H/I:L/A:L",
+            "assigner": "Snyk",
+            "severity": "medium",
+            "baseScore": 6.4,
+            "cvssVersion": "3.1",
+            "modificationTime": "2026-10-03T14:04:31.990605Z"
+          },
+          {
+            "type": "secondary",
+            "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:L",
+            "assigner": "Red Hat",
+            "severity": "medium",
+            "baseScore": 6.5,
+            "cvssVersion": "3.1",
+            "modificationTime": "2026-09-01T05:31:20.346600Z"
+          }
+        ],
+        "description": "## Overview\n[ch.qos.logback:logback-classic](https://mvnrepository.com/artifact/ch.qos.logback/logback-classic) is a reliable, generic, fast and flexible logging library for Java.\n\nAffected versions of this package are vulnerable to Directory Traversal in `MDCBasedDiscriminator`, used by `SiftingAppender`, which takes an MDC value as the discriminating key without removing path separators, so the value reaches the nested `FileAppender` path unsanitized. An attacker can direct log output to a file outside the intended directory by supplying an MDC value containing `/` or `\\` path segments. This requires a configuration whose `SiftingAppender` discriminates on MDC and whose nested `FileAppender` interpolates the discriminating key into its file path, with that MDC value populated from attacker-influenced input.\n\n**Note:** This is a bypass of the fix for the vulnerability described in [CVE-2025-11226](https://security.snyk.io/vuln/SNYK-JAVA-CHQOSLOGBACK-13169722).\n\n## Details\n\nA Directory Traversal attack (also known as path traversal) aims to access files and directories that are stored outside the intended folder. By manipulating files with \"dot-dot-slash (../)\" sequences and its variations, or by using absolute file paths, it may be possible to access arbitrary files and directories stored on file system, including application source code, configuration, and other critical system files.\n\nDirectory Traversal vulnerabilities can be generally divided into two types:\n\n- **Information Disclosure**: Allows the attacker to gain information about the folder structure or read the contents of sensitive files on the system.\n\n`st` is a module for serving static files on web pages, and contains a [vulnerability of this type](https://snyk.io/vuln/npm:st:20140206). In our example, we will serve files from the `public` route.\n\nIf an attacker requests the following URL from our server, it will in turn leak the sensitive private key of the root user.\n\n```\ncurl http://localhost:8080/public/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/root/.ssh/id_rsa\n```\n**Note** `%2e` is the URL encoded version of `.` (dot).\n\n- **Writing arbitrary files**: Allows the attacker to create or replace existing files. This type of vulnerability is also known as `Zip-Slip`. \n\nOne way to achieve this is by using a malicious `zip` archive that holds path traversal filenames. When each filename in the zip archive gets concatenated to the target extraction folder, without validation, the final path ends up outside of the target folder. If an executable or a configuration file is overwritten with a file containing malicious code, the problem can turn into an arbitrary code execution issue quite easily.\n\nThe following is an example of a `zip` archive with one benign file and one malicious file. Extracting the malicious file will result in traversing out of the target folder, ending up in `/root/.ssh/` overwriting the `authorized_keys` file:\n\n```\n2018-04-15 22:04:29 .....           19           19  good.txt\n2018-04-15 22:04:42 .....           20           20  ../../../../../../root/.ssh/authorized_keys\n```\n\n## Remediation\nUpgrade `ch.qos.logback:logback-classic` to version 1.6.3 or higher.\n## References\n- [GitHub Commit](https://github.com/qos-ch/logback/commit/761821bfaacac3a0ad44fa546cfc814429bf9312)\n- [Release Notes](https://logback.qos.ch/news.html#1.6.3)\n",
+        "epssDetails": {
+          "percentile": "0.24106",
+          "probability": "0.00332",
+          "modelVersion": "v2026.06.15"
+        },
+        "identifiers": {
+          "CVE": [
+            "CVE-2026-19880"
+          ],
+          "CWE": [
+            "CWE-22"
+          ]
+        },
+        "packageName": "ch.qos.logback:logback-classic",
+        "proprietary": false,
+        "creationTime": "2026-09-17T09:20:28.009091Z",
+        "functions_new": [],
+        "alternativeIds": [],
+        "disclosureTime": "2026-08-14T16:51:34.793000Z",
+        "exploitDetails": {
+          "sources": [],
+          "maturityLevels": [
+            {
+              "type": "secondary",
+              "level": "Not Defined",
+              "format": "CVSSv3"
+            },
+            {
+              "type": "primary",
+              "level": "Not Defined",
+              "format": "CVSSv4"
+            }
+          ]
+        },
+        "packageManager": "maven",
+        "mavenModuleName": {
+          "groupId": "ch.qos.logback",
+          "artifactId": "logback-classic"
+        },
+        "publicationTime": "2026-09-17T09:20:28.220612Z",
+        "severityBasedOn": "CVSS",
+        "modificationTime": "2026-10-03T14:04:31.990605Z",
+        "socialTrendAlert": false,
+        "packagePopularityRank": 99,
+        "from": [
+          "com.pedidos:pedidos-api@0.0.1-SNAPSHOT",
+          "org.springframework.boot:spring-boot-starter-actuator@4.1.1",
+          "org.springframework.boot:spring-boot-starter@4.1.1",
+          "org.springframework.boot:spring-boot-starter-logging@4.1.1",
+          "ch.qos.logback:logback-classic@1.5.38"
+        ],
+        "upgradePath": [],
+        "isUpgradable": false,
+        "isPatchable": false,
+        "isPinnable": false,
+        "isRuntime": false,
+        "name": "ch.qos.logback:logback-classic",
+        "version": "1.5.38",
+        "severityWithCritical": "medium"
+      },
+      {
+        "id": "SNYK-JAVA-CHQOSLOGBACK-20824362",
+        "title": "Directory Traversal",
+        "CVSSv3": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:L",
+        "credit": [
+          "Unknown"
+        ],
+        "semver": {
+          "vulnerable": [
+            "[0.9.14,1.6.5)"
+          ]
+        },
+        "exploit": "Not Defined",
+        "fixedIn": [
+          "1.6.5"
+        ],
+        "patches": [],
+        "insights": {
+          "triageAdvice": null
+        },
+        "language": "java",
+        "severity": "medium",
+        "cvssScore": 6.3,
+        "functions": [],
+        "malicious": false,
+        "isDisputed": false,
+        "moduleName": "ch.qos.logback:logback-classic",
+        "references": [
+          {
+            "url": "https://github.com/qos-ch/logback/releases/tag/v_1.6.5",
+            "title": "GitHub Release"
+          },
+          {
+            "url": "https://logback.qos.ch/news.html%231.6.5",
+            "title": "logback.qos.ch"
+          }
+        ],
+        "cvssDetails": [
+          {
+            "assigner": "Red Hat",
+            "severity": "medium",
+            "cvssV3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:L",
+            "cvssV3BaseScore": 5.6,
+            "modificationTime": "2026-10-03T06:05:52.893547Z"
+          }
+        ],
+        "cvssSources": [
+          {
+            "type": "primary",
+            "vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:L/VI:L/VA:L/SC:N/SI:N/SA:N",
+            "assigner": "Snyk",
+            "severity": "medium",
+            "baseScore": 6.3,
+            "cvssVersion": "4.0",
+            "modificationTime": "2026-10-11T08:47:33.856867Z"
+          },
+          {
+            "type": "secondary",
+            "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:L",
+            "assigner": "Snyk",
+            "severity": "medium",
+            "baseScore": 5.6,
+            "cvssVersion": "3.1",
+            "modificationTime": "2026-10-11T08:47:33.856867Z"
+          },
+          {
+            "type": "secondary",
+            "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:L",
+            "assigner": "Red Hat",
+            "severity": "medium",
+            "baseScore": 5.6,
+            "cvssVersion": "3.1",
+            "modificationTime": "2026-10-03T06:05:52.893547Z"
+          }
+        ],
+        "description": "## Overview\n[ch.qos.logback:logback-classic](https://mvnrepository.com/artifact/ch.qos.logback/logback-classic) is a reliable, generic, fast and flexible logging library for Java.\n\nAffected versions of this package are vulnerable to Directory Traversal via unsanitized input in the `MDCDiscriminator` process. An attacker can create or append log files outside the intended directory by supplying crafted values, such as through HTTP headers, that influence the log file path. This is only exploitable if `SiftingAppender` is active and unsanitized data is used by `MDCDiscriminator`.\r\n \r\n## Workaround \r\nThis vulnerability can be mitigated by sanitizing relevant data provided by the user.\n\n## Details\n\nA Directory Traversal attack (also known as path traversal) aims to access files and directories that are stored outside the intended folder. By manipulating files with \"dot-dot-slash (../)\" sequences and its variations, or by using absolute file paths, it may be possible to access arbitrary files and directories stored on file system, including application source code, configuration, and other critical system files.\n\nDirectory Traversal vulnerabilities can be generally divided into two types:\n\n- **Information Disclosure**: Allows the attacker to gain information about the folder structure or read the contents of sensitive files on the system.\n\n`st` is a module for serving static files on web pages, and contains a [vulnerability of this type](https://snyk.io/vuln/npm:st:20140206). In our example, we will serve files from the `public` route.\n\nIf an attacker requests the following URL from our server, it will in turn leak the sensitive private key of the root user.\n\n```\ncurl http://localhost:8080/public/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/root/.ssh/id_rsa\n```\n**Note** `%2e` is the URL encoded version of `.` (dot).\n\n- **Writing arbitrary files**: Allows the attacker to create or replace existing files. This type of vulnerability is also known as `Zip-Slip`. \n\nOne way to achieve this is by using a malicious `zip` archive that holds path traversal filenames. When each filename in the zip archive gets concatenated to the target extraction folder, without validation, the final path ends up outside of the target folder. If an executable or a configuration file is overwritten with a file containing malicious code, the problem can turn into an arbitrary code execution issue quite easily.\n\nThe following is an example of a `zip` archive with one benign file and one malicious file. Extracting the malicious file will result in traversing out of the target folder, ending up in `/root/.ssh/` overwriting the `authorized_keys` file:\n\n```\n2018-04-15 22:04:29 .....           19           19  good.txt\n2018-04-15 22:04:42 .....           20           20  ../../../../../../root/.ssh/authorized_keys\n```\n\n## Remediation\nUpgrade `ch.qos.logback:logback-classic` to version 1.6.5 or higher.\n## References\n- [GitHub Release](https://github.com/qos-ch/logback/releases/tag/v_1.6.5)\n- [logback.qos.ch](https://logback.qos.ch/news.html#1.6.5)\n",
+        "epssDetails": {
+          "percentile": "0.24106",
+          "probability": "0.00332",
+          "modelVersion": "v2026.06.15"
+        },
+        "identifiers": {
+          "CVE": [
+            "CVE-2026-104721"
+          ],
+          "CWE": [
+            "CWE-22"
+          ]
+        },
+        "packageName": "ch.qos.logback:logback-classic",
+        "proprietary": false,
+        "creationTime": "2026-10-11T08:45:05.798486Z",
+        "functions_new": [],
+        "alternativeIds": [],
+        "disclosureTime": "2026-10-02T14:26:31Z",
+        "exploitDetails": {
+          "sources": [],
+          "maturityLevels": [
+            {
+              "type": "secondary",
+              "level": "Not Defined",
+              "format": "CVSSv3"
+            },
+            {
+              "type": "primary",
+              "level": "Not Defined",
+              "format": "CVSSv4"
+            }
+          ]
+        },
+        "packageManager": "maven",
+        "mavenModuleName": {
+          "groupId": "ch.qos.logback",
+          "artifactId": "logback-classic"
+        },
+        "publicationTime": "2026-10-11T08:45:06.025380Z",
+        "severityBasedOn": "CVSS",
+        "modificationTime": "2026-10-11T08:47:33.856867Z",
+        "socialTrendAlert": false,
+        "packagePopularityRank": 99,
+        "from": [
+          "com.pedidos:pedidos-api@0.0.1-SNAPSHOT",
+          "org.springframework.boot:spring-boot-starter-actuator@4.1.1",
+          "org.springframework.boot:spring-boot-starter@4.1.1",
+          "org.springframework.boot:spring-boot-starter-logging@4.1.1",
+          "ch.qos.logback:logback-classic@1.5.38"
+        ],
+        "upgradePath": [],
+        "isUpgradable": false,
+        "isPatchable": false,
+        "isPinnable": false,
+        "isRuntime": false,
+        "name": "ch.qos.logback:logback-classic",
+        "version": "1.5.38",
+        "severityWithCritical": "medium"
+      },
+      {
+        "id": "SNYK-JAVA-NETMINIDEV-21715438",
+        "title": "Improper Neutralization",
+        "CVSSv3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N/E:P",
+        "credit": [
+          "Yu Bao"
+        ],
+        "semver": {
+          "vulnerable": [
+            "[,2.6.1)"
+          ]
+        },
+        "exploit": "Proof of Concept",
+        "fixedIn": [
+          "2.6.1"
+        ],
+        "patches": [],
+        "insights": {
+          "triageAdvice": null
+        },
+        "language": "java",
+        "severity": "medium",
+        "cvssScore": 6.9,
+        "functions": [],
+        "malicious": false,
+        "isDisputed": false,
+        "moduleName": "net.minidev:json-smart",
+        "references": [
+          {
+            "url": "https://github.com/netplex/json-smart-v2/blob/v2.6.0/json-smart/src/main/java/net/minidev/json/parser/JSONParserBase.java",
+            "title": "github.com"
+          },
+          {
+            "url": "https://github.com/netplex/json-smart-v2/commit/e0b5afeb3bb4f5f969c233c60e9aeca0a6338d7e",
+            "title": "GitHub Commit"
+          },
+          {
+            "url": "https://github.com/netplex/json-smart-v2/issues/302",
+            "title": "GitHub Issue"
+          },
+          {
+            "url": "https://github.com/netplex/json-smart-v2/pull/305",
+            "title": "GitHub PR"
+          },
+          {
+            "url": "https://bugzilla.redhat.com/show_bug.cgi?id=2556274",
+            "title": "Red Hat Bugzilla Bug"
+          },
+          {
+            "url": "https://github.com/netplex/json-smart-v2/blob/ebf7cf8cf0dccef246cd1ed0d052074d787a2de4/json-smart/src/main/java/net/minidev/json/parser/JSONParserBase.java%23L229-L240",
+            "title": "Vulnerable Code"
+          }
+        ],
+        "cvssDetails": [
+          {
+            "assigner": "NVD",
+            "severity": "medium",
+            "cvssV3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+            "cvssV3BaseScore": 5.3,
+            "modificationTime": "2026-10-20T18:30:37.177195Z"
+          },
+          {
+            "assigner": "Red Hat",
+            "severity": "medium",
+            "cvssV3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+            "cvssV3BaseScore": 5.3,
+            "modificationTime": "2026-10-21T07:30:17.137393Z"
+          }
+        ],
+        "cvssSources": [
+          {
+            "type": "primary",
+            "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N/E:P",
+            "assigner": "Snyk",
+            "severity": "medium",
+            "baseScore": 6.9,
+            "cvssVersion": "4.0",
+            "modificationTime": "2026-11-08T17:41:54.865837Z"
+          },
+          {
+            "type": "secondary",
+            "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N/E:P",
+            "assigner": "Snyk",
+            "severity": "medium",
+            "baseScore": 5.3,
+            "cvssVersion": "3.1",
+            "modificationTime": "2026-11-08T17:41:54.865837Z"
+          },
+          {
+            "type": "secondary",
+            "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+            "assigner": "NVD",
+            "severity": "medium",
+            "baseScore": 5.3,
+            "cvssVersion": "3.1",
+            "modificationTime": "2026-10-20T18:30:37.177195Z"
+          },
+          {
+            "type": "secondary",
+            "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+            "assigner": "Red Hat",
+            "severity": "medium",
+            "baseScore": 5.3,
+            "cvssVersion": "3.1",
+            "modificationTime": "2026-10-21T07:30:17.137393Z"
+          }
+        ],
+        "description": "## Overview\n[net.minidev:json-smart](https://github.com/netplex/json-smart-v1) is a Java JSON parser.\n\nAffected versions of this package are vulnerable to Improper Neutralization via the `parseInner` function in the `JSONParserBase` parser. An attacker can evade `JSONValue.parseStrict` or `isValidJsonStrict` by sending a valid JSON value followed by a literal `0x1A` character and malformed content; `parseInner` mistakes the character for end-of-input and skips the trailing-data check. Applications that rely on these strict-validation methods can accept input that downstream parsers such as Jackson or Gson interpret differently.\n## Remediation\nUpgrade `net.minidev:json-smart` to version 2.6.1 or higher.\n## References\n- [github.com](https://github.com/netplex/json-smart-v2/blob/v2.6.0/json-smart/src/main/java/net/minidev/json/parser/JSONParserBase.java)\n- [GitHub Commit](https://github.com/netplex/json-smart-v2/commit/e0b5afeb3bb4f5f969c233c60e9aeca0a6338d7e)\n- [GitHub Issue](https://github.com/netplex/json-smart-v2/issues/302)\n- [GitHub PR](https://github.com/netplex/json-smart-v2/pull/305)\n- [Red Hat Bugzilla Bug](https://bugzilla.redhat.com/show_bug.cgi?id=2556274)\n- [Vulnerable Code](https://github.com/netplex/json-smart-v2/blob/ebf7cf8cf0dccef246cd1ed0d052074d787a2de4/json-smart/src/main/java/net/minidev/json/parser/JSONParserBase.java#L229-L240)\n",
+        "epssDetails": {
+          "percentile": "0.38731",
+          "probability": "0.00449",
+          "modelVersion": "v2026.06.15"
+        },
+        "identifiers": {
+          "CVE": [
+            "CVE-2026-113602"
+          ],
+          "CWE": [
+            "CWE-1286",
+            "CWE-147"
+          ]
+        },
+        "packageName": "net.minidev:json-smart",
+        "proprietary": false,
+        "creationTime": "2026-10-26T08:35:59.795629Z",
+        "functions_new": [],
+        "alternativeIds": [],
+        "disclosureTime": "2026-10-20T15:40:29Z",
+        "exploitDetails": {
+          "sources": [
+            "Snyk"
+          ],
+          "maturityLevels": [
+            {
+              "type": "secondary",
+              "level": "Proof of Concept",
+              "format": "CVSSv3"
+            },
+            {
+              "type": "primary",
+              "level": "Proof of Concept",
+              "format": "CVSSv4"
+            }
+          ]
+        },
+        "packageManager": "maven",
+        "mavenModuleName": {
+          "groupId": "net.minidev",
+          "artifactId": "json-smart"
+        },
+        "publicationTime": "2026-10-26T08:35:59.976744Z",
+        "severityBasedOn": "CVSS",
+        "modificationTime": "2026-11-08T17:41:54.865837Z",
+        "socialTrendAlert": false,
+        "packagePopularityRank": 99,
+        "from": [
+          "com.pedidos:pedidos-api@0.0.1-SNAPSHOT",
+          "org.springframework.boot:spring-boot-starter-actuator-test@4.1.1",
+          "org.springframework.boot:spring-boot-starter-test@4.1.1",
+          "net.minidev:json-smart@2.6.0"
+        ],
+        "upgradePath": [],
+        "isUpgradable": false,
+        "isPatchable": false,
+        "isPinnable": false,
+        "isRuntime": false,
+        "name": "net.minidev:json-smart",
+        "version": "2.6.0",
+        "severityWithCritical": "medium"
+      },
+      {
+        "id": "SNYK-JAVA-ORGGLASSFISHJAXB-20883142",
+        "title": "XML External Entity (XXE) Injection",
+        "CVSSv3": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:L",
+        "credit": [
+          "Huzaifa Sidhpurwala"
+        ],
+        "semver": {
+          "vulnerable": [
+            "[4.0.0-M4,]"
+          ]
+        },
+        "exploit": "Not Defined",
+        "fixedIn": [],
+        "patches": [],
+        "insights": {
+          "triageAdvice": null
+        },
+        "language": "java",
+        "severity": "high",
+        "cvssScore": 8.3,
+        "functions": [],
+        "malicious": false,
+        "isDisputed": false,
+        "moduleName": "org.glassfish.jaxb:jaxb-core",
+        "references": [
+          {
+            "url": "https://github.com/eclipse-ee4j/jaxb-ri/commit/abf8c9707046d78bd3b7e834596feb3d3c21dbcb",
+            "title": "GitHub Commit"
+          },
+          {
+            "url": "https://github.com/eclipse-ee4j/jaxb-ri/commit/c08fde59",
+            "title": "GitHub Commit"
+          },
+          {
+            "url": "https://github.com/eclipse-ee4j/jaxb-ri/pull/2013",
+            "title": "GitHub PR"
+          },
+          {
+            "url": "https://gitlab.eclipse.org/security/cve-assignment/-/work_items/310",
+            "title": "GitLab Work Item"
+          }
+        ],
+        "cvssDetails": [],
+        "cvssSources": [
+          {
+            "type": "primary",
+            "vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:N/VA:L/SC:N/SI:N/SA:N",
+            "assigner": "Snyk",
+            "severity": "high",
+            "baseScore": 8.3,
+            "cvssVersion": "4.0",
+            "modificationTime": "2026-10-13T14:40:59.053810Z"
+          },
+          {
+            "type": "secondary",
+            "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:L",
+            "assigner": "Snyk",
+            "severity": "medium",
+            "baseScore": 6.5,
+            "cvssVersion": "3.1",
+            "modificationTime": "2026-10-13T14:40:59.053810Z"
+          }
+        ],
+        "description": "## Overview\n\nAffected versions of this package are vulnerable to XML External Entity (XXE) Injection in the `createParserFactory` and `createDocumentBuilderFactory` methods of the `XmlFactory` class, which set only `XMLConstants.FEATURE_SECURE_PROCESSING` on the factory and leave `disallow-doctype-decl`, `external-general-entities`, `external-parameter-entities`, and `load-external-dtd` at their defaults. An attacker can read local files out of band by submitting XML containing an external entity declaration to an application that unmarshals untrusted documents. Exploitation depends on the JAXP implementation in use, because secure processing alone does not block external entity resolution on every implementation.\n\n## Details\nXXE Injection is a type of attack against an application that parses XML input.\nXML is a markup language that defines a set of rules for encoding documents in a format that is both human-readable and machine-readable. By default, many XML processors allow specification of an external entity, a URI that is dereferenced and evaluated during XML processing. When an XML document is being parsed, the parser can make a request and include the content at the specified URI inside of the XML document.\n\nAttacks can include disclosing local files, which may contain sensitive data such as passwords or private user data, using file: schemes or relative paths in the system identifier.\n\nFor example, below is a sample XML document, containing an XML element- username.\n\n```\n<xml>\n<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?>\n   <username>John</username>\n</xml>\n```\n\nAn external XML entity - `xxe`, is defined using a system identifier and present within a DOCTYPE header. These entities can access local or remote content. For example the below code contains an external XML entity that would fetch the content of  `/etc/passwd` and display it to the user rendered by `username`.\n\n```\n<xml>\n<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?>\n<!DOCTYPE foo [\n   <!ENTITY xxe SYSTEM \"file:///etc/passwd\" >]>\n   <username>&xxe;</username>\n</xml>\n```\n\nOther XXE Injection attacks can access local resources that may not stop returning data, possibly impacting application availability and leading to Denial of Service.\n\n## Remediation\nA fix was pushed into the `master` branch but not yet published.\n## References\n- [GitHub Commit](https://github.com/eclipse-ee4j/jaxb-ri/commit/abf8c9707046d78bd3b7e834596feb3d3c21dbcb)\n- [GitHub Commit](https://github.com/eclipse-ee4j/jaxb-ri/commit/c08fde59)\n- [GitHub PR](https://github.com/eclipse-ee4j/jaxb-ri/pull/2013)\n- [GitLab Work Item](https://gitlab.eclipse.org/security/cve-assignment/-/work_items/310)\n",
+        "epssDetails": {
+          "percentile": "0.17041",
+          "probability": "0.00265",
+          "modelVersion": "v2026.06.15"
+        },
+        "identifiers": {
+          "CVE": [
+            "CVE-2026-92877"
+          ],
+          "CWE": [
+            "CWE-611"
+          ]
+        },
+        "packageName": "org.glassfish.jaxb:jaxb-core",
+        "proprietary": false,
+        "creationTime": "2026-10-13T14:40:58.767662Z",
+        "functions_new": [],
+        "alternativeIds": [],
+        "disclosureTime": "2026-10-12T14:44:11.378000Z",
+        "exploitDetails": {
+          "sources": [],
+          "maturityLevels": [
+            {
+              "type": "secondary",
+              "level": "Not Defined",
+              "format": "CVSSv3"
+            },
+            {
+              "type": "primary",
+              "level": "Not Defined",
+              "format": "CVSSv4"
+            }
+          ]
+        },
+        "packageManager": "maven",
+        "mavenModuleName": {
+          "groupId": "org.glassfish.jaxb",
+          "artifactId": "jaxb-core"
+        },
+        "publicationTime": "2026-10-13T14:40:58.917729Z",
+        "severityBasedOn": "CVSS",
+        "modificationTime": "2026-10-13T14:40:59.053810Z",
+        "socialTrendAlert": false,
+        "packagePopularityRank": 99,
+        "from": [
+          "com.pedidos:pedidos-api@0.0.1-SNAPSHOT",
+          "org.springframework.boot:spring-boot-starter-data-jpa@4.1.1",
+          "org.springframework.boot:spring-boot-data-jpa@4.1.1",
+          "org.springframework.boot:spring-boot-hibernate@4.1.1",
+          "org.hibernate.orm:hibernate-core@7.4.5.Final",
+          "org.glassfish.jaxb:jaxb-runtime@4.0.9",
+          "org.glassfish.jaxb:jaxb-core@4.0.9"
+        ],
+        "upgradePath": [],
+        "isUpgradable": false,
+        "isPatchable": false,
+        "isPinnable": false,
+        "isRuntime": false,
+        "name": "org.glassfish.jaxb:jaxb-core",
+        "version": "4.0.9",
+        "severityWithCritical": "high"
+      },
+      {
+        "id": "SNYK-JAVA-ORGOBJENESIS-21755439",
+        "title": "Symbolic Name not Mapping to Correct Object",
+        "CVSSv3": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:L/I:L/A:L",
+        "credit": [
+          "Unknown"
+        ],
+        "semver": {
+          "vulnerable": [
+            "[,3.6)"
+          ]
+        },
+        "exploit": "Not Defined",
+        "fixedIn": [
+          "3.6"
+        ],
+        "patches": [],
+        "insights": {
+          "triageAdvice": null
+        },
+        "language": "java",
+        "severity": "low",
+        "cvssScore": 2,
+        "functions": [],
+        "malicious": false,
+        "isDisputed": false,
+        "moduleName": "org.objenesis:objenesis",
+        "references": [
+          {
+            "url": "https://github.com/easymock/objenesis/security/advisories/GHSA-743r-26gf-97ff",
+            "title": "GitHub Advisory"
+          },
+          {
+            "url": "https://github.com/easymock/objenesis",
+            "title": "github.com"
+          },
+          {
+            "url": "https://github.com/easymock/objenesis/commit/40f90f435a06b16af74a7398f0007faeaa52c00c",
+            "title": "GitHub Commit"
+          },
+          {
+            "url": "https://github.com/easymock/objenesis/blob/fb36e5c377ed1bf57a18386fa79d2eed4ddfcfac/main/src/main/java/org/objenesis/ObjenesisBase.java%23L92-L95",
+            "title": "Vulnerable Code"
+          }
+        ],
+        "cvssDetails": [
+          {
+            "assigner": "NVD",
+            "severity": "medium",
+            "cvssV3Vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:L/I:L/A:L",
+            "cvssV3BaseScore": 4.5,
+            "modificationTime": "2026-10-27T01:15:29.358631Z"
+          },
+          {
+            "assigner": "Red Hat",
+            "severity": "medium",
+            "cvssV3Vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:L/I:L/A:L",
+            "cvssV3BaseScore": 4.5,
+            "modificationTime": "2026-10-27T07:32:06.707457Z"
+          }
+        ],
+        "cvssSources": [
+          {
+            "type": "primary",
+            "vector": "CVSS:4.0/AV:L/AC:H/AT:P/PR:L/UI:N/VC:L/VI:L/VA:L/SC:N/SI:N/SA:N",
+            "assigner": "Snyk",
+            "severity": "low",
+            "baseScore": 2,
+            "cvssVersion": "4.0",
+            "modificationTime": "2026-10-27T15:27:13.863414Z"
+          },
+          {
+            "type": "secondary",
+            "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:L/I:L/A:L",
+            "assigner": "Snyk",
+            "severity": "medium",
+            "baseScore": 4.5,
+            "cvssVersion": "3.1",
+            "modificationTime": "2026-10-27T15:27:13.863414Z"
+          },
+          {
+            "type": "secondary",
+            "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:L/I:L/A:L",
+            "assigner": "NVD",
+            "severity": "medium",
+            "baseScore": 4.5,
+            "cvssVersion": "3.1",
+            "modificationTime": "2026-10-27T01:15:29.358631Z"
+          },
+          {
+            "type": "secondary",
+            "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:L/I:L/A:L",
+            "assigner": "Red Hat",
+            "severity": "medium",
+            "baseScore": 4.5,
+            "cvssVersion": "3.1",
+            "modificationTime": "2026-10-27T07:32:06.707457Z"
+          }
+        ],
+        "description": "## Overview\n\nAffected versions of this package are vulnerable to Symbolic Name not Mapping to Correct Object through the `getInstantiatorOf` process. An attacker can cause objects from one class loader to be substituted into another by exploiting instantiator caching keyed on class name, potentially leading to unexpected behavior, data corruption, or application crashes by introducing wrong-class objects.\n## Remediation\nUpgrade `org.objenesis:objenesis` to version 3.6 or higher.\n## References\n- [GitHub Advisory](https://github.com/easymock/objenesis/security/advisories/GHSA-743r-26gf-97ff)\n- [github.com](https://github.com/easymock/objenesis)\n- [GitHub Commit](https://github.com/easymock/objenesis/commit/40f90f435a06b16af74a7398f0007faeaa52c00c)\n- [Vulnerable Code](https://github.com/easymock/objenesis/blob/fb36e5c377ed1bf57a18386fa79d2eed4ddfcfac/main/src/main/java/org/objenesis/ObjenesisBase.java#L92-L95)\n",
+        "epssDetails": {
+          "percentile": "0.02926",
+          "probability": "0.00135",
+          "modelVersion": "v2026.06.15"
+        },
+        "identifiers": {
+          "CVE": [
+            "CVE-2026-116486"
+          ],
+          "CWE": [
+            "CWE-386"
+          ],
+          "GHSA": [
+            "GHSA-743r-26gf-97ff"
+          ]
+        },
+        "packageName": "org.objenesis:objenesis",
+        "proprietary": false,
+        "creationTime": "2026-10-27T15:27:13.515331Z",
+        "functions_new": [],
+        "alternativeIds": [],
+        "disclosureTime": "2026-10-26T16:48:39.065000Z",
+        "exploitDetails": {
+          "sources": [],
+          "maturityLevels": [
+            {
+              "type": "secondary",
+              "level": "Not Defined",
+              "format": "CVSSv3"
+            },
+            {
+              "type": "primary",
+              "level": "Not Defined",
+              "format": "CVSSv4"
+            }
+          ]
+        },
+        "packageManager": "maven",
+        "mavenModuleName": {
+          "groupId": "org.objenesis",
+          "artifactId": "objenesis"
+        },
+        "publicationTime": "2026-10-27T15:27:13.679087Z",
+        "severityBasedOn": "CVSS",
+        "modificationTime": "2026-10-27T15:27:13.863414Z",
+        "socialTrendAlert": false,
+        "packagePopularityRank": 99,
+        "from": [
+          "com.pedidos:pedidos-api@0.0.1-SNAPSHOT",
+          "org.springframework.boot:spring-boot-starter-actuator-test@4.1.1",
+          "org.springframework.boot:spring-boot-starter-test@4.1.1",
+          "org.mockito:mockito-core@5.23.0",
+          "org.objenesis:objenesis@3.3"
+        ],
+        "upgradePath": [],
+        "isUpgradable": false,
+        "isPatchable": false,
+        "isPinnable": false,
+        "isRuntime": false,
+        "name": "org.objenesis:objenesis",
+        "version": "3.3",
+        "severityWithCritical": "low"
+      },
+      {
+        "id": "SNYK-JAVA-ORGOW2ASM-21715439",
+        "title": "Inefficient Algorithmic Complexity",
+        "CVSSv3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+        "credit": [
+          "Eric Bruneton"
+        ],
+        "semver": {
+          "vulnerable": [
+            "[3.0,9.11)"
+          ]
+        },
+        "exploit": "Not Defined",
+        "fixedIn": [
+          "9.11"
+        ],
+        "patches": [],
+        "insights": {
+          "triageAdvice": null
+        },
+        "language": "java",
+        "severity": "medium",
+        "cvssScore": 6.8,
+        "functions": [],
+        "malicious": false,
+        "isDisputed": false,
+        "moduleName": "org.ow2.asm:asm",
+        "references": [
+          {
+            "url": "https://gitlab.ow2.org/asm/asm/-/commit/ab68bbd2521359b7c8cd3517c6331ced3d817ed0",
+            "title": "GitLab Commit"
+          },
+          {
+            "url": "https://gitlab.ow2.org/asm/asm/-/blob/ASM_9_10_1/asm/src/main/java/org/objectweb/asm/MethodWriter.java%23L1595",
+            "title": "gitlab.ow2.org"
+          },
+          {
+            "url": "https://gitlab.ow2.org/asm/asm/-/merge_requests/463",
+            "title": "gitlab.ow2.org"
+          },
+          {
+            "url": "https://bugzilla.redhat.com/show_bug.cgi?id=2552253",
+            "title": "Red Hat Bugzilla Bug"
+          }
+        ],
+        "cvssDetails": [
+          {
+            "assigner": "Red Hat",
+            "severity": "medium",
+            "cvssV3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvssV3BaseScore": 5.5,
+            "modificationTime": "2026-10-20T06:22:51.943997Z"
+          },
+          {
+            "assigner": "NVD",
+            "severity": "medium",
+            "cvssV3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvssV3BaseScore": 5.5,
+            "modificationTime": "2026-10-14T19:41:27.293648Z"
+          }
+        ],
+        "cvssSources": [
+          {
+            "type": "primary",
+            "vector": "CVSS:4.0/AV:L/AC:L/AT:N/PR:N/UI:P/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+            "assigner": "Snyk",
+            "severity": "medium",
+            "baseScore": 6.8,
+            "cvssVersion": "4.0",
+            "modificationTime": "2026-10-27T02:01:39.889548Z"
+          },
+          {
+            "type": "secondary",
+            "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "assigner": "Snyk",
+            "severity": "medium",
+            "baseScore": 5.5,
+            "cvssVersion": "3.1",
+            "modificationTime": "2026-10-27T02:01:39.889548Z"
+          },
+          {
+            "type": "secondary",
+            "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "assigner": "Red Hat",
+            "severity": "medium",
+            "baseScore": 5.5,
+            "cvssVersion": "3.1",
+            "modificationTime": "2026-10-20T06:22:51.943997Z"
+          },
+          {
+            "type": "secondary",
+            "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "assigner": "NVD",
+            "severity": "medium",
+            "baseScore": 5.5,
+            "cvssVersion": "3.1",
+            "modificationTime": "2026-10-14T19:41:27.293648Z"
+          }
+        ],
+        "description": "## Overview\n\nAffected versions of this package are vulnerable to Inefficient Algorithmic Complexity via the `computeAllFrames` method in `MethodWriter`. An attacker can exhaust CPU and tie up class-file transformation threads for an unbounded time by supplying crafted class files for processing with `ClassWriter.COMPUTE_FRAMES`; their methods make frame computation’s fixpoint algorithm converge slowly.\n## Remediation\nUpgrade `org.ow2.asm:asm` to version 9.11 or higher.\n## References\n- [GitLab Commit](https://gitlab.ow2.org/asm/asm/-/commit/ab68bbd2521359b7c8cd3517c6331ced3d817ed0)\n- [gitlab.ow2.org](https://gitlab.ow2.org/asm/asm/-/blob/ASM_9_10_1/asm/src/main/java/org/objectweb/asm/MethodWriter.java#L1595)\n- [gitlab.ow2.org](https://gitlab.ow2.org/asm/asm/-/merge_requests/463)\n- [Red Hat Bugzilla Bug](https://bugzilla.redhat.com/show_bug.cgi?id=2552253)\n",
+        "epssDetails": {
+          "percentile": "0.06319",
+          "probability": "0.00170",
+          "modelVersion": "v2026.06.15"
+        },
+        "identifiers": {
+          "CVE": [
+            "CVE-2026-110261"
+          ],
+          "CWE": [
+            "CWE-407",
+            "CWE-606"
+          ]
+        },
+        "packageName": "org.ow2.asm:asm",
+        "proprietary": false,
+        "creationTime": "2026-10-26T08:50:41.029995Z",
+        "functions_new": [],
+        "alternativeIds": [],
+        "disclosureTime": "2026-10-14T14:16:33Z",
+        "exploitDetails": {
+          "sources": [],
+          "maturityLevels": [
+            {
+              "type": "secondary",
+              "level": "Not Defined",
+              "format": "CVSSv3"
+            },
+            {
+              "type": "primary",
+              "level": "Not Defined",
+              "format": "CVSSv4"
+            }
+          ]
+        },
+        "packageManager": "maven",
+        "mavenModuleName": {
+          "groupId": "org.ow2.asm",
+          "artifactId": "asm"
+        },
+        "publicationTime": "2026-10-26T08:50:41.223630Z",
+        "severityBasedOn": "CVSS",
+        "modificationTime": "2026-10-27T02:01:39.889548Z",
+        "socialTrendAlert": false,
+        "packagePopularityRank": 99,
+        "from": [
+          "com.pedidos:pedidos-api@0.0.1-SNAPSHOT",
+          "org.springframework.boot:spring-boot-starter-actuator-test@4.1.1",
+          "org.springframework.boot:spring-boot-starter-test@4.1.1",
+          "net.minidev:json-smart@2.6.0",
+          "net.minidev:accessors-smart@2.6.0",
+          "org.ow2.asm:asm@9.7.1"
+        ],
+        "upgradePath": [],
+        "isUpgradable": false,
+        "isPatchable": false,
+        "isPinnable": false,
+        "isRuntime": false,
+        "name": "org.ow2.asm:asm",
+        "version": "9.7.1",
+        "severityWithCritical": "medium"
+      },
+      {
+        "id": "SNYK-JAVA-ORGOW2ASM-21715442",
+        "title": "Memory Allocation with Excessive Size Value",
+        "CVSSv3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+        "credit": [
+          "Yu Bao"
+        ],
+        "semver": {
+          "vulnerable": [
+            "[5.0,9.11)"
+          ]
+        },
+        "exploit": "Not Defined",
+        "fixedIn": [
+          "9.11"
+        ],
+        "patches": [],
+        "insights": {
+          "triageAdvice": null
+        },
+        "language": "java",
+        "severity": "medium",
+        "cvssScore": 6.8,
+        "functions": [],
+        "malicious": false,
+        "isDisputed": false,
+        "moduleName": "org.ow2.asm:asm",
+        "references": [
+          {
+            "url": "https://gitlab.ow2.org/asm/asm/-/commit/eb5fa95bb0670eaec2ecf9b8a3a501b48e5a967c",
+            "title": "GitLab Commit"
+          },
+          {
+            "url": "https://gitlab.ow2.org/asm/asm/-/blob/ASM_9_10_1/asm/src/main/java/org/objectweb/asm/ClassReader.java%23L3497",
+            "title": "gitlab.ow2.org"
+          },
+          {
+            "url": "https://gitlab.ow2.org/asm/asm/-/merge_requests/456",
+            "title": "gitlab.ow2.org"
+          },
+          {
+            "url": "https://bugzilla.redhat.com/show_bug.cgi?id=2552305",
+            "title": "Red Hat Bugzilla Bug"
+          }
+        ],
+        "cvssDetails": [
+          {
+            "assigner": "Red Hat",
+            "severity": "medium",
+            "cvssV3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvssV3BaseScore": 5.5,
+            "modificationTime": "2026-10-20T06:23:26.945242Z"
+          },
+          {
+            "assigner": "NVD",
+            "severity": "medium",
+            "cvssV3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvssV3BaseScore": 5.5,
+            "modificationTime": "2026-10-14T19:41:19.331117Z"
+          }
+        ],
+        "cvssSources": [
+          {
+            "type": "primary",
+            "vector": "CVSS:4.0/AV:L/AC:L/AT:N/PR:N/UI:P/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+            "assigner": "Snyk",
+            "severity": "medium",
+            "baseScore": 6.8,
+            "cvssVersion": "4.0",
+            "modificationTime": "2026-10-27T02:01:39.890408Z"
+          },
+          {
+            "type": "secondary",
+            "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "assigner": "Snyk",
+            "severity": "medium",
+            "baseScore": 5.5,
+            "cvssVersion": "3.1",
+            "modificationTime": "2026-10-27T02:01:39.890408Z"
+          },
+          {
+            "type": "secondary",
+            "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "assigner": "Red Hat",
+            "severity": "medium",
+            "baseScore": 5.5,
+            "cvssVersion": "3.1",
+            "modificationTime": "2026-10-20T06:23:26.945242Z"
+          },
+          {
+            "type": "secondary",
+            "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "assigner": "NVD",
+            "severity": "medium",
+            "baseScore": 5.5,
+            "cvssVersion": "3.1",
+            "modificationTime": "2026-10-14T19:41:19.331117Z"
+          }
+        ],
+        "description": "## Overview\n\nAffected versions of this package are vulnerable to Memory Allocation with Excessive Size Value via `readBootstrapMethodsAttribute()` in `ClassReader`. When an application parses an attacker-supplied class file, a crafted BootstrapMethods attribute with an unchecked declared length can trigger an allocation of roughly 2 GB from a file of about 100 bytes, causing an `OutOfMemoryError` that crashes the JVM or the thread processing the class.\n## Remediation\nUpgrade `org.ow2.asm:asm` to version 9.11 or higher.\n## References\n- [GitLab Commit](https://gitlab.ow2.org/asm/asm/-/commit/eb5fa95bb0670eaec2ecf9b8a3a501b48e5a967c)\n- [gitlab.ow2.org](https://gitlab.ow2.org/asm/asm/-/blob/ASM_9_10_1/asm/src/main/java/org/objectweb/asm/ClassReader.java#L3497)\n- [gitlab.ow2.org](https://gitlab.ow2.org/asm/asm/-/merge_requests/456)\n- [Red Hat Bugzilla Bug](https://bugzilla.redhat.com/show_bug.cgi?id=2552305)\n",
+        "epssDetails": {
+          "percentile": "0.06318",
+          "probability": "0.00170",
+          "modelVersion": "v2026.06.15"
+        },
+        "identifiers": {
+          "CVE": [
+            "CVE-2026-110257"
+          ],
+          "CWE": [
+            "CWE-770",
+            "CWE-789"
+          ]
+        },
+        "packageName": "org.ow2.asm:asm",
+        "proprietary": false,
+        "creationTime": "2026-10-26T08:53:01.698562Z",
+        "functions_new": [],
+        "alternativeIds": [],
+        "disclosureTime": "2026-10-14T14:16:30Z",
+        "exploitDetails": {
+          "sources": [],
+          "maturityLevels": [
+            {
+              "type": "secondary",
+              "level": "Not Defined",
+              "format": "CVSSv3"
+            },
+            {
+              "type": "primary",
+              "level": "Not Defined",
+              "format": "CVSSv4"
+            }
+          ]
+        },
+        "packageManager": "maven",
+        "mavenModuleName": {
+          "groupId": "org.ow2.asm",
+          "artifactId": "asm"
+        },
+        "publicationTime": "2026-10-26T08:53:01.869904Z",
+        "severityBasedOn": "CVSS",
+        "modificationTime": "2026-10-27T02:01:39.890408Z",
+        "socialTrendAlert": false,
+        "packagePopularityRank": 99,
+        "from": [
+          "com.pedidos:pedidos-api@0.0.1-SNAPSHOT",
+          "org.springframework.boot:spring-boot-starter-actuator-test@4.1.1",
+          "org.springframework.boot:spring-boot-starter-test@4.1.1",
+          "net.minidev:json-smart@2.6.0",
+          "net.minidev:accessors-smart@2.6.0",
+          "org.ow2.asm:asm@9.7.1"
+        ],
+        "upgradePath": [],
+        "isUpgradable": false,
+        "isPatchable": false,
+        "isPinnable": false,
+        "isRuntime": false,
+        "name": "org.ow2.asm:asm",
+        "version": "9.7.1",
+        "severityWithCritical": "medium"
+      },
+      {
+        "id": "SNYK-JAVA-ORGOW2ASM-21715445",
+        "title": "Uncontrolled Recursion",
+        "CVSSv3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+        "credit": [
+          "Eric Bruneton"
+        ],
+        "semver": {
+          "vulnerable": [
+            "[3.0,9.11)"
+          ]
+        },
+        "exploit": "Not Defined",
+        "fixedIn": [
+          "9.11"
+        ],
+        "patches": [],
+        "insights": {
+          "triageAdvice": null
+        },
+        "language": "java",
+        "severity": "medium",
+        "cvssScore": 6.8,
+        "functions": [],
+        "malicious": false,
+        "isDisputed": false,
+        "moduleName": "org.ow2.asm:asm",
+        "references": [
+          {
+            "url": "https://gitlab.ow2.org/asm/asm/-/commit/8f87fc0317a4c5ee8f538bcbb641928def25dbd6",
+            "title": "GitLab Commit"
+          },
+          {
+            "url": "https://gitlab.ow2.org/asm/asm/-/blob/ASM_9_10_1/asm/src/main/java/org/objectweb/asm/signature/SignatureReader.java%23L151",
+            "title": "gitlab.ow2.org"
+          },
+          {
+            "url": "https://gitlab.ow2.org/asm/asm/-/merge_requests/465",
+            "title": "gitlab.ow2.org"
+          },
+          {
+            "url": "https://bugzilla.redhat.com/show_bug.cgi?id=2552264",
+            "title": "Red Hat Bugzilla Bug"
+          }
+        ],
+        "cvssDetails": [
+          {
+            "assigner": "Red Hat",
+            "severity": "medium",
+            "cvssV3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvssV3BaseScore": 5.5,
+            "modificationTime": "2026-10-20T06:22:44.207578Z"
+          },
+          {
+            "assigner": "NVD",
+            "severity": "medium",
+            "cvssV3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvssV3BaseScore": 5.5,
+            "modificationTime": "2026-10-14T19:41:35.045190Z"
+          }
+        ],
+        "cvssSources": [
+          {
+            "type": "primary",
+            "vector": "CVSS:4.0/AV:L/AC:L/AT:N/PR:N/UI:P/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+            "assigner": "Snyk",
+            "severity": "medium",
+            "baseScore": 6.8,
+            "cvssVersion": "4.0",
+            "modificationTime": "2026-10-27T02:01:39.891070Z"
+          },
+          {
+            "type": "secondary",
+            "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "assigner": "Snyk",
+            "severity": "medium",
+            "baseScore": 5.5,
+            "cvssVersion": "3.1",
+            "modificationTime": "2026-10-27T02:01:39.891070Z"
+          },
+          {
+            "type": "secondary",
+            "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "assigner": "Red Hat",
+            "severity": "medium",
+            "baseScore": 5.5,
+            "cvssVersion": "3.1",
+            "modificationTime": "2026-10-20T06:22:44.207578Z"
+          },
+          {
+            "type": "secondary",
+            "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "assigner": "NVD",
+            "severity": "medium",
+            "baseScore": 5.5,
+            "cvssVersion": "3.1",
+            "modificationTime": "2026-10-14T19:41:35.045190Z"
+          }
+        ],
+        "description": "## Overview\n\nAffected versions of this package are vulnerable to Uncontrolled Recursion via the `parseType` method in `SignatureReader`. An attacker can trigger a `StackOverflowError` and disrupt class transformation by supplying a crafted class file with a `Signature` attribute containing deeply nested generic type arguments.\n## Remediation\nUpgrade `org.ow2.asm:asm` to version 9.11 or higher.\n## References\n- [GitLab Commit](https://gitlab.ow2.org/asm/asm/-/commit/8f87fc0317a4c5ee8f538bcbb641928def25dbd6)\n- [gitlab.ow2.org](https://gitlab.ow2.org/asm/asm/-/blob/ASM_9_10_1/asm/src/main/java/org/objectweb/asm/signature/SignatureReader.java#L151)\n- [gitlab.ow2.org](https://gitlab.ow2.org/asm/asm/-/merge_requests/465)\n- [Red Hat Bugzilla Bug](https://bugzilla.redhat.com/show_bug.cgi?id=2552264)\n",
+        "epssDetails": {
+          "percentile": "0.06318",
+          "probability": "0.00170",
+          "modelVersion": "v2026.06.15"
+        },
+        "identifiers": {
+          "CVE": [
+            "CVE-2026-110263"
+          ],
+          "CWE": [
+            "CWE-674",
+            "CWE-770"
+          ]
+        },
+        "packageName": "org.ow2.asm:asm",
+        "proprietary": false,
+        "creationTime": "2026-10-26T08:55:49.731008Z",
+        "functions_new": [],
+        "alternativeIds": [],
+        "disclosureTime": "2026-10-14T14:16:34Z",
+        "exploitDetails": {
+          "sources": [],
+          "maturityLevels": [
+            {
+              "type": "secondary",
+              "level": "Not Defined",
+              "format": "CVSSv3"
+            },
+            {
+              "type": "primary",
+              "level": "Not Defined",
+              "format": "CVSSv4"
+            }
+          ]
+        },
+        "packageManager": "maven",
+        "mavenModuleName": {
+          "groupId": "org.ow2.asm",
+          "artifactId": "asm"
+        },
+        "publicationTime": "2026-10-26T08:55:49.904017Z",
+        "severityBasedOn": "CVSS",
+        "modificationTime": "2026-10-27T02:01:39.891070Z",
+        "socialTrendAlert": false,
+        "packagePopularityRank": 99,
+        "from": [
+          "com.pedidos:pedidos-api@0.0.1-SNAPSHOT",
+          "org.springframework.boot:spring-boot-starter-actuator-test@4.1.1",
+          "org.springframework.boot:spring-boot-starter-test@4.1.1",
+          "net.minidev:json-smart@2.6.0",
+          "net.minidev:accessors-smart@2.6.0",
+          "org.ow2.asm:asm@9.7.1"
+        ],
+        "upgradePath": [],
+        "isUpgradable": false,
+        "isPatchable": false,
+        "isPinnable": false,
+        "isRuntime": false,
+        "name": "org.ow2.asm:asm",
+        "version": "9.7.1",
+        "severityWithCritical": "medium"
+      },
+      {
+        "id": "SNYK-JAVA-ORGOW2ASM-21715448",
+        "title": "Memory Allocation with Excessive Size Value",
+        "CVSSv3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+        "credit": [
+          "Eric Bruneton"
+        ],
+        "semver": {
+          "vulnerable": [
+            "[3.0,9.11)"
+          ]
+        },
+        "exploit": "Not Defined",
+        "fixedIn": [
+          "9.11"
+        ],
+        "patches": [],
+        "insights": {
+          "triageAdvice": null
+        },
+        "language": "java",
+        "severity": "medium",
+        "cvssScore": 6.8,
+        "functions": [],
+        "malicious": false,
+        "isDisputed": false,
+        "moduleName": "org.ow2.asm:asm",
+        "references": [
+          {
+            "url": "https://gitlab.ow2.org/asm/asm/-/commit/4dabfe0aef14f8cccb0617640a4add8fbcc4ed36",
+            "title": "GitLab Commit"
+          },
+          {
+            "url": "https://gitlab.ow2.org/asm/asm/-/blob/ASM_9_10_1/asm/src/main/java/org/objectweb/asm/Label.java%23L568",
+            "title": "gitlab.ow2.org"
+          },
+          {
+            "url": "https://gitlab.ow2.org/asm/asm/-/merge_requests/458",
+            "title": "gitlab.ow2.org"
+          },
+          {
+            "url": "https://bugzilla.redhat.com/show_bug.cgi?id=2552308",
+            "title": "Red Hat Bugzilla Bug"
+          }
+        ],
+        "cvssDetails": [
+          {
+            "assigner": "Red Hat",
+            "severity": "medium",
+            "cvssV3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvssV3BaseScore": 5.5,
+            "modificationTime": "2026-10-20T06:22:39.941169Z"
+          },
+          {
+            "assigner": "NVD",
+            "severity": "medium",
+            "cvssV3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvssV3BaseScore": 5.5,
+            "modificationTime": "2026-10-14T19:41:29.194992Z"
+          }
+        ],
+        "cvssSources": [
+          {
+            "type": "primary",
+            "vector": "CVSS:4.0/AV:L/AC:L/AT:N/PR:N/UI:P/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+            "assigner": "Snyk",
+            "severity": "medium",
+            "baseScore": 6.8,
+            "cvssVersion": "4.0",
+            "modificationTime": "2026-10-27T02:01:39.891726Z"
+          },
+          {
+            "type": "secondary",
+            "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "assigner": "Snyk",
+            "severity": "medium",
+            "baseScore": 5.5,
+            "cvssVersion": "3.1",
+            "modificationTime": "2026-10-27T02:01:39.891726Z"
+          },
+          {
+            "type": "secondary",
+            "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "assigner": "Red Hat",
+            "severity": "medium",
+            "baseScore": 5.5,
+            "cvssVersion": "3.1",
+            "modificationTime": "2026-10-20T06:22:39.941169Z"
+          },
+          {
+            "type": "secondary",
+            "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "assigner": "NVD",
+            "severity": "medium",
+            "baseScore": 5.5,
+            "cvssVersion": "3.1",
+            "modificationTime": "2026-10-14T19:41:29.194992Z"
+          }
+        ],
+        "description": "## Overview\n\nAffected versions of this package are vulnerable to Memory Allocation with Excessive Size Value via the `addSubroutineRetSuccessors()` method in the `Label` class. An attacker can crash the JVM by supplying a crafted invalid class file with multiple `RET` instructions for one `JSR` while ASM processes the subroutine.\n\n**Notes**\n\n- The attacker must get a user to load or process the crafted class file.\n## Remediation\nUpgrade `org.ow2.asm:asm` to version 9.11 or higher.\n## References\n- [GitLab Commit](https://gitlab.ow2.org/asm/asm/-/commit/4dabfe0aef14f8cccb0617640a4add8fbcc4ed36)\n- [gitlab.ow2.org](https://gitlab.ow2.org/asm/asm/-/blob/ASM_9_10_1/asm/src/main/java/org/objectweb/asm/Label.java#L568)\n- [gitlab.ow2.org](https://gitlab.ow2.org/asm/asm/-/merge_requests/458)\n- [Red Hat Bugzilla Bug](https://bugzilla.redhat.com/show_bug.cgi?id=2552308)\n",
+        "epssDetails": {
+          "percentile": "0.06319",
+          "probability": "0.00170",
+          "modelVersion": "v2026.06.15"
+        },
+        "identifiers": {
+          "CVE": [
+            "CVE-2026-110258"
+          ],
+          "CWE": [
+            "CWE-770",
+            "CWE-789"
+          ]
+        },
+        "packageName": "org.ow2.asm:asm",
+        "proprietary": false,
+        "creationTime": "2026-10-26T08:58:07.836646Z",
+        "functions_new": [],
+        "alternativeIds": [],
+        "disclosureTime": "2026-10-14T14:16:31Z",
+        "exploitDetails": {
+          "sources": [],
+          "maturityLevels": [
+            {
+              "type": "secondary",
+              "level": "Not Defined",
+              "format": "CVSSv3"
+            },
+            {
+              "type": "primary",
+              "level": "Not Defined",
+              "format": "CVSSv4"
+            }
+          ]
+        },
+        "packageManager": "maven",
+        "mavenModuleName": {
+          "groupId": "org.ow2.asm",
+          "artifactId": "asm"
+        },
+        "publicationTime": "2026-10-26T08:58:07.995152Z",
+        "severityBasedOn": "CVSS",
+        "modificationTime": "2026-10-27T02:01:39.891726Z",
+        "socialTrendAlert": false,
+        "packagePopularityRank": 99,
+        "from": [
+          "com.pedidos:pedidos-api@0.0.1-SNAPSHOT",
+          "org.springframework.boot:spring-boot-starter-actuator-test@4.1.1",
+          "org.springframework.boot:spring-boot-starter-test@4.1.1",
+          "net.minidev:json-smart@2.6.0",
+          "net.minidev:accessors-smart@2.6.0",
+          "org.ow2.asm:asm@9.7.1"
+        ],
+        "upgradePath": [],
+        "isUpgradable": false,
+        "isPatchable": false,
+        "isPinnable": false,
+        "isRuntime": false,
+        "name": "org.ow2.asm:asm",
+        "version": "9.7.1",
+        "severityWithCritical": "medium"
+      },
+      {
+        "id": "SNYK-JAVA-ORGOW2ASM-21715452",
+        "title": "Inefficient Algorithmic Complexity",
+        "CVSSv3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+        "credit": [
+          "Yu Bao"
+        ],
+        "semver": {
+          "vulnerable": [
+            "[3.0,9.11)"
+          ]
+        },
+        "exploit": "Not Defined",
+        "fixedIn": [
+          "9.11"
+        ],
+        "patches": [],
+        "insights": {
+          "triageAdvice": null
+        },
+        "language": "java",
+        "severity": "medium",
+        "cvssScore": 6.8,
+        "functions": [],
+        "malicious": false,
+        "isDisputed": false,
+        "moduleName": "org.ow2.asm:asm",
+        "references": [
+          {
+            "url": "https://gitlab.ow2.org/asm/asm/-/commit/91057c98239d994aed5e46434e34e00d593c0daf",
+            "title": "GitLab Commit"
+          },
+          {
+            "url": "https://gitlab.ow2.org/asm/asm/-/blob/ASM_9_10_1/asm/src/main/java/org/objectweb/asm/MethodWriter.java%23L1662",
+            "title": "gitlab.ow2.org"
+          },
+          {
+            "url": "https://gitlab.ow2.org/asm/asm/-/merge_requests/461",
+            "title": "gitlab.ow2.org"
+          },
+          {
+            "url": "https://bugzilla.redhat.com/show_bug.cgi?id=2552285",
+            "title": "Red Hat Bugzilla Bug"
+          }
+        ],
+        "cvssDetails": [
+          {
+            "assigner": "Red Hat",
+            "severity": "medium",
+            "cvssV3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvssV3BaseScore": 5.5,
+            "modificationTime": "2026-10-20T06:22:46.458678Z"
+          },
+          {
+            "assigner": "NVD",
+            "severity": "medium",
+            "cvssV3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvssV3BaseScore": 5.5,
+            "modificationTime": "2026-10-14T19:41:24.740424Z"
+          }
+        ],
+        "cvssSources": [
+          {
+            "type": "primary",
+            "vector": "CVSS:4.0/AV:L/AC:L/AT:N/PR:N/UI:P/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+            "assigner": "Snyk",
+            "severity": "medium",
+            "baseScore": 6.8,
+            "cvssVersion": "4.0",
+            "modificationTime": "2026-10-27T02:01:39.893260Z"
+          },
+          {
+            "type": "secondary",
+            "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "assigner": "Snyk",
+            "severity": "medium",
+            "baseScore": 5.5,
+            "cvssVersion": "3.1",
+            "modificationTime": "2026-10-27T02:01:39.893260Z"
+          },
+          {
+            "type": "secondary",
+            "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "assigner": "Red Hat",
+            "severity": "medium",
+            "baseScore": 5.5,
+            "cvssVersion": "3.1",
+            "modificationTime": "2026-10-20T06:22:46.458678Z"
+          },
+          {
+            "type": "secondary",
+            "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "assigner": "NVD",
+            "severity": "medium",
+            "baseScore": 5.5,
+            "cvssVersion": "3.1",
+            "modificationTime": "2026-10-14T19:41:24.740424Z"
+          }
+        ],
+        "description": "## Overview\n\nAffected versions of this package are vulnerable to Inefficient Algorithmic Complexity via the `computeAllFrames()` and `computeMaxStackAndLocal()` methods in `MethodWriter`. When ASM processes a crafted class file with thousands of overlapping exception handlers using `COMPUTE_FRAMES` or `COMPUTE_MAXS`, it allocates excessive `Edge` objects, causing an `OutOfMemoryError` that crashes the JVM.\n## Remediation\nUpgrade `org.ow2.asm:asm` to version 9.11 or higher.\n## References\n- [GitLab Commit](https://gitlab.ow2.org/asm/asm/-/commit/91057c98239d994aed5e46434e34e00d593c0daf)\n- [gitlab.ow2.org](https://gitlab.ow2.org/asm/asm/-/blob/ASM_9_10_1/asm/src/main/java/org/objectweb/asm/MethodWriter.java#L1662)\n- [gitlab.ow2.org](https://gitlab.ow2.org/asm/asm/-/merge_requests/461)\n- [Red Hat Bugzilla Bug](https://bugzilla.redhat.com/show_bug.cgi?id=2552285)\n",
+        "epssDetails": {
+          "percentile": "0.07085",
+          "probability": "0.00176",
+          "modelVersion": "v2026.06.15"
+        },
+        "identifiers": {
+          "CVE": [
+            "CVE-2026-110260"
+          ],
+          "CWE": [
+            "CWE-407",
+            "CWE-770"
+          ]
+        },
+        "packageName": "org.ow2.asm:asm",
+        "proprietary": false,
+        "creationTime": "2026-10-26T09:00:41.246483Z",
+        "functions_new": [],
+        "alternativeIds": [],
+        "disclosureTime": "2026-10-14T14:16:32Z",
+        "exploitDetails": {
+          "sources": [],
+          "maturityLevels": [
+            {
+              "type": "secondary",
+              "level": "Not Defined",
+              "format": "CVSSv3"
+            },
+            {
+              "type": "primary",
+              "level": "Not Defined",
+              "format": "CVSSv4"
+            }
+          ]
+        },
+        "packageManager": "maven",
+        "mavenModuleName": {
+          "groupId": "org.ow2.asm",
+          "artifactId": "asm"
+        },
+        "publicationTime": "2026-10-26T09:00:41.423951Z",
+        "severityBasedOn": "CVSS",
+        "modificationTime": "2026-10-27T02:01:39.893260Z",
+        "socialTrendAlert": false,
+        "packagePopularityRank": 99,
+        "from": [
+          "com.pedidos:pedidos-api@0.0.1-SNAPSHOT",
+          "org.springframework.boot:spring-boot-starter-actuator-test@4.1.1",
+          "org.springframework.boot:spring-boot-starter-test@4.1.1",
+          "net.minidev:json-smart@2.6.0",
+          "net.minidev:accessors-smart@2.6.0",
+          "org.ow2.asm:asm@9.7.1"
+        ],
+        "upgradePath": [],
+        "isUpgradable": false,
+        "isPatchable": false,
+        "isPinnable": false,
+        "isRuntime": false,
+        "name": "org.ow2.asm:asm",
+        "version": "9.7.1",
+        "severityWithCritical": "medium"
+      }
+    ],
+    "upgrade": {},
+    "patch": {},
+    "ignore": {},
+    "pin": {}
+  },
+  "filesystemPolicy": true,
+  "uniqueCount": 10,
+  "projectName": "com.pedidos:pedidos-api",
+  "displayTargetFile": "pom.xml",
+  "hasUnknownVersions": false,
+  "path": "/var/jenkins_home/workspace/L4-09-pedidos-api/fuente-l4/pedidos-api/pedidos-api"
+}

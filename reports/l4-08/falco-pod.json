@@ -1,0 +1,651 @@
+{
+    "apiVersion": "v1",
+    "kind": "Pod",
+    "metadata": {
+        "annotations": {
+            "checksum/certs": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "checksum/config": "a0e7d354bf59709129558c6ad4017936f0e5306f91e747304a2e0c5d1ddb2b1e",
+            "checksum/rules": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "container.apparmor.security.beta.kubernetes.io/falco": "unconfined"
+        },
+        "creationTimestamp": "2026-11-11T14:38:53Z",
+        "generateName": "falco-",
+        "generation": 1,
+        "labels": {
+            "app.kubernetes.io/instance": "falco",
+            "app.kubernetes.io/name": "falco",
+            "controller-revision-hash": "8576ccbdb7",
+            "pod-template-generation": "1"
+        },
+        "name": "falco-mtdw2",
+        "namespace": "falco",
+        "ownerReferences": [
+            {
+                "apiVersion": "apps/v1",
+                "blockOwnerDeletion": true,
+                "controller": true,
+                "kind": "DaemonSet",
+                "name": "falco",
+                "uid": "ab37c6b3-2f21-43cb-8353-489ab6560ffe"
+            }
+        ],
+        "resourceVersion": "26747",
+        "uid": "52543bd3-f326-4d60-a15f-2ba1e4fb2ad0"
+    },
+    "spec": {
+        "affinity": {
+            "nodeAffinity": {
+                "requiredDuringSchedulingIgnoredDuringExecution": {
+                    "nodeSelectorTerms": [
+                        {
+                            "matchFields": [
+                                {
+                                    "key": "metadata.name",
+                                    "operator": "In",
+                                    "values": [
+                                        "minikube"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        },
+        "containers": [
+            {
+                "args": [
+                    "/usr/bin/falco"
+                ],
+                "env": [
+                    {
+                        "name": "HOST_ROOT",
+                        "value": "/host"
+                    },
+                    {
+                        "name": "FALCO_HOSTNAME",
+                        "valueFrom": {
+                            "fieldRef": {
+                                "apiVersion": "v1",
+                                "fieldPath": "spec.nodeName"
+                            }
+                        }
+                    },
+                    {
+                        "name": "FALCO_K8S_NODE_NAME",
+                        "valueFrom": {
+                            "fieldRef": {
+                                "apiVersion": "v1",
+                                "fieldPath": "spec.nodeName"
+                            }
+                        }
+                    }
+                ],
+                "image": "docker.io/falcosecurity/falco:0.45.2",
+                "imagePullPolicy": "IfNotPresent",
+                "livenessProbe": {
+                    "failureThreshold": 3,
+                    "httpGet": {
+                        "path": "/healthz",
+                        "port": 8765,
+                        "scheme": "HTTP"
+                    },
+                    "periodSeconds": 15,
+                    "successThreshold": 1,
+                    "timeoutSeconds": 5
+                },
+                "name": "falco",
+                "ports": [
+                    {
+                        "containerPort": 8765,
+                        "name": "web",
+                        "protocol": "TCP"
+                    }
+                ],
+                "readinessProbe": {
+                    "failureThreshold": 3,
+                    "httpGet": {
+                        "path": "/healthz",
+                        "port": 8765,
+                        "scheme": "HTTP"
+                    },
+                    "periodSeconds": 15,
+                    "successThreshold": 1,
+                    "timeoutSeconds": 5
+                },
+                "resources": {
+                    "limits": {
+                        "cpu": "1",
+                        "memory": "1Gi"
+                    },
+                    "requests": {
+                        "cpu": "100m",
+                        "memory": "512Mi"
+                    }
+                },
+                "securityContext": {
+                    "appArmorProfile": {
+                        "type": "Unconfined"
+                    },
+                    "capabilities": {
+                        "add": [
+                            "BPF",
+                            "SYS_RESOURCE",
+                            "PERFMON",
+                            "SYS_PTRACE"
+                        ]
+                    }
+                },
+                "startupProbe": {
+                    "failureThreshold": 20,
+                    "httpGet": {
+                        "path": "/healthz",
+                        "port": 8765,
+                        "scheme": "HTTP"
+                    },
+                    "initialDelaySeconds": 3,
+                    "periodSeconds": 5,
+                    "successThreshold": 1,
+                    "timeoutSeconds": 5
+                },
+                "terminationMessagePath": "/dev/termination-log",
+                "terminationMessagePolicy": "File",
+                "volumeMounts": [
+                    {
+                        "mountPath": "/host/run/containerd",
+                        "name": "container-engine-socket-0"
+                    },
+                    {
+                        "mountPath": "/etc/falco",
+                        "name": "rulesfiles-install-dir"
+                    },
+                    {
+                        "mountPath": "/usr/share/falco/plugins",
+                        "name": "plugins-install-dir"
+                    },
+                    {
+                        "mountPath": "/etc/falco/config.d",
+                        "name": "specialized-falco-configs"
+                    },
+                    {
+                        "mountPath": "/root/.falco",
+                        "name": "root-falco-fs"
+                    },
+                    {
+                        "mountPath": "/host/proc",
+                        "name": "proc-fs",
+                        "readOnly": true
+                    },
+                    {
+                        "mountPath": "/host/etc",
+                        "name": "etc-fs",
+                        "readOnly": true
+                    },
+                    {
+                        "mountPath": "/sys/kernel",
+                        "name": "sys-fs",
+                        "readOnly": true
+                    },
+                    {
+                        "mountPath": "/etc/falco/falco.yaml",
+                        "name": "falco-yaml",
+                        "subPath": "falco.yaml"
+                    },
+                    {
+                        "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                        "name": "kube-api-access-xb7pq",
+                        "readOnly": true
+                    }
+                ]
+            }
+        ],
+        "dnsPolicy": "ClusterFirst",
+        "enableServiceLinks": true,
+        "initContainers": [
+            {
+                "args": [
+                    "artifact",
+                    "install",
+                    "--log-format=json"
+                ],
+                "image": "docker.io/falcosecurity/falcoctl:0.14.3",
+                "imagePullPolicy": "IfNotPresent",
+                "name": "falcoctl-artifact-install",
+                "resources": {},
+                "terminationMessagePath": "/dev/termination-log",
+                "terminationMessagePolicy": "File",
+                "volumeMounts": [
+                    {
+                        "mountPath": "/plugins",
+                        "name": "plugins-install-dir"
+                    },
+                    {
+                        "mountPath": "/rulesfiles",
+                        "name": "rulesfiles-install-dir"
+                    },
+                    {
+                        "mountPath": "/etc/falcoctl",
+                        "name": "falcoctl-config-volume"
+                    },
+                    {
+                        "mountPath": "/artifactstate",
+                        "name": "artifact-state-dir"
+                    },
+                    {
+                        "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                        "name": "kube-api-access-xb7pq",
+                        "readOnly": true
+                    }
+                ]
+            }
+        ],
+        "nodeName": "minikube",
+        "preemptionPolicy": "PreemptLowerPriority",
+        "priority": 0,
+        "restartPolicy": "Always",
+        "schedulerName": "default-scheduler",
+        "securityContext": {},
+        "serviceAccount": "falco",
+        "serviceAccountName": "falco",
+        "terminationGracePeriodSeconds": 30,
+        "tolerations": [
+            {
+                "effect": "NoSchedule",
+                "key": "node-role.kubernetes.io/master"
+            },
+            {
+                "effect": "NoSchedule",
+                "key": "node-role.kubernetes.io/control-plane"
+            },
+            {
+                "effect": "NoExecute",
+                "key": "node.kubernetes.io/not-ready",
+                "operator": "Exists"
+            },
+            {
+                "effect": "NoExecute",
+                "key": "node.kubernetes.io/unreachable",
+                "operator": "Exists"
+            },
+            {
+                "effect": "NoSchedule",
+                "key": "node.kubernetes.io/disk-pressure",
+                "operator": "Exists"
+            },
+            {
+                "effect": "NoSchedule",
+                "key": "node.kubernetes.io/memory-pressure",
+                "operator": "Exists"
+            },
+            {
+                "effect": "NoSchedule",
+                "key": "node.kubernetes.io/pid-pressure",
+                "operator": "Exists"
+            },
+            {
+                "effect": "NoSchedule",
+                "key": "node.kubernetes.io/unschedulable",
+                "operator": "Exists"
+            }
+        ],
+        "volumes": [
+            {
+                "hostPath": {
+                    "path": "/run/containerd",
+                    "type": ""
+                },
+                "name": "container-engine-socket-0"
+            },
+            {
+                "emptyDir": {},
+                "name": "specialized-falco-configs"
+            },
+            {
+                "emptyDir": {},
+                "name": "plugins-install-dir"
+            },
+            {
+                "emptyDir": {},
+                "name": "rulesfiles-install-dir"
+            },
+            {
+                "emptyDir": {},
+                "name": "artifact-state-dir"
+            },
+            {
+                "emptyDir": {},
+                "name": "root-falco-fs"
+            },
+            {
+                "hostPath": {
+                    "path": "/boot",
+                    "type": ""
+                },
+                "name": "boot-fs"
+            },
+            {
+                "hostPath": {
+                    "path": "/lib/modules",
+                    "type": ""
+                },
+                "name": "lib-modules"
+            },
+            {
+                "hostPath": {
+                    "path": "/usr",
+                    "type": ""
+                },
+                "name": "usr-fs"
+            },
+            {
+                "hostPath": {
+                    "path": "/etc",
+                    "type": ""
+                },
+                "name": "etc-fs"
+            },
+            {
+                "hostPath": {
+                    "path": "/sys/kernel",
+                    "type": ""
+                },
+                "name": "sys-fs"
+            },
+            {
+                "hostPath": {
+                    "path": "/proc",
+                    "type": ""
+                },
+                "name": "proc-fs"
+            },
+            {
+                "configMap": {
+                    "defaultMode": 420,
+                    "items": [
+                        {
+                            "key": "falcoctl.yaml",
+                            "path": "falcoctl.yaml"
+                        }
+                    ],
+                    "name": "falco-falcoctl"
+                },
+                "name": "falcoctl-config-volume"
+            },
+            {
+                "configMap": {
+                    "defaultMode": 420,
+                    "items": [
+                        {
+                            "key": "falco.yaml",
+                            "path": "falco.yaml"
+                        }
+                    ],
+                    "name": "falco"
+                },
+                "name": "falco-yaml"
+            },
+            {
+                "name": "kube-api-access-xb7pq",
+                "projected": {
+                    "defaultMode": 420,
+                    "sources": [
+                        {
+                            "serviceAccountToken": {
+                                "expirationSeconds": 3607,
+                                "path": "token"
+                            }
+                        },
+                        {
+                            "configMap": {
+                                "items": [
+                                    {
+                                        "key": "ca.crt",
+                                        "path": "ca.crt"
+                                    }
+                                ],
+                                "name": "kube-root-ca.crt"
+                            }
+                        },
+                        {
+                            "downwardAPI": {
+                                "items": [
+                                    {
+                                        "fieldRef": {
+                                            "apiVersion": "v1",
+                                            "fieldPath": "metadata.namespace"
+                                        },
+                                        "path": "namespace"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "status": {
+        "allocatedResources": {
+            "cpu": "100m",
+            "memory": "512Mi"
+        },
+        "conditions": [
+            {
+                "lastProbeTime": null,
+                "lastTransitionTime": "2026-11-11T14:38:54Z",
+                "observedGeneration": 1,
+                "status": "True",
+                "type": "PodReadyToStartContainers"
+            },
+            {
+                "lastProbeTime": null,
+                "lastTransitionTime": "2026-11-11T14:39:20Z",
+                "observedGeneration": 1,
+                "status": "True",
+                "type": "Initialized"
+            },
+            {
+                "lastProbeTime": null,
+                "lastTransitionTime": "2026-11-11T14:39:34Z",
+                "observedGeneration": 1,
+                "status": "True",
+                "type": "Ready"
+            },
+            {
+                "lastProbeTime": null,
+                "lastTransitionTime": "2026-11-11T14:39:34Z",
+                "observedGeneration": 1,
+                "status": "True",
+                "type": "ContainersReady"
+            },
+            {
+                "lastProbeTime": null,
+                "lastTransitionTime": "2026-11-11T14:38:53Z",
+                "observedGeneration": 1,
+                "status": "True",
+                "type": "PodScheduled"
+            }
+        ],
+        "containerStatuses": [
+            {
+                "allocatedResources": {
+                    "cpu": "100m",
+                    "memory": "512Mi"
+                },
+                "containerID": "containerd://4e7aea9d1d989b408c9fc764e05b9a204bd801d00e13942fbffefd2ce73411d3",
+                "image": "docker.io/falcosecurity/falco:0.45.2",
+                "imageID": "docker.io/falcosecurity/falco@sha256:1562a643953f938e02f47319b5214d93a235f11f646d60e9b8a516fd5a64698e",
+                "lastState": {},
+                "name": "falco",
+                "ready": true,
+                "resources": {
+                    "limits": {
+                        "cpu": "1",
+                        "memory": "1Gi"
+                    },
+                    "requests": {
+                        "cpu": "100m",
+                        "memory": "512Mi"
+                    }
+                },
+                "restartCount": 0,
+                "started": true,
+                "state": {
+                    "running": {
+                        "startedAt": "2026-11-11T14:39:29Z"
+                    }
+                },
+                "user": {
+                    "linux": {
+                        "gid": 0,
+                        "supplementalGroups": [
+                            0,
+                            1,
+                            2,
+                            3,
+                            4,
+                            6,
+                            10,
+                            11,
+                            20,
+                            26,
+                            27
+                        ],
+                        "uid": 0
+                    }
+                },
+                "volumeMounts": [
+                    {
+                        "mountPath": "/host/run/containerd",
+                        "name": "container-engine-socket-0"
+                    },
+                    {
+                        "mountPath": "/etc/falco",
+                        "name": "rulesfiles-install-dir"
+                    },
+                    {
+                        "mountPath": "/usr/share/falco/plugins",
+                        "name": "plugins-install-dir"
+                    },
+                    {
+                        "mountPath": "/etc/falco/config.d",
+                        "name": "specialized-falco-configs"
+                    },
+                    {
+                        "mountPath": "/root/.falco",
+                        "name": "root-falco-fs"
+                    },
+                    {
+                        "mountPath": "/host/proc",
+                        "name": "proc-fs",
+                        "readOnly": true,
+                        "recursiveReadOnly": "Disabled"
+                    },
+                    {
+                        "mountPath": "/host/etc",
+                        "name": "etc-fs",
+                        "readOnly": true,
+                        "recursiveReadOnly": "Disabled"
+                    },
+                    {
+                        "mountPath": "/sys/kernel",
+                        "name": "sys-fs",
+                        "readOnly": true,
+                        "recursiveReadOnly": "Disabled"
+                    },
+                    {
+                        "mountPath": "/etc/falco/falco.yaml",
+                        "name": "falco-yaml"
+                    },
+                    {
+                        "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                        "name": "kube-api-access-xb7pq",
+                        "readOnly": true,
+                        "recursiveReadOnly": "Disabled"
+                    }
+                ]
+            }
+        ],
+        "hostIP": "192.168.49.2",
+        "hostIPs": [
+            {
+                "ip": "192.168.49.2"
+            }
+        ],
+        "initContainerStatuses": [
+            {
+                "containerID": "containerd://c843075aede328484bb23f41ad45b3803bd97974bfe21f9d37c4ac7157494539",
+                "image": "docker.io/falcosecurity/falcoctl:0.14.3",
+                "imageID": "docker.io/falcosecurity/falcoctl@sha256:2230fb4802aafe09455b58d38f8f1faedd8f09f042e9a18fffd397e63488c023",
+                "lastState": {},
+                "name": "falcoctl-artifact-install",
+                "ready": true,
+                "resources": {},
+                "restartCount": 0,
+                "started": false,
+                "state": {
+                    "terminated": {
+                        "containerID": "containerd://c843075aede328484bb23f41ad45b3803bd97974bfe21f9d37c4ac7157494539",
+                        "exitCode": 0,
+                        "finishedAt": "2026-11-11T14:39:19Z",
+                        "reason": "Completed",
+                        "startedAt": "2026-11-11T14:39:04Z"
+                    }
+                },
+                "user": {
+                    "linux": {
+                        "gid": 65532,
+                        "supplementalGroups": [
+                            65532
+                        ],
+                        "uid": 65532
+                    }
+                },
+                "volumeMounts": [
+                    {
+                        "mountPath": "/plugins",
+                        "name": "plugins-install-dir"
+                    },
+                    {
+                        "mountPath": "/rulesfiles",
+                        "name": "rulesfiles-install-dir"
+                    },
+                    {
+                        "mountPath": "/etc/falcoctl",
+                        "name": "falcoctl-config-volume"
+                    },
+                    {
+                        "mountPath": "/artifactstate",
+                        "name": "artifact-state-dir"
+                    },
+                    {
+                        "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                        "name": "kube-api-access-xb7pq",
+                        "readOnly": true,
+                        "recursiveReadOnly": "Disabled"
+                    }
+                ]
+            }
+        ],
+        "observedGeneration": 1,
+        "phase": "Running",
+        "podIP": "10.244.0.11",
+        "podIPs": [
+            {
+                "ip": "10.244.0.11"
+            }
+        ],
+        "qosClass": "Burstable",
+        "resources": {
+            "limits": {
+                "cpu": "1",
+                "memory": "1Gi"
+            },
+            "requests": {
+                "cpu": "79m",
+                "memory": "512Mi"
+            }
+        },
+        "startTime": "2026-11-11T14:38:53Z"
+    }
+}

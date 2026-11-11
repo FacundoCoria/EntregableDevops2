@@ -1,0 +1,11 @@
+{
+  "scan_exit_code": 1,
+  "findings_by_severity": {
+    "critical": 0,
+    "high": 1,
+    "low": 1,
+    "medium": 8
+  },
+  "critical_ids": [],
+  "gate": "PASS"
+}

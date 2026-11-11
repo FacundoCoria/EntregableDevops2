@@ -1,0 +1,84 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "pedidos.base" . }}-api
+data:
+  SERVER_PORT: {{ .Values.components.api.port | quote }}
+  API_TITLE: {{ .Values.apiTitle | quote }}
+  SPRING_PROFILES_ACTIVE: {{ .Values.environment | quote }}
+  SPRING_DATASOURCE_URL: "jdbc:h2:file:/data/pedidos"
+  SPRING_H2_CONSOLE_ENABLED: "false"
+  MANAGEMENT_ENDPOINT_HEALTH_PROBES_ENABLED: "true"
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "pedidos.base" . }}-prometheus
+data:
+  prometheus.yml: |
+    global:
+      scrape_interval: 5s
+    scrape_configs:
+      - job_name: pedidos-api
+        metrics_path: /actuator/prometheus
+        static_configs:
+          - targets: ["{{ include "pedidos.base" . }}-api:{{ .Values.components.api.port }}"]
+            labels:
+              namespace: {{ .Release.Namespace | quote }}
+              release: {{ .Release.Name | quote }}
+      - job_name: kubelet-resource
+        scheme: https
+        metrics_path: /api/v1/nodes/{{ .Values.observability.nodeName }}/proxy/metrics/resource
+        authorization:
+          credentials_file: /var/run/secrets/kubernetes.io/serviceaccount/token
+        tls_config:
+          ca_file: /var/run/secrets/kubernetes.io/serviceaccount/ca.crt
+        static_configs:
+          - targets: ["kubernetes.default.svc:443"]
+        metric_relabel_configs:
+          - source_labels: [__name__]
+            regex: 'pod_cpu_usage_seconds_total|pod_memory_working_set_bytes'
+            action: keep
+          - source_labels: [namespace, pod]
+            regex: '{{ .Release.Namespace }};{{ include "pedidos.base" . }}-.*'
+            action: keep
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "pedidos.base" . }}-grafana-provisioning
+data:
+  datasource.yaml: |
+    apiVersion: 1
+    datasources:
+      - name: Prometheus L4
+        uid: l4-prometheus
+        type: prometheus
+        access: proxy
+        url: http://{{ include "pedidos.base" . }}-prometheus:{{ .Values.components.prometheus.port }}
+        isDefault: true
+        editable: false
+        version: 1
+        jsonData:
+          httpMethod: POST
+          timeInterval: 5s
+  dashboards.yaml: |
+    apiVersion: 1
+    providers:
+      - name: laboratorio4
+        orgId: 1
+        folder: Laboratorio 4
+        type: file
+        disableDeletion: false
+        allowUiUpdates: false
+        updateIntervalSeconds: 10
+        options:
+          path: /etc/grafana/l4-dashboards
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "pedidos.base" . }}-grafana-dashboard
+data:
+  dashboard.json: |
+{{ .Files.Get "files/dashboard.json" | replace "\"laboratorio4\"" (.Release.Namespace | toJson) | replace "\"l4\"" (.Release.Name | toJson) | nindent 4 }}

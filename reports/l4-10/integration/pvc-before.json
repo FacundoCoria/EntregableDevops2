@@ -1,0 +1,183 @@
+{
+    "apiVersion": "v1",
+    "items": [
+        {
+            "apiVersion": "v1",
+            "kind": "PersistentVolumeClaim",
+            "metadata": {
+                "annotations": {
+                    "helm.sh/resource-policy": "keep",
+                    "meta.helm.sh/release-name": "l4-test",
+                    "meta.helm.sh/release-namespace": "laboratorio4-l4test",
+                    "pv.kubernetes.io/bind-completed": "yes",
+                    "pv.kubernetes.io/bound-by-controller": "yes",
+                    "volume.beta.kubernetes.io/storage-provisioner": "k8s.io/minikube-hostpath",
+                    "volume.kubernetes.io/storage-provisioner": "k8s.io/minikube-hostpath"
+                },
+                "creationTimestamp": "2026-11-11T17:55:04Z",
+                "finalizers": [
+                    "kubernetes.io/pvc-protection"
+                ],
+                "labels": {
+                    "app.kubernetes.io/managed-by": "Helm"
+                },
+                "name": "l4-test-pedidos-api",
+                "namespace": "laboratorio4-l4test",
+                "resourceVersion": "50844",
+                "uid": "0d51a1ef-dd7c-4231-8c61-ec8d2f763e9e"
+            },
+            "spec": {
+                "accessModes": [
+                    "ReadWriteOnce"
+                ],
+                "resources": {
+                    "requests": {
+                        "storage": "1Gi"
+                    }
+                },
+                "storageClassName": "standard",
+                "volumeMode": "Filesystem",
+                "volumeName": "pvc-0d51a1ef-dd7c-4231-8c61-ec8d2f763e9e"
+            },
+            "status": {
+                "accessModes": [
+                    "ReadWriteOnce"
+                ],
+                "capacity": {
+                    "storage": "1Gi"
+                },
+                "conditions": [
+                    {
+                        "lastProbeTime": null,
+                        "lastTransitionTime": "2026-11-11T17:55:04Z",
+                        "message": "A pod is currently referencing this PVC",
+                        "reason": "PodUsingPVC",
+                        "status": "False",
+                        "type": "Unused"
+                    }
+                ],
+                "phase": "Bound"
+            }
+        },
+        {
+            "apiVersion": "v1",
+            "kind": "PersistentVolumeClaim",
+            "metadata": {
+                "annotations": {
+                    "helm.sh/resource-policy": "keep",
+                    "meta.helm.sh/release-name": "l4-test",
+                    "meta.helm.sh/release-namespace": "laboratorio4-l4test",
+                    "pv.kubernetes.io/bind-completed": "yes",
+                    "pv.kubernetes.io/bound-by-controller": "yes",
+                    "volume.beta.kubernetes.io/storage-provisioner": "k8s.io/minikube-hostpath",
+                    "volume.kubernetes.io/storage-provisioner": "k8s.io/minikube-hostpath"
+                },
+                "creationTimestamp": "2026-11-11T17:55:04Z",
+                "finalizers": [
+                    "kubernetes.io/pvc-protection"
+                ],
+                "labels": {
+                    "app.kubernetes.io/managed-by": "Helm"
+                },
+                "name": "l4-test-pedidos-grafana",
+                "namespace": "laboratorio4-l4test",
+                "resourceVersion": "50851",
+                "uid": "787103cf-9f8b-4496-a9ed-906a0268a8dc"
+            },
+            "spec": {
+                "accessModes": [
+                    "ReadWriteOnce"
+                ],
+                "resources": {
+                    "requests": {
+                        "storage": "1Gi"
+                    }
+                },
+                "storageClassName": "standard",
+                "volumeMode": "Filesystem",
+                "volumeName": "pvc-787103cf-9f8b-4496-a9ed-906a0268a8dc"
+            },
+            "status": {
+                "accessModes": [
+                    "ReadWriteOnce"
+                ],
+                "capacity": {
+                    "storage": "1Gi"
+                },
+                "conditions": [
+                    {
+                        "lastProbeTime": null,
+                        "lastTransitionTime": "2026-11-11T17:55:04Z",
+                        "message": "A pod is currently referencing this PVC",
+                        "reason": "PodUsingPVC",
+                        "status": "False",
+                        "type": "Unused"
+                    }
+                ],
+                "phase": "Bound"
+            }
+        },
+        {
+            "apiVersion": "v1",
+            "kind": "PersistentVolumeClaim",
+            "metadata": {
+                "annotations": {
+                    "helm.sh/resource-policy": "keep",
+                    "meta.helm.sh/release-name": "l4-test",
+                    "meta.helm.sh/release-namespace": "laboratorio4-l4test",
+                    "pv.kubernetes.io/bind-completed": "yes",
+                    "pv.kubernetes.io/bound-by-controller": "yes",
+                    "volume.beta.kubernetes.io/storage-provisioner": "k8s.io/minikube-hostpath",
+                    "volume.kubernetes.io/storage-provisioner": "k8s.io/minikube-hostpath"
+                },
+                "creationTimestamp": "2026-11-11T17:55:04Z",
+                "finalizers": [
+                    "kubernetes.io/pvc-protection"
+                ],
+                "labels": {
+                    "app.kubernetes.io/managed-by": "Helm"
+                },
+                "name": "l4-test-pedidos-prometheus",
+                "namespace": "laboratorio4-l4test",
+                "resourceVersion": "50835",
+                "uid": "b71d4c79-87a3-4665-862e-f3fdd668e27d"
+            },
+            "spec": {
+                "accessModes": [
+                    "ReadWriteOnce"
+                ],
+                "resources": {
+                    "requests": {
+                        "storage": "1Gi"
+                    }
+                },
+                "storageClassName": "standard",
+                "volumeMode": "Filesystem",
+                "volumeName": "pvc-b71d4c79-87a3-4665-862e-f3fdd668e27d"
+            },
+            "status": {
+                "accessModes": [
+                    "ReadWriteOnce"
+                ],
+                "capacity": {
+                    "storage": "1Gi"
+                },
+                "conditions": [
+                    {
+                        "lastProbeTime": null,
+                        "lastTransitionTime": "2026-11-11T17:55:04Z",
+                        "message": "A pod is currently referencing this PVC",
+                        "reason": "PodUsingPVC",
+                        "status": "False",
+                        "type": "Unused"
+                    }
+                ],
+                "phase": "Bound"
+            }
+        }
+    ],
+    "kind": "List",
+    "metadata": {
+        "resourceVersion": ""
+    }
+}

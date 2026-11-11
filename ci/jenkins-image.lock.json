@@ -1,0 +1,8 @@
+{
+  "container": "jenkins",
+  "imageId": "sha256:99ea0037369f4639f495e5646bfef6b1820aa1b714a95b0e23e2edea1da76702",
+  "observedReference": "ucu-devops/jenkins:lts",
+  "observedCoreVersion": "2.568.3",
+  "observedUser": "root",
+  "scope": "Existing local container only; does not reproduce installed tools, plugins, credentials or volumes."
+}

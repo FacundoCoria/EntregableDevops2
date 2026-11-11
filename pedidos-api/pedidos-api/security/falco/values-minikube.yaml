@@ -1,0 +1,34 @@
+# Falco 0.45.2 / chart 9.2.2, Minikube containerd sobre WSL2.
+driver:
+  kind: modern_ebpf
+  modernEbpf:
+    leastPrivileged: true
+tty: false
+falco:
+  json_output: true
+  time_format_iso_8601: true
+  buffered_outputs: false
+  log_syslog: false
+  syslog_output:
+    enabled: false
+falcoctl:
+  artifact:
+    follow:
+      enabled: false
+collectors:
+  containerEngine:
+    engines:
+      docker:
+        enabled: false
+      podman:
+        enabled: false
+      containerd:
+        sockets: ["/run/containerd/containerd.sock"]
+      cri:
+        sockets: ["/run/containerd/containerd.sock"]
+      lxc:
+        enabled: false
+      libvirt_lxc:
+        enabled: false
+      bpm:
+        enabled: false

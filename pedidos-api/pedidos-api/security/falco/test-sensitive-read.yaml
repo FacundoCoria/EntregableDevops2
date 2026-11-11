@@ -1,0 +1,52 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: l4-08-falco-fixture
+  namespace: laboratorio4
+  labels:
+    app.kubernetes.io/part-of: l4-08-falco-test
+data:
+  # Fixture publica; no contiene cuentas ni hashes reales.
+  shadow: "l4_falco_fixture:!:20000:0:99999:7:::\n"
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: l4-08-falco-read
+  namespace: laboratorio4
+  labels:
+    app.kubernetes.io/part-of: l4-08-falco-test
+spec:
+  restartPolicy: Never
+  automountServiceAccountToken: false
+  securityContext:
+    runAsNonRoot: true
+    runAsUser: 10001
+    runAsGroup: 10001
+  containers:
+    - name: reader
+      image: busybox:1.36.1
+      command: ["sleep", "3600"]
+      resources:
+        requests:
+          cpu: 10m
+          memory: 16Mi
+        limits:
+          cpu: 100m
+          memory: 64Mi
+      securityContext:
+        privileged: false
+        allowPrivilegeEscalation: false
+        readOnlyRootFilesystem: true
+        capabilities:
+          drop: ["ALL"]
+      volumeMounts:
+        - name: fixture
+          mountPath: /etc/shadow
+          subPath: shadow
+          readOnly: true
+  volumes:
+    - name: fixture
+      configMap:
+        name: l4-08-falco-fixture
+        defaultMode: 0444

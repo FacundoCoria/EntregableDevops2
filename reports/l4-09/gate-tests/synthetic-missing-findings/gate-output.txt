@@ -1,0 +1,1 @@
+BLOCKED_SCAN_ERROR: No hay lista vulnerabilities: analisis no acreditado

@@ -1,0 +1,225 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  annotations:
+    deprecated.daemonset.template.generation: "1"
+    meta.helm.sh/release-name: falco
+    meta.helm.sh/release-namespace: falco
+  creationTimestamp: "2026-11-11T14:38:53Z"
+  generation: 1
+  labels:
+    app.kubernetes.io/instance: falco
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: falco
+    app.kubernetes.io/version: 0.45.2
+    helm.sh/chart: falco-9.2.2
+  name: falco
+  namespace: falco
+  resourceVersion: "26748"
+  uid: ab37c6b3-2f21-43cb-8353-489ab6560ffe
+spec:
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app.kubernetes.io/instance: falco
+      app.kubernetes.io/name: falco
+  template:
+    metadata:
+      annotations:
+        checksum/certs: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+        checksum/config: a0e7d354bf59709129558c6ad4017936f0e5306f91e747304a2e0c5d1ddb2b1e
+        checksum/rules: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+        container.apparmor.security.beta.kubernetes.io/falco: unconfined
+      labels:
+        app.kubernetes.io/instance: falco
+        app.kubernetes.io/name: falco
+      name: falco
+    spec:
+      containers:
+      - args:
+        - /usr/bin/falco
+        env:
+        - name: HOST_ROOT
+          value: /host
+        - name: FALCO_HOSTNAME
+          valueFrom:
+            fieldRef:
+              apiVersion: v1
+              fieldPath: spec.nodeName
+        - name: FALCO_K8S_NODE_NAME
+          valueFrom:
+            fieldRef:
+              apiVersion: v1
+              fieldPath: spec.nodeName
+        image: docker.io/falcosecurity/falco:0.45.2
+        imagePullPolicy: IfNotPresent
+        livenessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /healthz
+            port: 8765
+            scheme: HTTP
+          periodSeconds: 15
+          successThreshold: 1
+          timeoutSeconds: 5
+        name: falco
+        ports:
+        - containerPort: 8765
+          name: web
+          protocol: TCP
+        readinessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /healthz
+            port: 8765
+            scheme: HTTP
+          periodSeconds: 15
+          successThreshold: 1
+          timeoutSeconds: 5
+        resources:
+          limits:
+            cpu: "1"
+            memory: 1Gi
+          requests:
+            cpu: 100m
+            memory: 512Mi
+        securityContext:
+          capabilities:
+            add:
+            - BPF
+            - SYS_RESOURCE
+            - PERFMON
+            - SYS_PTRACE
+        startupProbe:
+          failureThreshold: 20
+          httpGet:
+            path: /healthz
+            port: 8765
+            scheme: HTTP
+          initialDelaySeconds: 3
+          periodSeconds: 5
+          successThreshold: 1
+          timeoutSeconds: 5
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        volumeMounts:
+        - mountPath: /host/run/containerd
+          name: container-engine-socket-0
+        - mountPath: /etc/falco
+          name: rulesfiles-install-dir
+        - mountPath: /usr/share/falco/plugins
+          name: plugins-install-dir
+        - mountPath: /etc/falco/config.d
+          name: specialized-falco-configs
+        - mountPath: /root/.falco
+          name: root-falco-fs
+        - mountPath: /host/proc
+          name: proc-fs
+          readOnly: true
+        - mountPath: /host/etc
+          name: etc-fs
+          readOnly: true
+        - mountPath: /sys/kernel
+          name: sys-fs
+          readOnly: true
+        - mountPath: /etc/falco/falco.yaml
+          name: falco-yaml
+          subPath: falco.yaml
+      dnsPolicy: ClusterFirst
+      initContainers:
+      - args:
+        - artifact
+        - install
+        - --log-format=json
+        image: docker.io/falcosecurity/falcoctl:0.14.3
+        imagePullPolicy: IfNotPresent
+        name: falcoctl-artifact-install
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        volumeMounts:
+        - mountPath: /plugins
+          name: plugins-install-dir
+        - mountPath: /rulesfiles
+          name: rulesfiles-install-dir
+        - mountPath: /etc/falcoctl
+          name: falcoctl-config-volume
+        - mountPath: /artifactstate
+          name: artifact-state-dir
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      serviceAccount: falco
+      serviceAccountName: falco
+      terminationGracePeriodSeconds: 30
+      tolerations:
+      - effect: NoSchedule
+        key: node-role.kubernetes.io/master
+      - effect: NoSchedule
+        key: node-role.kubernetes.io/control-plane
+      volumes:
+      - hostPath:
+          path: /run/containerd
+          type: ""
+        name: container-engine-socket-0
+      - emptyDir: {}
+        name: specialized-falco-configs
+      - emptyDir: {}
+        name: plugins-install-dir
+      - emptyDir: {}
+        name: rulesfiles-install-dir
+      - emptyDir: {}
+        name: artifact-state-dir
+      - emptyDir: {}
+        name: root-falco-fs
+      - hostPath:
+          path: /boot
+          type: ""
+        name: boot-fs
+      - hostPath:
+          path: /lib/modules
+          type: ""
+        name: lib-modules
+      - hostPath:
+          path: /usr
+          type: ""
+        name: usr-fs
+      - hostPath:
+          path: /etc
+          type: ""
+        name: etc-fs
+      - hostPath:
+          path: /sys/kernel
+          type: ""
+        name: sys-fs
+      - hostPath:
+          path: /proc
+          type: ""
+        name: proc-fs
+      - configMap:
+          defaultMode: 420
+          items:
+          - key: falcoctl.yaml
+            path: falcoctl.yaml
+          name: falco-falcoctl
+        name: falcoctl-config-volume
+      - configMap:
+          defaultMode: 420
+          items:
+          - key: falco.yaml
+            path: falco.yaml
+          name: falco
+        name: falco-yaml
+  updateStrategy:
+    rollingUpdate:
+      maxSurge: 0
+      maxUnavailable: 1
+    type: RollingUpdate
+status:
+  currentNumberScheduled: 1
+  desiredNumberScheduled: 1
+  numberAvailable: 1
+  numberMisscheduled: 0
+  numberReady: 1
+  observedGeneration: 1
+  updatedNumberScheduled: 1

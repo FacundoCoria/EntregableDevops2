@@ -4,6 +4,9 @@ metadata:
   name: pedidos-api
 spec:
   replicas: 1
+  # H2: one writer, including during updates.
+  strategy:
+    type: Recreate
   selector:
     matchLabels:
       app: pedidos-api
@@ -16,10 +19,20 @@ spec:
     spec:
       securityContext:
         fsGroup: 10001
+        fsGroupChangePolicy: OnRootMismatch
+        seccompProfile:
+          type: RuntimeDefault
       containers:
         - name: pedidos
-          image: pedidos-api:v1
-          imagePullPolicy: Never
+          image: pedidos-api:l4-01
+          imagePullPolicy: IfNotPresent
+          resources:
+            requests:
+              cpu: 250m
+              memory: 384Mi
+            limits:
+              cpu: "1"
+              memory: 768Mi
           securityContext:
             runAsNonRoot: true
             runAsUser: 10001
@@ -30,6 +43,25 @@ spec:
                 - ALL
           ports:
             - containerPort: 8080
+          startupProbe:
+            httpGet:
+              path: /actuator/health
+              port: 8080
+            periodSeconds: 5
+            failureThreshold: 36
+          readinessProbe:
+            httpGet:
+              path: /actuator/health
+              port: 8080
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /actuator/health/liveness
+              port: 8080
+            periodSeconds: 15
+          envFrom:
+            - configMapRef:
+                name: pedidos-config
           env:
             - name: API_TITLE
               valueFrom:

@@ -1,0 +1,20 @@
+Evidencia: /c/Users/Bruno/PARA System/1- Projects/Entregable 3 - Devops/EntregableDevops2/reports/l4-11b/b04/restart-app
+namespace/laboratorio4 unchanged
+Release "l4" has been upgraded. Happy Helming!
+NAME: l4
+LAST DEPLOYED: Wed Nov 11 15:55:37 2026
+NAMESPACE: laboratorio4
+STATUS: deployed
+REVISION: 2
+DESCRIPTION: Upgrade complete
+TEST SUITE: None
+NOTES:
+Entorno: dev. Los servicios son privados del cluster.
+Acceso local (mantener cada comando activo en su terminal):
+kubectl --context minikube -n laboratorio4 port-forward svc/l4-pedidos-api 18080:8080 --address 127.0.0.1
+API: http://127.0.0.1:18080/actuator/health
+PVC retenidos al desinstalar: revisar datos antes de eliminarlos manualmente.
+deployment "l4-pedidos-api" successfully rolled out
+deployment "l4-pedidos-prometheus" successfully rolled out
+deployment "l4-pedidos-grafana" successfully rolled out
+PASS

@@ -1,0 +1,28 @@
+{
+  "dateUruguay": "2026-11-11",
+  "cliVersion": "1.1308.4",
+  "mavenVersion": "3.9.16",
+  "javaVersion": "21.0.12.1",
+  "exitCode": 1,
+  "dependencyCount": 130,
+  "uniqueSnykIds": 44,
+  "vulnerablePaths": 44,
+  "severityCounts": {
+    "medium": 24,
+    "critical": 7,
+    "high": 11,
+    "low": 2
+  },
+  "includesTestDependencies": true,
+  "ignoredFindings": 0,
+  "remediationApplied": false,
+  "criticalIds": [
+    "SNYK-JAVA-ORGAPACHETOMCATEMBED-20302842",
+    "SNYK-JAVA-ORGAPACHETOMCATEMBED-20302843",
+    "SNYK-JAVA-ORGAPACHETOMCATEMBED-21707475",
+    "SNYK-JAVA-ORGAPACHETOMCATEMBED-21707477",
+    "SNYK-JAVA-ORGAPACHETOMCATEMBED-21716509",
+    "SNYK-JAVA-ORGAPACHETOMCATEMBED-20552494",
+    "SNYK-JAVA-TOOLSJACKSONCORE-21761838"
+  ]
+}

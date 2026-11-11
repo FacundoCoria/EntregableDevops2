@@ -1,0 +1,71 @@
+{
+  "annotations": {
+    "artifacthub.io/changes": "- kind: fixed\n  description: Grant the background controller every permission the chart aggregates into the admin and view roles, so generate rules can create RoleBindings to admin again.\n- kind: fixed\n  description: Bump bundled reports-server dependency to v0.1.7 to fix APIServices being de-registered on pod termination when another replica is still ready.\n- kind: fixed\n  description: Ensure spec.template.metadata isn't null\n- kind: removed\n  description: Remove the `delete` permission for policyexceptions in the admission controller\n- kind: changed\n  description: Enable the flag `--generateValidatingAdmissionPolicy` by default in the admission controller.\n- kind: changed\n  description: Enable the flag `--validatingAdmissionPolicyReports` by default in the reports controller.\n- kind: added\n  description: Add support for configuring container lifecycle hooks (e.g. a preStop sleep) on the admission, background, cleanup and reports controllers.\n",
+    "artifacthub.io/license": "Apache-2.0",
+    "artifacthub.io/links": "- name: Documentation\n  url: https://kyverno.io/docs\n",
+    "artifacthub.io/operator": "false",
+    "artifacthub.io/prerelease": "true"
+  },
+  "apiVersion": "v2",
+  "appVersion": "v1.20.0-rc.4",
+  "created": "2026-11-10T17:47:35.470049488Z",
+  "dependencies": [
+    {
+      "condition": "grafana.enabled",
+      "name": "grafana",
+      "repository": "",
+      "version": "3.10.0-rc.4"
+    },
+    {
+      "condition": "crds.install",
+      "name": "crds",
+      "repository": "",
+      "version": "3.10.0-rc.4"
+    },
+    {
+      "condition": "crds.install",
+      "name": "kyverno-api",
+      "repository": "https://kyverno.github.io/api",
+      "version": "0.0.1-alpha.5"
+    },
+    {
+      "condition": "openreports.installCrds",
+      "name": "openreports",
+      "repository": "https://openreports.github.io/reports-api",
+      "version": "0.1.0"
+    },
+    {
+      "condition": "reportsServer.enabled",
+      "name": "reports-server",
+      "repository": "https://kyverno.github.io/reports-server/",
+      "version": "0.1.7"
+    }
+  ],
+  "description": "Kubernetes Native Policy Management",
+  "digest": "20c9a1a0d0a31b4f57961abe523ab10a963f05c7b7d89ddc5031391f8c89d310",
+  "home": "https://kyverno.io/",
+  "icon": "https://github.com/kyverno/kyverno/raw/main/img/logo.png",
+  "keywords": [
+    "kubernetes",
+    "policy agent",
+    "policy",
+    "validating webhook",
+    "admission controller",
+    "mutation",
+    "mutate",
+    "validate",
+    "generate",
+    "supply chain",
+    "security"
+  ],
+  "kubeVersion": ">=1.25.0-0",
+  "name": "kyverno",
+  "sources": [
+    "https://github.com/kyverno/kyverno"
+  ],
+  "type": "application",
+  "urls": [
+    "https://kyverno.github.io/kyverno/kyverno-3.10.0-rc.4.tgz"
+  ],
+  "version": "3.10.0-rc.4"
+}

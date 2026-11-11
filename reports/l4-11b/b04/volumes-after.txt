@@ -1,0 +1,9 @@
+00-setup_jenkins_home
+ejerciciolaboratorio-main_labdata
+entregable3-trivy-cache
+lab-inventario_labdata
+minikube
+self-hosted-ai-starter-kit_n8n_storage
+self-hosted-ai-starter-kit_ollama_storage
+self-hosted-ai-starter-kit_postgres_storage
+self-hosted-ai-starter-kit_qdrant_storage

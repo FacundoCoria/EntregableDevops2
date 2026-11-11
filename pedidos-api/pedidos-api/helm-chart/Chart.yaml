@@ -1,0 +1,7 @@
+apiVersion: v2
+name: pedidos
+description: API de pedidos con H2, Prometheus y Grafana
+type: application
+version: 0.3.0
+appVersion: "l4-01"
+kubeVersion: ">=1.35.0-0"

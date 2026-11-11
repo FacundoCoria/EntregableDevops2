@@ -1,0 +1,1009 @@
+{
+    "apiVersion": "v1",
+    "items": [
+        {
+            "apiVersion": "policies.kyverno.io/v1",
+            "kind": "ValidatingPolicy",
+            "metadata": {
+                "annotations": {
+                    "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"policies.kyverno.io/v1\",\"kind\":\"ValidatingPolicy\",\"metadata\":{\"annotations\":{},\"name\":\"l4-deny-latest-images\"},\"spec\":{\"autogen\":{\"validatingAdmissionPolicy\":{\"enabled\":false}},\"evaluation\":{\"admission\":{\"enabled\":true},\"background\":{\"enabled\":true}},\"failurePolicy\":\"Fail\",\"matchConstraints\":{\"namespaceSelector\":{\"matchLabels\":{\"kubernetes.io/metadata.name\":\"laboratorio4\"}},\"resourceRules\":[{\"apiGroups\":[\"\"],\"apiVersions\":[\"v1\"],\"operations\":[\"CREATE\",\"UPDATE\"],\"resources\":[\"pods\"]}]},\"validationActions\":[\"Deny\"],\"validations\":[{\"expression\":\"(object.spec.containers + (has(object.spec.initContainers) ? object.spec.initContainers : [])).all(c, c.image.contains('@sha256:') || (c.image.split('/')[c.image.split('/').size()-1].contains(':') \\u0026\\u0026 !c.image.endsWith(':latest')))\",\"message\":\"Imagenes con etiqueta explicita distinta de latest o digest SHA256.\"}]}}\n"
+                },
+                "creationTimestamp": "2026-11-11T18:49:11Z",
+                "generation": 1,
+                "name": "l4-deny-latest-images",
+                "resourceVersion": "813",
+                "uid": "0a51e0c9-9e80-428b-ba7a-21046d68babd"
+            },
+            "spec": {
+                "autogen": {
+                    "validatingAdmissionPolicy": {
+                        "enabled": false
+                    }
+                },
+                "evaluation": {
+                    "admission": {
+                        "enabled": true
+                    },
+                    "background": {
+                        "enabled": true
+                    }
+                },
+                "failurePolicy": "Fail",
+                "matchConstraints": {
+                    "namespaceSelector": {
+                        "matchLabels": {
+                            "kubernetes.io/metadata.name": "laboratorio4"
+                        }
+                    },
+                    "resourceRules": [
+                        {
+                            "apiGroups": [
+                                ""
+                            ],
+                            "apiVersions": [
+                                "v1"
+                            ],
+                            "operations": [
+                                "CREATE",
+                                "UPDATE"
+                            ],
+                            "resources": [
+                                "pods"
+                            ]
+                        }
+                    ]
+                },
+                "validationActions": [
+                    "Deny"
+                ],
+                "validations": [
+                    {
+                        "expression": "(object.spec.containers + (has(object.spec.initContainers) ? object.spec.initContainers : [])).all(c, c.image.contains('@sha256:') || (c.image.split('/')[c.image.split('/').size()-1].contains(':') \u0026\u0026 !c.image.endsWith(':latest')))",
+                        "message": "Imagenes con etiqueta explicita distinta de latest o digest SHA256."
+                    }
+                ]
+            },
+            "status": {
+                "autogen": {
+                    "configs": {
+                        "cronjobs": {
+                            "spec": {
+                                "autogen": {
+                                    "validatingAdmissionPolicy": {
+                                        "enabled": false
+                                    }
+                                },
+                                "evaluation": {
+                                    "admission": {
+                                        "enabled": true
+                                    },
+                                    "background": {
+                                        "enabled": true
+                                    }
+                                },
+                                "failurePolicy": "Fail",
+                                "matchConstraints": {
+                                    "namespaceSelector": {
+                                        "matchLabels": {
+                                            "kubernetes.io/metadata.name": "laboratorio4"
+                                        }
+                                    },
+                                    "resourceRules": [
+                                        {
+                                            "apiGroups": [
+                                                "batch"
+                                            ],
+                                            "apiVersions": [
+                                                "v1"
+                                            ],
+                                            "operations": [
+                                                "CREATE",
+                                                "UPDATE"
+                                            ],
+                                            "resources": [
+                                                "cronjobs"
+                                            ]
+                                        }
+                                    ]
+                                },
+                                "validationActions": [
+                                    "Deny"
+                                ],
+                                "validations": [
+                                    {
+                                        "expression": "(object.spec.jobTemplate.spec.template.spec.containers + (has(object.spec.jobTemplate.spec.template.spec.initContainers) ? object.spec.jobTemplate.spec.template.spec.initContainers : [])).all(c, c.image.contains('@sha256:') || (c.image.split('/')[c.image.split('/').size()-1].contains(':') \u0026\u0026 !c.image.endsWith(':latest')))",
+                                        "message": "Imagenes con etiqueta explicita distinta de latest o digest SHA256."
+                                    }
+                                ]
+                            },
+                            "targets": [
+                                {
+                                    "group": "batch",
+                                    "kind": "CronJob",
+                                    "resource": "cronjobs",
+                                    "version": "v1"
+                                }
+                            ]
+                        },
+                        "defaults": {
+                            "spec": {
+                                "autogen": {
+                                    "validatingAdmissionPolicy": {
+                                        "enabled": false
+                                    }
+                                },
+                                "evaluation": {
+                                    "admission": {
+                                        "enabled": true
+                                    },
+                                    "background": {
+                                        "enabled": true
+                                    }
+                                },
+                                "failurePolicy": "Fail",
+                                "matchConstraints": {
+                                    "namespaceSelector": {
+                                        "matchLabels": {
+                                            "kubernetes.io/metadata.name": "laboratorio4"
+                                        }
+                                    },
+                                    "resourceRules": [
+                                        {
+                                            "apiGroups": [
+                                                "apps"
+                                            ],
+                                            "apiVersions": [
+                                                "v1"
+                                            ],
+                                            "operations": [
+                                                "CREATE",
+                                                "UPDATE"
+                                            ],
+                                            "resources": [
+                                                "daemonsets",
+                                                "deployments",
+                                                "replicasets",
+                                                "statefulsets"
+                                            ]
+                                        },
+                                        {
+                                            "apiGroups": [
+                                                "batch"
+                                            ],
+                                            "apiVersions": [
+                                                "v1"
+                                            ],
+                                            "operations": [
+                                                "CREATE",
+                                                "UPDATE"
+                                            ],
+                                            "resources": [
+                                                "jobs"
+                                            ]
+                                        }
+                                    ]
+                                },
+                                "validationActions": [
+                                    "Deny"
+                                ],
+                                "validations": [
+                                    {
+                                        "expression": "(object.spec.template.spec.containers + (has(object.spec.template.spec.initContainers) ? object.spec.template.spec.initContainers : [])).all(c, c.image.contains('@sha256:') || (c.image.split('/')[c.image.split('/').size()-1].contains(':') \u0026\u0026 !c.image.endsWith(':latest')))",
+                                        "message": "Imagenes con etiqueta explicita distinta de latest o digest SHA256."
+                                    }
+                                ]
+                            },
+                            "targets": [
+                                {
+                                    "group": "apps",
+                                    "kind": "DaemonSet",
+                                    "resource": "daemonsets",
+                                    "version": "v1"
+                                },
+                                {
+                                    "group": "apps",
+                                    "kind": "Deployment",
+                                    "resource": "deployments",
+                                    "version": "v1"
+                                },
+                                {
+                                    "group": "apps",
+                                    "kind": "ReplicaSet",
+                                    "resource": "replicasets",
+                                    "version": "v1"
+                                },
+                                {
+                                    "group": "apps",
+                                    "kind": "StatefulSet",
+                                    "resource": "statefulsets",
+                                    "version": "v1"
+                                },
+                                {
+                                    "group": "batch",
+                                    "kind": "Job",
+                                    "resource": "jobs",
+                                    "version": "v1"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "conditionStatus": {
+                    "conditions": [
+                        {
+                            "lastTransitionTime": "2026-11-11T18:49:13Z",
+                            "message": "Webhook configured.",
+                            "reason": "Succeeded",
+                            "status": "True",
+                            "type": "WebhookConfigured"
+                        },
+                        {
+                            "lastTransitionTime": "2026-11-11T18:49:13Z",
+                            "message": "Policy is ready for reporting.",
+                            "reason": "Succeeded",
+                            "status": "True",
+                            "type": "RBACPermissionsGranted"
+                        }
+                    ],
+                    "message": "skip generating ValidatingAdmissionPolicy: not enabled.",
+                    "ready": true
+                },
+                "generated": false
+            }
+        },
+        {
+            "apiVersion": "policies.kyverno.io/v1",
+            "kind": "ValidatingPolicy",
+            "metadata": {
+                "annotations": {
+                    "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"policies.kyverno.io/v1\",\"kind\":\"ValidatingPolicy\",\"metadata\":{\"annotations\":{},\"name\":\"l4-disallow-privileged-containers\"},\"spec\":{\"autogen\":{\"validatingAdmissionPolicy\":{\"enabled\":false}},\"evaluation\":{\"admission\":{\"enabled\":true},\"background\":{\"enabled\":true}},\"failurePolicy\":\"Fail\",\"matchConstraints\":{\"namespaceSelector\":{\"matchLabels\":{\"kubernetes.io/metadata.name\":\"laboratorio4\"}},\"resourceRules\":[{\"apiGroups\":[\"\"],\"apiVersions\":[\"v1\"],\"operations\":[\"CREATE\",\"UPDATE\"],\"resources\":[\"pods\"]}]},\"validationActions\":[\"Deny\"],\"validations\":[{\"expression\":\"(object.spec.containers + (has(object.spec.initContainers) ? object.spec.initContainers : [])).all(c, !has(c.securityContext) || !has(c.securityContext.privileged) || !c.securityContext.privileged)\",\"message\":\"No se permiten contenedores privilegiados.\"}]}}\n"
+                },
+                "creationTimestamp": "2026-11-11T18:49:11Z",
+                "generation": 1,
+                "name": "l4-disallow-privileged-containers",
+                "resourceVersion": "817",
+                "uid": "eff0e701-e264-4bca-962e-85ae808f56bb"
+            },
+            "spec": {
+                "autogen": {
+                    "validatingAdmissionPolicy": {
+                        "enabled": false
+                    }
+                },
+                "evaluation": {
+                    "admission": {
+                        "enabled": true
+                    },
+                    "background": {
+                        "enabled": true
+                    }
+                },
+                "failurePolicy": "Fail",
+                "matchConstraints": {
+                    "namespaceSelector": {
+                        "matchLabels": {
+                            "kubernetes.io/metadata.name": "laboratorio4"
+                        }
+                    },
+                    "resourceRules": [
+                        {
+                            "apiGroups": [
+                                ""
+                            ],
+                            "apiVersions": [
+                                "v1"
+                            ],
+                            "operations": [
+                                "CREATE",
+                                "UPDATE"
+                            ],
+                            "resources": [
+                                "pods"
+                            ]
+                        }
+                    ]
+                },
+                "validationActions": [
+                    "Deny"
+                ],
+                "validations": [
+                    {
+                        "expression": "(object.spec.containers + (has(object.spec.initContainers) ? object.spec.initContainers : [])).all(c, !has(c.securityContext) || !has(c.securityContext.privileged) || !c.securityContext.privileged)",
+                        "message": "No se permiten contenedores privilegiados."
+                    }
+                ]
+            },
+            "status": {
+                "autogen": {
+                    "configs": {
+                        "cronjobs": {
+                            "spec": {
+                                "autogen": {
+                                    "validatingAdmissionPolicy": {
+                                        "enabled": false
+                                    }
+                                },
+                                "evaluation": {
+                                    "admission": {
+                                        "enabled": true
+                                    },
+                                    "background": {
+                                        "enabled": true
+                                    }
+                                },
+                                "failurePolicy": "Fail",
+                                "matchConstraints": {
+                                    "namespaceSelector": {
+                                        "matchLabels": {
+                                            "kubernetes.io/metadata.name": "laboratorio4"
+                                        }
+                                    },
+                                    "resourceRules": [
+                                        {
+                                            "apiGroups": [
+                                                "batch"
+                                            ],
+                                            "apiVersions": [
+                                                "v1"
+                                            ],
+                                            "operations": [
+                                                "CREATE",
+                                                "UPDATE"
+                                            ],
+                                            "resources": [
+                                                "cronjobs"
+                                            ]
+                                        }
+                                    ]
+                                },
+                                "validationActions": [
+                                    "Deny"
+                                ],
+                                "validations": [
+                                    {
+                                        "expression": "(object.spec.jobTemplate.spec.template.spec.containers + (has(object.spec.jobTemplate.spec.template.spec.initContainers) ? object.spec.jobTemplate.spec.template.spec.initContainers : [])).all(c, !has(c.securityContext) || !has(c.securityContext.privileged) || !c.securityContext.privileged)",
+                                        "message": "No se permiten contenedores privilegiados."
+                                    }
+                                ]
+                            },
+                            "targets": [
+                                {
+                                    "group": "batch",
+                                    "kind": "CronJob",
+                                    "resource": "cronjobs",
+                                    "version": "v1"
+                                }
+                            ]
+                        },
+                        "defaults": {
+                            "spec": {
+                                "autogen": {
+                                    "validatingAdmissionPolicy": {
+                                        "enabled": false
+                                    }
+                                },
+                                "evaluation": {
+                                    "admission": {
+                                        "enabled": true
+                                    },
+                                    "background": {
+                                        "enabled": true
+                                    }
+                                },
+                                "failurePolicy": "Fail",
+                                "matchConstraints": {
+                                    "namespaceSelector": {
+                                        "matchLabels": {
+                                            "kubernetes.io/metadata.name": "laboratorio4"
+                                        }
+                                    },
+                                    "resourceRules": [
+                                        {
+                                            "apiGroups": [
+                                                "apps"
+                                            ],
+                                            "apiVersions": [
+                                                "v1"
+                                            ],
+                                            "operations": [
+                                                "CREATE",
+                                                "UPDATE"
+                                            ],
+                                            "resources": [
+                                                "daemonsets",
+                                                "deployments",
+                                                "replicasets",
+                                                "statefulsets"
+                                            ]
+                                        },
+                                        {
+                                            "apiGroups": [
+                                                "batch"
+                                            ],
+                                            "apiVersions": [
+                                                "v1"
+                                            ],
+                                            "operations": [
+                                                "CREATE",
+                                                "UPDATE"
+                                            ],
+                                            "resources": [
+                                                "jobs"
+                                            ]
+                                        }
+                                    ]
+                                },
+                                "validationActions": [
+                                    "Deny"
+                                ],
+                                "validations": [
+                                    {
+                                        "expression": "(object.spec.template.spec.containers + (has(object.spec.template.spec.initContainers) ? object.spec.template.spec.initContainers : [])).all(c, !has(c.securityContext) || !has(c.securityContext.privileged) || !c.securityContext.privileged)",
+                                        "message": "No se permiten contenedores privilegiados."
+                                    }
+                                ]
+                            },
+                            "targets": [
+                                {
+                                    "group": "apps",
+                                    "kind": "DaemonSet",
+                                    "resource": "daemonsets",
+                                    "version": "v1"
+                                },
+                                {
+                                    "group": "apps",
+                                    "kind": "Deployment",
+                                    "resource": "deployments",
+                                    "version": "v1"
+                                },
+                                {
+                                    "group": "apps",
+                                    "kind": "ReplicaSet",
+                                    "resource": "replicasets",
+                                    "version": "v1"
+                                },
+                                {
+                                    "group": "apps",
+                                    "kind": "StatefulSet",
+                                    "resource": "statefulsets",
+                                    "version": "v1"
+                                },
+                                {
+                                    "group": "batch",
+                                    "kind": "Job",
+                                    "resource": "jobs",
+                                    "version": "v1"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "conditionStatus": {
+                    "conditions": [
+                        {
+                            "lastTransitionTime": "2026-11-11T18:49:13Z",
+                            "message": "Webhook configured.",
+                            "reason": "Succeeded",
+                            "status": "True",
+                            "type": "WebhookConfigured"
+                        },
+                        {
+                            "lastTransitionTime": "2026-11-11T18:49:14Z",
+                            "message": "Policy is ready for reporting.",
+                            "reason": "Succeeded",
+                            "status": "True",
+                            "type": "RBACPermissionsGranted"
+                        }
+                    ],
+                    "message": "skip generating ValidatingAdmissionPolicy: not enabled.",
+                    "ready": true
+                },
+                "generated": false
+            }
+        },
+        {
+            "apiVersion": "policies.kyverno.io/v1",
+            "kind": "ValidatingPolicy",
+            "metadata": {
+                "annotations": {
+                    "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"policies.kyverno.io/v1\",\"kind\":\"ValidatingPolicy\",\"metadata\":{\"annotations\":{},\"name\":\"l4-disallow-root-containers\"},\"spec\":{\"autogen\":{\"validatingAdmissionPolicy\":{\"enabled\":false}},\"evaluation\":{\"admission\":{\"enabled\":true},\"background\":{\"enabled\":true}},\"failurePolicy\":\"Fail\",\"matchConstraints\":{\"namespaceSelector\":{\"matchLabels\":{\"kubernetes.io/metadata.name\":\"laboratorio4\"}},\"resourceRules\":[{\"apiGroups\":[\"\"],\"apiVersions\":[\"v1\"],\"operations\":[\"CREATE\",\"UPDATE\"],\"resources\":[\"pods\"]}]},\"validationActions\":[\"Deny\"],\"validations\":[{\"expression\":\"(object.spec.containers + (has(object.spec.initContainers) ? object.spec.initContainers : [])).all(c, (has(c.securityContext) \\u0026\\u0026 has(c.securityContext.runAsNonRoot) ? c.securityContext.runAsNonRoot : (has(object.spec.securityContext) \\u0026\\u0026 has(object.spec.securityContext.runAsNonRoot) \\u0026\\u0026 object.spec.securityContext.runAsNonRoot)) \\u0026\\u0026 (has(c.securityContext) \\u0026\\u0026 has(c.securityContext.runAsUser) ? c.securityContext.runAsUser != 0 : (!has(object.spec.securityContext) || !has(object.spec.securityContext.runAsUser) || object.spec.securityContext.runAsUser != 0)))\",\"message\":\"runAsNonRoot efectivo debe ser true y runAsUser no puede ser 0.\"}]}}\n"
+                },
+                "creationTimestamp": "2026-11-11T18:49:11Z",
+                "generation": 1,
+                "name": "l4-disallow-root-containers",
+                "resourceVersion": "815",
+                "uid": "89f4b775-a506-49b4-8c33-9a1d5b57e59c"
+            },
+            "spec": {
+                "autogen": {
+                    "validatingAdmissionPolicy": {
+                        "enabled": false
+                    }
+                },
+                "evaluation": {
+                    "admission": {
+                        "enabled": true
+                    },
+                    "background": {
+                        "enabled": true
+                    }
+                },
+                "failurePolicy": "Fail",
+                "matchConstraints": {
+                    "namespaceSelector": {
+                        "matchLabels": {
+                            "kubernetes.io/metadata.name": "laboratorio4"
+                        }
+                    },
+                    "resourceRules": [
+                        {
+                            "apiGroups": [
+                                ""
+                            ],
+                            "apiVersions": [
+                                "v1"
+                            ],
+                            "operations": [
+                                "CREATE",
+                                "UPDATE"
+                            ],
+                            "resources": [
+                                "pods"
+                            ]
+                        }
+                    ]
+                },
+                "validationActions": [
+                    "Deny"
+                ],
+                "validations": [
+                    {
+                        "expression": "(object.spec.containers + (has(object.spec.initContainers) ? object.spec.initContainers : [])).all(c, (has(c.securityContext) \u0026\u0026 has(c.securityContext.runAsNonRoot) ? c.securityContext.runAsNonRoot : (has(object.spec.securityContext) \u0026\u0026 has(object.spec.securityContext.runAsNonRoot) \u0026\u0026 object.spec.securityContext.runAsNonRoot)) \u0026\u0026 (has(c.securityContext) \u0026\u0026 has(c.securityContext.runAsUser) ? c.securityContext.runAsUser != 0 : (!has(object.spec.securityContext) || !has(object.spec.securityContext.runAsUser) || object.spec.securityContext.runAsUser != 0)))",
+                        "message": "runAsNonRoot efectivo debe ser true y runAsUser no puede ser 0."
+                    }
+                ]
+            },
+            "status": {
+                "autogen": {
+                    "configs": {
+                        "cronjobs": {
+                            "spec": {
+                                "autogen": {
+                                    "validatingAdmissionPolicy": {
+                                        "enabled": false
+                                    }
+                                },
+                                "evaluation": {
+                                    "admission": {
+                                        "enabled": true
+                                    },
+                                    "background": {
+                                        "enabled": true
+                                    }
+                                },
+                                "failurePolicy": "Fail",
+                                "matchConstraints": {
+                                    "namespaceSelector": {
+                                        "matchLabels": {
+                                            "kubernetes.io/metadata.name": "laboratorio4"
+                                        }
+                                    },
+                                    "resourceRules": [
+                                        {
+                                            "apiGroups": [
+                                                "batch"
+                                            ],
+                                            "apiVersions": [
+                                                "v1"
+                                            ],
+                                            "operations": [
+                                                "CREATE",
+                                                "UPDATE"
+                                            ],
+                                            "resources": [
+                                                "cronjobs"
+                                            ]
+                                        }
+                                    ]
+                                },
+                                "validationActions": [
+                                    "Deny"
+                                ],
+                                "validations": [
+                                    {
+                                        "expression": "(object.spec.jobTemplate.spec.template.spec.containers + (has(object.spec.jobTemplate.spec.template.spec.initContainers) ? object.spec.jobTemplate.spec.template.spec.initContainers : [])).all(c, (has(c.securityContext) \u0026\u0026 has(c.securityContext.runAsNonRoot) ? c.securityContext.runAsNonRoot : (has(object.spec.jobTemplate.spec.template.spec.securityContext) \u0026\u0026 has(object.spec.jobTemplate.spec.template.spec.securityContext.runAsNonRoot) \u0026\u0026 object.spec.jobTemplate.spec.template.spec.securityContext.runAsNonRoot)) \u0026\u0026 (has(c.securityContext) \u0026\u0026 has(c.securityContext.runAsUser) ? c.securityContext.runAsUser != 0 : (!has(object.spec.jobTemplate.spec.template.spec.securityContext) || !has(object.spec.jobTemplate.spec.template.spec.securityContext.runAsUser) || object.spec.jobTemplate.spec.template.spec.securityContext.runAsUser != 0)))",
+                                        "message": "runAsNonRoot efectivo debe ser true y runAsUser no puede ser 0."
+                                    }
+                                ]
+                            },
+                            "targets": [
+                                {
+                                    "group": "batch",
+                                    "kind": "CronJob",
+                                    "resource": "cronjobs",
+                                    "version": "v1"
+                                }
+                            ]
+                        },
+                        "defaults": {
+                            "spec": {
+                                "autogen": {
+                                    "validatingAdmissionPolicy": {
+                                        "enabled": false
+                                    }
+                                },
+                                "evaluation": {
+                                    "admission": {
+                                        "enabled": true
+                                    },
+                                    "background": {
+                                        "enabled": true
+                                    }
+                                },
+                                "failurePolicy": "Fail",
+                                "matchConstraints": {
+                                    "namespaceSelector": {
+                                        "matchLabels": {
+                                            "kubernetes.io/metadata.name": "laboratorio4"
+                                        }
+                                    },
+                                    "resourceRules": [
+                                        {
+                                            "apiGroups": [
+                                                "apps"
+                                            ],
+                                            "apiVersions": [
+                                                "v1"
+                                            ],
+                                            "operations": [
+                                                "CREATE",
+                                                "UPDATE"
+                                            ],
+                                            "resources": [
+                                                "daemonsets",
+                                                "deployments",
+                                                "replicasets",
+                                                "statefulsets"
+                                            ]
+                                        },
+                                        {
+                                            "apiGroups": [
+                                                "batch"
+                                            ],
+                                            "apiVersions": [
+                                                "v1"
+                                            ],
+                                            "operations": [
+                                                "CREATE",
+                                                "UPDATE"
+                                            ],
+                                            "resources": [
+                                                "jobs"
+                                            ]
+                                        }
+                                    ]
+                                },
+                                "validationActions": [
+                                    "Deny"
+                                ],
+                                "validations": [
+                                    {
+                                        "expression": "(object.spec.template.spec.containers + (has(object.spec.template.spec.initContainers) ? object.spec.template.spec.initContainers : [])).all(c, (has(c.securityContext) \u0026\u0026 has(c.securityContext.runAsNonRoot) ? c.securityContext.runAsNonRoot : (has(object.spec.template.spec.securityContext) \u0026\u0026 has(object.spec.template.spec.securityContext.runAsNonRoot) \u0026\u0026 object.spec.template.spec.securityContext.runAsNonRoot)) \u0026\u0026 (has(c.securityContext) \u0026\u0026 has(c.securityContext.runAsUser) ? c.securityContext.runAsUser != 0 : (!has(object.spec.template.spec.securityContext) || !has(object.spec.template.spec.securityContext.runAsUser) || object.spec.template.spec.securityContext.runAsUser != 0)))",
+                                        "message": "runAsNonRoot efectivo debe ser true y runAsUser no puede ser 0."
+                                    }
+                                ]
+                            },
+                            "targets": [
+                                {
+                                    "group": "apps",
+                                    "kind": "DaemonSet",
+                                    "resource": "daemonsets",
+                                    "version": "v1"
+                                },
+                                {
+                                    "group": "apps",
+                                    "kind": "Deployment",
+                                    "resource": "deployments",
+                                    "version": "v1"
+                                },
+                                {
+                                    "group": "apps",
+                                    "kind": "ReplicaSet",
+                                    "resource": "replicasets",
+                                    "version": "v1"
+                                },
+                                {
+                                    "group": "apps",
+                                    "kind": "StatefulSet",
+                                    "resource": "statefulsets",
+                                    "version": "v1"
+                                },
+                                {
+                                    "group": "batch",
+                                    "kind": "Job",
+                                    "resource": "jobs",
+                                    "version": "v1"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "conditionStatus": {
+                    "conditions": [
+                        {
+                            "lastTransitionTime": "2026-11-11T18:49:13Z",
+                            "message": "Webhook configured.",
+                            "reason": "Succeeded",
+                            "status": "True",
+                            "type": "WebhookConfigured"
+                        },
+                        {
+                            "lastTransitionTime": "2026-11-11T18:49:13Z",
+                            "message": "Policy is ready for reporting.",
+                            "reason": "Succeeded",
+                            "status": "True",
+                            "type": "RBACPermissionsGranted"
+                        }
+                    ],
+                    "message": "skip generating ValidatingAdmissionPolicy: not enabled.",
+                    "ready": true
+                },
+                "generated": false
+            }
+        },
+        {
+            "apiVersion": "policies.kyverno.io/v1",
+            "kind": "ValidatingPolicy",
+            "metadata": {
+                "annotations": {
+                    "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"policies.kyverno.io/v1\",\"kind\":\"ValidatingPolicy\",\"metadata\":{\"annotations\":{},\"name\":\"l4-require-container-resources\"},\"spec\":{\"autogen\":{\"validatingAdmissionPolicy\":{\"enabled\":false}},\"evaluation\":{\"admission\":{\"enabled\":true},\"background\":{\"enabled\":true}},\"failurePolicy\":\"Fail\",\"matchConstraints\":{\"namespaceSelector\":{\"matchLabels\":{\"kubernetes.io/metadata.name\":\"laboratorio4\"}},\"resourceRules\":[{\"apiGroups\":[\"\"],\"apiVersions\":[\"v1\"],\"operations\":[\"CREATE\",\"UPDATE\"],\"resources\":[\"pods\"]}]},\"validationActions\":[\"Deny\"],\"validations\":[{\"expression\":\"(object.spec.containers + (has(object.spec.initContainers) ? object.spec.initContainers : [])).all(c, has(c.resources) \\u0026\\u0026 has(c.resources.requests) \\u0026\\u0026 has(c.resources.limits) \\u0026\\u0026 ['cpu','memory'].all(k, k in c.resources.requests \\u0026\\u0026 k in c.resources.limits))\",\"message\":\"Cada contenedor requiere requests y limits de CPU y memoria.\"}]}}\n"
+                },
+                "creationTimestamp": "2026-11-11T18:49:11Z",
+                "generation": 1,
+                "name": "l4-require-container-resources",
+                "resourceVersion": "812",
+                "uid": "fe3c499a-a7bf-4444-86db-bfd8c0eec0e2"
+            },
+            "spec": {
+                "autogen": {
+                    "validatingAdmissionPolicy": {
+                        "enabled": false
+                    }
+                },
+                "evaluation": {
+                    "admission": {
+                        "enabled": true
+                    },
+                    "background": {
+                        "enabled": true
+                    }
+                },
+                "failurePolicy": "Fail",
+                "matchConstraints": {
+                    "namespaceSelector": {
+                        "matchLabels": {
+                            "kubernetes.io/metadata.name": "laboratorio4"
+                        }
+                    },
+                    "resourceRules": [
+                        {
+                            "apiGroups": [
+                                ""
+                            ],
+                            "apiVersions": [
+                                "v1"
+                            ],
+                            "operations": [
+                                "CREATE",
+                                "UPDATE"
+                            ],
+                            "resources": [
+                                "pods"
+                            ]
+                        }
+                    ]
+                },
+                "validationActions": [
+                    "Deny"
+                ],
+                "validations": [
+                    {
+                        "expression": "(object.spec.containers + (has(object.spec.initContainers) ? object.spec.initContainers : [])).all(c, has(c.resources) \u0026\u0026 has(c.resources.requests) \u0026\u0026 has(c.resources.limits) \u0026\u0026 ['cpu','memory'].all(k, k in c.resources.requests \u0026\u0026 k in c.resources.limits))",
+                        "message": "Cada contenedor requiere requests y limits de CPU y memoria."
+                    }
+                ]
+            },
+            "status": {
+                "autogen": {
+                    "configs": {
+                        "cronjobs": {
+                            "spec": {
+                                "autogen": {
+                                    "validatingAdmissionPolicy": {
+                                        "enabled": false
+                                    }
+                                },
+                                "evaluation": {
+                                    "admission": {
+                                        "enabled": true
+                                    },
+                                    "background": {
+                                        "enabled": true
+                                    }
+                                },
+                                "failurePolicy": "Fail",
+                                "matchConstraints": {
+                                    "namespaceSelector": {
+                                        "matchLabels": {
+                                            "kubernetes.io/metadata.name": "laboratorio4"
+                                        }
+                                    },
+                                    "resourceRules": [
+                                        {
+                                            "apiGroups": [
+                                                "batch"
+                                            ],
+                                            "apiVersions": [
+                                                "v1"
+                                            ],
+                                            "operations": [
+                                                "CREATE",
+                                                "UPDATE"
+                                            ],
+                                            "resources": [
+                                                "cronjobs"
+                                            ]
+                                        }
+                                    ]
+                                },
+                                "validationActions": [
+                                    "Deny"
+                                ],
+                                "validations": [
+                                    {
+                                        "expression": "(object.spec.jobTemplate.spec.template.spec.containers + (has(object.spec.jobTemplate.spec.template.spec.initContainers) ? object.spec.jobTemplate.spec.template.spec.initContainers : [])).all(c, has(c.resources) \u0026\u0026 has(c.resources.requests) \u0026\u0026 has(c.resources.limits) \u0026\u0026 ['cpu','memory'].all(k, k in c.resources.requests \u0026\u0026 k in c.resources.limits))",
+                                        "message": "Cada contenedor requiere requests y limits de CPU y memoria."
+                                    }
+                                ]
+                            },
+                            "targets": [
+                                {
+                                    "group": "batch",
+                                    "kind": "CronJob",
+                                    "resource": "cronjobs",
+                                    "version": "v1"
+                                }
+                            ]
+                        },
+                        "defaults": {
+                            "spec": {
+                                "autogen": {
+                                    "validatingAdmissionPolicy": {
+                                        "enabled": false
+                                    }
+                                },
+                                "evaluation": {
+                                    "admission": {
+                                        "enabled": true
+                                    },
+                                    "background": {
+                                        "enabled": true
+                                    }
+                                },
+                                "failurePolicy": "Fail",
+                                "matchConstraints": {
+                                    "namespaceSelector": {
+                                        "matchLabels": {
+                                            "kubernetes.io/metadata.name": "laboratorio4"
+                                        }
+                                    },
+                                    "resourceRules": [
+                                        {
+                                            "apiGroups": [
+                                                "apps"
+                                            ],
+                                            "apiVersions": [
+                                                "v1"
+                                            ],
+                                            "operations": [
+                                                "CREATE",
+                                                "UPDATE"
+                                            ],
+                                            "resources": [
+                                                "daemonsets",
+                                                "deployments",
+                                                "replicasets",
+                                                "statefulsets"
+                                            ]
+                                        },
+                                        {
+                                            "apiGroups": [
+                                                "batch"
+                                            ],
+                                            "apiVersions": [
+                                                "v1"
+                                            ],
+                                            "operations": [
+                                                "CREATE",
+                                                "UPDATE"
+                                            ],
+                                            "resources": [
+                                                "jobs"
+                                            ]
+                                        }
+                                    ]
+                                },
+                                "validationActions": [
+                                    "Deny"
+                                ],
+                                "validations": [
+                                    {
+                                        "expression": "(object.spec.template.spec.containers + (has(object.spec.template.spec.initContainers) ? object.spec.template.spec.initContainers : [])).all(c, has(c.resources) \u0026\u0026 has(c.resources.requests) \u0026\u0026 has(c.resources.limits) \u0026\u0026 ['cpu','memory'].all(k, k in c.resources.requests \u0026\u0026 k in c.resources.limits))",
+                                        "message": "Cada contenedor requiere requests y limits de CPU y memoria."
+                                    }
+                                ]
+                            },
+                            "targets": [
+                                {
+                                    "group": "apps",
+                                    "kind": "DaemonSet",
+                                    "resource": "daemonsets",
+                                    "version": "v1"
+                                },
+                                {
+                                    "group": "apps",
+                                    "kind": "Deployment",
+                                    "resource": "deployments",
+                                    "version": "v1"
+                                },
+                                {
+                                    "group": "apps",
+                                    "kind": "ReplicaSet",
+                                    "resource": "replicasets",
+                                    "version": "v1"
+                                },
+                                {
+                                    "group": "apps",
+                                    "kind": "StatefulSet",
+                                    "resource": "statefulsets",
+                                    "version": "v1"
+                                },
+                                {
+                                    "group": "batch",
+                                    "kind": "Job",
+                                    "resource": "jobs",
+                                    "version": "v1"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "conditionStatus": {
+                    "conditions": [
+                        {
+                            "lastTransitionTime": "2026-11-11T18:49:13Z",
+                            "message": "Webhook configured.",
+                            "reason": "Succeeded",
+                            "status": "True",
+                            "type": "WebhookConfigured"
+                        },
+                        {
+                            "lastTransitionTime": "2026-11-11T18:49:13Z",
+                            "message": "Policy is ready for reporting.",
+                            "reason": "Succeeded",
+                            "status": "True",
+                            "type": "RBACPermissionsGranted"
+                        }
+                    ],
+                    "message": "skip generating ValidatingAdmissionPolicy: not enabled.",
+                    "ready": true
+                },
+                "generated": false
+            }
+        }
+    ],
+    "kind": "List",
+    "metadata": {
+        "resourceVersion": ""
+    }
+}

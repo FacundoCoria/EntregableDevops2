@@ -1,0 +1,2 @@
+deployment "kyverno-admission-controller" successfully rolled out
+deployment "kyverno-reports-controller" successfully rolled out

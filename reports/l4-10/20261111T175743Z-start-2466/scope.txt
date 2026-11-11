@@ -1,0 +1,4 @@
+context=minikube
+namespace=laboratorio4-l4test
+release=l4-test
+utc=2026-11-11T17:57:43Z

@@ -1,0 +1,135 @@
+L4-07 Kyverno admission validation; 2026-11-11T10:27:16.0649702-03:00; context=minikube; namespace=laboratorio4; server dry-run
+
+COMMAND: kubectl --context minikube create --dry-run=server -f C:\Users\Bruno\PARA System\1- Projects\Entregable 3 - Devops\EntregableDevops2\pedidos-api\pedidos-api\security\kyverno\tests\conforme.json
+EXPECTED: ACCEPT
+EXIT: 0
+pod/l4-07-conforme created (server dry run)
+
+PASS: True
+
+COMMAND: kubectl --context minikube create --dry-run=server -f C:\Users\Bruno\PARA System\1- Projects\Entregable 3 - Devops\EntregableDevops2\pedidos-api\pedidos-api\security\kyverno\tests\containers-latest.json
+EXPECTED: DENY l4-deny-latest-images
+EXIT: 1
+Error from server: error when creating "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\pedidos-api\\pedidos-api\\security\\kyverno\\tests\\containers-latest.json": admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-deny-latest-images failed: Imagenes con etiqueta explicita distinta de latest o digest SHA256.
+
+PASS: True
+
+COMMAND: kubectl --context minikube create --dry-run=server -f C:\Users\Bruno\PARA System\1- Projects\Entregable 3 - Devops\EntregableDevops2\pedidos-api\pedidos-api\security\kyverno\tests\containers-sin-tag.json
+EXPECTED: DENY l4-deny-latest-images
+EXIT: 1
+Error from server: error when creating "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\pedidos-api\\pedidos-api\\security\\kyverno\\tests\\containers-sin-tag.json": admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-deny-latest-images failed: Imagenes con etiqueta explicita distinta de latest o digest SHA256.
+
+PASS: True
+
+COMMAND: kubectl --context minikube create --dry-run=server -f C:\Users\Bruno\PARA System\1- Projects\Entregable 3 - Devops\EntregableDevops2\pedidos-api\pedidos-api\security\kyverno\tests\containers-resources.json
+EXPECTED: DENY l4-require-container-resources
+EXIT: 1
+Error from server: error when creating "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\pedidos-api\\pedidos-api\\security\\kyverno\\tests\\containers-resources.json": admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-require-container-resources failed: Cada contenedor requiere requests y limits de CPU y memoria.
+
+PASS: True
+
+COMMAND: kubectl --context minikube create --dry-run=server -f C:\Users\Bruno\PARA System\1- Projects\Entregable 3 - Devops\EntregableDevops2\pedidos-api\pedidos-api\security\kyverno\tests\containers-root.json
+EXPECTED: DENY l4-disallow-root-containers
+EXIT: 1
+Error from server: error when creating "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\pedidos-api\\pedidos-api\\security\\kyverno\\tests\\containers-root.json": admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-disallow-root-containers failed: runAsNonRoot efectivo debe ser true y runAsUser no puede ser 0.
+
+PASS: True
+
+COMMAND: kubectl --context minikube create --dry-run=server -f C:\Users\Bruno\PARA System\1- Projects\Entregable 3 - Devops\EntregableDevops2\pedidos-api\pedidos-api\security\kyverno\tests\containers-uid-zero.json
+EXPECTED: DENY l4-disallow-root-containers
+EXIT: 1
+Error from server: error when creating "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\pedidos-api\\pedidos-api\\security\\kyverno\\tests\\containers-uid-zero.json": admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-disallow-root-containers failed: runAsNonRoot efectivo debe ser true y runAsUser no puede ser 0.
+
+PASS: True
+
+COMMAND: kubectl --context minikube create --dry-run=server -f C:\Users\Bruno\PARA System\1- Projects\Entregable 3 - Devops\EntregableDevops2\pedidos-api\pedidos-api\security\kyverno\tests\containers-privileged.json
+EXPECTED: DENY l4-disallow-privileged-containers
+EXIT: 1
+Error from server: error when creating "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\pedidos-api\\pedidos-api\\security\\kyverno\\tests\\containers-privileged.json": admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-disallow-privileged-containers failed: No se permiten contenedores privilegiados.
+
+PASS: True
+
+COMMAND: kubectl --context minikube create --dry-run=server -f C:\Users\Bruno\PARA System\1- Projects\Entregable 3 - Devops\EntregableDevops2\pedidos-api\pedidos-api\security\kyverno\tests\initcontainers-latest.json
+EXPECTED: DENY l4-deny-latest-images
+EXIT: 1
+Error from server: error when creating "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\pedidos-api\\pedidos-api\\security\\kyverno\\tests\\initcontainers-latest.json": admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-deny-latest-images failed: Imagenes con etiqueta explicita distinta de latest o digest SHA256.
+
+PASS: True
+
+COMMAND: kubectl --context minikube create --dry-run=server -f C:\Users\Bruno\PARA System\1- Projects\Entregable 3 - Devops\EntregableDevops2\pedidos-api\pedidos-api\security\kyverno\tests\initcontainers-sin-tag.json
+EXPECTED: DENY l4-deny-latest-images
+EXIT: 1
+Error from server: error when creating "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\pedidos-api\\pedidos-api\\security\\kyverno\\tests\\initcontainers-sin-tag.json": admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-deny-latest-images failed: Imagenes con etiqueta explicita distinta de latest o digest SHA256.
+
+PASS: True
+
+COMMAND: kubectl --context minikube create --dry-run=server -f C:\Users\Bruno\PARA System\1- Projects\Entregable 3 - Devops\EntregableDevops2\pedidos-api\pedidos-api\security\kyverno\tests\initcontainers-resources.json
+EXPECTED: DENY l4-require-container-resources
+EXIT: 1
+Error from server: error when creating "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\pedidos-api\\pedidos-api\\security\\kyverno\\tests\\initcontainers-resources.json": admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-require-container-resources failed: Cada contenedor requiere requests y limits de CPU y memoria.
+
+PASS: True
+
+COMMAND: kubectl --context minikube create --dry-run=server -f C:\Users\Bruno\PARA System\1- Projects\Entregable 3 - Devops\EntregableDevops2\pedidos-api\pedidos-api\security\kyverno\tests\initcontainers-root.json
+EXPECTED: DENY l4-disallow-root-containers
+EXIT: 1
+Error from server: error when creating "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\pedidos-api\\pedidos-api\\security\\kyverno\\tests\\initcontainers-root.json": admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-disallow-root-containers failed: runAsNonRoot efectivo debe ser true y runAsUser no puede ser 0.
+
+PASS: True
+
+COMMAND: kubectl --context minikube create --dry-run=server -f C:\Users\Bruno\PARA System\1- Projects\Entregable 3 - Devops\EntregableDevops2\pedidos-api\pedidos-api\security\kyverno\tests\initcontainers-uid-zero.json
+EXPECTED: DENY l4-disallow-root-containers
+EXIT: 1
+Error from server: error when creating "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\pedidos-api\\pedidos-api\\security\\kyverno\\tests\\initcontainers-uid-zero.json": admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-disallow-root-containers failed: runAsNonRoot efectivo debe ser true y runAsUser no puede ser 0.
+
+PASS: True
+
+COMMAND: kubectl --context minikube create --dry-run=server -f C:\Users\Bruno\PARA System\1- Projects\Entregable 3 - Devops\EntregableDevops2\pedidos-api\pedidos-api\security\kyverno\tests\initcontainers-privileged.json
+EXPECTED: DENY l4-disallow-privileged-containers
+EXIT: 1
+Error from server: error when creating "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\pedidos-api\\pedidos-api\\security\\kyverno\\tests\\initcontainers-privileged.json": admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-disallow-privileged-containers failed: No se permiten contenedores privilegiados.
+
+PASS: True
+
+COMMAND: kubectl --context minikube create --dry-run=server -f C:\Users\Bruno\PARA System\1- Projects\Entregable 3 - Devops\EntregableDevops2\pedidos-api\pedidos-api\security\kyverno\tests\herencia-pod-conforme.json
+EXPECTED: ACCEPT
+EXIT: 0
+pod/l4-07-herencia-pod-conforme created (server dry run)
+
+PASS: True
+
+COMMAND: kubectl --context minikube create --dry-run=server -f C:\Users\Bruno\PARA System\1- Projects\Entregable 3 - Devops\EntregableDevops2\pedidos-api\pedidos-api\security\kyverno\tests\override-false.json
+EXPECTED: DENY l4-disallow-root-containers
+EXIT: 1
+Error from server: error when creating "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\pedidos-api\\pedidos-api\\security\\kyverno\\tests\\override-false.json": admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-disallow-root-containers failed: runAsNonRoot efectivo debe ser true y runAsUser no puede ser 0.
+
+PASS: True
+
+COMMAND: kubectl --context minikube create --dry-run=server -f C:\Users\Bruno\PARA System\1- Projects\Entregable 3 - Devops\EntregableDevops2\pedidos-api\pedidos-api\security\kyverno\tests\init-conforme.json
+EXPECTED: ACCEPT
+EXIT: 0
+pod/l4-07-init-conforme created (server dry run)
+
+PASS: True
+
+RESULT: 16/16 PASS. Los dry-run prueban admision; no ejecucion de contenedores.
+COMMAND: kubectl --context minikube create -f EntregableDevops2/pedidos-api/pedidos-api/security/kyverno/tests/containers-latest.json
+EXIT: 1
+Error from server: error when creating "EntregableDevops2/pedidos-api/pedidos-api/security/kyverno/tests/containers-latest.json": admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-deny-latest-images failed: Imagenes con etiqueta explicita distinta de latest o digest SHA256.
+
+COMMAND: kubectl --context minikube create -f EntregableDevops2/pedidos-api/pedidos-api/security/kyverno/tests/containers-resources.json
+EXIT: 1
+Error from server: error when creating "EntregableDevops2/pedidos-api/pedidos-api/security/kyverno/tests/containers-resources.json": admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-require-container-resources failed: Cada contenedor requiere requests y limits de CPU y memoria.
+
+COMMAND: kubectl --context minikube create -f EntregableDevops2/pedidos-api/pedidos-api/security/kyverno/tests/containers-root.json
+EXIT: 1
+Error from server: error when creating "EntregableDevops2/pedidos-api/pedidos-api/security/kyverno/tests/containers-root.json": admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-disallow-root-containers failed: runAsNonRoot efectivo debe ser true y runAsUser no puede ser 0.
+
+COMMAND: kubectl --context minikube create -f EntregableDevops2/pedidos-api/pedidos-api/security/kyverno/tests/containers-privileged.json
+EXIT: 1
+Error from server: error when creating "EntregableDevops2/pedidos-api/pedidos-api/security/kyverno/tests/containers-privileged.json": admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-disallow-privileged-containers failed: No se permiten contenedores privilegiados.
+
+pod/l4-07-live-conforme created
+pod/l4-07-live-conforme condition met
+uid=10001(usuario) gid=10001(appgroup) groups=10001(appgroup)
+pod "l4-07-live-conforme" deleted from laboratorio4 namespace

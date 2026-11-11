@@ -1,0 +1,460 @@
+Started by user unknown or anonymous
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins in /var/jenkins_home/workspace/L4-09-pedidos-api
+[Pipeline] {
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] timeout
+Timeout set to expire in 45 min
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (1. Clonacion)
+[Pipeline] script
+[Pipeline] {
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] sh
++ mkdir -p /var/jenkins_home/workspace/L4-09-pedidos-api/evidencia-5
+[Pipeline] dir
+Running in /var/jenkins_home/workspace/L4-09-pedidos-api/fuente-l4
+[Pipeline] {
+[Pipeline] deleteDir
+[Pipeline] sh
++ set -eu
++ git clone --no-local -- /var/jenkins_home/l4-source.git .
+Cloning into '.'...
++ git rev-parse --verify --end-of-options main^{commit}
++ ref=470c74d40d044f40db0f4323c7674f29d3651932
++ git checkout --detach 470c74d40d044f40db0f4323c7674f29d3651932
+HEAD is now at 470c74d L4-09 local candidate: pipeline and critical dependency fixes
++ git rev-parse HEAD
++ git status --porcelain
++ sha256sum pedidos-api/pedidos-api/pom.xml pedidos-api/pedidos-api/Dockerfile
++ sh ci/bootstrap-tools.sh
++ cat /var/jenkins_home/workspace/L4-09-pedidos-api/evidencia-5/herramientas.log
+== Maven 3.9.16 ==
+== Snyk 1.1308.4 ==
+== Helm 4.3.1 ==
+== kubectl 1.37.0 ==
+== Semgrep 1.184.0 ==
+Apache Maven 3.9.16 (2bdd9fddda4b155ebf8000e807eb73fd829a51d5)
+Maven home: /var/jenkins_home/l4-tools/apache-maven-3.9.16
+Java version: 21.0.12.1, vendor: Eclipse Adoptium, runtime: /opt/java/openjdk
+Default locale: en, platform encoding: UTF-8
+OS name: "linux", version: "6.6.87.2-microsoft-standard-wsl2", arch: "amd64", family: "unix"
+1.1308.4
+v4.3.1+gc0d08d0
+Client Version: v1.37.0
+Kustomize Version: v5.8.1
+1.184.0
+L4_TOOLS_READY
+[Pipeline] }
+[Pipeline] // dir
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (2. Semgrep)
+[Pipeline] dir
+Running in /var/jenkins_home/workspace/L4-09-pedidos-api/fuente-l4
+[Pipeline] {
+[Pipeline] sh
++ set -eu
++ cd pedidos-api/pedidos-api
++ semgrep scan --config security/semgrep --metrics=off --disable-version-check --strict --error --no-rewrite-rule-ids --json-output /var/jenkins_home/workspace/L4-09-pedidos-api/evidencia-5/semgrep.json --text --output /var/jenkins_home/workspace/L4-09-pedidos-api/evidencia-5/semgrep.txt src
++ cat /var/jenkins_home/workspace/L4-09-pedidos-api/evidencia-5/semgrep.log
+               
+               
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”�
+â”‚ Scan Status â”‚
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+  Scanning 9 files tracked by git with 2 Code rules:
+  Scanning 8 files with 2 java rules.
+                
+                
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”�
+â”‚ Scan Summary â”‚
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+âœ… Scan completed successfully.
+ â€¢ Findings: 0 (0 blocking)
+ â€¢ Rules run: 2
+ â€¢ Targets scanned: 8
+ â€¢ Parsed lines: ~100.0%
+ â€¢ Scan skipped: 
+   â—¦ Files matching .semgrepignore patterns: 1
+ â€¢ Scan was limited to files tracked by git
+ â€¢ For a detailed list of skipped files and lines, run semgrep with the --verbose flag
+Ran 2 rules on 8 files: 0 findings.
+[Pipeline] }
+[Pipeline] // dir
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (3. Snyk y bloqueo de criticos)
+[Pipeline] withCredentials
+Masking supported pattern matches of $SNYK_TOKEN
+[Pipeline] {
+[Pipeline] dir
+Running in /var/jenkins_home/workspace/L4-09-pedidos-api/fuente-l4
+[Pipeline] {
+[Pipeline] script
+[Pipeline] {
+[Pipeline] sh
++ set +x
+[Pipeline] writeFile
+[Pipeline] sh
++ cat /var/jenkins_home/workspace/L4-09-pedidos-api/evidencia-5/snyk-exit.txt
++ python3 ci/gate-snyk.py /var/jenkins_home/workspace/L4-09-pedidos-api/evidencia-5/snyk.json 1
+{
+  "scan_exit_code": 1,
+  "findings_by_severity": {
+    "critical": 0,
+    "high": 1,
+    "low": 1,
+    "medium": 8
+  },
+  "critical_ids": [],
+  "gate": "PASS"
+}
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // dir
+[Pipeline] }
+[Pipeline] // withCredentials
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (4. Compilacion y pruebas)
+[Pipeline] dir
+Running in /var/jenkins_home/workspace/L4-09-pedidos-api/fuente-l4
+[Pipeline] {
+[Pipeline] sh
++ set -eu
++ cd pedidos-api/pedidos-api
++ ./mvnw -B -ntp -Dspring.datasource.url=jdbc:h2:mem:cijenkins clean verify
++ cat /var/jenkins_home/workspace/L4-09-pedidos-api/evidencia-5/maven.log
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------< com.pedidos:pedidos-api >-----------------------
+[INFO] Building  0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.5.0:clean (default-clean) @ pedidos-api ---
+[INFO] 
+[INFO] --- resources:3.5.0:resources (default-resources) @ pedidos-api ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 0 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.15.0:compile (default-compile) @ pedidos-api ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 8 source files with javac [debug parameters release 21] to target/classes
+[INFO] 
+[INFO] --- resources:3.5.0:testResources (default-testResources) @ pedidos-api ---
+[INFO] skip non existing resourceDirectory /var/jenkins_home/workspace/L4-09-pedidos-api/fuente-l4/pedidos-api/pedidos-api/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.15.0:testCompile (default-testCompile) @ pedidos-api ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 1 source file with javac [debug parameters release 21] to target/test-classes
+[INFO] 
+[INFO] --- surefire:3.5.6:test (default-test) @ pedidos-api ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.pedidos.pedidos_api.PedidosApiApplicationTests
+17:25:59.517 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.pedidos.pedidos_api.PedidosApiApplicationTests]: PedidosApiApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+17:25:59.691 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.pedidos.pedidos_api.PedidosApiApplication for test class com.pedidos.pedidos_api.PedidosApiApplicationTests
+17:25:59.867 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.pedidos.pedidos_api.PedidosApiApplicationTests]: PedidosApiApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+17:25:59.871 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.pedidos.pedidos_api.PedidosApiApplication for test class com.pedidos.pedidos_api.PedidosApiApplicationTests
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.1.1)
+
+2026-11-11T17:26:00.504Z  INFO 5175 --- [pedidos-api] [           main] c.p.p.PedidosApiApplicationTests         : Starting PedidosApiApplicationTests using Java 21.0.12.1 with PID 5175 (started by root in /var/jenkins_home/workspace/L4-09-pedidos-api/fuente-l4/pedidos-api/pedidos-api)
+2026-11-11T17:26:00.507Z  INFO 5175 --- [pedidos-api] [           main] c.p.p.PedidosApiApplicationTests         : No active profile set, falling back to 1 default profile: "default"
+2026-11-11T17:26:01.826Z  INFO 5175 --- [pedidos-api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-11T17:26:01.914Z  INFO 5175 --- [pedidos-api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 72 ms. Found 2 JPA repository interfaces.
+2026-11-11T17:26:02.773Z  INFO 5175 --- [pedidos-api] [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-11-11T17:26:02.939Z  INFO 5175 --- [pedidos-api] [           main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.5.Final
+2026-11-11T17:26:04.135Z  INFO 5175 --- [pedidos-api] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-11T17:26:04.225Z  INFO 5175 --- [pedidos-api] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-11T17:26:04.633Z  INFO 5175 --- [pedidos-api] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:cijenkins user=SA
+2026-11-11T17:26:04.635Z  INFO 5175 --- [pedidos-api] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-11-11T17:26:04.824Z  INFO 5175 --- [pedidos-api] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:cijenkins]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: CIJENKINS/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-11-11T17:26:06.472Z  INFO 5175 --- [pedidos-api] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: create table pedido (id bigint generated by default as identity, cliente varchar(255), estado varchar(255), fecha_creacion timestamp(6), minutos_espera integer, precio_unitario float(53), producto_id bigint, primary key (id))
+Hibernate: create table producto (id bigint generated by default as identity, nombre varchar(255), precio float(53), primary key (id))
+Hibernate: alter table if exists pedido add constraint FKsoggxhdxr3wnhv3kdkka1nmvy foreign key (producto_id) references producto
+2026-11-11T17:26:06.601Z  INFO 5175 --- [pedidos-api] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-11T17:26:06.758Z  INFO 5175 --- [pedidos-api] [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-11-11T17:26:07.195Z  WARN 5175 --- [pedidos-api] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-11-11T17:26:08.143Z  INFO 5175 --- [pedidos-api] [           main] o.s.b.h.a.H2ConsoleAutoConfiguration     : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:cijenkins'
+2026-11-11T17:26:08.472Z  INFO 5175 --- [pedidos-api] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 4 endpoints beneath base path '/actuator'
+2026-11-11T17:26:08.662Z  INFO 5175 --- [pedidos-api] [           main] c.p.p.PedidosApiApplicationTests         : Started PedidosApiApplicationTests in 8.675 seconds (process running for 10.852)
+Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
+WARNING: A Java agent has been loaded dynamically (/root/.m2/repository/net/bytebuddy/byte-buddy-agent/1.18.11/byte-buddy-agent-1.18.11.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 10.82 s -- in com.pedidos.pedidos_api.PedidosApiApplicationTests
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jar:3.5.1:jar (default-jar) @ pedidos-api ---
+[INFO] Building jar: /var/jenkins_home/workspace/L4-09-pedidos-api/fuente-l4/pedidos-api/pedidos-api/target/pedidos-api-0.0.1-SNAPSHOT.jar
+[INFO] 
+[INFO] --- spring-boot:4.1.1:repackage (repackage) @ pedidos-api ---
+[INFO] Replacing main artifact /var/jenkins_home/workspace/L4-09-pedidos-api/fuente-l4/pedidos-api/pedidos-api/target/pedidos-api-0.0.1-SNAPSHOT.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
+[INFO] The original artifact has been renamed to /var/jenkins_home/workspace/L4-09-pedidos-api/fuente-l4/pedidos-api/pedidos-api/target/pedidos-api-0.0.1-SNAPSHOT.jar.original
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  19.540 s
+[INFO] Finished at: 2026-11-11T17:26:12Z
+[INFO] ------------------------------------------------------------------------
++ ./mvnw -B -ntp dependency:tree
+[Pipeline] }
+[Pipeline] // dir
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (5. Imagen y publicacion Docker)
+[Pipeline] script
+[Pipeline] {
+[Pipeline] readFile
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] dir
+Running in /var/jenkins_home/workspace/L4-09-pedidos-api/fuente-l4
+[Pipeline] {
+[Pipeline] sh
++ set -eu
++ docker build --iidfile /var/jenkins_home/workspace/L4-09-pedidos-api/evidencia-5/image-id.txt -t brunovitola/pedidos-api-l4:l4-5-470c74d40d04 pedidos-api/pedidos-api
++ cat /var/jenkins_home/workspace/L4-09-pedidos-api/evidencia-5/docker-build.log
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+Sending build context to Docker daemon  188.9kB
+
+Step 1/15 : FROM eclipse-temurin:21.0.13_9-jdk-jammy@sha256:4b1a74fbffbe6b4e7b6f0171a472478282fb463790a51edf10e465d578f22b69 AS build
+21.0.13_9-jdk-jammy: Pulling from library/eclipse-temurin
+Digest: sha256:4b1a74fbffbe6b4e7b6f0171a472478282fb463790a51edf10e465d578f22b69
+Status: Downloaded newer image for eclipse-temurin:21.0.13_9-jdk-jammy@sha256:4b1a74fbffbe6b4e7b6f0171a472478282fb463790a51edf10e465d578f22b69
+ ---> 4b1a74fbffbe
+Step 2/15 : WORKDIR /workspace
+ ---> Running in ce930b2b5774
+ ---> Removed intermediate container ce930b2b5774
+ ---> 081656c80385
+Step 3/15 : COPY .mvn/ .mvn/
+ ---> d84e95e67acf
+Step 4/15 : COPY mvnw pom.xml ./
+ ---> 6a7ce4ebffe2
+Step 5/15 : RUN chmod +x mvnw
+ ---> Running in 625e8badfa80
+ ---> Removed intermediate container 625e8badfa80
+ ---> 3ae8fc56c511
+Step 6/15 : COPY src/ src/
+ ---> b664776af34a
+Step 7/15 : RUN ./mvnw -B -ntp -Dspring.datasource.url=jdbc:h2:mem:buildtest clean verify
+ ---> Running in 59a5caee8810
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------< com.pedidos:pedidos-api >-----------------------
+[INFO] Building  0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.5.0:clean (default-clean) @ pedidos-api ---
+[INFO] 
+[INFO] --- resources:3.5.0:resources (default-resources) @ pedidos-api ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 0 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.15.0:compile (default-compile) @ pedidos-api ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 8 source files with javac [debug parameters release 21] to target/classes
+[INFO] 
+[INFO] --- resources:3.5.0:testResources (default-testResources) @ pedidos-api ---
+[INFO] skip non existing resourceDirectory /workspace/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.15.0:testCompile (default-testCompile) @ pedidos-api ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 1 source file with javac [debug parameters release 21] to target/test-classes
+[INFO] 
+[INFO] --- surefire:3.5.6:test (default-test) @ pedidos-api ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.pedidos.pedidos_api.PedidosApiApplicationTests
+17:27:17.373 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.pedidos.pedidos_api.PedidosApiApplicationTests]: PedidosApiApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+17:27:17.570 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.pedidos.pedidos_api.PedidosApiApplication for test class com.pedidos.pedidos_api.PedidosApiApplicationTests
+17:27:17.754 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.pedidos.pedidos_api.PedidosApiApplicationTests]: PedidosApiApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+17:27:17.757 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.pedidos.pedidos_api.PedidosApiApplication for test class com.pedidos.pedidos_api.PedidosApiApplicationTests
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.1.1)
+
+2026-11-11T17:27:18.406Z  INFO 210 --- [pedidos-api] [           main] c.p.p.PedidosApiApplicationTests         : Starting PedidosApiApplicationTests using Java 21.0.13 with PID 210 (started by root in /workspace)
+2026-11-11T17:27:18.409Z  INFO 210 --- [pedidos-api] [           main] c.p.p.PedidosApiApplicationTests         : No active profile set, falling back to 1 default profile: "default"
+2026-11-11T17:27:20.135Z  INFO 210 --- [pedidos-api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-11T17:27:20.232Z  INFO 210 --- [pedidos-api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 83 ms. Found 2 JPA repository interfaces.
+2026-11-11T17:27:21.739Z  INFO 210 --- [pedidos-api] [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-11-11T17:27:21.907Z  INFO 210 --- [pedidos-api] [           main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.5.Final
+2026-11-11T17:27:22.811Z  INFO 210 --- [pedidos-api] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-11T17:27:22.862Z  INFO 210 --- [pedidos-api] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-11T17:27:23.218Z  INFO 210 --- [pedidos-api] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:buildtest user=SA
+2026-11-11T17:27:23.221Z  INFO 210 --- [pedidos-api] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-11-11T17:27:23.362Z  INFO 210 --- [pedidos-api] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:buildtest]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: BUILDTEST/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-11-11T17:27:24.985Z  INFO 210 --- [pedidos-api] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: create table pedido (id bigint generated by default as identity, cliente varchar(255), estado varchar(255), fecha_creacion timestamp(6), minutos_espera integer, precio_unitario float(53), producto_id bigint, primary key (id))
+Hibernate: create table producto (id bigint generated by default as identity, nombre varchar(255), precio float(53), primary key (id))
+Hibernate: alter table if exists pedido add constraint FKsoggxhdxr3wnhv3kdkka1nmvy foreign key (producto_id) references producto
+2026-11-11T17:27:25.124Z  INFO 210 --- [pedidos-api] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-11T17:27:25.266Z  INFO 210 --- [pedidos-api] [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-11-11T17:27:25.783Z  WARN 210 --- [pedidos-api] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-11-11T17:27:27.082Z  INFO 210 --- [pedidos-api] [           main] o.s.b.h.a.H2ConsoleAutoConfiguration     : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:buildtest'
+2026-11-11T17:27:27.413Z  INFO 210 --- [pedidos-api] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 4 endpoints beneath base path '/actuator'
+2026-11-11T17:27:27.547Z  INFO 210 --- [pedidos-api] [           main] c.p.p.PedidosApiApplicationTests         : Started PedidosApiApplicationTests in 9.677 seconds (process running for 13.42)
+[91mMockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
+[0m[91mOpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+WARNING: A Java agent has been loaded dynamically (/root/.m2/repository/net/bytebuddy/byte-buddy-agent/1.18.11/byte-buddy-agent-1.18.11.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+[0m[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 11.83 s -- in com.pedidos.pedidos_api.PedidosApiApplicationTests
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jar:3.5.1:jar (default-jar) @ pedidos-api ---
+[INFO] Building jar: /workspace/target/pedidos-api-0.0.1-SNAPSHOT.jar
+[INFO] 
+[INFO] --- spring-boot:4.1.1:repackage (repackage) @ pedidos-api ---
+[INFO] Replacing main artifact /workspace/target/pedidos-api-0.0.1-SNAPSHOT.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
+[INFO] The original artifact has been renamed to /workspace/target/pedidos-api-0.0.1-SNAPSHOT.jar.original
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  50.380 s
+[INFO] Finished at: 2026-11-11T17:27:35Z
+[INFO] ------------------------------------------------------------------------
+ ---> Removed intermediate container 59a5caee8810
+ ---> 3b9a5ec6e61b
+Step 8/15 : FROM eclipse-temurin:21.0.13_9-jre-jammy@sha256:d4cbe963bb4f3a769d56473b32db2bfb46b0d4b29797c152815da692d9f9aab5 AS runtime
+21.0.13_9-jre-jammy: Pulling from library/eclipse-temurin
+Digest: sha256:d4cbe963bb4f3a769d56473b32db2bfb46b0d4b29797c152815da692d9f9aab5
+Status: Downloaded newer image for eclipse-temurin:21.0.13_9-jre-jammy@sha256:d4cbe963bb4f3a769d56473b32db2bfb46b0d4b29797c152815da692d9f9aab5
+ ---> d4cbe963bb4f
+Step 9/15 : WORKDIR /app
+ ---> Running in 706a0271160f
+ ---> Removed intermediate container 706a0271160f
+ ---> 4616a941dd3c
+Step 10/15 : RUN groupadd --gid 10001 appgroup     && useradd --uid 10001 --gid appgroup --no-create-home --shell /usr/sbin/nologin usuario     && mkdir /data && chown 10001:10001 /data
+ ---> Running in 9e950bc04d20
+ ---> Removed intermediate container 9e950bc04d20
+ ---> 4f232e325734
+Step 11/15 : COPY --from=build --chown=10001:10001 /workspace/target/pedidos-api-0.0.1-SNAPSHOT.jar app.jar
+ ---> 6ba08165dc4b
+Step 12/15 : ENV JAVA_TOOL_OPTIONS="-XX:MaxRAMPercentage=70"
+ ---> Running in 761bc609972a
+ ---> Removed intermediate container 761bc609972a
+ ---> 5f744006c427
+Step 13/15 : EXPOSE 8080
+ ---> Running in c8d9d0c0c5f2
+ ---> Removed intermediate container c8d9d0c0c5f2
+ ---> 9628f0f81cd4
+Step 14/15 : USER 10001:10001
+ ---> Running in d3c98d4f89a9
+ ---> Removed intermediate container d3c98d4f89a9
+ ---> 420723ca2c8b
+Step 15/15 : ENTRYPOINT ["java", "-jar", "app.jar"]
+ ---> Running in 2631bb9062f9
+ ---> Removed intermediate container 2631bb9062f9
+ ---> 48b65d95763c
+Successfully built 48b65d95763c
+Successfully tagged brunovitola/pedidos-api-l4:l4-5-470c74d40d04
++ docker image inspect --format {{.Config.User}} brunovitola/pedidos-api-l4:l4-5-470c74d40d04
++ test 10001:10001 = 10001:10001
+[Pipeline] }
+[Pipeline] // dir
+[Pipeline] withCredentials
+Masking supported pattern matches of $DOCKER_TOKEN
+[Pipeline] {
+[Pipeline] sh
++ set +x
+Sending interrupt signal to process
+Aborted by unknown
+Terminated
+[Pipeline] }
+[Pipeline] // withCredentials
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (6. Despliegue Helm)
+Stage "6. Despliegue Helm" skipped due to earlier failure(s)
+[Pipeline] getContext
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Declarative: Post Actions)
+[Pipeline] archiveArtifacts
+Archiving artifacts
+[Pipeline] junit
+Recording test results
+[Checks API] No suitable checks publisher found.
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // timeout
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+org.jenkinsci.plugins.workflow.actions.ErrorAction$ErrorId: 6b7e5b91-923c-42ab-8aff-22c242081a69
+Finished: ABORTED

@@ -1,0 +1,50 @@
+
+Testing /var/jenkins_home/workspace/L4-09-pedidos-api/fuente-l4/pedidos-api/pedidos-api...
+
+Tested 130 dependencies for known issues, found 10 issues, 10 vulnerable paths.
+
+
+Issues with no direct upgrade or patch:
+  ✗ Directory Traversal [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-CHQOSLOGBACK-19882330] in ch.qos.logback:logback-classic@1.5.38
+    introduced by org.springframework.boot:spring-boot-starter-actuator@4.1.1 > org.springframework.boot:spring-boot-starter@4.1.1 > org.springframework.boot:spring-boot-starter-logging@4.1.1 > ch.qos.logback:logback-classic@1.5.38
+  This issue was fixed in versions: 1.6.3
+  ✗ Directory Traversal [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-CHQOSLOGBACK-20824362] in ch.qos.logback:logback-classic@1.5.38
+    introduced by org.springframework.boot:spring-boot-starter-actuator@4.1.1 > org.springframework.boot:spring-boot-starter@4.1.1 > org.springframework.boot:spring-boot-starter-logging@4.1.1 > ch.qos.logback:logback-classic@1.5.38
+  This issue was fixed in versions: 1.6.5
+  ✗ Improper Neutralization [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-NETMINIDEV-21715438] in net.minidev:json-smart@2.6.0
+    introduced by org.springframework.boot:spring-boot-starter-actuator-test@4.1.1 > org.springframework.boot:spring-boot-starter-test@4.1.1 > net.minidev:json-smart@2.6.0
+  This issue was fixed in versions: 2.6.1
+  ✗ XML External Entity (XXE) Injection [High Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGGLASSFISHJAXB-20883142] in org.glassfish.jaxb:jaxb-core@4.0.9
+    introduced by org.springframework.boot:spring-boot-starter-data-jpa@4.1.1 > org.springframework.boot:spring-boot-data-jpa@4.1.1 > org.springframework.boot:spring-boot-hibernate@4.1.1 > org.hibernate.orm:hibernate-core@7.4.5.Final > org.glassfish.jaxb:jaxb-runtime@4.0.9 > org.glassfish.jaxb:jaxb-core@4.0.9
+  No upgrade or patch available
+  ✗ Symbolic Name not Mapping to Correct Object [Low Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGOBJENESIS-21755439] in org.objenesis:objenesis@3.3
+    introduced by org.springframework.boot:spring-boot-starter-actuator-test@4.1.1 > org.springframework.boot:spring-boot-starter-test@4.1.1 > org.mockito:mockito-core@5.23.0 > org.objenesis:objenesis@3.3
+  This issue was fixed in versions: 3.6
+  ✗ Inefficient Algorithmic Complexity [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGOW2ASM-21715439] in org.ow2.asm:asm@9.7.1
+    introduced by org.springframework.boot:spring-boot-starter-actuator-test@4.1.1 > org.springframework.boot:spring-boot-starter-test@4.1.1 > net.minidev:json-smart@2.6.0 > net.minidev:accessors-smart@2.6.0 > org.ow2.asm:asm@9.7.1
+  This issue was fixed in versions: 9.11
+  ✗ Memory Allocation with Excessive Size Value [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGOW2ASM-21715442] in org.ow2.asm:asm@9.7.1
+    introduced by org.springframework.boot:spring-boot-starter-actuator-test@4.1.1 > org.springframework.boot:spring-boot-starter-test@4.1.1 > net.minidev:json-smart@2.6.0 > net.minidev:accessors-smart@2.6.0 > org.ow2.asm:asm@9.7.1
+  This issue was fixed in versions: 9.11
+  ✗ Uncontrolled Recursion [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGOW2ASM-21715445] in org.ow2.asm:asm@9.7.1
+    introduced by org.springframework.boot:spring-boot-starter-actuator-test@4.1.1 > org.springframework.boot:spring-boot-starter-test@4.1.1 > net.minidev:json-smart@2.6.0 > net.minidev:accessors-smart@2.6.0 > org.ow2.asm:asm@9.7.1
+  This issue was fixed in versions: 9.11
+  ✗ Memory Allocation with Excessive Size Value [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGOW2ASM-21715448] in org.ow2.asm:asm@9.7.1
+    introduced by org.springframework.boot:spring-boot-starter-actuator-test@4.1.1 > org.springframework.boot:spring-boot-starter-test@4.1.1 > net.minidev:json-smart@2.6.0 > net.minidev:accessors-smart@2.6.0 > org.ow2.asm:asm@9.7.1
+  This issue was fixed in versions: 9.11
+  ✗ Inefficient Algorithmic Complexity [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGOW2ASM-21715452] in org.ow2.asm:asm@9.7.1
+    introduced by org.springframework.boot:spring-boot-starter-actuator-test@4.1.1 > org.springframework.boot:spring-boot-starter-test@4.1.1 > net.minidev:json-smart@2.6.0 > net.minidev:accessors-smart@2.6.0 > org.ow2.asm:asm@9.7.1
+  This issue was fixed in versions: 9.11
+
+
+
+Organization:      pela311
+Package manager:   maven
+Target file:       pom.xml
+Project name:      com.pedidos:pedidos-api
+Open source:       no
+Project path:      /var/jenkins_home/workspace/L4-09-pedidos-api/fuente-l4/pedidos-api/pedidos-api
+Local Snyk policy: found
+Licenses:          enabled
+
+

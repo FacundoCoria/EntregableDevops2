@@ -1,0 +1,8 @@
+These resources were kept due to the resource policy:
+[PersistentVolumeClaim] l4-b03-check-pedidos-api
+[PersistentVolumeClaim] l4-b03-check-pedidos-grafana
+[PersistentVolumeClaim] l4-b03-check-pedidos-prometheus
+
+release "l4-b03-check" uninstalled
+
+exit=0

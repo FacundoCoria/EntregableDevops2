@@ -1,0 +1,78 @@
+Started by user unknown or anonymous
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins in /var/jenkins_home/workspace/L4-09-pedidos-api
+[Pipeline] {
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] timeout
+Timeout set to expire in 45 min
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (1. Clonacion)
+[Pipeline] script
+[Pipeline] {
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] sh
++ mkdir -p /var/jenkins_home/workspace/L4-09-pedidos-api/evidencia-4
+[Pipeline] dir
+Running in /var/jenkins_home/workspace/L4-09-pedidos-api/fuente-l4
+[Pipeline] {
+[Pipeline] deleteDir
+[Pipeline] sh
++ set -eu
+/var/jenkins_home/workspace/L4-09-pedidos-api/fuente-l4@tmp/durable-b72c71e8/script.sh.copy: 3: SOURCE_URL: parameter not set
+[Pipeline] }
+[Pipeline] // dir
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (2. Semgrep)
+Stage "2. Semgrep" skipped due to earlier failure(s)
+[Pipeline] getContext
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (3. Snyk y bloqueo de criticos)
+Stage "3. Snyk y bloqueo de criticos" skipped due to earlier failure(s)
+[Pipeline] getContext
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (4. Compilacion y pruebas)
+Stage "4. Compilacion y pruebas" skipped due to earlier failure(s)
+[Pipeline] getContext
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (5. Imagen y publicacion Docker)
+Stage "5. Imagen y publicacion Docker" skipped due to earlier failure(s)
+[Pipeline] getContext
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (6. Despliegue Helm)
+Stage "6. Despliegue Helm" skipped due to earlier failure(s)
+[Pipeline] getContext
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Declarative: Post Actions)
+[Pipeline] archiveArtifacts
+Archiving artifacts
+[Pipeline] junit
+Recording test results
+No test report files were found. Configuration error?
+[Checks API] No suitable checks publisher found.
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // timeout
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+ERROR: script returned exit code 2
+Finished: FAILURE

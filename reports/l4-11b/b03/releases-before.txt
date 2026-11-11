@@ -1,0 +1,3 @@
+[{"name":"l4","namespace":"laboratorio4","revision":"10","updated":"2026-11-11 15:01:02.7202439 -0300 -03","status":"deployed","chart":"pedidos-0.2.1","app_version":"l4-01"}]
+
+exit=0

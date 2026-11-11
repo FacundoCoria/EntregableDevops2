@@ -1,0 +1,2 @@
+2c9c1164da86e53a774ec37fb9d2c5dca33cb151f9e138814e2188df4c62fff9  pedidos-api/pedidos-api/pom.xml
+ac829b96a5b05708c886bb26558d79ffc883dfda7f2fb75c2595dfa69dc9d1b4  pedidos-api/pedidos-api/Dockerfile

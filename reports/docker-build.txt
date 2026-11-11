@@ -1,0 +1,80 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 193B 0.0s done
+#1 DONE 0.1s
+
+#2 [internal] load metadata for docker.io/library/eclipse-temurin:21-jre
+#2 ...
+
+#3 [auth] library/eclipse-temurin:pull token for registry-1.docker.io
+#3 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/eclipse-temurin:21-jre
+#2 DONE 3.2s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 26.65MB 5.0s
+#5 ...
+
+#6 [1/3] FROM docker.io/library/eclipse-temurin:21-jre@sha256:0b99b3376fbb50dbf9c0af8535fdd5b8eb0d3fdfc8b1e4967f383b6919f6901a
+#6 resolve docker.io/library/eclipse-temurin:21-jre@sha256:0b99b3376fbb50dbf9c0af8535fdd5b8eb0d3fdfc8b1e4967f383b6919f6901a 0.1s done
+#6 sha256:7bf4c6adbed59b289c82f355d0712c87d1f1cbfed41437f19557ad4f6f7ce057 2.46kB / 2.46kB 0.3s done
+#6 sha256:5cec81137da720199b8f279bc24b0054cc7d2e8685fef3d93ea8a9bfa414c909 159B / 159B 0.5s done
+#6 sha256:b27fb70cc2e5debd2278dbbd2d7cc0665e63785bd8c751ea1682be3dabe79915 27.26MB / 53.21MB 6.9s
+#6 sha256:d6c2cb069076049f26b59aaca7c1d09fd75a23b64cc4b2b4f63d04465e334ea7 20.14MB / 20.14MB 5.9s done
+#6 sha256:f3f25b84a7d74315d94ee4108231f8f5e0cd2a44725a7204d5dd6ce91c151697 392B / 392B 0.6s done
+#6 sha256:edafa32f5d9e4d9629f0dbc6c01e63c79ff08133c01cfb7d3363aa8bd8a614cf 25.17MB / 42.14MB 6.5s
+#6 ...
+
+#5 [internal] load build context
+#5 transferring context: 47.66MB 10.1s
+#5 transferring context: 57.07MB 11.8s done
+#5 DONE 11.8s
+
+#6 [1/3] FROM docker.io/library/eclipse-temurin:21-jre@sha256:0b99b3376fbb50dbf9c0af8535fdd5b8eb0d3fdfc8b1e4967f383b6919f6901a
+#6 sha256:b27fb70cc2e5debd2278dbbd2d7cc0665e63785bd8c751ea1682be3dabe79915 50.33MB / 53.21MB 11.4s
+#6 sha256:edafa32f5d9e4d9629f0dbc6c01e63c79ff08133c01cfb7d3363aa8bd8a614cf 42.14MB / 42.14MB 10.3s done
+#6 extracting sha256:edafa32f5d9e4d9629f0dbc6c01e63c79ff08133c01cfb7d3363aa8bd8a614cf
+#6 sha256:b27fb70cc2e5debd2278dbbd2d7cc0665e63785bd8c751ea1682be3dabe79915 53.21MB / 53.21MB 11.7s
+#6 sha256:b27fb70cc2e5debd2278dbbd2d7cc0665e63785bd8c751ea1682be3dabe79915 53.21MB / 53.21MB 11.8s done
+#6 extracting sha256:edafa32f5d9e4d9629f0dbc6c01e63c79ff08133c01cfb7d3363aa8bd8a614cf 4.6s done
+#6 DONE 15.9s
+
+#6 [1/3] FROM docker.io/library/eclipse-temurin:21-jre@sha256:0b99b3376fbb50dbf9c0af8535fdd5b8eb0d3fdfc8b1e4967f383b6919f6901a
+#6 extracting sha256:f3f25b84a7d74315d94ee4108231f8f5e0cd2a44725a7204d5dd6ce91c151697 0.0s done
+#6 extracting sha256:d6c2cb069076049f26b59aaca7c1d09fd75a23b64cc4b2b4f63d04465e334ea7
+#6 extracting sha256:d6c2cb069076049f26b59aaca7c1d09fd75a23b64cc4b2b4f63d04465e334ea7 1.7s done
+#6 extracting sha256:b27fb70cc2e5debd2278dbbd2d7cc0665e63785bd8c751ea1682be3dabe79915
+#6 extracting sha256:b27fb70cc2e5debd2278dbbd2d7cc0665e63785bd8c751ea1682be3dabe79915 2.9s done
+#6 DONE 20.6s
+
+#6 [1/3] FROM docker.io/library/eclipse-temurin:21-jre@sha256:0b99b3376fbb50dbf9c0af8535fdd5b8eb0d3fdfc8b1e4967f383b6919f6901a
+#6 extracting sha256:5cec81137da720199b8f279bc24b0054cc7d2e8685fef3d93ea8a9bfa414c909 0.1s done
+#6 extracting sha256:7bf4c6adbed59b289c82f355d0712c87d1f1cbfed41437f19557ad4f6f7ce057 0.1s done
+#6 DONE 20.7s
+
+#7 [2/3] WORKDIR /app
+#7 DONE 1.7s
+
+#8 [3/3] COPY target/pedidos-api-0.0.1-SNAPSHOT.jar app.jar
+#8 DONE 0.8s
+
+#9 exporting to image
+#9 exporting layers
+#9 exporting layers 4.4s done
+#9 exporting manifest sha256:f916723f21c5c4353705f60491b680be1b181a8a95c842607a930abf37573ba2 0.0s done
+#9 exporting config sha256:94d3a5152657532d77f59e92d0db85cc5efaa988aeb77fd2ef75a77796c599a5 0.0s done
+#9 exporting attestation manifest sha256:00eaafebb9e73e5d9a81970de51b75d991c954ea56cc09c745f8fcbc8d718b5a
+#9 exporting attestation manifest sha256:00eaafebb9e73e5d9a81970de51b75d991c954ea56cc09c745f8fcbc8d718b5a 0.0s done
+#9 exporting manifest list sha256:543f1bd934b36206545f3a2b1f736c0d0ce09e0ba3e0367bed1cf86117dd20b6 0.0s done
+#9 naming to docker.io/library/pedidos-api:trivy-20261101 done
+#9 unpacking to docker.io/library/pedidos-api:trivy-20261101
+#9 unpacking to docker.io/library/pedidos-api:trivy-20261101 0.6s done
+#9 DONE 5.3s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/aqbegbxvc71u2lem47srhq45k

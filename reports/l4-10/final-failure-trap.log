@@ -1,0 +1,7 @@
+Evidencia: /c/Users/Bruno/PARA System/1- Projects/Entregable 3 - Devops/EntregableDevops2/reports/l4-10/20261111T180055Z-clean-2691
+Contexto=minikube namespace=laboratorio4 release=l4
+Desinstalar release l4: API, Prometheus, Grafana, configuración y RBAC de métricas.
+Eliminar PVC=false (solo l4-pedidos-api, l4-pedidos-prometheus, l4-pedidos-grafana).
+Retirar políticas L4 y releases kyverno/falco=false.
+Conservar namespaces, CRD compartidas, Jenkins/credenciales/volumen, Minikube, default y reportes.
+ERROR: Para ejecutar: L4_CONFIRM=minikube/laboratorio4/l4 y --apply

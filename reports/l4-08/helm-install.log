@@ -1,0 +1,19 @@
+Release "falco" does not exist. Installing it now.
+I1111 11:38:53.334547     636 warnings.go:107] "Warning: spec.template.metadata.annotations[container.apparmor.security.beta.kubernetes.io/falco]: deprecated since v1.30; use the \"appArmorProfile\" field instead"
+NAME: falco
+LAST DEPLOYED: Wed Nov 11 11:38:52 2026
+NAMESPACE: falco
+STATUS: deployed
+REVISION: 1
+DESCRIPTION: Install complete
+TEST SUITE: None
+NOTES:
+Falco agents are spinning up on each node in your cluster. After a few
+seconds, they are going to start monitoring your containers looking for
+security issues.
+
+TIP:
+You can easily forward Falco events to Slack, Kafka, AWS Lambda and more with falcosidekick.
+Full list of outputs: https://github.com/falcosecurity/charts/tree/master/charts/falcosidekick.
+You can enable its deployment with `--set falcosidekick.enabled=true` or in your values.yaml.
+See: https://github.com/falcosecurity/charts/blob/master/charts/falcosidekick/values.yaml for configuration values.

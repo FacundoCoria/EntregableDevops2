@@ -1,0 +1,6 @@
+# Desarrollo local: imagen cargada en Minikube, sin acceso al registro.
+environment: dev
+apiTitle: Pedidos - desarrollo L4
+components:
+  api:
+    imagePullPolicy: Never

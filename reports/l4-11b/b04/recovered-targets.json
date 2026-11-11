@@ -1,0 +1,68 @@
+{
+  "status": "success",
+  "data": {
+    "activeTargets": [
+      {
+        "discoveredLabels": {
+          "__address__": "kubernetes.default.svc:443",
+          "__always_scrape_classic_histograms__": "false",
+          "__convert_classic_histograms_to_nhcb__": "false",
+          "__metrics_path__": "/api/v1/nodes/minikube-l4-b04/proxy/metrics/resource",
+          "__scheme__": "https",
+          "__scrape_interval__": "5s",
+          "__scrape_native_histograms__": "false",
+          "__scrape_timeout__": "5s",
+          "job": "kubelet-resource"
+        },
+        "labels": {
+          "instance": "kubernetes.default.svc:443",
+          "job": "kubelet-resource"
+        },
+        "scrapePool": "kubelet-resource",
+        "scrapeUrl": "https://kubernetes.default.svc:443/api/v1/nodes/minikube-l4-b04/proxy/metrics/resource",
+        "globalUrl": "https://kubernetes.default.svc:443/api/v1/nodes/minikube-l4-b04/proxy/metrics/resource",
+        "lastError": "",
+        "lastScrape": "2026-11-11T18:56:35.060648591Z",
+        "lastScrapeDuration": 0.06213484,
+        "health": "up",
+        "scrapeInterval": "5s",
+        "scrapeTimeout": "5s"
+      },
+      {
+        "discoveredLabels": {
+          "__address__": "l4-pedidos-api:8080",
+          "__always_scrape_classic_histograms__": "false",
+          "__convert_classic_histograms_to_nhcb__": "false",
+          "__metrics_path__": "/actuator/prometheus",
+          "__scheme__": "http",
+          "__scrape_interval__": "5s",
+          "__scrape_native_histograms__": "false",
+          "__scrape_timeout__": "5s",
+          "job": "pedidos-api",
+          "namespace": "laboratorio4",
+          "release": "l4"
+        },
+        "labels": {
+          "instance": "l4-pedidos-api:8080",
+          "job": "pedidos-api",
+          "namespace": "laboratorio4",
+          "release": "l4"
+        },
+        "scrapePool": "pedidos-api",
+        "scrapeUrl": "http://l4-pedidos-api:8080/actuator/prometheus",
+        "globalUrl": "http://l4-pedidos-api:8080/actuator/prometheus",
+        "lastError": "",
+        "lastScrape": "2026-11-11T18:56:33.535350847Z",
+        "lastScrapeDuration": 0.014401291,
+        "health": "up",
+        "scrapeInterval": "5s",
+        "scrapeTimeout": "5s"
+      }
+    ],
+    "droppedTargets": [],
+    "droppedTargetCounts": {
+      "kubelet-resource": 0,
+      "pedidos-api": 0
+    }
+  }
+}

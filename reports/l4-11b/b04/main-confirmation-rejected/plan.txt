@@ -1,0 +1,1 @@
+Perfil exclusivo: minikube-l4-b04. Docker/CLI preinstalados; Jenkins principal excluido.

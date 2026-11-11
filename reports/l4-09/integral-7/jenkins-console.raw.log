@@ -1,0 +1,419 @@
+Started by user unknown or anonymous
+[8mha:////4OYME+qgLA/v5Qg9w7rHbJ1YGxFkmjv+DyLC+WlTjiiWAAAAoh+LCAAAAAAAAP9tjTEOwjAQBM8BClpKHuFItIiK1krDC0x8GCfWnbEdkooX8TX+gCESFVvtrLSa5wtWKcKBo5UdUu8otU4GP9jS5Mixv3geZcdn2TIl9igbHBs2eJyx4YwwR1SwULBGaj0nRzbDRnX6rmuvydanHMu2V1A5c4MHCFXMWcf8hSnC9jqYxPTz/BXAFEIGsfuclm8zQVqFvQAAAA==[0m[Pipeline] Start of Pipeline
+[8mha:////4NDXQheQqaWgeimAoPLLw9sZWV/rKTPTWPBLCXqw2LwdAAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycohUghExsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jduZBmjwAAAAA==[0m[Pipeline] node
+Running on [8mha:////4LsNz6dA+6pUP/CiBOP1G8kooRVygsukynYUrCRHqjeoAAAAoR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAz2EgZR/eT83ILSktQifY2k0sycEt3MPE19AHHxbH3KAAAA[0mJenkins in /var/jenkins_home/workspace/L4-09-pedidos-api
+[8mha:////4ELV6z6qdZDegF12qinPZnJjnsFJiwht6vZ/9EkyN573AAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycoh0gA0xsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jfoP95RwAAAAA==[0m[Pipeline] {
+[8mha:////4E00YfWQNnOMHhfKh/FdclKvcBqXJDu6qJgSrABz4mCAAAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycoh0gQkxsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jc09154wAAAAA==[0m[Pipeline] withEnv
+[8mha:////4LXeZ6Sjx9UZSgPR3Ev3T7DFILX1WYTw+y5fOuMSB/2lAAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycoh0ggUxsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jek7ggRwAAAAA==[0m[Pipeline] {
+[8mha:////4IWkpCvQ3Jpc0Re6Lat/HDUeZTDFcEpA1gapHG3dMCNbAAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycoh0gwExsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jcChmMxwAAAAA==[0m[Pipeline] timeout
+Timeout set to expire in 45 min
+[8mha:////4CdwbYryTrjsIM4zFXUR2wmeLQRMa5Nvf4cU963aBSlyAAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycoh0BAkxsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jfpX/cvwAAAAA==[0m[Pipeline] {
+[8mha:////4NAY5IHmDz3/qIjzGGOTAjxLp4swjmNi7+JJuYudPlFzAAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycoh0BSEm1igLJwhJCGmj/9skpZ04EVfjDgQqMWHJkm3Jes8X1CnCkaLjrcXOY9Ke92F0JfGJYncNNPGWLlwTJgqWSztJMva0VEnZwiJWwUrA2qIOlDy6DBvRqrtqgkLXnHMs20FA5c0AD2CikLOK+VvmCNvbaBLhj/MXAHOfge2K959f/QbB16AVwAAAAA==[0m[Pipeline] stage
+[8mha:////4F8vxLt/eWafxl004hE0nbKng+JHEjcLxbEEZ10dl+zTAAAAph+LCAAAAAAAAP9tjTEOwjAQBM9BKWgpeYQDJUJUtJYbXmBiY5xYd8G+kFS8iK/xBwKRqNhqZ6XVPF9Q5gQHSl42DtuAuQ6yi72fmhwotZdIg2zoLGvCTNFJ7QZN1h1n1MQO5ogCFgqWDutIOaBnWKnG3E0VDfrqxGna9gqKYG/wAKEmM5vEXxgTrK+9zYQ/z18BjB2D2DEU283nWL4Bsam+msEAAAA=[0m[Pipeline] { (1. Clonacion)
+[8mha:////4FIMrfIw4n1zA2sULpm4ZxFUg3R0rukd/ayIy94VGALSAAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+DOrAycoiUzoiJNerCCUITQtLo/zZJSSdOxNW4Ay2VmPBg2Zas93pDGQOcKBjuNHYWY2t570czJ54pdDdPmTu68pYwkte80bkhpc9rbShpWFUw2AjYamw9RYsmwU44+ZCVl2iqSwrzdhTArBrgCYWYyUmG9C1TgP19VJHwx/kLgKlPwOrDYvXyLD8BobDcwgAAAA==[0m[Pipeline] script
+[8mha:////4Kj2cSpdcmwPL0jfYVrp0cqT51vCZwkd4fts9Hk05Z+fAAAAph+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUZUVMrFEWThCaEJJG/7dJSjpxIq7GHWipxIQHy7ZkvdcbqhjgRMEwp7GzGFvLej+aObFMobt5yszRlbWEkbxmQmdBSp/XKihpWFWUsOGw1dh6ihZNgh138iFrL9HUlxTm7cihtGqAJxR8JicZ0rdMAfb3UUXCH+cvAKY+Qdk0ix2WZ/UBbwyqm8IAAAA=[0m[Pipeline] {
+[8mha:////4ERUCPwGG/rMwRXKN+T4ZFY1j6uxome0s5TAa1X85jUEAAAAox+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIioERUaS03vMDExjix7oztkFS8iK/xBwKRqNhitbPNPF+wTBGOHC22hjpHqXEYfG+nhQPH7uJ5wJbP2DAl9galGSRrU88oORuYU5SwELAy1HhOjmyGtWjVXVVeka1OOU7fQUDp9A0eUIjJnFXMXxgjbK69Tkw/z18BjCFkKLf7T+3eO7Rwfr4AAAA=[0m[Pipeline] }
+[8mha:////4Ckh5nwZ6ovNiZuMdXslg+UZ+SFmPqBBd1lBufdpEuX1AAAApB+LCAAAAAAAAP9tjbEOwiAURV9rHFwd/QiaJm7GyZWw+AXYIkLJexSodPKL/DX/QbSJk3e4uecu5/mCdQxwpKCZVTgYjJ1h3k26LJYpDFdHmVm6sI4wklNMqCyoV6cFBSUFS6oaVhw2CjtH0aBOsOVW3mXjJOrmnEL5Dhxq04/wgIoXc5IhfWEOsLtNfST8ef4KYPY+Qd3uP9W+ATnVfPq+AAAA[0m[Pipeline] // script
+[8mha:////4PKdeE2tDqYUXOmvmjqll6FWlUHb+KZdKN9FHVw5W7hKAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOICBRWiSmu54QUmNsaJdWdsh6TiRXyNPxCIRMUWq51t5vmCZYpw5GixNdQ5So3D4Hs7LRw4dhfPA7Z8xoYpsTcozSBZm3pGydnAnKKEhYCVocZzcmQzrEWr7qryimx1ynH6DgJKp2/wgEJM5qxi/sIYYXPtdWL6ef4KYAwZyt32U/vwBtafXdy+AAAA[0m[Pipeline] sh
++ mkdir -p /var/jenkins_home/workspace/L4-09-pedidos-api/evidencia-7
+[8mha:////4IE9Dwna9c6+siPJPSjiPX6axW/wyV8zGD5tB9y6O72hAAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycogUFhbE1DXKwglCE0La6P/yk9JOnIircQdaKjHhwbItWe/1hiIynIidaCy2HmPtRRd6NyUxELfXQINo6CJqwkjBCmUHRcZWS1WULCzKclhJWFusA0WPLsFGNvqhy6DRlefE03aUkHtzhydkciInzelbRobtrTeR8Mf5C4CxS5Dvd7Md5mfxAbmRtcHCAAAA[0m[Pipeline] dir
+Running in /var/jenkins_home/workspace/L4-09-pedidos-api/fuente-l4
+[8mha:////4J1g4JrpnsONGz3Vu9nwOBE77vJb79tXmAtmvjLc/QYcAAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohULDAgpq5RFk4QmhDSRv+Xn5R24kRcjTvQUokJD5ZtyXqvNxSR4UTsRGOx9RhrL7rQuymJgbi9BhpEQxdRE0YKVig7KDK2WqqiZGFRlsNKwtpiHSh6dAk2stEPXQaNrjwnnrajhNybOzwhkxM5aU7fMjJsb72JhD/OXwCMXYJ8t5/tMD+LD1+IXOLCAAAA[0m[Pipeline] {
+[8mha:////4PwNF/6anUAa8NzSHZsHKtVOfmootavekBFy6rqBHS8sAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiKpAQVVrLDS8wsTFOrDtjOyQVL+Jr/IFAJCq2WO1sM88XLFOEI0eLraHOUWocBt/baeHAsbt4HrDlMzZMib1BaQbJ2tQzSs4G5hQlLASsDDWekyObYS1adVeVV2SrU47TdxBQOn2DBxRiMmcV8xfGCJtrrxPTz/NXAGPIUG53n9qHNxXfVKy+AAAA[0m[Pipeline] deleteDir
+[8mha:////4ADSr5Z/OwPTkJR1QeEvPUd5Gum85HUjvFBf8FbiGnsvAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiKoQQVVrLDS8wsTFOrDtjOyQVL+Jr/IFAJCq2WO1sM88XLFOEI0eLraHOUWocBt/baeHAsbt4HrDlMzZMib1BaQbJ2tQzSs4G5hQlLASsDDWekyObYS1adVeVV2SrU47TdxBQOn2DBxRiMmcV8xfGCJtrrxPTz/NXAGPIUG53n9qHN1TuT7W+AAAA[0m[Pipeline] sh
++ set -eu
++ git clone --no-local -- /var/jenkins_home/l4-source.git .
+Cloning into '.'...
++ git rev-parse --verify --end-of-options main^{commit}
++ ref=0f47780b51b3711763d6aebf4a9791d5d1edee28
++ git checkout --detach 0f47780b51b3711763d6aebf4a9791d5d1edee28
+HEAD is now at 0f47780 Deploy with client diff and legacy wait under restricted RBAC
++ git rev-parse HEAD
++ git status --porcelain
++ sha256sum pedidos-api/pedidos-api/pom.xml pedidos-api/pedidos-api/Dockerfile
++ sh ci/bootstrap-tools.sh
++ cat /var/jenkins_home/workspace/L4-09-pedidos-api/evidencia-7/herramientas.log
+== Maven 3.9.16 ==
+== Snyk 1.1308.4 ==
+== Helm 4.3.1 ==
+== kubectl 1.37.0 ==
+== Semgrep 1.184.0 ==
+Apache Maven 3.9.16 (2bdd9fddda4b155ebf8000e807eb73fd829a51d5)
+Maven home: /var/jenkins_home/l4-tools/apache-maven-3.9.16
+Java version: 21.0.12.1, vendor: Eclipse Adoptium, runtime: /opt/java/openjdk
+Default locale: en, platform encoding: UTF-8
+OS name: "linux", version: "6.6.87.2-microsoft-standard-wsl2", arch: "amd64", family: "unix"
+1.1308.4
+v4.3.1+gc0d08d0
+Client Version: v1.37.0
+Kustomize Version: v5.8.1
+1.184.0
+L4_TOOLS_READY
+[8mha:////4JLQ4r0Js0bjxIJbW2Y6HElVM+sQnsytIBibDz9p548cAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOICNBQoFa3lhheYxBgn1l2wHZyKF/E1/oBFJCq2WO1sM683LIOHmr3BTlNvKTQWBzeavDCx76+OE3Z8wYYpsNModZLc6tOMkqOGOUUJCwErTY3jYMlEWItOPVTlFJnqHH3+jgJK297hCYXI5qh8/MLkYXMb28D08/wVwDQMEcr9Ntfu8AGHKGa5vgAAAA==[0m[Pipeline] }
+[8mha:////4LqlLFUt886uZi9tC2nWUktp6ob7VXFsEAFfpQpJ4kiIAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOKiUNAgqrRWGl5gYmOcWHfGdkgqXsTX+AMWkajYYrWzzbzesI4BThwM9poGS7Gz6N1o8sKJw3B1PGHPF+yYIjuNrZ5aVrpZsOWkYUlRwkrARlPnOFoyCbailw9ZOUmmOqeQv6OA0qo7PKEQ2ZxkSF+YA+xuo4pMP89fAczeJyj3da768AG0yz0FvgAAAA==[0m[Pipeline] // dir
+[8mha:////4L+vu1SR+s6H1JQeMVi9Ww+BYqtd4u0xIdgtqfU4WscsAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOICaRFVWisNLzCxMU6sO2M7JBUv4mv8AYtIVGyx2tlmXm9YxwAnDgZ7TYOl2Fn0bjR54cRhuDqesOcLdkyRncZWTy0r3SzYctKwpChhJWCjqXMcLZkEW9HLh6ycJFOdU8jfUUBp1R2eUIhsTjKkL8wBdrdRRaaf568AZu8TlHWd67D/AC8cymq+AAAA[0m[Pipeline] }
+[8mha:////4LlLQtKlRWPNWb5IN3mwkPDfIFUvq31yx7noqk2+M6YZAAAAox+LCAAAAAAAAP9tjTEOwjAQBDdBFLSUPMKRoEKIitZKwwtMYowT6y7YF5KKF/E1/kBEJCq22plmXm8sU8SRo1ONpdZTqrzqQu+mpwaO7TXwoBq+qIopcbCqtEPJtT3NWLJYzMtyLDRWlqrAyZMTrHVjHqYIhlxxlji5g0bu6zueyPRUFhPlC2PE5tbXienX+RvA2HWCfLsTZPsPRl/Abb0AAAA=[0m[Pipeline] // stage
+[8mha:////4KG+NoPSujxXs1Z+S1uJJdF6T2ncWGyGeWt35mNMLEmhAAAApx+LCAAAAAAAAP9tjTEOwjAQBM9BKWgpeYQjIQokREVrueEFJjbGiXUX7AtJxYv4Gn8gEImKrXZWWs3zBWVOcKDkZeOwDZjrILvY+6nJgVJ7iTTIhs6yJswUndRu0GTdcUZN7GCOKGChYOmwjpQDeoaVaszdVNGgr06cpm2voAj2Bg8QajKzSfyFMcH62ttM+PP8FcDYMYgdQ7HZfo7lG/ouSfHBAAAA[0m[Pipeline] stage
+[8mha:////4C7LCAMEjxvHo5DMVO0SrNvlZHUEzWETl0itRh8IHi/PAAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUQjAhpq5RFk4QmhDSRv+Xn5R24kRcjTvQUokJD5ZtyXqvNxSR4UTsRGOx9RhrL7rQuymJgbi9BhpEQxdRE0YKVig7KDK2WqqiZGFRlsNKwtpiHSh6dAk2stEPXQaNrjwnnrajhNybOzwhkxM5aU7fMjJsb72JhD/OXwCMXYJ8t5/tMD+LD/hYjrHCAAAA[0m[Pipeline] { (2. Semgrep)
+[8mha:////4OZU6PA6/5+uwgw4A5GdGMxJTxKTVfIHy5vYr/NoCR9tAAAAqB+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUQoIFMXWNsnCC0ISQNvq//KS0EyfiatyBlkpMeLBsS9Z7vaGIDCdiJxqLrcdYe9GF3k1JDMTtNdAgGrqImjBSsELZQZGx1VIVJQuLshxWEtYW60DRo0uwkY1+6DJodOU58bQdJeTe3OEJmZzISXP6lpFhe+tNJPxx/gJg7BLku/1sh/lZfACW9ZT2wgAAAA==[0m[Pipeline] dir
+Running in /var/jenkins_home/workspace/L4-09-pedidos-api/fuente-l4
+[8mha:////4KtS/vxcyi2a9yYWjcLxjOqj4ThPBgiMHacsbvvdUXGBAAAAqB+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUYoABMXWNsnCC0ISQNvq//KS0EyfiatyBlkpMeLBsS9Z7vaGIDCdiJxqLrcdYe9GF3k1JDMTtNdAgGrqImjBSsELZQZGx1VIVJQuLshxWEtYW60DRo0uwkY1+6DJodOU58bQdJeTe3OEJmZzISXP6lpFhe+tNJPxx/gJg7BLku/1sh/lZfAAyQCqkwgAAAA==[0m[Pipeline] {
+[8mha:////4InDeZy0u/TV2EIRXi9SLyjXvT28v390FvrV04FsbAYiAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIi0YCEqNJabniBiY1xYt0Z2yGpeBFf4w8EIlGxxWpnm3m+YJkiHDlabA11jlLjMPjeTgsHjt3F84Atn7FhSuwNSjNI1qaeUXI2MKcoYSFgZajxnBzZDGvRqruqvCJbnXKcvoOA0ukbPKAQkzmrmL8wRthce52Yfp6/AhhDhnK7+9Q+vAGvZp0gvgAAAA==[0m[Pipeline] sh
++ set -eu
++ cd pedidos-api/pedidos-api
++ semgrep scan --config security/semgrep --metrics=off --disable-version-check --strict --error --no-rewrite-rule-ids --json-output /var/jenkins_home/workspace/L4-09-pedidos-api/evidencia-7/semgrep.json --text --output /var/jenkins_home/workspace/L4-09-pedidos-api/evidencia-7/semgrep.txt src
++ cat /var/jenkins_home/workspace/L4-09-pedidos-api/evidencia-7/semgrep.log
+               
+               
+┌─────────────┐
+│ Scan Status │
+└─────────────┘
+  Scanning 9 files tracked by git with 2 Code rules:
+  Scanning 8 files with 2 java rules.
+                
+                
+┌──────────────┐
+│ Scan Summary │
+└──────────────┘
+✅ Scan completed successfully.
+ • Findings: 0 (0 blocking)
+ • Rules run: 2
+ • Targets scanned: 8
+ • Parsed lines: ~100.0%
+ • Scan skipped: 
+   ◦ Files matching .semgrepignore patterns: 1
+ • Scan was limited to files tracked by git
+ • For a detailed list of skipped files and lines, run semgrep with the --verbose flag
+Ran 2 rules on 8 files: 0 findings.
+[8mha:////4FOTmDlykiFAlAc2flRcQJjz5Phm0xuBmwHGwSNECYSrAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIi0SCEqNJabniBiY1xYt0Z2yGpeBFf4w8EIlGxxWpnm3m+YJkiHDlabA11jlLjMPjeTgsHjt3F84Atn7FhSuwNSjNI1qaeUXI2MKcoYSFgZajxnBzZDGvRqruqvCJbnXKcvoOA0ukbPKAQkzmrmL8wRthce52Yfp6/AhhDyFBu95/avQGMKkS1vgAAAA==[0m[Pipeline] }
+[8mha:////4PviMlnYDbTtDv+lNrS+mPBMH7l48B9ibHJG2bEclGvAAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOKCQKJBqWgtN7zAJMY4se6C7eBUvIiv8QcsIlGxxWpnm3m9YRk81OwNdpp6S6GxOLjR5IWJfX91nLDjCzZMgZ1GqZPkVp9mlBw1zClKWAhYaWocB0smwlp06qEqp8hU5+jzdxRQ2vYOTyhENkfl4xcmD5vb2Aamn+evAKZhiFDut7l2hw9mQDtDvgAAAA==[0m[Pipeline] // dir
+[8mha:////4OotCfQC618DOxniTthgYZVlepoAEDgX18wPdr4Q7fQ3AAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiQFQoFa3lhheYxBgn1l2wHZyKF/E1/oBFJCq2WO1sM683LIOHmr3BTlNvKTQWBzeavDCx76+OE3Z8wYYpsNModZLc6tOMkqOGOUUJCwErTY3jYMlEWItOPVTlFJnqHH3+jgJK297hCYXI5qh8/MLkYXMb28D08/wVwDQMEcr9Ntfu8AF5wm4RvgAAAA==[0m[Pipeline] }
+[8mha:////4GsA5EyYZo8WbmzKJ1VJsHg3NvAIxenpOvpoKpIr0LEXAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiBTpEldZKwwtMbIwT687YDknFi/gaf8AiEhVbrHa2mdcb1jHAiYPBXtNgKXYWvRtNXjhxGK6OJ+z5gh1TZKex1VPLSjcLtpw0LClKWAnYaOocR0smwVb08iErJ8lU5xTydxRQWnWHJxQim5MM6QtzgN1tVJHp5/krgNn7BOW+zlUfPkGA/eC+AAAA[0m[Pipeline] // stage
+[8mha:////4Bc2IY8l2nNjkrZQYXP9c+p3MpU6XOLjZxqa1Q2ePWO4AAAAph+LCAAAAAAAAP9tjTEOwjAQBC9BKWgpeYRTpEFCVLSWG15gYmOcWHfBvpBUvIiv8QcMkajYamel1TxfUKUIB4pOdBZ7j6n1Ygijy01MFPtLoEl0dBYtYaJghbKTImOPCypiC0uKElYS1hbbQMmjY9jITt91HTS6+sQxb3sJpTc3eEAhs5l15C/MEbbX0STCn+evAOaBodgxlE3zOVZv9hU7SsEAAAA=[0m[Pipeline] stage
+[8mha:////4EIJ+J7iMwb9wnRsd3ziOz6NrvvqsmqVY18OmbfC06jUAAAAph+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycoh0KBtiYo2ycILQhJA0+r9NUtKJE3E17kBLJSY8WLYl673eUMUAJwqGOY2dxdha1vvRzIllCt3NU2aOrqwljOQ1EzoLUvq8VkFJw6qihA2HrcbWU7RoEuy4kw9Ze4mmvqQwb0cOpVUDPKHgMznJkL5lCrC/jyoS/jh/ATD1CcqmWeywPKsPBdk7bsIAAAA=[0m[Pipeline] { (3. Snyk y bloqueo de criticos)
+[8mha:////4Jl60mHvYyrvcel3+PriGt2p7JPQvOIn0LafH4Xl3r3YAAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycoh0ACbE1DXKwglCE0La6P/yk9JOnIircQdaKjHhwbItWe/1hiIynIidaCy2HmPtRRd6NyUxELfXQINo6CJqwkjBCmUHRcZWS1WULCzKclhJWFusA0WPLsFGNvqhy6DRlefE03aUkHtzhydkciInzelbRobtrTeR8Mf5C4CxS5Dv9rMd5mfxASMfXIzCAAAA[0m[Pipeline] withCredentials
+Masking supported pattern matches of $SNYK_TOKEN
+[8mha:////4Pnp7j5FKnT+zn00MebSPMyd0PdhDOYC2B75kdASo431AAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycoh0QLAgpq5RFk4QmhDSRv+Xn5R24kRcjTvQUokJD5ZtyXqvNxSR4UTsRGOx9RhrL7rQuymJgbi9BhpEQxdRE0YKVig7KDK2WqqiZGFRlsNKwtpiHSh6dAk2stEPXQaNrjwnnrajhNybOzwhkxM5aU7fMjJsb72JhD/OXwCMXYJ8t5/tMD+LD02yRsvCAAAA[0m[Pipeline] {
+[8mha:////4I94t0HghGL9ZeMQyQ8J9TafgANHfHAIVgDrLlAshK1gAAAAqB+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycoh0QIIBMXWNsnCC0ISQNvq//KS0EyfiatyBlkpMeLBsS9Z7vaGIDCdiJxqLrcdYe9GF3k1JDMTtNdAgGrqImjBSsELZQZGx1VIVJQuLshxWEtYW60DRo0uwkY1+6DJodOU58bQdJeTe3OEJmZzISXP6lpFhe+tNJPxx/gJg7BLku/1sh/lZfADpB/iZwgAAAA==[0m[Pipeline] dir
+Running in /var/jenkins_home/workspace/L4-09-pedidos-api/fuente-l4
+[8mha:////4JXP3bzfKSZFZXPRRUZ05PLYZJOzUGgUqgAAodhfiBjhAAAAqB+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycoh0YAAJMXWNsnCC0ISQNvq//KS0EyfiatyBlkpMeLBsS9Z7vaGIDCdiJxqLrcdYe9GF3k1JDMTtNdAgGrqImjBSsELZQZGx1VIVJQuLshxWEtYW60DRo0uwkY1+6DJodOU58bQdJeTe3OEJmZzISXP6lpFhe+tNJPxx/gJg7BLku/1sh/lZfAD8aiCpwgAAAA==[0m[Pipeline] {
+[8mha:////4LYNTD5XrCcW0RHiEinfCoIj5/bUGl+gG6c3ndIc1H+0AAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycoh0YAEhpq5RFk4QmhDSRv+Xn5R24kRcjTvQUokJD5ZtyXqvNxSR4UTsRGOx9RhrL7rQuymJgbi9BhpEQxdRE0YKVig7KDK2WqqiZGFRlsNKwtpiHSh6dAk2stEPXQaNrjwnnrajhNybOzwhkxM5aU7fMjJsb72JhD/OXwCMXYJ8t5/tMD+LD59NhPHCAAAA[0m[Pipeline] script
+[8mha:////4PiXp6axDnY43F/Bkjeorw3vw+xl0udO22B49HP3m5OIAAAAqB+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycogUCRaEOrFGXThBaEJIGv1fkpR04kRcjTsQqMSEB8u2ZL3nC6rgoSGvmVXYGwydYYMbdU4ske8vjhKzdGYdYSCnWKtSS1Id59pSVDCrKGHBYamwcxQM6ggrbsVd1E6grk/R5+3AoTTyBg8oeCZH4eO3TB7W11EGwh/nLwCmIUK53WfbbT7P6g0Z/aLSwgAAAA==[0m[Pipeline] {
+[8mha:////4GfEpFHgdLeXptjnDoo39UKe8MzVVCplpIY6RN/f8dLiAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOICEh2iSmu54QUmNsaJdWdsh6TiRXyNPxCIRMUWq51t5vmCZYpw5GixNdQ5So3D4Hs7LRw4dhfPA7Z8xoYpsTcozSBZm3pGydnAnKKEhYCVocZzcmQzrEWr7qryimx1ynH6DgJKp2/wgEJM5qxi/sIYYXPtdWL6ef4KYAwZyv32U7vwBl2WGva+AAAA[0m[Pipeline] sh
++ set +x
+[8mha:////4N3VbI+Rv8DWavTp0PFA2VGmVgV4hJpQp3lQUFa2AAM3AAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOKCEB2iSmu54QUmNsaJdWdsh6TiRXyNPxCIRMUWq51t5vmCZYpw5GixNdQ5So3D4Hs7LRw4dhfPA7Z8xoYpsTcozSBZm3pGydnAnKKEhYCVocZzcmQzrEWr7qryimx1ynH6DgJKp2/wgEJM5qxi/sIYYXPtdWL6ef4KYAwZyv32U7vwBp7FN92+AAAA[0m[Pipeline] writeFile
+[8mha:////4GnxYNpumGWsMMxQrwK55EE5kzZJ5WCyWpmOo2NMHF7vAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOKCBB2iSmu54QUmNsaJdWdsh6TiRXyNPxCIRMUWq51t5vmCZYpw5GixNdQ5So3D4Hs7LRw4dhfPA7Z8xoYpsTcozSBZm3pGydnAnKKEhYCVocZzcmQzrEWr7qryimx1ynH6DgJKp2/wgEJM5qxi/sIYYXPtdWL6ef4KYAwZyv32U7vwBt/0LMS+AAAA[0m[Pipeline] sh
++ cat /var/jenkins_home/workspace/L4-09-pedidos-api/evidencia-7/snyk-exit.txt
++ python3 ci/gate-snyk.py /var/jenkins_home/workspace/L4-09-pedidos-api/evidencia-7/snyk.json 1
+{
+  "scan_exit_code": 1,
+  "findings_by_severity": {
+    "critical": 0,
+    "high": 1,
+    "low": 1,
+    "medium": 8
+  },
+  "critical_ids": [],
+  "gate": "PASS"
+}
+[8mha:////4No4zAEoqBu2K/eX/hW8ZSPdBNP9Ba4BCgFQ8hTvk/gxAAAAox+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOJCkQ5R0VppeIFJjLFj3Tm2g1PxIr7GHwhEomKL1c4283zBOgY4ctBoFfWGYmvQu1HPCzOH/uo4o+ULtkyRncJG5YY7dVqw4aRgSVHCSsBGUes4GtIJtsLKu6ycJF2dU5i/g4DSdAM8oBCzOcmQvjAF2N3GLjL9PH8FMHmfoKzrT+3fTT40or4AAAA=[0m[Pipeline] }
+[8mha:////4J5FRf/NrBxk5Suib3qAdQodzCUnKUYuSI+ra7yyGm2CAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOJSAAVCqWgtN7zAJMY4se6C7eBUvIiv8QcsIlGxxWpnm3m9YRk81OwNdpp6S6GxOLjR5IWJfX91nLDjCzZMgZ1GqZPkVp9mlBw1zClKWAhYaWocB0smwlp06qEqp8hU5+jzdxRQ2vYOTyhENkfl4xcmD5vb2Aamn+evAKZhiFDu9rm2hw+Lw/VfvgAAAA==[0m[Pipeline] // script
+[8mha:////4NyuedqNiWWhxLexKXhP7aelJOk1yNootWwsuezoO/zhAAAAph+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOJSgBASSkVrueEFJjHGiXUXbAen4kV8jT9gEYmKLVY728zrDcvgoWZvsNPUWwqNxcGNJi9M7Pur44QdX7BhCuw0Sp0kt/o0o+SoYU5RwkLASlPjOFgyEdaiUw9VOUWmOkefv6OA0rZ3eEIhsjkqH78wedjcxjYw/Tx/BTANQ4Ryt8+1PXwAs4Fmrr4AAAA=[0m[Pipeline] }
+[8mha:////4JGuv6sLpgKR70MBMfYY3kurYcsL8Ojw2NQwzOnO8Z0+AAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOJSgJQCUaW10vACExvjxLoztkNS8SK+xh+wiETFFqudbeb1hnUMcOJgsNc0WIqdRe9GkxdOHIar4wl7vmDHFNlpbPXUstLNgi0nDUuKElYCNpo6x9GSSbAVvXzIykky1TmF/B0FlFbd4QmFyOYkQ/rCHGB3G1Vk+nn+CmD2PkF5qHPt6w+HT4X1vgAAAA==[0m[Pipeline] // dir
+[8mha:////4A4PImesPZQavTPO/INWRhpC3gQ4SGGq/9C8se0HhZoDAAAAph+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOJSgBASSkVrueEFJjHGiXUXbAen4kV8jT9gEYmKLVY728zrDcvgoWZvsNPUWwqNxcGNJi9M7Pur44QdX7BhCuw0Sp0kt/o0o+SoYU5RwkLASlPjOFgyEdaiUw9VOUWmOkefv6OA0rZ3eEIhsjkqH78wedjcxjYw/Tx/BTANQ4Ryd8i13X8AxM3Uc74AAAA=[0m[Pipeline] }
+[8mha:////4NwVwsI6v/xH7+xFP501z8u5cOafAlpYPcPhdVAmKPQuAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOJSAAVCqWgtN7zAJMY4se6C7eBUvIiv8QcsIlGxxWpnm3m9YRk81OwNdpp6S6GxOLjR5IWJfX91nLDjCzZMgZ1GqZPkVp9mlBw1zClKWAhYaWocB0smwlp06qEqp8hU5+jzdxRQ2vYOTyhENkfl4xcmD5vb2Aamn+evAKZhiFDuDrm2+w/bT4EhvgAAAA==[0m[Pipeline] // withCredentials
+[8mha:////4D3cln5HmADy34hFzZxSnavdL6jl4W84h3Mv1YnrdeFCAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOKCBFQoFa3lhheYxBgn1l2wHZyKF/E1/oBFJCq2WO1sM683LIOHmr3BTlNvKTQWBzeavDCx76+OE3Z8wYYpsNModZLc6tOMkqOGOUUJCwErTY3jYMlEWItOPVTlFJnqHH3+jgJK297hCYXI5qh8/MLkYXMb28D08/wVwDQMEcrDNtdu/wExJf7XvgAAAA==[0m[Pipeline] }
+[8mha:////4Nm/0iOfYjj1MOAZk4AbRDsYZ0//Yx2x7laLZkNU5dc9AAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPMIRiqgQVVorDS8w8WGcWHfGdkgqXsTX+AMWkajYYrWzzbzesI4BThyM6JEGS7GzwrvR5CUmDsPV8SR6voiOKbJD0eLUssZmwZYTwpKihJWEDVLnOFoyCbayVw9VOUWmOqeQv6OE0uo7PKGQ2ZxUSF+YA+xuo45MP89fAczeJygP+1x1/QE3Y8aCvgAAAA==[0m[Pipeline] // stage
+[8mha:////4HqNvmgxPU26M8RPfAK2S3b8DQ8X3zObsYZrDpINAJkeAAAApx+LCAAAAAAAAP9tjUEKwjAQRSeVLty69BApCIIgrtyGbDxBbGJMG2ZqMrVdeSKv5h2sFlz5V/99+LznC8qc4EDJy8ZhGzDXQXax91OTA6X2EmmQDZ1lTZgpOqndoMm644ya2MEcUcBCwdJhHSkH9Awr1Zi7qaJBX504TdteQRHsDR4g1GRmk/gLY4L1tbeZ8Of5K4CxYxA7hmK7+RzLN2nzt+LBAAAA[0m[Pipeline] stage
+[8mha:////4M3Bu8jUwr3s4FhuvsGHIey8fs8JFoNjU0siZPJFw1BBAAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUAjEhpq5RFk4QmhDSRv+Xn5R24kRcjTvQUokJD5ZtyXqvNxSR4UTsRGOx9RhrL7rQuymJgbi9BhpEQxdRE0YKVig7KDK2WqqiZGFRlsNKwtpiHSh6dAk2stEPXQaNrjwnnrajhNybOzwhkxM5aU7fMjJsb72JhD/OXwCMXYL8sJttPz+LD6emXT7CAAAA[0m[Pipeline] { (4. Compilacion y pruebas)
+[8mha:////4CYnkvaKUTaM50xgCulSuDTIsbTeOS81ejGGDSnrPl9hAAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycoh0ACbE1DXKwglCE0La6P/yk9JOnIircQdaKjHhwbItWe/1hiIynIidaCy2HmPtRRd6NyUxELfXQINo6CJqwkjBCmUHRcZWS1WULCzKclhJWFusA0WPLsFGNvqhy6DRlefE03aUkHtzhydkciInzelbRobtrTeR8Mf5C4CxS5AfdrPt52fxAd9J1uLCAAAA[0m[Pipeline] dir
+Running in /var/jenkins_home/workspace/L4-09-pedidos-api/fuente-l4
+[8mha:////4HV6lnuFoCM5yhu9S2o0vLuHqEuIO7eHTyGQEobf3zwJAAAAph+LCAAAAAAAAP9tjTEOwjAUQ3+DOrAycoh0oRNiYo26cILQhJA0+r9NUtKJE3E17kBLJSY8WLYl673eUMYAJwqGO42dxdha3vvRzIlnCt3NU+aOrrwljOQ1b3RuSOnzWhtKGlYVDDYCthpbT9GiSbATTj5k5SWa6pLCvB0FMKsGeEIhZnKSIX3LFGB/H1Uk/HH+AmDqE7D6sFi9PMsP+Y+xAMIAAAA=[0m[Pipeline] {
+[8mha:////4DIg2WpNLG9KfHQeosH/uxnXcKQEpRODqyUvBcMA0hqZAAAAox+LCAAAAAAAAP9tjTESwiAURH/iWNhaeghSxcaxsmVoPAEmiBDmfwJEUnkir+YdRDNj5RY7+7Z5zxesY4AjBc2swsFg7AzzbtJlsUxhuDrKzNKFdYSRnGJCZUG9Oi0oKClYUtWw4rBR2DmKBnWCLbfyLhsnUTfnFMp34FCbfoQHVLyYkwzpC3OA3W3qI+HP81cAs09Qt+2n9v4NlEULJr4AAAA=[0m[Pipeline] sh
++ set -eu
++ cd pedidos-api/pedidos-api
++ ./mvnw -B -ntp -Dspring.datasource.url=jdbc:h2:mem:cijenkins clean verify
++ cat /var/jenkins_home/workspace/L4-09-pedidos-api/evidencia-7/maven.log
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------< com.pedidos:pedidos-api >-----------------------
+[INFO] Building  0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.5.0:clean (default-clean) @ pedidos-api ---
+[INFO] 
+[INFO] --- resources:3.5.0:resources (default-resources) @ pedidos-api ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 0 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.15.0:compile (default-compile) @ pedidos-api ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 8 source files with javac [debug parameters release 21] to target/classes
+[INFO] 
+[INFO] --- resources:3.5.0:testResources (default-testResources) @ pedidos-api ---
+[INFO] skip non existing resourceDirectory /var/jenkins_home/workspace/L4-09-pedidos-api/fuente-l4/pedidos-api/pedidos-api/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.15.0:testCompile (default-testCompile) @ pedidos-api ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 1 source file with javac [debug parameters release 21] to target/test-classes
+[INFO] 
+[INFO] --- surefire:3.5.6:test (default-test) @ pedidos-api ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.pedidos.pedidos_api.PedidosApiApplicationTests
+17:43:19.490 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.pedidos.pedidos_api.PedidosApiApplicationTests]: PedidosApiApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+17:43:19.636 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.pedidos.pedidos_api.PedidosApiApplication for test class com.pedidos.pedidos_api.PedidosApiApplicationTests
+17:43:19.787 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.pedidos.pedidos_api.PedidosApiApplicationTests]: PedidosApiApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+17:43:19.790 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.pedidos.pedidos_api.PedidosApiApplication for test class com.pedidos.pedidos_api.PedidosApiApplicationTests
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.1.1)
+
+2026-11-11T17:43:20.373Z  INFO 8189 --- [pedidos-api] [           main] c.p.p.PedidosApiApplicationTests         : Starting PedidosApiApplicationTests using Java 21.0.12.1 with PID 8189 (started by root in /var/jenkins_home/workspace/L4-09-pedidos-api/fuente-l4/pedidos-api/pedidos-api)
+2026-11-11T17:43:20.375Z  INFO 8189 --- [pedidos-api] [           main] c.p.p.PedidosApiApplicationTests         : No active profile set, falling back to 1 default profile: "default"
+2026-11-11T17:43:21.561Z  INFO 8189 --- [pedidos-api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-11T17:43:21.645Z  INFO 8189 --- [pedidos-api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 69 ms. Found 2 JPA repository interfaces.
+2026-11-11T17:43:22.482Z  INFO 8189 --- [pedidos-api] [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-11-11T17:43:22.562Z  INFO 8189 --- [pedidos-api] [           main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.5.Final
+2026-11-11T17:43:23.312Z  INFO 8189 --- [pedidos-api] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-11T17:43:23.354Z  INFO 8189 --- [pedidos-api] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-11T17:43:23.634Z  INFO 8189 --- [pedidos-api] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:cijenkins user=SA
+2026-11-11T17:43:23.638Z  INFO 8189 --- [pedidos-api] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-11-11T17:43:23.792Z  INFO 8189 --- [pedidos-api] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:cijenkins]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: CIJENKINS/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-11-11T17:43:25.280Z  INFO 8189 --- [pedidos-api] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: create table pedido (id bigint generated by default as identity, cliente varchar(255), estado varchar(255), fecha_creacion timestamp(6), minutos_espera integer, precio_unitario float(53), producto_id bigint, primary key (id))
+Hibernate: create table producto (id bigint generated by default as identity, nombre varchar(255), precio float(53), primary key (id))
+Hibernate: alter table if exists pedido add constraint FKsoggxhdxr3wnhv3kdkka1nmvy foreign key (producto_id) references producto
+2026-11-11T17:43:25.450Z  INFO 8189 --- [pedidos-api] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-11T17:43:25.643Z  INFO 8189 --- [pedidos-api] [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-11-11T17:43:26.271Z  WARN 8189 --- [pedidos-api] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-11-11T17:43:27.018Z  INFO 8189 --- [pedidos-api] [           main] o.s.b.h.a.H2ConsoleAutoConfiguration     : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:cijenkins'
+2026-11-11T17:43:27.304Z  INFO 8189 --- [pedidos-api] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 4 endpoints beneath base path '/actuator'
+2026-11-11T17:43:27.455Z  INFO 8189 --- [pedidos-api] [           main] c.p.p.PedidosApiApplicationTests         : Started PedidosApiApplicationTests in 7.544 seconds (process running for 9.438)
+Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
+WARNING: A Java agent has been loaded dynamically (/root/.m2/repository/net/bytebuddy/byte-buddy-agent/1.18.11/byte-buddy-agent-1.18.11.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.358 s -- in com.pedidos.pedidos_api.PedidosApiApplicationTests
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jar:3.5.1:jar (default-jar) @ pedidos-api ---
+[INFO] Building jar: /var/jenkins_home/workspace/L4-09-pedidos-api/fuente-l4/pedidos-api/pedidos-api/target/pedidos-api-0.0.1-SNAPSHOT.jar
+[INFO] 
+[INFO] --- spring-boot:4.1.1:repackage (repackage) @ pedidos-api ---
+[INFO] Replacing main artifact /var/jenkins_home/workspace/L4-09-pedidos-api/fuente-l4/pedidos-api/pedidos-api/target/pedidos-api-0.0.1-SNAPSHOT.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
+[INFO] The original artifact has been renamed to /var/jenkins_home/workspace/L4-09-pedidos-api/fuente-l4/pedidos-api/pedidos-api/target/pedidos-api-0.0.1-SNAPSHOT.jar.original
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  16.646 s
+[INFO] Finished at: 2026-11-11T17:43:30Z
+[INFO] ------------------------------------------------------------------------
++ ./mvnw -B -ntp dependency:tree
+[8mha:////4HlLECN5aOkhJ2oXP590KQ8deA0WyeSfqi61WHZBDPT7AAAAox+LCAAAAAAAAP9tjTESwiAURH/iWNhaeghSZSwcK1uGxhNggghh/idAJJUn8mreQTQzVm6xs2+b93zBOgY4UtDMKhwMxs4w7yZdFssUhqujzCxdWEcYySkmVBbUq9OCgpKCJVUNKw4bhZ2jaFAn2HIr77JxEnVzTqF8Bw616Ud4QMWLOcmQvjAH2N2mPhL+PH8FMHufoG73n2rfmYKm674AAAA=[0m[Pipeline] }
+[8mha:////4I4Swh+E3F1kkjtd1h2cJxXlH+ew45kczXtRoXF/H70tAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOLSgISEqNJabniBiY1xYt0Z2yGpeBFf4w8EIlGxxWpnm3m+YJkiHDlabA11jlLjMPjeTgsHjt3F84Atn7FhSuwNSjNI1qaeUXI2MKcoYSFgZajxnBzZDGvRqruqvCJbnXKcvoOA0ukbPKAQkzmrmL8wRthce52Yfp6/AhhDyFDu9p/avgHaAPdtvgAAAA==[0m[Pipeline] // dir
+[8mha:////4EV7mOs3TwWRl0Vna+gYDniPHXtBPkfAVolIwU7aJE2pAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOJSIAqEqNJabniBiY1xYt0Z2yGpeBFf4w8EIlGxxWpnm3m+YJkiHDlabA11jlLjMPjeTgsHjt3F84Atn7FhSuwNSjNI1qaeUXI2MKcoYSFgZajxnBzZDGvRqruqvCJbnXKcvoOA0ukbPKAQkzmrmL8wRthce52Yfp6/AhhDyFDu9p/avgHcRs84vgAAAA==[0m[Pipeline] }
+[8mha:////4FWM+H+HrSA5vEBIwsItW5vEVzJr2hdaN2gbF2bt9bMuAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOKCkKBBqWgtN7zAJMY4se6C7eBUvIiv8QcsIlGxxWpnm3m9YRk81OwNdpp6S6GxOLjR5IWJfX91nLDjCzZMgZ1GqZPkVp9mlBw1zClKWAhYaWocB0smwlp06qEqp8hU5+jzdxRQ2vYOTyhENkfl4xcmD5vb2Aamn+evAKZhiFAetrn2uw8fPS9ZvgAAAA==[0m[Pipeline] // stage
+[8mha:////4Ozt84l6I4wO4pqgeRoDpz+okTugj92c/Vbxkczd95SAAAAApx+LCAAAAAAAAP9tjTEOwjAQBM9BKWgpeYQjGoSEqGgtN7zAxMY4se6CfSGpeBFf4w8EIlGx1c5Kq3m+oMwJDpS8bBy2AXMdZBd7PzU5UGovkQbZ0FnWhJmik9oNmqw7zqiJHcwRBSwULB3WkXJAz7BSjbmbKhr01YnTtO0VFMHe4AFCTWY2ib8wJlhfe5sJf56/Ahg7BrFjKLabz7F8A1qby1XBAAAA[0m[Pipeline] stage
+[8mha:////4AmL3fmHQUHh/9tCb5Io2eN0xEj2F7i5k3yDXnbKnDlxAAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUMLAgpq5RFk4QmhDSRv+Xn5R24kRcjTvQUokJD5ZtyXqvNxSR4UTsRGOx9RhrL7rQuymJgbi9BhpEQxdRE0YKVig7KDK2WqqiZGFRlsNKwtpiHSh6dAk2stEPXQaNrjwnnrajhNybOzwhkxM5aU7fMjJsb72JhD/OXwCMXYL8sJttPz+LD27blSrCAAAA[0m[Pipeline] { (5. Imagen y publicacion Docker)
+[8mha:////4M/GndGG1sz0oE8LbTPyVYGk9XWm7VnvPE3rP0AIeU+CAAAAqB+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUAokFMXWNsnCC0ISQNvq//KS0EyfiatyBlkpMeLBsS9Z7vaGIDCdiJxqLrcdYe9GF3k1JDMTtNdAgGrqImjBSsELZQZGx1VIVJQuLshxWEtYW60DRo0uwkY1+6DJodOU58bQdJeTe3OEJmZzISXP6lpFhe+tNJPxx/gJg7BLkh91s+/lZfADKbit4wgAAAA==[0m[Pipeline] script
+[8mha:////4L7isuc/L8vs5kr8vClE/qJnQ+mDQsDBlPwbDXR9j6mgAAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycoh0ALEgpq5RFk4QmhDSRv+Xn5R24kRcjTvQUokJD5ZtyXqvNxSR4UTsRGOx9RhrL7rQuymJgbi9BhpEQxdRE0YKVig7KDK2WqqiZGFRlsNKwtpiHSh6dAk2stEPXQaNrjwnnrajhNybOzwhkxM5aU7fMjJsb72JhD/OXwCMXYL8sJttPz+LD7KBoKTCAAAA[0m[Pipeline] {
+[8mha:////4Plj3CBkO9D1EirBIViEROc62l847U6bShPEurH5GrBNAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOLSAA2iSmu54QUmNsaJdWdsh6TiRXyNPxCIRMUWq51t5vmCZYpw5GixNdQ5So3D4Hs7LRw4dhfPA7Z8xoYpsTcozSBZm3pGydnAnKKEhYCVocZzcmQzrEWr7qryimx1ynH6DgJKp2/wgEJM5qxi/sIYYXPtdWL6ef4KYAwZyv32U7vwBlmkmCe+AAAA[0m[Pipeline] readFile
+[8mha:////4HZ/GToFByyV3fCzEoK8/fMusmptLiCx2g8i1zVGcdKqAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOLSoDSIitZKwwtMYowd686xHZyKF/E1/kAgEhVbrHa2mecL1jHAkYNGq6g3FFuD3o16Xpg59FfHGS1fsGWK7BQ2KjfcqdOCDScFS4oSVgI2ilrH0ZBOsBVW3mXlJOnqnML8HQSUphvgAYWYzUmG9IUpwO42dpHp5/krgMn7BGVdf2r/BvQoOE2+AAAA[0m[Pipeline] }
+[8mha:////4AUBtVuK3H52ohQErm58KHCQQBcPdB1ahSIe4qHS2TssAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOJSIEGBqNJabniBiY1xYt0Z2yGpeBFf4w8EIlGxxWpnm3m+YJkiHDlabA11jlLjMPjeTgsHjt3F84Atn7FhSuwNSjNI1qaeUXI2MKcoYSFgZajxnBzZDGvRqruqvCJbnXKcvoOA0ukbPKAQkzmrmL8wRthce52Yfp6/AhhDyFDu9p/avgHybgAYvgAAAA==[0m[Pipeline] // script
+[8mha:////4Ar1SCNsFm3oFnvqn8IiugXZjB8U9R9PG0r084Rx0nHbAAAAqB+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUYkBIiKlrlIUThCaEtNH/5SelnTgRV+MOtFRiwoNlW7Le6w1FZDgRO9FYbD3G2osu9G5KYiBur4EG0dBF1ISRghXKDoqMrZaqKFlYlOWwkrC2WAeKHl2CjWz0Q5dBoyvPiaftKCH35g5PyORETprTt4wM21tvIuGP8xcAY5cg3+9mO8zP4gMJnuwSwgAAAA==[0m[Pipeline] dir
+Running in /var/jenkins_home/workspace/L4-09-pedidos-api/fuente-l4
+[8mha:////4EEsXQWVHfoyuoZYqS9CLCGWKLXoMFeJ5IWd5hWcGGsyAAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycoh0QyDE1DXKwglCE0La6P/yk9JOnIircQdaKjHhwbItWe/1hiIynIidaCy2HmPtRRd6NyUxELfXQINo6CJqwkjBCmUHRcZWS1WULCzKclhJWFusA0WPLsFGNvqhy6DRlefE03aUkHtzhydkciInzelbRobtrTeR8Mf5C4CxS5Dv9rMd5mfxASgVHzvCAAAA[0m[Pipeline] {
+[8mha:////4Gay3Fgxd+y49DA9R43jro5j7A+0qpiomUSsCnV5m4F1AAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOJCBUIoFa3lhheYxBgn1l2wHZyKF/E1/oBFJCq2WO1sM683LIOHmr3BTlNvKTQWBzeavDCx76+OE3Z8wYYpsNModZLc6tOMkqOGOUUJCwErTY3jYMlEWItOPVTlFJnqHH3+jgJK297hCYXI5qh8/MLkYXMb28D08/wVwDREKHeHXPvt8AHrW/o6vgAAAA==[0m[Pipeline] sh
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+Sending build context to Docker daemon  188.9kB
+Step 1/15 : FROM eclipse-temurin:21.0.13_9-jdk-jammy@sha256:4b1a74fbffbe6b4e7b6f0171a472478282fb463790a51edf10e465d578f22b69 AS build
+ ---> 4b1a74fbffbe
+Step 2/15 : WORKDIR /workspace
+ ---> Using cache
+ ---> 081656c80385
+Step 3/15 : COPY .mvn/ .mvn/
+ ---> Using cache
+ ---> d84e95e67acf
+Step 4/15 : COPY mvnw pom.xml ./
+ ---> Using cache
+ ---> 6a7ce4ebffe2
+Step 5/15 : RUN chmod +x mvnw
+ ---> Using cache
+ ---> 3ae8fc56c511
+Step 6/15 : COPY src/ src/
+ ---> Using cache
+ ---> b664776af34a
+Step 7/15 : RUN ./mvnw -B -ntp -Dspring.datasource.url=jdbc:h2:mem:buildtest clean verify
+ ---> Using cache
+ ---> 3b9a5ec6e61b
+Step 8/15 : FROM eclipse-temurin:21.0.13_9-jre-jammy@sha256:d4cbe963bb4f3a769d56473b32db2bfb46b0d4b29797c152815da692d9f9aab5 AS runtime
+ ---> d4cbe963bb4f
+Step 9/15 : WORKDIR /app
+ ---> Using cache
+ ---> 4616a941dd3c
+Step 10/15 : RUN groupadd --gid 10001 appgroup     && useradd --uid 10001 --gid appgroup --no-create-home --shell /usr/sbin/nologin usuario     && mkdir /data && chown 10001:10001 /data
+ ---> Using cache
+ ---> 4f232e325734
+Step 11/15 : COPY --from=build --chown=10001:10001 /workspace/target/pedidos-api-0.0.1-SNAPSHOT.jar app.jar
+ ---> Using cache
+ ---> 6ba08165dc4b
+Step 12/15 : ENV JAVA_TOOL_OPTIONS="-XX:MaxRAMPercentage=70"
+ ---> Using cache
+ ---> 5f744006c427
+Step 13/15 : EXPOSE 8080
+ ---> Using cache
+ ---> 9628f0f81cd4
+Step 14/15 : USER 10001:10001
+ ---> Using cache
+ ---> 420723ca2c8b
+Step 15/15 : ENTRYPOINT ["java", "-jar", "app.jar"]
+ ---> Using cache
+ ---> 48b65d95763c
+Successfully built 48b65d95763c
+Successfully tagged brunovitola/pedidos-api-l4:l4-7-0f47780b51b3
+[8mha:////4PTQv8jtiAv0WZY5LLZ7VH90FAND4CIB6LbAv/930xqsAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiGhBCqWgtN7zAJMY4se6C7eBUvIiv8QcsIlGxxWpnm3m9YRk81OwNdpp6S6GxOLjR5IWJfX91nLDjCzZMgZ1GqZPkVp9mlBw1zClKWAhYaWocB0smwlp06qEqp8hU5+jzdxRQ2vYOTyhENkfl4xcmD5vb2Aamn+evAKZhiFDut7l2hw9Fb/uIvgAAAA==[0m[Pipeline] }
+[8mha:////4LVeIhKofwl5BuU4rILiPNGpjsXwdZmLG0FCF+Tq6gT+AAAAph+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiUQASSkVrueEFJjHGiXUXbAen4kV8jT9gEYmKLVY728zrDcvgoWZvsNPUWwqNxcGNJi9M7Pur44QdX7BhCuw0Sp0kt/o0o+SoYU5RwkLASlPjOFgyEdaiUw9VOUWmOkefv6OA0rZ3eEIhsjkqH78wedjcxjYw/Tx/BTANQ4Ryv821O3wAfS1oeb4AAAA=[0m[Pipeline] // dir
+[8mha:////4J8RVg+9vdhoKs6TVF6ESFf/sPKmf3RUGQWivoqBZXYWAAAAqB+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUAgkG1Ik16sIJQhNC0uj/kqSkEyfiatyBQCUmPFi2Jes9X1AFDw15zazC3mDoDBvcqHNiiXx/cZSYpTPrCAM5xVqVWpLqONeWooJZRQkLDkuFnaNgUEdYcSvuonYCdX2KPm8HDqWRN3hAwTM5Ch+/ZfKwvo4yEP44fwEwDRHK3Sbbfvt5Vm9+ZVzewgAAAA==[0m[Pipeline] withCredentials
+Masking supported pattern matches of $DOCKER_TOKEN
+[8mha:////4FGZ6j9LP1Ga1LVVRe1VFaJxI4gMkF2HuwjZm/laT+2TAAAAqB+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycoh0AIkBMXWNsnCC0ISQNvq//KS0EyfiatyBlkpMeLBsS9Z7vaGIDCdiJxqLrcdYe9GF3k1JDMTtNdAgGrqImjBSsELZQZGx1VIVJQuLshxWEtYW60DRo0uwkY1+6DJodOU58bQdJeTe3OEJmZzISXP6lpFhe+tNJPxx/gJg7BLkh91s+/lZfABpxnKZwgAAAA==[0m[Pipeline] {
+[8mha:////4D9Bu2jr4XkorrYqv89IqNUcp5mhd8OX+TTBLhGj/AR8AAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOLSgCgQVVrLDS8wsTFOrDtjOyQVL+Jr/IFAJCq2WO1sM88XLFOEI0eLraHOUWocBt/baeHAsbt4HrDlMzZMib1BaQbJ2tQzSs4G5hQlLASsDDWekyObYS1adVeVV2SrU47TdxBQOn2DBxRiMmcV8xfGCJtrrxPTz/NXAGPIUO63n9qFN/DO8Oq+AAAA[0m[Pipeline] sh
+The push refers to repository [docker.io/brunovitola/pedidos-api-l4]
+0626d3cc316c: Waiting
+771b03f5a03d: Waiting
+7c8d2409cb04: Waiting
+ddc306c5cceb: Waiting
+ddc306c5cceb: Waiting
+0626d3cc316c: Waiting
+771b03f5a03d: Waiting
+7c8d2409cb04: Waiting
+ddc306c5cceb: Waiting
+0626d3cc316c: Waiting
+771b03f5a03d: Waiting
+7c8d2409cb04: Waiting
+ddc306c5cceb: Waiting
+0626d3cc316c: Waiting
+771b03f5a03d: Waiting
+7c8d2409cb04: Waiting
+ddc306c5cceb: Waiting
+0626d3cc316c: Waiting
+771b03f5a03d: Waiting
+7c8d2409cb04: Waiting
+ddc306c5cceb: Waiting
+0626d3cc316c: Waiting
+771b03f5a03d: Waiting
+7c8d2409cb04: Waiting
+ddc306c5cceb: Waiting
+0626d3cc316c: Waiting
+771b03f5a03d: Waiting
+7c8d2409cb04: Waiting
+ddc306c5cceb: Waiting
+0626d3cc316c: Waiting
+771b03f5a03d: Waiting
+7c8d2409cb04: Waiting
+5374b0422788: Waiting
+8ce225f7e131: Waiting
+ddc306c5cceb: Waiting
+0626d3cc316c: Layer already exists
+771b03f5a03d: Waiting
+7c8d2409cb04: Layer already exists
+ddc306c5cceb: Waiting
+771b03f5a03d: Waiting
+5374b0422788: Waiting
+8ce225f7e131: Waiting
+13c61d793de9: Waiting
+771b03f5a03d: Layer already exists
+05e72d3e67a3: Waiting
+5374b0422788: Waiting
+8ce225f7e131: Waiting
+ddc306c5cceb: Layer already exists
+8ce225f7e131: Layer already exists
+13c61d793de9: Layer already exists
+05e72d3e67a3: Layer already exists
+5374b0422788: Layer already exists
+l4-7-0f47780b51b3: digest: sha256:48b65d95763c2a1eb6727f9b22b78fc27509f79b62a7b87903cea87a4aee41d9 size: 2052
+[8mha:////4Bt5IFLPqUZiGZeEomktt1Gsipi1iyK2TvCzsibDMpS9AAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOLSICgQVVrLDS8wsTFOrDtjOyQVL+Jr/IFAJCq2WO1sM88XLFOEI0eLraHOUWocBt/baeHAsbt4HrDlMzZMib1BaQbJ2tQzSs4G5hQlLASsDDWekyObYS1adVeVV2SrU47TdxBQOn2DBxRiMmcV8xfGCJtrrxPTz/NXAGMIGcr97lPbNwESVPK+AAAA[0m[Pipeline] }
+[8mha:////4M5SiucoPA6HjaZKLpjHOqlFotYZfqdyBrtKnZ7D0I7mAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOJSUKRAVLRWGl5gEmPsWHeO7eBUvIiv8QcCkajYYrWzzTxfsI4Bjhw0WkW9odga9G7U88LMob86zmj5gi1TZKewUbnhTp0WbDgpWFKUsBKwUdQ6joZ0gq2w8i4rJ0lX5xTm7yCgNN0ADyjEbE4ypC9MAXa3sYtMP89fAUzeJyjr+lP7NwdUbKe+AAAA[0m[Pipeline] // withCredentials
+[8mha:////4KqCrmmBvtAmS30oge8Xt5ETxEf/wAys/rtVOCJATASAAAAAph+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiUQASSkVrueEFJjHGiXUXbAen4kV8jT9gEYmKLVY728zrDcvgoWZvsNPUWwqNxcGNJi9M7Pur44QdX7BhCuw0Sp0kt/o0o+SoYU5RwkLASlPjOFgyEdaiUw9VOUWmOkefv6OA0rZ3eEIhsjkqH78wedjcxjYw/Tx/BTANQ4Ryf8i1234ABecmOL4AAAA=[0m[Pipeline] }
+[8mha:////4NXg81frwEpBBs2syx/qSkFO1vvOQ7jtir1Bl4HT1F8JAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiGhBCqWgtN7zAJMY4se6C7eBUvIiv8QcsIlGxxWpnm3m9YRk81OwNdpp6S6GxOLjR5IWJfX91nLDjCzZMgZ1GqZPkVp9mlBw1zClKWAhYaWocB0smwlp06qEqp8hU5+jzdxRQ2vYOTyhENkfl4xcmD5vb2Aamn+evAKZhiFDuD7l22w8aZXNqvgAAAA==[0m[Pipeline] // stage
+[8mha:////4I23epOqUSm+P/dt7QIxWYrEqPu+Q7V/0QfFbPpZpcbVAAAAph+LCAAAAAAAAP9tjTEOwjAQBM9BKWgpeYRDGQlR0VpueIFJjHFi3QX7QlLxIr7GHzBEomKrnZVW83xBmSIcKDrZWew9psbLIYwuNzlR7C+BJtnRWTaEiYKV2k6aWntcUBNbWCIKWClYW2wCJY+OYaM6czdVMOiqE8e87RUUvr3BA4TKZjaRvzBH2F7HNhH+PH8FMA8MomYo6t3nWL4BojOozsEAAAA=[0m[Pipeline] stage
+[8mha:////4A7pGF+8iK1PrXt4LUqjRmTfWvMceYQHOtwnXwFeS5VlAAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycogUNiTE1DXKwglCE0La6P/yk9JOnIircQdaKjHhwbItWe/1hiIynIidaCy2HmPtRRd6NyUxELfXQINo6CJqwkjBCmUHRcZWS1WULCzKclhJWFusA0WPLsFGNvqhy6DRlefE03aUkHtzhydkciInzelbRobtrTeR8Mf5C4CxS5AfdrPt52fxAUPegdTCAAAA[0m[Pipeline] { (6. Despliegue Helm)
+[8mha:////4GLzDVsllAlBl0G7dD7qQ1Z/weBJ9R+3To0m3sKArm6yAAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUMCEhpq5RFk4QmhDSRv+Xn5R24kRcjTvQUokJD5ZtyXqvNxSR4UTsRGOx9RhrL7rQuymJgbi9BhpEQxdRE0YKVig7KDK2WqqiZGFRlsNKwtpiHSh6dAk2stEPXQaNrjwnnrajhNybOzwhkxM5aU7fMjJsb72JhD/OXwCMXYL8sJttPz+LDy1zm5PCAAAA[0m[Pipeline] dir
+Running in /var/jenkins_home/workspace/L4-09-pedidos-api/fuente-l4
+[8mha:////4Lv/90V3xVusLn7ZeBuK2sIcEnlLRiQYu8yk6T5uqMu/AAAAqB+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUggUJMXWNsnCC0ISQNvq//KS0EyfiatyBlkpMeLBsS9Z7vaGIDCdiJxqLrcdYe9GF3k1JDMTtNdAgGrqImjBSsELZQZGx1VIVJQuLshxWEtYW60DRo0uwkY1+6DJodOU58bQdJeTe3OEJmZzISXP6lpFhe+tNJPxx/gJg7BLkh91s+/lZfACJxiXBwgAAAA==[0m[Pipeline] {
+[8mha:////4PPcE12bmfxJ2GClcjJABi/0fXyrGAFf69kkyWdSsrz2AAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOJSQIGEqNJabniBiY1xYt0Z2yGpeBFf4w8EIlGxxWpnm3m+YJkiHDlabA11jlLjMPjeTgsHjt3F84Atn7FhSuwNSjNI1qaeUXI2MKcoYSFgZajxnBzZDGvRqruqvCJbnXKcvoOA0ukbPKAQkzmrmL8wRthce52Yfp6/AhhDhnK//dQuvAGulDDkvgAAAA==[0m[Pipeline] sh
++ set -eu
++ export KUBECONFIG=/var/jenkins_home/l4-kube/config
++ sh ci/deploy.sh
++ cat /var/jenkins_home/workspace/L4-09-pedidos-api/evidencia-7/helm.log
+==> Linting pedidos-api/pedidos-api/helm-chart
+[INFO] Chart.yaml: icon is recommended
+
+1 chart(s) linted, 0 chart(s) failed
+Release "l4" has been upgraded. Happy Helming!
+NAME: l4
+LAST DEPLOYED: Wed Nov 11 17:43:44 2026
+NAMESPACE: laboratorio4
+STATUS: deployed
+REVISION: 8
+DESCRIPTION: Upgrade complete
+TEST SUITE: None
+NOTES:
+Entorno: dev. Los servicios son privados del cluster.
+Acceso local (mantener cada comando activo en su terminal):
+kubectl --context minikube -n laboratorio4 port-forward svc/l4-pedidos-api 18080:8080 --address 127.0.0.1
+API: http://127.0.0.1:18080/actuator/health
+PVC retenidos al desinstalar: revisar datos antes de eliminarlos manualmente.
+deployment "l4-pedidos-api" successfully rolled out
+curl: (7) Failed to connect to 127.0.0.1 port 18089 after 0 ms: Could not connect to server
+L4_DEPLOY_PASS
+[8mha:////4NOaTTG/GYyNkFkzBHLo3sbLWPn5/f6Gcj7gbYszeD4AAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOJSICQkRJXWcsMLTGyME+vO2A5JxYv4Gn8gEImKLVY728zzBcsU4cjRYmuoc5Qah8H3dlo4cOwungds+YwNU2JvUJpBsjb1jJKzgTlFCQsBK0ON5+TIZliLVt1V5RXZ6pTj9B0ElE7f4AGFmMxZxfyFMcLm2uvE9PP8FcAYQoZyv/vU9g0qmXSbvgAAAA==[0m[Pipeline] }
+[8mha:////4Db2T2NAS9SsajxtNosDmGi514DfQXMXjlk8XMn0wsu1AAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiUSAkRJXWcsMLTGyME+vO2A5JxYv4Gn8gEImKLVY728zzBcsU4cjRYmuoc5Qah8H3dlo4cOwungds+YwNU2JvUJpBsjb1jJKzgTlFCQsBK0ON5+TIZliLVt1V5RXZ6pTj9B0ElE7f4AGFmMxZxfyFMcLm2uvE9PP8FcAYQoZyv/vU9g0S2+dqvgAAAA==[0m[Pipeline] // dir
+[8mha:////4Ffu7eInKvBgenQ2GfCCDyHAGOVDUfZ6b9BkVy1h4IM3AAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiKpAQVVrLDS8wsTFOrDtjOyQVL+Jr/IFAJCq2WO1sM88XLFOEI0eLraHOUWocBt/baeHAsbt4HrDlMzZMib1BaQbJ2tQzSs4G5hQlLASsDDWekyObYS1adVeVV2SrU47TdxBQOn2DBxRiMmcV8xfGCJtrrxPTz/NXAGMIGcr97lPbNw1Zsji+AAAA[0m[Pipeline] }
+[8mha:////4FIWDCrvesLOO9/0X1/Sj2DK7/iOKI2N24PMUmX6R5k0AAAAox+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOJCGQlR0VppeIFJjLFj3Tm2g1PxIr7GHwhEomKL1c4283zBOgY4ctBoFfWGYmvQu1HPCzOH/uo4o+ULtkyRncJG5YY7dVqw4aRgSVHCSsBGUes4GtIJtsLKu6ycJF2dU5i/g4DSdAM8oBCzOcmQvjAF2N3GLjL9PH8FMHmfoKzrT+3fTtvjvr4AAAA=[0m[Pipeline] // stage
+[8mha:////4GjZypJ/vnv8yYEPaBhBPvulh0bDAHxICnv5xAFATpu+AAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BKWgpeYTTBiEqWssNLzCxMU6su2BfSCpexNf4A4ZIVGy1s9Jqni+oUoQDRSc6i73H1HoxhNHlJiaK/SXQJDo6i5YwUbBC2UmRsccFFbGFJUUJKwlri22g5NExbGSn77oOGl194pi3vYTSmxs8oJDZzDryF+YI2+toEuHP81cA88BQNAxls/scqzdqYqfpwQAAAA==[0m[Pipeline] stage
+[8mha:////4HEn4qFTkeEEj2eL7uA4n3rIi8s3nAXxLdIgixcAWM91AAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycoiUkQoxdY2ycIKQhJA2+r8kKe3EibgadyBQiQkPlm3Jes8XVDHAkYJlncHeYVSODX60ObGJQn/xNLGOzkwRRvKGCTMJ0qZdqqBkYFFRworD2qDyFB3aBBveybusvURbn1LI24FD6fQNHlDwTE4ypG+ZA2yvo46EP85fAMxDgnLfZGt2n2f1Btc458LCAAAA[0m[Pipeline] { (Declarative: Post Actions)
+[8mha:////4H7C1b5OesdwI5gdiuiMTH2od7P2nWJipo2tJPyJv99KAAAAox+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOICJUJUaS03vMDExjix7oztkFS8iK/xBwKRqNhitbPNPF+wTBGOHC22hjpHqXEYfG+nhQPH7uJ5wJbP2DAl9galGSRrU88oORuYU5SwELAy1HhOjmyGtWjVXVVeka1OOU7fQUDp9A0eUIjJnFXMXxgjbK69Tkw/z18BjCFDud9+ahfe3xDHZb4AAAA=[0m[Pipeline] archiveArtifacts
+Archiving artifacts
+[8mha:////4G0J/0YKW7pTU5tLBvlpmO/oWip4DLUx7Hr+B0Yai82oAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOKC6BCiSmu54QUmNsaJdWdsh6TiRXyNPxCIRMUWq51t5vmCZYpw5GixNdQ5So3D4Hs7LRw4dhfPA7Z8xoYpsTcozSBZm3pGydnAnKKEhYCVocZzcmQzrEWr7qryimx1ynH6DgJKp2/wgEJM5qxi/sIYYXPtdWL6ef4KYAwZyv32U7vwBhxD6k6+AAAA[0m[Pipeline] junit
+Recording test results
+[Checks API] No suitable checks publisher found.
+[8mha:////4LmqIAZwoLJtOvBmPXFmXdtS014UoCdZq1szQLdAtv+/AAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOKCRIUQVVrLDS8wsTFOrDtjOyQVL+Jr/IFAJCq2WO1sM88XLFOEI0eLraHOUWocBt/baeHAsbt4HrDlMzZMib1BaQbJ2tQzSs4G5hQlLASsDDWekyObYS1adVeVV2SrU47TdxBQOn2DBxRiMmcV8xfGCJtrrxPTz/NXAGMIGcr97lPbN3gRSGu+AAAA[0m[Pipeline] }
+[8mha:////4JUIYGrisOF4NhjzbKtsRmw+VSwDvQysNGp5PzaRInQmAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOLSUBAhqrRWGl5gYmOcWHfGdkgqXsTX+AMWkajYYrWzzbzesI4BThwM9poGS7Gz6N1o8sKJw3B1PGHPF+yYIjuNrZ5aVrpZsOWkYUlRwkrARlPnOFoyCbailw9ZOUmmOqeQv6OA0qo7PKEQ2ZxkSF+YA+xuo4pMP89fAczeJyjrfa5D/QElqIoWvgAAAA==[0m[Pipeline] // stage
+[8mha:////4ENZWq89ldmvDscWcP2ElKD7+BffQ/okvCjkgq5B+PMYAAAAox+LCAAAAAAAAP9tjTEOwjAQBDdBFLSUPMKpkECIitZKwwtMYowT6y7YF5KKF/E1/kBEJCq22plmXm8sU8SRo1ONpdZTqrzqQu+mpwaO7TXwoBq+qIopcbCqtEPJtT3NWLJYzMtyLDRWlqrAyZMTrHVjHqYIhlxxlji5g0bu6zueyPRUFhPlC2PE5tbXienX+RvA2HWCfL8VZLsPs2pA/70AAAA=[0m[Pipeline] }
+[8mha:////4OFNZHMNz6EGGVDfr7pckBcyrL3f0TA3Om5O3LFi+4nWAAAAox+LCAAAAAAAAP9tjTEOwjAQBDdBFLSUPMLpQAhR0VppeIFJjHFi3QX7QlLxIr7GH4iIRMVWO9PM641lijhydKqx1HpKlVdd6N301MCxvQYeVMMXVTElDlaVdii5tqcZSxaLeVmOhcbKUhU4eXKCtW7MwxTBkCvOEid30Mh9fccTmZ7KYqJ8YYzY3Po6Mf06fwMYu06Q77eCbPcB8g1fKL0AAAA=[0m[Pipeline] // timeout
+[8mha:////4IH2wGQsMwCLe4/FVakHI3VouGZWMM6qJRwwfti9gzpPAAAAox+LCAAAAAAAAP9tjTEOwjAQBDdBFLSUPMLpQAhR0VppeIFJjHFi3QX7QlLxIr7GH4iIRMVWO9PM641lijhydKqx1HpKlVdd6N301MCxvQYeVMMXVTElDlaVdii5tqcZSxaLeVmOhcbKUhU4eXKCtW7MwxTBkCvOEid30Mh9fccTmZ7KYqJ8YYzY3Po6Mf06fwMYu06Q73eCbPsB1BQ4Yr0AAAA=[0m[Pipeline] }
+[8mha:////4FtqYNARppqmx1E/rQ0LXWsLZlOcradlLbCCQ5wHuSiAAAAAox+LCAAAAAAAAP9tjTEOwjAQBDdBFLSUPMKpkECIitZKwwtMYowT6y7YF5KKF/E1/kBEJCq22plmXm8sU8SRo1ONpdZTqrzqQu+mpwaO7TXwoBq+qIopcbCqtEPJtT3NWLJYzMtyLDRWlqrAyZMTrHVjHqYIhlxxlji5g0bu6zueyPRUFhPlC2PE5tbXienX+RvA2HWCfL8TZNsPv9Jheb0AAAA=[0m[Pipeline] // withEnv
+[8mha:////4DlvNOfneCV51+/kKepK/NVvC+49oP4IK3Y9pdzwEUXnAAAAox+LCAAAAAAAAP9tjTESgjAQRT84FraWHiI0NoxjZZuh8QQRYgxkdjFZhMoTeTXvICMzVv7qv9e81xvrFHHk6FRrqfOUaq/6MLj5qZFjdw08qpYvqmZKHKyq7FhxY08LViwWy7IcK42NpTpw8uQEW92ahymCIVecJc7uoJH75o4nMj2XxUT5whSxuw1NYvp1/gYw9b0gL0tBtv8AmcsGM70AAAA=[0m[Pipeline] }
+[8mha:////4HP05Aof9uaHaQ032aDxISl6+qNT6twqbLo9+LjoD6I1AAAApB+LCAAAAAAAAP9tjTEOwjAQBM+JKGgpeYQTRImoaK00vMDExjix7oJ9wal4EV/jD0REomKrnWnm9YZVinCk6GRnsfeYWi+HMLr5yUyxvwbKsqOLbAkTBSsbmxsy9rRgQ2xhmSigVLC22AZKHh3DRnX6oaug0VVnjrM7KCi8ucMThJrLrCN/YYqwvY0mEf46fwMwDQNDuatrBrH/AELdpda+AAAA[0m[Pipeline] // node
+[8mha:////4CZmrFX6tcWPuZaLIRAhR+Y/I8ybjGh3n5USfBPNmtvrAAAAox+LCAAAAAAAAP9tjTESgjAQRRcYC1tLDxHE1rGyzdB4gkhiDGR2Y7IYKk/k1byDjMxY+av/XvNeb1ilCEeKVvQGB4epcyL40c5PZIrD1VMWPV1ER5jIG9Ga3JI2pwVbYgPLihIqCWuDnafk0DJsZK8eqvYKbX3mOLuDhNLpOzyhkHOZVeQvTBG2t1Enwl/nbwCmEBiqZtcwFPsPZMTCnL4AAAA=[0m[Pipeline] End of Pipeline
+Finished: SUCCESS

@@ -1,0 +1,370 @@
+[
+  {
+    "namespace": "falco",
+    "pod": "falco-mtdw2",
+    "kind": "initContainers",
+    "name": "falcoctl-artifact-install",
+    "image": "docker.io/falcosecurity/falcoctl:0.14.3",
+    "imageID": "docker.io/falcosecurity/falcoctl@sha256:2230fb4802aafe09455b58d38f8f1faedd8f09f042e9a18fffd397e63488c023",
+    "podSecurityContext": {},
+    "securityContext": {},
+    "runtimeUser": {
+      "linux": {
+        "gid": 65532,
+        "supplementalGroups": [
+          65532
+        ],
+        "uid": 65532
+      }
+    },
+    "state": {
+      "terminated": {
+        "containerID": "containerd://c843075aede328484bb23f41ad45b3803bd97974bfe21f9d37c4ac7157494539",
+        "exitCode": 0,
+        "finishedAt": "2026-11-11T14:39:19Z",
+        "reason": "Completed",
+        "startedAt": "2026-11-11T14:39:04Z"
+      }
+    },
+    "ready": true
+  },
+  {
+    "namespace": "falco",
+    "pod": "falco-mtdw2",
+    "kind": "containers",
+    "name": "falco",
+    "image": "docker.io/falcosecurity/falco:0.45.2",
+    "imageID": "docker.io/falcosecurity/falco@sha256:1562a643953f938e02f47319b5214d93a235f11f646d60e9b8a516fd5a64698e",
+    "podSecurityContext": {},
+    "securityContext": {
+      "appArmorProfile": {
+        "type": "Unconfined"
+      },
+      "capabilities": {
+        "add": [
+          "BPF",
+          "SYS_RESOURCE",
+          "PERFMON",
+          "SYS_PTRACE"
+        ]
+      }
+    },
+    "runtimeUser": {
+      "linux": {
+        "gid": 0,
+        "supplementalGroups": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          6,
+          10,
+          11,
+          20,
+          26,
+          27
+        ],
+        "uid": 0
+      }
+    },
+    "state": {
+      "running": {
+        "startedAt": "2026-11-11T14:39:29Z"
+      }
+    },
+    "ready": true
+  },
+  {
+    "namespace": "kyverno",
+    "pod": "kyverno-admission-controller-7d7d6d7d48-g9ldv",
+    "kind": "initContainers",
+    "name": "kyverno-pre",
+    "image": "reg.kyverno.io/kyverno/kyvernopre:v1.20.0-rc.4",
+    "imageID": "reg.kyverno.io/kyverno/kyvernopre@sha256:fe203d1fe6766c6af457535933e7851a6319a2f431c11f216df06c479b5ba92d",
+    "podSecurityContext": {},
+    "securityContext": {
+      "allowPrivilegeEscalation": false,
+      "capabilities": {
+        "drop": [
+          "ALL"
+        ]
+      },
+      "privileged": false,
+      "readOnlyRootFilesystem": true,
+      "runAsGroup": 65534,
+      "runAsNonRoot": true,
+      "runAsUser": 65534,
+      "seccompProfile": {
+        "type": "RuntimeDefault"
+      }
+    },
+    "runtimeUser": {
+      "linux": {
+        "gid": 65534,
+        "supplementalGroups": [
+          65534
+        ],
+        "uid": 65534
+      }
+    },
+    "state": {
+      "terminated": {
+        "containerID": "containerd://41df7b982328dfc183bf54850a53e3719070d17e1a95ed59337b878d00ac03d5",
+        "exitCode": 0,
+        "finishedAt": "2026-11-11T14:37:32Z",
+        "reason": "Completed",
+        "startedAt": "2026-11-11T14:37:23Z"
+      }
+    },
+    "ready": true
+  },
+  {
+    "namespace": "kyverno",
+    "pod": "kyverno-admission-controller-7d7d6d7d48-g9ldv",
+    "kind": "containers",
+    "name": "kyverno",
+    "image": "reg.kyverno.io/kyverno/kyverno:v1.20.0-rc.4",
+    "imageID": "reg.kyverno.io/kyverno/kyverno@sha256:b3edb4785453e74bec95c2584c6ad52cdc70e19acf9c40cd38f69d2cbde70430",
+    "podSecurityContext": {},
+    "securityContext": {
+      "allowPrivilegeEscalation": false,
+      "capabilities": {
+        "drop": [
+          "ALL"
+        ]
+      },
+      "privileged": false,
+      "readOnlyRootFilesystem": true,
+      "runAsGroup": 65534,
+      "runAsNonRoot": true,
+      "runAsUser": 65534,
+      "seccompProfile": {
+        "type": "RuntimeDefault"
+      }
+    },
+    "runtimeUser": {
+      "linux": {
+        "gid": 65534,
+        "supplementalGroups": [
+          65534
+        ],
+        "uid": 65534
+      }
+    },
+    "state": {
+      "running": {
+        "startedAt": "2026-11-11T14:37:35Z"
+      }
+    },
+    "ready": true
+  },
+  {
+    "namespace": "kyverno",
+    "pod": "kyverno-migrate-resources-crmkg",
+    "kind": "containers",
+    "name": "kyverno-cli",
+    "image": "reg.kyverno.io/kyverno/kyverno-cli:v1.20.0-rc.4",
+    "imageID": "reg.kyverno.io/kyverno/kyverno-cli@sha256:4c1230c15452fc6904c0b44415bca667414ceaa4ca59e06b1d223dd43dee427e",
+    "podSecurityContext": {},
+    "securityContext": {
+      "allowPrivilegeEscalation": false,
+      "capabilities": {
+        "drop": [
+          "ALL"
+        ]
+      },
+      "privileged": false,
+      "readOnlyRootFilesystem": true,
+      "runAsGroup": 65534,
+      "runAsNonRoot": true,
+      "runAsUser": 65534,
+      "seccompProfile": {
+        "type": "RuntimeDefault"
+      }
+    },
+    "runtimeUser": {
+      "linux": {
+        "gid": 65534,
+        "supplementalGroups": [
+          65534
+        ],
+        "uid": 65534
+      }
+    },
+    "state": {
+      "terminated": {
+        "containerID": "containerd://ed79c584c023e2eb6676c5224cef31d2c8d00d082a705922e8bf731676c05bbe",
+        "exitCode": 0,
+        "finishedAt": "2026-11-11T18:00:55Z",
+        "reason": "Completed",
+        "startedAt": "2026-11-11T18:00:51Z"
+      }
+    },
+    "ready": false
+  },
+  {
+    "namespace": "kyverno",
+    "pod": "kyverno-reports-controller-5f46d997cb-mqtkr",
+    "kind": "containers",
+    "name": "controller",
+    "image": "reg.kyverno.io/kyverno/reports-controller:v1.20.0-rc.4",
+    "imageID": "reg.kyverno.io/kyverno/reports-controller@sha256:82ebcf3410788f82be077a8a5b1f9a03509eb7436e026e70102175d35442d44d",
+    "podSecurityContext": {},
+    "securityContext": {
+      "allowPrivilegeEscalation": false,
+      "capabilities": {
+        "drop": [
+          "ALL"
+        ]
+      },
+      "privileged": false,
+      "readOnlyRootFilesystem": true,
+      "runAsGroup": 65534,
+      "runAsNonRoot": true,
+      "runAsUser": 65534,
+      "seccompProfile": {
+        "type": "RuntimeDefault"
+      }
+    },
+    "runtimeUser": {
+      "linux": {
+        "gid": 65534,
+        "supplementalGroups": [
+          65534
+        ],
+        "uid": 65534
+      }
+    },
+    "state": {
+      "running": {
+        "startedAt": "2026-11-11T14:37:21Z"
+      }
+    },
+    "ready": true
+  },
+  {
+    "namespace": "laboratorio4",
+    "pod": "l4-pedidos-api-6fd7986c64-nvkwf",
+    "kind": "containers",
+    "name": "api",
+    "image": "brunovitola/pedidos-api-l4:l4-7-0f47780b51b3",
+    "imageID": "docker.io/brunovitola/pedidos-api-l4@sha256:48b65d95763c2a1eb6727f9b22b78fc27509f79b62a7b87903cea87a4aee41d9",
+    "podSecurityContext": {
+      "fsGroup": 10001,
+      "fsGroupChangePolicy": "OnRootMismatch",
+      "seccompProfile": {
+        "type": "RuntimeDefault"
+      }
+    },
+    "securityContext": {
+      "allowPrivilegeEscalation": false,
+      "capabilities": {
+        "drop": [
+          "ALL"
+        ]
+      },
+      "runAsGroup": 10001,
+      "runAsNonRoot": true,
+      "runAsUser": 10001
+    },
+    "runtimeUser": {
+      "linux": {
+        "gid": 10001,
+        "supplementalGroups": [
+          10001
+        ],
+        "uid": 10001
+      }
+    },
+    "state": {
+      "running": {
+        "startedAt": "2026-11-11T17:54:17Z"
+      }
+    },
+    "ready": true
+  },
+  {
+    "namespace": "laboratorio4",
+    "pod": "l4-pedidos-grafana-cc66fcb7b-7tlm7",
+    "kind": "containers",
+    "name": "grafana",
+    "image": "grafana/grafana:13.0.12@sha256:28476aa8096cd8d0f658a05a443b605fffb450e57f444335216175d604cfd23d",
+    "imageID": "docker.io/grafana/grafana@sha256:28476aa8096cd8d0f658a05a443b605fffb450e57f444335216175d604cfd23d",
+    "podSecurityContext": {
+      "fsGroup": 472,
+      "fsGroupChangePolicy": "OnRootMismatch",
+      "seccompProfile": {
+        "type": "RuntimeDefault"
+      }
+    },
+    "securityContext": {
+      "allowPrivilegeEscalation": false,
+      "capabilities": {
+        "drop": [
+          "ALL"
+        ]
+      },
+      "runAsGroup": 472,
+      "runAsNonRoot": true,
+      "runAsUser": 472
+    },
+    "runtimeUser": {
+      "linux": {
+        "gid": 472,
+        "supplementalGroups": [
+          0,
+          472
+        ],
+        "uid": 472
+      }
+    },
+    "state": {
+      "running": {
+        "startedAt": "2026-11-11T17:54:17Z"
+      }
+    },
+    "ready": true
+  },
+  {
+    "namespace": "laboratorio4",
+    "pod": "l4-pedidos-prometheus-6ddd79b65d-xsk8p",
+    "kind": "containers",
+    "name": "prometheus",
+    "image": "prom/prometheus:v3.16.0@sha256:e04987641b57704f408e31f6373ba4138ecf27cb4a165d24aabb6c38fddd0f06",
+    "imageID": "docker.io/prom/prometheus@sha256:e04987641b57704f408e31f6373ba4138ecf27cb4a165d24aabb6c38fddd0f06",
+    "podSecurityContext": {
+      "fsGroup": 65534,
+      "fsGroupChangePolicy": "OnRootMismatch",
+      "seccompProfile": {
+        "type": "RuntimeDefault"
+      }
+    },
+    "securityContext": {
+      "allowPrivilegeEscalation": false,
+      "capabilities": {
+        "drop": [
+          "ALL"
+        ]
+      },
+      "runAsGroup": 65534,
+      "runAsNonRoot": true,
+      "runAsUser": 65534
+    },
+    "runtimeUser": {
+      "linux": {
+        "gid": 65534,
+        "supplementalGroups": [
+          65534
+        ],
+        "uid": 65534
+      }
+    },
+    "state": {
+      "running": {
+        "startedAt": "2026-11-11T17:54:18Z"
+      }
+    },
+    "ready": true
+  }
+]

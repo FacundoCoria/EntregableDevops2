@@ -1,0 +1,6 @@
+Error: values don't meet the specifications of the schema(s) in the following chart(s):
+pedidos:
+- at '/components/api/replicas': minimum: got -1, want 0
+
+
+exit=1

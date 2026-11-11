@@ -1,0 +1,72 @@
+# Acceso al namespace del laboratorio; Helm almacena releases como Secrets.
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: jenkins-l4
+  namespace: laboratorio4
+automountServiceAccountToken: false
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: jenkins-l4
+  namespace: laboratorio4
+rules:
+  - apiGroups: ['']
+    resources: [configmaps, secrets, services, persistentvolumeclaims, serviceaccounts]
+    verbs: [get, list, watch, create, update, patch]
+  - apiGroups: ['']
+    resources: [pods, pods/log, events, endpoints]
+    verbs: [get, list, watch]
+  - apiGroups: ['']
+    resources: [pods/portforward]
+    verbs: [create]
+  - apiGroups: [apps]
+    resources: [deployments]
+    verbs: [get, list, watch, create, update, patch]
+  - apiGroups: [apps]
+    resources: [replicasets]
+    verbs: [get, list, watch]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: jenkins-l4
+  namespace: laboratorio4
+subjects:
+  - kind: ServiceAccount
+    name: jenkins-l4
+    namespace: laboratorio4
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: jenkins-l4
+---
+# El chart ya existente incluye RBAC de Prometheus. Solo puede consultar y
+# leer esos dos objetos con nombre exacto, sin escribir permisos de cluster.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: jenkins-l4-existing-monitoring
+rules:
+  - apiGroups: [rbac.authorization.k8s.io]
+    resources: [clusterroles]
+    resourceNames: [laboratorio4-l4-pedidos-node-metrics]
+    verbs: [get]
+  - apiGroups: [rbac.authorization.k8s.io]
+    resources: [clusterrolebindings]
+    resourceNames: [laboratorio4-l4-pedidos-node-metrics]
+    verbs: [get]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: jenkins-l4-existing-monitoring
+subjects:
+  - kind: ServiceAccount
+    name: jenkins-l4
+    namespace: laboratorio4
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: jenkins-l4-existing-monitoring
