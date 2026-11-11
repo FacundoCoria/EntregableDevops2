@@ -1,6 +1,8 @@
 # B05 — consolidación y fuente de entrega
 
 Fecha: 11/11/2026, Uruguay. Rama: `lab4/b05-consolidacion-entrega`.
+Rama publicada por Pela311, SCM configurado por Bruno y clonación desde Jenkins
+comprobada; [evidencias B05](../reports/l4-11b/b05/CONSOLIDACION.md).
 Este registro describe la entrega técnica; el informe integrador sigue en B06.
 
 ## Contenido y evidencia
@@ -32,13 +34,15 @@ por la corrección OOM comprobada. Se conserva el renombrado remoto de
 `monitoring/prometheus/prometheus.yml` a `prometheus.yaml` y se actualiza la ruta
 de Kustomize; la clave montada dentro del contenedor sigue siendo `prometheus.yml`.
 
-## Conexión Jenkins prevista
+## Conexión Jenkins verificada
 
 Repositorio: `https://github.com/FacundoCoria/EntregableDevops2.git`.
 Rama: `lab4/b05-consolidacion-entrega`. Script Path: `Jenkinsfile`.
 Configurar el trabajo existente `L4-09-pedidos-api` como **Pipeline script from SCM**,
 SCM Git, URL anterior, Branch Specifier `*/lab4/b05-consolidacion-entrega`.
-Bruno realiza ese cambio de interfaz después de comprobar la publicación.
+Bruno realizó el cambio en interfaz; definición, URL, rama y Script Path comprobados
+por lectura de configuración. SOURCE_URL/SOURCE_REF heredados actualizados en
+los parámetros del job. Clonación real desde GitHub comprobada dentro de Jenkins.
 
 El Jenkinsfile toma esa URL/rama como defaults y resuelve ramas de `origin` tras
 clonar. Las credenciales `l4-snyk-token` y `l4-dockerhub`, herramientas y conexión
@@ -57,4 +61,5 @@ B02 literal y B04 global/Jenkins desde cero siguen parciales. B06 es el informe;
 B07/B09 conservan hallazgos y límites de seguridad. Snyk #7 mantiene una alta y
 nueve hallazgos de otros niveles; Trivy B01 mantiene dos altos Ubuntu.
 No se afirma conformidad global ni un análisis nuevo por consolidar estos archivos.
-La publicación y la conexión SCM deben comprobarse antes de marcar B05 completa.
+Publicación y conexión SCM verificadas en B05. Esto no acredita una nueva
+ejecución integral ni conformidad total del integrador.

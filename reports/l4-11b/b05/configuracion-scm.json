@@ -1,0 +1,21 @@
+{
+  "job": "L4-09-pedidos-api",
+  "definition": "org.jenkinsci.plugins.workflow.cps.CpsScmFlowDefinition",
+  "source_url_matches": true,
+  "branch_matches": true,
+  "script_path": "Jenkinsfile",
+  "lightweight": "true",
+  "parameter_names": [
+    "SOURCE_URL",
+    "SOURCE_REF",
+    "IMAGE_REPOSITORY"
+  ],
+  "parameter_defaults": {
+    "SOURCE_URL": "https://github.com/FacundoCoria/EntregableDevops2.git",
+    "SOURCE_REF": "lab4/b05-consolidacion-entrega",
+    "IMAGE_REPOSITORY": "brunovitola/pedidos-api-l4"
+  },
+  "next_build_number": "8",
+  "config_sha256": "7ca2635f7b516e8a59d619e314a8fd9f31493bd5b4c7bd08068a7bdbd5923901",
+  "checked_utc": "20261111T200817Z"
+}
