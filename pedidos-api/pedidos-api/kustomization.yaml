@@ -14,4 +14,4 @@ resources:
 configMapGenerator:
   - name: prometheus-config
     files:
-      - prometheus.yml=monitoring/prometheus/prometheus.yml
+      - prometheus.yml=monitoring/prometheus/prometheus.yaml
