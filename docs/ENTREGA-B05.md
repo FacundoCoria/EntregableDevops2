@@ -1,9 +1,19 @@
 # B05 — consolidación y fuente de entrega
 
+**Entrega para revisión, 13/11/2026:** la rama
+[trabajo-integrador-4](https://github.com/FacundoCoria/EntregableDevops2/tree/trabajo-integrador-4)
+reúne la base B05 y la documentación B06. Main queda sin cambios; la revisión y
+el merge corresponden al compañero. La rama métricas-nuevas sigue separada.
+El job Jenkins conserva la fuente B05 comprobada abajo; no se cambió su
+configuración ni se ejecutó otro build al preparar esta entrega. Para probar
+la rama nueva, revisar expresamente SCM y SOURCE_REF antes de una ejecución.
+
 Fecha: 11/11/2026, Uruguay. Rama: `lab4/b05-consolidacion-entrega`.
 Rama publicada por Pela311, SCM configurado por Bruno y clonación desde Jenkins
 comprobada; [evidencias B05](../reports/l4-11b/b05/CONSOLIDACION.md).
-Este registro describe la entrega técnica; el informe integrador sigue en B06.
+Este registro describe la entrega técnica. El [informe integrador B06](../README.md)
+fue preparado el 11/11 y se incorpora a trabajo-integrador-4; su publicación es
+posterior al cierre B05.
 
 ## Contenido y evidencia
 
@@ -57,7 +67,7 @@ imagen y actualiza el release principal: registrar sus resultados por separado.
 
 ## Límites de la entrega
 
-B02 literal y B04 global/Jenkins desde cero siguen parciales. B06 es el informe;
+B02 literal y B04 global/Jenkins desde cero siguen parciales. B06 aporta el informe;
 B07/B09 conservan hallazgos y límites de seguridad. Snyk #7 mantiene una alta y
 nueve hallazgos de otros niveles; Trivy B01 mantiene dos altos Ubuntu.
 No se afirma conformidad global ni un análisis nuevo por consolidar estos archivos.

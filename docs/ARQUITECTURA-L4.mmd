@@ -1,0 +1,28 @@
+flowchart TB
+  git["GitHub · rama lab4/b05-consolidacion-entrega"] --> jenkins
+  subgraph host["Host Docker / WSL2 · herramientas preinstaladas"]
+    jenkins["Jenkins existente · UID 0 / socket Docker"]
+    jenkins --> checks["Semgrep → Snyk / gate → Maven"]
+    checks --> build["Docker multi-stage · API UID 10001"]
+  end
+  build --> registry["Docker Hub · imagen por digest"]
+  jenkins -->|"Helm / acceso Kubernetes limitado"| admission
+  registry -->|"pull"| api
+  subgraph cluster["Minikube · un nodo"]
+    admission["API server + Kyverno · admisión"]
+    admission -.->|"4 políticas · namespace laboratorio4"| api
+    subgraph ns["laboratorio4 · release l4"]
+      api["Service → API Java + H2 embebida"] --> h2["PVC · /data"]
+      prom["Service → Prometheus"] -->|"scrape /actuator/prometheus"| api
+      graf["Service → Grafana"] -->|"PromQL"| prom
+      prom --> tsdb["PVC · TSDB"]
+      graf --> sqlite["PVC · Grafana"]
+      config["ConfigMaps · scrape / datasource / dashboard"] -.-> prom
+      config -.-> graf
+    end
+    prom -->|"HTTPS nodes/proxy · RBAC un nodo"| kubelet["kubelet · /metrics/resource"]
+    falco["Falco · DaemonSet modern eBPF · UID 0"] -.->|"observa syscalls del nodo"| api
+    falco --> alerts["Alertas / reports/falco-event.log"]
+  end
+  user["Usuario / tráfico Bash"] -->|"port-forward loopback"| api
+  user -->|"port-forward loopback"| graf

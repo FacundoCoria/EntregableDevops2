@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1700" height="1270" viewBox="0 0 1700 1270">
+<title>Arquitectura del Laboratorio 4</title>
+<desc>Jenkins externo integra análisis, build y publicación. Minikube ejecuta API, monitoreo y seguridad. Tres PVC independientes.</desc>
+<rect width="100%" height="100%" fill="#f7f9fc"/>
+<text x="50" y="71.0" font-family="Arial, sans-serif" font-size="40" font-weight="700" fill="#18283f">Laboratorio 4 · Arquitectura de componentes</text>
+<text x="50" y="112.6" font-family="Arial, sans-serif" font-size="24" font-weight="400" fill="#18283f">API de pedidos · laboratorio de un nodo · evidencias del 10 y 11/11/2026</text>
+<rect x="50" y="160" width="270" height="130" rx="15" fill="#ffffff" stroke="#b6c5d9" stroke-width="2"/>
+<text x="70" y="203.3" font-family="Arial, sans-serif" font-size="27" font-weight="700" fill="#18283f">GitHub</text>
+<text x="70" y="237.8" font-family="Arial, sans-serif" font-size="22" font-weight="400" fill="#18283f">Rama de entrega B05</text>
+<text x="70" y="266.8" font-family="Arial, sans-serif" font-size="22" font-weight="400" fill="#18283f">Código y evidencias</text>
+<rect x="380" y="160" width="300" height="130" rx="15" fill="#ffffff" stroke="#b6c5d9" stroke-width="2"/>
+<text x="400" y="203.3" font-family="Arial, sans-serif" font-size="27" font-weight="700" fill="#18283f">Jenkins externo</text>
+<text x="400" y="237.8" font-family="Arial, sans-serif" font-size="22" font-weight="400" fill="#18283f">UID 0 / socket Docker</text>
+<text x="400" y="266.8" font-family="Arial, sans-serif" font-size="22" font-weight="400" fill="#18283f">Volumen heredado</text>
+<rect x="740" y="160" width="390" height="130" rx="15" fill="#ffffff" stroke="#b6c5d9" stroke-width="2"/>
+<text x="760" y="203.3" font-family="Arial, sans-serif" font-size="27" font-weight="700" fill="#18283f">CI y construcción</text>
+<text x="760" y="237.8" font-family="Arial, sans-serif" font-size="22" font-weight="400" fill="#18283f">Semgrep → Snyk → Maven</text>
+<text x="760" y="266.8" font-family="Arial, sans-serif" font-size="22" font-weight="400" fill="#18283f">Docker multi-stage · API</text>
+<rect x="1190" y="160" width="450" height="130" rx="15" fill="#ffffff" stroke="#b6c5d9" stroke-width="2"/>
+<text x="1210" y="203.3" font-family="Arial, sans-serif" font-size="27" font-weight="700" fill="#18283f">Docker Hub</text>
+<text x="1210" y="237.8" font-family="Arial, sans-serif" font-size="22" font-weight="400" fill="#18283f">Imagen #7 publicada</text>
+<text x="1210" y="266.8" font-family="Arial, sans-serif" font-size="22" font-weight="400" fill="#18283f">Identidad fijada por digest</text>
+<polyline points="320,225 380,225" fill="none" stroke="#48647e" stroke-width="3"/>
+<polygon points="380,225 367.0,219.0 367.0,231.0" fill="#48647e"/>
+<polyline points="680,225 740,225" fill="none" stroke="#48647e" stroke-width="3"/>
+<polygon points="740,225 727.0,219.0 727.0,231.0" fill="#48647e"/>
+<polyline points="1130,225 1190,225" fill="none" stroke="#48647e" stroke-width="3"/>
+<polygon points="1190,225 1177.0,219.0 1177.0,231.0" fill="#48647e"/>
+<text x="50" y="329.8" font-family="Arial, sans-serif" font-size="22" font-weight="400" fill="#18283f">Host Docker / WSL2</text>
+<text x="600" y="334.8" font-family="Arial, sans-serif" font-size="22" font-weight="400" fill="#18283f">SCM remoto conectado después del SUCCESS #7.</text>
+<rect x="40" y="370" width="1620" height="755" rx="22" fill="#edf3fa" stroke="#8ba4c1" stroke-width="2"/>
+<text x="605" y="409.5" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#18283f">MINIKUBE · admisión y observación del nodo</text>
+<rect x="580" y="442" width="1030" height="630" rx="18" fill="#ffffff" stroke="#b6c5d9" stroke-width="2"/>
+<text x="605" y="471.8" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#18283f">namespace laboratorio4 · release l4</text>
+<rect x="90" y="490" width="390" height="130" rx="15" fill="#e8efff" stroke="#b6c5d9" stroke-width="2"/>
+<text x="110" y="533.3" font-family="Arial, sans-serif" font-size="27" font-weight="700" fill="#18283f">API server + Kyverno</text>
+<text x="110" y="567.8" font-family="Arial, sans-serif" font-size="22" font-weight="400" fill="#18283f">4 políticas · Pods / init</text>
+<text x="110" y="596.8" font-family="Arial, sans-serif" font-size="22" font-weight="400" fill="#18283f">Admisión: permite o rechaza</text>
+<rect x="650" y="490" width="360" height="130" rx="15" fill="#e4f4ee" stroke="#b6c5d9" stroke-width="2"/>
+<text x="670" y="533.3" font-family="Arial, sans-serif" font-size="27" font-weight="700" fill="#18283f">Service → API Java</text>
+<text x="670" y="567.8" font-family="Arial, sans-serif" font-size="22" font-weight="400" fill="#18283f">H2 embebida · UID 10001</text>
+<text x="670" y="596.8" font-family="Arial, sans-serif" font-size="22" font-weight="400" fill="#18283f">HTTP / métricas Micrometer</text>
+<rect x="1220" y="490" width="340" height="130" rx="15" fill="#f4f0e6" stroke="#b6c5d9" stroke-width="2"/>
+<text x="1240" y="533.3" font-family="Arial, sans-serif" font-size="27" font-weight="700" fill="#18283f">PVC · H2</text>
+<text x="1240" y="567.8" font-family="Arial, sans-serif" font-size="22" font-weight="400" fill="#18283f">Datos de la aplicación</text>
+<text x="1240" y="596.8" font-family="Arial, sans-serif" font-size="22" font-weight="400" fill="#18283f">Montaje /data</text>
+<rect x="90" y="710" width="390" height="130" rx="15" fill="#e8efff" stroke="#b6c5d9" stroke-width="2"/>
+<text x="110" y="753.3" font-family="Arial, sans-serif" font-size="27" font-weight="700" fill="#18283f">kubelet / proxy API</text>
+<text x="110" y="787.8" font-family="Arial, sans-serif" font-size="22" font-weight="400" fill="#18283f">/metrics/resource</text>
+<text x="110" y="816.8" font-family="Arial, sans-serif" font-size="22" font-weight="400" fill="#18283f">RBAC: nodes/proxy</text>
+<rect x="650" y="710" width="360" height="130" rx="15" fill="#e4f4ee" stroke="#b6c5d9" stroke-width="2"/>
+<text x="670" y="753.3" font-family="Arial, sans-serif" font-size="27" font-weight="700" fill="#18283f">Service → Prometheus</text>
+<text x="670" y="787.8" font-family="Arial, sans-serif" font-size="22" font-weight="400" fill="#18283f">Scrape API y kubelet</text>
+<text x="670" y="816.8" font-family="Arial, sans-serif" font-size="22" font-weight="400" fill="#18283f">UID 65534</text>
+<rect x="1220" y="710" width="340" height="130" rx="15" fill="#f4f0e6" stroke="#b6c5d9" stroke-width="2"/>
+<text x="1240" y="753.3" font-family="Arial, sans-serif" font-size="27" font-weight="700" fill="#18283f">PVC · TSDB</text>
+<text x="1240" y="787.8" font-family="Arial, sans-serif" font-size="22" font-weight="400" fill="#18283f">Series temporales</text>
+<text x="1240" y="816.8" font-family="Arial, sans-serif" font-size="22" font-weight="400" fill="#18283f">Datos de Prometheus</text>
+<rect x="90" y="930" width="390" height="130" rx="15" fill="#fff1e8" stroke="#b6c5d9" stroke-width="2"/>
+<text x="110" y="973.3" font-family="Arial, sans-serif" font-size="27" font-weight="700" fill="#18283f">Falco · DaemonSet</text>
+<text x="110" y="1007.8" font-family="Arial, sans-serif" font-size="22" font-weight="400" fill="#18283f">modern eBPF · sensor UID 0</text>
+<text x="110" y="1036.8" font-family="Arial, sans-serif" font-size="22" font-weight="400" fill="#18283f">Syscalls → alertas / logs</text>
+<rect x="650" y="930" width="360" height="130" rx="15" fill="#e4f4ee" stroke="#b6c5d9" stroke-width="2"/>
+<text x="670" y="973.3" font-family="Arial, sans-serif" font-size="27" font-weight="700" fill="#18283f">Service → Grafana</text>
+<text x="670" y="1007.8" font-family="Arial, sans-serif" font-size="22" font-weight="400" fill="#18283f">Datasource Prometheus</text>
+<text x="670" y="1036.8" font-family="Arial, sans-serif" font-size="22" font-weight="400" fill="#18283f">6 paneles · UID 472</text>
+<rect x="1220" y="930" width="340" height="130" rx="15" fill="#f4f0e6" stroke="#b6c5d9" stroke-width="2"/>
+<text x="1240" y="973.3" font-family="Arial, sans-serif" font-size="27" font-weight="700" fill="#18283f">PVC · Grafana</text>
+<text x="1240" y="1007.8" font-family="Arial, sans-serif" font-size="22" font-weight="400" fill="#18283f">Estado de Grafana</text>
+<text x="1240" y="1036.8" font-family="Arial, sans-serif" font-size="22" font-weight="400" fill="#18283f">Almacenamiento propio</text>
+<polyline points="380,270 350,270 350,465 285,465 285,490" fill="none" stroke="#48647e" stroke-width="3"/>
+<polygon points="285,490 291.0,477.0 279.0,477.0" fill="#48647e"/>
+<text x="65" y="418.9" font-family="Arial, sans-serif" font-size="21" font-weight="400" fill="#48647e">Helm / acceso limitado</text>
+<polyline points="1415,290 1415,430 1160,430 1160,480 830,480 830,490" fill="none" stroke="#48647e" stroke-width="3"/>
+<polygon points="830,490 836.0,477.0 824.0,477.0" fill="#48647e"/>
+<text x="1435" y="408.9" font-family="Arial, sans-serif" font-size="21" font-weight="400" fill="#48647e">pull imagen</text>
+<polyline points="480,555 650,555" fill="none" stroke="#48647e" stroke-width="3" stroke-dasharray="8 7"/>
+<polygon points="650,555 637.0,549.0 637.0,561.0" fill="#48647e"/>
+<text x="505" y="537.9" font-family="Arial, sans-serif" font-size="21" font-weight="400" fill="#48647e">valida</text>
+<polyline points="1010,555 1220,555" fill="none" stroke="#48647e" stroke-width="3"/>
+<polygon points="1220,555 1207.0,549.0 1207.0,561.0" fill="#48647e"/>
+<text x="1080" y="539.9" font-family="Arial, sans-serif" font-size="21" font-weight="400" fill="#48647e">datos</text>
+<polyline points="1010,775 1220,775" fill="none" stroke="#48647e" stroke-width="3"/>
+<polygon points="1220,775 1207.0,769.0 1207.0,781.0" fill="#48647e"/>
+<text x="1080" y="759.9" font-family="Arial, sans-serif" font-size="21" font-weight="400" fill="#48647e">datos</text>
+<polyline points="1010,995 1220,995" fill="none" stroke="#48647e" stroke-width="3"/>
+<polygon points="1220,995 1207.0,989.0 1207.0,1001.0" fill="#48647e"/>
+<text x="1080" y="979.9" font-family="Arial, sans-serif" font-size="21" font-weight="400" fill="#48647e">datos</text>
+<polyline points="830,710 830,620" fill="none" stroke="#48647e" stroke-width="3"/>
+<polygon points="830,620 824.0,633.0 836.0,633.0" fill="#48647e"/>
+<text x="850" y="668.9" font-family="Arial, sans-serif" font-size="21" font-weight="400" fill="#48647e">scrape</text>
+<polyline points="650,775 480,775" fill="none" stroke="#48647e" stroke-width="3"/>
+<polygon points="480,775 493.0,781.0 493.0,769.0" fill="#48647e"/>
+<text x="545" y="758.9" font-family="Arial, sans-serif" font-size="21" font-weight="400" fill="#48647e">HTTPS</text>
+<polyline points="830,930 830,840" fill="none" stroke="#48647e" stroke-width="3"/>
+<polygon points="830,840 824.0,853.0 836.0,853.0" fill="#48647e"/>
+<text x="850" y="888.9" font-family="Arial, sans-serif" font-size="21" font-weight="400" fill="#48647e">PromQL</text>
+<polyline points="480,995 530,995 530,635 650,635 650,620" fill="none" stroke="#b96b36" stroke-width="3" stroke-dasharray="8 7"/>
+<polygon points="650,620 644.0,633.0 656.0,633.0" fill="#b96b36"/>
+<text x="75" y="1104.8" font-family="Arial, sans-serif" font-size="22" font-weight="400" fill="#18283f">ConfigMaps: scrape, datasource y dashboard. Acceso humano por port-forward en loopback; sin Ingress.</text>
+<text x="50" y="1171.8" font-family="Arial, sans-serif" font-size="22" font-weight="400" fill="#18283f">Lectura: flecha continua = solicitud / transferencia; discontinua = validación u observación.</text>
+<text x="50" y="1209.8" font-family="Arial, sans-serif" font-size="22" font-weight="400" fill="#18283f">Alcance: tres PVC y un escritor por servicio; sin HA. Jenkins/Falco conservan excepciones de privilegios.</text>
+<text x="50" y="1247.8" font-family="Arial, sans-serif" font-size="22" font-weight="400" fill="#18283f">Versiones y diferencias entre principal, chart 0.3.0 y ejecución #7: ver el informe README.</text>
+</svg>

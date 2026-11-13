@@ -1,7 +1,11 @@
 # Laboratorio 4 — índice vigente de guías y evidencias
 
-Actualización B05: 11/11/2026, Uruguay. Estado respaldado por archivos de las
-etapas indicadas; no es una consulta en vivo ni el informe integrador final.
+Actualización de entrega: 13/11/2026, Uruguay. Estado respaldado por archivos de las
+etapas indicadas; no es una consulta en vivo. El [informe integrador](../README.md)
+y su [diagrama](../docs/arquitectura-l4.png) se incorporan a la rama de revisión
+[trabajo-integrador-4](https://github.com/FacundoCoria/EntregableDevops2/tree/trabajo-integrador-4).
+Main queda sin cambios; el compañero revisará y decidirá el merge. No se
+incorpora la rama métricas-nuevas ni se repite el pipeline por esta publicación.
 
 | Tema | Guía / evidencia vigente | Alcance y antecedente |
 |---|---|---|
@@ -18,7 +22,8 @@ etapas indicadas; no es una consulta en vivo ni el informe integrador final.
 | Falco | [Guía](../pedidos-api/pedidos-api/security/falco/README.md), [evento](falco-event.md), [log](falco-event.log) | Acción no shell sobre fixture ficticio y alerta correlacionada L4-08; no incidente real. |
 | Pruebas operativas iniciales | [L4-10](l4-10/VERIFICACION.md) | Inicio/tráfico/retención/purga previos; B04 amplía reproducción y retiro de seguridad, sin borrar el diagnóstico. |
 
-Pendientes separados: B02 literal, B04 global/Jenkins desde cero, B06 informe final y B07/B09 seguimiento
-de seguridad/alcance. B05 cierra publicación de la rama/fuente SCM; B08 contextualizó las guías. Las demás brechas siguen abiertas.
+Pendientes separados: B02 literal, B04 global/Jenkins desde cero, revisión/merge a main y B07/B09 seguimiento
+de seguridad/alcance. B06 completa la redacción, diagrama y selección de salidas.
+B05 cierra publicación de la rama/fuente SCM; B08 contextualizó las guías. Las demás brechas siguen abiertas.
 E3 y sus Word quedan pausados. No ejecutar nuevamente verificadores para
 recuperar evidencia ya conservada; cualquier prueba nueva necesita destino nuevo.

@@ -1,11 +1,10 @@
 # Métricas de monitoreo — API de Pedidos
 
-Guía operativa del Laboratorio 4: [inicio, tráfico, acceso y limpieza](scripts/l4/GUIA.md).
-[Estado y evidencias vigentes](reports/ESTADO-EVIDENCIAS-L4.md), incluida la
+Guía operativa del Laboratorio 4: [inicio, tráfico, acceso y limpieza](../scripts/l4/GUIA.md).
+[Estado y evidencias vigentes](../reports/ESTADO-EVIDENCIAS-L4.md), incluida la
 comparación de seguridad y los límites de reproducción.
-[B05: consolidación y fuente Jenkins](docs/ENTREGA-B05.md), rama publicada y
-[comprobaciones](reports/l4-11b/b05/CONSOLIDACION.md). Este README conserva
-su alcance de métricas; el informe integrador final sigue pendiente (B06).
+[B05: consolidación y fuente Jenkins](ENTREGA-B05.md), rama publicada y
+[comprobaciones](../reports/l4-11b/b05/CONSOLIDACION.md). Esta guía conserva su alcance de métricas. El [informe integrador](../README.md) corresponde a B06/L4-12.
 
 La API utiliza **Micrometer y Prometheus** para registrar métricas relacionadas con la creación de pedidos y sus tiempos de espera. Estas métricas permiten visualizar el comportamiento de la aplicación mediante dashboards en Grafana.
 
