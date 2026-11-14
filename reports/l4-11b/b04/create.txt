@@ -1,0 +1,76 @@
+Evidencia: /c/Users/Bruno/PARA System/1- Projects/Entregable 3 - Devops/EntregableDevops2/reports/l4-11b/b04/create
+Perfil exclusivo: minikube-l4-b04. Docker/CLI preinstalados; Jenkins principal excluido.
+* [minikube-l4-b04] minikube v1.39.0 on Microsoft Windows 11 Pro 25H2
+* Using the docker driver based on user configuration
+* Using Docker Desktop driver with root privileges
+* Starting "minikube-l4-b04" primary control-plane node in "minikube-l4-b04" cluster
+* Pulling base image v0.0.51 ...
+* Preparing Kubernetes v1.37.0 on containerd 2.3.4 ...
+* Configuring CNI (Container Networking Interface) ...
+* Verifying Kubernetes components...
+  - Using image gcr.io/k8s-minikube/storage-provisioner:v5
+* Enabled addons: storage-provisioner, default-storageclass
+* To connect to this cluster, use:  --context=minikube-l4-b04
+Evidencia: /c/Users/Bruno/PARA System/1- Projects/Entregable 3 - Devops/EntregableDevops2/reports/l4-10/20261111T184722Z-start-1026
+namespace/laboratorio4 created
+Release "kyverno" does not exist. Installing it now.
+NAME: kyverno
+LAST DEPLOYED: Wed Nov 11 15:47:24 2026
+NAMESPACE: kyverno
+STATUS: deployed
+REVISION: 1
+DESCRIPTION: Install complete
+NOTES:
+Chart version: 3.10.0-rc.4
+Kyverno version: v1.20.0-rc.4
+
+Thank you for installing kyverno! Your release is named kyverno.
+
+The following components have been installed in your cluster:
+- CRDs
+- Admission controller
+- Reports controller
+
+
+⚠️  WARNING: Setting the admission controller replica count below 2 means Kyverno is not running in high availability mode.
+
+
+⚠️  WARNING: PolicyExceptions are disabled by default. To enable them, set '--enablePolicyException' to true.
+⚠️  WARNING: The legacy kyverno.io policy types are deprecated and will be removed in a future release. Migrate to their policies.kyverno.io replacements:
+    - ClusterPolicy / Policy → ValidatingPolicy, MutatingPolicy, GeneratingPolicy, ImageValidatingPolicy (and their namespaced variants)
+    - ClusterCleanupPolicy / CleanupPolicy → DeletingPolicy / NamespacedDeletingPolicy
+    - PolicyException (kyverno.io) → PolicyException (policies.kyverno.io)
+    See https://kyverno.io/docs/guides/migration-to-cel/ for the migration guide.
+
+💡 Note: There is a trade-off when deciding which approach to take regarding Namespace exclusions. Please see the documentation at https://kyverno.io/docs/installation/#security-vs-operability to understand the risks.
+customresourcedefinition.apiextensions.k8s.io/validatingpolicies.policies.kyverno.io condition met
+validatingpolicy.policies.kyverno.io/l4-deny-latest-images created
+validatingpolicy.policies.kyverno.io/l4-require-container-resources created
+validatingpolicy.policies.kyverno.io/l4-disallow-root-containers created
+validatingpolicy.policies.kyverno.io/l4-disallow-privileged-containers created
+validatingpolicy.policies.kyverno.io/l4-deny-latest-images condition met
+validatingpolicy.policies.kyverno.io/l4-require-container-resources condition met
+validatingpolicy.policies.kyverno.io/l4-disallow-root-containers condition met
+validatingpolicy.policies.kyverno.io/l4-disallow-privileged-containers condition met
+Release "falco" does not exist. Installing it now.
+I1111 15:49:16.359391   29824 warnings.go:107] "Warning: spec.template.metadata.annotations[container.apparmor.security.beta.kubernetes.io/falco]: deprecated since v1.30; use the \"appArmorProfile\" field instead"
+NAME: falco
+LAST DEPLOYED: Wed Nov 11 15:49:15 2026
+NAMESPACE: falco
+STATUS: deployed
+REVISION: 1
+DESCRIPTION: Install complete
+TEST SUITE: None
+NOTES:
+Falco agents are spinning up on each node in your cluster. After a few
+seconds, they are going to start monitoring your containers looking for
+security issues.
+
+TIP:
+You can easily forward Falco events to Slack, Kafka, AWS Lambda and more with falcosidekick.
+Full list of outputs: https://github.com/falcosecurity/charts/tree/master/charts/falcosidekick.
+You can enable its deployment with `--set falcosidekick.enabled=true` or in your values.yaml.
+See: https://github.com/falcosecurity/charts/blob/master/charts/falcosidekick/values.yaml for configuration values.
+Waiting for daemon set "falco" rollout to finish: 0 of 1 updated pods are available...
+daemon set "falco" successfully rolled out
+/c/Users/Bruno/PARA System/1- Projects/Entregable 3 - Devops/EntregableDevops2/scripts/l4/start.sh: line 46: se: command not found

@@ -1,0 +1,14 @@
+apiTitle: B03 puertos alternativos
+components:
+  api:
+    image: brunovitola/pedidos-api-l4:l4-7-0f47780b51b3@sha256:48b65d95763c2a1eb6727f9b22b78fc27509f79b62a7b87903cea87a4aee41d9
+    imagePullPolicy: IfNotPresent
+    port: 18081
+    replicas: 1
+  grafana:
+    port: 13001
+    replicas: 1
+  prometheus:
+    port: 19091
+    replicas: 1
+environment: b03

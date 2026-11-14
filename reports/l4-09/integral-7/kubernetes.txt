@@ -1,0 +1,4 @@
+NAME                                         READY   STATUS    RESTARTS   AGE     IP            NODE       NOMINATED NODE   READINESS GATES
+pod/l4-pedidos-api-5f56667f4b-76mjp          1/1     Running   0          27s     10.244.0.16   minikube   <none>           <none>
+pod/l4-pedidos-grafana-7b9cf89f5d-2bp9n      1/1     Running   0          6m47s   10.244.0.14   minikube   <none>           <none>
+pod/l4-pedidos-prometheus-7d8477d7dd-vtm42   1/1     Running   0          6m47s   10.244.0.13   minikube   <none>           <none>

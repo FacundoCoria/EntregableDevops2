@@ -4,6 +4,8 @@ metadata:
   name: grafana
 spec:
   replicas: 1
+  strategy:
+    type: Recreate
   selector:
     matchLabels:
       app: grafana
@@ -12,20 +14,24 @@ spec:
       labels:
         app: grafana
     spec:
+      securityContext:
+        fsGroup: 472
+        fsGroupChangePolicy: OnRootMismatch
+        seccompProfile:
+          type: RuntimeDefault
       containers:
         - name: grafana
-          image: grafana/grafana:11.6.0
+          image: grafana/grafana:13.0.12@sha256:28476aa8096cd8d0f658a05a443b605fffb450e57f444335216175d604cfd23d
+          imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 3000
-
           resources:
             requests:
-              cpu: "25m"
-              memory: "128Mi"
+              cpu: 100m
+              memory: 512Mi
             limits:
-              cpu: "250m"
-              memory: "256Mi"
-
+              cpu: 500m
+              memory: 1Gi
           securityContext:
             runAsNonRoot: true
             runAsUser: 472
@@ -34,3 +40,10 @@ spec:
             capabilities:
               drop:
                 - ALL
+          volumeMounts:
+            - name: grafana-data
+              mountPath: /var/lib/grafana
+      volumes:
+        - name: grafana-data
+          persistentVolumeClaim:
+            claimName: grafana-pvc

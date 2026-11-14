@@ -1,0 +1,27 @@
+{
+  "result": "PASS",
+  "resources": 16,
+  "variants": [
+    "default",
+    "dev",
+    "alternate",
+    "paused"
+  ],
+  "rejected": [
+    "reject-api-replicas-2",
+    "reject-api-replicas--1",
+    "reject-api-port-80",
+    "reject-api-port-65536",
+    "reject-api-port-text",
+    "reject-prometheus-replicas-2",
+    "reject-prometheus-replicas--1",
+    "reject-prometheus-port-80",
+    "reject-prometheus-port-65536",
+    "reject-prometheus-port-text",
+    "reject-grafana-replicas-2",
+    "reject-grafana-replicas--1",
+    "reject-grafana-port-80",
+    "reject-grafana-port-65536",
+    "reject-grafana-port-text"
+  ]
+}

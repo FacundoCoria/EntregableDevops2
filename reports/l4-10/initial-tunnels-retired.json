@@ -1,0 +1,78 @@
+[
+  {
+    "ProcessId": 26528,
+    "CommandLine": "\"C:\\Program Files\\Docker\\Docker\\resources\\bin\\kubectl.exe\" --context minikube -n laboratorio4 port-forward --address 127.0.0.1 svc/l4-pedidos-api :8080"
+  },
+  {
+    "ProcessId": 27268,
+    "CommandLine": "\"C:\\Program Files\\Docker\\Docker\\resources\\bin\\kubectl.exe\" --context minikube -n laboratorio4 port-forward --address 127.0.0.1 svc/l4-pedidos-prometheus :9090"
+  },
+  {
+    "ProcessId": 19140,
+    "CommandLine": "\"C:\\Program Files\\Docker\\Docker\\resources\\bin\\kubectl.exe\" --context minikube -n laboratorio4 port-forward --address 127.0.0.1 svc/l4-pedidos-grafana :3000"
+  },
+  {
+    "ProcessId": 5464,
+    "CommandLine": "\"C:\\Program Files\\Docker\\Docker\\resources\\bin\\kubectl.exe\" --context minikube -n laboratorio4 port-forward --address 127.0.0.1 svc/l4-pedidos-api :8080"
+  },
+  {
+    "ProcessId": 16336,
+    "CommandLine": "\"C:\\Program Files\\Docker\\Docker\\resources\\bin\\kubectl.exe\" --context minikube -n laboratorio4-l4test port-forward --address 127.0.0.1 svc/l4-test-pedidos-api :8080"
+  },
+  {
+    "ProcessId": 13268,
+    "CommandLine": "\"C:\\Program Files\\Docker\\Docker\\resources\\bin\\kubectl.exe\" --context minikube -n laboratorio4-l4test port-forward --address 127.0.0.1 svc/l4-test-pedidos-prometheus :9090"
+  },
+  {
+    "ProcessId": 22764,
+    "CommandLine": "\"C:\\Program Files\\Docker\\Docker\\resources\\bin\\kubectl.exe\" --context minikube -n laboratorio4-l4test port-forward --address 127.0.0.1 svc/l4-test-pedidos-grafana :3000"
+  },
+  {
+    "ProcessId": 18988,
+    "CommandLine": "\"C:\\Program Files\\Docker\\Docker\\resources\\bin\\kubectl.exe\" --context minikube -n laboratorio4-l4test port-forward --address 127.0.0.1 svc/l4-test-pedidos-api :8080"
+  },
+  {
+    "ProcessId": 13800,
+    "CommandLine": "\"C:\\Program Files\\Docker\\Docker\\resources\\bin\\kubectl.exe\" --context minikube -n laboratorio4-l4test port-forward --address 127.0.0.1 svc/l4-test-pedidos-api :8080"
+  },
+  {
+    "ProcessId": 228,
+    "CommandLine": "\"C:\\Program Files\\Docker\\Docker\\resources\\bin\\kubectl.exe\" --context minikube -n laboratorio4 port-forward --address 127.0.0.1 svc/l4-pedidos-api :8080"
+  },
+  {
+    "ProcessId": 7876,
+    "CommandLine": "\"C:\\Program Files\\Docker\\Docker\\resources\\bin\\kubectl.exe\" --context minikube -n laboratorio4 port-forward --address 127.0.0.1 svc/l4-pedidos-prometheus :9090"
+  },
+  {
+    "ProcessId": 16568,
+    "CommandLine": "\"C:\\Program Files\\Docker\\Docker\\resources\\bin\\kubectl.exe\" --context minikube -n laboratorio4 port-forward --address 127.0.0.1 svc/l4-pedidos-grafana :3000"
+  },
+  {
+    "ProcessId": 2896,
+    "CommandLine": "\"C:\\Program Files\\Docker\\Docker\\resources\\bin\\kubectl.exe\" --context minikube -n laboratorio4-l4test port-forward --address 127.0.0.1 svc/l4-test-pedidos-api :8080"
+  },
+  {
+    "ProcessId": 4772,
+    "CommandLine": "\"C:\\Program Files\\Docker\\Docker\\resources\\bin\\kubectl.exe\" --context minikube -n laboratorio4-l4test port-forward --address 127.0.0.1 svc/l4-test-pedidos-prometheus :9090"
+  },
+  {
+    "ProcessId": 27560,
+    "CommandLine": "\"C:\\Program Files\\Docker\\Docker\\resources\\bin\\kubectl.exe\" --context minikube -n laboratorio4-l4test port-forward --address 127.0.0.1 svc/l4-test-pedidos-grafana :3000"
+  },
+  {
+    "ProcessId": 20420,
+    "CommandLine": "\"C:\\Program Files\\Docker\\Docker\\resources\\bin\\kubectl.exe\" --context minikube -n laboratorio4-l4test port-forward --address 127.0.0.1 svc/l4-test-pedidos-api :8080"
+  },
+  {
+    "ProcessId": 17788,
+    "CommandLine": "\"C:\\Program Files\\Docker\\Docker\\resources\\bin\\kubectl.exe\" --context minikube -n laboratorio4 port-forward --address 127.0.0.1 svc/l4-pedidos-api :8080"
+  },
+  {
+    "ProcessId": 23480,
+    "CommandLine": "\"C:\\Program Files\\Docker\\Docker\\resources\\bin\\kubectl.exe\" --context minikube -n laboratorio4 port-forward --address 127.0.0.1 svc/l4-pedidos-prometheus :9090"
+  },
+  {
+    "ProcessId": 25488,
+    "CommandLine": "\"C:\\Program Files\\Docker\\Docker\\resources\\bin\\kubectl.exe\" --context minikube -n laboratorio4 port-forward --address 127.0.0.1 svc/l4-pedidos-grafana :3000"
+  }
+]

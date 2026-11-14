@@ -1,0 +1,11 @@
+{
+  "result": "PASS",
+  "previous_files_unchanged": 211,
+  "revisions": {
+    "l4": "10",
+    "kyverno": "3",
+    "falco": "2"
+  },
+  "policies_ready": 4,
+  "main_ready_pods": 3
+}

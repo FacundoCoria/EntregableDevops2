@@ -1,0 +1,38 @@
+{
+  "hostname": "minikube",
+  "output": "2026-11-11T14:40:58.000012516+0000: Warning Sensitive file opened for reading by non-trusted program | file=/etc/shadow gparent=<NA> ggparent=<NA> gggparent=<NA> evt_type=openat user=<NA> user_uid=10001 user_loginuid=-1 process=cat proc_exepath=/bin/cat parent=containerd-shim command=cat /etc/shadow terminal=0 container_id=e3770cf0a5d3 container_name=reader container_image_repository=docker.io/library/busybox container_image_tag=1.36.1 k8s_pod_name=l4-08-falco-read k8s_ns_name=laboratorio4",
+  "output_fields": {
+    "container.id": "e3770cf0a5d3",
+    "container.image.repository": "docker.io/library/busybox",
+    "container.image.tag": "1.36.1",
+    "container.name": "reader",
+    "evt.time.iso8601": 1794408058000012516,
+    "evt.type": "openat",
+    "fd.name": "/etc/shadow",
+    "k8s.ns.name": "laboratorio4",
+    "k8s.pod.name": "l4-08-falco-read",
+    "proc.aname[2]": null,
+    "proc.aname[3]": null,
+    "proc.aname[4]": null,
+    "proc.cmdline": "cat /etc/shadow",
+    "proc.exepath": "/bin/cat",
+    "proc.name": "cat",
+    "proc.pname": "containerd-shim",
+    "proc.tty": 0,
+    "user.loginuid": -1,
+    "user.name": "<NA>",
+    "user.uid": 10001
+  },
+  "priority": "Warning",
+  "rule": "Read sensitive file untrusted",
+  "source": "syscall",
+  "tags": [
+    "T1555",
+    "container",
+    "filesystem",
+    "host",
+    "maturity_stable",
+    "mitre_credential_access"
+  ],
+  "time": "2026-11-11T14:40:58.000012516Z"
+}

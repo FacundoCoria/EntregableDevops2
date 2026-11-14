@@ -1,0 +1,21 @@
+{
+  "pass": true,
+  "context": "minikube",
+  "namespace": "laboratorio4",
+  "pod": "l4-08-falco-read",
+  "podUid": "f96df247-cb6b-4046-8bd5-f92e64cf244c",
+  "containerId": "e3770cf0a5d3cff6e0e46d28e4a2f8152d392f208683492734c309351400042f",
+  "image": "busybox:1.36.1",
+  "imageId": "docker.io/library/busybox@sha256:73aaf090f3d85aa34ee199857f03fa3a95c8ede2ffd4cc2cdb5b94e566b11662",
+  "falcoPod": "falco-mtdw2",
+  "command": "kubectl --context minikube -n laboratorio4 exec l4-08-falco-read -c reader -- cat /etc/shadow",
+  "actionStartUtc": "2026-11-11T14:40:57.6847494Z",
+  "actionEndUtc": "2026-11-11T14:40:58.0173882Z",
+  "eventTimeUtc": "2026-11-11T14:40:58.000012516Z",
+  "rule": "Read sensitive file untrusted",
+  "priority": "Warning",
+  "matchedEvents": 1,
+  "controlMatchedSensitiveEvents": 0,
+  "shellOpened": false,
+  "syntheticFixture": true
+}

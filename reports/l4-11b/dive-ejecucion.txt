@@ -1,0 +1,5 @@
+  Using default CI config
+[1mImage Source: [0mdocker-archive://handoffs/evidencias_l4_11b_2026-11-11/pedidos-api-publicada.tar
+[1mExtracting image from docker-archive...[0m (this can take a while for large images)
+[1mAnalyzing image...[0m
+[1mExporting image to 'EntregableDevops2/reports/l4-11b/dive.json'...[0m

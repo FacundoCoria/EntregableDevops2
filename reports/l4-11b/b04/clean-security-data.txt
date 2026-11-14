@@ -1,0 +1,31 @@
+Evidencia: /c/Users/Bruno/PARA System/1- Projects/Entregable 3 - Devops/EntregableDevops2/reports/l4-11b/b04/clean-security-data
+Contexto=minikube-l4-b04 namespace=laboratorio4 release=l4
+Desinstalar release l4: API, Prometheus, Grafana, configuración y RBAC de métricas.
+Eliminar PVC=true (solo l4-pedidos-api, l4-pedidos-prometheus, l4-pedidos-grafana).
+Retirar políticas L4 y releases kyverno/falco=true.
+Conservar namespaces, CRD compartidas, Jenkins/credenciales/volumen, Minikube, default y reportes.
+These resources were kept due to the resource policy:
+[PersistentVolumeClaim] l4-pedidos-api
+[PersistentVolumeClaim] l4-pedidos-grafana
+[PersistentVolumeClaim] l4-pedidos-prometheus
+
+release "l4" uninstalled
+persistentvolumeclaim "l4-pedidos-api" deleted from laboratorio4 namespace
+persistentvolumeclaim "l4-pedidos-prometheus" deleted from laboratorio4 namespace
+persistentvolumeclaim "l4-pedidos-grafana" deleted from laboratorio4 namespace
+validatingpolicy.policies.kyverno.io "l4-deny-latest-images" deleted
+validatingpolicy.policies.kyverno.io "l4-require-container-resources" deleted
+validatingpolicy.policies.kyverno.io "l4-disallow-root-containers" deleted
+validatingpolicy.policies.kyverno.io "l4-disallow-privileged-containers" deleted
+release "falco" uninstalled
+These resources were kept due to the resource policy:
+[CustomResourceDefinition] cleanuppolicies.kyverno.io
+[CustomResourceDefinition] clustercleanuppolicies.kyverno.io
+[CustomResourceDefinition] clusterpolicies.kyverno.io
+[CustomResourceDefinition] policies.kyverno.io
+[CustomResourceDefinition] policyexceptions.kyverno.io
+[ConfigMap] kyverno
+
+release "kyverno" uninstalled
+No resources found in laboratorio4 namespace.
+PASS

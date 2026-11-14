@@ -1,0 +1,5 @@
+persistentvolumeclaim "l4-b03-check-pedidos-api" deleted from laboratorio4 namespace
+persistentvolumeclaim "l4-b03-check-pedidos-prometheus" deleted from laboratorio4 namespace
+persistentvolumeclaim "l4-b03-check-pedidos-grafana" deleted from laboratorio4 namespace
+
+exit=0

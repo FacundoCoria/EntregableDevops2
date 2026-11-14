@@ -1,0 +1,12 @@
+uid=0(root) gid=0(root) groups=0(root)
+openjdk version "21.0.12.1" 2026-08-18 LTS
+OpenJDK Runtime Environment Temurin-21.0.12.1+1 (build 21.0.12.1+1-LTS)
+OpenJDK 64-Bit Server VM Temurin-21.0.12.1+1 (build 21.0.12.1+1-LTS, mixed mode)
+/usr/bin/git
+/usr/bin/docker
+helm: pendiente
+kubectl: pendiente
+mvn: pendiente
+/usr/bin/python3
+semgrep: pendiente
+snyk: pendiente

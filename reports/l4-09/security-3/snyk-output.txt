@@ -1,0 +1,124 @@
+
+Testing /var/jenkins_home/workspace/L4-09-pedidos-api/fuente-referencia/pedidos-api/pedidos-api...
+
+Tested 130 dependencies for known issues, found 44 issues, 44 vulnerable paths.
+
+
+Issues to fix by upgrading:
+
+  Upgrade org.springframework.boot:spring-boot-starter-webmvc@4.1.1 to org.springframework.boot:spring-boot-starter-webmvc@4.1.2 to fix
+  ✗ Improper Check for Certificate Revocation (new) [Low Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGAPACHETOMCATEMBED-21715432] in org.apache.tomcat.embed:tomcat-embed-core@11.0.24
+    introduced by org.springframework.boot:spring-boot-starter-webmvc@4.1.1 > org.springframework.boot:spring-boot-starter-tomcat@4.1.1 > org.springframework.boot:spring-boot-starter-tomcat-runtime@4.1.1 > org.apache.tomcat.embed:tomcat-embed-core@11.0.24
+  ✗ Insufficient Session Expiration [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGAPACHETOMCATEMBED-20302874] in org.apache.tomcat.embed:tomcat-embed-core@11.0.24
+    introduced by org.springframework.boot:spring-boot-starter-webmvc@4.1.1 > org.springframework.boot:spring-boot-starter-tomcat@4.1.1 > org.springframework.boot:spring-boot-starter-tomcat-runtime@4.1.1 > org.apache.tomcat.embed:tomcat-embed-core@11.0.24
+  ✗ Incorrect Authorization (new) [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGAPACHETOMCATEMBED-21249727] in org.apache.tomcat.embed:tomcat-embed-core@11.0.24
+    introduced by org.springframework.boot:spring-boot-starter-webmvc@4.1.1 > org.springframework.boot:spring-boot-starter-tomcat@4.1.1 > org.springframework.boot:spring-boot-starter-tomcat-runtime@4.1.1 > org.apache.tomcat.embed:tomcat-embed-core@11.0.24
+  ✗ Buffer Under-read (new) [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGAPACHETOMCATEMBED-21707473] in org.apache.tomcat.embed:tomcat-embed-core@11.0.24
+    introduced by org.springframework.boot:spring-boot-starter-webmvc@4.1.1 > org.springframework.boot:spring-boot-starter-tomcat@4.1.1 > org.springframework.boot:spring-boot-starter-tomcat-runtime@4.1.1 > org.apache.tomcat.embed:tomcat-embed-core@11.0.24
+  ✗ Incomplete Cleanup (new) [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGAPACHETOMCATEMBED-21707518] in org.apache.tomcat.embed:tomcat-embed-core@11.0.24
+    introduced by org.springframework.boot:spring-boot-starter-webmvc@4.1.1 > org.springframework.boot:spring-boot-starter-tomcat@4.1.1 > org.springframework.boot:spring-boot-starter-tomcat-runtime@4.1.1 > org.apache.tomcat.embed:tomcat-embed-core@11.0.24
+  ✗ Not Failing Securely ('Failing Open') (new) [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGAPACHETOMCATEMBED-21707531] in org.apache.tomcat.embed:tomcat-embed-core@11.0.24
+    introduced by org.springframework.boot:spring-boot-starter-webmvc@4.1.1 > org.springframework.boot:spring-boot-starter-tomcat@4.1.1 > org.springframework.boot:spring-boot-starter-tomcat-runtime@4.1.1 > org.apache.tomcat.embed:tomcat-embed-core@11.0.24
+  ✗ HTTP Request Smuggling (new) [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGAPACHETOMCATEMBED-21715433] in org.apache.tomcat.embed:tomcat-embed-core@11.0.24
+    introduced by org.springframework.boot:spring-boot-starter-webmvc@4.1.1 > org.springframework.boot:spring-boot-starter-tomcat@4.1.1 > org.springframework.boot:spring-boot-starter-tomcat-runtime@4.1.1 > org.apache.tomcat.embed:tomcat-embed-core@11.0.24
+  ✗ Incorrect Synchronization (new) [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGAPACHETOMCATEMBED-21716513] in org.apache.tomcat.embed:tomcat-embed-core@11.0.24
+    introduced by org.springframework.boot:spring-boot-starter-webmvc@4.1.1 > org.springframework.boot:spring-boot-starter-tomcat@4.1.1 > org.springframework.boot:spring-boot-starter-tomcat-runtime@4.1.1 > org.apache.tomcat.embed:tomcat-embed-core@11.0.24
+  ✗ Authentication Bypass by Primary Weakness (new) [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGAPACHETOMCATEMBED-21716517] in org.apache.tomcat.embed:tomcat-embed-core@11.0.24
+    introduced by org.springframework.boot:spring-boot-starter-webmvc@4.1.1 > org.springframework.boot:spring-boot-starter-tomcat@4.1.1 > org.springframework.boot:spring-boot-starter-tomcat-runtime@4.1.1 > org.apache.tomcat.embed:tomcat-embed-core@11.0.24
+  ✗ Incomplete Cleanup (new) [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGAPACHETOMCATEMBED-21716521] in org.apache.tomcat.embed:tomcat-embed-core@11.0.24
+    introduced by org.springframework.boot:spring-boot-starter-webmvc@4.1.1 > org.springframework.boot:spring-boot-starter-tomcat@4.1.1 > org.springframework.boot:spring-boot-starter-tomcat-runtime@4.1.1 > org.apache.tomcat.embed:tomcat-embed-core@11.0.24
+  ✗ Incomplete Cleanup (new) [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGAPACHETOMCATEMBED-21716524] in org.apache.tomcat.embed:tomcat-embed-core@11.0.24
+    introduced by org.springframework.boot:spring-boot-starter-webmvc@4.1.1 > org.springframework.boot:spring-boot-starter-tomcat@4.1.1 > org.springframework.boot:spring-boot-starter-tomcat-runtime@4.1.1 > org.apache.tomcat.embed:tomcat-embed-core@11.0.24
+  ✗ Insufficient Session Expiration [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGAPACHETOMCATEMBED-20302876] in org.apache.tomcat.embed:tomcat-embed-websocket@11.0.24
+    introduced by org.springframework.boot:spring-boot-starter-webmvc@4.1.1 > org.springframework.boot:spring-boot-starter-tomcat@4.1.1 > org.springframework.boot:spring-boot-starter-tomcat-runtime@4.1.1 > org.apache.tomcat.embed:tomcat-embed-websocket@11.0.24
+  ✗ Improper Handling of Length Parameter Inconsistency (new) [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGAPACHETOMCATEMBED-21715428] in org.apache.tomcat.embed:tomcat-embed-websocket@11.0.24
+    introduced by org.springframework.boot:spring-boot-starter-webmvc@4.1.1 > org.springframework.boot:spring-boot-starter-tomcat@4.1.1 > org.springframework.boot:spring-boot-starter-tomcat-runtime@4.1.1 > org.apache.tomcat.embed:tomcat-embed-websocket@11.0.24
+  ✗ Use of Externally-Controlled Input to Select Classes or Code ('Unsafe Reflection') [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-TOOLSJACKSONCORE-19477043] in tools.jackson.core:jackson-databind@3.1.5
+    introduced by org.springframework.boot:spring-boot-starter-webmvc@4.1.1 > org.springframework.boot:spring-boot-starter-jackson@4.1.1 > org.springframework.boot:spring-boot-jackson@4.1.1 > tools.jackson.core:jackson-databind@3.1.5
+  ✗ Deserialization of Untrusted Data [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-TOOLSJACKSONCORE-19496767] in tools.jackson.core:jackson-databind@3.1.5
+    introduced by org.springframework.boot:spring-boot-starter-webmvc@4.1.1 > org.springframework.boot:spring-boot-starter-jackson@4.1.1 > org.springframework.boot:spring-boot-jackson@4.1.1 > tools.jackson.core:jackson-databind@3.1.5
+  ✗ Allocation of Resources Without Limits or Throttling [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-TOOLSJACKSONCORE-20059686] in tools.jackson.core:jackson-databind@3.1.5
+    introduced by org.springframework.boot:spring-boot-starter-webmvc@4.1.1 > org.springframework.boot:spring-boot-starter-jackson@4.1.1 > org.springframework.boot:spring-boot-jackson@4.1.1 > tools.jackson.core:jackson-databind@3.1.5
+  ✗ Regular Expression Denial of Service (ReDoS) [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-TOOLSJACKSONCORE-20059678] in tools.jackson.core:jackson-core@3.1.5
+    introduced by org.springframework.boot:spring-boot-starter-webmvc@4.1.1 > org.springframework.boot:spring-boot-starter-jackson@4.1.1 > org.springframework.boot:spring-boot-jackson@4.1.1 > tools.jackson.core:jackson-databind@3.1.5 > tools.jackson.core:jackson-core@3.1.5
+  ✗ Off-by-one Error [High Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGAPACHETOMCATEMBED-20302886] in org.apache.tomcat.embed:tomcat-embed-core@11.0.24
+    introduced by org.springframework.boot:spring-boot-starter-webmvc@4.1.1 > org.springframework.boot:spring-boot-starter-tomcat@4.1.1 > org.springframework.boot:spring-boot-starter-tomcat-runtime@4.1.1 > org.apache.tomcat.embed:tomcat-embed-core@11.0.24
+  ✗ Authentication Bypass by Primary Weakness [High Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGAPACHETOMCATEMBED-20302889] in org.apache.tomcat.embed:tomcat-embed-core@11.0.24
+    introduced by org.springframework.boot:spring-boot-starter-webmvc@4.1.1 > org.springframework.boot:spring-boot-starter-tomcat@4.1.1 > org.springframework.boot:spring-boot-starter-tomcat-runtime@4.1.1 > org.apache.tomcat.embed:tomcat-embed-core@11.0.24
+  ✗ Allocation of Resources Without Limits or Throttling [High Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGAPACHETOMCATEMBED-20304748] in org.apache.tomcat.embed:tomcat-embed-core@11.0.24
+    introduced by org.springframework.boot:spring-boot-starter-webmvc@4.1.1 > org.springframework.boot:spring-boot-starter-tomcat@4.1.1 > org.springframework.boot:spring-boot-starter-tomcat-runtime@4.1.1 > org.apache.tomcat.embed:tomcat-embed-core@11.0.24
+  ✗ Allocation of Resources Without Limits or Throttling (new) [High Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGAPACHETOMCATEMBED-21715436] in org.apache.tomcat.embed:tomcat-embed-core@11.0.24
+    introduced by org.springframework.boot:spring-boot-starter-webmvc@4.1.1 > org.springframework.boot:spring-boot-starter-tomcat@4.1.1 > org.springframework.boot:spring-boot-starter-tomcat-runtime@4.1.1 > org.apache.tomcat.embed:tomcat-embed-core@11.0.24
+  ✗ Missing Release of Resource after Effective Lifetime (new) [High Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGAPACHETOMCATEMBED-21246252] in org.apache.tomcat.embed:tomcat-embed-websocket@11.0.24
+    introduced by org.springframework.boot:spring-boot-starter-webmvc@4.1.1 > org.springframework.boot:spring-boot-starter-tomcat@4.1.1 > org.springframework.boot:spring-boot-starter-tomcat-runtime@4.1.1 > org.apache.tomcat.embed:tomcat-embed-websocket@11.0.24
+  ✗ Denial of Service (DoS) (new) [High Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGAPACHETOMCATEMBED-21249759] in org.apache.tomcat.embed:tomcat-embed-websocket@11.0.24
+    introduced by org.springframework.boot:spring-boot-starter-webmvc@4.1.1 > org.springframework.boot:spring-boot-starter-tomcat@4.1.1 > org.springframework.boot:spring-boot-starter-tomcat-runtime@4.1.1 > org.apache.tomcat.embed:tomcat-embed-websocket@11.0.24
+  ✗ Allocation of Resources Without Limits or Throttling [High Severity][https://security.snyk.io/vuln/SNYK-JAVA-TOOLSJACKSONCORE-19778371] in tools.jackson.core:jackson-databind@3.1.5
+    introduced by org.springframework.boot:spring-boot-starter-webmvc@4.1.1 > org.springframework.boot:spring-boot-starter-jackson@4.1.1 > org.springframework.boot:spring-boot-jackson@4.1.1 > tools.jackson.core:jackson-databind@3.1.5
+  ✗ Allocation of Resources Without Limits or Throttling [High Severity][https://security.snyk.io/vuln/SNYK-JAVA-TOOLSJACKSONCORE-20059682] in tools.jackson.core:jackson-databind@3.1.5
+    introduced by org.springframework.boot:spring-boot-starter-webmvc@4.1.1 > org.springframework.boot:spring-boot-starter-jackson@4.1.1 > org.springframework.boot:spring-boot-jackson@4.1.1 > tools.jackson.core:jackson-databind@3.1.5
+  ✗ Allocation of Resources Without Limits or Throttling [High Severity][https://security.snyk.io/vuln/SNYK-JAVA-TOOLSJACKSONCORE-20059180] in tools.jackson.core:jackson-core@3.1.5
+    introduced by org.springframework.boot:spring-boot-starter-webmvc@4.1.1 > org.springframework.boot:spring-boot-starter-jackson@4.1.1 > org.springframework.boot:spring-boot-jackson@4.1.1 > tools.jackson.core:jackson-databind@3.1.5 > tools.jackson.core:jackson-core@3.1.5
+  ✗ Denial of Service (DoS) (new) [High Severity][https://security.snyk.io/vuln/SNYK-JAVA-TOOLSJACKSONCORE-21193288] in tools.jackson.core:jackson-core@3.1.5
+    introduced by org.springframework.boot:spring-boot-starter-webmvc@4.1.1 > org.springframework.boot:spring-boot-starter-jackson@4.1.1 > org.springframework.boot:spring-boot-jackson@4.1.1 > tools.jackson.core:jackson-databind@3.1.5 > tools.jackson.core:jackson-core@3.1.5
+  ✗ Replay Attack [Critical Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGAPACHETOMCATEMBED-20302842] in org.apache.tomcat.embed:tomcat-embed-core@11.0.24
+    introduced by org.springframework.boot:spring-boot-starter-webmvc@4.1.1 > org.springframework.boot:spring-boot-starter-tomcat@4.1.1 > org.springframework.boot:spring-boot-starter-tomcat-runtime@4.1.1 > org.apache.tomcat.embed:tomcat-embed-core@11.0.24
+  ✗ Incorrect Authorization [Critical Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGAPACHETOMCATEMBED-20302843] in org.apache.tomcat.embed:tomcat-embed-core@11.0.24
+    introduced by org.springframework.boot:spring-boot-starter-webmvc@4.1.1 > org.springframework.boot:spring-boot-starter-tomcat@4.1.1 > org.springframework.boot:spring-boot-starter-tomcat-runtime@4.1.1 > org.apache.tomcat.embed:tomcat-embed-core@11.0.24
+  ✗ Missing Critical Step in Authentication (new) [Critical Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGAPACHETOMCATEMBED-21707475] in org.apache.tomcat.embed:tomcat-embed-core@11.0.24
+    introduced by org.springframework.boot:spring-boot-starter-webmvc@4.1.1 > org.springframework.boot:spring-boot-starter-tomcat@4.1.1 > org.springframework.boot:spring-boot-starter-tomcat-runtime@4.1.1 > org.apache.tomcat.embed:tomcat-embed-core@11.0.24
+  ✗ Access Control Bypass (new) [Critical Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGAPACHETOMCATEMBED-21707477] in org.apache.tomcat.embed:tomcat-embed-core@11.0.24
+    introduced by org.springframework.boot:spring-boot-starter-webmvc@4.1.1 > org.springframework.boot:spring-boot-starter-tomcat@4.1.1 > org.springframework.boot:spring-boot-starter-tomcat-runtime@4.1.1 > org.apache.tomcat.embed:tomcat-embed-core@11.0.24
+  ✗ HTTP Request Smuggling (new) [Critical Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGAPACHETOMCATEMBED-21716509] in org.apache.tomcat.embed:tomcat-embed-core@11.0.24
+    introduced by org.springframework.boot:spring-boot-starter-webmvc@4.1.1 > org.springframework.boot:spring-boot-starter-tomcat@4.1.1 > org.springframework.boot:spring-boot-starter-tomcat-runtime@4.1.1 > org.apache.tomcat.embed:tomcat-embed-core@11.0.24
+  ✗ Authentication Bypass by Alternate Name [Critical Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGAPACHETOMCATEMBED-20552494] in org.apache.tomcat.embed:tomcat-embed-websocket@11.0.24
+    introduced by org.springframework.boot:spring-boot-starter-webmvc@4.1.1 > org.springframework.boot:spring-boot-starter-tomcat@4.1.1 > org.springframework.boot:spring-boot-starter-tomcat-runtime@4.1.1 > org.apache.tomcat.embed:tomcat-embed-websocket@11.0.24
+
+
+Issues with no direct upgrade or patch:
+  ✗ Directory Traversal [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-CHQOSLOGBACK-19882330] in ch.qos.logback:logback-classic@1.5.38
+    introduced by org.springframework.boot:spring-boot-starter-actuator@4.1.1 > org.springframework.boot:spring-boot-starter@4.1.1 > org.springframework.boot:spring-boot-starter-logging@4.1.1 > ch.qos.logback:logback-classic@1.5.38
+  This issue was fixed in versions: 1.6.3
+  ✗ Directory Traversal [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-CHQOSLOGBACK-20824362] in ch.qos.logback:logback-classic@1.5.38
+    introduced by org.springframework.boot:spring-boot-starter-actuator@4.1.1 > org.springframework.boot:spring-boot-starter@4.1.1 > org.springframework.boot:spring-boot-starter-logging@4.1.1 > ch.qos.logback:logback-classic@1.5.38
+  This issue was fixed in versions: 1.6.5
+  ✗ Improper Neutralization [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-NETMINIDEV-21715438] in net.minidev:json-smart@2.6.0
+    introduced by org.springframework.boot:spring-boot-starter-actuator-test@4.1.1 > org.springframework.boot:spring-boot-starter-test@4.1.1 > net.minidev:json-smart@2.6.0
+  This issue was fixed in versions: 2.6.1
+  ✗ XML External Entity (XXE) Injection [High Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGGLASSFISHJAXB-20883142] in org.glassfish.jaxb:jaxb-core@4.0.9
+    introduced by org.springframework.boot:spring-boot-starter-data-jpa@4.1.1 > org.springframework.boot:spring-boot-data-jpa@4.1.1 > org.springframework.boot:spring-boot-hibernate@4.1.1 > org.hibernate.orm:hibernate-core@7.4.5.Final > org.glassfish.jaxb:jaxb-runtime@4.0.9 > org.glassfish.jaxb:jaxb-core@4.0.9
+  No upgrade or patch available
+  ✗ Symbolic Name not Mapping to Correct Object [Low Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGOBJENESIS-21755439] in org.objenesis:objenesis@3.3
+    introduced by org.springframework.boot:spring-boot-starter-actuator-test@4.1.1 > org.springframework.boot:spring-boot-starter-test@4.1.1 > org.mockito:mockito-core@5.23.0 > org.objenesis:objenesis@3.3
+  This issue was fixed in versions: 3.6
+  ✗ Inefficient Algorithmic Complexity [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGOW2ASM-21715439] in org.ow2.asm:asm@9.7.1
+    introduced by org.springframework.boot:spring-boot-starter-actuator-test@4.1.1 > org.springframework.boot:spring-boot-starter-test@4.1.1 > net.minidev:json-smart@2.6.0 > net.minidev:accessors-smart@2.6.0 > org.ow2.asm:asm@9.7.1
+  This issue was fixed in versions: 9.11
+  ✗ Memory Allocation with Excessive Size Value [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGOW2ASM-21715442] in org.ow2.asm:asm@9.7.1
+    introduced by org.springframework.boot:spring-boot-starter-actuator-test@4.1.1 > org.springframework.boot:spring-boot-starter-test@4.1.1 > net.minidev:json-smart@2.6.0 > net.minidev:accessors-smart@2.6.0 > org.ow2.asm:asm@9.7.1
+  This issue was fixed in versions: 9.11
+  ✗ Uncontrolled Recursion [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGOW2ASM-21715445] in org.ow2.asm:asm@9.7.1
+    introduced by org.springframework.boot:spring-boot-starter-actuator-test@4.1.1 > org.springframework.boot:spring-boot-starter-test@4.1.1 > net.minidev:json-smart@2.6.0 > net.minidev:accessors-smart@2.6.0 > org.ow2.asm:asm@9.7.1
+  This issue was fixed in versions: 9.11
+  ✗ Memory Allocation with Excessive Size Value [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGOW2ASM-21715448] in org.ow2.asm:asm@9.7.1
+    introduced by org.springframework.boot:spring-boot-starter-actuator-test@4.1.1 > org.springframework.boot:spring-boot-starter-test@4.1.1 > net.minidev:json-smart@2.6.0 > net.minidev:accessors-smart@2.6.0 > org.ow2.asm:asm@9.7.1
+  This issue was fixed in versions: 9.11
+  ✗ Inefficient Algorithmic Complexity [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGOW2ASM-21715452] in org.ow2.asm:asm@9.7.1
+    introduced by org.springframework.boot:spring-boot-starter-actuator-test@4.1.1 > org.springframework.boot:spring-boot-starter-test@4.1.1 > net.minidev:json-smart@2.6.0 > net.minidev:accessors-smart@2.6.0 > org.ow2.asm:asm@9.7.1
+  This issue was fixed in versions: 9.11
+  ✗ Deserialization of Untrusted Data [Critical Severity][https://security.snyk.io/vuln/SNYK-JAVA-TOOLSJACKSONCORE-21761838] in tools.jackson.core:jackson-databind@3.1.5
+    introduced by org.springframework.boot:spring-boot-starter-webmvc@4.1.1 > org.springframework.boot:spring-boot-starter-jackson@4.1.1 > org.springframework.boot:spring-boot-jackson@4.1.1 > tools.jackson.core:jackson-databind@3.1.5
+  This issue was fixed in versions: 3.1.8, 3.2.4
+
+
+
+Organization:      pela311
+Package manager:   maven
+Target file:       pom.xml
+Project name:      com.pedidos:pedidos-api
+Open source:       no
+Project path:      /var/jenkins_home/workspace/L4-09-pedidos-api/fuente-referencia/pedidos-api/pedidos-api
+Local Snyk policy: found
+Licenses:          enabled
+
+

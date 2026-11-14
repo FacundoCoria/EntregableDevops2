@@ -1,0 +1,76 @@
+// Prueba incremental L4-09: herramientas, acceso Snyk y gate real.
+// Fuente Java/POM de referencia: no incluye los cambios locales L4.
+pipeline {
+    agent any
+    options {
+        skipDefaultCheckout(true)
+        disableConcurrentBuilds()
+        timeout(time: 20, unit: 'MINUTES')
+    }
+    environment {
+        PATH = "/var/jenkins_home/l4-tools/bin:${env.PATH}"
+        SEMGREP_SEND_METRICS = 'off'
+        SEMGREP_ENABLE_VERSION_CHECK = '0'
+    }
+    stages {
+        stage('Herramientas L4') {
+            steps {
+                sh '''
+                    set -eu
+                    mkdir -p "evidencia-$BUILD_NUMBER"
+                    sh /var/jenkins_home/l4-tools/bootstrap-tools.sh > "evidencia-$BUILD_NUMBER/herramientas.log" 2>&1
+                    cat "evidencia-$BUILD_NUMBER/herramientas.log"
+                '''
+            }
+        }
+        stage('Clonacion de referencia') {
+            steps {
+                dir('fuente-referencia') {
+                    checkout([$class: 'GitSCM',
+                        branches: [[name: 'ee6bc9333506ddaec1ecb3803bdb812eda0a94ff']],
+                        userRemoteConfigs: [[url: 'https://github.com/FacundoCoria/EntregableDevops2.git']]])
+                    sh 'git rev-parse HEAD > "$WORKSPACE/evidencia-$BUILD_NUMBER/commit.txt"'
+                }
+            }
+        }
+        stage('Snyk Maven') {
+            steps {
+                withCredentials([string(credentialsId: 'l4-snyk-token', variable: 'SNYK_TOKEN')]) {
+                    dir('fuente-referencia/pedidos-api/pedidos-api') {
+                        script {
+                            def scanExit = sh(returnStatus: true, script: '''
+                                set +x
+                                # Git entrega mvnw como 100644; Snyk lo ejecuta directamente.
+                                chmod +x mvnw || exit 2
+                                snyk test --file=pom.xml --dev --ignore-policy \
+                                    --json-file-output="$WORKSPACE/evidencia-$BUILD_NUMBER/snyk.json" \
+                                    > "$WORKSPACE/evidencia-$BUILD_NUMBER/snyk-output.txt" 2>&1
+                            ''')
+                            writeFile file: "${env.WORKSPACE}/evidencia-${env.BUILD_NUMBER}/snyk-exit.txt", text: "${scanExit}\n"
+                            echo "Snyk termino con codigo ${scanExit}; el gate validara el resultado."
+                        }
+                    }
+                }
+            }
+        }
+        stage('Bloqueo por criticos') {
+            steps {
+                sh '''
+                    set -eu
+                    reports="$WORKSPACE/evidencia-$BUILD_NUMBER"
+                    python3 /var/jenkins_home/l4-tools/gate-snyk.py "$reports/snyk.json" "$(cat "$reports/snyk-exit.txt")"
+                '''
+            }
+        }
+        stage('Continuacion permitida') {
+            steps {
+                echo 'Gate aprobado. El pipeline integrador de build/publicacion/Helm sigue por configurar.'
+            }
+        }
+    }
+    post {
+        always {
+            archiveArtifacts artifacts: "evidencia-${env.BUILD_NUMBER}/*", allowEmptyArchive: true
+        }
+    }
+}

@@ -1,0 +1,3 @@
+      0 [main] bash (11612) C:\Program Files\Git\bin\..\usr\bin\bash.exe: *** fatal error - NtCreateDirectoryObject(\BaseNamedObjects\msys-2.0S5-1888ae32e00d56aa): 0xC0000022
+
+exit=3221225794

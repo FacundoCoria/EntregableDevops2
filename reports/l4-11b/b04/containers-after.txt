@@ -1,0 +1,6 @@
+ejerciciolaboratorio-main-front-1
+ejerciciolaboratorio-main-back-1
+lab-inventario-app-1
+jenkins
+minikube
+DenTech-n8n

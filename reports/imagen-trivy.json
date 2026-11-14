@@ -1,0 +1,60 @@
+[
+    {
+        "Id": "sha256:790fd66d1697395d8693d1acaa1ea702406a20f109b6fc7bac8db623eca6c06c",
+        "RepoTags": [
+            "aquasec/trivy:0.76.1"
+        ],
+        "RepoDigests": [
+            "aquasec/trivy@sha256:790fd66d1697395d8693d1acaa1ea702406a20f109b6fc7bac8db623eca6c06c"
+        ],
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2026-10-21T11:16:20.653582502Z",
+        "Config": {
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+            ],
+            "Entrypoint": [
+                "trivy"
+            ],
+            "WorkingDir": "/",
+            "Labels": {
+                "org.opencontainers.image.created": "2026-10-21T10:43:17Z",
+                "org.opencontainers.image.description": "A Fast Vulnerability Scanner for Containers",
+                "org.opencontainers.image.documentation": "https://trivy.dev/v0.76.1/",
+                "org.opencontainers.image.revision": "e713f67f7d54decdcd9b3132c9751833dcced698",
+                "org.opencontainers.image.source": "https://github.com/aquasecurity/trivy",
+                "org.opencontainers.image.title": "trivy",
+                "org.opencontainers.image.url": "https://www.aquasec.com/products/trivy/",
+                "org.opencontainers.image.vendor": "Aqua Security",
+                "org.opencontainers.image.version": "0.76.1"
+            }
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 63457017,
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:74d97c428c51a828f9051a7a40a53ff1fc99e54fc30323ce36760701b0b7f711",
+                "sha256:62d68460b6a8de6126e25353ceb1f4c8dd6268ae094b655b4672c9069f7c65a7",
+                "sha256:0b1899c412c34940b8752746a7ee250128b0cbdc63d814b9c5306277bac34b5a",
+                "sha256:9871a6cad94bb9c251886e20dd39843f0ba676098c6f15de8a603ec92fb1055a"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2026-11-01T19:31:44.195282411Z"
+        },
+        "Descriptor": {
+            "mediaType": "application/vnd.oci.image.index.v1+json",
+            "digest": "sha256:790fd66d1697395d8693d1acaa1ea702406a20f109b6fc7bac8db623eca6c06c",
+            "size": 3772
+        },
+        "Identity": {
+            "Pull": [
+                {
+                    "Repository": "docker.io/aquasec/trivy"
+                }
+            ]
+        }
+    }
+]

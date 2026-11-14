@@ -1,0 +1,42 @@
+[
+  {
+    "name": "bad-context",
+    "exit": 1,
+    "expected": 1
+  },
+  {
+    "name": "bad-namespace",
+    "exit": 1,
+    "expected": 1
+  },
+  {
+    "name": "invalid-traffic",
+    "exit": 1,
+    "expected": 1
+  },
+  {
+    "name": "needs-confirmation",
+    "exit": 1,
+    "expected": 1
+  },
+  {
+    "name": "existing-evidence",
+    "exit": 1,
+    "expected": 1
+  },
+  {
+    "name": "test-traffic",
+    "exit": 0,
+    "expected": 0
+  },
+  {
+    "name": "plan-only",
+    "exit": 0,
+    "expected": 0
+  },
+  {
+    "name": "keep-data",
+    "exit": 1,
+    "expected": 0
+  }
+]

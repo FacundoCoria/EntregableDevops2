@@ -1,0 +1,7 @@
+{
+  "result": "PASS",
+  "originalReleaseUnchanged": true,
+  "temporaryResourcesRemoved": true,
+  "forwardsClosed": true,
+  "comparison": "All fields identical except live Pod metadata.resourceVersion"
+}

@@ -1,0 +1,4 @@
+==> Linting C:/Users/Bruno/PARA System/1- Projects/Entregable 3 - Devops/EntregableDevops2/pedidos-api/pedidos-api/helm-chart
+[INFO] Chart.yaml: icon is recommended
+
+1 chart(s) linted, 0 chart(s) failed

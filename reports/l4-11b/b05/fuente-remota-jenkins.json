@@ -1,0 +1,15 @@
+{
+  "result": "PASS",
+  "source_url": "https://github.com/FacundoCoria/EntregableDevops2.git",
+  "source_ref": "lab4/b05-consolidacion-entrega",
+  "commit": "1869fe342c0f02366b455fbd323e1b53f11d1610",
+  "source_status": "clean",
+  "jenkins_clone_path": "/var/jenkins_home/l4-b05-source-check-20261111T195940Z",
+  "jenkinsfile_sha256": "ec2077998035eb73c9f370a6d6f722d2a3d15a5c62cc7c366294fcda8706f5c9",
+  "new_integral_build": false,
+  "deployment": false,
+  "local_reports_identical": true,
+  "reports_count": 721,
+  "account_published": "Pela311",
+  "checked_utc": "20261111T195940Z"
+}

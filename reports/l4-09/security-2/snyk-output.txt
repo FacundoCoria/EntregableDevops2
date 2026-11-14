@@ -1,0 +1,10 @@
+
+ ERROR   Unspecified Error (SNYK-CLI-0000)
+                                                                                        
+           Child process failed with exit code: -13.                                    
+           Run in debug mode (-d) to see STDERR and STDOUT.                             
+
+Docs:    https://docs.snyk.io/scan-with-snyk/error-catalog#snyk-cli-0000 
+Tip:     Give the snyk doctor your logs to debug: `snyk doctor --input <log-file>` 
+                                                                                   
+ID:      urn:snyk:interaction:c11e5481-819b-49f6-ad17-99df4eac1de4 

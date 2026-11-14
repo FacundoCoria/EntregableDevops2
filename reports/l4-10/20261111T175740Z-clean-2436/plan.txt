@@ -1,0 +1,5 @@
+Contexto=minikube namespace=laboratorio4-l4test release=l4-test
+Desinstalar release l4-test: API, Prometheus, Grafana, configuración y RBAC de métricas.
+Eliminar PVC=false (solo l4-test-pedidos-api, l4-test-pedidos-prometheus, l4-test-pedidos-grafana).
+Retirar políticas L4 y releases kyverno/falco=false.
+Conservar namespaces, CRD compartidas, Jenkins/credenciales/volumen, Minikube, default y reportes.

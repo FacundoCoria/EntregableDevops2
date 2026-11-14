@@ -1,0 +1,58 @@
+NAME: l4
+LAST DEPLOYED: Wed Nov 11 17:39:30 2026
+NAMESPACE: laboratorio4
+STATUS: deployed
+REVISION: 7
+DESCRIPTION: Upgrade complete
+RESOURCES:
+==> v1/Deployment
+NAME             READY   UP-TO-DATE   AVAILABLE   AGE
+l4-pedidos-api   1/1     1            1           16h
+l4-pedidos-grafana   1/1   1     1     16h
+l4-pedidos-prometheus   1/1   1     1     16h
+
+==> v1/Pod(related)
+NAME                              READY   STATUS    RESTARTS   AGE
+l4-pedidos-api-69c7775b8d-d7tv7   1/1     Running   0          2m1s
+l4-pedidos-grafana-7b9cf89f5d-2bp9n   1/1   Running   0     2m5s
+l4-pedidos-prometheus-7d8477d7dd-vtm42   1/1   Running   0     2m5s
+
+==> v1/ServiceAccount
+NAME                    AGE
+l4-pedidos-prometheus   16h
+
+==> v1/ConfigMap
+NAME             DATA   AGE
+l4-pedidos-api   5      16h
+l4-pedidos-prometheus   1     16h
+l4-pedidos-grafana-provisioning   2     16h
+l4-pedidos-grafana-dashboard   1     16h
+
+==> v1/PersistentVolumeClaim
+NAME             STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE
+l4-pedidos-api   Bound    pvc-3a26f3ca-9015-4e77-9e71-bc6c707070c4   1Gi        RWO            standard       <unset>                 16h
+l4-pedidos-grafana   Bound   pvc-9509576c-9996-4f47-8221-ca0f8ce3b880   1Gi   RWO   standard   <unset>   16h
+l4-pedidos-prometheus   Bound   pvc-6c91870b-9d26-4a28-8e2e-09dd51478132   1Gi   RWO   standard   <unset>   16h
+
+==> v1/ClusterRole
+NAME                                   CREATED AT
+laboratorio4-l4-pedidos-node-metrics   2026-11-11T01:23:58Z
+
+==> v1/ClusterRoleBinding
+NAME                                   ROLE                                               AGE
+laboratorio4-l4-pedidos-node-metrics   ClusterRole/laboratorio4-l4-pedidos-node-metrics   16h
+
+==> v1/Service
+NAME             TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)    AGE
+l4-pedidos-api   ClusterIP   10.98.53.252   <none>        8080/TCP   16h
+l4-pedidos-grafana   ClusterIP   10.106.169.1   <none>   3000/TCP   16h
+l4-pedidos-prometheus   ClusterIP   10.105.81.14   <none>   9090/TCP   16h
+
+
+TEST SUITE: None
+NOTES:
+Entorno: dev. Los servicios son privados del cluster.
+Acceso local (mantener cada comando activo en su terminal):
+kubectl --context minikube -n laboratorio4 port-forward svc/l4-pedidos-api 18080:8080 --address 127.0.0.1
+API: http://127.0.0.1:18080/actuator/health
+PVC retenidos al desinstalar: revisar datos antes de eliminarlos manualmente.

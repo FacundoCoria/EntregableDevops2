@@ -1,0 +1,5 @@
+Entorno: {{ .Values.environment }}. Los servicios son privados del cluster.
+Acceso local: scripts/l4/access.sh, con L4_CONTEXT igual al contexto usado
+para instalar este release, L4_NAMESPACE={{ .Release.Namespace }} y L4_RELEASE={{ .Release.Name }}.
+El script muestra las direcciones y mantiene los tuneles hasta Ctrl+C.
+PVC retenidos al desinstalar: revisar datos antes de eliminarlos manualmente.

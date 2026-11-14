@@ -1,0 +1,12 @@
+{
+  "chart": "falco",
+  "version": "9.2.2",
+  "appVersion": "0.45.2",
+  "index": "https://falcosecurity.github.io/charts/index.yaml",
+  "url": "https://github.com/falcosecurity/charts/releases/download/falco-9.2.2/falco-9.2.2.tgz",
+  "sha256": "b8a1aa984c3d513ab1639be760e6a07a9eb203d4da77a45a1512d382b6d3687d",
+  "falcoImageID": "docker.io/falcosecurity/falco@sha256:1562a643953f938e02f47319b5214d93a235f11f646d60e9b8a516fd5a64698e",
+  "rulesOCI": "ghcr.io/falcosecurity/rules/falco-rules@sha256:213c9bb201088fa23e7fe51e595ce52292ff55fa7a4d43b2628287f92b1d66d0",
+  "ruleFileSHA256": "32c2a016b39793665d0a8483be564782123b74f2e63acc79409964cd6c40ecc5",
+  "note": "SHA del archivo exportado localmente; digest OCI y verificacion de firma en artifact-install.log."
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "case": "historical-critical",
+    "expected": 1,
+    "actual": 1,
+    "pass": true
+  },
+  {
+    "case": "synthetic-clean",
+    "expected": 0,
+    "actual": 0,
+    "pass": true
+  },
+  {
+    "case": "synthetic-high-only",
+    "expected": 0,
+    "actual": 0,
+    "pass": true
+  },
+  {
+    "case": "synthetic-auth-error",
+    "expected": 2,
+    "actual": 2,
+    "pass": true
+  },
+  {
+    "case": "synthetic-invalid-json",
+    "expected": 2,
+    "actual": 2,
+    "pass": true
+  },
+  {
+    "case": "synthetic-missing-findings",
+    "expected": 2,
+    "actual": 2,
+    "pass": true
+  }
+]

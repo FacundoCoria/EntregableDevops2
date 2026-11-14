@@ -1,0 +1,18 @@
+{"level":"INFO","msg":"Resolving dependencies ...","timestamp":"2026-11-11 14:39:07"}
+{"level":"INFO","msg":"Installing artifacts","refs":["ghcr.io/falcosecurity/rules/falco-rules:5","ghcr.io/falcosecurity/plugins/plugin/container:0.7.6"],"timestamp":"2026-11-11 14:39:07"}
+{"level":"INFO","msg":"Preparing to pull artifact","ref":"ghcr.io/falcosecurity/rules/falco-rules:5","timestamp":"2026-11-11 14:39:07"}
+{"level":"INFO","msg":"Pulling layer 58af94be5dad","timestamp":"2026-11-11 14:39:08"}
+{"level":"INFO","msg":"Pulling layer 7a25d7f1e8ab","timestamp":"2026-11-11 14:39:08"}
+{"level":"INFO","msg":"Pulling layer 213c9bb20108","timestamp":"2026-11-11 14:39:08"}
+{"digest":"ghcr.io/falcosecurity/rules/falco-rules@sha256:213c9bb201088fa23e7fe51e595ce52292ff55fa7a4d43b2628287f92b1d66d0","level":"INFO","msg":"Verifying signature for artifact","timestamp":"2026-11-11 14:39:08"}
+{"level":"INFO","msg":"Signature successfully verified!","timestamp":"2026-11-11 14:39:13"}
+{"file":"falco_rules.yaml.tar.gz","level":"INFO","msg":"Extracting and installing artifact","timestamp":"2026-11-11 14:39:13","type":"rulesfile"}
+{"digest":"sha256:213c9bb201088fa23e7fe51e595ce52292ff55fa7a4d43b2628287f92b1d66d0","directory":"/rulesfiles","level":"INFO","msg":"Artifact successfully installed","name":"ghcr.io/falcosecurity/rules/falco-rules:5","timestamp":"2026-11-11 14:39:13","type":"rulesfile"}
+{"level":"INFO","msg":"Preparing to pull artifact","ref":"ghcr.io/falcosecurity/plugins/plugin/container:0.7.6","timestamp":"2026-11-11 14:39:13"}
+{"level":"INFO","msg":"Pulling layer 52fde6f20b39","timestamp":"2026-11-11 14:39:14"}
+{"level":"INFO","msg":"Pulling layer 44d61eff009e","timestamp":"2026-11-11 14:39:14"}
+{"level":"INFO","msg":"Pulling layer fd75ae2530fa","timestamp":"2026-11-11 14:39:16"}
+{"digest":"ghcr.io/falcosecurity/plugins/plugin/container@sha256:b754131d80b2487aa1438087738d7ec096a70f29473cecd03cf14bfa8e29df1a","level":"INFO","msg":"Verifying signature for artifact","timestamp":"2026-11-11 14:39:16"}
+{"level":"INFO","msg":"Signature successfully verified!","timestamp":"2026-11-11 14:39:19"}
+{"file":"container-0.7.6-linux-x86_64.tar.gz","level":"INFO","msg":"Extracting and installing artifact","timestamp":"2026-11-11 14:39:19","type":"plugin"}
+{"digest":"sha256:fd75ae2530facf815e4de4517f44d09db3f843c98f1101bdc6764f6dd51bc88c","directory":"/plugins","level":"INFO","msg":"Artifact successfully installed","name":"ghcr.io/falcosecurity/plugins/plugin/container:0.7.6","timestamp":"2026-11-11 14:39:19","type":"plugin"}

@@ -1,0 +1,10 @@
+Evidencia: /c/Users/Bruno/PARA System/1- Projects/Entregable 3 - Devops/EntregableDevops2/reports/l4-10/20261111T175752Z-access-2482
+API: http://127.0.0.1:52921
+{"groups":["liveness","readiness"],"status":"UP"}Prometheus: http://127.0.0.1:52926
+Prometheus Server is Ready.
+Grafana: http://127.0.0.1:52930/d/l4-observabilidad
+{
+  "database": "ok",
+  "version": "13.0.12",
+  "commit": "fd417469e2a53ee3dc8158a36bc46bfd752d129c"
+}Conexiones en loopback. Ctrl+C cierra solo los túneles de este script.

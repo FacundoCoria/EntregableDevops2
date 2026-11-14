@@ -1,0 +1,9 @@
+{
+    "apiVersion": "v1",
+    "items": [],
+    "kind": "List",
+    "metadata": {
+        "resourceVersion": ""
+    }
+}
+Error from server (NotFound): Unable to list "policies.kyverno.io/v1, Resource=validatingpolicies": the server could not find the requested resource (get validatingpolicies.policies.kyverno.io)

@@ -1,0 +1,151 @@
+{{- $base := include "pedidos.base" . -}}
+{{- range $name, $c := .Values.components }}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ $base }}-{{ $name }}
+  labels:
+    app.kubernetes.io/instance: {{ $.Release.Name }}
+    app.kubernetes.io/component: {{ $name }}
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app.kubernetes.io/instance: {{ $.Release.Name }}
+      app.kubernetes.io/component: {{ $name }}
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/instance: {{ $.Release.Name }}
+        app.kubernetes.io/component: {{ $name }}
+      annotations:
+        checksum/config: {{ include (print $.Template.BasePath "/configmaps.yaml") $ | sha256sum }}
+    spec:
+      {{- if eq $name "prometheus" }}
+      serviceAccountName: {{ $base }}-prometheus
+      automountServiceAccountToken: true
+      {{- else }}
+      automountServiceAccountToken: false
+      {{- end }}
+      securityContext:
+        fsGroup: {{ $c.uid }}
+        fsGroupChangePolicy: OnRootMismatch
+        seccompProfile:
+          type: RuntimeDefault
+      containers:
+        - name: {{ $name }}
+          image: {{ $c.image | quote }}
+          imagePullPolicy: {{ $c.imagePullPolicy }}
+          ports:
+            - name: http
+              containerPort: {{ $c.port }}
+          resources:
+            {{- toYaml $c.resources | nindent 12 }}
+          securityContext:
+            runAsNonRoot: true
+            runAsUser: {{ $c.uid }}
+            runAsGroup: {{ $c.uid }}
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop: [ALL]
+          {{- if eq $name "api" }}
+          envFrom:
+            - configMapRef:
+                name: {{ $base }}-api
+          {{- else if eq $name "grafana" }}
+          env:
+            - name: GF_DASHBOARDS_DEFAULT_HOME_DASHBOARD_PATH
+              value: /etc/grafana/l4-dashboards/dashboard.json
+          {{- else if eq $name "prometheus" }}
+          args:
+            - --config.file=/etc/prometheus/prometheus.yml
+            - --storage.tsdb.path=/prometheus
+            - --storage.tsdb.retention.time=7d
+          {{- end }}
+          startupProbe:
+            httpGet:
+              path: {{ if eq $name "api" }}/actuator/health{{ else if eq $name "grafana" }}/api/health{{ else }}/-/ready{{ end }}
+              port: http
+            periodSeconds: 5
+            failureThreshold: 60
+          readinessProbe:
+            httpGet:
+              path: {{ if eq $name "api" }}/actuator/health{{ else if eq $name "grafana" }}/api/health{{ else }}/-/ready{{ end }}
+              port: http
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: {{ if eq $name "api" }}/actuator/health/liveness{{ else if eq $name "grafana" }}/api/health{{ else }}/-/healthy{{ end }}
+              port: http
+            periodSeconds: 15
+          volumeMounts:
+            - name: data
+              mountPath: {{ $c.mountPath }}
+            {{- if eq $name "prometheus" }}
+            - name: config
+              mountPath: /etc/prometheus/prometheus.yml
+              subPath: prometheus.yml
+              readOnly: true
+            {{- else if eq $name "grafana" }}
+            - name: provisioning
+              mountPath: /etc/grafana/provisioning/datasources/l4.yaml
+              subPath: datasource.yaml
+              readOnly: true
+            - name: provisioning
+              mountPath: /etc/grafana/provisioning/dashboards/l4.yaml
+              subPath: dashboards.yaml
+              readOnly: true
+            - name: dashboard
+              mountPath: /etc/grafana/l4-dashboards
+              readOnly: true
+            {{- end }}
+      volumes:
+        - name: data
+          persistentVolumeClaim:
+            claimName: {{ $base }}-{{ $name }}
+        {{- if eq $name "grafana" }}
+        - name: provisioning
+          configMap:
+            name: {{ $base }}-grafana-provisioning
+        - name: dashboard
+          configMap:
+            name: {{ $base }}-grafana-dashboard
+        {{- end }}
+        {{- if eq $name "prometheus" }}
+        - name: config
+          configMap:
+            name: {{ $base }}-prometheus
+        {{- end }}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ $base }}-{{ $name }}
+spec:
+  type: ClusterIP
+  selector:
+    app.kubernetes.io/instance: {{ $.Release.Name }}
+    app.kubernetes.io/component: {{ $name }}
+  ports:
+    - name: http
+      port: {{ $c.port }}
+      targetPort: http
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ $base }}-{{ $name }}
+  annotations:
+    helm.sh/resource-policy: keep
+spec:
+  accessModes: [ReadWriteOnce]
+  {{- if $.Values.storageClassName }}
+  storageClassName: {{ $.Values.storageClassName | quote }}
+  {{- end }}
+  resources:
+    requests:
+      storage: {{ $c.storageSize }}
+{{- end }}

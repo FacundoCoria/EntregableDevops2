@@ -1,0 +1,7 @@
+{
+  "result": "PASS",
+  "create_with_final_scripts": true,
+  "delete_with_live_workloads": true,
+  "main_preserved": true,
+  "previous_files_unchanged": 525
+}

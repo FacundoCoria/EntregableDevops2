@@ -1,0 +1,12 @@
+{
+  "fecha_local": "2026-11-01T16:32:54.1477574-03:00",
+  "zona_horaria": "America/Montevideo",
+  "commit": "695072de8a64a0770de2af3346d85cfaae397922",
+  "imagen": "pedidos-api:trivy-20261101",
+  "trivy": "aquasec/trivy:0.76.1",
+  "trivy_digest": "sha256:790fd66d1697395d8693d1acaa1ea702406a20f109b6fc7bac8db623eca6c06c",
+  "jar_sha256": "28A40377CDDAE4FBA099B2F7691C957FDFB70553314977B6E571FE4B1E130FF4",
+  "compilacion": ".\\mvnw.cmd package",
+  "construccion": "docker build --pull --progress plain -t pedidos-api:trivy-20261101 ./pedidos-api/pedidos-api",
+  "alcance": "Vulnerabilidades de paquetes del sistema y dependencias incluidas en la imagen; no se ejecutan Semgrep, Kyverno, KubeLinter ni Falco."
+}

@@ -1,0 +1,6 @@
+Error: values don't meet the specifications of the schema(s) in the following chart(s):
+pedidos:
+- at '/components/prometheus/port': maximum: got 65,536, want 65,535
+
+
+exit=1

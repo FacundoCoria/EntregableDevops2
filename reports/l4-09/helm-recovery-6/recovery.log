@@ -1,0 +1,21 @@
+==> Linting pedidos-api/pedidos-api/helm-chart
+[INFO] Chart.yaml: icon is recommended
+
+1 chart(s) linted, 0 chart(s) failed
+Release "l4" has been upgraded. Happy Helming!
+NAME: l4
+LAST DEPLOYED: Wed Nov 11 17:39:30 2026
+NAMESPACE: laboratorio4
+STATUS: deployed
+REVISION: 7
+DESCRIPTION: Upgrade complete
+TEST SUITE: None
+NOTES:
+Entorno: dev. Los servicios son privados del cluster.
+Acceso local (mantener cada comando activo en su terminal):
+kubectl --context minikube -n laboratorio4 port-forward svc/l4-pedidos-api 18080:8080 --address 127.0.0.1
+API: http://127.0.0.1:18080/actuator/health
+PVC retenidos al desinstalar: revisar datos antes de eliminarlos manualmente.
+deployment "l4-pedidos-api" successfully rolled out
+curl: (7) Failed to connect to 127.0.0.1 port 18089 after 2 ms: Could not connect to server
+L4_DEPLOY_PASS

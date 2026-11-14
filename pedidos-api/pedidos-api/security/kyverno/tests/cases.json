@@ -1,0 +1,66 @@
+[
+  {
+    "file": "conforme.json",
+    "policy": null
+  },
+  {
+    "file": "containers-latest.json",
+    "policy": "l4-deny-latest-images"
+  },
+  {
+    "file": "containers-sin-tag.json",
+    "policy": "l4-deny-latest-images"
+  },
+  {
+    "file": "containers-resources.json",
+    "policy": "l4-require-container-resources"
+  },
+  {
+    "file": "containers-root.json",
+    "policy": "l4-disallow-root-containers"
+  },
+  {
+    "file": "containers-uid-zero.json",
+    "policy": "l4-disallow-root-containers"
+  },
+  {
+    "file": "containers-privileged.json",
+    "policy": "l4-disallow-privileged-containers"
+  },
+  {
+    "file": "initcontainers-latest.json",
+    "policy": "l4-deny-latest-images"
+  },
+  {
+    "file": "initcontainers-sin-tag.json",
+    "policy": "l4-deny-latest-images"
+  },
+  {
+    "file": "initcontainers-resources.json",
+    "policy": "l4-require-container-resources"
+  },
+  {
+    "file": "initcontainers-root.json",
+    "policy": "l4-disallow-root-containers"
+  },
+  {
+    "file": "initcontainers-uid-zero.json",
+    "policy": "l4-disallow-root-containers"
+  },
+  {
+    "file": "initcontainers-privileged.json",
+    "policy": "l4-disallow-privileged-containers"
+  },
+  {
+    "file": "herencia-pod-conforme.json",
+    "policy": null
+  },
+  {
+    "file": "override-false.json",
+    "policy": "l4-disallow-root-containers"
+  },
+  {
+    "file": "init-conforme.json",
+    "policy": null
+  }
+]

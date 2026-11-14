@@ -1,0 +1,4 @@
+validatingpolicy.policies.kyverno.io/l4-deny-latest-images created
+validatingpolicy.policies.kyverno.io/l4-require-container-resources created
+validatingpolicy.policies.kyverno.io/l4-disallow-root-containers created
+validatingpolicy.policies.kyverno.io/l4-disallow-privileged-containers created

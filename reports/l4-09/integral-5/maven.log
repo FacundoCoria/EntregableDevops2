@@ -1,0 +1,101 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------< com.pedidos:pedidos-api >-----------------------
+[INFO] Building  0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.5.0:clean (default-clean) @ pedidos-api ---
+[INFO] 
+[INFO] --- resources:3.5.0:resources (default-resources) @ pedidos-api ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 0 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.15.0:compile (default-compile) @ pedidos-api ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 8 source files with javac [debug parameters release 21] to target/classes
+[INFO] 
+[INFO] --- resources:3.5.0:testResources (default-testResources) @ pedidos-api ---
+[INFO] skip non existing resourceDirectory /var/jenkins_home/workspace/L4-09-pedidos-api/fuente-l4/pedidos-api/pedidos-api/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.15.0:testCompile (default-testCompile) @ pedidos-api ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 1 source file with javac [debug parameters release 21] to target/test-classes
+[INFO] 
+[INFO] --- surefire:3.5.6:test (default-test) @ pedidos-api ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.pedidos.pedidos_api.PedidosApiApplicationTests
+17:25:59.517 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.pedidos.pedidos_api.PedidosApiApplicationTests]: PedidosApiApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+17:25:59.691 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.pedidos.pedidos_api.PedidosApiApplication for test class com.pedidos.pedidos_api.PedidosApiApplicationTests
+17:25:59.867 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.pedidos.pedidos_api.PedidosApiApplicationTests]: PedidosApiApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+17:25:59.871 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.pedidos.pedidos_api.PedidosApiApplication for test class com.pedidos.pedidos_api.PedidosApiApplicationTests
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.1.1)
+
+2026-11-11T17:26:00.504Z  INFO 5175 --- [pedidos-api] [           main] c.p.p.PedidosApiApplicationTests         : Starting PedidosApiApplicationTests using Java 21.0.12.1 with PID 5175 (started by root in /var/jenkins_home/workspace/L4-09-pedidos-api/fuente-l4/pedidos-api/pedidos-api)
+2026-11-11T17:26:00.507Z  INFO 5175 --- [pedidos-api] [           main] c.p.p.PedidosApiApplicationTests         : No active profile set, falling back to 1 default profile: "default"
+2026-11-11T17:26:01.826Z  INFO 5175 --- [pedidos-api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-11T17:26:01.914Z  INFO 5175 --- [pedidos-api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 72 ms. Found 2 JPA repository interfaces.
+2026-11-11T17:26:02.773Z  INFO 5175 --- [pedidos-api] [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-11-11T17:26:02.939Z  INFO 5175 --- [pedidos-api] [           main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.5.Final
+2026-11-11T17:26:04.135Z  INFO 5175 --- [pedidos-api] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-11T17:26:04.225Z  INFO 5175 --- [pedidos-api] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-11T17:26:04.633Z  INFO 5175 --- [pedidos-api] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:cijenkins user=SA
+2026-11-11T17:26:04.635Z  INFO 5175 --- [pedidos-api] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-11-11T17:26:04.824Z  INFO 5175 --- [pedidos-api] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:cijenkins]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: CIJENKINS/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-11-11T17:26:06.472Z  INFO 5175 --- [pedidos-api] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: create table pedido (id bigint generated by default as identity, cliente varchar(255), estado varchar(255), fecha_creacion timestamp(6), minutos_espera integer, precio_unitario float(53), producto_id bigint, primary key (id))
+Hibernate: create table producto (id bigint generated by default as identity, nombre varchar(255), precio float(53), primary key (id))
+Hibernate: alter table if exists pedido add constraint FKsoggxhdxr3wnhv3kdkka1nmvy foreign key (producto_id) references producto
+2026-11-11T17:26:06.601Z  INFO 5175 --- [pedidos-api] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-11T17:26:06.758Z  INFO 5175 --- [pedidos-api] [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-11-11T17:26:07.195Z  WARN 5175 --- [pedidos-api] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-11-11T17:26:08.143Z  INFO 5175 --- [pedidos-api] [           main] o.s.b.h.a.H2ConsoleAutoConfiguration     : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:cijenkins'
+2026-11-11T17:26:08.472Z  INFO 5175 --- [pedidos-api] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 4 endpoints beneath base path '/actuator'
+2026-11-11T17:26:08.662Z  INFO 5175 --- [pedidos-api] [           main] c.p.p.PedidosApiApplicationTests         : Started PedidosApiApplicationTests in 8.675 seconds (process running for 10.852)
+Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
+WARNING: A Java agent has been loaded dynamically (/root/.m2/repository/net/bytebuddy/byte-buddy-agent/1.18.11/byte-buddy-agent-1.18.11.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 10.82 s -- in com.pedidos.pedidos_api.PedidosApiApplicationTests
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jar:3.5.1:jar (default-jar) @ pedidos-api ---
+[INFO] Building jar: /var/jenkins_home/workspace/L4-09-pedidos-api/fuente-l4/pedidos-api/pedidos-api/target/pedidos-api-0.0.1-SNAPSHOT.jar
+[INFO] 
+[INFO] --- spring-boot:4.1.1:repackage (repackage) @ pedidos-api ---
+[INFO] Replacing main artifact /var/jenkins_home/workspace/L4-09-pedidos-api/fuente-l4/pedidos-api/pedidos-api/target/pedidos-api-0.0.1-SNAPSHOT.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
+[INFO] The original artifact has been renamed to /var/jenkins_home/workspace/L4-09-pedidos-api/fuente-l4/pedidos-api/pedidos-api/target/pedidos-api-0.0.1-SNAPSHOT.jar.original
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  19.540 s
+[INFO] Finished at: 2026-11-11T17:26:12Z
+[INFO] ------------------------------------------------------------------------

@@ -1,0 +1,6 @@
+apiTitle: Pedidos - desarrollo L4
+components:
+  api:
+    image: brunovitola/pedidos-api-l4:l4-7-0f47780b51b3
+    imagePullPolicy: IfNotPresent
+environment: dev

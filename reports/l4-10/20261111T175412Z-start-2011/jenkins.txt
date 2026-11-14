@@ -1,0 +1,1 @@
+/jenkins ucu-devops/jenkins:lts

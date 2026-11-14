@@ -1,0 +1,200 @@
+{
+  "createdAt": "2026-11-11T18:19:57.344056192Z",
+  "publishedDigest": "sha256:48b65d95763c2a1eb6727f9b22b78fc27509f79b62a7b87903cea87a4aee41d9",
+  "configDigest": "sha256:859e7bc1a1a1323cd7b507479eb79755bf00da50cd2cbe83d5464ecd3e3557d3",
+  "counts": {
+    "HIGH": 2,
+    "MEDIUM": 23,
+    "LOW": 16
+  },
+  "totalFindings": 41,
+  "uniqueIDs": 30,
+  "dockerSize": 150630157,
+  "layerBlobBytes": 150621357,
+  "dive": {
+    "sizeBytes": 346922869,
+    "inefficientBytes": 5465165,
+    "efficiencyScore": 0.9867341751978882,
+    "fileReference": [
+      {
+        "count": 2,
+        "sizeBytes": 2950076,
+        "file": "/var/log/lastlog"
+      },
+      {
+        "count": 2,
+        "sizeBytes": 1364285,
+        "file": "/var/cache/debconf/templates.dat"
+      },
+      {
+        "count": 2,
+        "sizeBytes": 408717,
+        "file": "/var/log/dpkg.log"
+      },
+      {
+        "count": 2,
+        "sizeBytes": 323296,
+        "file": "/var/log/faillog"
+      },
+      {
+        "count": 2,
+        "sizeBytes": 241990,
+        "file": "/var/lib/dpkg/status"
+      },
+      {
+        "count": 2,
+        "sizeBytes": 42377,
+        "file": "/var/log/apt/history.log"
+      },
+      {
+        "count": 2,
+        "sizeBytes": 32768,
+        "file": "/tmp/hsperfdata_root/65"
+      },
+      {
+        "count": 2,
+        "sizeBytes": 28161,
+        "file": "/var/cache/debconf/config.dat"
+      },
+      {
+        "count": 3,
+        "sizeBytes": 21973,
+        "file": "/var/cache/ldconfig/aux-cache"
+      },
+      {
+        "count": 3,
+        "sizeBytes": 21616,
+        "file": "/etc/ld.so.cache"
+      },
+      {
+        "count": 2,
+        "sizeBytes": 12960,
+        "file": "/var/log/apt/eipp.log.xz"
+      },
+      {
+        "count": 2,
+        "sizeBytes": 10046,
+        "file": "/var/log/alternatives.log"
+      },
+      {
+        "count": 2,
+        "sizeBytes": 2027,
+        "file": "/var/lib/apt/extended_states"
+      },
+      {
+        "count": 2,
+        "sizeBytes": 1899,
+        "file": "/etc/passwd"
+      },
+      {
+        "count": 2,
+        "sizeBytes": 1031,
+        "file": "/etc/shadow"
+      },
+      {
+        "count": 2,
+        "sizeBytes": 910,
+        "file": "/etc/group"
+      },
+      {
+        "count": 2,
+        "sizeBytes": 761,
+        "file": "/etc/gshadow"
+      },
+      {
+        "count": 2,
+        "sizeBytes": 230,
+        "file": "/var/lib/dpkg/triggers/File"
+      },
+      {
+        "count": 2,
+        "sizeBytes": 21,
+        "file": "/etc/subgid"
+      },
+      {
+        "count": 2,
+        "sizeBytes": 21,
+        "file": "/etc/subuid"
+      },
+      {
+        "count": 2,
+        "sizeBytes": 0,
+        "file": "/var/lib/dpkg/triggers/Lock"
+      },
+      {
+        "count": 2,
+        "sizeBytes": 0,
+        "file": "/var/lib/dpkg/lock"
+      },
+      {
+        "count": 2,
+        "sizeBytes": 0,
+        "file": "/var/lib/dpkg/triggers/Unincorp"
+      }
+    ]
+  },
+  "layers": 8,
+  "noLongerDetected": [
+    [
+      "org.apache.tomcat.embed:tomcat-embed-core",
+      "CVE-2026-65182"
+    ],
+    [
+      "org.apache.tomcat.embed:tomcat-embed-core",
+      "CVE-2026-65637"
+    ],
+    [
+      "org.apache.tomcat.embed:tomcat-embed-core",
+      "CVE-2026-65905"
+    ],
+    [
+      "org.apache.tomcat.embed:tomcat-embed-core",
+      "CVE-2026-68525"
+    ],
+    [
+      "tools.jackson.core:jackson-core",
+      "CVE-2026-89407"
+    ],
+    [
+      "tools.jackson.core:jackson-core",
+      "CVE-2026-89425"
+    ],
+    [
+      "tools.jackson.core:jackson-databind",
+      "CVE-2026-19032"
+    ],
+    [
+      "tools.jackson.core:jackson-databind",
+      "CVE-2026-68497"
+    ],
+    [
+      "tools.jackson.core:jackson-databind",
+      "CVE-2026-83557"
+    ],
+    [
+      "tools.jackson.core:jackson-databind",
+      "CVE-2026-91776"
+    ],
+    [
+      "tools.jackson.core:jackson-databind",
+      "CVE-2026-91777"
+    ]
+  ],
+  "newlyDetected": [],
+  "byTarget": [
+    {
+      "target": "/input/pedidos-api-publicada.tar (ubuntu 22.04)",
+      "type": "ubuntu",
+      "counts": {
+        "HIGH": 2,
+        "MEDIUM": 23,
+        "LOW": 16
+      }
+    },
+    {
+      "target": "Java",
+      "type": "jar",
+      "counts": {}
+    }
+  ]
+}

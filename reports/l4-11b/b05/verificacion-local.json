@@ -1,0 +1,26 @@
+{
+  "result": "PASS",
+  "commit": "1869fe342c0f02366b455fbd323e1b53f11d1610",
+  "main": "ee6bc9333506ddaec1ecb3803bdb812eda0a94ff",
+  "main_is_ancestor": true,
+  "evidence_files": 721,
+  "evidence_exact_in_clean_clone": true,
+  "original_files": 832,
+  "unchanged_original_files": 828,
+  "changed_original_files": [
+    "EntregableDevops2/.gitignore",
+    "EntregableDevops2/Jenkinsfile",
+    "EntregableDevops2/pedidos-api/pedidos-api/kustomization.yaml",
+    "EntregableDevops2/pedidos-api/pedidos-api/monitoring/prometheus/prometheus.yml"
+  ],
+  "branch_and_commit_resolution": "PASS",
+  "missing_ref_rejected": true,
+  "bash_syntax": 9,
+  "executable_modes": "PASS",
+  "helm_resources": 16,
+  "kustomize_resources": 11,
+  "renamed_prometheus_config": "PASS",
+  "new_security_scan": false,
+  "deployment": false,
+  "remote_publication": false
+}

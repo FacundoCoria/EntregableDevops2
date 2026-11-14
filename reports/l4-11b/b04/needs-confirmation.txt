@@ -1,0 +1,3 @@
+Evidencia: /c/Users/Bruno/PARA System/1- Projects/Entregable 3 - Devops/EntregableDevops2/reports/l4-11b/b04/needs-confirmation
+Perfil exclusivo: minikube-l4-b04. Docker/CLI preinstalados; Jenkins principal excluido.
+ERROR: Requiere L4_CONFIRM=minikube-l4-b04/laboratorio4/l4

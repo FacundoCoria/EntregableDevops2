@@ -426,3 +426,6 @@ FodyWeavers.xsd
 
 # Official VS Code C# Dev Kit Extension exclusion
 #*.lscache
+
+# L4 evidence is a deliverable, including the required Falco/Kyverno logs.
+!/reports/**/*.log

@@ -1,0 +1,14 @@
+Release "l4-test" does not exist. Installing it now.
+NAME: l4-test
+LAST DEPLOYED: Wed Nov 11 14:57:44 2026
+NAMESPACE: laboratorio4-l4test
+STATUS: deployed
+REVISION: 1
+DESCRIPTION: Install complete
+TEST SUITE: None
+NOTES:
+Entorno: dev. Los servicios son privados del cluster.
+Acceso local (mantener cada comando activo en su terminal):
+kubectl --context minikube -n laboratorio4-l4test port-forward svc/l4-test-pedidos-api 18080:8080 --address 127.0.0.1
+API: http://127.0.0.1:18080/actuator/health
+PVC retenidos al desinstalar: revisar datos antes de eliminarlos manualmente.

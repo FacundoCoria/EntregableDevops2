@@ -4,3 +4,6 @@ metadata:
   name: pedidos-config
 data:
   api_title: "La API de pedidos - Kubernetes"
+  SPRING_DATASOURCE_URL: "jdbc:h2:file:/data/pedidos"
+  SPRING_H2_CONSOLE_ENABLED: "false"
+  MANAGEMENT_ENDPOINT_HEALTH_PROBES_ENABLED: "true"

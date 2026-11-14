@@ -1,0 +1,376 @@
+== Maven 3.9.16 ==
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 87 9060k   87 7954k    0     0   9.9M      0 --:--:-- --:--:-- --:--:--  9.9M100 9060k  100 9060k    0     0  10.4M      0 --:--:-- --:--:-- --:--:-- 10.4M
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   128  100   128    0     0   1289      0 --:--:-- --:--:-- --:--:--  1292
+maven.tar.gz: OK
+== Snyk 1.1308.4 ==
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  1  192M    1 2007k    0     0  1189k      0  0:02:45  0:00:01  0:02:44 1189k  3  192M    3 7157k    0     0  2663k      0  0:01:13  0:00:02  0:01:11 2662k  8  192M    8 16.5M    0     0  4584k      0  0:00:42  0:00:03  0:00:39 4584k 14  192M   14 27.2M    0     0  5961k      0  0:00:33  0:00:04  0:00:29 5960k 18  192M   18 34.6M    0     0  6237k      0  0:00:31  0:00:05  0:00:26 7288k 23  192M   23 45.1M    0     0  6908k      0  0:00:28  0:00:06  0:00:22 8837k 28  192M   28 55.1M    0     0  7347k      0  0:00:26  0:00:07  0:00:19 9865k 33  192M   33 65.0M    0     0  7662k      0  0:00:25  0:00:08  0:00:17 9932k 39  192M   39 75.0M    0     0  7934k      0  0:00:24  0:00:09  0:00:15 9785k 44  192M   44 85.2M    0     0  8170k      0  0:00:24  0:00:10  0:00:14 10.1M 49  192M   49 95.4M    0     0  8362k      0  0:00:23  0:00:11  0:00:12 10.0M 53  192M   53  102M    0     0  8301k      0  0:00:23  0:00:12  0:00:11 9767k 58  192M   58  113M    0     0  8482k      0  0:00:23  0:00:13  0:00:10 9906k 64  192M   64  124M    0     0  8626k      0  0:00:22  0:00:14  0:00:08 9959k 69  192M   69  134M    0     0  8738k      0  0:00:22  0:00:15  0:00:07 9948k 74  192M   74  144M    0     0  8847k      0  0:00:22  0:00:16  0:00:06 9981k 80  192M   80  153M    0     0  8911k      0  0:00:22  0:00:17  0:00:05 10.2M 85  192M   85  164M    0     0  8978k      0  0:00:21  0:00:18  0:00:03 10.0M 90  192M   90  174M    0     0  9094k      0  0:00:21  0:00:19  0:00:02 10.2M 96  192M   96  184M    0     0  9152k      0  0:00:21  0:00:20  0:00:01 10.2M100  192M  100  192M    0     0  9216k      0  0:00:21  0:00:21 --:--:-- 10.2M
+snyk-linux: OK
+== Helm 4.3.1 ==
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  2 19.4M    2  576k    0     0   844k      0  0:00:23 --:--:--  0:00:23  843k 76 19.4M   76 14.9M    0     0  9101k      0  0:00:02  0:00:01  0:00:01 9098k100 19.4M  100 19.4M    0     0   9.8M      0  0:00:01  0:00:01 --:--:--  9.8M
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    97  100    97    0     0    656      0 --:--:-- --:--:-- --:--:--   659
+helm.tar.gz: OK
+== kubectl 1.37.0 ==
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 19 59.0M   19 11.2M    0     0  11.5M      0  0:00:05 --:--:--  0:00:05 11.5M 44 59.0M   44 26.4M    0     0  13.3M      0  0:00:04  0:00:01  0:00:03 13.3M 64 59.0M   64 37.9M    0     0  12.7M      0  0:00:04  0:00:02  0:00:02 12.7M 83 59.0M   83 49.4M    0     0  12.4M      0  0:00:04  0:00:03  0:00:01 12.4M 94 59.0M   94 56.0M    0     0  10.0M      0  0:00:05  0:00:05 --:--:-- 10.0M 94 59.0M   94 56.0M    0     0  9446k      0  0:00:06  0:00:06 --:--:-- 8987k100 59.0M  100 59.0M    0     0  9503k      0  0:00:06  0:00:06 --:--:-- 7607k
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    64  100    64    0     0   1061      0 --:--:-- --:--:-- --:--:--  1066
+kubectl: OK
+== Semgrep 1.184.0 ==
+Collecting semgrep==1.184.0
+  Downloading semgrep-1.184.0-cp310.cp311.cp312.cp313.cp314.py310.py311.py312.py313.py314-none-manylinux_2_34_x86_64.whl.metadata (22 kB)
+Collecting attrs>=21.3 (from semgrep==1.184.0)
+  Downloading attrs-26.1.0-py3-none-any.whl.metadata (8.8 kB)
+Collecting boltons~=21.0 (from semgrep==1.184.0)
+  Downloading boltons-21.0.0-py2.py3-none-any.whl.metadata (1.5 kB)
+Collecting certifi>=2026.10.19 (from semgrep==1.184.0)
+  Downloading certifi-2026.10.23-py3-none-any.whl.metadata (2.5 kB)
+Collecting click-option-group~=0.5 (from semgrep==1.184.0)
+  Downloading click_option_group-0.5.9-py3-none-any.whl.metadata (5.8 kB)
+Collecting click~=8.4.2 (from semgrep==1.184.0)
+  Downloading click-8.4.2-py3-none-any.whl.metadata (2.6 kB)
+Collecting colorama~=0.4.0 (from semgrep==1.184.0)
+  Downloading colorama-0.4.6-py2.py3-none-any.whl.metadata (17 kB)
+Collecting exceptiongroup~=1.2.0 (from semgrep==1.184.0)
+  Downloading exceptiongroup-1.2.2-py3-none-any.whl.metadata (6.6 kB)
+Collecting glom>=23.3 (from semgrep==1.184.0)
+  Downloading glom-25.12.0-py3-none-any.whl.metadata (5.2 kB)
+Collecting jsonschema~=4.25.1 (from semgrep==1.184.0)
+  Downloading jsonschema-4.25.1-py3-none-any.whl.metadata (7.6 kB)
+Collecting mcp==1.29.0 (from semgrep==1.184.0)
+  Downloading mcp-1.29.0-py3-none-any.whl.metadata (9.3 kB)
+Collecting opentelemetry-api~=1.37.0 (from semgrep==1.184.0)
+  Downloading opentelemetry_api-1.37.0-py3-none-any.whl.metadata (1.5 kB)
+Collecting opentelemetry-sdk~=1.37.0 (from semgrep==1.184.0)
+  Downloading opentelemetry_sdk-1.37.0-py3-none-any.whl.metadata (1.5 kB)
+Collecting opentelemetry-exporter-otlp-proto-http~=1.37.0 (from semgrep==1.184.0)
+  Downloading opentelemetry_exporter_otlp_proto_http-1.37.0-py3-none-any.whl.metadata (2.3 kB)
+Collecting opentelemetry-instrumentation-requests~=0.58b0 (from semgrep==1.184.0)
+  Downloading opentelemetry_instrumentation_requests-0.66b2-py3-none-any.whl.metadata (2.6 kB)
+Collecting opentelemetry-instrumentation-threading~=0.58b0 (from semgrep==1.184.0)
+  Downloading opentelemetry_instrumentation_threading-0.66b2-py3-none-any.whl.metadata (2.1 kB)
+Collecting packaging>=21.0 (from semgrep==1.184.0)
+  Using cached packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+Collecting peewee~=3.14 (from semgrep==1.184.0)
+  Downloading peewee-3.19.0-py3-none-any.whl.metadata (7.0 kB)
+Collecting pyjwt<3,>=2.15.0 (from pyjwt[crypto]<3,>=2.15.0->semgrep==1.184.0)
+  Downloading pyjwt-2.15.1-py3-none-any.whl.metadata (3.5 kB)
+Collecting requests~=2.22 (from semgrep==1.184.0)
+  Downloading requests-2.34.2-py3-none-any.whl.metadata (4.8 kB)
+Collecting rich>=13.5.2 (from semgrep==1.184.0)
+  Downloading rich-15.0.0-py3-none-any.whl.metadata (18 kB)
+Collecting ruamel.yaml>=0.18.15 (from semgrep==1.184.0)
+  Downloading ruamel_yaml-0.19.1-py3-none-any.whl.metadata (16 kB)
+Collecting ruamel.yaml.clib==0.2.15 (from semgrep==1.184.0)
+  Downloading ruamel_yaml_clib-0.2.15-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (3.5 kB)
+Collecting semantic-version~=2.10.0 (from semgrep==1.184.0)
+  Downloading semantic_version-2.10.0-py2.py3-none-any.whl.metadata (9.7 kB)
+Collecting structlog~=26.1.0 (from semgrep==1.184.0)
+  Downloading structlog-26.1.0-py3-none-any.whl.metadata (9.7 kB)
+Collecting tomli~=2.4.0 (from semgrep==1.184.0)
+  Downloading tomli-2.4.1-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (10 kB)
+Collecting typing-extensions~=4.2 (from semgrep==1.184.0)
+  Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting urllib3~=2.0 (from semgrep==1.184.0)
+  Downloading urllib3-2.8.0-py3-none-any.whl.metadata (7.4 kB)
+Collecting wcmatch~=8.3 (from semgrep==1.184.0)
+  Downloading wcmatch-8.5.2-py3-none-any.whl.metadata (4.8 kB)
+Collecting anyio>=4.5 (from mcp==1.29.0->semgrep==1.184.0)
+  Downloading anyio-4.16.0-py3-none-any.whl.metadata (4.7 kB)
+Collecting httpx-sse>=0.4 (from mcp==1.29.0->semgrep==1.184.0)
+  Downloading httpx_sse-0.4.3-py3-none-any.whl.metadata (9.7 kB)
+Collecting httpx<1.0.0,>=0.27.1 (from mcp==1.29.0->semgrep==1.184.0)
+  Downloading httpx-0.28.1-py3-none-any.whl.metadata (7.1 kB)
+Collecting pydantic-settings>=2.5.2 (from mcp==1.29.0->semgrep==1.184.0)
+  Downloading pydantic_settings-2.16.2-py3-none-any.whl.metadata (4.0 kB)
+Collecting pydantic<3.0.0,>=2.11.0 (from mcp==1.29.0->semgrep==1.184.0)
+  Downloading pydantic-2.14.3-py3-none-any.whl.metadata (141 kB)
+Collecting python-multipart>=0.0.9 (from mcp==1.29.0->semgrep==1.184.0)
+  Downloading python_multipart-0.0.33-py3-none-any.whl.metadata (6.3 kB)
+Collecting sse-starlette>=1.6.1 (from mcp==1.29.0->semgrep==1.184.0)
+  Downloading sse_starlette-3.7.0-py3-none-any.whl.metadata (15 kB)
+Collecting starlette>=0.27 (from mcp==1.29.0->semgrep==1.184.0)
+  Downloading starlette-1.10.0-py3-none-any.whl.metadata (6.6 kB)
+Collecting typing-inspection>=0.4.1 (from mcp==1.29.0->semgrep==1.184.0)
+  Downloading typing_inspection-0.4.5-py3-none-any.whl.metadata (2.6 kB)
+Collecting uvicorn>=0.31.1 (from mcp==1.29.0->semgrep==1.184.0)
+  Downloading uvicorn-0.54.0-py3-none-any.whl.metadata (6.6 kB)
+Collecting httpcore==1.* (from httpx<1.0.0,>=0.27.1->mcp==1.29.0->semgrep==1.184.0)
+  Downloading httpcore-1.0.9-py3-none-any.whl.metadata (21 kB)
+Collecting idna (from httpx<1.0.0,>=0.27.1->mcp==1.29.0->semgrep==1.184.0)
+  Downloading idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+Collecting h11>=0.16 (from httpcore==1.*->httpx<1.0.0,>=0.27.1->mcp==1.29.0->semgrep==1.184.0)
+  Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+Collecting jsonschema-specifications>=2023.03.6 (from jsonschema~=4.25.1->semgrep==1.184.0)
+  Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl.metadata (2.9 kB)
+Collecting referencing>=0.28.4 (from jsonschema~=4.25.1->semgrep==1.184.0)
+  Downloading referencing-0.37.0-py3-none-any.whl.metadata (2.8 kB)
+Collecting rpds-py>=0.7.1 (from jsonschema~=4.25.1->semgrep==1.184.0)
+  Downloading rpds_py-2026.9.1-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.1 kB)
+Collecting importlib-metadata<8.8.0,>=6.0 (from opentelemetry-api~=1.37.0->semgrep==1.184.0)
+  Downloading importlib_metadata-8.7.1-py3-none-any.whl.metadata (4.7 kB)
+Collecting zipp>=3.20 (from importlib-metadata<8.8.0,>=6.0->opentelemetry-api~=1.37.0->semgrep==1.184.0)
+  Downloading zipp-4.1.2-py3-none-any.whl.metadata (3.6 kB)
+Collecting googleapis-common-protos~=1.52 (from opentelemetry-exporter-otlp-proto-http~=1.37.0->semgrep==1.184.0)
+  Downloading googleapis_common_protos-1.76.0-py3-none-any.whl.metadata (8.5 kB)
+Collecting opentelemetry-exporter-otlp-proto-common==1.37.0 (from opentelemetry-exporter-otlp-proto-http~=1.37.0->semgrep==1.184.0)
+  Downloading opentelemetry_exporter_otlp_proto_common-1.37.0-py3-none-any.whl.metadata (1.8 kB)
+Collecting opentelemetry-proto==1.37.0 (from opentelemetry-exporter-otlp-proto-http~=1.37.0->semgrep==1.184.0)
+  Downloading opentelemetry_proto-1.37.0-py3-none-any.whl.metadata (2.3 kB)
+Collecting protobuf<7.0,>=5.0 (from opentelemetry-proto==1.37.0->opentelemetry-exporter-otlp-proto-http~=1.37.0->semgrep==1.184.0)
+  Downloading protobuf-6.33.6-cp39-abi3-manylinux2014_x86_64.whl.metadata (593 bytes)
+Collecting opentelemetry-instrumentation==0.66b2 (from opentelemetry-instrumentation-requests~=0.58b0->semgrep==1.184.0)
+  Downloading opentelemetry_instrumentation-0.66b2-py3-none-any.whl.metadata (7.2 kB)
+Collecting opentelemetry-semantic-conventions==0.66b2 (from opentelemetry-instrumentation-requests~=0.58b0->semgrep==1.184.0)
+  Downloading opentelemetry_semantic_conventions-0.66b2-py3-none-any.whl.metadata (2.4 kB)
+Collecting opentelemetry-util-http==0.66b2 (from opentelemetry-instrumentation-requests~=0.58b0->semgrep==1.184.0)
+  Downloading opentelemetry_util_http-0.66b2-py3-none-any.whl.metadata (2.6 kB)
+Collecting wrapt<3.0.0,>=1.0.0 (from opentelemetry-instrumentation==0.66b2->opentelemetry-instrumentation-requests~=0.58b0->semgrep==1.184.0)
+  Downloading wrapt-2.5.2-cp313-cp313-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (7.6 kB)
+INFO: pip is looking at multiple versions of opentelemetry-semantic-conventions to determine which version is compatible with other requirements. This could take a while.
+Collecting opentelemetry-instrumentation-requests~=0.58b0 (from semgrep==1.184.0)
+  Downloading opentelemetry_instrumentation_requests-0.66b1-py3-none-any.whl.metadata (2.6 kB)
+Collecting opentelemetry-instrumentation==0.66b1 (from opentelemetry-instrumentation-requests~=0.58b0->semgrep==1.184.0)
+  Downloading opentelemetry_instrumentation-0.66b1-py3-none-any.whl.metadata (7.2 kB)
+Collecting opentelemetry-semantic-conventions==0.66b1 (from opentelemetry-instrumentation-requests~=0.58b0->semgrep==1.184.0)
+  Downloading opentelemetry_semantic_conventions-0.66b1-py3-none-any.whl.metadata (2.4 kB)
+Collecting opentelemetry-util-http==0.66b1 (from opentelemetry-instrumentation-requests~=0.58b0->semgrep==1.184.0)
+  Downloading opentelemetry_util_http-0.66b1-py3-none-any.whl.metadata (2.6 kB)
+Collecting opentelemetry-instrumentation-requests~=0.58b0 (from semgrep==1.184.0)
+  Downloading opentelemetry_instrumentation_requests-0.66b0-py3-none-any.whl.metadata (2.6 kB)
+Collecting opentelemetry-instrumentation==0.66b0 (from opentelemetry-instrumentation-requests~=0.58b0->semgrep==1.184.0)
+  Downloading opentelemetry_instrumentation-0.66b0-py3-none-any.whl.metadata (7.2 kB)
+Collecting opentelemetry-semantic-conventions==0.66b0 (from opentelemetry-instrumentation-requests~=0.58b0->semgrep==1.184.0)
+  Downloading opentelemetry_semantic_conventions-0.66b0-py3-none-any.whl.metadata (2.4 kB)
+Collecting opentelemetry-util-http==0.66b0 (from opentelemetry-instrumentation-requests~=0.58b0->semgrep==1.184.0)
+  Downloading opentelemetry_util_http-0.66b0-py3-none-any.whl.metadata (2.6 kB)
+Collecting opentelemetry-instrumentation-requests~=0.58b0 (from semgrep==1.184.0)
+  Downloading opentelemetry_instrumentation_requests-0.65b0-py3-none-any.whl.metadata (2.6 kB)
+Collecting opentelemetry-instrumentation==0.65b0 (from opentelemetry-instrumentation-requests~=0.58b0->semgrep==1.184.0)
+  Downloading opentelemetry_instrumentation-0.65b0-py3-none-any.whl.metadata (7.2 kB)
+Collecting opentelemetry-semantic-conventions==0.65b0 (from opentelemetry-instrumentation-requests~=0.58b0->semgrep==1.184.0)
+  Downloading opentelemetry_semantic_conventions-0.65b0-py3-none-any.whl.metadata (2.4 kB)
+Collecting opentelemetry-util-http==0.65b0 (from opentelemetry-instrumentation-requests~=0.58b0->semgrep==1.184.0)
+  Downloading opentelemetry_util_http-0.65b0-py3-none-any.whl.metadata (2.6 kB)
+Collecting opentelemetry-instrumentation-requests~=0.58b0 (from semgrep==1.184.0)
+  Downloading opentelemetry_instrumentation_requests-0.64b0-py3-none-any.whl.metadata (2.6 kB)
+Collecting opentelemetry-instrumentation==0.64b0 (from opentelemetry-instrumentation-requests~=0.58b0->semgrep==1.184.0)
+  Downloading opentelemetry_instrumentation-0.64b0-py3-none-any.whl.metadata (7.2 kB)
+Collecting opentelemetry-semantic-conventions==0.64b0 (from opentelemetry-instrumentation-requests~=0.58b0->semgrep==1.184.0)
+  Downloading opentelemetry_semantic_conventions-0.64b0-py3-none-any.whl.metadata (2.4 kB)
+Collecting opentelemetry-util-http==0.64b0 (from opentelemetry-instrumentation-requests~=0.58b0->semgrep==1.184.0)
+  Downloading opentelemetry_util_http-0.64b0-py3-none-any.whl.metadata (2.6 kB)
+Collecting opentelemetry-instrumentation-requests~=0.58b0 (from semgrep==1.184.0)
+  Downloading opentelemetry_instrumentation_requests-0.63b1-py3-none-any.whl.metadata (2.6 kB)
+Collecting opentelemetry-instrumentation==0.63b1 (from opentelemetry-instrumentation-requests~=0.58b0->semgrep==1.184.0)
+  Downloading opentelemetry_instrumentation-0.63b1-py3-none-any.whl.metadata (7.2 kB)
+Collecting opentelemetry-semantic-conventions==0.63b1 (from opentelemetry-instrumentation-requests~=0.58b0->semgrep==1.184.0)
+  Downloading opentelemetry_semantic_conventions-0.63b1-py3-none-any.whl.metadata (2.4 kB)
+Collecting opentelemetry-util-http==0.63b1 (from opentelemetry-instrumentation-requests~=0.58b0->semgrep==1.184.0)
+  Downloading opentelemetry_util_http-0.63b1-py3-none-any.whl.metadata (2.6 kB)
+Collecting opentelemetry-instrumentation-requests~=0.58b0 (from semgrep==1.184.0)
+  Downloading opentelemetry_instrumentation_requests-0.63b0-py3-none-any.whl.metadata (2.6 kB)
+Collecting opentelemetry-instrumentation==0.63b0 (from opentelemetry-instrumentation-requests~=0.58b0->semgrep==1.184.0)
+  Downloading opentelemetry_instrumentation-0.63b0-py3-none-any.whl.metadata (7.2 kB)
+Collecting opentelemetry-semantic-conventions==0.63b0 (from opentelemetry-instrumentation-requests~=0.58b0->semgrep==1.184.0)
+  Downloading opentelemetry_semantic_conventions-0.63b0-py3-none-any.whl.metadata (2.4 kB)
+Collecting opentelemetry-util-http==0.63b0 (from opentelemetry-instrumentation-requests~=0.58b0->semgrep==1.184.0)
+  Downloading opentelemetry_util_http-0.63b0-py3-none-any.whl.metadata (2.6 kB)
+Collecting opentelemetry-instrumentation-requests~=0.58b0 (from semgrep==1.184.0)
+  Downloading opentelemetry_instrumentation_requests-0.62b1-py3-none-any.whl.metadata (2.7 kB)
+Collecting opentelemetry-instrumentation==0.62b1 (from opentelemetry-instrumentation-requests~=0.58b0->semgrep==1.184.0)
+  Downloading opentelemetry_instrumentation-0.62b1-py3-none-any.whl.metadata (7.2 kB)
+Collecting opentelemetry-semantic-conventions==0.62b1 (from opentelemetry-instrumentation-requests~=0.58b0->semgrep==1.184.0)
+  Downloading opentelemetry_semantic_conventions-0.62b1-py3-none-any.whl.metadata (2.5 kB)
+Collecting opentelemetry-util-http==0.62b1 (from opentelemetry-instrumentation-requests~=0.58b0->semgrep==1.184.0)
+  Downloading opentelemetry_util_http-0.62b1-py3-none-any.whl.metadata (2.6 kB)
+INFO: pip is still looking at multiple versions of opentelemetry-semantic-conventions to determine which version is compatible with other requirements. This could take a while.
+Collecting opentelemetry-instrumentation-requests~=0.58b0 (from semgrep==1.184.0)
+  Downloading opentelemetry_instrumentation_requests-0.62b0-py3-none-any.whl.metadata (2.7 kB)
+Collecting opentelemetry-instrumentation==0.62b0 (from opentelemetry-instrumentation-requests~=0.58b0->semgrep==1.184.0)
+  Downloading opentelemetry_instrumentation-0.62b0-py3-none-any.whl.metadata (7.2 kB)
+Collecting opentelemetry-semantic-conventions==0.62b0 (from opentelemetry-instrumentation-requests~=0.58b0->semgrep==1.184.0)
+  Downloading opentelemetry_semantic_conventions-0.62b0-py3-none-any.whl.metadata (2.5 kB)
+Collecting opentelemetry-util-http==0.62b0 (from opentelemetry-instrumentation-requests~=0.58b0->semgrep==1.184.0)
+  Downloading opentelemetry_util_http-0.62b0-py3-none-any.whl.metadata (2.6 kB)
+Collecting opentelemetry-instrumentation-requests~=0.58b0 (from semgrep==1.184.0)
+  Downloading opentelemetry_instrumentation_requests-0.61b0-py3-none-any.whl.metadata (2.7 kB)
+Collecting opentelemetry-instrumentation==0.61b0 (from opentelemetry-instrumentation-requests~=0.58b0->semgrep==1.184.0)
+  Downloading opentelemetry_instrumentation-0.61b0-py3-none-any.whl.metadata (7.2 kB)
+Collecting opentelemetry-semantic-conventions==0.61b0 (from opentelemetry-instrumentation-requests~=0.58b0->semgrep==1.184.0)
+  Downloading opentelemetry_semantic_conventions-0.61b0-py3-none-any.whl.metadata (2.5 kB)
+Collecting opentelemetry-util-http==0.61b0 (from opentelemetry-instrumentation-requests~=0.58b0->semgrep==1.184.0)
+  Downloading opentelemetry_util_http-0.61b0-py3-none-any.whl.metadata (2.6 kB)
+Collecting wrapt<2.0.0,>=1.0.0 (from opentelemetry-instrumentation==0.61b0->opentelemetry-instrumentation-requests~=0.58b0->semgrep==1.184.0)
+  Downloading wrapt-1.17.3-cp313-cp313-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (6.4 kB)
+Collecting opentelemetry-instrumentation-requests~=0.58b0 (from semgrep==1.184.0)
+  Downloading opentelemetry_instrumentation_requests-0.60b1-py3-none-any.whl.metadata (2.6 kB)
+Collecting opentelemetry-instrumentation==0.60b1 (from opentelemetry-instrumentation-requests~=0.58b0->semgrep==1.184.0)
+  Downloading opentelemetry_instrumentation-0.60b1-py3-none-any.whl.metadata (7.2 kB)
+Collecting opentelemetry-semantic-conventions==0.60b1 (from opentelemetry-instrumentation-requests~=0.58b0->semgrep==1.184.0)
+  Downloading opentelemetry_semantic_conventions-0.60b1-py3-none-any.whl.metadata (2.4 kB)
+Collecting opentelemetry-util-http==0.60b1 (from opentelemetry-instrumentation-requests~=0.58b0->semgrep==1.184.0)
+  Downloading opentelemetry_util_http-0.60b1-py3-none-any.whl.metadata (2.6 kB)
+Collecting opentelemetry-instrumentation-requests~=0.58b0 (from semgrep==1.184.0)
+  Downloading opentelemetry_instrumentation_requests-0.60b0-py3-none-any.whl.metadata (2.6 kB)
+Collecting opentelemetry-instrumentation==0.60b0 (from opentelemetry-instrumentation-requests~=0.58b0->semgrep==1.184.0)
+  Downloading opentelemetry_instrumentation-0.60b0-py3-none-any.whl.metadata (7.2 kB)
+Collecting opentelemetry-semantic-conventions==0.60b0 (from opentelemetry-instrumentation-requests~=0.58b0->semgrep==1.184.0)
+  Downloading opentelemetry_semantic_conventions-0.60b0-py3-none-any.whl.metadata (2.4 kB)
+Collecting opentelemetry-util-http==0.60b0 (from opentelemetry-instrumentation-requests~=0.58b0->semgrep==1.184.0)
+  Downloading opentelemetry_util_http-0.60b0-py3-none-any.whl.metadata (2.6 kB)
+Collecting opentelemetry-instrumentation-requests~=0.58b0 (from semgrep==1.184.0)
+  Downloading opentelemetry_instrumentation_requests-0.59b0-py3-none-any.whl.metadata (2.6 kB)
+Collecting opentelemetry-instrumentation==0.59b0 (from opentelemetry-instrumentation-requests~=0.58b0->semgrep==1.184.0)
+  Downloading opentelemetry_instrumentation-0.59b0-py3-none-any.whl.metadata (7.1 kB)
+Collecting opentelemetry-semantic-conventions==0.59b0 (from opentelemetry-instrumentation-requests~=0.58b0->semgrep==1.184.0)
+  Downloading opentelemetry_semantic_conventions-0.59b0-py3-none-any.whl.metadata (2.4 kB)
+Collecting opentelemetry-util-http==0.59b0 (from opentelemetry-instrumentation-requests~=0.58b0->semgrep==1.184.0)
+  Downloading opentelemetry_util_http-0.59b0-py3-none-any.whl.metadata (2.6 kB)
+INFO: This is taking longer than usual. You might need to provide the dependency resolver with stricter constraints to reduce runtime. See https://pip.pypa.io/warnings/backtracking for guidance. If you want to abort this run, press Ctrl + C.
+Collecting opentelemetry-instrumentation-requests~=0.58b0 (from semgrep==1.184.0)
+  Downloading opentelemetry_instrumentation_requests-0.58b0-py3-none-any.whl.metadata (2.6 kB)
+Collecting opentelemetry-instrumentation==0.58b0 (from opentelemetry-instrumentation-requests~=0.58b0->semgrep==1.184.0)
+  Downloading opentelemetry_instrumentation-0.58b0-py3-none-any.whl.metadata (7.1 kB)
+Collecting opentelemetry-semantic-conventions==0.58b0 (from opentelemetry-instrumentation-requests~=0.58b0->semgrep==1.184.0)
+  Downloading opentelemetry_semantic_conventions-0.58b0-py3-none-any.whl.metadata (2.4 kB)
+Collecting opentelemetry-util-http==0.58b0 (from opentelemetry-instrumentation-requests~=0.58b0->semgrep==1.184.0)
+  Downloading opentelemetry_util_http-0.58b0-py3-none-any.whl.metadata (2.6 kB)
+INFO: pip is looking at multiple versions of opentelemetry-instrumentation-threading to determine which version is compatible with other requirements. This could take a while.
+Collecting opentelemetry-instrumentation-threading~=0.58b0 (from semgrep==1.184.0)
+  Downloading opentelemetry_instrumentation_threading-0.66b1-py3-none-any.whl.metadata (2.1 kB)
+  Downloading opentelemetry_instrumentation_threading-0.66b0-py3-none-any.whl.metadata (2.1 kB)
+  Downloading opentelemetry_instrumentation_threading-0.65b0-py3-none-any.whl.metadata (2.1 kB)
+  Downloading opentelemetry_instrumentation_threading-0.64b0-py3-none-any.whl.metadata (2.1 kB)
+  Downloading opentelemetry_instrumentation_threading-0.63b1-py3-none-any.whl.metadata (2.1 kB)
+  Downloading opentelemetry_instrumentation_threading-0.63b0-py3-none-any.whl.metadata (2.1 kB)
+  Downloading opentelemetry_instrumentation_threading-0.62b1-py3-none-any.whl.metadata (2.2 kB)
+INFO: pip is still looking at multiple versions of opentelemetry-instrumentation-threading to determine which version is compatible with other requirements. This could take a while.
+  Downloading opentelemetry_instrumentation_threading-0.62b0-py3-none-any.whl.metadata (2.2 kB)
+  Downloading opentelemetry_instrumentation_threading-0.61b0-py3-none-any.whl.metadata (2.2 kB)
+  Downloading opentelemetry_instrumentation_threading-0.60b1-py3-none-any.whl.metadata (2.1 kB)
+  Downloading opentelemetry_instrumentation_threading-0.60b0-py3-none-any.whl.metadata (2.1 kB)
+  Downloading opentelemetry_instrumentation_threading-0.59b0-py3-none-any.whl.metadata (2.1 kB)
+INFO: This is taking longer than usual. You might need to provide the dependency resolver with stricter constraints to reduce runtime. See https://pip.pypa.io/warnings/backtracking for guidance. If you want to abort this run, press Ctrl + C.
+  Downloading opentelemetry_instrumentation_threading-0.58b0-py3-none-any.whl.metadata (2.1 kB)
+Collecting annotated-types>=0.6.0 (from pydantic<3.0.0,>=2.11.0->mcp==1.29.0->semgrep==1.184.0)
+  Downloading annotated_types-0.8.0-py3-none-any.whl.metadata (15 kB)
+Collecting pydantic-core==2.50.4 (from pydantic<3.0.0,>=2.11.0->mcp==1.29.0->semgrep==1.184.0)
+  Downloading pydantic_core-2.50.4-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (6.6 kB)
+Collecting cryptography>=3.4.0 (from pyjwt[crypto]<3,>=2.15.0->semgrep==1.184.0)
+  Downloading cryptography-50.0.2-cp311-abi3-manylinux_2_34_x86_64.whl.metadata (4.4 kB)
+Collecting charset_normalizer<4,>=2 (from requests~=2.22->semgrep==1.184.0)
+  Downloading charset_normalizer-3.5.2-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (46 kB)
+Collecting bracex>=2.1.1 (from wcmatch~=8.3->semgrep==1.184.0)
+  Downloading bracex-3.2.2-py3-none-any.whl.metadata (3.3 kB)
+Collecting cffi>=2.0.0 (from cryptography>=3.4.0->pyjwt[crypto]<3,>=2.15.0->semgrep==1.184.0)
+  Downloading cffi-2.1.1-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.5 kB)
+Collecting pycparser (from cffi>=2.0.0->cryptography>=3.4.0->pyjwt[crypto]<3,>=2.15.0->semgrep==1.184.0)
+  Downloading pycparser-3.12-py3-none-any.whl.metadata (9.7 kB)
+Collecting face>=20.1.1 (from glom>=23.3->semgrep==1.184.0)
+  Downloading face-26.0.1-py3-none-any.whl.metadata (1.8 kB)
+Collecting python-dotenv>=1.2.2 (from pydantic-settings>=2.5.2->mcp==1.29.0->semgrep==1.184.0)
+  Downloading python_dotenv-1.2.4-py3-none-any.whl.metadata (29 kB)
+Collecting markdown-it-py>=2.2.0 (from rich>=13.5.2->semgrep==1.184.0)
+  Downloading markdown_it_py-4.3.0-py3-none-any.whl.metadata (7.9 kB)
+Collecting pygments<3.0.0,>=2.13.0 (from rich>=13.5.2->semgrep==1.184.0)
+  Downloading pygments-2.21.0-py3-none-any.whl.metadata (2.5 kB)
+Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich>=13.5.2->semgrep==1.184.0)
+  Downloading mdurl-0.1.2-py3-none-any.whl.metadata (1.6 kB)
+Downloading semgrep-1.184.0-cp310.cp311.cp312.cp313.cp314.py310.py311.py312.py313.py314-none-manylinux_2_34_x86_64.whl (72.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 72.3/72.3 MB 11.8 MB/s eta 0:00:00
+Downloading mcp-1.29.0-py3-none-any.whl (223 kB)
+Downloading ruamel_yaml_clib-0.2.15-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (782 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 782.1/782.1 kB 11.4 MB/s eta 0:00:00
+Downloading boltons-21.0.0-py2.py3-none-any.whl (193 kB)
+Downloading click-8.4.2-py3-none-any.whl (119 kB)
+Downloading click_option_group-0.5.9-py3-none-any.whl (11 kB)
+Downloading colorama-0.4.6-py2.py3-none-any.whl (25 kB)
+Downloading exceptiongroup-1.2.2-py3-none-any.whl (16 kB)
+Downloading httpx-0.28.1-py3-none-any.whl (73 kB)
+Downloading httpcore-1.0.9-py3-none-any.whl (78 kB)
+Downloading jsonschema-4.25.1-py3-none-any.whl (90 kB)
+Downloading opentelemetry_api-1.37.0-py3-none-any.whl (65 kB)
+Downloading importlib_metadata-8.7.1-py3-none-any.whl (27 kB)
+Downloading opentelemetry_exporter_otlp_proto_http-1.37.0-py3-none-any.whl (19 kB)
+Downloading opentelemetry_exporter_otlp_proto_common-1.37.0-py3-none-any.whl (18 kB)
+Downloading opentelemetry_proto-1.37.0-py3-none-any.whl (72 kB)
+Downloading googleapis_common_protos-1.76.0-py3-none-any.whl (307 kB)
+Downloading opentelemetry_instrumentation_requests-0.58b0-py3-none-any.whl (12 kB)
+Downloading opentelemetry_instrumentation-0.58b0-py3-none-any.whl (33 kB)
+Downloading opentelemetry_semantic_conventions-0.58b0-py3-none-any.whl (207 kB)
+Downloading opentelemetry_util_http-0.58b0-py3-none-any.whl (7.7 kB)
+Downloading opentelemetry_instrumentation_threading-0.58b0-py3-none-any.whl (9.3 kB)
+Downloading opentelemetry_sdk-1.37.0-py3-none-any.whl (131 kB)
+Downloading peewee-3.19.0-py3-none-any.whl (411 kB)
+Downloading protobuf-6.33.6-cp39-abi3-manylinux2014_x86_64.whl (323 kB)
+Downloading pydantic-2.14.3-py3-none-any.whl (494 kB)
+Downloading pydantic_core-2.50.4-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (2.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.3/2.3 MB 12.0 MB/s eta 0:00:00
+Downloading pyjwt-2.15.1-py3-none-any.whl (33 kB)
+Downloading requests-2.34.2-py3-none-any.whl (73 kB)
+Downloading charset_normalizer-3.5.2-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (254 kB)
+Downloading idna-3.20-py3-none-any.whl (69 kB)
+Downloading semantic_version-2.10.0-py2.py3-none-any.whl (15 kB)
+Downloading structlog-26.1.0-py3-none-any.whl (73 kB)
+Downloading tomli-2.4.1-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (251 kB)
+Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+Downloading urllib3-2.8.0-py3-none-any.whl (135 kB)
+Downloading wcmatch-8.5.2-py3-none-any.whl (39 kB)
+Downloading wrapt-1.17.3-cp313-cp313-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (88 kB)
+Downloading annotated_types-0.8.0-py3-none-any.whl (13 kB)
+Downloading anyio-4.16.0-py3-none-any.whl (134 kB)
+Downloading attrs-26.1.0-py3-none-any.whl (67 kB)
+Downloading bracex-3.2.2-py3-none-any.whl (14 kB)
+Downloading certifi-2026.10.23-py3-none-any.whl (135 kB)
+Downloading cryptography-50.0.2-cp311-abi3-manylinux_2_34_x86_64.whl (4.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.8/4.8 MB 12.8 MB/s eta 0:00:00
+Downloading cffi-2.1.1-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (221 kB)
+Downloading glom-25.12.0-py3-none-any.whl (103 kB)
+Downloading face-26.0.1-py3-none-any.whl (57 kB)
+Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+Downloading httpx_sse-0.4.3-py3-none-any.whl (9.0 kB)
+Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl (18 kB)
+Using cached packaging-26.3-py3-none-any.whl (129 kB)
+Downloading pydantic_settings-2.16.2-py3-none-any.whl (81 kB)
+Downloading python_dotenv-1.2.4-py3-none-any.whl (23 kB)
+Downloading python_multipart-0.0.33-py3-none-any.whl (32 kB)
+Downloading referencing-0.37.0-py3-none-any.whl (26 kB)
+Downloading rich-15.0.0-py3-none-any.whl (310 kB)
+Downloading pygments-2.21.0-py3-none-any.whl (1.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 12.6 MB/s eta 0:00:00
+Downloading markdown_it_py-4.3.0-py3-none-any.whl (96 kB)
+Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+Downloading rpds_py-2026.9.1-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (370 kB)
+Downloading ruamel_yaml-0.19.1-py3-none-any.whl (118 kB)
+Downloading sse_starlette-3.7.0-py3-none-any.whl (18 kB)
+Downloading starlette-1.10.0-py3-none-any.whl (80 kB)
+Downloading typing_inspection-0.4.5-py3-none-any.whl (14 kB)
+Downloading uvicorn-0.54.0-py3-none-any.whl (87 kB)
+Downloading zipp-4.1.2-py3-none-any.whl (10 kB)
+Downloading pycparser-3.12-py3-none-any.whl (62 kB)
+Installing collected packages: peewee, boltons, zipp, wrapt, urllib3, typing-extensions, tomli, structlog, semantic-version, ruamel.yaml.clib, ruamel.yaml, rpds-py, python-multipart, python-dotenv, pyjwt, pygments, pycparser, protobuf, packaging, opentelemetry-util-http, mdurl, idna, httpx-sse, h11, face, exceptiongroup, colorama, click, charset_normalizer, certifi, bracex, attrs, annotated-types, wcmatch, uvicorn, typing-inspection, requests, referencing, pydantic-core, opentelemetry-proto, markdown-it-py, importlib-metadata, httpcore, googleapis-common-protos, glom, click-option-group, cffi, anyio, starlette, rich, pydantic, opentelemetry-exporter-otlp-proto-common, opentelemetry-api, jsonschema-specifications, httpx, cryptography, sse-starlette, pydantic-settings, opentelemetry-semantic-conventions, jsonschema, opentelemetry-sdk, opentelemetry-instrumentation, mcp, opentelemetry-instrumentation-threading, opentelemetry-instrumentation-requests, opentelemetry-exporter-otlp-proto-http, semgrep
+
+Successfully installed annotated-types-0.8.0 anyio-4.16.0 attrs-26.1.0 boltons-21.0.0 bracex-3.2.2 certifi-2026.10.23 cffi-2.1.1 charset_normalizer-3.5.2 click-8.4.2 click-option-group-0.5.9 colorama-0.4.6 cryptography-50.0.2 exceptiongroup-1.2.2 face-26.0.1 glom-25.12.0 googleapis-common-protos-1.76.0 h11-0.16.0 httpcore-1.0.9 httpx-0.28.1 httpx-sse-0.4.3 idna-3.20 importlib-metadata-8.7.1 jsonschema-4.25.1 jsonschema-specifications-2025.9.1 markdown-it-py-4.3.0 mcp-1.29.0 mdurl-0.1.2 opentelemetry-api-1.37.0 opentelemetry-exporter-otlp-proto-common-1.37.0 opentelemetry-exporter-otlp-proto-http-1.37.0 opentelemetry-instrumentation-0.58b0 opentelemetry-instrumentation-requests-0.58b0 opentelemetry-instrumentation-threading-0.58b0 opentelemetry-proto-1.37.0 opentelemetry-sdk-1.37.0 opentelemetry-semantic-conventions-0.58b0 opentelemetry-util-http-0.58b0 packaging-26.3 peewee-3.19.0 protobuf-6.33.6 pycparser-3.12 pydantic-2.14.3 pydantic-core-2.50.4 pydantic-settings-2.16.2 pygments-2.21.0 pyjwt-2.15.1 python-dotenv-1.2.4 python-multipart-0.0.33 referencing-0.37.0 requests-2.34.2 rich-15.0.0 rpds-py-2026.9.1 ruamel.yaml-0.19.1 ruamel.yaml.clib-0.2.15 semantic-version-2.10.0 semgrep-1.184.0 sse-starlette-3.7.0 starlette-1.10.0 structlog-26.1.0 tomli-2.4.1 typing-extensions-4.16.0 typing-inspection-0.4.5 urllib3-2.8.0 uvicorn-0.54.0 wcmatch-8.5.2 wrapt-1.17.3 zipp-4.1.2
+Apache Maven 3.9.16 (2bdd9fddda4b155ebf8000e807eb73fd829a51d5)
+Maven home: /var/jenkins_home/l4-tools/apache-maven-3.9.16
+Java version: 21.0.12.1, vendor: Eclipse Adoptium, runtime: /opt/java/openjdk
+Default locale: en, platform encoding: UTF-8
+OS name: "linux", version: "6.6.87.2-microsoft-standard-wsl2", arch: "amd64", family: "unix"
+1.1308.4
+v4.3.1+gc0d08d0
+Client Version: v1.37.0
+Kustomize Version: v5.8.1
+1.184.0
+L4_TOOLS_READY

@@ -1,0 +1,7 @@
+{
+  "result": "PASS",
+  "previous_files_unchanged": 211,
+  "pvc_uids_retained": 3,
+  "main_resource_uids_unchanged": true,
+  "test_stack_removed": true
+}

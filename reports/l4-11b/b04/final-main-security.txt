@@ -1,0 +1,2420 @@
+{
+    "apiVersion": "v1",
+    "items": [
+        {
+            "apiVersion": "apps/v1",
+            "kind": "Deployment",
+            "metadata": {
+                "annotations": {
+                    "deployment.kubernetes.io/revision": "1",
+                    "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"apps/v1\",\"kind\":\"Deployment\",\"metadata\":{\"annotations\":{},\"name\":\"grafana\",\"namespace\":\"default\"},\"spec\":{\"replicas\":1,\"selector\":{\"matchLabels\":{\"app\":\"grafana\"}},\"template\":{\"metadata\":{\"labels\":{\"app\":\"grafana\"}},\"spec\":{\"containers\":[{\"image\":\"grafana/grafana\",\"name\":\"grafana\",\"ports\":[{\"containerPort\":3000}]}]}}}}\n"
+                },
+                "creationTimestamp": "2026-10-17T23:20:57Z",
+                "generation": 1,
+                "name": "grafana",
+                "namespace": "default",
+                "resourceVersion": "26373",
+                "uid": "b64e72dd-5d68-4e6a-9d58-3b8cfe9cfd38"
+            },
+            "spec": {
+                "progressDeadlineSeconds": 600,
+                "replicas": 1,
+                "revisionHistoryLimit": 10,
+                "selector": {
+                    "matchLabels": {
+                        "app": "grafana"
+                    }
+                },
+                "strategy": {
+                    "rollingUpdate": {
+                        "maxSurge": "25%",
+                        "maxUnavailable": "25%"
+                    },
+                    "type": "RollingUpdate"
+                },
+                "template": {
+                    "metadata": {
+                        "labels": {
+                            "app": "grafana"
+                        }
+                    },
+                    "spec": {
+                        "containers": [
+                            {
+                                "image": "grafana/grafana",
+                                "imagePullPolicy": "Always",
+                                "name": "grafana",
+                                "ports": [
+                                    {
+                                        "containerPort": 3000,
+                                        "protocol": "TCP"
+                                    }
+                                ],
+                                "resources": {},
+                                "terminationMessagePath": "/dev/termination-log",
+                                "terminationMessagePolicy": "File"
+                            }
+                        ],
+                        "dnsPolicy": "ClusterFirst",
+                        "restartPolicy": "Always",
+                        "schedulerName": "default-scheduler",
+                        "securityContext": {},
+                        "terminationGracePeriodSeconds": 30
+                    }
+                }
+            },
+            "status": {
+                "availableReplicas": 1,
+                "conditions": [
+                    {
+                        "lastTransitionTime": "2026-10-17T23:20:58Z",
+                        "lastUpdateTime": "2026-10-17T23:25:47Z",
+                        "message": "ReplicaSet \"grafana-7d795ff859\" has successfully progressed.",
+                        "reason": "NewReplicaSetAvailable",
+                        "status": "True",
+                        "type": "Progressing"
+                    },
+                    {
+                        "lastTransitionTime": "2026-11-11T14:37:26Z",
+                        "lastUpdateTime": "2026-11-11T14:37:26Z",
+                        "message": "Deployment has minimum availability.",
+                        "reason": "MinimumReplicasAvailable",
+                        "status": "True",
+                        "type": "Available"
+                    }
+                ],
+                "observedGeneration": 1,
+                "readyReplicas": 1,
+                "replicas": 1,
+                "terminatingReplicas": 0,
+                "updatedReplicas": 1
+            }
+        },
+        {
+            "apiVersion": "apps/v1",
+            "kind": "Deployment",
+            "metadata": {
+                "annotations": {
+                    "deployment.kubernetes.io/revision": "1",
+                    "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"apps/v1\",\"kind\":\"Deployment\",\"metadata\":{\"annotations\":{},\"name\":\"pedidos-api\",\"namespace\":\"default\"},\"spec\":{\"replicas\":1,\"selector\":{\"matchLabels\":{\"app\":\"pedidos-api\",\"version\":\"v1\"}},\"template\":{\"metadata\":{\"labels\":{\"app\":\"pedidos-api\",\"version\":\"v1\"}},\"spec\":{\"containers\":[{\"env\":[{\"name\":\"API_TITLE\",\"valueFrom\":{\"configMapKeyRef\":{\"key\":\"api_title\",\"name\":\"pedidos-config\"}}}],\"image\":\"pedidos-api:v1\",\"imagePullPolicy\":\"Never\",\"name\":\"pedidos\",\"ports\":[{\"containerPort\":8080}]}]}}}}\n"
+                },
+                "creationTimestamp": "2026-10-17T23:20:28Z",
+                "generation": 1,
+                "name": "pedidos-api",
+                "namespace": "default",
+                "resourceVersion": "7949",
+                "uid": "dc7b3bed-54c3-4806-bde5-be14fee43b08"
+            },
+            "spec": {
+                "progressDeadlineSeconds": 600,
+                "replicas": 1,
+                "revisionHistoryLimit": 10,
+                "selector": {
+                    "matchLabels": {
+                        "app": "pedidos-api",
+                        "version": "v1"
+                    }
+                },
+                "strategy": {
+                    "rollingUpdate": {
+                        "maxSurge": "25%",
+                        "maxUnavailable": "25%"
+                    },
+                    "type": "RollingUpdate"
+                },
+                "template": {
+                    "metadata": {
+                        "labels": {
+                            "app": "pedidos-api",
+                            "version": "v1"
+                        }
+                    },
+                    "spec": {
+                        "containers": [
+                            {
+                                "env": [
+                                    {
+                                        "name": "API_TITLE",
+                                        "valueFrom": {
+                                            "configMapKeyRef": {
+                                                "key": "api_title",
+                                                "name": "pedidos-config"
+                                            }
+                                        }
+                                    }
+                                ],
+                                "image": "pedidos-api:v1",
+                                "imagePullPolicy": "Never",
+                                "name": "pedidos",
+                                "ports": [
+                                    {
+                                        "containerPort": 8080,
+                                        "protocol": "TCP"
+                                    }
+                                ],
+                                "resources": {},
+                                "terminationMessagePath": "/dev/termination-log",
+                                "terminationMessagePolicy": "File"
+                            }
+                        ],
+                        "dnsPolicy": "ClusterFirst",
+                        "restartPolicy": "Always",
+                        "schedulerName": "default-scheduler",
+                        "securityContext": {},
+                        "terminationGracePeriodSeconds": 30
+                    }
+                }
+            },
+            "status": {
+                "availableReplicas": 1,
+                "conditions": [
+                    {
+                        "lastTransitionTime": "2026-10-17T23:20:29Z",
+                        "lastUpdateTime": "2026-10-17T23:20:29Z",
+                        "message": "Deployment has minimum availability.",
+                        "reason": "MinimumReplicasAvailable",
+                        "status": "True",
+                        "type": "Available"
+                    },
+                    {
+                        "lastTransitionTime": "2026-10-17T23:20:28Z",
+                        "lastUpdateTime": "2026-10-17T23:20:29Z",
+                        "message": "ReplicaSet \"pedidos-api-69d89d58c\" has successfully progressed.",
+                        "reason": "NewReplicaSetAvailable",
+                        "status": "True",
+                        "type": "Progressing"
+                    }
+                ],
+                "observedGeneration": 1,
+                "readyReplicas": 1,
+                "replicas": 1,
+                "terminatingReplicas": 0,
+                "updatedReplicas": 1
+            }
+        },
+        {
+            "apiVersion": "apps/v1",
+            "kind": "Deployment",
+            "metadata": {
+                "annotations": {
+                    "deployment.kubernetes.io/revision": "1",
+                    "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"apps/v1\",\"kind\":\"Deployment\",\"metadata\":{\"annotations\":{},\"name\":\"prometheus\",\"namespace\":\"default\"},\"spec\":{\"replicas\":1,\"selector\":{\"matchLabels\":{\"app\":\"prometheus\"}},\"template\":{\"metadata\":{\"labels\":{\"app\":\"prometheus\"}},\"spec\":{\"containers\":[{\"image\":\"prom/prometheus\",\"name\":\"prometheus\",\"ports\":[{\"containerPort\":9090}],\"volumeMounts\":[{\"mountPath\":\"/etc/prometheus/prometheus.yml\",\"name\":\"prometheus-config\",\"subPath\":\"prometheus.yml\"}]}],\"volumes\":[{\"configMap\":{\"name\":\"prometheus-config\"},\"name\":\"prometheus-config\"}]}}}}\n"
+                },
+                "creationTimestamp": "2026-10-17T23:20:53Z",
+                "generation": 1,
+                "name": "prometheus",
+                "namespace": "default",
+                "resourceVersion": "26381",
+                "uid": "5d314921-2269-4ead-828c-3892d838b522"
+            },
+            "spec": {
+                "progressDeadlineSeconds": 600,
+                "replicas": 1,
+                "revisionHistoryLimit": 10,
+                "selector": {
+                    "matchLabels": {
+                        "app": "prometheus"
+                    }
+                },
+                "strategy": {
+                    "rollingUpdate": {
+                        "maxSurge": "25%",
+                        "maxUnavailable": "25%"
+                    },
+                    "type": "RollingUpdate"
+                },
+                "template": {
+                    "metadata": {
+                        "labels": {
+                            "app": "prometheus"
+                        }
+                    },
+                    "spec": {
+                        "containers": [
+                            {
+                                "image": "prom/prometheus",
+                                "imagePullPolicy": "Always",
+                                "name": "prometheus",
+                                "ports": [
+                                    {
+                                        "containerPort": 9090,
+                                        "protocol": "TCP"
+                                    }
+                                ],
+                                "resources": {},
+                                "terminationMessagePath": "/dev/termination-log",
+                                "terminationMessagePolicy": "File",
+                                "volumeMounts": [
+                                    {
+                                        "mountPath": "/etc/prometheus/prometheus.yml",
+                                        "name": "prometheus-config",
+                                        "subPath": "prometheus.yml"
+                                    }
+                                ]
+                            }
+                        ],
+                        "dnsPolicy": "ClusterFirst",
+                        "restartPolicy": "Always",
+                        "schedulerName": "default-scheduler",
+                        "securityContext": {},
+                        "terminationGracePeriodSeconds": 30,
+                        "volumes": [
+                            {
+                                "configMap": {
+                                    "defaultMode": 420,
+                                    "name": "prometheus-config"
+                                },
+                                "name": "prometheus-config"
+                            }
+                        ]
+                    }
+                }
+            },
+            "status": {
+                "availableReplicas": 1,
+                "conditions": [
+                    {
+                        "lastTransitionTime": "2026-10-17T23:20:53Z",
+                        "lastUpdateTime": "2026-10-17T23:21:58Z",
+                        "message": "ReplicaSet \"prometheus-55864bd794\" has successfully progressed.",
+                        "reason": "NewReplicaSetAvailable",
+                        "status": "True",
+                        "type": "Progressing"
+                    },
+                    {
+                        "lastTransitionTime": "2026-11-11T14:37:29Z",
+                        "lastUpdateTime": "2026-11-11T14:37:29Z",
+                        "message": "Deployment has minimum availability.",
+                        "reason": "MinimumReplicasAvailable",
+                        "status": "True",
+                        "type": "Available"
+                    }
+                ],
+                "observedGeneration": 1,
+                "readyReplicas": 1,
+                "replicas": 1,
+                "terminatingReplicas": 0,
+                "updatedReplicas": 1
+            }
+        },
+        {
+            "apiVersion": "apps/v1",
+            "kind": "Deployment",
+            "metadata": {
+                "annotations": {
+                    "deployment.kubernetes.io/revision": "1"
+                },
+                "creationTimestamp": "2026-09-15T21:52:36Z",
+                "generation": 2,
+                "labels": {
+                    "k8s-app": "kube-dns"
+                },
+                "name": "coredns",
+                "namespace": "kube-system",
+                "resourceVersion": "26452",
+                "uid": "cc527586-714f-4343-9390-766c9eb006dc"
+            },
+            "spec": {
+                "progressDeadlineSeconds": 600,
+                "replicas": 1,
+                "revisionHistoryLimit": 10,
+                "selector": {
+                    "matchLabels": {
+                        "k8s-app": "kube-dns"
+                    }
+                },
+                "strategy": {
+                    "rollingUpdate": {
+                        "maxSurge": "25%",
+                        "maxUnavailable": 1
+                    },
+                    "type": "RollingUpdate"
+                },
+                "template": {
+                    "metadata": {
+                        "labels": {
+                            "k8s-app": "kube-dns"
+                        }
+                    },
+                    "spec": {
+                        "affinity": {
+                            "podAntiAffinity": {
+                                "preferredDuringSchedulingIgnoredDuringExecution": [
+                                    {
+                                        "podAffinityTerm": {
+                                            "labelSelector": {
+                                                "matchExpressions": [
+                                                    {
+                                                        "key": "k8s-app",
+                                                        "operator": "In",
+                                                        "values": [
+                                                            "kube-dns"
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            "topologyKey": "kubernetes.io/hostname"
+                                        },
+                                        "weight": 100
+                                    }
+                                ]
+                            }
+                        },
+                        "containers": [
+                            {
+                                "args": [
+                                    "-conf",
+                                    "/etc/coredns/Corefile"
+                                ],
+                                "image": "registry.k8s.io/coredns/coredns:v1.14.6",
+                                "imagePullPolicy": "IfNotPresent",
+                                "livenessProbe": {
+                                    "failureThreshold": 5,
+                                    "httpGet": {
+                                        "path": "/health",
+                                        "port": "liveness-probe",
+                                        "scheme": "HTTP"
+                                    },
+                                    "initialDelaySeconds": 60,
+                                    "periodSeconds": 10,
+                                    "successThreshold": 1,
+                                    "timeoutSeconds": 5
+                                },
+                                "name": "coredns",
+                                "ports": [
+                                    {
+                                        "containerPort": 53,
+                                        "name": "dns",
+                                        "protocol": "UDP"
+                                    },
+                                    {
+                                        "containerPort": 53,
+                                        "name": "dns-tcp",
+                                        "protocol": "TCP"
+                                    },
+                                    {
+                                        "containerPort": 9153,
+                                        "name": "metrics",
+                                        "protocol": "TCP"
+                                    },
+                                    {
+                                        "containerPort": 8080,
+                                        "name": "liveness-probe",
+                                        "protocol": "TCP"
+                                    },
+                                    {
+                                        "containerPort": 8181,
+                                        "name": "readiness-probe",
+                                        "protocol": "TCP"
+                                    }
+                                ],
+                                "readinessProbe": {
+                                    "failureThreshold": 3,
+                                    "httpGet": {
+                                        "path": "/ready",
+                                        "port": "readiness-probe",
+                                        "scheme": "HTTP"
+                                    },
+                                    "periodSeconds": 10,
+                                    "successThreshold": 1,
+                                    "timeoutSeconds": 1
+                                },
+                                "resources": {
+                                    "limits": {
+                                        "memory": "170Mi"
+                                    },
+                                    "requests": {
+                                        "cpu": "100m",
+                                        "memory": "70Mi"
+                                    }
+                                },
+                                "securityContext": {
+                                    "allowPrivilegeEscalation": false,
+                                    "capabilities": {
+                                        "add": [
+                                            "NET_BIND_SERVICE"
+                                        ],
+                                        "drop": [
+                                            "ALL"
+                                        ]
+                                    },
+                                    "readOnlyRootFilesystem": true
+                                },
+                                "terminationMessagePath": "/dev/termination-log",
+                                "terminationMessagePolicy": "File",
+                                "volumeMounts": [
+                                    {
+                                        "mountPath": "/etc/coredns",
+                                        "name": "config-volume",
+                                        "readOnly": true
+                                    }
+                                ]
+                            }
+                        ],
+                        "dnsPolicy": "Default",
+                        "nodeSelector": {
+                            "kubernetes.io/os": "linux"
+                        },
+                        "priorityClassName": "system-cluster-critical",
+                        "restartPolicy": "Always",
+                        "schedulerName": "default-scheduler",
+                        "securityContext": {},
+                        "serviceAccount": "coredns",
+                        "serviceAccountName": "coredns",
+                        "terminationGracePeriodSeconds": 30,
+                        "tolerations": [
+                            {
+                                "key": "CriticalAddonsOnly",
+                                "operator": "Exists"
+                            },
+                            {
+                                "effect": "NoSchedule",
+                                "key": "node-role.kubernetes.io/control-plane"
+                            }
+                        ],
+                        "volumes": [
+                            {
+                                "configMap": {
+                                    "defaultMode": 420,
+                                    "items": [
+                                        {
+                                            "key": "Corefile",
+                                            "path": "Corefile"
+                                        }
+                                    ],
+                                    "name": "coredns"
+                                },
+                                "name": "config-volume"
+                            }
+                        ]
+                    }
+                }
+            },
+            "status": {
+                "availableReplicas": 1,
+                "conditions": [
+                    {
+                        "lastTransitionTime": "2026-09-15T21:52:42Z",
+                        "lastUpdateTime": "2026-09-15T21:52:42Z",
+                        "message": "Deployment has minimum availability.",
+                        "reason": "MinimumReplicasAvailable",
+                        "status": "True",
+                        "type": "Available"
+                    },
+                    {
+                        "lastTransitionTime": "2026-09-15T21:52:42Z",
+                        "lastUpdateTime": "2026-09-15T21:53:06Z",
+                        "message": "ReplicaSet \"coredns-559f6c778d\" has successfully progressed.",
+                        "reason": "NewReplicaSetAvailable",
+                        "status": "True",
+                        "type": "Progressing"
+                    }
+                ],
+                "observedGeneration": 2,
+                "readyReplicas": 1,
+                "replicas": 1,
+                "terminatingReplicas": 0,
+                "updatedReplicas": 1
+            }
+        },
+        {
+            "apiVersion": "apps/v1",
+            "kind": "Deployment",
+            "metadata": {
+                "annotations": {
+                    "deployment.kubernetes.io/revision": "1",
+                    "meta.helm.sh/release-name": "kyverno",
+                    "meta.helm.sh/release-namespace": "kyverno"
+                },
+                "creationTimestamp": "2026-11-11T13:25:30Z",
+                "generation": 1,
+                "labels": {
+                    "app.kubernetes.io/component": "admission-controller",
+                    "app.kubernetes.io/instance": "kyverno",
+                    "app.kubernetes.io/managed-by": "Helm",
+                    "app.kubernetes.io/name": "kyverno-admission-controller",
+                    "app.kubernetes.io/part-of": "kyverno",
+                    "app.kubernetes.io/version": "3.10.0-rc.4",
+                    "helm.sh/chart": "kyverno-3.10.0-rc.4"
+                },
+                "name": "kyverno-admission-controller",
+                "namespace": "kyverno",
+                "resourceVersion": "26434",
+                "uid": "15594988-4c90-4483-8807-885b4ce65a90"
+            },
+            "spec": {
+                "progressDeadlineSeconds": 600,
+                "replicas": 1,
+                "revisionHistoryLimit": 10,
+                "selector": {
+                    "matchLabels": {
+                        "app.kubernetes.io/component": "admission-controller",
+                        "app.kubernetes.io/instance": "kyverno",
+                        "app.kubernetes.io/part-of": "kyverno"
+                    }
+                },
+                "strategy": {
+                    "rollingUpdate": {
+                        "maxSurge": 1,
+                        "maxUnavailable": "40%"
+                    },
+                    "type": "RollingUpdate"
+                },
+                "template": {
+                    "metadata": {
+                        "labels": {
+                            "app.kubernetes.io/component": "admission-controller",
+                            "app.kubernetes.io/instance": "kyverno",
+                            "app.kubernetes.io/managed-by": "Helm",
+                            "app.kubernetes.io/name": "kyverno-admission-controller",
+                            "app.kubernetes.io/part-of": "kyverno",
+                            "app.kubernetes.io/version": "3.10.0-rc.4",
+                            "helm.sh/chart": "kyverno-3.10.0-rc.4"
+                        }
+                    },
+                    "spec": {
+                        "affinity": {
+                            "podAntiAffinity": {
+                                "preferredDuringSchedulingIgnoredDuringExecution": [
+                                    {
+                                        "podAffinityTerm": {
+                                            "labelSelector": {
+                                                "matchExpressions": [
+                                                    {
+                                                        "key": "app.kubernetes.io/component",
+                                                        "operator": "In",
+                                                        "values": [
+                                                            "admission-controller"
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            "topologyKey": "kubernetes.io/hostname"
+                                        },
+                                        "weight": 1
+                                    }
+                                ]
+                            }
+                        },
+                        "automountServiceAccountToken": true,
+                        "containers": [
+                            {
+                                "args": [
+                                    "--caSecretName=kyverno-svc.kyverno.svc.kyverno-tls-ca",
+                                    "--tlsSecretName=kyverno-svc.kyverno.svc.kyverno-tls-pair",
+                                    "--tlsKeyAlgorithm=RSA",
+                                    "--reportsServiceAccountName=system:serviceaccount:kyverno:kyverno-reports-controller",
+                                    "--servicePort=443",
+                                    "--webhookServerPort=9443",
+                                    "--resyncPeriod=15m",
+                                    "--crdWatcher=false",
+                                    "--disableMetrics=false",
+                                    "--otelConfig=prometheus",
+                                    "--metricsPort=8000",
+                                    "--admissionReports=true",
+                                    "--maxAdmissionReports=1000",
+                                    "--autoUpdateWebhooks=true",
+                                    "--excludeBootstrapResources=false",
+                                    "--enableConfigMapCaching=true",
+                                    "--controllerRuntimeMetricsAddress=:8080",
+                                    "--enableDeferredLoading=true",
+                                    "--dumpPayload=false",
+                                    "--forceFailurePolicyIgnore=false",
+                                    "--generateValidatingAdmissionPolicy=true",
+                                    "--generateMutatingAdmissionPolicy=false",
+                                    "--dumpPatches=false",
+                                    "--maxAPICallResponseLength=2000000",
+                                    "--apiCallTimeout=30s",
+                                    "--maxGlobalContextEntries=0",
+                                    "--loggingFormat=text",
+                                    "--v=2",
+                                    "--omitEvents=PolicyApplied,PolicySkipped",
+                                    "--enablePolicyException=false",
+                                    "--protectManagedResources=false",
+                                    "--protectGenerationLabels=true",
+                                    "--allowInsecureRegistry=false",
+                                    "--registryCredentialHelpers=default,google,amazon,azure,github",
+                                    "--enableReporting=validate,mutate,mutateExisting,imageVerify,generate"
+                                ],
+                                "env": [
+                                    {
+                                        "name": "INIT_CONFIG",
+                                        "value": "kyverno"
+                                    },
+                                    {
+                                        "name": "METRICS_CONFIG",
+                                        "value": "kyverno-metrics"
+                                    },
+                                    {
+                                        "name": "KYVERNO_NAMESPACE",
+                                        "valueFrom": {
+                                            "fieldRef": {
+                                                "apiVersion": "v1",
+                                                "fieldPath": "metadata.namespace"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "name": "KYVERNO_POD_NAME",
+                                        "valueFrom": {
+                                            "fieldRef": {
+                                                "apiVersion": "v1",
+                                                "fieldPath": "metadata.name"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "name": "KYVERNO_SERVICEACCOUNT_NAME",
+                                        "value": "kyverno-admission-controller"
+                                    },
+                                    {
+                                        "name": "KYVERNO_ROLE_NAME",
+                                        "value": "kyverno:admission-controller"
+                                    },
+                                    {
+                                        "name": "KYVERNO_SVC",
+                                        "value": "kyverno-svc"
+                                    },
+                                    {
+                                        "name": "TUF_ROOT",
+                                        "value": "/.sigstore"
+                                    },
+                                    {
+                                        "name": "KYVERNO_DEPLOYMENT",
+                                        "value": "kyverno-admission-controller"
+                                    }
+                                ],
+                                "image": "reg.kyverno.io/kyverno/kyverno:v1.20.0-rc.4",
+                                "imagePullPolicy": "IfNotPresent",
+                                "livenessProbe": {
+                                    "failureThreshold": 2,
+                                    "httpGet": {
+                                        "path": "/health/liveness",
+                                        "port": 9443,
+                                        "scheme": "HTTPS"
+                                    },
+                                    "initialDelaySeconds": 15,
+                                    "periodSeconds": 30,
+                                    "successThreshold": 1,
+                                    "timeoutSeconds": 5
+                                },
+                                "name": "kyverno",
+                                "ports": [
+                                    {
+                                        "containerPort": 9443,
+                                        "name": "https",
+                                        "protocol": "TCP"
+                                    },
+                                    {
+                                        "containerPort": 8000,
+                                        "name": "metrics-port",
+                                        "protocol": "TCP"
+                                    }
+                                ],
+                                "readinessProbe": {
+                                    "failureThreshold": 6,
+                                    "httpGet": {
+                                        "path": "/health/readiness",
+                                        "port": 9443,
+                                        "scheme": "HTTPS"
+                                    },
+                                    "initialDelaySeconds": 5,
+                                    "periodSeconds": 10,
+                                    "successThreshold": 1,
+                                    "timeoutSeconds": 5
+                                },
+                                "resources": {
+                                    "limits": {
+                                        "cpu": "1",
+                                        "memory": "512Mi"
+                                    },
+                                    "requests": {
+                                        "cpu": "100m",
+                                        "memory": "128Mi"
+                                    }
+                                },
+                                "securityContext": {
+                                    "allowPrivilegeEscalation": false,
+                                    "capabilities": {
+                                        "drop": [
+                                            "ALL"
+                                        ]
+                                    },
+                                    "privileged": false,
+                                    "readOnlyRootFilesystem": true,
+                                    "runAsGroup": 65534,
+                                    "runAsNonRoot": true,
+                                    "runAsUser": 65534,
+                                    "seccompProfile": {
+                                        "type": "RuntimeDefault"
+                                    }
+                                },
+                                "startupProbe": {
+                                    "failureThreshold": 20,
+                                    "httpGet": {
+                                        "path": "/health/liveness",
+                                        "port": 9443,
+                                        "scheme": "HTTPS"
+                                    },
+                                    "initialDelaySeconds": 2,
+                                    "periodSeconds": 6,
+                                    "successThreshold": 1,
+                                    "timeoutSeconds": 1
+                                },
+                                "terminationMessagePath": "/dev/termination-log",
+                                "terminationMessagePolicy": "File",
+                                "volumeMounts": [
+                                    {
+                                        "mountPath": "/.sigstore",
+                                        "name": "sigstore"
+                                    },
+                                    {
+                                        "mountPath": "/var/run/secrets/kyverno/apicall",
+                                        "name": "apicall-token",
+                                        "readOnly": true
+                                    }
+                                ]
+                            }
+                        ],
+                        "dnsPolicy": "ClusterFirst",
+                        "initContainers": [
+                            {
+                                "args": [
+                                    "--loggingFormat=text",
+                                    "--v=2",
+                                    "--openreportsEnabled=false"
+                                ],
+                                "env": [
+                                    {
+                                        "name": "KYVERNO_SERVICEACCOUNT_NAME",
+                                        "value": "kyverno-admission-controller"
+                                    },
+                                    {
+                                        "name": "KYVERNO_ROLE_NAME",
+                                        "value": "kyverno:admission-controller"
+                                    },
+                                    {
+                                        "name": "INIT_CONFIG",
+                                        "value": "kyverno"
+                                    },
+                                    {
+                                        "name": "METRICS_CONFIG",
+                                        "value": "kyverno-metrics"
+                                    },
+                                    {
+                                        "name": "KYVERNO_NAMESPACE",
+                                        "valueFrom": {
+                                            "fieldRef": {
+                                                "apiVersion": "v1",
+                                                "fieldPath": "metadata.namespace"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "name": "KYVERNO_POD_NAME",
+                                        "valueFrom": {
+                                            "fieldRef": {
+                                                "apiVersion": "v1",
+                                                "fieldPath": "metadata.name"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "name": "KYVERNO_DEPLOYMENT",
+                                        "value": "kyverno-admission-controller"
+                                    },
+                                    {
+                                        "name": "KYVERNO_SVC",
+                                        "value": "kyverno-svc"
+                                    }
+                                ],
+                                "image": "reg.kyverno.io/kyverno/kyvernopre:v1.20.0-rc.4",
+                                "imagePullPolicy": "IfNotPresent",
+                                "name": "kyverno-pre",
+                                "resources": {
+                                    "limits": {
+                                        "cpu": "100m",
+                                        "memory": "256Mi"
+                                    },
+                                    "requests": {
+                                        "cpu": "10m",
+                                        "memory": "64Mi"
+                                    }
+                                },
+                                "securityContext": {
+                                    "allowPrivilegeEscalation": false,
+                                    "capabilities": {
+                                        "drop": [
+                                            "ALL"
+                                        ]
+                                    },
+                                    "privileged": false,
+                                    "readOnlyRootFilesystem": true,
+                                    "runAsGroup": 65534,
+                                    "runAsNonRoot": true,
+                                    "runAsUser": 65534,
+                                    "seccompProfile": {
+                                        "type": "RuntimeDefault"
+                                    }
+                                },
+                                "terminationMessagePath": "/dev/termination-log",
+                                "terminationMessagePolicy": "File"
+                            }
+                        ],
+                        "nodeSelector": {
+                            "kubernetes.io/os": "linux"
+                        },
+                        "restartPolicy": "Always",
+                        "schedulerName": "default-scheduler",
+                        "securityContext": {},
+                        "serviceAccount": "kyverno-admission-controller",
+                        "serviceAccountName": "kyverno-admission-controller",
+                        "terminationGracePeriodSeconds": 30,
+                        "volumes": [
+                            {
+                                "emptyDir": {},
+                                "name": "sigstore"
+                            },
+                            {
+                                "name": "apicall-token",
+                                "projected": {
+                                    "defaultMode": 292,
+                                    "sources": [
+                                        {
+                                            "serviceAccountToken": {
+                                                "audience": "kyverno-svc.kyverno.io",
+                                                "expirationSeconds": 3600,
+                                                "path": "token"
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                }
+            },
+            "status": {
+                "availableReplicas": 1,
+                "conditions": [
+                    {
+                        "lastTransitionTime": "2026-11-11T13:25:31Z",
+                        "lastUpdateTime": "2026-11-11T13:26:28Z",
+                        "message": "ReplicaSet \"kyverno-admission-controller-7d7d6d7d48\" has successfully progressed.",
+                        "reason": "NewReplicaSetAvailable",
+                        "status": "True",
+                        "type": "Progressing"
+                    },
+                    {
+                        "lastTransitionTime": "2026-11-11T14:37:45Z",
+                        "lastUpdateTime": "2026-11-11T14:37:45Z",
+                        "message": "Deployment has minimum availability.",
+                        "reason": "MinimumReplicasAvailable",
+                        "status": "True",
+                        "type": "Available"
+                    }
+                ],
+                "observedGeneration": 1,
+                "readyReplicas": 1,
+                "replicas": 1,
+                "terminatingReplicas": 0,
+                "updatedReplicas": 1
+            }
+        },
+        {
+            "apiVersion": "apps/v1",
+            "kind": "Deployment",
+            "metadata": {
+                "annotations": {
+                    "deployment.kubernetes.io/revision": "1",
+                    "meta.helm.sh/release-name": "kyverno",
+                    "meta.helm.sh/release-namespace": "kyverno"
+                },
+                "creationTimestamp": "2026-11-11T13:25:30Z",
+                "generation": 1,
+                "labels": {
+                    "app.kubernetes.io/component": "reports-controller",
+                    "app.kubernetes.io/instance": "kyverno",
+                    "app.kubernetes.io/managed-by": "Helm",
+                    "app.kubernetes.io/name": "kyverno-reports-controller",
+                    "app.kubernetes.io/part-of": "kyverno",
+                    "app.kubernetes.io/version": "3.10.0-rc.4",
+                    "helm.sh/chart": "kyverno-3.10.0-rc.4"
+                },
+                "name": "kyverno-reports-controller",
+                "namespace": "kyverno",
+                "resourceVersion": "22366",
+                "uid": "a74bb0ae-7b78-4d63-a4d2-a6802cf9d85f"
+            },
+            "spec": {
+                "progressDeadlineSeconds": 600,
+                "replicas": 1,
+                "revisionHistoryLimit": 10,
+                "selector": {
+                    "matchLabels": {
+                        "app.kubernetes.io/component": "reports-controller",
+                        "app.kubernetes.io/instance": "kyverno",
+                        "app.kubernetes.io/part-of": "kyverno"
+                    }
+                },
+                "strategy": {
+                    "rollingUpdate": {
+                        "maxSurge": 1,
+                        "maxUnavailable": "40%"
+                    },
+                    "type": "RollingUpdate"
+                },
+                "template": {
+                    "metadata": {
+                        "labels": {
+                            "app.kubernetes.io/component": "reports-controller",
+                            "app.kubernetes.io/instance": "kyverno",
+                            "app.kubernetes.io/managed-by": "Helm",
+                            "app.kubernetes.io/name": "kyverno-reports-controller",
+                            "app.kubernetes.io/part-of": "kyverno",
+                            "app.kubernetes.io/version": "3.10.0-rc.4",
+                            "helm.sh/chart": "kyverno-3.10.0-rc.4"
+                        }
+                    },
+                    "spec": {
+                        "affinity": {
+                            "podAntiAffinity": {
+                                "preferredDuringSchedulingIgnoredDuringExecution": [
+                                    {
+                                        "podAffinityTerm": {
+                                            "labelSelector": {
+                                                "matchExpressions": [
+                                                    {
+                                                        "key": "app.kubernetes.io/component",
+                                                        "operator": "In",
+                                                        "values": [
+                                                            "reports-controller"
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            "topologyKey": "kubernetes.io/hostname"
+                                        },
+                                        "weight": 1
+                                    }
+                                ]
+                            }
+                        },
+                        "automountServiceAccountToken": true,
+                        "containers": [
+                            {
+                                "args": [
+                                    "--disableMetrics=false",
+                                    "--openreportsEnabled=false",
+                                    "--otelConfig=prometheus",
+                                    "--metricsPort=8000",
+                                    "--resyncPeriod=15m",
+                                    "--admissionReports=true",
+                                    "--aggregateReports=true",
+                                    "--policyReports=true",
+                                    "--validatingAdmissionPolicyReports=true",
+                                    "--mutatingAdmissionPolicyReports=false",
+                                    "--backgroundScan=true",
+                                    "--backgroundScanWorkers=2",
+                                    "--backgroundScanInterval=1h",
+                                    "--skipResourceFilters=true",
+                                    "--enableConfigMapCaching=true",
+                                    "--enableDeferredLoading=true",
+                                    "--maxAPICallResponseLength=2000000",
+                                    "--apiCallTimeout=30s",
+                                    "--maxGlobalContextEntries=0",
+                                    "--loggingFormat=text",
+                                    "--v=2",
+                                    "--omitEvents=PolicyApplied,PolicySkipped",
+                                    "--enablePolicyException=false",
+                                    "--allowInsecureRegistry=false",
+                                    "--registryCredentialHelpers=default,google,amazon,azure,github",
+                                    "--enableReporting=validate,mutate,mutateExisting,imageVerify,generate"
+                                ],
+                                "env": [
+                                    {
+                                        "name": "KYVERNO_SERVICEACCOUNT_NAME",
+                                        "value": "kyverno-reports-controller"
+                                    },
+                                    {
+                                        "name": "KYVERNO_DEPLOYMENT",
+                                        "value": "kyverno-reports-controller"
+                                    },
+                                    {
+                                        "name": "INIT_CONFIG",
+                                        "value": "kyverno"
+                                    },
+                                    {
+                                        "name": "METRICS_CONFIG",
+                                        "value": "kyverno-metrics"
+                                    },
+                                    {
+                                        "name": "KYVERNO_POD_NAME",
+                                        "valueFrom": {
+                                            "fieldRef": {
+                                                "apiVersion": "v1",
+                                                "fieldPath": "metadata.name"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "name": "KYVERNO_NAMESPACE",
+                                        "valueFrom": {
+                                            "fieldRef": {
+                                                "apiVersion": "v1",
+                                                "fieldPath": "metadata.namespace"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "name": "TUF_ROOT",
+                                        "value": "/.sigstore"
+                                    }
+                                ],
+                                "image": "reg.kyverno.io/kyverno/reports-controller:v1.20.0-rc.4",
+                                "imagePullPolicy": "IfNotPresent",
+                                "name": "controller",
+                                "ports": [
+                                    {
+                                        "containerPort": 9443,
+                                        "name": "https",
+                                        "protocol": "TCP"
+                                    },
+                                    {
+                                        "containerPort": 8000,
+                                        "name": "metrics",
+                                        "protocol": "TCP"
+                                    }
+                                ],
+                                "resources": {
+                                    "limits": {
+                                        "memory": "128Mi"
+                                    },
+                                    "requests": {
+                                        "cpu": "100m",
+                                        "memory": "64Mi"
+                                    }
+                                },
+                                "securityContext": {
+                                    "allowPrivilegeEscalation": false,
+                                    "capabilities": {
+                                        "drop": [
+                                            "ALL"
+                                        ]
+                                    },
+                                    "privileged": false,
+                                    "readOnlyRootFilesystem": true,
+                                    "runAsGroup": 65534,
+                                    "runAsNonRoot": true,
+                                    "runAsUser": 65534,
+                                    "seccompProfile": {
+                                        "type": "RuntimeDefault"
+                                    }
+                                },
+                                "terminationMessagePath": "/dev/termination-log",
+                                "terminationMessagePolicy": "File",
+                                "volumeMounts": [
+                                    {
+                                        "mountPath": "/.sigstore",
+                                        "name": "sigstore"
+                                    },
+                                    {
+                                        "mountPath": "/var/run/secrets/kyverno/apicall",
+                                        "name": "apicall-token",
+                                        "readOnly": true
+                                    }
+                                ]
+                            }
+                        ],
+                        "dnsPolicy": "ClusterFirst",
+                        "nodeSelector": {
+                            "kubernetes.io/os": "linux"
+                        },
+                        "restartPolicy": "Always",
+                        "schedulerName": "default-scheduler",
+                        "securityContext": {},
+                        "serviceAccount": "kyverno-reports-controller",
+                        "serviceAccountName": "kyverno-reports-controller",
+                        "terminationGracePeriodSeconds": 30,
+                        "volumes": [
+                            {
+                                "emptyDir": {},
+                                "name": "sigstore"
+                            },
+                            {
+                                "name": "apicall-token",
+                                "projected": {
+                                    "defaultMode": 292,
+                                    "sources": [
+                                        {
+                                            "serviceAccountToken": {
+                                                "audience": "kyverno-svc.kyverno.io",
+                                                "expirationSeconds": 3600,
+                                                "path": "token"
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                }
+            },
+            "status": {
+                "availableReplicas": 1,
+                "conditions": [
+                    {
+                        "lastTransitionTime": "2026-11-11T13:26:02Z",
+                        "lastUpdateTime": "2026-11-11T13:26:02Z",
+                        "message": "Deployment has minimum availability.",
+                        "reason": "MinimumReplicasAvailable",
+                        "status": "True",
+                        "type": "Available"
+                    },
+                    {
+                        "lastTransitionTime": "2026-11-11T13:25:31Z",
+                        "lastUpdateTime": "2026-11-11T13:26:02Z",
+                        "message": "ReplicaSet \"kyverno-reports-controller-5f46d997cb\" has successfully progressed.",
+                        "reason": "NewReplicaSetAvailable",
+                        "status": "True",
+                        "type": "Progressing"
+                    }
+                ],
+                "observedGeneration": 1,
+                "readyReplicas": 1,
+                "replicas": 1,
+                "terminatingReplicas": 0,
+                "updatedReplicas": 1
+            }
+        },
+        {
+            "apiVersion": "apps/v1",
+            "kind": "Deployment",
+            "metadata": {
+                "annotations": {
+                    "deployment.kubernetes.io/revision": "7",
+                    "meta.helm.sh/release-name": "l4",
+                    "meta.helm.sh/release-namespace": "laboratorio4"
+                },
+                "creationTimestamp": "2026-11-11T01:10:10Z",
+                "generation": 7,
+                "labels": {
+                    "app.kubernetes.io/component": "api",
+                    "app.kubernetes.io/instance": "l4",
+                    "app.kubernetes.io/managed-by": "Helm"
+                },
+                "name": "l4-pedidos-api",
+                "namespace": "laboratorio4",
+                "resourceVersion": "50659",
+                "uid": "5ebefbd0-16ab-4f0b-82bd-c279c8dbbe3c"
+            },
+            "spec": {
+                "progressDeadlineSeconds": 600,
+                "replicas": 1,
+                "revisionHistoryLimit": 10,
+                "selector": {
+                    "matchLabels": {
+                        "app.kubernetes.io/component": "api",
+                        "app.kubernetes.io/instance": "l4"
+                    }
+                },
+                "strategy": {
+                    "type": "Recreate"
+                },
+                "template": {
+                    "metadata": {
+                        "annotations": {
+                            "checksum/config": "d20271edfe44f717abc501f1289208ec2e07ada46824778db688cd1818eb648b",
+                            "kubectl.kubernetes.io/restartedAt": "2026-11-10T22:13:31-03:00"
+                        },
+                        "labels": {
+                            "app.kubernetes.io/component": "api",
+                            "app.kubernetes.io/instance": "l4"
+                        }
+                    },
+                    "spec": {
+                        "automountServiceAccountToken": false,
+                        "containers": [
+                            {
+                                "envFrom": [
+                                    {
+                                        "configMapRef": {
+                                            "name": "l4-pedidos-api"
+                                        }
+                                    }
+                                ],
+                                "image": "brunovitola/pedidos-api-l4:l4-7-0f47780b51b3",
+                                "imagePullPolicy": "IfNotPresent",
+                                "livenessProbe": {
+                                    "failureThreshold": 3,
+                                    "httpGet": {
+                                        "path": "/actuator/health/liveness",
+                                        "port": "http",
+                                        "scheme": "HTTP"
+                                    },
+                                    "periodSeconds": 15,
+                                    "successThreshold": 1,
+                                    "timeoutSeconds": 1
+                                },
+                                "name": "api",
+                                "ports": [
+                                    {
+                                        "containerPort": 8080,
+                                        "name": "http",
+                                        "protocol": "TCP"
+                                    }
+                                ],
+                                "readinessProbe": {
+                                    "failureThreshold": 3,
+                                    "httpGet": {
+                                        "path": "/actuator/health",
+                                        "port": "http",
+                                        "scheme": "HTTP"
+                                    },
+                                    "periodSeconds": 10,
+                                    "successThreshold": 1,
+                                    "timeoutSeconds": 1
+                                },
+                                "resources": {
+                                    "limits": {
+                                        "cpu": "1",
+                                        "memory": "768Mi"
+                                    },
+                                    "requests": {
+                                        "cpu": "250m",
+                                        "memory": "384Mi"
+                                    }
+                                },
+                                "securityContext": {
+                                    "allowPrivilegeEscalation": false,
+                                    "capabilities": {
+                                        "drop": [
+                                            "ALL"
+                                        ]
+                                    },
+                                    "runAsGroup": 10001,
+                                    "runAsNonRoot": true,
+                                    "runAsUser": 10001
+                                },
+                                "startupProbe": {
+                                    "failureThreshold": 60,
+                                    "httpGet": {
+                                        "path": "/actuator/health",
+                                        "port": "http",
+                                        "scheme": "HTTP"
+                                    },
+                                    "periodSeconds": 5,
+                                    "successThreshold": 1,
+                                    "timeoutSeconds": 1
+                                },
+                                "terminationMessagePath": "/dev/termination-log",
+                                "terminationMessagePolicy": "File",
+                                "volumeMounts": [
+                                    {
+                                        "mountPath": "/data",
+                                        "name": "data"
+                                    }
+                                ]
+                            }
+                        ],
+                        "dnsPolicy": "ClusterFirst",
+                        "restartPolicy": "Always",
+                        "schedulerName": "default-scheduler",
+                        "securityContext": {
+                            "fsGroup": 10001,
+                            "fsGroupChangePolicy": "OnRootMismatch",
+                            "seccompProfile": {
+                                "type": "RuntimeDefault"
+                            }
+                        },
+                        "terminationGracePeriodSeconds": 30,
+                        "volumes": [
+                            {
+                                "name": "data",
+                                "persistentVolumeClaim": {
+                                    "claimName": "l4-pedidos-api"
+                                }
+                            }
+                        ]
+                    }
+                }
+            },
+            "status": {
+                "availableReplicas": 1,
+                "conditions": [
+                    {
+                        "lastTransitionTime": "2026-11-11T17:54:32Z",
+                        "lastUpdateTime": "2026-11-11T17:54:32Z",
+                        "message": "Deployment has minimum availability.",
+                        "reason": "MinimumReplicasAvailable",
+                        "status": "True",
+                        "type": "Available"
+                    },
+                    {
+                        "lastTransitionTime": "2026-11-11T01:10:10Z",
+                        "lastUpdateTime": "2026-11-11T17:54:32Z",
+                        "message": "ReplicaSet \"l4-pedidos-api-6fd7986c64\" has successfully progressed.",
+                        "reason": "NewReplicaSetAvailable",
+                        "status": "True",
+                        "type": "Progressing"
+                    }
+                ],
+                "observedGeneration": 7,
+                "readyReplicas": 1,
+                "replicas": 1,
+                "terminatingReplicas": 0,
+                "updatedReplicas": 1
+            }
+        },
+        {
+            "apiVersion": "apps/v1",
+            "kind": "Deployment",
+            "metadata": {
+                "annotations": {
+                    "deployment.kubernetes.io/revision": "5",
+                    "meta.helm.sh/release-name": "l4",
+                    "meta.helm.sh/release-namespace": "laboratorio4"
+                },
+                "creationTimestamp": "2026-11-11T01:10:10Z",
+                "generation": 5,
+                "labels": {
+                    "app.kubernetes.io/component": "grafana",
+                    "app.kubernetes.io/instance": "l4",
+                    "app.kubernetes.io/managed-by": "Helm"
+                },
+                "name": "l4-pedidos-grafana",
+                "namespace": "laboratorio4",
+                "resourceVersion": "50641",
+                "uid": "14cf9469-1d77-46c4-bca0-5cbe35102fbd"
+            },
+            "spec": {
+                "progressDeadlineSeconds": 600,
+                "replicas": 1,
+                "revisionHistoryLimit": 10,
+                "selector": {
+                    "matchLabels": {
+                        "app.kubernetes.io/component": "grafana",
+                        "app.kubernetes.io/instance": "l4"
+                    }
+                },
+                "strategy": {
+                    "type": "Recreate"
+                },
+                "template": {
+                    "metadata": {
+                        "annotations": {
+                            "checksum/config": "d20271edfe44f717abc501f1289208ec2e07ada46824778db688cd1818eb648b"
+                        },
+                        "labels": {
+                            "app.kubernetes.io/component": "grafana",
+                            "app.kubernetes.io/instance": "l4"
+                        }
+                    },
+                    "spec": {
+                        "automountServiceAccountToken": false,
+                        "containers": [
+                            {
+                                "env": [
+                                    {
+                                        "name": "GF_DASHBOARDS_DEFAULT_HOME_DASHBOARD_PATH",
+                                        "value": "/etc/grafana/l4-dashboards/dashboard.json"
+                                    }
+                                ],
+                                "image": "grafana/grafana:13.0.12@sha256:28476aa8096cd8d0f658a05a443b605fffb450e57f444335216175d604cfd23d",
+                                "imagePullPolicy": "IfNotPresent",
+                                "livenessProbe": {
+                                    "failureThreshold": 3,
+                                    "httpGet": {
+                                        "path": "/api/health",
+                                        "port": "http",
+                                        "scheme": "HTTP"
+                                    },
+                                    "periodSeconds": 15,
+                                    "successThreshold": 1,
+                                    "timeoutSeconds": 1
+                                },
+                                "name": "grafana",
+                                "ports": [
+                                    {
+                                        "containerPort": 3000,
+                                        "name": "http",
+                                        "protocol": "TCP"
+                                    }
+                                ],
+                                "readinessProbe": {
+                                    "failureThreshold": 3,
+                                    "httpGet": {
+                                        "path": "/api/health",
+                                        "port": "http",
+                                        "scheme": "HTTP"
+                                    },
+                                    "periodSeconds": 10,
+                                    "successThreshold": 1,
+                                    "timeoutSeconds": 1
+                                },
+                                "resources": {
+                                    "limits": {
+                                        "cpu": "500m",
+                                        "memory": "1Gi"
+                                    },
+                                    "requests": {
+                                        "cpu": "100m",
+                                        "memory": "512Mi"
+                                    }
+                                },
+                                "securityContext": {
+                                    "allowPrivilegeEscalation": false,
+                                    "capabilities": {
+                                        "drop": [
+                                            "ALL"
+                                        ]
+                                    },
+                                    "runAsGroup": 472,
+                                    "runAsNonRoot": true,
+                                    "runAsUser": 472
+                                },
+                                "startupProbe": {
+                                    "failureThreshold": 60,
+                                    "httpGet": {
+                                        "path": "/api/health",
+                                        "port": "http",
+                                        "scheme": "HTTP"
+                                    },
+                                    "periodSeconds": 5,
+                                    "successThreshold": 1,
+                                    "timeoutSeconds": 1
+                                },
+                                "terminationMessagePath": "/dev/termination-log",
+                                "terminationMessagePolicy": "File",
+                                "volumeMounts": [
+                                    {
+                                        "mountPath": "/var/lib/grafana",
+                                        "name": "data"
+                                    },
+                                    {
+                                        "mountPath": "/etc/grafana/provisioning/datasources/l4.yaml",
+                                        "name": "provisioning",
+                                        "readOnly": true,
+                                        "subPath": "datasource.yaml"
+                                    },
+                                    {
+                                        "mountPath": "/etc/grafana/provisioning/dashboards/l4.yaml",
+                                        "name": "provisioning",
+                                        "readOnly": true,
+                                        "subPath": "dashboards.yaml"
+                                    },
+                                    {
+                                        "mountPath": "/etc/grafana/l4-dashboards",
+                                        "name": "dashboard",
+                                        "readOnly": true
+                                    }
+                                ]
+                            }
+                        ],
+                        "dnsPolicy": "ClusterFirst",
+                        "restartPolicy": "Always",
+                        "schedulerName": "default-scheduler",
+                        "securityContext": {
+                            "fsGroup": 472,
+                            "fsGroupChangePolicy": "OnRootMismatch",
+                            "seccompProfile": {
+                                "type": "RuntimeDefault"
+                            }
+                        },
+                        "terminationGracePeriodSeconds": 30,
+                        "volumes": [
+                            {
+                                "name": "data",
+                                "persistentVolumeClaim": {
+                                    "claimName": "l4-pedidos-grafana"
+                                }
+                            },
+                            {
+                                "configMap": {
+                                    "defaultMode": 420,
+                                    "name": "l4-pedidos-grafana-provisioning"
+                                },
+                                "name": "provisioning"
+                            },
+                            {
+                                "configMap": {
+                                    "defaultMode": 420,
+                                    "name": "l4-pedidos-grafana-dashboard"
+                                },
+                                "name": "dashboard"
+                            }
+                        ]
+                    }
+                }
+            },
+            "status": {
+                "availableReplicas": 1,
+                "conditions": [
+                    {
+                        "lastTransitionTime": "2026-11-11T01:10:10Z",
+                        "lastUpdateTime": "2026-11-11T17:37:47Z",
+                        "message": "ReplicaSet \"l4-pedidos-grafana-7b9cf89f5d\" has successfully progressed.",
+                        "reason": "NewReplicaSetAvailable",
+                        "status": "True",
+                        "type": "Progressing"
+                    },
+                    {
+                        "lastTransitionTime": "2026-11-11T17:54:27Z",
+                        "lastUpdateTime": "2026-11-11T17:54:27Z",
+                        "message": "Deployment has minimum availability.",
+                        "reason": "MinimumReplicasAvailable",
+                        "status": "True",
+                        "type": "Available"
+                    }
+                ],
+                "observedGeneration": 5,
+                "readyReplicas": 1,
+                "replicas": 1,
+                "terminatingReplicas": 0,
+                "updatedReplicas": 1
+            }
+        },
+        {
+            "apiVersion": "apps/v1",
+            "kind": "Deployment",
+            "metadata": {
+                "annotations": {
+                    "deployment.kubernetes.io/revision": "4",
+                    "meta.helm.sh/release-name": "l4",
+                    "meta.helm.sh/release-namespace": "laboratorio4"
+                },
+                "creationTimestamp": "2026-11-11T01:10:10Z",
+                "generation": 4,
+                "labels": {
+                    "app.kubernetes.io/component": "prometheus",
+                    "app.kubernetes.io/instance": "l4",
+                    "app.kubernetes.io/managed-by": "Helm"
+                },
+                "name": "l4-pedidos-prometheus",
+                "namespace": "laboratorio4",
+                "resourceVersion": "50627",
+                "uid": "80a4df07-3396-4c5d-8744-1131a27e0af4"
+            },
+            "spec": {
+                "progressDeadlineSeconds": 600,
+                "replicas": 1,
+                "revisionHistoryLimit": 10,
+                "selector": {
+                    "matchLabels": {
+                        "app.kubernetes.io/component": "prometheus",
+                        "app.kubernetes.io/instance": "l4"
+                    }
+                },
+                "strategy": {
+                    "type": "Recreate"
+                },
+                "template": {
+                    "metadata": {
+                        "annotations": {
+                            "checksum/config": "d20271edfe44f717abc501f1289208ec2e07ada46824778db688cd1818eb648b"
+                        },
+                        "labels": {
+                            "app.kubernetes.io/component": "prometheus",
+                            "app.kubernetes.io/instance": "l4"
+                        }
+                    },
+                    "spec": {
+                        "automountServiceAccountToken": true,
+                        "containers": [
+                            {
+                                "args": [
+                                    "--config.file=/etc/prometheus/prometheus.yml",
+                                    "--storage.tsdb.path=/prometheus",
+                                    "--storage.tsdb.retention.time=7d"
+                                ],
+                                "image": "prom/prometheus:v3.16.0@sha256:e04987641b57704f408e31f6373ba4138ecf27cb4a165d24aabb6c38fddd0f06",
+                                "imagePullPolicy": "IfNotPresent",
+                                "livenessProbe": {
+                                    "failureThreshold": 3,
+                                    "httpGet": {
+                                        "path": "/-/healthy",
+                                        "port": "http",
+                                        "scheme": "HTTP"
+                                    },
+                                    "periodSeconds": 15,
+                                    "successThreshold": 1,
+                                    "timeoutSeconds": 1
+                                },
+                                "name": "prometheus",
+                                "ports": [
+                                    {
+                                        "containerPort": 9090,
+                                        "name": "http",
+                                        "protocol": "TCP"
+                                    }
+                                ],
+                                "readinessProbe": {
+                                    "failureThreshold": 3,
+                                    "httpGet": {
+                                        "path": "/-/ready",
+                                        "port": "http",
+                                        "scheme": "HTTP"
+                                    },
+                                    "periodSeconds": 10,
+                                    "successThreshold": 1,
+                                    "timeoutSeconds": 1
+                                },
+                                "resources": {
+                                    "limits": {
+                                        "cpu": "500m",
+                                        "memory": "512Mi"
+                                    },
+                                    "requests": {
+                                        "cpu": "100m",
+                                        "memory": "128Mi"
+                                    }
+                                },
+                                "securityContext": {
+                                    "allowPrivilegeEscalation": false,
+                                    "capabilities": {
+                                        "drop": [
+                                            "ALL"
+                                        ]
+                                    },
+                                    "runAsGroup": 65534,
+                                    "runAsNonRoot": true,
+                                    "runAsUser": 65534
+                                },
+                                "startupProbe": {
+                                    "failureThreshold": 60,
+                                    "httpGet": {
+                                        "path": "/-/ready",
+                                        "port": "http",
+                                        "scheme": "HTTP"
+                                    },
+                                    "periodSeconds": 5,
+                                    "successThreshold": 1,
+                                    "timeoutSeconds": 1
+                                },
+                                "terminationMessagePath": "/dev/termination-log",
+                                "terminationMessagePolicy": "File",
+                                "volumeMounts": [
+                                    {
+                                        "mountPath": "/prometheus",
+                                        "name": "data"
+                                    },
+                                    {
+                                        "mountPath": "/etc/prometheus/prometheus.yml",
+                                        "name": "config",
+                                        "readOnly": true,
+                                        "subPath": "prometheus.yml"
+                                    }
+                                ]
+                            }
+                        ],
+                        "dnsPolicy": "ClusterFirst",
+                        "restartPolicy": "Always",
+                        "schedulerName": "default-scheduler",
+                        "securityContext": {
+                            "fsGroup": 65534,
+                            "fsGroupChangePolicy": "OnRootMismatch",
+                            "seccompProfile": {
+                                "type": "RuntimeDefault"
+                            }
+                        },
+                        "serviceAccount": "l4-pedidos-prometheus",
+                        "serviceAccountName": "l4-pedidos-prometheus",
+                        "terminationGracePeriodSeconds": 30,
+                        "volumes": [
+                            {
+                                "name": "data",
+                                "persistentVolumeClaim": {
+                                    "claimName": "l4-pedidos-prometheus"
+                                }
+                            },
+                            {
+                                "configMap": {
+                                    "defaultMode": 420,
+                                    "name": "l4-pedidos-prometheus"
+                                },
+                                "name": "config"
+                            }
+                        ]
+                    }
+                }
+            },
+            "status": {
+                "availableReplicas": 1,
+                "conditions": [
+                    {
+                        "lastTransitionTime": "2026-11-11T01:10:10Z",
+                        "lastUpdateTime": "2026-11-11T17:37:33Z",
+                        "message": "ReplicaSet \"l4-pedidos-prometheus-7d8477d7dd\" has successfully progressed.",
+                        "reason": "NewReplicaSetAvailable",
+                        "status": "True",
+                        "type": "Progressing"
+                    },
+                    {
+                        "lastTransitionTime": "2026-11-11T17:54:22Z",
+                        "lastUpdateTime": "2026-11-11T17:54:22Z",
+                        "message": "Deployment has minimum availability.",
+                        "reason": "MinimumReplicasAvailable",
+                        "status": "True",
+                        "type": "Available"
+                    }
+                ],
+                "observedGeneration": 4,
+                "readyReplicas": 1,
+                "replicas": 1,
+                "terminatingReplicas": 0,
+                "updatedReplicas": 1
+            }
+        },
+        {
+            "apiVersion": "apps/v1",
+            "kind": "DaemonSet",
+            "metadata": {
+                "annotations": {
+                    "deprecated.daemonset.template.generation": "1",
+                    "meta.helm.sh/release-name": "falco",
+                    "meta.helm.sh/release-namespace": "falco"
+                },
+                "creationTimestamp": "2026-11-11T14:38:53Z",
+                "generation": 1,
+                "labels": {
+                    "app.kubernetes.io/instance": "falco",
+                    "app.kubernetes.io/managed-by": "Helm",
+                    "app.kubernetes.io/name": "falco",
+                    "app.kubernetes.io/version": "0.45.2",
+                    "helm.sh/chart": "falco-9.2.2"
+                },
+                "name": "falco",
+                "namespace": "falco",
+                "resourceVersion": "26748",
+                "uid": "ab37c6b3-2f21-43cb-8353-489ab6560ffe"
+            },
+            "spec": {
+                "revisionHistoryLimit": 10,
+                "selector": {
+                    "matchLabels": {
+                        "app.kubernetes.io/instance": "falco",
+                        "app.kubernetes.io/name": "falco"
+                    }
+                },
+                "template": {
+                    "metadata": {
+                        "annotations": {
+                            "checksum/certs": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                            "checksum/config": "a0e7d354bf59709129558c6ad4017936f0e5306f91e747304a2e0c5d1ddb2b1e",
+                            "checksum/rules": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                            "container.apparmor.security.beta.kubernetes.io/falco": "unconfined"
+                        },
+                        "labels": {
+                            "app.kubernetes.io/instance": "falco",
+                            "app.kubernetes.io/name": "falco"
+                        },
+                        "name": "falco"
+                    },
+                    "spec": {
+                        "containers": [
+                            {
+                                "args": [
+                                    "/usr/bin/falco"
+                                ],
+                                "env": [
+                                    {
+                                        "name": "HOST_ROOT",
+                                        "value": "/host"
+                                    },
+                                    {
+                                        "name": "FALCO_HOSTNAME",
+                                        "valueFrom": {
+                                            "fieldRef": {
+                                                "apiVersion": "v1",
+                                                "fieldPath": "spec.nodeName"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "name": "FALCO_K8S_NODE_NAME",
+                                        "valueFrom": {
+                                            "fieldRef": {
+                                                "apiVersion": "v1",
+                                                "fieldPath": "spec.nodeName"
+                                            }
+                                        }
+                                    }
+                                ],
+                                "image": "docker.io/falcosecurity/falco:0.45.2",
+                                "imagePullPolicy": "IfNotPresent",
+                                "livenessProbe": {
+                                    "failureThreshold": 3,
+                                    "httpGet": {
+                                        "path": "/healthz",
+                                        "port": 8765,
+                                        "scheme": "HTTP"
+                                    },
+                                    "periodSeconds": 15,
+                                    "successThreshold": 1,
+                                    "timeoutSeconds": 5
+                                },
+                                "name": "falco",
+                                "ports": [
+                                    {
+                                        "containerPort": 8765,
+                                        "name": "web",
+                                        "protocol": "TCP"
+                                    }
+                                ],
+                                "readinessProbe": {
+                                    "failureThreshold": 3,
+                                    "httpGet": {
+                                        "path": "/healthz",
+                                        "port": 8765,
+                                        "scheme": "HTTP"
+                                    },
+                                    "periodSeconds": 15,
+                                    "successThreshold": 1,
+                                    "timeoutSeconds": 5
+                                },
+                                "resources": {
+                                    "limits": {
+                                        "cpu": "1",
+                                        "memory": "1Gi"
+                                    },
+                                    "requests": {
+                                        "cpu": "100m",
+                                        "memory": "512Mi"
+                                    }
+                                },
+                                "securityContext": {
+                                    "capabilities": {
+                                        "add": [
+                                            "BPF",
+                                            "SYS_RESOURCE",
+                                            "PERFMON",
+                                            "SYS_PTRACE"
+                                        ]
+                                    }
+                                },
+                                "startupProbe": {
+                                    "failureThreshold": 20,
+                                    "httpGet": {
+                                        "path": "/healthz",
+                                        "port": 8765,
+                                        "scheme": "HTTP"
+                                    },
+                                    "initialDelaySeconds": 3,
+                                    "periodSeconds": 5,
+                                    "successThreshold": 1,
+                                    "timeoutSeconds": 5
+                                },
+                                "terminationMessagePath": "/dev/termination-log",
+                                "terminationMessagePolicy": "File",
+                                "volumeMounts": [
+                                    {
+                                        "mountPath": "/host/run/containerd",
+                                        "name": "container-engine-socket-0"
+                                    },
+                                    {
+                                        "mountPath": "/etc/falco",
+                                        "name": "rulesfiles-install-dir"
+                                    },
+                                    {
+                                        "mountPath": "/usr/share/falco/plugins",
+                                        "name": "plugins-install-dir"
+                                    },
+                                    {
+                                        "mountPath": "/etc/falco/config.d",
+                                        "name": "specialized-falco-configs"
+                                    },
+                                    {
+                                        "mountPath": "/root/.falco",
+                                        "name": "root-falco-fs"
+                                    },
+                                    {
+                                        "mountPath": "/host/proc",
+                                        "name": "proc-fs",
+                                        "readOnly": true
+                                    },
+                                    {
+                                        "mountPath": "/host/etc",
+                                        "name": "etc-fs",
+                                        "readOnly": true
+                                    },
+                                    {
+                                        "mountPath": "/sys/kernel",
+                                        "name": "sys-fs",
+                                        "readOnly": true
+                                    },
+                                    {
+                                        "mountPath": "/etc/falco/falco.yaml",
+                                        "name": "falco-yaml",
+                                        "subPath": "falco.yaml"
+                                    }
+                                ]
+                            }
+                        ],
+                        "dnsPolicy": "ClusterFirst",
+                        "initContainers": [
+                            {
+                                "args": [
+                                    "artifact",
+                                    "install",
+                                    "--log-format=json"
+                                ],
+                                "image": "docker.io/falcosecurity/falcoctl:0.14.3",
+                                "imagePullPolicy": "IfNotPresent",
+                                "name": "falcoctl-artifact-install",
+                                "resources": {},
+                                "terminationMessagePath": "/dev/termination-log",
+                                "terminationMessagePolicy": "File",
+                                "volumeMounts": [
+                                    {
+                                        "mountPath": "/plugins",
+                                        "name": "plugins-install-dir"
+                                    },
+                                    {
+                                        "mountPath": "/rulesfiles",
+                                        "name": "rulesfiles-install-dir"
+                                    },
+                                    {
+                                        "mountPath": "/etc/falcoctl",
+                                        "name": "falcoctl-config-volume"
+                                    },
+                                    {
+                                        "mountPath": "/artifactstate",
+                                        "name": "artifact-state-dir"
+                                    }
+                                ]
+                            }
+                        ],
+                        "restartPolicy": "Always",
+                        "schedulerName": "default-scheduler",
+                        "securityContext": {},
+                        "serviceAccount": "falco",
+                        "serviceAccountName": "falco",
+                        "terminationGracePeriodSeconds": 30,
+                        "tolerations": [
+                            {
+                                "effect": "NoSchedule",
+                                "key": "node-role.kubernetes.io/master"
+                            },
+                            {
+                                "effect": "NoSchedule",
+                                "key": "node-role.kubernetes.io/control-plane"
+                            }
+                        ],
+                        "volumes": [
+                            {
+                                "hostPath": {
+                                    "path": "/run/containerd",
+                                    "type": ""
+                                },
+                                "name": "container-engine-socket-0"
+                            },
+                            {
+                                "emptyDir": {},
+                                "name": "specialized-falco-configs"
+                            },
+                            {
+                                "emptyDir": {},
+                                "name": "plugins-install-dir"
+                            },
+                            {
+                                "emptyDir": {},
+                                "name": "rulesfiles-install-dir"
+                            },
+                            {
+                                "emptyDir": {},
+                                "name": "artifact-state-dir"
+                            },
+                            {
+                                "emptyDir": {},
+                                "name": "root-falco-fs"
+                            },
+                            {
+                                "hostPath": {
+                                    "path": "/boot",
+                                    "type": ""
+                                },
+                                "name": "boot-fs"
+                            },
+                            {
+                                "hostPath": {
+                                    "path": "/lib/modules",
+                                    "type": ""
+                                },
+                                "name": "lib-modules"
+                            },
+                            {
+                                "hostPath": {
+                                    "path": "/usr",
+                                    "type": ""
+                                },
+                                "name": "usr-fs"
+                            },
+                            {
+                                "hostPath": {
+                                    "path": "/etc",
+                                    "type": ""
+                                },
+                                "name": "etc-fs"
+                            },
+                            {
+                                "hostPath": {
+                                    "path": "/sys/kernel",
+                                    "type": ""
+                                },
+                                "name": "sys-fs"
+                            },
+                            {
+                                "hostPath": {
+                                    "path": "/proc",
+                                    "type": ""
+                                },
+                                "name": "proc-fs"
+                            },
+                            {
+                                "configMap": {
+                                    "defaultMode": 420,
+                                    "items": [
+                                        {
+                                            "key": "falcoctl.yaml",
+                                            "path": "falcoctl.yaml"
+                                        }
+                                    ],
+                                    "name": "falco-falcoctl"
+                                },
+                                "name": "falcoctl-config-volume"
+                            },
+                            {
+                                "configMap": {
+                                    "defaultMode": 420,
+                                    "items": [
+                                        {
+                                            "key": "falco.yaml",
+                                            "path": "falco.yaml"
+                                        }
+                                    ],
+                                    "name": "falco"
+                                },
+                                "name": "falco-yaml"
+                            }
+                        ]
+                    }
+                },
+                "updateStrategy": {
+                    "rollingUpdate": {
+                        "maxSurge": 0,
+                        "maxUnavailable": 1
+                    },
+                    "type": "RollingUpdate"
+                }
+            },
+            "status": {
+                "currentNumberScheduled": 1,
+                "desiredNumberScheduled": 1,
+                "numberAvailable": 1,
+                "numberMisscheduled": 0,
+                "numberReady": 1,
+                "observedGeneration": 1,
+                "updatedNumberScheduled": 1
+            }
+        },
+        {
+            "apiVersion": "apps/v1",
+            "kind": "DaemonSet",
+            "metadata": {
+                "annotations": {
+                    "deprecated.daemonset.template.generation": "1",
+                    "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"apps/v1\",\"kind\":\"DaemonSet\",\"metadata\":{\"annotations\":{},\"labels\":{\"app\":\"kindnet\",\"k8s-app\":\"kindnet\",\"tier\":\"node\"},\"name\":\"kindnet\",\"namespace\":\"kube-system\"},\"spec\":{\"selector\":{\"matchLabels\":{\"app\":\"kindnet\"}},\"template\":{\"metadata\":{\"labels\":{\"app\":\"kindnet\",\"k8s-app\":\"kindnet\",\"tier\":\"node\"}},\"spec\":{\"containers\":[{\"env\":[{\"name\":\"HOST_IP\",\"valueFrom\":{\"fieldRef\":{\"fieldPath\":\"status.hostIP\"}}},{\"name\":\"POD_IP\",\"valueFrom\":{\"fieldRef\":{\"fieldPath\":\"status.podIP\"}}},{\"name\":\"POD_SUBNET\",\"value\":\"10.244.0.0/16\"}],\"image\":\"docker.io/kindest/kindnetd:v20260820-69b56db7\",\"name\":\"kindnet-cni\",\"resources\":{\"limits\":{\"cpu\":\"100m\",\"memory\":\"50Mi\"},\"requests\":{\"cpu\":\"100m\",\"memory\":\"50Mi\"}},\"securityContext\":{\"capabilities\":{\"add\":[\"NET_RAW\",\"NET_ADMIN\"]},\"privileged\":false},\"volumeMounts\":[{\"mountPath\":\"/etc/cni/net.d\",\"name\":\"cni-cfg\"},{\"mountPath\":\"/run/xtables.lock\",\"name\":\"xtables-lock\",\"readOnly\":false},{\"mountPath\":\"/lib/modules\",\"name\":\"lib-modules\",\"readOnly\":true}]}],\"hostNetwork\":true,\"serviceAccountName\":\"kindnet\",\"tolerations\":[{\"effect\":\"NoSchedule\",\"operator\":\"Exists\"}],\"volumes\":[{\"hostPath\":{\"path\":\"/etc/cni/net.d\",\"type\":\"DirectoryOrCreate\"},\"name\":\"cni-cfg\"},{\"hostPath\":{\"path\":\"/run/xtables.lock\",\"type\":\"FileOrCreate\"},\"name\":\"xtables-lock\"},{\"hostPath\":{\"path\":\"/lib/modules\"},\"name\":\"lib-modules\"}]}}}}\n"
+                },
+                "creationTimestamp": "2026-09-15T21:52:38Z",
+                "generation": 1,
+                "labels": {
+                    "app": "kindnet",
+                    "k8s-app": "kindnet",
+                    "tier": "node"
+                },
+                "name": "kindnet",
+                "namespace": "kube-system",
+                "resourceVersion": "444",
+                "uid": "dcc97c73-d50b-4208-80cc-cbe5417346c0"
+            },
+            "spec": {
+                "revisionHistoryLimit": 10,
+                "selector": {
+                    "matchLabels": {
+                        "app": "kindnet"
+                    }
+                },
+                "template": {
+                    "metadata": {
+                        "labels": {
+                            "app": "kindnet",
+                            "k8s-app": "kindnet",
+                            "tier": "node"
+                        }
+                    },
+                    "spec": {
+                        "containers": [
+                            {
+                                "env": [
+                                    {
+                                        "name": "HOST_IP",
+                                        "valueFrom": {
+                                            "fieldRef": {
+                                                "apiVersion": "v1",
+                                                "fieldPath": "status.hostIP"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "name": "POD_IP",
+                                        "valueFrom": {
+                                            "fieldRef": {
+                                                "apiVersion": "v1",
+                                                "fieldPath": "status.podIP"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "name": "POD_SUBNET",
+                                        "value": "10.244.0.0/16"
+                                    }
+                                ],
+                                "image": "docker.io/kindest/kindnetd:v20260820-69b56db7",
+                                "imagePullPolicy": "IfNotPresent",
+                                "name": "kindnet-cni",
+                                "resources": {
+                                    "limits": {
+                                        "cpu": "100m",
+                                        "memory": "50Mi"
+                                    },
+                                    "requests": {
+                                        "cpu": "100m",
+                                        "memory": "50Mi"
+                                    }
+                                },
+                                "securityContext": {
+                                    "capabilities": {
+                                        "add": [
+                                            "NET_RAW",
+                                            "NET_ADMIN"
+                                        ]
+                                    },
+                                    "privileged": false
+                                },
+                                "terminationMessagePath": "/dev/termination-log",
+                                "terminationMessagePolicy": "File",
+                                "volumeMounts": [
+                                    {
+                                        "mountPath": "/etc/cni/net.d",
+                                        "name": "cni-cfg"
+                                    },
+                                    {
+                                        "mountPath": "/run/xtables.lock",
+                                        "name": "xtables-lock"
+                                    },
+                                    {
+                                        "mountPath": "/lib/modules",
+                                        "name": "lib-modules",
+                                        "readOnly": true
+                                    }
+                                ]
+                            }
+                        ],
+                        "dnsPolicy": "ClusterFirst",
+                        "hostNetwork": true,
+                        "restartPolicy": "Always",
+                        "schedulerName": "default-scheduler",
+                        "securityContext": {},
+                        "serviceAccount": "kindnet",
+                        "serviceAccountName": "kindnet",
+                        "terminationGracePeriodSeconds": 30,
+                        "tolerations": [
+                            {
+                                "effect": "NoSchedule",
+                                "operator": "Exists"
+                            }
+                        ],
+                        "volumes": [
+                            {
+                                "hostPath": {
+                                    "path": "/etc/cni/net.d",
+                                    "type": "DirectoryOrCreate"
+                                },
+                                "name": "cni-cfg"
+                            },
+                            {
+                                "hostPath": {
+                                    "path": "/run/xtables.lock",
+                                    "type": "FileOrCreate"
+                                },
+                                "name": "xtables-lock"
+                            },
+                            {
+                                "hostPath": {
+                                    "path": "/lib/modules",
+                                    "type": ""
+                                },
+                                "name": "lib-modules"
+                            }
+                        ]
+                    }
+                },
+                "updateStrategy": {
+                    "rollingUpdate": {
+                        "maxSurge": 0,
+                        "maxUnavailable": 1
+                    },
+                    "type": "RollingUpdate"
+                }
+            },
+            "status": {
+                "currentNumberScheduled": 1,
+                "desiredNumberScheduled": 1,
+                "numberAvailable": 1,
+                "numberMisscheduled": 0,
+                "numberReady": 1,
+                "observedGeneration": 1,
+                "updatedNumberScheduled": 1
+            }
+        },
+        {
+            "apiVersion": "apps/v1",
+            "kind": "DaemonSet",
+            "metadata": {
+                "annotations": {
+                    "deprecated.daemonset.template.generation": "1"
+                },
+                "creationTimestamp": "2026-09-15T21:52:36Z",
+                "generation": 1,
+                "labels": {
+                    "k8s-app": "kube-proxy"
+                },
+                "name": "kube-proxy",
+                "namespace": "kube-system",
+                "resourceVersion": "427",
+                "uid": "ad793a76-3ba9-4ad6-ba45-cefc2fb6148d"
+            },
+            "spec": {
+                "revisionHistoryLimit": 10,
+                "selector": {
+                    "matchLabels": {
+                        "k8s-app": "kube-proxy"
+                    }
+                },
+                "template": {
+                    "metadata": {
+                        "labels": {
+                            "k8s-app": "kube-proxy"
+                        }
+                    },
+                    "spec": {
+                        "containers": [
+                            {
+                                "command": [
+                                    "/usr/local/bin/kube-proxy",
+                                    "--config=/var/lib/kube-proxy/config.conf",
+                                    "--hostname-override=$(NODE_NAME)"
+                                ],
+                                "env": [
+                                    {
+                                        "name": "NODE_NAME",
+                                        "valueFrom": {
+                                            "fieldRef": {
+                                                "apiVersion": "v1",
+                                                "fieldPath": "spec.nodeName"
+                                            }
+                                        }
+                                    }
+                                ],
+                                "image": "registry.k8s.io/kube-proxy:v1.37.0",
+                                "imagePullPolicy": "IfNotPresent",
+                                "name": "kube-proxy",
+                                "resources": {},
+                                "securityContext": {
+                                    "privileged": true
+                                },
+                                "terminationMessagePath": "/dev/termination-log",
+                                "terminationMessagePolicy": "File",
+                                "volumeMounts": [
+                                    {
+                                        "mountPath": "/var/lib/kube-proxy",
+                                        "name": "kube-proxy"
+                                    },
+                                    {
+                                        "mountPath": "/run/xtables.lock",
+                                        "name": "xtables-lock"
+                                    },
+                                    {
+                                        "mountPath": "/lib/modules",
+                                        "name": "lib-modules",
+                                        "readOnly": true
+                                    }
+                                ]
+                            }
+                        ],
+                        "dnsPolicy": "ClusterFirst",
+                        "hostNetwork": true,
+                        "nodeSelector": {
+                            "kubernetes.io/os": "linux"
+                        },
+                        "priorityClassName": "system-node-critical",
+                        "restartPolicy": "Always",
+                        "schedulerName": "default-scheduler",
+                        "securityContext": {},
+                        "serviceAccount": "kube-proxy",
+                        "serviceAccountName": "kube-proxy",
+                        "terminationGracePeriodSeconds": 30,
+                        "tolerations": [
+                            {
+                                "operator": "Exists"
+                            }
+                        ],
+                        "volumes": [
+                            {
+                                "configMap": {
+                                    "defaultMode": 420,
+                                    "name": "kube-proxy"
+                                },
+                                "name": "kube-proxy"
+                            },
+                            {
+                                "hostPath": {
+                                    "path": "/run/xtables.lock",
+                                    "type": "FileOrCreate"
+                                },
+                                "name": "xtables-lock"
+                            },
+                            {
+                                "hostPath": {
+                                    "path": "/lib/modules",
+                                    "type": ""
+                                },
+                                "name": "lib-modules"
+                            }
+                        ]
+                    }
+                },
+                "updateStrategy": {
+                    "rollingUpdate": {
+                        "maxSurge": 0,
+                        "maxUnavailable": 1
+                    },
+                    "type": "RollingUpdate"
+                }
+            },
+            "status": {
+                "currentNumberScheduled": 1,
+                "desiredNumberScheduled": 1,
+                "numberAvailable": 1,
+                "numberMisscheduled": 0,
+                "numberReady": 1,
+                "observedGeneration": 1,
+                "updatedNumberScheduled": 1
+            }
+        }
+    ],
+    "kind": "List",
+    "metadata": {
+        "resourceVersion": ""
+    }
+}

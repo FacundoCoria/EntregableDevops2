@@ -1,0 +1,242 @@
+[
+  {
+    "path": "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\COMANDOS-TRIVY.md",
+    "unchanged": true
+  },
+  {
+    "path": "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\docker-build.txt",
+    "unchanged": true
+  },
+  {
+    "path": "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\ejecucion.json",
+    "unchanged": true
+  },
+  {
+    "path": "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\image-analysis.md",
+    "unchanged": true
+  },
+  {
+    "path": "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\imagen-analizada.json",
+    "unchanged": true
+  },
+  {
+    "path": "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\imagen-trivy.json",
+    "unchanged": true
+  },
+  {
+    "path": "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\kyverno-validation.log",
+    "unchanged": true
+  },
+  {
+    "path": "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\prueba-maven.txt",
+    "unchanged": true
+  },
+  {
+    "path": "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\RESULTADOS-TRIVY.md",
+    "unchanged": true
+  },
+  {
+    "path": "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\semgrep-report.txt",
+    "unchanged": true
+  },
+  {
+    "path": "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\snyk-report.txt",
+    "unchanged": true
+  },
+  {
+    "path": "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\trivy-ejecucion.txt",
+    "unchanged": true
+  },
+  {
+    "path": "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\trivy-version.txt",
+    "unchanged": true
+  },
+  {
+    "path": "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\trivyreport.json",
+    "unchanged": true
+  },
+  {
+    "path": "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\trivyreport.txt",
+    "unchanged": true
+  },
+  {
+    "path": "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\l4-02\\COMANDOS.md",
+    "unchanged": true
+  },
+  {
+    "path": "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\l4-02\\dive-ci-exit.txt",
+    "unchanged": true
+  },
+  {
+    "path": "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\l4-02\\dive-ci.txt",
+    "unchanged": true
+  },
+  {
+    "path": "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\l4-02\\dive-ejecucion.txt",
+    "unchanged": true
+  },
+  {
+    "path": "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\l4-02\\dive-exit.txt",
+    "unchanged": true
+  },
+  {
+    "path": "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\l4-02\\dive.json",
+    "unchanged": true
+  },
+  {
+    "path": "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\l4-02\\resumen.json",
+    "unchanged": true
+  },
+  {
+    "path": "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\l4-02\\trivy-ejecucion.txt",
+    "unchanged": true
+  },
+  {
+    "path": "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\l4-02\\trivy-exit.txt",
+    "unchanged": true
+  },
+  {
+    "path": "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\l4-02\\trivy-version.txt",
+    "unchanged": true
+  },
+  {
+    "path": "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\l4-02\\trivyreport.json",
+    "unchanged": true
+  },
+  {
+    "path": "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\l4-02\\trivyreport.txt",
+    "unchanged": true
+  },
+  {
+    "path": "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\l4-05\\scan-log.txt",
+    "unchanged": true
+  },
+  {
+    "path": "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\l4-05\\semgrep.json",
+    "unchanged": true
+  },
+  {
+    "path": "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\l4-05\\semgrep.txt",
+    "unchanged": true
+  },
+  {
+    "path": "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\l4-06\\snyk-output.txt",
+    "unchanged": true
+  },
+  {
+    "path": "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\l4-06\\snyk.json",
+    "unchanged": true
+  },
+  {
+    "path": "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\l4-06\\summary.json",
+    "unchanged": true
+  },
+  {
+    "path": "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\l4-07\\chart-default-values.yaml",
+    "unchanged": true
+  },
+  {
+    "path": "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\l4-07\\chart-source.json",
+    "unchanged": true
+  },
+  {
+    "path": "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\l4-07\\helm-effective-values.yaml",
+    "unchanged": true
+  },
+  {
+    "path": "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\l4-07\\helm-install.txt",
+    "unchanged": true
+  },
+  {
+    "path": "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\l4-07\\helm-releases.txt",
+    "unchanged": true
+  },
+  {
+    "path": "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\l4-07\\historical-report-integrity.txt",
+    "unchanged": true
+  },
+  {
+    "path": "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\l4-07\\kyverno-pods.yaml",
+    "unchanged": true
+  },
+  {
+    "path": "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\l4-07\\l4-chart-admission.txt",
+    "unchanged": true
+  },
+  {
+    "path": "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\l4-07\\l4-pods-final.txt",
+    "unchanged": true
+  },
+  {
+    "path": "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\l4-07\\l4-rendered.yaml",
+    "unchanged": true
+  },
+  {
+    "path": "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\l4-07\\live-conforme-result.yaml",
+    "unchanged": true
+  },
+  {
+    "path": "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\l4-07\\live-conforme.json",
+    "unchanged": true
+  },
+  {
+    "path": "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\l4-07\\live-create-validation.log",
+    "unchanged": true
+  },
+  {
+    "path": "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\l4-07\\policies-effective.yaml",
+    "unchanged": true
+  },
+  {
+    "path": "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\l4-07\\policies-initial.yaml",
+    "unchanged": true
+  },
+  {
+    "path": "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\l4-07\\policy-apply.txt",
+    "unchanged": true
+  },
+  {
+    "path": "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\l4-07\\validation-initial-failed.log",
+    "unchanged": true
+  },
+  {
+    "path": "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\l4-07\\validation-results-initial-failed.json",
+    "unchanged": true
+  },
+  {
+    "path": "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\l4-07\\validation-results.json",
+    "unchanged": true
+  },
+  {
+    "path": "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\l4-07\\webhooks.yaml",
+    "unchanged": true
+  },
+  {
+    "path": "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\repeticion\\trivyreport.json",
+    "unchanged": true
+  },
+  {
+    "path": "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\repeticion\\trivyreport.txt",
+    "unchanged": true
+  },
+  {
+    "path": "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\pedidos-api\\pedidos-api\\reports\\falco-event.txt",
+    "unchanged": true
+  },
+  {
+    "path": "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\pedidos-api\\pedidos-api\\reports\\kubelinter.txt",
+    "unchanged": true
+  },
+  {
+    "path": "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\pedidos-api\\pedidos-api\\reports\\npm-audit.txt",
+    "unchanged": true
+  },
+  {
+    "path": "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\pedidos-api\\pedidos-api\\reports\\semgrep.txt",
+    "unchanged": true
+  },
+  {
+    "path": "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\pedidos-api\\pedidos-api\\reports\\semgrepFixed.txt",
+    "unchanged": true
+  }
+]

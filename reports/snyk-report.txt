@@ -1,0 +1,154 @@
+ESTADO POSTERIOR — 11/11/2026, contextualización B08
+Este archivo conserva íntegro el diagnóstico inicial L4-06 debajo del separador.
+Sus frases «propuestas sin aplicar», «compatibilidad no probada» y «pendiente
+Jenkins» describen ese momento, no el resultado posterior de L4-09.
+Jenkins #7: 130 dependencias con test; 0 CRITICAL, 1 HIGH, 8 MEDIUM, 1 LOW;
+exit de Snyk 1 por hallazgos, gate PASS. Tomcat 11.0.27/Jackson BOM 3.1.8
+probados; siete críticos y diez altas iniciales ya no aparecen. Sigue JAXB HIGH.
+Comparación y límites: snyk-comparison.md (en esta misma carpeta).
+Resultado original: l4-06/snyk.json; posterior: l4-09/integral-7/snyk.json.
+No se realizó un nuevo scan en B08. Trivy sobre imagen es un análisis separado.
+
+--- DIAGNÓSTICO ORIGINAL L4-06, CUERPO ÍNTEGRO ---
+
+L4-06 — Snyk sobre dependencias Maven
+Fecha de ejecución: 11/11/2026, Uruguay. Preparación: 10/11.
+Estado: análisis completado; vulnerabilidades abiertas, propuestas sin aplicar.
+
+1. Procedencia, herramientas y alcance
+Rama lab4/l4-01-docker-manifiestos; HEAD 489f9f37a2275a5e284769fdbb511c0855c1c384.
+Cambios locales L4 anteriores sin commit. POM y fuentes Java iguales a HEAD.
+Snyk CLI 1.1308.4 Windows, SHA256 oficial verificado en la preparación;
+Maven Wrapper 3.9.16, Java Temurin 21.0.12.1; org pela311.
+Manifest: pedidos-api/pedidos-api/pom.xml, com.pedidos:pedidos-api:0.0.1-SNAPSHOT.
+Spring Boot parent 4.1.1. Análisis Snyk Open Source de dependencias directas y
+transitivas, --dev incluye test; sin filtro de severidad, sin ignores/patches.
+No se analizó código fuente con Snyk Code, sistema operativo, imagen Docker,
+otros manifiestos, reachability ni explotación real. Una ruta vulnerable no
+demuestra que el código afectado se ejecute con configuración explotable.
+
+2. Comando reproducible
+# PowerShell, desde EntregableDevops2/pedidos-api/pedidos-api
+$projectRoot = (Resolve-Path ../../..).Path
+$env:MAVEN_USER_HOME = Join-Path $projectRoot '.tools/maven-user'
+$env:SNYK_CFG_DISABLE_ANALYTICS = '1'
+& "$projectRoot/.tools/snyk/snyk.exe" test --file=pom.xml --package-manager=maven --dev --json-file-output=../../reports/l4-06/snyk.json -- "-Dmaven.repo.local=$projectRoot/.tools/m2"
+# Capturar stdout/stderr y $LASTEXITCODE al ejecutar; usar otro directorio
+# para un futuro reescaneo y preservar el diagnostico inicial.
+
+3. Resultado real
+130 dependencias; 44 IDs Snyk únicos y 44 rutas informadas.
+CRITICAL 7; HIGH 11; MEDIUM 24; LOW 2. Sin supresiones.
+Exit 1: Snyk completó el análisis y encontró vulnerabilidades; no es fallo
+de ejecución. Exit 2/3 sí denotaría error. JSON ok=false describe hallazgos.
+El BUILD SUCCESS previo de dependency:tree acredita resolución Maven solamente.
+
+4. Críticos y propuestas por identificador
+Todas las rutas críticas registradas entran por spring-boot-starter-webmvc,
+dependencia de producción. No se hizo una segunda ejecución sin --dev; el total
+de 44 incluye test y no se presenta como recuento exclusivo de producción.
+Las versiones corregidas y descripciones siguientes proceden de Snyk y se
+contrastaron con sus fichas oficiales el 11/11. Compatibilidad no probada.
+
+1. SNYK-JAVA-ORGAPACHETOMCATEMBED-20302842 | CVE-2026-65905
+   Replay Attack | CRITICAL | org.apache.tomcat.embed:tomcat-embed-core@11.0.24
+   Ruta: com.pedidos:pedidos-api@0.0.1-SNAPSHOT > org.springframework.boot:spring-boot-starter-webmvc@4.1.1 > org.springframework.boot:spring-boot-starter-tomcat@4.1.1 > org.springframework.boot:spring-boot-starter-tomcat-runtime@4.1.1 > org.apache.tomcat.embed:tomcat-embed-core@11.0.24
+   fixedIn informado: 9.0.121, 10.1.59, 11.0.25
+   Propuesta: Tomcat 11.0.27 o posterior compatible en la línea 11; actualizar los módulos Tomcat juntos.
+   Fuente: https://security.snyk.io/vuln/SNYK-JAVA-ORGAPACHETOMCATEMBED-20302842
+
+2. SNYK-JAVA-ORGAPACHETOMCATEMBED-20302843 | CVE-2026-68525
+   Incorrect Authorization | CRITICAL | org.apache.tomcat.embed:tomcat-embed-core@11.0.24
+   Ruta: com.pedidos:pedidos-api@0.0.1-SNAPSHOT > org.springframework.boot:spring-boot-starter-webmvc@4.1.1 > org.springframework.boot:spring-boot-starter-tomcat@4.1.1 > org.springframework.boot:spring-boot-starter-tomcat-runtime@4.1.1 > org.apache.tomcat.embed:tomcat-embed-core@11.0.24
+   fixedIn informado: 9.0.121, 10.1.58, 11.0.25
+   Propuesta: Tomcat 11.0.27 o posterior compatible en la línea 11; actualizar los módulos Tomcat juntos.
+   Fuente: https://security.snyk.io/vuln/SNYK-JAVA-ORGAPACHETOMCATEMBED-20302843
+
+3. SNYK-JAVA-ORGAPACHETOMCATEMBED-21707475 | CVE-2026-101296
+   Missing Critical Step in Authentication | CRITICAL | org.apache.tomcat.embed:tomcat-embed-core@11.0.24
+   Ruta: com.pedidos:pedidos-api@0.0.1-SNAPSHOT > org.springframework.boot:spring-boot-starter-webmvc@4.1.1 > org.springframework.boot:spring-boot-starter-tomcat@4.1.1 > org.springframework.boot:spring-boot-starter-tomcat-runtime@4.1.1 > org.apache.tomcat.embed:tomcat-embed-core@11.0.24
+   fixedIn informado: 11.0.27, 10.1.61, 9.0.123
+   Propuesta: Tomcat 11.0.27 o posterior compatible en la línea 11; actualizar los módulos Tomcat juntos.
+   Fuente: https://security.snyk.io/vuln/SNYK-JAVA-ORGAPACHETOMCATEMBED-21707475
+
+4. SNYK-JAVA-ORGAPACHETOMCATEMBED-21707477 | CVE-2026-101356
+   Access Control Bypass | CRITICAL | org.apache.tomcat.embed:tomcat-embed-core@11.0.24
+   Ruta: com.pedidos:pedidos-api@0.0.1-SNAPSHOT > org.springframework.boot:spring-boot-starter-webmvc@4.1.1 > org.springframework.boot:spring-boot-starter-tomcat@4.1.1 > org.springframework.boot:spring-boot-starter-tomcat-runtime@4.1.1 > org.apache.tomcat.embed:tomcat-embed-core@11.0.24
+   fixedIn informado: 9.0.123, 10.1.61, 11.0.27
+   Propuesta: Tomcat 11.0.27 o posterior compatible en la línea 11; actualizar los módulos Tomcat juntos.
+   Fuente: https://security.snyk.io/vuln/SNYK-JAVA-ORGAPACHETOMCATEMBED-21707477
+
+5. SNYK-JAVA-ORGAPACHETOMCATEMBED-21716509 | CVE-2026-86350
+   HTTP Request Smuggling | CRITICAL | org.apache.tomcat.embed:tomcat-embed-core@11.0.24
+   Ruta: com.pedidos:pedidos-api@0.0.1-SNAPSHOT > org.springframework.boot:spring-boot-starter-webmvc@4.1.1 > org.springframework.boot:spring-boot-starter-tomcat@4.1.1 > org.springframework.boot:spring-boot-starter-tomcat-runtime@4.1.1 > org.apache.tomcat.embed:tomcat-embed-core@11.0.24
+   fixedIn informado: 9.0.122, 10.1.60, 11.0.26
+   Propuesta: Tomcat 11.0.27 o posterior compatible en la línea 11; actualizar los módulos Tomcat juntos.
+   Fuente: https://security.snyk.io/vuln/SNYK-JAVA-ORGAPACHETOMCATEMBED-21716509
+
+6. SNYK-JAVA-ORGAPACHETOMCATEMBED-20552494 | CVE-2026-76183
+   Authentication Bypass by Alternate Name | CRITICAL | org.apache.tomcat.embed:tomcat-embed-websocket@11.0.24
+   Ruta: com.pedidos:pedidos-api@0.0.1-SNAPSHOT > org.springframework.boot:spring-boot-starter-webmvc@4.1.1 > org.springframework.boot:spring-boot-starter-tomcat@4.1.1 > org.springframework.boot:spring-boot-starter-tomcat-runtime@4.1.1 > org.apache.tomcat.embed:tomcat-embed-websocket@11.0.24
+   fixedIn informado: 9.0.122, 10.1.60, 11.0.26
+   Propuesta: Tomcat 11.0.27 o posterior compatible en la línea 11; actualizar los módulos Tomcat juntos.
+   Fuente: https://security.snyk.io/vuln/SNYK-JAVA-ORGAPACHETOMCATEMBED-20552494
+
+7. SNYK-JAVA-TOOLSJACKSONCORE-21761838 | CVE-2026-110879
+   Deserialization of Untrusted Data | CRITICAL | tools.jackson.core:jackson-databind@3.1.5
+   Ruta: com.pedidos:pedidos-api@0.0.1-SNAPSHOT > org.springframework.boot:spring-boot-starter-webmvc@4.1.1 > org.springframework.boot:spring-boot-starter-jackson@4.1.1 > org.springframework.boot:spring-boot-jackson@4.1.1 > tools.jackson.core:jackson-databind@3.1.5
+   fixedIn informado: 3.1.8, 3.2.4
+   Propuesta: Jackson databind 3.1.8 o posterior compatible; alternativa 3.2.4 con migración y alineación de BOM verificadas.
+   Fuente: https://security.snyk.io/vuln/SNYK-JAVA-TOOLSJACKSONCORE-21761838
+
+5. Plan de tratamiento (propuesta, no cambio aplicado)
+A. Tomcat: Snyk propone starter-webmvc 4.1.2 y muestra Tomcat 11.0.27 en
+   upgradePath. Evaluar subir el parent/BOM Spring Boot de manera coherente,
+   no fijar versiones aisladas de cada starter. Verificar el árbol efectivo.
+B. Jackson: esa propuesta de Boot muestra Jackson 3.1.7 y NO cubre el crítico
+   de databind, cuyo mínimo en la línea 3.1 es 3.1.8. Buscar un BOM Boot compatible
+   que gestione la versión corregida o evaluar una sobrescritura del BOM Jackson
+   alineando sus módulos. La existencia de fixedIn no garantiza actualización
+   automática: para este crítico Snyk indica isUpgradable=false y upgradePath vacío.
+C. Antes de aceptar cambios: resolver árbol, ejecutar clean verify con base H2
+   de prueba, comprobar API/JSON, pedidos y métricas; reconstruir imagen y repetir
+   Snyk y Trivy con evidencias separadas. No declarar corrección hasta verificar.
+D. JAXB core 4.0.9 presenta un HIGH de XXE sin fixedIn en este resultado.
+   Seguir aviso oficial, revisar si se procesa XML externo y configuración de
+   entidades/DTD; no inventar versión segura ni eliminar dependencia a ciegas.
+   https://security.snyk.io/vuln/SNYK-JAVA-ORGGLASSFISHJAXB-20883142
+E. Sin análisis de alcanzabilidad ni prueba de exploit. Por ejemplo, la ficha
+   del crítico Jackson exige deserialización polimórfica con IDs de tipo basados
+   en nombres de clase; la de Tomcat SNYK-JAVA-ORGAPACHETOMCATEMBED-21707475
+   describe JNDIRealm con SASL no GSSAPI. No se confirmó esa configuración aquí.
+F. Pendiente Jenkins L4-09: bloquear críticos con la etapa Snyk. El comando usado
+   aquí devuelve 1 ante cualquier severidad; no se añadió pipeline en L4-06.
+
+6. Otros HIGH detectados (permanecen abiertos)
+- SNYK-JAVA-ORGAPACHETOMCATEMBED-20302886 | org.apache.tomcat.embed:tomcat-embed-core@11.0.24 | Off-by-one Error | fixedIn: 9.0.121, 10.1.59, 11.0.25
+- SNYK-JAVA-ORGAPACHETOMCATEMBED-20302889 | org.apache.tomcat.embed:tomcat-embed-core@11.0.24 | Authentication Bypass by Primary Weakness | fixedIn: 9.0.121, 10.1.59, 11.0.25
+- SNYK-JAVA-ORGAPACHETOMCATEMBED-20304748 | org.apache.tomcat.embed:tomcat-embed-core@11.0.24 | Allocation of Resources Without Limits or Throttling | fixedIn: 9.0.121, 10.1.59, 11.0.25
+- SNYK-JAVA-ORGAPACHETOMCATEMBED-21715436 | org.apache.tomcat.embed:tomcat-embed-core@11.0.24 | Allocation of Resources Without Limits or Throttling | fixedIn: 9.0.122, 10.1.59, 11.0.26
+- SNYK-JAVA-ORGAPACHETOMCATEMBED-21246252 | org.apache.tomcat.embed:tomcat-embed-websocket@11.0.24 | Missing Release of Resource after Effective Lifetime | fixedIn: 11.0.26, 10.1.60, 9.0.122
+- SNYK-JAVA-ORGAPACHETOMCATEMBED-21249759 | org.apache.tomcat.embed:tomcat-embed-websocket@11.0.24 | Denial of Service (DoS) | fixedIn: 9.0.121, 10.1.59, 11.0.25
+- SNYK-JAVA-ORGGLASSFISHJAXB-20883142 | org.glassfish.jaxb:jaxb-core@4.0.9 | XML External Entity (XXE) Injection | fixedIn: sin versión corregida informada
+- SNYK-JAVA-TOOLSJACKSONCORE-19778371 | tools.jackson.core:jackson-databind@3.1.5 | Allocation of Resources Without Limits or Throttling | fixedIn: 3.1.6, 3.2.2
+- SNYK-JAVA-TOOLSJACKSONCORE-20059682 | tools.jackson.core:jackson-databind@3.1.5 | Allocation of Resources Without Limits or Throttling | fixedIn: 3.1.7, 3.2.3
+- SNYK-JAVA-TOOLSJACKSONCORE-20059180 | tools.jackson.core:jackson-core@3.1.5 | Allocation of Resources Without Limits or Throttling | fixedIn: 3.1.7, 3.2.3
+- SNYK-JAVA-TOOLSJACKSONCORE-21193288 | tools.jackson.core:jackson-core@3.1.5 | Denial of Service (DoS) | fixedIn: 3.1.6, 3.2.2
+
+7. Evidencias y límites
+reports/l4-06/snyk.json: resultado original completo, incluyendo rutas y avisos.
+reports/l4-06/snyk-output.txt: stdout/stderr original.
+reports/l4-06/summary.json: resumen calculado y cotejado con salida.
+Fuera del repo: handoffs/evidencias_l4_06_2026-11-10/ conserva preparación,
+descarga, árbol Maven, comando, exit, huellas y fuentes. Escaneo realizado 11/11.
+35 reportes previos intactos por SHA256. No se modificó POM, Java, imagen ni
+instalación del clúster; sin commit/publicación ni escritura de los Word.
+Los once HIGH/CRITICAL Trivy L4-02 siguen abiertos. Son análisis de alcance,
+catálogo y fecha distintos: no sumar 11+18 como vulnerabilidades únicas ni
+interpretar 52 Trivy frente a 44 Snyk como mejora de seguridad.
+Autenticación confirmada por el scan exitoso, sin leer/imprimir credenciales.
+La comprobación inicial del archivo APPDATA dio ausencia; eso solo no prueba
+falta de sesión, ya que el análisis real sí quedó autorizado.
+
+Documentación exit codes/scopes:
+https://docs.snyk.io/developer-tools/snyk-cli/commands/test

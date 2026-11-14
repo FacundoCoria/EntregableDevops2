@@ -1,0 +1,92 @@
+[
+  {
+    "case": "conforme.json",
+    "expected": "ACCEPT",
+    "exitCode": 0,
+    "pass": true
+  },
+  {
+    "case": "containers-latest.json",
+    "expected": "DENY l4-deny-latest-images",
+    "exitCode": 1,
+    "pass": true
+  },
+  {
+    "case": "containers-sin-tag.json",
+    "expected": "DENY l4-deny-latest-images",
+    "exitCode": 1,
+    "pass": true
+  },
+  {
+    "case": "containers-resources.json",
+    "expected": "DENY l4-require-container-resources",
+    "exitCode": 1,
+    "pass": true
+  },
+  {
+    "case": "containers-root.json",
+    "expected": "DENY l4-disallow-root-containers",
+    "exitCode": 1,
+    "pass": true
+  },
+  {
+    "case": "containers-uid-zero.json",
+    "expected": "DENY l4-disallow-root-containers",
+    "exitCode": 1,
+    "pass": true
+  },
+  {
+    "case": "containers-privileged.json",
+    "expected": "DENY l4-disallow-privileged-containers",
+    "exitCode": 1,
+    "pass": true
+  },
+  {
+    "case": "initcontainers-latest.json",
+    "expected": "DENY l4-deny-latest-images",
+    "exitCode": 1,
+    "pass": false
+  },
+  {
+    "case": "initcontainers-sin-tag.json",
+    "expected": "DENY l4-deny-latest-images",
+    "exitCode": 1,
+    "pass": false
+  },
+  {
+    "case": "initcontainers-resources.json",
+    "expected": "DENY l4-require-container-resources",
+    "exitCode": 1,
+    "pass": false
+  },
+  {
+    "case": "initcontainers-root.json",
+    "expected": "DENY l4-disallow-root-containers",
+    "exitCode": 1,
+    "pass": false
+  },
+  {
+    "case": "initcontainers-uid-zero.json",
+    "expected": "DENY l4-disallow-root-containers",
+    "exitCode": 1,
+    "pass": false
+  },
+  {
+    "case": "initcontainers-privileged.json",
+    "expected": "DENY l4-disallow-privileged-containers",
+    "exitCode": 1,
+    "pass": false
+  },
+  {
+    "case": "herencia-pod-conforme.json",
+    "expected": "ACCEPT",
+    "exitCode": 0,
+    "pass": true
+  },
+  {
+    "case": "override-false.json",
+    "expected": "DENY l4-disallow-root-containers",
+    "exitCode": 1,
+    "pass": true
+  }
+]

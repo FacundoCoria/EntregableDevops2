@@ -1,0 +1,21 @@
+NAME                                         READY   STATUS    RESTARTS   AGE   IP            NODE       NOMINATED NODE   READINESS GATES
+pod/l4-pedidos-api-6fd7986c64-nvkwf          1/1     Running   0          45m   10.244.0.18   minikube   <none>           <none>
+pod/l4-pedidos-grafana-cc66fcb7b-7tlm7       1/1     Running   0          45m   10.244.0.17   minikube   <none>           <none>
+pod/l4-pedidos-prometheus-6ddd79b65d-xsk8p   1/1     Running   0          45m   10.244.0.19   minikube   <none>           <none>
+
+NAME                                    READY   UP-TO-DATE   AVAILABLE   AGE   CONTAINERS   IMAGES                                                                                            SELECTOR
+deployment.apps/l4-pedidos-api          1/1     1            1           17h   api          brunovitola/pedidos-api-l4:l4-7-0f47780b51b3                                                      app.kubernetes.io/component=api,app.kubernetes.io/instance=l4
+deployment.apps/l4-pedidos-grafana      1/1     1            1           17h   grafana      grafana/grafana:13.0.12@sha256:28476aa8096cd8d0f658a05a443b605fffb450e57f444335216175d604cfd23d   app.kubernetes.io/component=grafana,app.kubernetes.io/instance=l4
+deployment.apps/l4-pedidos-prometheus   1/1     1            1           17h   prometheus   prom/prometheus:v3.16.0@sha256:e04987641b57704f408e31f6373ba4138ecf27cb4a165d24aabb6c38fddd0f06   app.kubernetes.io/component=prometheus,app.kubernetes.io/instance=l4
+
+NAME                            TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)    AGE   SELECTOR
+service/l4-pedidos-api          ClusterIP   10.98.53.252   <none>        8080/TCP   17h   app.kubernetes.io/component=api,app.kubernetes.io/instance=l4
+service/l4-pedidos-grafana      ClusterIP   10.106.169.1   <none>        3000/TCP   17h   app.kubernetes.io/component=grafana,app.kubernetes.io/instance=l4
+service/l4-pedidos-prometheus   ClusterIP   10.105.81.14   <none>        9090/TCP   17h   app.kubernetes.io/component=prometheus,app.kubernetes.io/instance=l4
+
+NAME                                          STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE   VOLUMEMODE
+persistentvolumeclaim/l4-pedidos-api          Bound    pvc-3a26f3ca-9015-4e77-9e71-bc6c707070c4   1Gi        RWO            standard       <unset>                 17h   Filesystem
+persistentvolumeclaim/l4-pedidos-grafana      Bound    pvc-9509576c-9996-4f47-8221-ca0f8ce3b880   1Gi        RWO            standard       <unset>                 17h   Filesystem
+persistentvolumeclaim/l4-pedidos-prometheus   Bound    pvc-6c91870b-9d26-4a28-8e2e-09dd51478132   1Gi        RWO            standard       <unset>                 17h   Filesystem
+
+exit=0

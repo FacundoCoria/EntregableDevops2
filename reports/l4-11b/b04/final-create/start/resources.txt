@@ -1,0 +1,14 @@
+NAME                                         READY   STATUS    RESTARTS   AGE    IP           NODE              NOMINATED NODE   READINESS GATES
+pod/l4-pedidos-api-86bcb98458-fvf5t          1/1     Running   0          2m1s   10.244.0.8   minikube-l4-b04   <none>           <none>
+pod/l4-pedidos-grafana-7bf799949b-bl2hn      1/1     Running   0          2m1s   10.244.0.9   minikube-l4-b04   <none>           <none>
+pod/l4-pedidos-prometheus-79b7b8bcc5-q7scp   1/1     Running   0          2m2s   10.244.0.7   minikube-l4-b04   <none>           <none>
+
+NAME                                          STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE    VOLUMEMODE
+persistentvolumeclaim/l4-pedidos-api          Bound    pvc-4548e175-51cd-4a08-993c-035c6d696306   1Gi        RWO            standard       <unset>                 2m2s   Filesystem
+persistentvolumeclaim/l4-pedidos-grafana      Bound    pvc-b30abf3d-de2a-4f33-b7c2-d8da70052652   1Gi        RWO            standard       <unset>                 2m2s   Filesystem
+persistentvolumeclaim/l4-pedidos-prometheus   Bound    pvc-91c0f02b-203d-4ba2-8105-55cd1a82656c   1Gi        RWO            standard       <unset>                 2m2s   Filesystem
+
+NAME                            TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)    AGE    SELECTOR
+service/l4-pedidos-api          ClusterIP   10.97.177.182   <none>        8080/TCP   2m2s   app.kubernetes.io/component=api,app.kubernetes.io/instance=l4
+service/l4-pedidos-grafana      ClusterIP   10.96.118.127   <none>        3000/TCP   2m2s   app.kubernetes.io/component=grafana,app.kubernetes.io/instance=l4
+service/l4-pedidos-prometheus   ClusterIP   10.97.68.61     <none>        9090/TCP   2m2s   app.kubernetes.io/component=prometheus,app.kubernetes.io/instance=l4

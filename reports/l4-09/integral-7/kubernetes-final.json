@@ -1,0 +1,1828 @@
+{
+    "apiVersion": "v1",
+    "items": [
+        {
+            "apiVersion": "apps/v1",
+            "kind": "Deployment",
+            "metadata": {
+                "annotations": {
+                    "deployment.kubernetes.io/revision": "6",
+                    "meta.helm.sh/release-name": "l4",
+                    "meta.helm.sh/release-namespace": "laboratorio4"
+                },
+                "creationTimestamp": "2026-11-11T01:10:10Z",
+                "generation": 6,
+                "labels": {
+                    "app.kubernetes.io/component": "api",
+                    "app.kubernetes.io/instance": "l4",
+                    "app.kubernetes.io/managed-by": "Helm"
+                },
+                "name": "l4-pedidos-api",
+                "namespace": "laboratorio4",
+                "resourceVersion": "49255",
+                "uid": "5ebefbd0-16ab-4f0b-82bd-c279c8dbbe3c"
+            },
+            "spec": {
+                "progressDeadlineSeconds": 600,
+                "replicas": 1,
+                "revisionHistoryLimit": 10,
+                "selector": {
+                    "matchLabels": {
+                        "app.kubernetes.io/component": "api",
+                        "app.kubernetes.io/instance": "l4"
+                    }
+                },
+                "strategy": {
+                    "type": "Recreate"
+                },
+                "template": {
+                    "metadata": {
+                        "annotations": {
+                            "checksum/config": "3df06179eed74966e0359b2bc45fdc3f75f63792655ab45b7b04bac93f40b788",
+                            "kubectl.kubernetes.io/restartedAt": "2026-11-10T22:13:31-03:00"
+                        },
+                        "labels": {
+                            "app.kubernetes.io/component": "api",
+                            "app.kubernetes.io/instance": "l4"
+                        }
+                    },
+                    "spec": {
+                        "automountServiceAccountToken": false,
+                        "containers": [
+                            {
+                                "envFrom": [
+                                    {
+                                        "configMapRef": {
+                                            "name": "l4-pedidos-api"
+                                        }
+                                    }
+                                ],
+                                "image": "brunovitola/pedidos-api-l4:l4-7-0f47780b51b3",
+                                "imagePullPolicy": "IfNotPresent",
+                                "livenessProbe": {
+                                    "failureThreshold": 3,
+                                    "httpGet": {
+                                        "path": "/actuator/health/liveness",
+                                        "port": "http",
+                                        "scheme": "HTTP"
+                                    },
+                                    "periodSeconds": 15,
+                                    "successThreshold": 1,
+                                    "timeoutSeconds": 1
+                                },
+                                "name": "api",
+                                "ports": [
+                                    {
+                                        "containerPort": 8080,
+                                        "name": "http",
+                                        "protocol": "TCP"
+                                    }
+                                ],
+                                "readinessProbe": {
+                                    "failureThreshold": 3,
+                                    "httpGet": {
+                                        "path": "/actuator/health",
+                                        "port": "http",
+                                        "scheme": "HTTP"
+                                    },
+                                    "periodSeconds": 10,
+                                    "successThreshold": 1,
+                                    "timeoutSeconds": 1
+                                },
+                                "resources": {
+                                    "limits": {
+                                        "cpu": "1",
+                                        "memory": "768Mi"
+                                    },
+                                    "requests": {
+                                        "cpu": "250m",
+                                        "memory": "384Mi"
+                                    }
+                                },
+                                "securityContext": {
+                                    "allowPrivilegeEscalation": false,
+                                    "capabilities": {
+                                        "drop": [
+                                            "ALL"
+                                        ]
+                                    },
+                                    "runAsGroup": 10001,
+                                    "runAsNonRoot": true,
+                                    "runAsUser": 10001
+                                },
+                                "startupProbe": {
+                                    "failureThreshold": 60,
+                                    "httpGet": {
+                                        "path": "/actuator/health",
+                                        "port": "http",
+                                        "scheme": "HTTP"
+                                    },
+                                    "periodSeconds": 5,
+                                    "successThreshold": 1,
+                                    "timeoutSeconds": 1
+                                },
+                                "terminationMessagePath": "/dev/termination-log",
+                                "terminationMessagePolicy": "File",
+                                "volumeMounts": [
+                                    {
+                                        "mountPath": "/data",
+                                        "name": "data"
+                                    }
+                                ]
+                            }
+                        ],
+                        "dnsPolicy": "ClusterFirst",
+                        "restartPolicy": "Always",
+                        "schedulerName": "default-scheduler",
+                        "securityContext": {
+                            "fsGroup": 10001,
+                            "fsGroupChangePolicy": "OnRootMismatch",
+                            "seccompProfile": {
+                                "type": "RuntimeDefault"
+                            }
+                        },
+                        "terminationGracePeriodSeconds": 30,
+                        "volumes": [
+                            {
+                                "name": "data",
+                                "persistentVolumeClaim": {
+                                    "claimName": "l4-pedidos-api"
+                                }
+                            }
+                        ]
+                    }
+                }
+            },
+            "status": {
+                "availableReplicas": 1,
+                "conditions": [
+                    {
+                        "lastTransitionTime": "2026-11-11T17:44:12Z",
+                        "lastUpdateTime": "2026-11-11T17:44:12Z",
+                        "message": "Deployment has minimum availability.",
+                        "reason": "MinimumReplicasAvailable",
+                        "status": "True",
+                        "type": "Available"
+                    },
+                    {
+                        "lastTransitionTime": "2026-11-11T01:10:10Z",
+                        "lastUpdateTime": "2026-11-11T17:44:12Z",
+                        "message": "ReplicaSet \"l4-pedidos-api-5f56667f4b\" has successfully progressed.",
+                        "reason": "NewReplicaSetAvailable",
+                        "status": "True",
+                        "type": "Progressing"
+                    }
+                ],
+                "observedGeneration": 6,
+                "readyReplicas": 1,
+                "replicas": 1,
+                "terminatingReplicas": 0,
+                "updatedReplicas": 1
+            }
+        },
+        {
+            "apiVersion": "apps/v1",
+            "kind": "Deployment",
+            "metadata": {
+                "annotations": {
+                    "deployment.kubernetes.io/revision": "4",
+                    "meta.helm.sh/release-name": "l4",
+                    "meta.helm.sh/release-namespace": "laboratorio4"
+                },
+                "creationTimestamp": "2026-11-11T01:10:10Z",
+                "generation": 4,
+                "labels": {
+                    "app.kubernetes.io/component": "grafana",
+                    "app.kubernetes.io/instance": "l4",
+                    "app.kubernetes.io/managed-by": "Helm"
+                },
+                "name": "l4-pedidos-grafana",
+                "namespace": "laboratorio4",
+                "resourceVersion": "48364",
+                "uid": "14cf9469-1d77-46c4-bca0-5cbe35102fbd"
+            },
+            "spec": {
+                "progressDeadlineSeconds": 600,
+                "replicas": 1,
+                "revisionHistoryLimit": 10,
+                "selector": {
+                    "matchLabels": {
+                        "app.kubernetes.io/component": "grafana",
+                        "app.kubernetes.io/instance": "l4"
+                    }
+                },
+                "strategy": {
+                    "type": "Recreate"
+                },
+                "template": {
+                    "metadata": {
+                        "annotations": {
+                            "checksum/config": "3df06179eed74966e0359b2bc45fdc3f75f63792655ab45b7b04bac93f40b788"
+                        },
+                        "labels": {
+                            "app.kubernetes.io/component": "grafana",
+                            "app.kubernetes.io/instance": "l4"
+                        }
+                    },
+                    "spec": {
+                        "automountServiceAccountToken": false,
+                        "containers": [
+                            {
+                                "env": [
+                                    {
+                                        "name": "GF_DASHBOARDS_DEFAULT_HOME_DASHBOARD_PATH",
+                                        "value": "/etc/grafana/l4-dashboards/dashboard.json"
+                                    }
+                                ],
+                                "image": "grafana/grafana:13.0.12@sha256:28476aa8096cd8d0f658a05a443b605fffb450e57f444335216175d604cfd23d",
+                                "imagePullPolicy": "IfNotPresent",
+                                "livenessProbe": {
+                                    "failureThreshold": 3,
+                                    "httpGet": {
+                                        "path": "/api/health",
+                                        "port": "http",
+                                        "scheme": "HTTP"
+                                    },
+                                    "periodSeconds": 15,
+                                    "successThreshold": 1,
+                                    "timeoutSeconds": 1
+                                },
+                                "name": "grafana",
+                                "ports": [
+                                    {
+                                        "containerPort": 3000,
+                                        "name": "http",
+                                        "protocol": "TCP"
+                                    }
+                                ],
+                                "readinessProbe": {
+                                    "failureThreshold": 3,
+                                    "httpGet": {
+                                        "path": "/api/health",
+                                        "port": "http",
+                                        "scheme": "HTTP"
+                                    },
+                                    "periodSeconds": 10,
+                                    "successThreshold": 1,
+                                    "timeoutSeconds": 1
+                                },
+                                "resources": {
+                                    "limits": {
+                                        "cpu": "500m",
+                                        "memory": "1Gi"
+                                    },
+                                    "requests": {
+                                        "cpu": "100m",
+                                        "memory": "512Mi"
+                                    }
+                                },
+                                "securityContext": {
+                                    "allowPrivilegeEscalation": false,
+                                    "capabilities": {
+                                        "drop": [
+                                            "ALL"
+                                        ]
+                                    },
+                                    "runAsGroup": 472,
+                                    "runAsNonRoot": true,
+                                    "runAsUser": 472
+                                },
+                                "startupProbe": {
+                                    "failureThreshold": 60,
+                                    "httpGet": {
+                                        "path": "/api/health",
+                                        "port": "http",
+                                        "scheme": "HTTP"
+                                    },
+                                    "periodSeconds": 5,
+                                    "successThreshold": 1,
+                                    "timeoutSeconds": 1
+                                },
+                                "terminationMessagePath": "/dev/termination-log",
+                                "terminationMessagePolicy": "File",
+                                "volumeMounts": [
+                                    {
+                                        "mountPath": "/var/lib/grafana",
+                                        "name": "data"
+                                    },
+                                    {
+                                        "mountPath": "/etc/grafana/provisioning/datasources/l4.yaml",
+                                        "name": "provisioning",
+                                        "readOnly": true,
+                                        "subPath": "datasource.yaml"
+                                    },
+                                    {
+                                        "mountPath": "/etc/grafana/provisioning/dashboards/l4.yaml",
+                                        "name": "provisioning",
+                                        "readOnly": true,
+                                        "subPath": "dashboards.yaml"
+                                    },
+                                    {
+                                        "mountPath": "/etc/grafana/l4-dashboards",
+                                        "name": "dashboard",
+                                        "readOnly": true
+                                    }
+                                ]
+                            }
+                        ],
+                        "dnsPolicy": "ClusterFirst",
+                        "restartPolicy": "Always",
+                        "schedulerName": "default-scheduler",
+                        "securityContext": {
+                            "fsGroup": 472,
+                            "fsGroupChangePolicy": "OnRootMismatch",
+                            "seccompProfile": {
+                                "type": "RuntimeDefault"
+                            }
+                        },
+                        "terminationGracePeriodSeconds": 30,
+                        "volumes": [
+                            {
+                                "name": "data",
+                                "persistentVolumeClaim": {
+                                    "claimName": "l4-pedidos-grafana"
+                                }
+                            },
+                            {
+                                "configMap": {
+                                    "defaultMode": 420,
+                                    "name": "l4-pedidos-grafana-provisioning"
+                                },
+                                "name": "provisioning"
+                            },
+                            {
+                                "configMap": {
+                                    "defaultMode": 420,
+                                    "name": "l4-pedidos-grafana-dashboard"
+                                },
+                                "name": "dashboard"
+                            }
+                        ]
+                    }
+                }
+            },
+            "status": {
+                "availableReplicas": 1,
+                "conditions": [
+                    {
+                        "lastTransitionTime": "2026-11-11T17:37:47Z",
+                        "lastUpdateTime": "2026-11-11T17:37:47Z",
+                        "message": "Deployment has minimum availability.",
+                        "reason": "MinimumReplicasAvailable",
+                        "status": "True",
+                        "type": "Available"
+                    },
+                    {
+                        "lastTransitionTime": "2026-11-11T01:10:10Z",
+                        "lastUpdateTime": "2026-11-11T17:37:47Z",
+                        "message": "ReplicaSet \"l4-pedidos-grafana-7b9cf89f5d\" has successfully progressed.",
+                        "reason": "NewReplicaSetAvailable",
+                        "status": "True",
+                        "type": "Progressing"
+                    }
+                ],
+                "observedGeneration": 4,
+                "readyReplicas": 1,
+                "replicas": 1,
+                "terminatingReplicas": 0,
+                "updatedReplicas": 1
+            }
+        },
+        {
+            "apiVersion": "apps/v1",
+            "kind": "Deployment",
+            "metadata": {
+                "annotations": {
+                    "deployment.kubernetes.io/revision": "3",
+                    "meta.helm.sh/release-name": "l4",
+                    "meta.helm.sh/release-namespace": "laboratorio4"
+                },
+                "creationTimestamp": "2026-11-11T01:10:10Z",
+                "generation": 3,
+                "labels": {
+                    "app.kubernetes.io/component": "prometheus",
+                    "app.kubernetes.io/instance": "l4",
+                    "app.kubernetes.io/managed-by": "Helm"
+                },
+                "name": "l4-pedidos-prometheus",
+                "namespace": "laboratorio4",
+                "resourceVersion": "48321",
+                "uid": "80a4df07-3396-4c5d-8744-1131a27e0af4"
+            },
+            "spec": {
+                "progressDeadlineSeconds": 600,
+                "replicas": 1,
+                "revisionHistoryLimit": 10,
+                "selector": {
+                    "matchLabels": {
+                        "app.kubernetes.io/component": "prometheus",
+                        "app.kubernetes.io/instance": "l4"
+                    }
+                },
+                "strategy": {
+                    "type": "Recreate"
+                },
+                "template": {
+                    "metadata": {
+                        "annotations": {
+                            "checksum/config": "3df06179eed74966e0359b2bc45fdc3f75f63792655ab45b7b04bac93f40b788"
+                        },
+                        "labels": {
+                            "app.kubernetes.io/component": "prometheus",
+                            "app.kubernetes.io/instance": "l4"
+                        }
+                    },
+                    "spec": {
+                        "automountServiceAccountToken": true,
+                        "containers": [
+                            {
+                                "args": [
+                                    "--config.file=/etc/prometheus/prometheus.yml",
+                                    "--storage.tsdb.path=/prometheus",
+                                    "--storage.tsdb.retention.time=7d"
+                                ],
+                                "image": "prom/prometheus:v3.16.0@sha256:e04987641b57704f408e31f6373ba4138ecf27cb4a165d24aabb6c38fddd0f06",
+                                "imagePullPolicy": "IfNotPresent",
+                                "livenessProbe": {
+                                    "failureThreshold": 3,
+                                    "httpGet": {
+                                        "path": "/-/healthy",
+                                        "port": "http",
+                                        "scheme": "HTTP"
+                                    },
+                                    "periodSeconds": 15,
+                                    "successThreshold": 1,
+                                    "timeoutSeconds": 1
+                                },
+                                "name": "prometheus",
+                                "ports": [
+                                    {
+                                        "containerPort": 9090,
+                                        "name": "http",
+                                        "protocol": "TCP"
+                                    }
+                                ],
+                                "readinessProbe": {
+                                    "failureThreshold": 3,
+                                    "httpGet": {
+                                        "path": "/-/ready",
+                                        "port": "http",
+                                        "scheme": "HTTP"
+                                    },
+                                    "periodSeconds": 10,
+                                    "successThreshold": 1,
+                                    "timeoutSeconds": 1
+                                },
+                                "resources": {
+                                    "limits": {
+                                        "cpu": "500m",
+                                        "memory": "512Mi"
+                                    },
+                                    "requests": {
+                                        "cpu": "100m",
+                                        "memory": "128Mi"
+                                    }
+                                },
+                                "securityContext": {
+                                    "allowPrivilegeEscalation": false,
+                                    "capabilities": {
+                                        "drop": [
+                                            "ALL"
+                                        ]
+                                    },
+                                    "runAsGroup": 65534,
+                                    "runAsNonRoot": true,
+                                    "runAsUser": 65534
+                                },
+                                "startupProbe": {
+                                    "failureThreshold": 60,
+                                    "httpGet": {
+                                        "path": "/-/ready",
+                                        "port": "http",
+                                        "scheme": "HTTP"
+                                    },
+                                    "periodSeconds": 5,
+                                    "successThreshold": 1,
+                                    "timeoutSeconds": 1
+                                },
+                                "terminationMessagePath": "/dev/termination-log",
+                                "terminationMessagePolicy": "File",
+                                "volumeMounts": [
+                                    {
+                                        "mountPath": "/prometheus",
+                                        "name": "data"
+                                    },
+                                    {
+                                        "mountPath": "/etc/prometheus/prometheus.yml",
+                                        "name": "config",
+                                        "readOnly": true,
+                                        "subPath": "prometheus.yml"
+                                    }
+                                ]
+                            }
+                        ],
+                        "dnsPolicy": "ClusterFirst",
+                        "restartPolicy": "Always",
+                        "schedulerName": "default-scheduler",
+                        "securityContext": {
+                            "fsGroup": 65534,
+                            "fsGroupChangePolicy": "OnRootMismatch",
+                            "seccompProfile": {
+                                "type": "RuntimeDefault"
+                            }
+                        },
+                        "serviceAccount": "l4-pedidos-prometheus",
+                        "serviceAccountName": "l4-pedidos-prometheus",
+                        "terminationGracePeriodSeconds": 30,
+                        "volumes": [
+                            {
+                                "name": "data",
+                                "persistentVolumeClaim": {
+                                    "claimName": "l4-pedidos-prometheus"
+                                }
+                            },
+                            {
+                                "configMap": {
+                                    "defaultMode": 420,
+                                    "name": "l4-pedidos-prometheus"
+                                },
+                                "name": "config"
+                            }
+                        ]
+                    }
+                }
+            },
+            "status": {
+                "availableReplicas": 1,
+                "conditions": [
+                    {
+                        "lastTransitionTime": "2026-11-11T17:37:33Z",
+                        "lastUpdateTime": "2026-11-11T17:37:33Z",
+                        "message": "Deployment has minimum availability.",
+                        "reason": "MinimumReplicasAvailable",
+                        "status": "True",
+                        "type": "Available"
+                    },
+                    {
+                        "lastTransitionTime": "2026-11-11T01:10:10Z",
+                        "lastUpdateTime": "2026-11-11T17:37:33Z",
+                        "message": "ReplicaSet \"l4-pedidos-prometheus-7d8477d7dd\" has successfully progressed.",
+                        "reason": "NewReplicaSetAvailable",
+                        "status": "True",
+                        "type": "Progressing"
+                    }
+                ],
+                "observedGeneration": 3,
+                "readyReplicas": 1,
+                "replicas": 1,
+                "terminatingReplicas": 0,
+                "updatedReplicas": 1
+            }
+        },
+        {
+            "apiVersion": "v1",
+            "kind": "Pod",
+            "metadata": {
+                "annotations": {
+                    "checksum/config": "3df06179eed74966e0359b2bc45fdc3f75f63792655ab45b7b04bac93f40b788",
+                    "kubectl.kubernetes.io/restartedAt": "2026-11-10T22:13:31-03:00"
+                },
+                "creationTimestamp": "2026-11-11T17:43:46Z",
+                "generateName": "l4-pedidos-api-5f56667f4b-",
+                "generation": 1,
+                "labels": {
+                    "app.kubernetes.io/component": "api",
+                    "app.kubernetes.io/instance": "l4",
+                    "pod-template-hash": "5f56667f4b"
+                },
+                "name": "l4-pedidos-api-5f56667f4b-76mjp",
+                "namespace": "laboratorio4",
+                "ownerReferences": [
+                    {
+                        "apiVersion": "apps/v1",
+                        "blockOwnerDeletion": true,
+                        "controller": true,
+                        "kind": "ReplicaSet",
+                        "name": "l4-pedidos-api-5f56667f4b",
+                        "uid": "9b6b3760-693a-433e-b132-4372696450b5"
+                    }
+                ],
+                "resourceVersion": "49251",
+                "uid": "78a9ee8e-7518-4d4b-bc8b-967c50ec7676"
+            },
+            "spec": {
+                "automountServiceAccountToken": false,
+                "containers": [
+                    {
+                        "envFrom": [
+                            {
+                                "configMapRef": {
+                                    "name": "l4-pedidos-api"
+                                }
+                            }
+                        ],
+                        "image": "brunovitola/pedidos-api-l4:l4-7-0f47780b51b3",
+                        "imagePullPolicy": "IfNotPresent",
+                        "livenessProbe": {
+                            "failureThreshold": 3,
+                            "httpGet": {
+                                "path": "/actuator/health/liveness",
+                                "port": "http",
+                                "scheme": "HTTP"
+                            },
+                            "periodSeconds": 15,
+                            "successThreshold": 1,
+                            "timeoutSeconds": 1
+                        },
+                        "name": "api",
+                        "ports": [
+                            {
+                                "containerPort": 8080,
+                                "name": "http",
+                                "protocol": "TCP"
+                            }
+                        ],
+                        "readinessProbe": {
+                            "failureThreshold": 3,
+                            "httpGet": {
+                                "path": "/actuator/health",
+                                "port": "http",
+                                "scheme": "HTTP"
+                            },
+                            "periodSeconds": 10,
+                            "successThreshold": 1,
+                            "timeoutSeconds": 1
+                        },
+                        "resources": {
+                            "limits": {
+                                "cpu": "1",
+                                "memory": "768Mi"
+                            },
+                            "requests": {
+                                "cpu": "250m",
+                                "memory": "384Mi"
+                            }
+                        },
+                        "securityContext": {
+                            "allowPrivilegeEscalation": false,
+                            "capabilities": {
+                                "drop": [
+                                    "ALL"
+                                ]
+                            },
+                            "runAsGroup": 10001,
+                            "runAsNonRoot": true,
+                            "runAsUser": 10001
+                        },
+                        "startupProbe": {
+                            "failureThreshold": 60,
+                            "httpGet": {
+                                "path": "/actuator/health",
+                                "port": "http",
+                                "scheme": "HTTP"
+                            },
+                            "periodSeconds": 5,
+                            "successThreshold": 1,
+                            "timeoutSeconds": 1
+                        },
+                        "terminationMessagePath": "/dev/termination-log",
+                        "terminationMessagePolicy": "File",
+                        "volumeMounts": [
+                            {
+                                "mountPath": "/data",
+                                "name": "data"
+                            }
+                        ]
+                    }
+                ],
+                "dnsPolicy": "ClusterFirst",
+                "enableServiceLinks": true,
+                "nodeName": "minikube",
+                "preemptionPolicy": "PreemptLowerPriority",
+                "priority": 0,
+                "restartPolicy": "Always",
+                "schedulerName": "default-scheduler",
+                "securityContext": {
+                    "fsGroup": 10001,
+                    "fsGroupChangePolicy": "OnRootMismatch",
+                    "seccompProfile": {
+                        "type": "RuntimeDefault"
+                    }
+                },
+                "serviceAccount": "default",
+                "serviceAccountName": "default",
+                "terminationGracePeriodSeconds": 30,
+                "tolerations": [
+                    {
+                        "effect": "NoExecute",
+                        "key": "node.kubernetes.io/not-ready",
+                        "operator": "Exists",
+                        "tolerationSeconds": 300
+                    },
+                    {
+                        "effect": "NoExecute",
+                        "key": "node.kubernetes.io/unreachable",
+                        "operator": "Exists",
+                        "tolerationSeconds": 300
+                    }
+                ],
+                "volumes": [
+                    {
+                        "name": "data",
+                        "persistentVolumeClaim": {
+                            "claimName": "l4-pedidos-api"
+                        }
+                    }
+                ]
+            },
+            "status": {
+                "allocatedResources": {
+                    "cpu": "250m",
+                    "memory": "384Mi"
+                },
+                "conditions": [
+                    {
+                        "lastProbeTime": null,
+                        "lastTransitionTime": "2026-11-11T17:43:47Z",
+                        "observedGeneration": 1,
+                        "status": "True",
+                        "type": "PodReadyToStartContainers"
+                    },
+                    {
+                        "lastProbeTime": null,
+                        "lastTransitionTime": "2026-11-11T17:43:46Z",
+                        "observedGeneration": 1,
+                        "status": "True",
+                        "type": "Initialized"
+                    },
+                    {
+                        "lastProbeTime": null,
+                        "lastTransitionTime": "2026-11-11T17:44:12Z",
+                        "observedGeneration": 1,
+                        "status": "True",
+                        "type": "Ready"
+                    },
+                    {
+                        "lastProbeTime": null,
+                        "lastTransitionTime": "2026-11-11T17:44:12Z",
+                        "observedGeneration": 1,
+                        "status": "True",
+                        "type": "ContainersReady"
+                    },
+                    {
+                        "lastProbeTime": null,
+                        "lastTransitionTime": "2026-11-11T17:43:46Z",
+                        "observedGeneration": 1,
+                        "status": "True",
+                        "type": "PodScheduled"
+                    }
+                ],
+                "containerStatuses": [
+                    {
+                        "allocatedResources": {
+                            "cpu": "250m",
+                            "memory": "384Mi"
+                        },
+                        "containerID": "containerd://03de50e3d9091bc5c21097bd5fed3be8428d33ee791d2cac3a202f408d625fd0",
+                        "image": "docker.io/brunovitola/pedidos-api-l4:l4-6-33c1bb8d11f6",
+                        "imageID": "docker.io/brunovitola/pedidos-api-l4@sha256:48b65d95763c2a1eb6727f9b22b78fc27509f79b62a7b87903cea87a4aee41d9",
+                        "lastState": {},
+                        "name": "api",
+                        "ready": true,
+                        "resources": {
+                            "limits": {
+                                "cpu": "1",
+                                "memory": "768Mi"
+                            },
+                            "requests": {
+                                "cpu": "250m",
+                                "memory": "384Mi"
+                            }
+                        },
+                        "restartCount": 0,
+                        "started": true,
+                        "state": {
+                            "running": {
+                                "startedAt": "2026-11-11T17:43:48Z"
+                            }
+                        },
+                        "user": {
+                            "linux": {
+                                "gid": 10001,
+                                "supplementalGroups": [
+                                    10001
+                                ],
+                                "uid": 10001
+                            }
+                        },
+                        "volumeMounts": [
+                            {
+                                "mountPath": "/data",
+                                "name": "data"
+                            }
+                        ]
+                    }
+                ],
+                "hostIP": "192.168.49.2",
+                "hostIPs": [
+                    {
+                        "ip": "192.168.49.2"
+                    }
+                ],
+                "observedGeneration": 1,
+                "phase": "Running",
+                "podIP": "10.244.0.16",
+                "podIPs": [
+                    {
+                        "ip": "10.244.0.16"
+                    }
+                ],
+                "qosClass": "Burstable",
+                "resources": {
+                    "limits": {
+                        "cpu": "1",
+                        "memory": "768Mi"
+                    },
+                    "requests": {
+                        "cpu": "232m",
+                        "memory": "384Mi"
+                    }
+                },
+                "startTime": "2026-11-11T17:43:46Z"
+            }
+        },
+        {
+            "apiVersion": "v1",
+            "kind": "Pod",
+            "metadata": {
+                "annotations": {
+                    "checksum/config": "3df06179eed74966e0359b2bc45fdc3f75f63792655ab45b7b04bac93f40b788"
+                },
+                "creationTimestamp": "2026-11-11T17:37:26Z",
+                "generateName": "l4-pedidos-grafana-7b9cf89f5d-",
+                "generation": 1,
+                "labels": {
+                    "app.kubernetes.io/component": "grafana",
+                    "app.kubernetes.io/instance": "l4",
+                    "pod-template-hash": "7b9cf89f5d"
+                },
+                "name": "l4-pedidos-grafana-7b9cf89f5d-2bp9n",
+                "namespace": "laboratorio4",
+                "ownerReferences": [
+                    {
+                        "apiVersion": "apps/v1",
+                        "blockOwnerDeletion": true,
+                        "controller": true,
+                        "kind": "ReplicaSet",
+                        "name": "l4-pedidos-grafana-7b9cf89f5d",
+                        "uid": "52694b0c-d5cc-4250-bbf5-1a63d3ac12db"
+                    }
+                ],
+                "resourceVersion": "48359",
+                "uid": "ba9b19fc-d579-4d7d-a7f6-0f9939762870"
+            },
+            "spec": {
+                "automountServiceAccountToken": false,
+                "containers": [
+                    {
+                        "env": [
+                            {
+                                "name": "GF_DASHBOARDS_DEFAULT_HOME_DASHBOARD_PATH",
+                                "value": "/etc/grafana/l4-dashboards/dashboard.json"
+                            }
+                        ],
+                        "image": "grafana/grafana:13.0.12@sha256:28476aa8096cd8d0f658a05a443b605fffb450e57f444335216175d604cfd23d",
+                        "imagePullPolicy": "IfNotPresent",
+                        "livenessProbe": {
+                            "failureThreshold": 3,
+                            "httpGet": {
+                                "path": "/api/health",
+                                "port": "http",
+                                "scheme": "HTTP"
+                            },
+                            "periodSeconds": 15,
+                            "successThreshold": 1,
+                            "timeoutSeconds": 1
+                        },
+                        "name": "grafana",
+                        "ports": [
+                            {
+                                "containerPort": 3000,
+                                "name": "http",
+                                "protocol": "TCP"
+                            }
+                        ],
+                        "readinessProbe": {
+                            "failureThreshold": 3,
+                            "httpGet": {
+                                "path": "/api/health",
+                                "port": "http",
+                                "scheme": "HTTP"
+                            },
+                            "periodSeconds": 10,
+                            "successThreshold": 1,
+                            "timeoutSeconds": 1
+                        },
+                        "resources": {
+                            "limits": {
+                                "cpu": "500m",
+                                "memory": "1Gi"
+                            },
+                            "requests": {
+                                "cpu": "100m",
+                                "memory": "512Mi"
+                            }
+                        },
+                        "securityContext": {
+                            "allowPrivilegeEscalation": false,
+                            "capabilities": {
+                                "drop": [
+                                    "ALL"
+                                ]
+                            },
+                            "runAsGroup": 472,
+                            "runAsNonRoot": true,
+                            "runAsUser": 472
+                        },
+                        "startupProbe": {
+                            "failureThreshold": 60,
+                            "httpGet": {
+                                "path": "/api/health",
+                                "port": "http",
+                                "scheme": "HTTP"
+                            },
+                            "periodSeconds": 5,
+                            "successThreshold": 1,
+                            "timeoutSeconds": 1
+                        },
+                        "terminationMessagePath": "/dev/termination-log",
+                        "terminationMessagePolicy": "File",
+                        "volumeMounts": [
+                            {
+                                "mountPath": "/var/lib/grafana",
+                                "name": "data"
+                            },
+                            {
+                                "mountPath": "/etc/grafana/provisioning/datasources/l4.yaml",
+                                "name": "provisioning",
+                                "readOnly": true,
+                                "subPath": "datasource.yaml"
+                            },
+                            {
+                                "mountPath": "/etc/grafana/provisioning/dashboards/l4.yaml",
+                                "name": "provisioning",
+                                "readOnly": true,
+                                "subPath": "dashboards.yaml"
+                            },
+                            {
+                                "mountPath": "/etc/grafana/l4-dashboards",
+                                "name": "dashboard",
+                                "readOnly": true
+                            }
+                        ]
+                    }
+                ],
+                "dnsPolicy": "ClusterFirst",
+                "enableServiceLinks": true,
+                "nodeName": "minikube",
+                "preemptionPolicy": "PreemptLowerPriority",
+                "priority": 0,
+                "restartPolicy": "Always",
+                "schedulerName": "default-scheduler",
+                "securityContext": {
+                    "fsGroup": 472,
+                    "fsGroupChangePolicy": "OnRootMismatch",
+                    "seccompProfile": {
+                        "type": "RuntimeDefault"
+                    }
+                },
+                "serviceAccount": "default",
+                "serviceAccountName": "default",
+                "terminationGracePeriodSeconds": 30,
+                "tolerations": [
+                    {
+                        "effect": "NoExecute",
+                        "key": "node.kubernetes.io/not-ready",
+                        "operator": "Exists",
+                        "tolerationSeconds": 300
+                    },
+                    {
+                        "effect": "NoExecute",
+                        "key": "node.kubernetes.io/unreachable",
+                        "operator": "Exists",
+                        "tolerationSeconds": 300
+                    }
+                ],
+                "volumes": [
+                    {
+                        "name": "data",
+                        "persistentVolumeClaim": {
+                            "claimName": "l4-pedidos-grafana"
+                        }
+                    },
+                    {
+                        "configMap": {
+                            "defaultMode": 420,
+                            "name": "l4-pedidos-grafana-provisioning"
+                        },
+                        "name": "provisioning"
+                    },
+                    {
+                        "configMap": {
+                            "defaultMode": 420,
+                            "name": "l4-pedidos-grafana-dashboard"
+                        },
+                        "name": "dashboard"
+                    }
+                ]
+            },
+            "status": {
+                "allocatedResources": {
+                    "cpu": "100m",
+                    "memory": "512Mi"
+                },
+                "conditions": [
+                    {
+                        "lastProbeTime": null,
+                        "lastTransitionTime": "2026-11-11T17:37:28Z",
+                        "observedGeneration": 1,
+                        "status": "True",
+                        "type": "PodReadyToStartContainers"
+                    },
+                    {
+                        "lastProbeTime": null,
+                        "lastTransitionTime": "2026-11-11T17:37:27Z",
+                        "observedGeneration": 1,
+                        "status": "True",
+                        "type": "Initialized"
+                    },
+                    {
+                        "lastProbeTime": null,
+                        "lastTransitionTime": "2026-11-11T17:37:47Z",
+                        "observedGeneration": 1,
+                        "status": "True",
+                        "type": "Ready"
+                    },
+                    {
+                        "lastProbeTime": null,
+                        "lastTransitionTime": "2026-11-11T17:37:47Z",
+                        "observedGeneration": 1,
+                        "status": "True",
+                        "type": "ContainersReady"
+                    },
+                    {
+                        "lastProbeTime": null,
+                        "lastTransitionTime": "2026-11-11T17:37:27Z",
+                        "observedGeneration": 1,
+                        "status": "True",
+                        "type": "PodScheduled"
+                    }
+                ],
+                "containerStatuses": [
+                    {
+                        "allocatedResources": {
+                            "cpu": "100m",
+                            "memory": "512Mi"
+                        },
+                        "containerID": "containerd://d936bd58197e21a7300319de6f60ba4db1f93e201b86fea7053b9c6b3833b6a3",
+                        "image": "sha256:5ce3453a239c32b9c0f4be3d7b7970bb994a7223b27180870e09ca10b3cbebe9",
+                        "imageID": "docker.io/grafana/grafana@sha256:28476aa8096cd8d0f658a05a443b605fffb450e57f444335216175d604cfd23d",
+                        "lastState": {},
+                        "name": "grafana",
+                        "ready": true,
+                        "resources": {
+                            "limits": {
+                                "cpu": "500m",
+                                "memory": "1Gi"
+                            },
+                            "requests": {
+                                "cpu": "100m",
+                                "memory": "512Mi"
+                            }
+                        },
+                        "restartCount": 0,
+                        "started": true,
+                        "state": {
+                            "running": {
+                                "startedAt": "2026-11-11T17:37:29Z"
+                            }
+                        },
+                        "user": {
+                            "linux": {
+                                "gid": 472,
+                                "supplementalGroups": [
+                                    0,
+                                    472
+                                ],
+                                "uid": 472
+                            }
+                        },
+                        "volumeMounts": [
+                            {
+                                "mountPath": "/var/lib/grafana",
+                                "name": "data"
+                            },
+                            {
+                                "mountPath": "/etc/grafana/provisioning/datasources/l4.yaml",
+                                "name": "provisioning",
+                                "readOnly": true,
+                                "recursiveReadOnly": "Disabled"
+                            },
+                            {
+                                "mountPath": "/etc/grafana/provisioning/dashboards/l4.yaml",
+                                "name": "provisioning",
+                                "readOnly": true,
+                                "recursiveReadOnly": "Disabled"
+                            },
+                            {
+                                "mountPath": "/etc/grafana/l4-dashboards",
+                                "name": "dashboard",
+                                "readOnly": true,
+                                "recursiveReadOnly": "Disabled"
+                            }
+                        ]
+                    }
+                ],
+                "hostIP": "192.168.49.2",
+                "hostIPs": [
+                    {
+                        "ip": "192.168.49.2"
+                    }
+                ],
+                "observedGeneration": 1,
+                "phase": "Running",
+                "podIP": "10.244.0.14",
+                "podIPs": [
+                    {
+                        "ip": "10.244.0.14"
+                    }
+                ],
+                "qosClass": "Burstable",
+                "resources": {
+                    "limits": {
+                        "cpu": "500m",
+                        "memory": "1Gi"
+                    },
+                    "requests": {
+                        "cpu": "79m",
+                        "memory": "512Mi"
+                    }
+                },
+                "startTime": "2026-11-11T17:37:27Z"
+            }
+        },
+        {
+            "apiVersion": "v1",
+            "kind": "Pod",
+            "metadata": {
+                "annotations": {
+                    "checksum/config": "3df06179eed74966e0359b2bc45fdc3f75f63792655ab45b7b04bac93f40b788"
+                },
+                "creationTimestamp": "2026-11-11T17:37:26Z",
+                "generateName": "l4-pedidos-prometheus-7d8477d7dd-",
+                "generation": 1,
+                "labels": {
+                    "app.kubernetes.io/component": "prometheus",
+                    "app.kubernetes.io/instance": "l4",
+                    "pod-template-hash": "7d8477d7dd"
+                },
+                "name": "l4-pedidos-prometheus-7d8477d7dd-vtm42",
+                "namespace": "laboratorio4",
+                "ownerReferences": [
+                    {
+                        "apiVersion": "apps/v1",
+                        "blockOwnerDeletion": true,
+                        "controller": true,
+                        "kind": "ReplicaSet",
+                        "name": "l4-pedidos-prometheus-7d8477d7dd",
+                        "uid": "52a389a3-1c78-409a-972f-06030f7f6dbf"
+                    }
+                ],
+                "resourceVersion": "48316",
+                "uid": "a79df90c-c450-4c66-81e9-15b4241d5708"
+            },
+            "spec": {
+                "automountServiceAccountToken": true,
+                "containers": [
+                    {
+                        "args": [
+                            "--config.file=/etc/prometheus/prometheus.yml",
+                            "--storage.tsdb.path=/prometheus",
+                            "--storage.tsdb.retention.time=7d"
+                        ],
+                        "image": "prom/prometheus:v3.16.0@sha256:e04987641b57704f408e31f6373ba4138ecf27cb4a165d24aabb6c38fddd0f06",
+                        "imagePullPolicy": "IfNotPresent",
+                        "livenessProbe": {
+                            "failureThreshold": 3,
+                            "httpGet": {
+                                "path": "/-/healthy",
+                                "port": "http",
+                                "scheme": "HTTP"
+                            },
+                            "periodSeconds": 15,
+                            "successThreshold": 1,
+                            "timeoutSeconds": 1
+                        },
+                        "name": "prometheus",
+                        "ports": [
+                            {
+                                "containerPort": 9090,
+                                "name": "http",
+                                "protocol": "TCP"
+                            }
+                        ],
+                        "readinessProbe": {
+                            "failureThreshold": 3,
+                            "httpGet": {
+                                "path": "/-/ready",
+                                "port": "http",
+                                "scheme": "HTTP"
+                            },
+                            "periodSeconds": 10,
+                            "successThreshold": 1,
+                            "timeoutSeconds": 1
+                        },
+                        "resources": {
+                            "limits": {
+                                "cpu": "500m",
+                                "memory": "512Mi"
+                            },
+                            "requests": {
+                                "cpu": "100m",
+                                "memory": "128Mi"
+                            }
+                        },
+                        "securityContext": {
+                            "allowPrivilegeEscalation": false,
+                            "capabilities": {
+                                "drop": [
+                                    "ALL"
+                                ]
+                            },
+                            "runAsGroup": 65534,
+                            "runAsNonRoot": true,
+                            "runAsUser": 65534
+                        },
+                        "startupProbe": {
+                            "failureThreshold": 60,
+                            "httpGet": {
+                                "path": "/-/ready",
+                                "port": "http",
+                                "scheme": "HTTP"
+                            },
+                            "periodSeconds": 5,
+                            "successThreshold": 1,
+                            "timeoutSeconds": 1
+                        },
+                        "terminationMessagePath": "/dev/termination-log",
+                        "terminationMessagePolicy": "File",
+                        "volumeMounts": [
+                            {
+                                "mountPath": "/prometheus",
+                                "name": "data"
+                            },
+                            {
+                                "mountPath": "/etc/prometheus/prometheus.yml",
+                                "name": "config",
+                                "readOnly": true,
+                                "subPath": "prometheus.yml"
+                            },
+                            {
+                                "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                                "name": "kube-api-access-mfwpl",
+                                "readOnly": true
+                            }
+                        ]
+                    }
+                ],
+                "dnsPolicy": "ClusterFirst",
+                "enableServiceLinks": true,
+                "nodeName": "minikube",
+                "preemptionPolicy": "PreemptLowerPriority",
+                "priority": 0,
+                "restartPolicy": "Always",
+                "schedulerName": "default-scheduler",
+                "securityContext": {
+                    "fsGroup": 65534,
+                    "fsGroupChangePolicy": "OnRootMismatch",
+                    "seccompProfile": {
+                        "type": "RuntimeDefault"
+                    }
+                },
+                "serviceAccount": "l4-pedidos-prometheus",
+                "serviceAccountName": "l4-pedidos-prometheus",
+                "terminationGracePeriodSeconds": 30,
+                "tolerations": [
+                    {
+                        "effect": "NoExecute",
+                        "key": "node.kubernetes.io/not-ready",
+                        "operator": "Exists",
+                        "tolerationSeconds": 300
+                    },
+                    {
+                        "effect": "NoExecute",
+                        "key": "node.kubernetes.io/unreachable",
+                        "operator": "Exists",
+                        "tolerationSeconds": 300
+                    }
+                ],
+                "volumes": [
+                    {
+                        "name": "data",
+                        "persistentVolumeClaim": {
+                            "claimName": "l4-pedidos-prometheus"
+                        }
+                    },
+                    {
+                        "configMap": {
+                            "defaultMode": 420,
+                            "name": "l4-pedidos-prometheus"
+                        },
+                        "name": "config"
+                    },
+                    {
+                        "name": "kube-api-access-mfwpl",
+                        "projected": {
+                            "defaultMode": 420,
+                            "sources": [
+                                {
+                                    "serviceAccountToken": {
+                                        "expirationSeconds": 3607,
+                                        "path": "token"
+                                    }
+                                },
+                                {
+                                    "configMap": {
+                                        "items": [
+                                            {
+                                                "key": "ca.crt",
+                                                "path": "ca.crt"
+                                            }
+                                        ],
+                                        "name": "kube-root-ca.crt"
+                                    }
+                                },
+                                {
+                                    "downwardAPI": {
+                                        "items": [
+                                            {
+                                                "fieldRef": {
+                                                    "apiVersion": "v1",
+                                                    "fieldPath": "metadata.namespace"
+                                                },
+                                                "path": "namespace"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "status": {
+                "allocatedResources": {
+                    "cpu": "100m",
+                    "memory": "128Mi"
+                },
+                "conditions": [
+                    {
+                        "lastProbeTime": null,
+                        "lastTransitionTime": "2026-11-11T17:37:28Z",
+                        "observedGeneration": 1,
+                        "status": "True",
+                        "type": "PodReadyToStartContainers"
+                    },
+                    {
+                        "lastProbeTime": null,
+                        "lastTransitionTime": "2026-11-11T17:37:27Z",
+                        "observedGeneration": 1,
+                        "status": "True",
+                        "type": "Initialized"
+                    },
+                    {
+                        "lastProbeTime": null,
+                        "lastTransitionTime": "2026-11-11T17:37:33Z",
+                        "observedGeneration": 1,
+                        "status": "True",
+                        "type": "Ready"
+                    },
+                    {
+                        "lastProbeTime": null,
+                        "lastTransitionTime": "2026-11-11T17:37:33Z",
+                        "observedGeneration": 1,
+                        "status": "True",
+                        "type": "ContainersReady"
+                    },
+                    {
+                        "lastProbeTime": null,
+                        "lastTransitionTime": "2026-11-11T17:37:27Z",
+                        "observedGeneration": 1,
+                        "status": "True",
+                        "type": "PodScheduled"
+                    }
+                ],
+                "containerStatuses": [
+                    {
+                        "allocatedResources": {
+                            "cpu": "100m",
+                            "memory": "128Mi"
+                        },
+                        "containerID": "containerd://64fc61b439885cd5410e862df0cd0ba1dfe92ba72117fe952228b0e7fb7e4392",
+                        "image": "docker.io/prom/prometheus:latest",
+                        "imageID": "docker.io/prom/prometheus@sha256:e04987641b57704f408e31f6373ba4138ecf27cb4a165d24aabb6c38fddd0f06",
+                        "lastState": {},
+                        "name": "prometheus",
+                        "ready": true,
+                        "resources": {
+                            "limits": {
+                                "cpu": "500m",
+                                "memory": "512Mi"
+                            },
+                            "requests": {
+                                "cpu": "100m",
+                                "memory": "128Mi"
+                            }
+                        },
+                        "restartCount": 0,
+                        "started": true,
+                        "state": {
+                            "running": {
+                                "startedAt": "2026-11-11T17:37:29Z"
+                            }
+                        },
+                        "user": {
+                            "linux": {
+                                "gid": 65534,
+                                "supplementalGroups": [
+                                    65534
+                                ],
+                                "uid": 65534
+                            }
+                        },
+                        "volumeMounts": [
+                            {
+                                "mountPath": "/prometheus",
+                                "name": "data"
+                            },
+                            {
+                                "mountPath": "/etc/prometheus/prometheus.yml",
+                                "name": "config",
+                                "readOnly": true,
+                                "recursiveReadOnly": "Disabled"
+                            },
+                            {
+                                "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                                "name": "kube-api-access-mfwpl",
+                                "readOnly": true,
+                                "recursiveReadOnly": "Disabled"
+                            }
+                        ]
+                    }
+                ],
+                "hostIP": "192.168.49.2",
+                "hostIPs": [
+                    {
+                        "ip": "192.168.49.2"
+                    }
+                ],
+                "observedGeneration": 1,
+                "phase": "Running",
+                "podIP": "10.244.0.13",
+                "podIPs": [
+                    {
+                        "ip": "10.244.0.13"
+                    }
+                ],
+                "qosClass": "Burstable",
+                "resources": {
+                    "limits": {
+                        "cpu": "500m",
+                        "memory": "512Mi"
+                    },
+                    "requests": {
+                        "cpu": "79m",
+                        "memory": "128Mi"
+                    }
+                },
+                "startTime": "2026-11-11T17:37:27Z"
+            }
+        },
+        {
+            "apiVersion": "v1",
+            "kind": "PersistentVolumeClaim",
+            "metadata": {
+                "annotations": {
+                    "helm.sh/resource-policy": "keep",
+                    "meta.helm.sh/release-name": "l4",
+                    "meta.helm.sh/release-namespace": "laboratorio4",
+                    "pv.kubernetes.io/bind-completed": "yes",
+                    "pv.kubernetes.io/bound-by-controller": "yes",
+                    "volume.beta.kubernetes.io/storage-provisioner": "k8s.io/minikube-hostpath",
+                    "volume.kubernetes.io/storage-provisioner": "k8s.io/minikube-hostpath"
+                },
+                "creationTimestamp": "2026-11-11T01:10:10Z",
+                "finalizers": [
+                    "kubernetes.io/pvc-protection"
+                ],
+                "labels": {
+                    "app.kubernetes.io/managed-by": "Helm"
+                },
+                "name": "l4-pedidos-api",
+                "namespace": "laboratorio4",
+                "resourceVersion": "49171",
+                "uid": "3a26f3ca-9015-4e77-9e71-bc6c707070c4"
+            },
+            "spec": {
+                "accessModes": [
+                    "ReadWriteOnce"
+                ],
+                "resources": {
+                    "requests": {
+                        "storage": "1Gi"
+                    }
+                },
+                "storageClassName": "standard",
+                "volumeMode": "Filesystem",
+                "volumeName": "pvc-3a26f3ca-9015-4e77-9e71-bc6c707070c4"
+            },
+            "status": {
+                "accessModes": [
+                    "ReadWriteOnce"
+                ],
+                "capacity": {
+                    "storage": "1Gi"
+                },
+                "conditions": [
+                    {
+                        "lastProbeTime": null,
+                        "lastTransitionTime": "2026-11-11T17:43:46Z",
+                        "message": "A pod is currently referencing this PVC",
+                        "reason": "PodUsingPVC",
+                        "status": "False",
+                        "type": "Unused"
+                    }
+                ],
+                "phase": "Bound"
+            }
+        },
+        {
+            "apiVersion": "v1",
+            "kind": "PersistentVolumeClaim",
+            "metadata": {
+                "annotations": {
+                    "helm.sh/resource-policy": "keep",
+                    "meta.helm.sh/release-name": "l4",
+                    "meta.helm.sh/release-namespace": "laboratorio4",
+                    "pv.kubernetes.io/bind-completed": "yes",
+                    "pv.kubernetes.io/bound-by-controller": "yes",
+                    "volume.beta.kubernetes.io/storage-provisioner": "k8s.io/minikube-hostpath",
+                    "volume.kubernetes.io/storage-provisioner": "k8s.io/minikube-hostpath"
+                },
+                "creationTimestamp": "2026-11-11T01:10:10Z",
+                "finalizers": [
+                    "kubernetes.io/pvc-protection"
+                ],
+                "labels": {
+                    "app.kubernetes.io/managed-by": "Helm"
+                },
+                "name": "l4-pedidos-grafana",
+                "namespace": "laboratorio4",
+                "resourceVersion": "48240",
+                "uid": "9509576c-9996-4f47-8221-ca0f8ce3b880"
+            },
+            "spec": {
+                "accessModes": [
+                    "ReadWriteOnce"
+                ],
+                "resources": {
+                    "requests": {
+                        "storage": "1Gi"
+                    }
+                },
+                "storageClassName": "standard",
+                "volumeMode": "Filesystem",
+                "volumeName": "pvc-9509576c-9996-4f47-8221-ca0f8ce3b880"
+            },
+            "status": {
+                "accessModes": [
+                    "ReadWriteOnce"
+                ],
+                "capacity": {
+                    "storage": "1Gi"
+                },
+                "conditions": [
+                    {
+                        "lastProbeTime": null,
+                        "lastTransitionTime": "2026-11-11T17:37:26Z",
+                        "message": "A pod is currently referencing this PVC",
+                        "reason": "PodUsingPVC",
+                        "status": "False",
+                        "type": "Unused"
+                    }
+                ],
+                "phase": "Bound"
+            }
+        },
+        {
+            "apiVersion": "v1",
+            "kind": "PersistentVolumeClaim",
+            "metadata": {
+                "annotations": {
+                    "helm.sh/resource-policy": "keep",
+                    "meta.helm.sh/release-name": "l4",
+                    "meta.helm.sh/release-namespace": "laboratorio4",
+                    "pv.kubernetes.io/bind-completed": "yes",
+                    "pv.kubernetes.io/bound-by-controller": "yes",
+                    "volume.beta.kubernetes.io/storage-provisioner": "k8s.io/minikube-hostpath",
+                    "volume.kubernetes.io/storage-provisioner": "k8s.io/minikube-hostpath"
+                },
+                "creationTimestamp": "2026-11-11T01:10:10Z",
+                "finalizers": [
+                    "kubernetes.io/pvc-protection"
+                ],
+                "labels": {
+                    "app.kubernetes.io/managed-by": "Helm"
+                },
+                "name": "l4-pedidos-prometheus",
+                "namespace": "laboratorio4",
+                "resourceVersion": "48245",
+                "uid": "6c91870b-9d26-4a28-8e2e-09dd51478132"
+            },
+            "spec": {
+                "accessModes": [
+                    "ReadWriteOnce"
+                ],
+                "resources": {
+                    "requests": {
+                        "storage": "1Gi"
+                    }
+                },
+                "storageClassName": "standard",
+                "volumeMode": "Filesystem",
+                "volumeName": "pvc-6c91870b-9d26-4a28-8e2e-09dd51478132"
+            },
+            "status": {
+                "accessModes": [
+                    "ReadWriteOnce"
+                ],
+                "capacity": {
+                    "storage": "1Gi"
+                },
+                "conditions": [
+                    {
+                        "lastProbeTime": null,
+                        "lastTransitionTime": "2026-11-11T17:37:27Z",
+                        "message": "A pod is currently referencing this PVC",
+                        "reason": "PodUsingPVC",
+                        "status": "False",
+                        "type": "Unused"
+                    }
+                ],
+                "phase": "Bound"
+            }
+        },
+        {
+            "apiVersion": "v1",
+            "kind": "Service",
+            "metadata": {
+                "annotations": {
+                    "meta.helm.sh/release-name": "l4",
+                    "meta.helm.sh/release-namespace": "laboratorio4"
+                },
+                "creationTimestamp": "2026-11-11T01:10:10Z",
+                "labels": {
+                    "app.kubernetes.io/managed-by": "Helm"
+                },
+                "name": "l4-pedidos-api",
+                "namespace": "laboratorio4",
+                "resourceVersion": "15017",
+                "uid": "fc29ea3d-37b0-442a-a6f0-1dab02a54ee3"
+            },
+            "spec": {
+                "clusterIP": "10.98.53.252",
+                "clusterIPs": [
+                    "10.98.53.252"
+                ],
+                "internalTrafficPolicy": "Cluster",
+                "ipFamilies": [
+                    "IPv4"
+                ],
+                "ipFamilyPolicy": "SingleStack",
+                "ports": [
+                    {
+                        "name": "http",
+                        "port": 8080,
+                        "protocol": "TCP",
+                        "targetPort": "http"
+                    }
+                ],
+                "selector": {
+                    "app.kubernetes.io/component": "api",
+                    "app.kubernetes.io/instance": "l4"
+                },
+                "sessionAffinity": "None",
+                "type": "ClusterIP"
+            },
+            "status": {
+                "loadBalancer": {}
+            }
+        },
+        {
+            "apiVersion": "v1",
+            "kind": "Service",
+            "metadata": {
+                "annotations": {
+                    "meta.helm.sh/release-name": "l4",
+                    "meta.helm.sh/release-namespace": "laboratorio4"
+                },
+                "creationTimestamp": "2026-11-11T01:10:10Z",
+                "labels": {
+                    "app.kubernetes.io/managed-by": "Helm"
+                },
+                "name": "l4-pedidos-grafana",
+                "namespace": "laboratorio4",
+                "resourceVersion": "15006",
+                "uid": "9c0fd4c9-e28b-4190-a397-739f7cdcdbc6"
+            },
+            "spec": {
+                "clusterIP": "10.106.169.1",
+                "clusterIPs": [
+                    "10.106.169.1"
+                ],
+                "internalTrafficPolicy": "Cluster",
+                "ipFamilies": [
+                    "IPv4"
+                ],
+                "ipFamilyPolicy": "SingleStack",
+                "ports": [
+                    {
+                        "name": "http",
+                        "port": 3000,
+                        "protocol": "TCP",
+                        "targetPort": "http"
+                    }
+                ],
+                "selector": {
+                    "app.kubernetes.io/component": "grafana",
+                    "app.kubernetes.io/instance": "l4"
+                },
+                "sessionAffinity": "None",
+                "type": "ClusterIP"
+            },
+            "status": {
+                "loadBalancer": {}
+            }
+        },
+        {
+            "apiVersion": "v1",
+            "kind": "Service",
+            "metadata": {
+                "annotations": {
+                    "meta.helm.sh/release-name": "l4",
+                    "meta.helm.sh/release-namespace": "laboratorio4"
+                },
+                "creationTimestamp": "2026-11-11T01:10:10Z",
+                "labels": {
+                    "app.kubernetes.io/managed-by": "Helm"
+                },
+                "name": "l4-pedidos-prometheus",
+                "namespace": "laboratorio4",
+                "resourceVersion": "15011",
+                "uid": "636c8ed3-f695-47a1-9c8e-66df5262108d"
+            },
+            "spec": {
+                "clusterIP": "10.105.81.14",
+                "clusterIPs": [
+                    "10.105.81.14"
+                ],
+                "internalTrafficPolicy": "Cluster",
+                "ipFamilies": [
+                    "IPv4"
+                ],
+                "ipFamilyPolicy": "SingleStack",
+                "ports": [
+                    {
+                        "name": "http",
+                        "port": 9090,
+                        "protocol": "TCP",
+                        "targetPort": "http"
+                    }
+                ],
+                "selector": {
+                    "app.kubernetes.io/component": "prometheus",
+                    "app.kubernetes.io/instance": "l4"
+                },
+                "sessionAffinity": "None",
+                "type": "ClusterIP"
+            },
+            "status": {
+                "loadBalancer": {}
+            }
+        }
+    ],
+    "kind": "List",
+    "metadata": {
+        "resourceVersion": ""
+    }
+}

@@ -1,0 +1,26 @@
+{
+  "result": "PASS",
+  "previous_files": 709,
+  "unchanged_previous_files": 708,
+  "changed_previous_files": [
+    "EntregableDevops2\\reports\\snyk-report.txt"
+  ],
+  "snyk_initial_body_preserved": true,
+  "local_links_checked": 50,
+  "missing_links": [],
+  "reviewed_documents": [
+    "EntregableDevops2/ReadMe.md",
+    "EntregableDevops2/reports/snyk-report.txt",
+    "EntregableDevops2/pedidos-api/pedidos-api/L4-01-BASE.md",
+    "EntregableDevops2/pedidos-api/pedidos-api/OBSERVABILIDAD-L4.md",
+    "EntregableDevops2/pedidos-api/pedidos-api/helm-chart/README.md",
+    "EntregableDevops2/pedidos-api/pedidos-api/security/falco/README.md",
+    "EntregableDevops2/pedidos-api/pedidos-api/security/kyverno/README.md",
+    "EntregableDevops2/scripts/l4/GUIA.md",
+    "EntregableDevops2/reports/ESTADO-EVIDENCIAS-L4.md",
+    "EntregableDevops2/reports/snyk-comparison.md"
+  ],
+  "new_scan": false,
+  "live_cluster_checks": false,
+  "note": "Initial auditor path separator assertion failed on Windows; this audit normalizes separators only, preserving all hash checks."
+}

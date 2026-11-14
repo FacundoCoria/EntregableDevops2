@@ -1,0 +1,40 @@
+{
+  "job": "L4-09-pedidos-api",
+  "build": 7,
+  "result": "SUCCESS",
+  "duration_ms": 97054,
+  "source_commit": "0f47780b51b3711763d6aebf4a9791d5d1edee28",
+  "stages": [
+    "1. Clonacion",
+    "2. Semgrep",
+    "3. Snyk y bloqueo de criticos",
+    "4. Compilacion y pruebas",
+    "5. Imagen y publicacion Docker",
+    "6. Despliegue Helm"
+  ],
+  "semgrep_findings": 0,
+  "snyk": {
+    "scan_exit_code": 1,
+    "findings_by_severity": {
+      "critical": 0,
+      "high": 1,
+      "low": 1,
+      "medium": 8
+    },
+    "critical_ids": [],
+    "gate": "PASS"
+  },
+  "tests": {
+    "tests": 1,
+    "failures": 0,
+    "errors": 0
+  },
+  "image": "brunovitola/pedidos-api-l4:l4-7-0f47780b51b3",
+  "digests": [
+    "brunovitola/pedidos-api-l4@sha256:48b65d95763c2a1eb6727f9b22b78fc27509f79b62a7b87903cea87a4aee41d9"
+  ],
+  "helm_revision": 8,
+  "api_status": "UP",
+  "ready_pods": 3,
+  "source_publication": "local snapshot; GitHub pending"
+}

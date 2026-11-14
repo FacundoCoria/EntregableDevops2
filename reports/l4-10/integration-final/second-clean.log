@@ -1,0 +1,10 @@
+Evidencia: /c/Users/Bruno/PARA System/1- Projects/Entregable 3 - Devops/EntregableDevops2/reports/l4-10/20261111T175823Z-clean-2625
+Contexto=minikube namespace=laboratorio4-l4test release=l4-test
+Desinstalar release l4-test: API, Prometheus, Grafana, configuraciÃ³n y RBAC de mÃ©tricas.
+Eliminar PVC=true (solo l4-test-pedidos-api, l4-test-pedidos-prometheus, l4-test-pedidos-grafana).
+Retirar polÃ­ticas L4 y releases kyverno/falco=false.
+Conservar namespaces, CRD compartidas, Jenkins/credenciales/volumen, Minikube, default y reportes.
+PASS
+
+STDERR:
+No resources found in laboratorio4-l4test namespace.

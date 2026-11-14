@@ -1,0 +1,11 @@
+{
+  "result": "PASS",
+  "fresh_profile": true,
+  "cold_restart": true,
+  "security_removed": true,
+  "profile_and_volumes_removed": true,
+  "main_and_jenkins_unchanged": true,
+  "current_context_restored_after_delete": true,
+  "previous_files_unchanged": 525,
+  "jenkins_bootstrap": false
+}

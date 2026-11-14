@@ -1,0 +1,6 @@
+These resources were kept due to the resource policy:
+[PersistentVolumeClaim] l4-test-pedidos-api
+[PersistentVolumeClaim] l4-test-pedidos-grafana
+[PersistentVolumeClaim] l4-test-pedidos-prometheus
+
+release "l4-test" uninstalled

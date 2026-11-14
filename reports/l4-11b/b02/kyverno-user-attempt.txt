@@ -1,0 +1,4 @@
+Defaulted container "kyverno" out of: kyverno, kyverno-pre (init)
+error: Internal error occurred: Internal error occurred: error executing command in container: failed to exec in container: failed to start exec "2cf2d94a585002bc9d063de0532e14abfa2f9b517145552206a4409a182b539e": OCI runtime exec failed: exec failed: unable to start container process: exec: "id": executable file not found in $PATH
+
+exit=1

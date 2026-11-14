@@ -1,0 +1,2 @@
+jenkins ucu-devops/jenkins:lts Up 4 hours
+minikube gcr.io/k8s-minikube/kicbase:v0.0.51 Up 3 hours
