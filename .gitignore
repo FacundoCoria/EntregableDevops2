@@ -430,3 +430,4 @@ FodyWeavers.xsd
 # L4 evidence is a deliverable, including the required Falco/Kyverno logs.
 !/reports/**/*.log
 /ci/jenkins/.local/
+!/ci/jenkins/images.env

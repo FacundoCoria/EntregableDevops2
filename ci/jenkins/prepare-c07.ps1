@@ -3,6 +3,7 @@ param([string]$Helm = 'helm')
 $ErrorActionPreference = 'Stop'
 function Check { if ($LASTEXITCODE -ne 0) { throw 'C07 command failed; preserve logs and inspect before retrying' } }
 $repo = (Resolve-Path (Join-Path $PSScriptRoot '../..')).Path
+if (-not (Test-Path (Join-Path $PSScriptRoot 'images.env'))) { throw 'Missing public image digest lock: images.env' }
 $app = Join-Path $repo 'pedidos-api/pedidos-api'
 $local = Join-Path $PSScriptRoot '.local'
 $out = Join-Path $repo 'reports/l4-c07/setup'
