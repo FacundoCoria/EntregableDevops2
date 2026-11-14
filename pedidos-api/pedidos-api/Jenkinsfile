@@ -46,6 +46,7 @@ pipeline {
                     dir(env.APP_DIR) {
                         // --severity-threshold=critical: solo falla (exit 1) si hay vulnerabilidades críticas
                         sh '''
+                            chmod +x mvnw
                             mkdir -p reports
                             set +e
                             snyk test --file=pom.xml --severity-threshold=critical > reports/snyk-ci.txt 2>&1
