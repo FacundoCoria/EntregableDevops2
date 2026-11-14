@@ -1,0 +1,13 @@
+ARG JENKINS_BASE
+FROM ${JENKINS_BASE}
+ENV JENKINS_UC=https://updates.jenkins.io/stable
+COPY ci/jenkins/plugins.txt /usr/share/jenkins/ref/plugins.txt
+COPY ci/jenkins/plugins.sha256 /opt/l4/plugins.sha256
+RUN jenkins-plugin-cli --latest=false --plugin-file /usr/share/jenkins/ref/plugins.txt
+RUN cd /usr/share/jenkins/ref/plugins && sha256sum --check /opt/l4/plugins.sha256
+USER root
+RUN mkdir -p /run/l4-agent && chown jenkins:jenkins /run/l4-agent
+COPY --chown=jenkins:jenkins ci/jenkins/init.groovy /usr/share/jenkins/ref/init.groovy.d/l4.groovy.override
+COPY ci/jenkins/Jenkinsfile.preflight /opt/l4/Jenkinsfile.preflight
+USER 1000:1000
+VOLUME /run/l4-agent

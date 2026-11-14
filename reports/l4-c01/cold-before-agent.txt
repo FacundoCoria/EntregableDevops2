@@ -1,0 +1,11 @@
+Sending build context to Docker daemon  2.048kB
+Step 1/2 : FROM scratch
+ ---> 
+Step 2/2 : LABEL l4.c01=persistence
+ ---> Running in 003c8a348793
+ ---> Removed intermediate container 003c8a348793
+ ---> 1b9fa28cc67f
+Successfully built 1b9fa28cc67f
+Successfully tagged l4-c01-smoke:persistence
+ecb4b54c28a46f74a4fd13baef53ba982d667d253b170500d059c95fd1be1940  /var/jenkins_home/c01-marker.txt
+sha256:1b9fa28cc67f352a69a2950fd2dd74bab91b2878cc5d6cc1b4cc6dae1b1f01f2

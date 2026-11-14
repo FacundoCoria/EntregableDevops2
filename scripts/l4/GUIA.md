@@ -1,5 +1,10 @@
 # L4-10 — Inicio, tráfico, acceso y limpieza
 
+**Máquina nueva:** empezar por [instalación y uso portable L4-C02](../../docs/INSTALACION-L4.md).
+Integra prerrequisitos/PATH, fuente publicada frente a cambios locales C01/C02,
+Jenkins dedicado, clúster, ejemplo API, credenciales y apagado. Esta guía conserva
+el detalle de los scripts y del Jenkins heredado; no exige recrearlo para C01.
+
 **Ampliación B04:** para crear, recuperar y eliminar un clúster descartable
 con seguridad y almacenamiento, consultar [B04-REPRODUCCION.md](B04-REPRODUCCION.md).
 El contexto adicional admitido es exclusivamente `minikube-l4-b04`.
@@ -22,16 +27,17 @@ rutas con espacios. No abren interfaces. Bruno abre las direcciones que muestra
 - Imagen API publicada en L4-09 accesible o imagen indicada en `L4_IMAGE`.
   No hacen falta Maven/Snyk para estos scripts; los controles siguen en Jenkins.
 - En Windows: usar `export L4_PYTHON=python` si `python3` apunta al acceso de
-  Microsoft Store. Agregar al PATH la carpeta que contiene `helm.exe`. En este
-  proyecto se encuentra en `../.tools/helm/windows-amd64`:
+  Microsoft Store. Instalar Helm 4.3.1 y agregar la carpeta de `helm.exe` al
+  PATH de la cuenta según [preparación portable](../../docs/INSTALACION-L4.md).
+  No se requiere ninguna carpeta `.tools` fuera del repositorio:
 
 ```bash
-export PATH="$(cd ../.tools/helm/windows-amd64 && pwd):$PATH"
 export L4_PYTHON=python
+helm version --short
 ```
 
 El contexto se pasa explícitamente a todos los comandos; se admite `minikube`
-+y, exclusivamente para B04, `minikube-l4-b04`. El namespace por defecto es `laboratorio4` y el release `l4`.
+y, exclusivamente para B04, `minikube-l4-b04`. El namespace por defecto es `laboratorio4` y el release `l4`.
 Para ensayos se admiten namespaces `laboratorio4-l4test...` y releases `l4-...`.
 No se instala un segundo stack de seguridad en los namespaces de ensayo.
 
@@ -51,9 +57,10 @@ Detalle de alcance/excepciones: [B02](../../reports/l4-11b/b02-componentes.md).
 
 El script espera su
 respuesta en `http://127.0.0.1:8080/login`. No reemplaza contenedor, volumen,
-plugins, trabajos ni credenciales. En una máquina nueva, crear primero Jenkins
-según la configuración del curso; el script falla si falta, sin inventar una
-instalación equivalente. El Jenkins observado usa `ucu-devops/jenkins:lts`,
+plugins, trabajos ni credenciales. En una máquina nueva usar el
+[Jenkins dedicado C01](../../ci/jenkins/README.md) y omitir `--jenkins-existing`;
+su arranque se hace por separado. Esta opción falla si falta el contenedor del
+curso. El Jenkins heredado observado usa `ucu-devops/jenkins:lts`,
 volumen `00-setup_jenkins_home` y socket Docker: es un prerrequisito heredado,
 no un aprovisionamiento desde cero acreditado por L4-10. Sin esa opción solo
 inicia el stack Kubernetes.
@@ -173,7 +180,9 @@ Los túneles temporales se cierran al terminar o fallar. No se guardan tokens.
 
 Si falta Docker, acceso al clúster o herramienta, corregir ese prerrequisito y
 repetir en otro directorio. Si Snyk/Kubernetes de Jenkins deja de autenticar,
-consultar `ci/connect-minikube.ps1` y el cierre L4-09 (token Kubernetes de 24 h);
+consultar [credenciales y conexión dedicada](../../docs/INSTALACION-L4.md)
+o `ci/connect-minikube.ps1` exclusivamente para el Jenkins heredado
+(token Kubernetes de 24 h);
 estos scripts no renuevan credenciales ni vuelven a ejecutar los análisis.
 
 Referencias: [Helm uninstall](https://helm.sh/docs/helm/helm_uninstall/),

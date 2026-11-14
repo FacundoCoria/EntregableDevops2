@@ -1,0 +1,53 @@
+Get:1 http://archive.ubuntu.com/ubuntu jammy InRelease [270 kB]
+Get:2 http://security.ubuntu.com/ubuntu jammy-security InRelease [129 kB]
+Get:3 http://archive.ubuntu.com/ubuntu jammy-updates InRelease [128 kB]
+Get:4 http://archive.ubuntu.com/ubuntu jammy-backports InRelease [127 kB]
+Get:5 http://archive.ubuntu.com/ubuntu jammy/multiverse amd64 Packages [266 kB]
+Get:6 http://security.ubuntu.com/ubuntu jammy-security/multiverse amd64 Packages [96.7 kB]
+Get:7 http://archive.ubuntu.com/ubuntu jammy/restricted amd64 Packages [164 kB]
+Get:8 http://archive.ubuntu.com/ubuntu jammy/universe amd64 Packages [17.5 MB]
+Get:9 http://security.ubuntu.com/ubuntu jammy-security/restricted amd64 Packages [8,086 kB]
+Get:10 http://archive.ubuntu.com/ubuntu jammy/main amd64 Packages [1,792 kB]
+Get:11 http://archive.ubuntu.com/ubuntu jammy-updates/restricted amd64 Packages [8,373 kB]
+Get:12 http://archive.ubuntu.com/ubuntu jammy-updates/universe amd64 Packages [1,631 kB]
+Get:13 http://archive.ubuntu.com/ubuntu jammy-updates/multiverse amd64 Packages [104 kB]
+Get:14 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 Packages [4,847 kB]
+Get:15 http://archive.ubuntu.com/ubuntu jammy-backports/universe amd64 Packages [35.6 kB]
+Get:16 http://archive.ubuntu.com/ubuntu jammy-backports/main amd64 Packages [82.9 kB]
+Get:17 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 Packages [1,328 kB]
+Get:18 http://security.ubuntu.com/ubuntu jammy-security/main amd64 Packages [4,521 kB]
+Fetched 49.5 MB in 7s (7,278 kB/s)
+Reading package lists...
+apt:
+  Installed: 2.4.14
+  Candidate: 2.4.15ubuntu0.1
+  Version table:
+     2.4.15ubuntu0.1 500
+        500 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 Packages
+        500 http://security.ubuntu.com/ubuntu jammy-security/main amd64 Packages
+ *** 2.4.14 100
+        100 /var/lib/dpkg/status
+     2.4.5 500
+        500 http://archive.ubuntu.com/ubuntu jammy/main amd64 Packages
+libapt-pkg6.0:
+  Installed: 2.4.14
+  Candidate: 2.4.15ubuntu0.1
+  Version table:
+     2.4.15ubuntu0.1 500
+        500 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 Packages
+        500 http://security.ubuntu.com/ubuntu jammy-security/main amd64 Packages
+ *** 2.4.14 100
+        100 /var/lib/dpkg/status
+     2.4.5 500
+        500 http://archive.ubuntu.com/ubuntu jammy/main amd64 Packages
+libpcre2-8-0:
+  Installed: 10.39-3ubuntu0.1
+  Candidate: 10.39-3ubuntu0.2
+  Version table:
+     10.39-3ubuntu0.2 500
+        500 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 Packages
+        500 http://security.ubuntu.com/ubuntu jammy-security/main amd64 Packages
+ *** 10.39-3ubuntu0.1 100
+        100 /var/lib/dpkg/status
+     10.39-3build1 500
+        500 http://archive.ubuntu.com/ubuntu jammy/main amd64 Packages

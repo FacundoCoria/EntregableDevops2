@@ -1,0 +1,170 @@
+{
+  "pass": true,
+  "checks": [
+    {
+      "method": "GET",
+      "path": "/actuator/health",
+      "type": "application/json",
+      "expected": 200,
+      "actual": 200,
+      "pass": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/productos",
+      "type": "application/json",
+      "expected": 200,
+      "actual": 200,
+      "pass": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/pedidos",
+      "type": "application/json",
+      "expected": 200,
+      "actual": 200,
+      "pass": true
+    },
+    {
+      "method": "GET",
+      "path": "/actuator/prometheus",
+      "type": "application/json",
+      "expected": 200,
+      "actual": 200,
+      "pass": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/productos",
+      "type": "application/xml",
+      "expected": 415,
+      "actual": 415,
+      "pass": true
+    },
+    {
+      "method": "PUT",
+      "path": "/api/productos/1",
+      "type": "application/xml",
+      "expected": 415,
+      "actual": 415,
+      "pass": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/productos",
+      "type": "text/xml",
+      "expected": 415,
+      "actual": 415,
+      "pass": true
+    },
+    {
+      "method": "PUT",
+      "path": "/api/productos/1",
+      "type": "text/xml",
+      "expected": 415,
+      "actual": 415,
+      "pass": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/productos",
+      "type": "application/problem+xml",
+      "expected": 415,
+      "actual": 415,
+      "pass": true
+    },
+    {
+      "method": "PUT",
+      "path": "/api/productos/1",
+      "type": "application/problem+xml",
+      "expected": 415,
+      "actual": 415,
+      "pass": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/pedidos",
+      "type": "application/xml",
+      "expected": 415,
+      "actual": 415,
+      "pass": true
+    },
+    {
+      "method": "PUT",
+      "path": "/api/pedidos/1",
+      "type": "application/xml",
+      "expected": 415,
+      "actual": 415,
+      "pass": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/pedidos",
+      "type": "text/xml",
+      "expected": 415,
+      "actual": 415,
+      "pass": true
+    },
+    {
+      "method": "PUT",
+      "path": "/api/pedidos/1",
+      "type": "text/xml",
+      "expected": 415,
+      "actual": 415,
+      "pass": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/pedidos",
+      "type": "application/problem+xml",
+      "expected": 415,
+      "actual": 415,
+      "pass": true
+    },
+    {
+      "method": "PUT",
+      "path": "/api/pedidos/1",
+      "type": "application/problem+xml",
+      "expected": 415,
+      "actual": 415,
+      "pass": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/productos",
+      "type": "application/json",
+      "expected": 400,
+      "actual": 400,
+      "pass": true
+    },
+    {
+      "method": "PUT",
+      "path": "/api/productos/1",
+      "type": "application/json",
+      "expected": 200,
+      "actual": 200,
+      "pass": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/productos/1",
+      "type": "application/json",
+      "expected": 200,
+      "actual": 200,
+      "pass": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/pedidos/1",
+      "type": "application/json",
+      "expected": 200,
+      "actual": 200,
+      "pass": true
+    }
+  ],
+  "httpChecks": 20,
+  "uid": 10001,
+  "restartPersistence": true,
+  "jarSha256": "25fb55cd11a66637fe975e6672b725f367c83baab1e2a9fb6c5739e99c16e54a",
+  "image": "sha256:0a309fa5e61806a7aac6489cfedf514711eb91296badcff512048152c02016c8"
+}

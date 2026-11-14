@@ -1,0 +1,12 @@
+{
+  "result": "PASS",
+  "baselineContainersPreserved": 12,
+  "allOriginalContainerIdsImagesMountsRestartCountsAndRunningStateUnchanged": true,
+  "originalVolumesPreserved": 19,
+  "originalNetworksPreserved": 11,
+  "restoredProjectAbsent": true,
+  "mountComparison": "sorted by Destination; Docker array order varies",
+  "source": "l4-c01 active 18080",
+  "course": "jenkins unchanged",
+  "secondary": "l4-c01-repro still stopped"
+}

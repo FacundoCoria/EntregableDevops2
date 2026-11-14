@@ -1,0 +1,38 @@
+{
+  "apiVersion": "v1",
+  "kind": "Pod",
+  "metadata": {
+    "name": "c05-subresources",
+    "namespace": "laboratorio4"
+  },
+  "spec": {
+    "restartPolicy": "Never",
+    "automountServiceAccountToken": false,
+    "containers": [
+      {
+        "name": "main",
+        "image": "busybox:1.36",
+        "imagePullPolicy": "Never",
+        "resources": {
+          "requests": {
+            "cpu": "10m",
+            "memory": "16Mi"
+          },
+          "limits": {
+            "cpu": "100m",
+            "memory": "64Mi"
+          }
+        },
+        "securityContext": {
+          "runAsNonRoot": true,
+          "runAsUser": 10001
+        }
+      }
+    ],
+    "schedulingGates": [
+      {
+        "name": "laboratorio4.test/no-execution"
+      }
+    ]
+  }
+}

@@ -1,0 +1,1003 @@
+{
+  "date": "2026-11-14",
+  "status": "technical-complete-local",
+  "academicAcceptance": "C05-A-open",
+  "branch": "lab4/c01-jenkins-reproducible",
+  "base": "50a0eb53e7a1152fbe0e4f26252fac2380403fc3",
+  "total": 90,
+  "passed": 90,
+  "byExpected": {
+    "ACCEPT": 24,
+    "DENY": 60,
+    "API_REJECT": 3,
+    "API_REJECT_LIMITS": 3
+  },
+  "results": [
+    {
+      "case": "regression-conforme",
+      "expected": "ACCEPT",
+      "policy": null,
+      "exitCode": 0,
+      "passed": true,
+      "source": "admission-1/results.json"
+    },
+    {
+      "case": "regression-containers-latest",
+      "expected": "DENY",
+      "policy": "l4-deny-latest-images",
+      "exitCode": 1,
+      "passed": true,
+      "source": "admission-1/results.json"
+    },
+    {
+      "case": "regression-containers-sin-tag",
+      "expected": "DENY",
+      "policy": "l4-deny-latest-images",
+      "exitCode": 1,
+      "passed": true,
+      "source": "admission-1/results.json"
+    },
+    {
+      "case": "regression-containers-resources",
+      "expected": "DENY",
+      "policy": "l4-require-container-resources",
+      "exitCode": 1,
+      "passed": true,
+      "source": "admission-1/results.json"
+    },
+    {
+      "case": "regression-containers-root",
+      "expected": "DENY",
+      "policy": "l4-disallow-root-containers",
+      "exitCode": 1,
+      "passed": true,
+      "source": "admission-1/results.json"
+    },
+    {
+      "case": "regression-containers-uid-zero",
+      "expected": "DENY",
+      "policy": "l4-disallow-root-containers",
+      "exitCode": 1,
+      "passed": true,
+      "source": "admission-1/results.json"
+    },
+    {
+      "case": "regression-containers-privileged",
+      "expected": "DENY",
+      "policy": "l4-disallow-privileged-containers",
+      "exitCode": 1,
+      "passed": true,
+      "source": "admission-1/results.json"
+    },
+    {
+      "case": "regression-initcontainers-latest",
+      "expected": "DENY",
+      "policy": "l4-deny-latest-images",
+      "exitCode": 1,
+      "passed": true,
+      "source": "admission-1/results.json"
+    },
+    {
+      "case": "regression-initcontainers-sin-tag",
+      "expected": "DENY",
+      "policy": "l4-deny-latest-images",
+      "exitCode": 1,
+      "passed": true,
+      "source": "admission-1/results.json"
+    },
+    {
+      "case": "regression-initcontainers-resources",
+      "expected": "DENY",
+      "policy": "l4-require-container-resources",
+      "exitCode": 1,
+      "passed": true,
+      "source": "admission-1/results.json"
+    },
+    {
+      "case": "regression-initcontainers-root",
+      "expected": "DENY",
+      "policy": "l4-disallow-root-containers",
+      "exitCode": 1,
+      "passed": true,
+      "source": "admission-1/results.json"
+    },
+    {
+      "case": "regression-initcontainers-uid-zero",
+      "expected": "DENY",
+      "policy": "l4-disallow-root-containers",
+      "exitCode": 1,
+      "passed": true,
+      "source": "admission-1/results.json"
+    },
+    {
+      "case": "regression-initcontainers-privileged",
+      "expected": "DENY",
+      "policy": "l4-disallow-privileged-containers",
+      "exitCode": 1,
+      "passed": true,
+      "source": "admission-1/results.json"
+    },
+    {
+      "case": "regression-herencia-pod-conforme",
+      "expected": "ACCEPT",
+      "policy": null,
+      "exitCode": 0,
+      "passed": true,
+      "source": "admission-1/results.json"
+    },
+    {
+      "case": "regression-override-false",
+      "expected": "DENY",
+      "policy": "l4-disallow-root-containers",
+      "exitCode": 1,
+      "passed": true,
+      "source": "admission-1/results.json"
+    },
+    {
+      "case": "regression-init-conforme",
+      "expected": "ACCEPT",
+      "policy": null,
+      "exitCode": 0,
+      "passed": true,
+      "source": "admission-1/results.json"
+    },
+    {
+      "case": "containers-latest-digest",
+      "expected": "DENY",
+      "policy": "l4-deny-latest-images",
+      "exitCode": 1,
+      "passed": true,
+      "source": "admission-1/results.json"
+    },
+    {
+      "case": "containers-digest",
+      "expected": "ACCEPT",
+      "policy": null,
+      "exitCode": 0,
+      "passed": true,
+      "source": "admission-1/results.json"
+    },
+    {
+      "case": "containers-tag-digest",
+      "expected": "ACCEPT",
+      "policy": null,
+      "exitCode": 0,
+      "passed": true,
+      "source": "admission-1/results.json"
+    },
+    {
+      "case": "containers-repo-named-latest",
+      "expected": "ACCEPT",
+      "policy": null,
+      "exitCode": 0,
+      "passed": true,
+      "source": "admission-1/results.json"
+    },
+    {
+      "case": "containers-port-no-tag",
+      "expected": "DENY",
+      "policy": "l4-deny-latest-images",
+      "exitCode": 1,
+      "passed": true,
+      "source": "admission-1/results.json"
+    },
+    {
+      "case": "containers-malformed-digest",
+      "expected": "DENY",
+      "policy": "l4-deny-latest-images",
+      "exitCode": 1,
+      "passed": true,
+      "source": "admission-1/results.json"
+    },
+    {
+      "case": "initcontainers-latest-digest",
+      "expected": "DENY",
+      "policy": "l4-deny-latest-images",
+      "exitCode": 1,
+      "passed": true,
+      "source": "admission-1/results.json"
+    },
+    {
+      "case": "initcontainers-digest",
+      "expected": "ACCEPT",
+      "policy": null,
+      "exitCode": 0,
+      "passed": true,
+      "source": "admission-1/results.json"
+    },
+    {
+      "case": "initcontainers-tag-digest",
+      "expected": "ACCEPT",
+      "policy": null,
+      "exitCode": 0,
+      "passed": true,
+      "source": "admission-1/results.json"
+    },
+    {
+      "case": "initcontainers-repo-named-latest",
+      "expected": "ACCEPT",
+      "policy": null,
+      "exitCode": 0,
+      "passed": true,
+      "source": "admission-1/results.json"
+    },
+    {
+      "case": "initcontainers-port-no-tag",
+      "expected": "DENY",
+      "policy": "l4-deny-latest-images",
+      "exitCode": 1,
+      "passed": true,
+      "source": "admission-1/results.json"
+    },
+    {
+      "case": "initcontainers-malformed-digest",
+      "expected": "DENY",
+      "policy": "l4-deny-latest-images",
+      "exitCode": 1,
+      "passed": true,
+      "source": "admission-1/results.json"
+    },
+    {
+      "case": "sidecar-latest-digest",
+      "expected": "DENY",
+      "policy": "l4-deny-latest-images",
+      "exitCode": 1,
+      "passed": true,
+      "source": "admission-1/results.json"
+    },
+    {
+      "case": "sidecar-digest",
+      "expected": "ACCEPT",
+      "policy": null,
+      "exitCode": 0,
+      "passed": true,
+      "source": "admission-1/results.json"
+    },
+    {
+      "case": "sidecar-tag-digest",
+      "expected": "ACCEPT",
+      "policy": null,
+      "exitCode": 0,
+      "passed": true,
+      "source": "admission-1/results.json"
+    },
+    {
+      "case": "sidecar-repo-named-latest",
+      "expected": "ACCEPT",
+      "policy": null,
+      "exitCode": 0,
+      "passed": true,
+      "source": "admission-1/results.json"
+    },
+    {
+      "case": "sidecar-port-no-tag",
+      "expected": "DENY",
+      "policy": "l4-deny-latest-images",
+      "exitCode": 1,
+      "passed": true,
+      "source": "admission-1/results.json"
+    },
+    {
+      "case": "sidecar-malformed-digest",
+      "expected": "DENY",
+      "policy": "l4-deny-latest-images",
+      "exitCode": 1,
+      "passed": true,
+      "source": "admission-1/results.json"
+    },
+    {
+      "case": "laboratorio4-latest",
+      "expected": "DENY",
+      "policy": "l4-deny-latest-images",
+      "exitCode": 1,
+      "passed": true,
+      "source": "admission-1/results.json"
+    },
+    {
+      "case": "laboratorio4-resources",
+      "expected": "DENY",
+      "policy": "l4-require-container-resources",
+      "exitCode": 1,
+      "passed": true,
+      "source": "admission-1/results.json"
+    },
+    {
+      "case": "laboratorio4-root",
+      "expected": "DENY",
+      "policy": "l4-disallow-root-containers",
+      "exitCode": 1,
+      "passed": true,
+      "source": "admission-1/results.json"
+    },
+    {
+      "case": "laboratorio4-privileged",
+      "expected": "DENY",
+      "policy": "l4-disallow-privileged-containers",
+      "exitCode": 1,
+      "passed": true,
+      "source": "admission-1/results.json"
+    },
+    {
+      "case": "default-latest",
+      "expected": "DENY",
+      "policy": "l4-deny-latest-images",
+      "exitCode": 1,
+      "passed": true,
+      "source": "admission-1/results.json"
+    },
+    {
+      "case": "default-resources",
+      "expected": "DENY",
+      "policy": "l4-require-container-resources",
+      "exitCode": 1,
+      "passed": true,
+      "source": "admission-1/results.json"
+    },
+    {
+      "case": "default-root",
+      "expected": "DENY",
+      "policy": "l4-disallow-root-containers",
+      "exitCode": 1,
+      "passed": true,
+      "source": "admission-1/results.json"
+    },
+    {
+      "case": "default-privileged",
+      "expected": "DENY",
+      "policy": "l4-disallow-privileged-containers",
+      "exitCode": 1,
+      "passed": true,
+      "source": "admission-1/results.json"
+    },
+    {
+      "case": "c05-second-latest",
+      "expected": "DENY",
+      "policy": "l4-deny-latest-images",
+      "exitCode": 1,
+      "passed": true,
+      "source": "admission-1/results.json"
+    },
+    {
+      "case": "c05-second-resources",
+      "expected": "DENY",
+      "policy": "l4-require-container-resources",
+      "exitCode": 1,
+      "passed": true,
+      "source": "admission-1/results.json"
+    },
+    {
+      "case": "c05-second-root",
+      "expected": "DENY",
+      "policy": "l4-disallow-root-containers",
+      "exitCode": 1,
+      "passed": true,
+      "source": "admission-1/results.json"
+    },
+    {
+      "case": "c05-second-privileged",
+      "expected": "DENY",
+      "policy": "l4-disallow-privileged-containers",
+      "exitCode": 1,
+      "passed": true,
+      "source": "admission-1/results.json"
+    },
+    {
+      "case": "exception-kube-system",
+      "expected": "ACCEPT",
+      "policy": null,
+      "exitCode": 0,
+      "passed": true,
+      "source": "admission-1/results.json"
+    },
+    {
+      "case": "exception-kube-public",
+      "expected": "ACCEPT",
+      "policy": null,
+      "exitCode": 0,
+      "passed": true,
+      "source": "admission-1/results.json"
+    },
+    {
+      "case": "exception-kube-node-lease",
+      "expected": "ACCEPT",
+      "policy": null,
+      "exitCode": 0,
+      "passed": true,
+      "source": "admission-1/results.json"
+    },
+    {
+      "case": "exception-kyverno",
+      "expected": "ACCEPT",
+      "policy": null,
+      "exitCode": 0,
+      "passed": true,
+      "source": "admission-1/results.json"
+    },
+    {
+      "case": "exception-falco",
+      "expected": "ACCEPT",
+      "policy": null,
+      "exitCode": 0,
+      "passed": true,
+      "source": "admission-1/results.json"
+    },
+    {
+      "case": "deployment-conforme",
+      "expected": "ACCEPT",
+      "policy": null,
+      "exitCode": 0,
+      "passed": true,
+      "source": "admission-1/results.json"
+    },
+    {
+      "case": "deployment-latest-digest",
+      "expected": "DENY",
+      "policy": "l4-deny-latest-images",
+      "exitCode": 1,
+      "passed": true,
+      "source": "admission-1/results.json"
+    },
+    {
+      "case": "deployment-resources",
+      "expected": "DENY",
+      "policy": "l4-require-container-resources",
+      "exitCode": 1,
+      "passed": true,
+      "source": "admission-1/results.json"
+    },
+    {
+      "case": "deployment-root",
+      "expected": "DENY",
+      "policy": "l4-disallow-root-containers",
+      "exitCode": 1,
+      "passed": true,
+      "source": "admission-1/results.json"
+    },
+    {
+      "case": "deployment-privileged",
+      "expected": "DENY",
+      "policy": "l4-disallow-privileged-containers",
+      "exitCode": 1,
+      "passed": true,
+      "source": "admission-1/results.json"
+    },
+    {
+      "case": "real-latest",
+      "expected": "DENY",
+      "policy": "l4-deny-latest-images",
+      "exitCode": 1,
+      "passed": true,
+      "source": "admission-1/results.json"
+    },
+    {
+      "case": "real-resources",
+      "expected": "DENY",
+      "policy": "l4-require-container-resources",
+      "exitCode": 1,
+      "passed": true,
+      "source": "admission-1/results.json"
+    },
+    {
+      "case": "real-root",
+      "expected": "DENY",
+      "policy": "l4-disallow-root-containers",
+      "exitCode": 1,
+      "passed": true,
+      "source": "admission-1/results.json"
+    },
+    {
+      "case": "real-privileged",
+      "expected": "DENY",
+      "policy": "l4-disallow-privileged-containers",
+      "exitCode": 1,
+      "passed": true,
+      "source": "admission-1/results.json"
+    },
+    {
+      "case": "laboratorio4-ephemeral-conforme",
+      "expected": "ACCEPT",
+      "policy": null,
+      "exitCode": 0,
+      "passed": true,
+      "source": "subresources-final/results.json"
+    },
+    {
+      "case": "laboratorio4-ephemeral-latest-digest",
+      "expected": "DENY",
+      "policy": "l4-ephemeral-images",
+      "exitCode": 1,
+      "passed": true,
+      "source": "subresources-final/results.json"
+    },
+    {
+      "case": "laboratorio4-ephemeral-no-tag",
+      "expected": "DENY",
+      "policy": "l4-ephemeral-images",
+      "exitCode": 1,
+      "passed": true,
+      "source": "subresources-final/results.json"
+    },
+    {
+      "case": "laboratorio4-ephemeral-root",
+      "expected": "DENY",
+      "policy": "l4-ephemeral-nonroot",
+      "exitCode": 1,
+      "passed": true,
+      "source": "subresources-final/results.json"
+    },
+    {
+      "case": "laboratorio4-ephemeral-uid-zero",
+      "expected": "DENY",
+      "policy": "l4-ephemeral-nonroot",
+      "exitCode": 1,
+      "passed": true,
+      "source": "subresources-final/results.json"
+    },
+    {
+      "case": "laboratorio4-ephemeral-privileged",
+      "expected": "DENY",
+      "policy": "l4-ephemeral-privileged",
+      "exitCode": 1,
+      "passed": true,
+      "source": "subresources-final/results.json"
+    },
+    {
+      "case": "laboratorio4-ephemeral-resources-api",
+      "expected": "API_REJECT",
+      "policy": null,
+      "exitCode": 1,
+      "passed": true,
+      "source": "subresources-final/results.json"
+    },
+    {
+      "case": "laboratorio4-ephemeral-real-denied",
+      "expected": "DENY",
+      "policy": "l4-ephemeral-images",
+      "exitCode": 1,
+      "passed": true,
+      "source": "subresources-final/results.json"
+    },
+    {
+      "case": "laboratorio4-resize-conforme",
+      "expected": "ACCEPT",
+      "policy": null,
+      "exitCode": 0,
+      "passed": true,
+      "source": "subresources-final/results.json"
+    },
+    {
+      "case": "laboratorio4-resize-missing-memory",
+      "expected": "API_REJECT_LIMITS",
+      "policy": null,
+      "exitCode": 1,
+      "passed": true,
+      "source": "subresources-final/results.json"
+    },
+    {
+      "case": "default-ephemeral-conforme",
+      "expected": "ACCEPT",
+      "policy": null,
+      "exitCode": 0,
+      "passed": true,
+      "source": "subresources-final/results.json"
+    },
+    {
+      "case": "default-ephemeral-latest-digest",
+      "expected": "DENY",
+      "policy": "l4-ephemeral-images",
+      "exitCode": 1,
+      "passed": true,
+      "source": "subresources-final/results.json"
+    },
+    {
+      "case": "default-ephemeral-no-tag",
+      "expected": "DENY",
+      "policy": "l4-ephemeral-images",
+      "exitCode": 1,
+      "passed": true,
+      "source": "subresources-final/results.json"
+    },
+    {
+      "case": "default-ephemeral-root",
+      "expected": "DENY",
+      "policy": "l4-ephemeral-nonroot",
+      "exitCode": 1,
+      "passed": true,
+      "source": "subresources-final/results.json"
+    },
+    {
+      "case": "default-ephemeral-uid-zero",
+      "expected": "DENY",
+      "policy": "l4-ephemeral-nonroot",
+      "exitCode": 1,
+      "passed": true,
+      "source": "subresources-final/results.json"
+    },
+    {
+      "case": "default-ephemeral-privileged",
+      "expected": "DENY",
+      "policy": "l4-ephemeral-privileged",
+      "exitCode": 1,
+      "passed": true,
+      "source": "subresources-final/results.json"
+    },
+    {
+      "case": "default-ephemeral-resources-api",
+      "expected": "API_REJECT",
+      "policy": null,
+      "exitCode": 1,
+      "passed": true,
+      "source": "subresources-final/results.json"
+    },
+    {
+      "case": "default-ephemeral-real-denied",
+      "expected": "DENY",
+      "policy": "l4-ephemeral-images",
+      "exitCode": 1,
+      "passed": true,
+      "source": "subresources-final/results.json"
+    },
+    {
+      "case": "default-resize-conforme",
+      "expected": "ACCEPT",
+      "policy": null,
+      "exitCode": 0,
+      "passed": true,
+      "source": "subresources-final/results.json"
+    },
+    {
+      "case": "default-resize-missing-memory",
+      "expected": "API_REJECT_LIMITS",
+      "policy": null,
+      "exitCode": 1,
+      "passed": true,
+      "source": "subresources-final/results.json"
+    },
+    {
+      "case": "c05-second-ephemeral-conforme",
+      "expected": "ACCEPT",
+      "policy": null,
+      "exitCode": 0,
+      "passed": true,
+      "source": "subresources-final/results.json"
+    },
+    {
+      "case": "c05-second-ephemeral-latest-digest",
+      "expected": "DENY",
+      "policy": "l4-ephemeral-images",
+      "exitCode": 1,
+      "passed": true,
+      "source": "subresources-final/results.json"
+    },
+    {
+      "case": "c05-second-ephemeral-no-tag",
+      "expected": "DENY",
+      "policy": "l4-ephemeral-images",
+      "exitCode": 1,
+      "passed": true,
+      "source": "subresources-final/results.json"
+    },
+    {
+      "case": "c05-second-ephemeral-root",
+      "expected": "DENY",
+      "policy": "l4-ephemeral-nonroot",
+      "exitCode": 1,
+      "passed": true,
+      "source": "subresources-final/results.json"
+    },
+    {
+      "case": "c05-second-ephemeral-uid-zero",
+      "expected": "DENY",
+      "policy": "l4-ephemeral-nonroot",
+      "exitCode": 1,
+      "passed": true,
+      "source": "subresources-final/results.json"
+    },
+    {
+      "case": "c05-second-ephemeral-privileged",
+      "expected": "DENY",
+      "policy": "l4-ephemeral-privileged",
+      "exitCode": 1,
+      "passed": true,
+      "source": "subresources-final/results.json"
+    },
+    {
+      "case": "c05-second-ephemeral-resources-api",
+      "expected": "API_REJECT",
+      "policy": null,
+      "exitCode": 1,
+      "passed": true,
+      "source": "subresources-final/results.json"
+    },
+    {
+      "case": "c05-second-ephemeral-real-denied",
+      "expected": "DENY",
+      "policy": "l4-ephemeral-images",
+      "exitCode": 1,
+      "passed": true,
+      "source": "subresources-final/results.json"
+    },
+    {
+      "case": "c05-second-resize-conforme",
+      "expected": "ACCEPT",
+      "policy": null,
+      "exitCode": 0,
+      "passed": true,
+      "source": "subresources-final/results.json"
+    },
+    {
+      "case": "c05-second-resize-missing-memory",
+      "expected": "API_REJECT_LIMITS",
+      "policy": null,
+      "exitCode": 1,
+      "passed": true,
+      "source": "subresources-final/results.json"
+    }
+  ],
+  "policyCount": 7,
+  "policiesReady": true,
+  "autogen": {
+    "l4-deny-latest-images": [
+      "cronjobs",
+      "daemonsets",
+      "deployments",
+      "jobs",
+      "replicasets",
+      "statefulsets"
+    ],
+    "l4-disallow-privileged-containers": [
+      "cronjobs",
+      "daemonsets",
+      "deployments",
+      "jobs",
+      "replicasets",
+      "statefulsets"
+    ],
+    "l4-disallow-root-containers": [
+      "cronjobs",
+      "daemonsets",
+      "deployments",
+      "jobs",
+      "replicasets",
+      "statefulsets"
+    ],
+    "l4-ephemeral-images": [],
+    "l4-ephemeral-nonroot": [],
+    "l4-ephemeral-privileged": [],
+    "l4-require-container-resources": [
+      "cronjobs",
+      "daemonsets",
+      "deployments",
+      "jobs",
+      "replicasets",
+      "statefulsets"
+    ]
+  },
+  "chartResources": 16,
+  "realDeniedCreates": 4,
+  "realDeniedEphemeralUpdates": 3,
+  "preservation": {
+    "inventoried": 889,
+    "intact": 886,
+    "changedAsExpected": [
+      "EntregableDevops2/reports/ESTADO-EVIDENCIAS-L4.md",
+      "EntregableDevops2/pedidos-api/pedidos-api/security/kyverno/policies.yaml",
+      "EntregableDevops2/pedidos-api/pedidos-api/security/kyverno/README.md"
+    ],
+    "previousPolicyCopyExact": true
+  },
+  "environment": {
+    "disposableProfileDeleted": true,
+    "noNamedVolumeOrNetworkRemains": true,
+    "originalContainersPreserved": 12,
+    "primaryStatus": "Stopped",
+    "contextRestored": "minikube",
+    "primaryPoliciesUpdated": false
+  },
+  "localLinksChecked": 49,
+  "checkedLinks": [
+    {
+      "file": "EntregableDevops2\\reports\\l4-c05\\ALCANCE.md",
+      "target": "VERIFICACION.md"
+    },
+    {
+      "file": "EntregableDevops2\\reports\\l4-c05\\ALCANCE.md",
+      "target": "verificacion.json"
+    },
+    {
+      "file": "EntregableDevops2\\reports\\l4-c05\\VERIFICACION.md",
+      "target": "ALCANCE.md"
+    },
+    {
+      "file": "EntregableDevops2\\reports\\l4-c05\\VERIFICACION.md",
+      "target": "verificacion.json"
+    },
+    {
+      "file": "EntregableDevops2\\reports\\l4-c05\\VERIFICACION.md",
+      "target": "baseline.log"
+    },
+    {
+      "file": "EntregableDevops2\\reports\\l4-c05\\VERIFICACION.md",
+      "target": "admission-1/results.json"
+    },
+    {
+      "file": "EntregableDevops2\\reports\\l4-c05\\VERIFICACION.md",
+      "target": "subresources-final/results.json"
+    },
+    {
+      "file": "handoffs\\HANDOFF_L4_C05_ALCANCE_KYVERNO_2026-11-14.md",
+      "target": "../EntregableDevops2/pedidos-api/pedidos-api/security/kyverno/policies.yaml"
+    },
+    {
+      "file": "handoffs\\HANDOFF_L4_C05_ALCANCE_KYVERNO_2026-11-14.md",
+      "target": "../EntregableDevops2/pedidos-api/pedidos-api/security/kyverno/README.md"
+    },
+    {
+      "file": "handoffs\\HANDOFF_L4_C05_ALCANCE_KYVERNO_2026-11-14.md",
+      "target": "../EntregableDevops2/pedidos-api/pedidos-api/scripts/verify-kyverno-c05.py"
+    },
+    {
+      "file": "handoffs\\HANDOFF_L4_C05_ALCANCE_KYVERNO_2026-11-14.md",
+      "target": "../EntregableDevops2/reports/l4-c05/ALCANCE.md"
+    },
+    {
+      "file": "handoffs\\HANDOFF_L4_C05_ALCANCE_KYVERNO_2026-11-14.md",
+      "target": "../EntregableDevops2/reports/l4-c05/VERIFICACION.md"
+    },
+    {
+      "file": "handoffs\\HANDOFF_L4_C05_ALCANCE_KYVERNO_2026-11-14.md",
+      "target": "../EntregableDevops2/reports/l4-c05/verificacion.json"
+    },
+    {
+      "file": "EntregableDevops2\\pedidos-api\\pedidos-api\\security\\kyverno\\README.md",
+      "target": "../../../../reports/l4-c05/ALCANCE.md"
+    },
+    {
+      "file": "EntregableDevops2\\pedidos-api\\pedidos-api\\security\\kyverno\\README.md",
+      "target": "../../../../reports/l4-c05/VERIFICACION.md"
+    },
+    {
+      "file": "EntregableDevops2\\pedidos-api\\pedidos-api\\security\\kyverno\\README.md",
+      "target": "../../../../reports/l4-c05/verificacion.json"
+    },
+    {
+      "file": "EntregableDevops2\\reports\\ESTADO-EVIDENCIAS-L4.md",
+      "target": "l4-c05/ALCANCE.md"
+    },
+    {
+      "file": "EntregableDevops2\\reports\\ESTADO-EVIDENCIAS-L4.md",
+      "target": "l4-c05/VERIFICACION.md"
+    },
+    {
+      "file": "EntregableDevops2\\reports\\ESTADO-EVIDENCIAS-L4.md",
+      "target": "l4-c04/CRITERIO-DOCKERFILES.md"
+    },
+    {
+      "file": "EntregableDevops2\\reports\\ESTADO-EVIDENCIAS-L4.md",
+      "target": "l4-c04/VERIFICACION.md"
+    },
+    {
+      "file": "EntregableDevops2\\reports\\ESTADO-EVIDENCIAS-L4.md",
+      "target": "../ci/jenkins/RECUPERACION.md"
+    },
+    {
+      "file": "EntregableDevops2\\reports\\ESTADO-EVIDENCIAS-L4.md",
+      "target": "l4-c03/VERIFICACION.md"
+    },
+    {
+      "file": "EntregableDevops2\\reports\\ESTADO-EVIDENCIAS-L4.md",
+      "target": "../docs/INSTALACION-L4.md"
+    },
+    {
+      "file": "EntregableDevops2\\reports\\ESTADO-EVIDENCIAS-L4.md",
+      "target": "../README.md"
+    },
+    {
+      "file": "EntregableDevops2\\reports\\ESTADO-EVIDENCIAS-L4.md",
+      "target": "../docs/arquitectura-l4.png"
+    },
+    {
+      "file": "EntregableDevops2\\reports\\ESTADO-EVIDENCIAS-L4.md",
+      "target": "../scripts/l4/GUIA.md"
+    },
+    {
+      "file": "EntregableDevops2\\reports\\ESTADO-EVIDENCIAS-L4.md",
+      "target": "../scripts/l4/B04-REPRODUCCION.md"
+    },
+    {
+      "file": "EntregableDevops2\\reports\\ESTADO-EVIDENCIAS-L4.md",
+      "target": "l4-11b/b04-reproduccion.md"
+    },
+    {
+      "file": "EntregableDevops2\\reports\\ESTADO-EVIDENCIAS-L4.md",
+      "target": "../pedidos-api/pedidos-api/helm-chart/README.md"
+    },
+    {
+      "file": "EntregableDevops2\\reports\\ESTADO-EVIDENCIAS-L4.md",
+      "target": "l4-11b/b03-helm.md"
+    },
+    {
+      "file": "EntregableDevops2\\reports\\ESTADO-EVIDENCIAS-L4.md",
+      "target": "l4-11b/image-analysis.md"
+    },
+    {
+      "file": "EntregableDevops2\\reports\\ESTADO-EVIDENCIAS-L4.md",
+      "target": "image-analysis.md"
+    },
+    {
+      "file": "EntregableDevops2\\reports\\ESTADO-EVIDENCIAS-L4.md",
+      "target": "snyk-comparison.md"
+    },
+    {
+      "file": "EntregableDevops2\\reports\\ESTADO-EVIDENCIAS-L4.md",
+      "target": "snyk-report.txt"
+    },
+    {
+      "file": "EntregableDevops2\\reports\\ESTADO-EVIDENCIAS-L4.md",
+      "target": "l4-09/integral-7/verification.json"
+    },
+    {
+      "file": "EntregableDevops2\\reports\\ESTADO-EVIDENCIAS-L4.md",
+      "target": "l4-09/security-3/gate-summary.json"
+    },
+    {
+      "file": "EntregableDevops2\\reports\\ESTADO-EVIDENCIAS-L4.md",
+      "target": "l4-11b/b05/CONSOLIDACION.md"
+    },
+    {
+      "file": "EntregableDevops2\\reports\\ESTADO-EVIDENCIAS-L4.md",
+      "target": "l4-c04/CRITERIO-DOCKERFILES.md"
+    },
+    {
+      "file": "EntregableDevops2\\reports\\ESTADO-EVIDENCIAS-L4.md",
+      "target": "l4-11b/b02-componentes.md"
+    },
+    {
+      "file": "EntregableDevops2\\reports\\ESTADO-EVIDENCIAS-L4.md",
+      "target": "../pedidos-api/pedidos-api/OBSERVABILIDAD-L4.md"
+    },
+    {
+      "file": "EntregableDevops2\\reports\\ESTADO-EVIDENCIAS-L4.md",
+      "target": "../grafana/dashboard.json"
+    },
+    {
+      "file": "EntregableDevops2\\reports\\ESTADO-EVIDENCIAS-L4.md",
+      "target": "semgrep-report.txt"
+    },
+    {
+      "file": "EntregableDevops2\\reports\\ESTADO-EVIDENCIAS-L4.md",
+      "target": "../pedidos-api/pedidos-api/security/kyverno/README.md"
+    },
+    {
+      "file": "EntregableDevops2\\reports\\ESTADO-EVIDENCIAS-L4.md",
+      "target": "l4-c05/VERIFICACION.md"
+    },
+    {
+      "file": "EntregableDevops2\\reports\\ESTADO-EVIDENCIAS-L4.md",
+      "target": "kyverno-validation.log"
+    },
+    {
+      "file": "EntregableDevops2\\reports\\ESTADO-EVIDENCIAS-L4.md",
+      "target": "../pedidos-api/pedidos-api/security/falco/README.md"
+    },
+    {
+      "file": "EntregableDevops2\\reports\\ESTADO-EVIDENCIAS-L4.md",
+      "target": "falco-event.md"
+    },
+    {
+      "file": "EntregableDevops2\\reports\\ESTADO-EVIDENCIAS-L4.md",
+      "target": "falco-event.log"
+    },
+    {
+      "file": "EntregableDevops2\\reports\\ESTADO-EVIDENCIAS-L4.md",
+      "target": "l4-10/VERIFICACION.md"
+    }
+  ],
+  "limits": [
+    "five namespace exclusions; academic acceptance pending",
+    "admission only, no execution of C05 fixtures",
+    "release candidate and one replica",
+    "90 distinct cases consolidated from 60 initial and 30 final; not one run",
+    "no commit/push/merge, scans, pipeline integral or report writing"
+  ]
+}

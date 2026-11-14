@@ -1,0 +1,325 @@
+
+CASE: connection
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "get", "nodes"]
+EXPECTED: ACCEPT 
+EXIT: 0
+NAME              STATUS   ROLES           AGE     VERSION
+minikube-l4-c05   Ready    control-plane   5m44s   v1.37.0
+
+PASS: True
+
+CASE: fixture-laboratorio4
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "create", "-f", "-"]
+EXPECTED: ACCEPT 
+EXIT: 0
+pod/c05-subresources created
+
+PASS: True
+
+CASE: laboratorio4-ephemeral-conforme
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "patch", "pod", "c05-subresources", "-n", "laboratorio4", "--subresource=ephemeralcontainers", "--type=merge", "--dry-run=server", "--patch-file", "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\l4-c05\\subresources-final\\fixtures\\laboratorio4-ephemeral-conforme.json"]
+EXPECTED: ACCEPT 
+EXIT: 0
+pod/c05-subresources patched
+
+PASS: True
+
+CASE: laboratorio4-ephemeral-latest-digest
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "patch", "pod", "c05-subresources", "-n", "laboratorio4", "--subresource=ephemeralcontainers", "--type=merge", "--dry-run=server", "--patch-file", "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\l4-c05\\subresources-final\\fixtures\\laboratorio4-ephemeral-latest-digest.json"]
+EXPECTED: DENY l4-ephemeral-images
+EXIT: 1
+Error from server: admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-ephemeral-images failed: Se requiere tag explicito distinto de latest o digest SHA256 valido; latest@digest tambien se rechaza.
+
+PASS: True
+
+CASE: laboratorio4-ephemeral-no-tag
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "patch", "pod", "c05-subresources", "-n", "laboratorio4", "--subresource=ephemeralcontainers", "--type=merge", "--dry-run=server", "--patch-file", "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\l4-c05\\subresources-final\\fixtures\\laboratorio4-ephemeral-no-tag.json"]
+EXPECTED: DENY l4-ephemeral-images
+EXIT: 1
+Error from server: admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-ephemeral-images failed: Se requiere tag explicito distinto de latest o digest SHA256 valido; latest@digest tambien se rechaza.
+
+PASS: True
+
+CASE: laboratorio4-ephemeral-root
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "patch", "pod", "c05-subresources", "-n", "laboratorio4", "--subresource=ephemeralcontainers", "--type=merge", "--dry-run=server", "--patch-file", "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\l4-c05\\subresources-final\\fixtures\\laboratorio4-ephemeral-root.json"]
+EXPECTED: DENY l4-ephemeral-nonroot
+EXIT: 1
+Error from server: admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-ephemeral-nonroot failed: runAsNonRoot efectivo debe ser true y runAsUser no puede ser 0.
+
+PASS: True
+
+CASE: laboratorio4-ephemeral-uid-zero
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "patch", "pod", "c05-subresources", "-n", "laboratorio4", "--subresource=ephemeralcontainers", "--type=merge", "--dry-run=server", "--patch-file", "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\l4-c05\\subresources-final\\fixtures\\laboratorio4-ephemeral-uid-zero.json"]
+EXPECTED: DENY l4-ephemeral-nonroot
+EXIT: 1
+Error from server: admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-ephemeral-nonroot failed: runAsNonRoot efectivo debe ser true y runAsUser no puede ser 0.
+
+PASS: True
+
+CASE: laboratorio4-ephemeral-privileged
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "patch", "pod", "c05-subresources", "-n", "laboratorio4", "--subresource=ephemeralcontainers", "--type=merge", "--dry-run=server", "--patch-file", "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\l4-c05\\subresources-final\\fixtures\\laboratorio4-ephemeral-privileged.json"]
+EXPECTED: DENY l4-ephemeral-privileged
+EXIT: 1
+Error from server: admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-ephemeral-privileged failed: No se permiten contenedores privilegiados.
+
+PASS: True
+
+CASE: laboratorio4-ephemeral-resources-api
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "patch", "pod", "c05-subresources", "-n", "laboratorio4", "--subresource=ephemeralcontainers", "--type=merge", "--dry-run=server", "--patch-file", "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\l4-c05\\subresources-final\\fixtures\\laboratorio4-ephemeral-resources-api.json"]
+EXPECTED: API_REJECT 
+EXIT: 1
+The Pod "c05-subresources" is invalid: spec.ephemeralContainers[0].resources: Forbidden: cannot be set for an Ephemeral Container
+
+PASS: True
+
+CASE: laboratorio4-ephemeral-real-denied
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "patch", "pod", "c05-subresources", "-n", "laboratorio4", "--subresource=ephemeralcontainers", "--type=merge", "--patch-file", "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\l4-c05\\subresources-final\\fixtures\\laboratorio4-ephemeral-real-denied.json"]
+EXPECTED: DENY l4-ephemeral-images
+EXIT: 1
+Error from server: admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-ephemeral-images failed: Se requiere tag explicito distinto de latest o digest SHA256 valido; latest@digest tambien se rechaza.
+
+PASS: True
+
+CASE: laboratorio4-resize-conforme
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "patch", "pod", "c05-subresources", "-n", "laboratorio4", "--subresource=resize", "--type=strategic", "--dry-run=server", "--patch-file", "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\l4-c05\\subresources-final\\fixtures\\laboratorio4-resize-conforme.json"]
+EXPECTED: ACCEPT 
+EXIT: 0
+pod/c05-subresources patched
+
+PASS: True
+
+CASE: laboratorio4-resize-missing-memory
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "patch", "pod", "c05-subresources", "-n", "laboratorio4", "--subresource=resize", "--type=strategic", "--dry-run=server", "--patch-file", "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\l4-c05\\subresources-final\\fixtures\\laboratorio4-resize-missing-memory.json"]
+EXPECTED: API_REJECT_LIMITS 
+EXIT: 1
+The Pod "c05-subresources" is invalid: spec.containers[0].resources.limits: Forbidden: resource limits cannot be removed
+
+PASS: True
+
+CASE: fixture-default
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "create", "-f", "-"]
+EXPECTED: ACCEPT 
+EXIT: 0
+pod/c05-subresources created
+
+PASS: True
+
+CASE: default-ephemeral-conforme
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "patch", "pod", "c05-subresources", "-n", "default", "--subresource=ephemeralcontainers", "--type=merge", "--dry-run=server", "--patch-file", "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\l4-c05\\subresources-final\\fixtures\\default-ephemeral-conforme.json"]
+EXPECTED: ACCEPT 
+EXIT: 0
+pod/c05-subresources patched
+
+PASS: True
+
+CASE: default-ephemeral-latest-digest
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "patch", "pod", "c05-subresources", "-n", "default", "--subresource=ephemeralcontainers", "--type=merge", "--dry-run=server", "--patch-file", "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\l4-c05\\subresources-final\\fixtures\\default-ephemeral-latest-digest.json"]
+EXPECTED: DENY l4-ephemeral-images
+EXIT: 1
+Error from server: admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-ephemeral-images failed: Se requiere tag explicito distinto de latest o digest SHA256 valido; latest@digest tambien se rechaza.
+
+PASS: True
+
+CASE: default-ephemeral-no-tag
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "patch", "pod", "c05-subresources", "-n", "default", "--subresource=ephemeralcontainers", "--type=merge", "--dry-run=server", "--patch-file", "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\l4-c05\\subresources-final\\fixtures\\default-ephemeral-no-tag.json"]
+EXPECTED: DENY l4-ephemeral-images
+EXIT: 1
+Error from server: admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-ephemeral-images failed: Se requiere tag explicito distinto de latest o digest SHA256 valido; latest@digest tambien se rechaza.
+
+PASS: True
+
+CASE: default-ephemeral-root
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "patch", "pod", "c05-subresources", "-n", "default", "--subresource=ephemeralcontainers", "--type=merge", "--dry-run=server", "--patch-file", "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\l4-c05\\subresources-final\\fixtures\\default-ephemeral-root.json"]
+EXPECTED: DENY l4-ephemeral-nonroot
+EXIT: 1
+Error from server: admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-ephemeral-nonroot failed: runAsNonRoot efectivo debe ser true y runAsUser no puede ser 0.
+
+PASS: True
+
+CASE: default-ephemeral-uid-zero
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "patch", "pod", "c05-subresources", "-n", "default", "--subresource=ephemeralcontainers", "--type=merge", "--dry-run=server", "--patch-file", "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\l4-c05\\subresources-final\\fixtures\\default-ephemeral-uid-zero.json"]
+EXPECTED: DENY l4-ephemeral-nonroot
+EXIT: 1
+Error from server: admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-ephemeral-nonroot failed: runAsNonRoot efectivo debe ser true y runAsUser no puede ser 0.
+
+PASS: True
+
+CASE: default-ephemeral-privileged
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "patch", "pod", "c05-subresources", "-n", "default", "--subresource=ephemeralcontainers", "--type=merge", "--dry-run=server", "--patch-file", "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\l4-c05\\subresources-final\\fixtures\\default-ephemeral-privileged.json"]
+EXPECTED: DENY l4-ephemeral-privileged
+EXIT: 1
+Error from server: admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-ephemeral-privileged failed: No se permiten contenedores privilegiados.
+
+PASS: True
+
+CASE: default-ephemeral-resources-api
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "patch", "pod", "c05-subresources", "-n", "default", "--subresource=ephemeralcontainers", "--type=merge", "--dry-run=server", "--patch-file", "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\l4-c05\\subresources-final\\fixtures\\default-ephemeral-resources-api.json"]
+EXPECTED: API_REJECT 
+EXIT: 1
+The Pod "c05-subresources" is invalid: spec.ephemeralContainers[0].resources: Forbidden: cannot be set for an Ephemeral Container
+
+PASS: True
+
+CASE: default-ephemeral-real-denied
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "patch", "pod", "c05-subresources", "-n", "default", "--subresource=ephemeralcontainers", "--type=merge", "--patch-file", "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\l4-c05\\subresources-final\\fixtures\\default-ephemeral-real-denied.json"]
+EXPECTED: DENY l4-ephemeral-images
+EXIT: 1
+Error from server: admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-ephemeral-images failed: Se requiere tag explicito distinto de latest o digest SHA256 valido; latest@digest tambien se rechaza.
+
+PASS: True
+
+CASE: default-resize-conforme
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "patch", "pod", "c05-subresources", "-n", "default", "--subresource=resize", "--type=strategic", "--dry-run=server", "--patch-file", "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\l4-c05\\subresources-final\\fixtures\\default-resize-conforme.json"]
+EXPECTED: ACCEPT 
+EXIT: 0
+pod/c05-subresources patched
+
+PASS: True
+
+CASE: default-resize-missing-memory
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "patch", "pod", "c05-subresources", "-n", "default", "--subresource=resize", "--type=strategic", "--dry-run=server", "--patch-file", "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\l4-c05\\subresources-final\\fixtures\\default-resize-missing-memory.json"]
+EXPECTED: API_REJECT_LIMITS 
+EXIT: 1
+The Pod "c05-subresources" is invalid: spec.containers[0].resources.limits: Forbidden: resource limits cannot be removed
+
+PASS: True
+
+CASE: fixture-c05-second
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "create", "-f", "-"]
+EXPECTED: ACCEPT 
+EXIT: 0
+pod/c05-subresources created
+
+PASS: True
+
+CASE: c05-second-ephemeral-conforme
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "patch", "pod", "c05-subresources", "-n", "c05-second", "--subresource=ephemeralcontainers", "--type=merge", "--dry-run=server", "--patch-file", "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\l4-c05\\subresources-final\\fixtures\\c05-second-ephemeral-conforme.json"]
+EXPECTED: ACCEPT 
+EXIT: 0
+pod/c05-subresources patched
+
+PASS: True
+
+CASE: c05-second-ephemeral-latest-digest
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "patch", "pod", "c05-subresources", "-n", "c05-second", "--subresource=ephemeralcontainers", "--type=merge", "--dry-run=server", "--patch-file", "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\l4-c05\\subresources-final\\fixtures\\c05-second-ephemeral-latest-digest.json"]
+EXPECTED: DENY l4-ephemeral-images
+EXIT: 1
+Error from server: admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-ephemeral-images failed: Se requiere tag explicito distinto de latest o digest SHA256 valido; latest@digest tambien se rechaza.
+
+PASS: True
+
+CASE: c05-second-ephemeral-no-tag
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "patch", "pod", "c05-subresources", "-n", "c05-second", "--subresource=ephemeralcontainers", "--type=merge", "--dry-run=server", "--patch-file", "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\l4-c05\\subresources-final\\fixtures\\c05-second-ephemeral-no-tag.json"]
+EXPECTED: DENY l4-ephemeral-images
+EXIT: 1
+Error from server: admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-ephemeral-images failed: Se requiere tag explicito distinto de latest o digest SHA256 valido; latest@digest tambien se rechaza.
+
+PASS: True
+
+CASE: c05-second-ephemeral-root
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "patch", "pod", "c05-subresources", "-n", "c05-second", "--subresource=ephemeralcontainers", "--type=merge", "--dry-run=server", "--patch-file", "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\l4-c05\\subresources-final\\fixtures\\c05-second-ephemeral-root.json"]
+EXPECTED: DENY l4-ephemeral-nonroot
+EXIT: 1
+Error from server: admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-ephemeral-nonroot failed: runAsNonRoot efectivo debe ser true y runAsUser no puede ser 0.
+
+PASS: True
+
+CASE: c05-second-ephemeral-uid-zero
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "patch", "pod", "c05-subresources", "-n", "c05-second", "--subresource=ephemeralcontainers", "--type=merge", "--dry-run=server", "--patch-file", "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\l4-c05\\subresources-final\\fixtures\\c05-second-ephemeral-uid-zero.json"]
+EXPECTED: DENY l4-ephemeral-nonroot
+EXIT: 1
+Error from server: admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-ephemeral-nonroot failed: runAsNonRoot efectivo debe ser true y runAsUser no puede ser 0.
+
+PASS: True
+
+CASE: c05-second-ephemeral-privileged
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "patch", "pod", "c05-subresources", "-n", "c05-second", "--subresource=ephemeralcontainers", "--type=merge", "--dry-run=server", "--patch-file", "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\l4-c05\\subresources-final\\fixtures\\c05-second-ephemeral-privileged.json"]
+EXPECTED: DENY l4-ephemeral-privileged
+EXIT: 1
+Error from server: admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-ephemeral-privileged failed: No se permiten contenedores privilegiados.
+
+PASS: True
+
+CASE: c05-second-ephemeral-resources-api
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "patch", "pod", "c05-subresources", "-n", "c05-second", "--subresource=ephemeralcontainers", "--type=merge", "--dry-run=server", "--patch-file", "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\l4-c05\\subresources-final\\fixtures\\c05-second-ephemeral-resources-api.json"]
+EXPECTED: API_REJECT 
+EXIT: 1
+The Pod "c05-subresources" is invalid: spec.ephemeralContainers[0].resources: Forbidden: cannot be set for an Ephemeral Container
+
+PASS: True
+
+CASE: c05-second-ephemeral-real-denied
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "patch", "pod", "c05-subresources", "-n", "c05-second", "--subresource=ephemeralcontainers", "--type=merge", "--patch-file", "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\l4-c05\\subresources-final\\fixtures\\c05-second-ephemeral-real-denied.json"]
+EXPECTED: DENY l4-ephemeral-images
+EXIT: 1
+Error from server: admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-ephemeral-images failed: Se requiere tag explicito distinto de latest o digest SHA256 valido; latest@digest tambien se rechaza.
+
+PASS: True
+
+CASE: c05-second-resize-conforme
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "patch", "pod", "c05-subresources", "-n", "c05-second", "--subresource=resize", "--type=strategic", "--dry-run=server", "--patch-file", "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\l4-c05\\subresources-final\\fixtures\\c05-second-resize-conforme.json"]
+EXPECTED: ACCEPT 
+EXIT: 0
+pod/c05-subresources patched
+
+PASS: True
+
+CASE: c05-second-resize-missing-memory
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "patch", "pod", "c05-subresources", "-n", "c05-second", "--subresource=resize", "--type=strategic", "--dry-run=server", "--patch-file", "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\reports\\l4-c05\\subresources-final\\fixtures\\c05-second-resize-missing-memory.json"]
+EXPECTED: API_REJECT_LIMITS 
+EXIT: 1
+The Pod "c05-subresources" is invalid: spec.containers[0].resources.limits: Forbidden: resource limits cannot be removed
+
+PASS: True
+
+CASE: cleanup-laboratorio4-c05-subresources
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "delete", "pod", "c05-subresources", "-n", "laboratorio4", "--ignore-not-found", "--wait=false"]
+EXPECTED: ACCEPT 
+EXIT: 0
+pod "c05-subresources" deleted from laboratorio4 namespace
+
+PASS: True
+
+CASE: cleanup-default-c05-subresources
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "delete", "pod", "c05-subresources", "-n", "default", "--ignore-not-found", "--wait=false"]
+EXPECTED: ACCEPT 
+EXIT: 0
+pod "c05-subresources" deleted from default namespace
+
+PASS: True
+
+CASE: cleanup-c05-second-c05-subresources
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "delete", "pod", "c05-subresources", "-n", "c05-second", "--ignore-not-found", "--wait=false"]
+EXPECTED: ACCEPT 
+EXIT: 0
+pod "c05-subresources" deleted from c05-second namespace
+
+PASS: True
+
+CASE: cleanup-default-c05-real-latest
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "delete", "pod", "c05-real-latest", "-n", "default", "--ignore-not-found", "--wait=false"]
+EXPECTED: ACCEPT 
+EXIT: 0
+
+PASS: True
+
+CASE: cleanup-default-c05-real-resources
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "delete", "pod", "c05-real-resources", "-n", "default", "--ignore-not-found", "--wait=false"]
+EXPECTED: ACCEPT 
+EXIT: 0
+
+PASS: True
+
+CASE: cleanup-default-c05-real-root
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "delete", "pod", "c05-real-root", "-n", "default", "--ignore-not-found", "--wait=false"]
+EXPECTED: ACCEPT 
+EXIT: 0
+
+PASS: True
+
+CASE: cleanup-default-c05-real-privileged
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "delete", "pod", "c05-real-privileged", "-n", "default", "--ignore-not-found", "--wait=false"]
+EXPECTED: ACCEPT 
+EXIT: 0
+
+PASS: True

@@ -1,0 +1,45 @@
+{
+  "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+  "artifacts": [
+    {
+      "fileName": "build.txt",
+      "relativePath": "evidence/build.txt"
+    },
+    {
+      "fileName": "commit.txt",
+      "relativePath": "evidence/commit.txt"
+    },
+    {
+      "fileName": "docker.txt",
+      "relativePath": "evidence/docker.txt"
+    },
+    {
+      "fileName": "identity.txt",
+      "relativePath": "evidence/identity.txt"
+    },
+    {
+      "fileName": "image.txt",
+      "relativePath": "evidence/image.txt"
+    },
+    {
+      "fileName": "java.txt",
+      "relativePath": "evidence/java.txt"
+    },
+    {
+      "fileName": "persistence.txt",
+      "relativePath": "evidence/persistence.txt"
+    },
+    {
+      "fileName": "python.txt",
+      "relativePath": "evidence/python.txt"
+    },
+    {
+      "fileName": "tools.txt",
+      "relativePath": "evidence/tools.txt"
+    }
+  ],
+  "building": false,
+  "duration": 22283,
+  "number": 2,
+  "result": "SUCCESS"
+}

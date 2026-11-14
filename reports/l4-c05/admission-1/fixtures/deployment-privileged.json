@@ -1,0 +1,49 @@
+{
+  "apiVersion": "apps/v1",
+  "kind": "Deployment",
+  "metadata": {
+    "name": "c05-deployment-privileged",
+    "namespace": "default"
+  },
+  "spec": {
+    "replicas": 1,
+    "selector": {
+      "matchLabels": {
+        "app": "c05"
+      }
+    },
+    "template": {
+      "metadata": {
+        "labels": {
+          "app": "c05"
+        }
+      },
+      "spec": {
+        "nodeName": "c05-no-execution",
+        "automountServiceAccountToken": false,
+        "containers": [
+          {
+            "name": "main",
+            "image": "busybox:1.36",
+            "imagePullPolicy": "Never",
+            "resources": {
+              "requests": {
+                "cpu": "10m",
+                "memory": "16Mi"
+              },
+              "limits": {
+                "cpu": "100m",
+                "memory": "64Mi"
+              }
+            },
+            "securityContext": {
+              "runAsNonRoot": true,
+              "runAsUser": 10001,
+              "privileged": true
+            }
+          }
+        ]
+      }
+    }
+  }
+}

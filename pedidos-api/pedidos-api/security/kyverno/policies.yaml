@@ -16,8 +16,15 @@ spec:
       enabled: false
   matchConstraints:
     namespaceSelector:
-      matchLabels:
-        kubernetes.io/metadata.name: laboratorio4
+      matchExpressions:
+      - key: kubernetes.io/metadata.name
+        operator: NotIn
+        values:
+        - kube-system
+        - kube-public
+        - kube-node-lease
+        - kyverno
+        - falco
     resourceRules:
     - apiGroups:
       - ''
@@ -30,9 +37,13 @@ spec:
       - pods
   validations:
   - expression: '(object.spec.containers + (has(object.spec.initContainers) ? object.spec.initContainers
-      : [])).all(c, c.image.contains(''@sha256:'') || (c.image.split(''/'')[c.image.split(''/'').size()-1].contains('':'')
-      && !c.image.endsWith('':latest'')))'
-    message: Imagenes con etiqueta explicita distinta de latest o digest SHA256.
+      : [])).all(c, !c.image.split(''@'')[0].endsWith('':latest'') &&
+
+      (c.image.matches(''^[^@]+@sha256:[a-fA-F0-9]{64}$'') ||
+
+      (!c.image.contains(''@'') && c.image.split(''/'')[c.image.split(''/'').size()-1].contains('':''))))'
+    message: Se requiere tag explicito distinto de latest o digest SHA256 valido;
+      latest@digest tambien se rechaza.
 ---
 apiVersion: policies.kyverno.io/v1
 kind: ValidatingPolicy
@@ -52,8 +63,15 @@ spec:
       enabled: false
   matchConstraints:
     namespaceSelector:
-      matchLabels:
-        kubernetes.io/metadata.name: laboratorio4
+      matchExpressions:
+      - key: kubernetes.io/metadata.name
+        operator: NotIn
+        values:
+        - kube-system
+        - kube-public
+        - kube-node-lease
+        - kyverno
+        - falco
     resourceRules:
     - apiGroups:
       - ''
@@ -88,8 +106,15 @@ spec:
       enabled: false
   matchConstraints:
     namespaceSelector:
-      matchLabels:
-        kubernetes.io/metadata.name: laboratorio4
+      matchExpressions:
+      - key: kubernetes.io/metadata.name
+        operator: NotIn
+        values:
+        - kube-system
+        - kube-public
+        - kube-node-lease
+        - kyverno
+        - falco
     resourceRules:
     - apiGroups:
       - ''
@@ -128,8 +153,15 @@ spec:
       enabled: false
   matchConstraints:
     namespaceSelector:
-      matchLabels:
-        kubernetes.io/metadata.name: laboratorio4
+      matchExpressions:
+      - key: kubernetes.io/metadata.name
+        operator: NotIn
+        values:
+        - kube-system
+        - kube-public
+        - kube-node-lease
+        - kyverno
+        - falco
     resourceRules:
     - apiGroups:
       - ''
@@ -144,4 +176,144 @@ spec:
   - expression: '(object.spec.containers + (has(object.spec.initContainers) ? object.spec.initContainers
       : [])).all(c, !has(c.securityContext) || !has(c.securityContext.privileged)
       || !c.securityContext.privileged)'
+    message: No se permiten contenedores privilegiados.
+---
+apiVersion: policies.kyverno.io/v1
+kind: ValidatingPolicy
+metadata:
+  name: l4-ephemeral-images
+spec:
+  validationActions:
+  - Deny
+  failurePolicy: Fail
+  evaluation:
+    admission:
+      enabled: true
+    background:
+      enabled: false
+  autogen:
+    validatingAdmissionPolicy:
+      enabled: false
+    podControllers:
+      controllers: []
+  matchConstraints:
+    namespaceSelector:
+      matchExpressions:
+      - key: kubernetes.io/metadata.name
+        operator: NotIn
+        values:
+        - kube-system
+        - kube-public
+        - kube-node-lease
+        - kyverno
+        - falco
+    resourceRules:
+    - apiGroups:
+      - ''
+      apiVersions:
+      - v1
+      operations:
+      - UPDATE
+      resources:
+      - pods/ephemeralcontainers
+  validations:
+  - expression: '(has(object.spec.ephemeralContainers) ? object.spec.ephemeralContainers
+      : []).all(c, !c.image.split(''@'')[0].endsWith('':latest'') &&
+
+      (c.image.matches(''^[^@]+@sha256:[a-fA-F0-9]{64}$'') ||
+
+      (!c.image.contains(''@'') && c.image.split(''/'')[c.image.split(''/'').size()-1].contains('':''))))'
+    message: Se requiere tag explicito distinto de latest o digest SHA256 valido;
+      latest@digest tambien se rechaza.
+---
+apiVersion: policies.kyverno.io/v1
+kind: ValidatingPolicy
+metadata:
+  name: l4-ephemeral-nonroot
+spec:
+  validationActions:
+  - Deny
+  failurePolicy: Fail
+  evaluation:
+    admission:
+      enabled: true
+    background:
+      enabled: false
+  autogen:
+    validatingAdmissionPolicy:
+      enabled: false
+    podControllers:
+      controllers: []
+  matchConstraints:
+    namespaceSelector:
+      matchExpressions:
+      - key: kubernetes.io/metadata.name
+        operator: NotIn
+        values:
+        - kube-system
+        - kube-public
+        - kube-node-lease
+        - kyverno
+        - falco
+    resourceRules:
+    - apiGroups:
+      - ''
+      apiVersions:
+      - v1
+      operations:
+      - UPDATE
+      resources:
+      - pods/ephemeralcontainers
+  validations:
+  - expression: '(has(object.spec.ephemeralContainers) ? object.spec.ephemeralContainers
+      : []).all(c, (has(c.securityContext) && has(c.securityContext.runAsNonRoot)
+      ? c.securityContext.runAsNonRoot : (has(object.spec.securityContext) && has(object.spec.securityContext.runAsNonRoot)
+      && object.spec.securityContext.runAsNonRoot)) && (has(c.securityContext) &&
+      has(c.securityContext.runAsUser) ? c.securityContext.runAsUser != 0 : (!has(object.spec.securityContext)
+      || !has(object.spec.securityContext.runAsUser) || object.spec.securityContext.runAsUser
+      != 0)))'
+    message: runAsNonRoot efectivo debe ser true y runAsUser no puede ser 0.
+---
+apiVersion: policies.kyverno.io/v1
+kind: ValidatingPolicy
+metadata:
+  name: l4-ephemeral-privileged
+spec:
+  validationActions:
+  - Deny
+  failurePolicy: Fail
+  evaluation:
+    admission:
+      enabled: true
+    background:
+      enabled: false
+  autogen:
+    validatingAdmissionPolicy:
+      enabled: false
+    podControllers:
+      controllers: []
+  matchConstraints:
+    namespaceSelector:
+      matchExpressions:
+      - key: kubernetes.io/metadata.name
+        operator: NotIn
+        values:
+        - kube-system
+        - kube-public
+        - kube-node-lease
+        - kyverno
+        - falco
+    resourceRules:
+    - apiGroups:
+      - ''
+      apiVersions:
+      - v1
+      operations:
+      - UPDATE
+      resources:
+      - pods/ephemeralcontainers
+  validations:
+  - expression: '(has(object.spec.ephemeralContainers) ? object.spec.ephemeralContainers
+      : []).all(c, !has(c.securityContext) || !has(c.securityContext.privileged) ||
+      !c.securityContext.privileged)'
     message: No se permiten contenedores privilegiados.

@@ -1,0 +1,16 @@
+{
+  "spec": {
+    "ephemeralContainers": [
+      {
+        "name": "debug-privileged",
+        "image": "busybox:1.36",
+        "imagePullPolicy": "Never",
+        "securityContext": {
+          "runAsNonRoot": true,
+          "runAsUser": 10001,
+          "privileged": true
+        }
+      }
+    ]
+  }
+}

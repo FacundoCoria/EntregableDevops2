@@ -7,7 +7,7 @@ pipeline {
     }
     parameters {
         string(name: 'SOURCE_URL', defaultValue: 'https://github.com/FacundoCoria/EntregableDevops2.git', description: 'Repositorio Git publicado del Laboratorio 4.')
-        string(name: 'SOURCE_REF', defaultValue: 'lab4/b05-consolidacion-entrega', description: 'Rama o commit a construir; debe existir en SOURCE_URL.')
+        string(name: 'SOURCE_REF', defaultValue: '', description: 'SHA completo (40 caracteres) del candidato publicado; obligatorio.')
         string(name: 'IMAGE_REPOSITORY', defaultValue: 'brunovitola/pedidos-api-l4', description: 'Docker Hub: usuario/pedidos-api-l4')
     }
     environment {
@@ -22,7 +22,7 @@ pipeline {
                 script {
                     env.EVIDENCE = "${env.WORKSPACE}/evidencia-${env.BUILD_NUMBER}"
                     env.SOURCE_URL = params.SOURCE_URL ?: 'https://github.com/FacundoCoria/EntregableDevops2.git'
-                    env.SOURCE_REF = params.SOURCE_REF ?: 'lab4/b05-consolidacion-entrega'
+                    env.SOURCE_REF = params.SOURCE_REF ?: ''
                     env.IMAGE_REPOSITORY = params.IMAGE_REPOSITORY ?: 'brunovitola/pedidos-api-l4'
                 }
                 sh 'mkdir -p "$EVIDENCE"'
@@ -37,6 +37,8 @@ pipeline {
                             ref=$(git rev-parse --verify --end-of-options "$SOURCE_REF^{commit}")
                         fi
                         git checkout --detach "$ref"
+                        test "${#SOURCE_REF}" = 40
+                        test "$ref" = "$SOURCE_REF"
                         git rev-parse HEAD > "$EVIDENCE/commit.txt"
                         git status --porcelain > "$EVIDENCE/source-status.txt"
                         sha256sum "$APP/pom.xml" "$APP/Dockerfile" > "$EVIDENCE/source-sha256.txt"
@@ -102,7 +104,7 @@ pipeline {
                     if (!(env.IMAGE_REPOSITORY ==~ /[a-z0-9][a-z0-9_-]*\/pedidos-api-l4/)) {
                         error('Indicar IMAGE_REPOSITORY: usuario/pedidos-api-l4')
                     }
-                    env.IMAGE_TAG = "${env.IMAGE_REPOSITORY}:l4-${env.BUILD_NUMBER}-${readFile("${env.EVIDENCE}/commit.txt").trim().take(12)}"
+                    env.IMAGE_TAG = "${env.IMAGE_REPOSITORY}:l4-c07-${env.BUILD_NUMBER}-${System.currentTimeMillis()}-${readFile("${env.EVIDENCE}/commit.txt").trim().take(12)}"
                 }
                 dir('fuente-l4') {
                     sh '''#!/bin/bash
@@ -124,6 +126,8 @@ pipeline {
                           > "$EVIDENCE/docker-login.txt" 2>&1
                         docker push "$IMAGE_TAG" 2>&1 | tee "$EVIDENCE/docker-push.log"
                         docker image inspect --format '{{json .RepoDigests}}' "$IMAGE_TAG" > "$EVIDENCE/image-digests.json"
+                        docker image inspect --format '{{index .RepoDigests 0}}' "$IMAGE_TAG" > "$EVIDENCE/image-digest.txt"
+                        grep -Eq '^brunovitola/pedidos-api-l4@sha256:[a-f0-9]{64}$' "$EVIDENCE/image-digest.txt"
                         printf '%s\n' "$IMAGE_TAG" > "$EVIDENCE/image-tag.txt"
                     '''
                 }
@@ -135,6 +139,7 @@ pipeline {
                     sh '''
                         set -eu
                         export KUBECONFIG=/var/jenkins_home/l4-kube/config
+                        export IMAGE_DIGEST=$(cat "$EVIDENCE/image-digest.txt")
                         sh ci/deploy.sh > "$EVIDENCE/helm.log" 2>&1
                         cat "$EVIDENCE/helm.log"
                     '''

@@ -1,0 +1,4 @@
+Picked up JAVA_TOOL_OPTIONS: -XX:MaxRAMPercentage=70 -Djavax.xml.accessExternalDTD= -Djavax.xml.accessExternalSchema= -Djavax.xml.accessExternalStylesheet=
+[Fatal Error] :1:106: External Entity: Failed to read external document 'c06-xml-7633180932963980826.txt', because 'file' access is not allowed due to restriction set by the accessExternalDTD property.
+[Fatal Error] :1:106: External Entity: Failed to read external document 'c06-xml-7633180932963980826.txt', because 'file' access is not allowed due to restriction set by the accessExternalDTD property.
+PASS mode=blocked DOM=true SAX=true normalXML=OK

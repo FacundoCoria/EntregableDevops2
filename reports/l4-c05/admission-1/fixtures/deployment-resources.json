@@ -1,0 +1,39 @@
+{
+  "apiVersion": "apps/v1",
+  "kind": "Deployment",
+  "metadata": {
+    "name": "c05-deployment-resources",
+    "namespace": "default"
+  },
+  "spec": {
+    "replicas": 1,
+    "selector": {
+      "matchLabels": {
+        "app": "c05"
+      }
+    },
+    "template": {
+      "metadata": {
+        "labels": {
+          "app": "c05"
+        }
+      },
+      "spec": {
+        "nodeName": "c05-no-execution",
+        "automountServiceAccountToken": false,
+        "containers": [
+          {
+            "name": "main",
+            "image": "busybox:1.36",
+            "imagePullPolicy": "Never",
+            "resources": {},
+            "securityContext": {
+              "runAsNonRoot": true,
+              "runAsUser": 10001
+            }
+          }
+        ]
+      }
+    }
+  }
+}

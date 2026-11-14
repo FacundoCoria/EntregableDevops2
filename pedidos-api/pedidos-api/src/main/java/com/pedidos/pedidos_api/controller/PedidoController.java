@@ -39,7 +39,7 @@ public class PedidoController {
         return pedidoRepository.findById(id).orElse(null);
     }
 
-   @PostMapping
+   @PostMapping(consumes = "application/json")
     public Pedido crearPedido(@RequestBody Pedido pedido) {
 
         Producto producto = productoRepository
@@ -74,7 +74,7 @@ public class PedidoController {
         return pedidoGuardado;
     }
 
-    @PutMapping("/{id}")
+    @PutMapping(value = "/{id}", consumes = "application/json")
     public Pedido modificarPedido(
             @PathVariable Long id,
             @RequestBody Pedido pedido) {

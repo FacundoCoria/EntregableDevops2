@@ -1,10 +1,10 @@
 #!/bin/sh
 # Herramientas aisladas en el volumen Jenkins; no modifica /usr/bin ni otros jobs.
 set -eu
-ROOT="${JENKINS_HOME:-/var/jenkins_home}/l4-tools"
+ROOT="${L4_TOOLS_ROOT:-${JENKINS_HOME:-/var/jenkins_home}/l4-tools}"
 mkdir -p "$ROOT/bin" "$ROOT/downloads"
 cd "$ROOT/downloads"
-fetch() { curl --fail --location --retry 3 --connect-timeout 20 --max-time 300 "$1" -o "$2"; }
+fetch() { curl --proto =https --proto-redir =https --fail --location --retry 3 --connect-timeout 20 --max-time 300 "$1" -o "$2"; }
 verify() {
     expected=$(awk '{print $1}' "$2")
     printf '%s  %s\n' "$expected" "$1" | "$3" -c -
@@ -49,13 +49,26 @@ fi
 echo '== Semgrep 1.184.0 =='
 if [ ! -x "$ROOT/semgrep-venv/bin/semgrep" ]; then
     python3 -m venv "$ROOT/semgrep-venv"
-    "$ROOT/semgrep-venv/bin/python" -m pip install --disable-pip-version-check 'semgrep==1.184.0'
+    "$ROOT/semgrep-venv/bin/python" -m pip --isolated install --index-url https://pypi.org/simple --disable-pip-version-check 'semgrep==1.184.0'
 fi
 ln -sf "$ROOT/semgrep-venv/bin/semgrep" "$ROOT/bin/semgrep"
 "$ROOT/semgrep-venv/bin/python" -m pip freeze > "$ROOT/python-packages.txt"
 
 export PATH="$ROOT/bin:$PATH"
 export SEMGREP_SEND_METRICS=off SEMGREP_ENABLE_VERSION_CHECK=0
+# Reutilizar un ejecutable exige la misma version; nunca aceptar solo su existencia.
+expect_version() {
+    name=$1 expected_version=$2 actual_version=$3
+    if [ "$actual_version" != "$expected_version" ]; then
+        echo "ERROR version $name: esperado $expected_version, encontrado $actual_version" >&2
+        exit 1
+    fi
+}
+expect_version Maven 3.9.16 "$(mvn --version | sed -n '1s/.*Apache Maven \([^ ]*\).*/\1/p')"
+expect_version Snyk 1.1308.4 "$(snyk --version)"
+expect_version Helm v4.3.1 "$(helm version --template '{{.Version}}')"
+expect_version kubectl v1.37.0 "$(kubectl version --client -o json | python3 -c 'import sys,json; print(json.load(sys.stdin)["clientVersion"]["gitVersion"])')"
+expect_version Semgrep 1.184.0 "$(semgrep --version)"
 mvn --version
 snyk --version
 helm version --short

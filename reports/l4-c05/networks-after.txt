@@ -1,0 +1,11 @@
+bridge
+ejerciciolaboratorio-main_default
+host
+jenkins_net
+l4-c01-repro_builds
+l4-c01-repro_control
+l4-c01_builds
+l4-c01_control
+lab-inventario_default
+minikube
+none

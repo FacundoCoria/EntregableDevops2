@@ -1,0 +1,15 @@
+{
+  "spec": {
+    "ephemeralContainers": [
+      {
+        "name": "debug-latest-digest",
+        "image": "busybox:latest@sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "imagePullPolicy": "Never",
+        "securityContext": {
+          "runAsNonRoot": true,
+          "runAsUser": 10001
+        }
+      }
+    ]
+  }
+}

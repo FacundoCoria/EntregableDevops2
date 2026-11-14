@@ -1,0 +1,2 @@
+github.com/docker/buildx v0.36.1 1d8dde89b8aba914e05e45366770736fea1fd690
+ERROR: failed to build: unable to prepare context: path "/tmp/c01-smoke" not found

@@ -1,0 +1,14 @@
+{
+  "result": "PASS",
+  "unchangedContainers": [
+    "/l4-c01-repro-agent-1",
+    "/l4-c01-repro-controller-1",
+    "/l4-c01-repro-docker-1",
+    "/ejerciciolaboratorio-main-front-1",
+    "/ejerciciolaboratorio-main-back-1",
+    "/lab-inventario-app-1",
+    "/jenkins",
+    "/minikube",
+    "/DenTech-n8n"
+  ]
+}

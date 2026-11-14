@@ -1,0 +1,13 @@
+{
+  "result": "PASS",
+  "preflight": 1,
+  "preflightResult": "SUCCESS",
+  "artifactCount": 9,
+  "artifactsHashVerified": true,
+  "secretMatches": 0,
+  "filesCheckedForSecret": 92,
+  "protectedTrackedFilesChanged": 0,
+  "localLinksChecked": 18,
+  "head": "50a0eb53e7a1152fbe0e4f26252fac2380403fc3",
+  "branch": "lab4/c01-jenkins-reproducible"
+}

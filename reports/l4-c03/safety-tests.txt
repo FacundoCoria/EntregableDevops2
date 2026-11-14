@@ -1,0 +1,16 @@
+test_corruption_rejected_before_docker (test_lifecycle.SafetyTests.test_corruption_rejected_before_docker) ... ok
+test_inspection_access_denied_is_not_empty (test_lifecycle.SafetyTests.test_inspection_access_denied_is_not_empty) ... ok
+test_missing_network_response_is_empty (test_lifecycle.SafetyTests.test_missing_network_response_is_empty) ... ok
+test_missing_volume_lowercase_response_is_empty (test_lifecycle.SafetyTests.test_missing_volume_lowercase_response_is_empty) ... ok
+test_purge_requires_exact_confirmation (test_lifecycle.SafetyTests.test_purge_requires_exact_confirmation) ... ok
+test_refuses_busy_jenkins (test_lifecycle.SafetyTests.test_refuses_busy_jenkins) ... ok
+test_rejects_shared_network (test_lifecycle.SafetyTests.test_rejects_shared_network) ... ok
+test_rejects_shared_project_before_docker (test_lifecycle.SafetyTests.test_rejects_shared_project_before_docker) ... ok
+test_rejects_shared_volume (test_lifecycle.SafetyTests.test_rejects_shared_volume) ... ok
+test_rejects_wrong_volume_owner (test_lifecycle.SafetyTests.test_rejects_wrong_volume_owner) ... ok
+test_restore_does_not_overwrite_existing_destination (test_lifecycle.SafetyTests.test_restore_does_not_overwrite_existing_destination) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.016s
+
+OK

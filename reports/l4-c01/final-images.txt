@@ -1,0 +1,2 @@
+[l4-c01-controller:2.580.2] sha256:fab01bd4b4cedd727aba1760879227e561d1268999a13ce6c0248c2112b99699 amd64 linux
+[l4-c01-agent:2.580.2] sha256:1a9cd13eeff7dc0550a7aab614a16b8ded1464baee430d0b20bd45ac01c998be amd64 linux

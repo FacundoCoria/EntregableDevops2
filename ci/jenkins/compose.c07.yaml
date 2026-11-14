@@ -1,0 +1,5 @@
+services:
+  controller:
+    image: l4-c07-controller:2.580.2
+  agent:
+    image: l4-c07-agent:2.580.2

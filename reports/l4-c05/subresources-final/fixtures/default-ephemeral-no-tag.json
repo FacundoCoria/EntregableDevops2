@@ -1,0 +1,15 @@
+{
+  "spec": {
+    "ephemeralContainers": [
+      {
+        "name": "debug-no-tag",
+        "image": "busybox",
+        "imagePullPolicy": "Never",
+        "securityContext": {
+          "runAsNonRoot": true,
+          "runAsUser": 10001
+        }
+      }
+    ]
+  }
+}

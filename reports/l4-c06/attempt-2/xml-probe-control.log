@@ -1,0 +1,2 @@
+Picked up JAVA_TOOL_OPTIONS: -Djavax.xml.accessExternalDTD=all
+PASS mode=allowed DOM=false SAX=false normalXML=OK

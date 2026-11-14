@@ -1,0 +1,263 @@
+{
+  "historicalTrivy": {
+    "CRITICAL": 0,
+    "HIGH": 2,
+    "MEDIUM": 23,
+    "LOW": 16
+  },
+  "baselineSameDatabase": {
+    "CRITICAL": 0,
+    "HIGH": 2,
+    "MEDIUM": 43,
+    "LOW": 16
+  },
+  "finalTrivy": {
+    "CRITICAL": 0,
+    "HIGH": 0,
+    "MEDIUM": 17,
+    "LOW": 16
+  },
+  "finalSnyk": {
+    "CRITICAL": 0,
+    "HIGH": 1,
+    "MEDIUM": 0,
+    "LOW": 0
+  },
+  "removedSameDatabase": [
+    {
+      "package": "apt",
+      "id": "CVE-2026-109518"
+    },
+    {
+      "package": "libapt-pkg6.0",
+      "id": "CVE-2026-109518"
+    },
+    {
+      "package": "libc-bin",
+      "id": "CVE-2026-18374"
+    },
+    {
+      "package": "libc-bin",
+      "id": "CVE-2026-84243"
+    },
+    {
+      "package": "libc-bin",
+      "id": "CVE-2026-8674"
+    },
+    {
+      "package": "libc-bin",
+      "id": "CVE-2026-86805"
+    },
+    {
+      "package": "libc-bin",
+      "id": "CVE-2026-95818"
+    },
+    {
+      "package": "libc-bin",
+      "id": "CVE-2026-97399"
+    },
+    {
+      "package": "libc6",
+      "id": "CVE-2026-18374"
+    },
+    {
+      "package": "libc6",
+      "id": "CVE-2026-84243"
+    },
+    {
+      "package": "libc6",
+      "id": "CVE-2026-8674"
+    },
+    {
+      "package": "libc6",
+      "id": "CVE-2026-86805"
+    },
+    {
+      "package": "libc6",
+      "id": "CVE-2026-95818"
+    },
+    {
+      "package": "libc6",
+      "id": "CVE-2026-97399"
+    },
+    {
+      "package": "libpcre2-8-0",
+      "id": "CVE-2026-103111"
+    },
+    {
+      "package": "libpcre2-8-0",
+      "id": "CVE-2026-86145"
+    },
+    {
+      "package": "libpcre2-8-0",
+      "id": "CVE-2026-89156"
+    },
+    {
+      "package": "libpcre2-8-0",
+      "id": "CVE-2026-89157"
+    },
+    {
+      "package": "libpcre2-8-0",
+      "id": "CVE-2026-89158"
+    },
+    {
+      "package": "libpcre2-8-0",
+      "id": "CVE-2026-89160"
+    },
+    {
+      "package": "libpcre2-8-0",
+      "id": "CVE-2026-89161"
+    },
+    {
+      "package": "locales",
+      "id": "CVE-2026-18374"
+    },
+    {
+      "package": "locales",
+      "id": "CVE-2026-84243"
+    },
+    {
+      "package": "locales",
+      "id": "CVE-2026-8674"
+    },
+    {
+      "package": "locales",
+      "id": "CVE-2026-86805"
+    },
+    {
+      "package": "locales",
+      "id": "CVE-2026-95818"
+    },
+    {
+      "package": "locales",
+      "id": "CVE-2026-97399"
+    },
+    {
+      "package": "perl-base",
+      "id": "CVE-2026-82560"
+    }
+  ],
+  "newSameDatabase": [],
+  "newCatalogVsHistorical": [
+    {
+      "package": "libc-bin",
+      "id": "CVE-2026-18374"
+    },
+    {
+      "package": "libc-bin",
+      "id": "CVE-2026-84243"
+    },
+    {
+      "package": "libc-bin",
+      "id": "CVE-2026-8674"
+    },
+    {
+      "package": "libc-bin",
+      "id": "CVE-2026-86805"
+    },
+    {
+      "package": "libc-bin",
+      "id": "CVE-2026-95818"
+    },
+    {
+      "package": "libc-bin",
+      "id": "CVE-2026-97399"
+    },
+    {
+      "package": "libc6",
+      "id": "CVE-2026-18374"
+    },
+    {
+      "package": "libc6",
+      "id": "CVE-2026-84243"
+    },
+    {
+      "package": "libc6",
+      "id": "CVE-2026-8674"
+    },
+    {
+      "package": "libc6",
+      "id": "CVE-2026-86805"
+    },
+    {
+      "package": "libc6",
+      "id": "CVE-2026-95818"
+    },
+    {
+      "package": "libc6",
+      "id": "CVE-2026-97399"
+    },
+    {
+      "package": "libsystemd0",
+      "id": "CVE-2026-121876"
+    },
+    {
+      "package": "libudev1",
+      "id": "CVE-2026-121876"
+    },
+    {
+      "package": "locales",
+      "id": "CVE-2026-18374"
+    },
+    {
+      "package": "locales",
+      "id": "CVE-2026-84243"
+    },
+    {
+      "package": "locales",
+      "id": "CVE-2026-8674"
+    },
+    {
+      "package": "locales",
+      "id": "CVE-2026-86805"
+    },
+    {
+      "package": "locales",
+      "id": "CVE-2026-95818"
+    },
+    {
+      "package": "locales",
+      "id": "CVE-2026-97399"
+    }
+  ],
+  "imageIndex": "sha256:0a309fa5e61806a7aac6489cfedf514711eb91296badcff512048152c02016c8",
+  "imageConfig": "sha256:d6669e2b13ffe0374b281d7762bffe4cfd56fc3a4f65258e78c1da2f99e33729",
+  "dockerBytes": 167726644,
+  "archiveSha256": "185b39230fb7e22e285b5ba687c959e99bd39041483f6bb61af9579ee2b90c4a",
+  "jarSha256": "25fb55cd11a66637fe975e6672b725f367c83baab1e2a9fb6c5739e99c16e54a",
+  "junit": [
+    {
+      "name": "com.pedidos.pedidos_api.JsonContractTests",
+      "tests": "2",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.pedidos.pedidos_api.PedidosApiApplicationTests",
+      "tests": "1",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    }
+  ],
+  "scanScope": {
+    "ubuntuPackages": 143,
+    "javaPackages": 83,
+    "snykDependencies": 130,
+    "snykIncludesTest": true
+  },
+  "criticalGate": {
+    "scan_exit_code": 1,
+    "findings_by_severity": {
+      "critical": 0,
+      "high": 1,
+      "low": 0,
+      "medium": 0
+    },
+    "critical_ids": [],
+    "gate": "PASS"
+  },
+  "localOnly": true,
+  "jaxbPatched": false
+}

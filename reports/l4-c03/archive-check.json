@@ -1,0 +1,6 @@
+{
+  "result": "PASS",
+  "masterKeyExcludedFromControllerArchive": true,
+  "masterKeyPresentSeparately": true,
+  "build1AndArchivedCommitPresent": true
+}

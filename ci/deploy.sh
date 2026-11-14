@@ -3,14 +3,18 @@ set -eu
 : "${EVIDENCE:?}" "${APP:?}" "${IMAGE_TAG:?}"
 namespace=laboratorio4
 release=l4
+node=minikube-l4-c07
+server=$(kubectl config view --minify -o jsonpath='{.clusters[0].cluster.server}')
+[ "$server" = 'https://minikube-l4-c07:8443' ] || { echo 'Destino fuera del ensayo C07' >&2; exit 1; }
+: "${IMAGE_DIGEST:?Se requiere la imagen publicada por digest}"
 chart="$APP/helm-chart"
 helm lint "$chart" -f "$chart/values-dev.yaml" \
-  --set-string "components.api.image=$IMAGE_TAG" --set components.api.imagePullPolicy=IfNotPresent
+  --set-string "components.api.image=$IMAGE_DIGEST" --set-string "observability.nodeName=$node" --set components.api.imagePullPolicy=IfNotPresent
 helm template "$release" "$chart" -n "$namespace" -f "$chart/values-dev.yaml" \
-  --set-string "components.api.image=$IMAGE_TAG" --set components.api.imagePullPolicy=IfNotPresent \
+  --set-string "components.api.image=$IMAGE_DIGEST" --set-string "observability.nodeName=$node" --set components.api.imagePullPolicy=IfNotPresent \
   > "$EVIDENCE/helm-rendered.yaml"
 helm upgrade --install "$release" "$chart" -n "$namespace" -f "$chart/values-dev.yaml" \
-  --set-string "components.api.image=$IMAGE_TAG" --set components.api.imagePullPolicy=IfNotPresent \
+  --set-string "components.api.image=$IMAGE_DIGEST" --set-string "observability.nodeName=$node" --set components.api.imagePullPolicy=IfNotPresent \
   --server-side=false --wait=legacy --timeout 8m
 kubectl -n "$namespace" rollout status deployment/l4-pedidos-api --timeout=300s
 kubectl -n "$namespace" get pods,pvc,services -l app.kubernetes.io/instance=l4 -o wide > "$EVIDENCE/kubernetes.txt"

@@ -1,0 +1,4 @@
+{"Version":2,"NextUpdate":"2026-11-15T19:00:12.815668137Z","UpdatedAt":"2026-11-14T19:00:12.815668408Z","DownloadedAt":"2026-11-14T21:04:23.224589492Z"}
+{"Version":1,"NextUpdate":"2026-11-17T00:57:38.620090274Z","UpdatedAt":"2026-11-14T00:57:38.620090755Z","DownloadedAt":"2026-11-14T21:06:24.990975485Z"}
+efd5f5d37996017573de77453725266d7241b3969a851bac8b4d12c8bfb348b6  /root/.cache/trivy/db/trivy.db
+637b8f504813cb6ea379d92343caa0bb221e48b6b56b68060e6a8aec31e89f54  /root/.cache/trivy/java-db/trivy-java.db

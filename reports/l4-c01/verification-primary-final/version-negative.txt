@@ -1,0 +1,2 @@
+ERROR version Snyk: esperado 1.1308.4, encontrado 0.0.0
+VERSION_MISMATCH_REJECTED

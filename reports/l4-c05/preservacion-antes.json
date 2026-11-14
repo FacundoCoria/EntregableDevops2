@@ -1,0 +1,3558 @@
+[
+  {
+    "path": "EntregableDevops2/reports/COMANDOS-TRIVY.md",
+    "sha256": "2b0187eac76f4f8cdf60f04ab566a9834cc19fef6b975c262ac5be241b8d0a8f"
+  },
+  {
+    "path": "EntregableDevops2/reports/docker-build.txt",
+    "sha256": "3e2f4f6423a2ed47e2ae204ad5112ba6aaa61ea6f87707d37865233c2c7ed4c9"
+  },
+  {
+    "path": "EntregableDevops2/reports/ejecucion.json",
+    "sha256": "f7b02f76e18970df6924905f33b338bee5bb536bfdff65c38332dfa617b1722b"
+  },
+  {
+    "path": "EntregableDevops2/reports/ESTADO-EVIDENCIAS-L4.md",
+    "sha256": "de14f047fb0128bd752847e03e139e4885839af416085f1e5a1d265f93f2287a"
+  },
+  {
+    "path": "EntregableDevops2/reports/falco-event.log",
+    "sha256": "047c91f575f19b16a34444d97a57dc4731222d025e36542bf9da1b57c6293651"
+  },
+  {
+    "path": "EntregableDevops2/reports/falco-event.md",
+    "sha256": "adb6b5e5c73093557d899a6d4599f13f27e2f423b71fb51e894d308baa7415d1"
+  },
+  {
+    "path": "EntregableDevops2/reports/image-analysis.md",
+    "sha256": "a0a92d20de9b545efc193e35d2714b4a0037156fdb38b4a827a39949a3285ba5"
+  },
+  {
+    "path": "EntregableDevops2/reports/imagen-analizada.json",
+    "sha256": "b0437be191301098d1183d0807ba03526b4b6145a4340cc130ee9b411456eee6"
+  },
+  {
+    "path": "EntregableDevops2/reports/imagen-trivy.json",
+    "sha256": "fbfd0ff1d68457d2bb00cd57baa093600aaa353222ba72c9774bbfec5a552263"
+  },
+  {
+    "path": "EntregableDevops2/reports/kyverno-validation.log",
+    "sha256": "7d585908ad20d0229f0808ecb161a250e79b0a15eed912b7311af3c37db949e0"
+  },
+  {
+    "path": "EntregableDevops2/reports/prueba-maven.txt",
+    "sha256": "caff9c7c14571d697d3d252d922754018c4b1b62f1a2b9c1f88d8ea815114f42"
+  },
+  {
+    "path": "EntregableDevops2/reports/RESULTADOS-TRIVY.md",
+    "sha256": "0300a7b0f5b792a29e90676997075401916aeca94366ca04b1598b950c6ce8d5"
+  },
+  {
+    "path": "EntregableDevops2/reports/semgrep-report.txt",
+    "sha256": "dcce9328cb61ea4d36b12533bf8608b0841da1149a7a6e24611d5e365d8b4bea"
+  },
+  {
+    "path": "EntregableDevops2/reports/snyk-comparison.md",
+    "sha256": "baa9ddadfc2202b4a523fd22325e424a33c3606a514ed93b32eec80f5f979df9"
+  },
+  {
+    "path": "EntregableDevops2/reports/snyk-report.txt",
+    "sha256": "4e1e09125d35e2c25f8f983bd0846d78785af2632401878b99a96dd9e5894991"
+  },
+  {
+    "path": "EntregableDevops2/reports/trivy-ejecucion.txt",
+    "sha256": "2d4605f6e18e7f76a31bfcf65bf49d8349cfdc9cf8fba3735fdc26255206b877"
+  },
+  {
+    "path": "EntregableDevops2/reports/trivy-version.txt",
+    "sha256": "79f461a5bd3b50c99e8e08f17b3066522abc2ba9c5810cb4cfcf30f325a36902"
+  },
+  {
+    "path": "EntregableDevops2/reports/trivyreport.json",
+    "sha256": "ce98f85a0028bd69d92d8c6daf057acbade02e51c108accbe7861ae70c2d85a7"
+  },
+  {
+    "path": "EntregableDevops2/reports/trivyreport.txt",
+    "sha256": "ddda789d0a1f58d2268c9e6364356949c01d16cfc62f33cef482e8095837752c"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-02/COMANDOS.md",
+    "sha256": "3c9c95109e15d51b758be22b8c5c0cfc6703aee1fb69d9b77f7ede2e9d01f8ae"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-02/dive-ci-exit.txt",
+    "sha256": "5f2bb1b52b93ecda505bbe52c3470fb3ba89a943d156701d1d69f04b248cfda0"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-02/dive-ci.txt",
+    "sha256": "173636e5d3e2a988afe43383e2f35ffbdcce05bf0ada9f2119d422e4e9eb256e"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-02/dive-ejecucion.txt",
+    "sha256": "e89f87c1f6834b3d67cf5d79301da444be00ab81200008ec1f895ea8c8f91e13"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-02/dive-exit.txt",
+    "sha256": "5f2bb1b52b93ecda505bbe52c3470fb3ba89a943d156701d1d69f04b248cfda0"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-02/dive.json",
+    "sha256": "32d53ebd6fd853b39c812c1dab7a623e2702ab4e5716c392ce4bfd4bc7d36ee1"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-02/resumen.json",
+    "sha256": "110887dd1e7682fdf25242b056ab30c543ff9c0787811d0442c49c98b150d242"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-02/trivy-ejecucion.txt",
+    "sha256": "42ae24884a47c4ac98b69685b9a5bef9f76290fd5a5816cc4bf0719c1d1f97d1"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-02/trivy-exit.txt",
+    "sha256": "5f2bb1b52b93ecda505bbe52c3470fb3ba89a943d156701d1d69f04b248cfda0"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-02/trivy-version.txt",
+    "sha256": "cad35a7e8113a19428c61a96713658fb78ef902ee48fa2f0a9b14180b9d56348"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-02/trivyreport.json",
+    "sha256": "44f9314da137522c8c975ad83787f661c34ee7214035b9fcec4f8e50c751088f"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-02/trivyreport.txt",
+    "sha256": "7751cc9821ca27bfc431b7fb81398a9427daeb16b1601d507cc152bb1454e291"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-05/scan-log.txt",
+    "sha256": "c43844d18d4f6f35429d544791684307b426380964e64a8b7a2eea3272505fc8"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-05/semgrep.json",
+    "sha256": "08b7379185f312deff3227c1190a49e2712d5c5473a015c30cd801e87f762a92"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-05/semgrep.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-06/snyk-output.txt",
+    "sha256": "f6263c4ef290700c8cd72fe3b542797334ae4d8885be8a4ea67113d67ac79bfd"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-06/snyk.json",
+    "sha256": "10abc1e789f4a9bf1f31da91551b5991d92e32251d758121ccc3cd9ef5464b3b"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-06/summary.json",
+    "sha256": "91f8ba544148fb0e97df91a0eff2b7505ad0da848ebfa3e67d0151d985b7c00a"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-07/chart-default-values.yaml",
+    "sha256": "cd92386b25e1e751b6274404f461fb739a4f96321ee3e19ff1e0b76a2ce1708a"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-07/chart-source.json",
+    "sha256": "09a004deefec181752024dce7c1bb411d614a7c8f432279f9d64e863e8a3575a"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-07/helm-effective-values.yaml",
+    "sha256": "ef9642e5dca65da702622c09a95294fd1ed61d6e80d9b5ac2da611f3bb1ec068"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-07/helm-install.txt",
+    "sha256": "4fe208a3bb788d58f0f5494381bde6c1cc3a832eeb4aa03041c45d86e59703b0"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-07/helm-releases.txt",
+    "sha256": "4ca9d8c0ed71e0170001ff628e80232b9e0238a16dd68880c4c51f7d2112d9b4"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-07/historical-report-integrity.txt",
+    "sha256": "85cb8342923359f000f124b2dddac44071810ef463fdb08050d55cb37ef3615a"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-07/kyverno-pods.yaml",
+    "sha256": "83ccab65f3833b01872b1e52d67c01ee22eca3f654983f5b5bf5ab03a12e5aa4"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-07/l4-chart-admission.txt",
+    "sha256": "d889ad858d544077771d0b5b87d203ce4c8330f7c1ce1808be1a49c2f630364a"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-07/l4-pods-final.txt",
+    "sha256": "08cccb1e93171ea4b87e83d4b1fb12892f8fecdde1769017f3a4f0583a195eda"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-07/l4-rendered.yaml",
+    "sha256": "1d536a1a32b716d7d9f3ce1da30664997244236efaaf9c8edb75ff7f1bbdefa1"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-07/live-conforme-result.yaml",
+    "sha256": "bff151bfbe189537f482d245cdc3156504d916fc1b237975766e0246d305ba60"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-07/live-conforme.json",
+    "sha256": "3fc9497723556ca85ed660a0e422c58153511140730b0b1bea82f577621f1364"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-07/live-create-validation.log",
+    "sha256": "07142202b0bdbeec9726f8c1a22ae9b2c2b662cbfa57a097aaf39d14ef01cde6"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-07/policies-effective.yaml",
+    "sha256": "59fc7675bc2e796215e65924c1a0f6d666b634159adf9b5ce49929b49093aee2"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-07/policies-initial.yaml",
+    "sha256": "24b40e48ba7fe2fd2e16e78c33c38041dbd8ecc9b16d659f3cb1e650f1eeb59d"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-07/policy-apply.txt",
+    "sha256": "2a9500d20e37ff77c3d7d7d65d27c34eb33b966d7e4eabfbadec75a7d139c89a"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-07/validation-initial-failed.log",
+    "sha256": "a63733d7860ab42b6390ca336993184d1b9a612274c541f519ec092ae40704f8"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-07/validation-results-initial-failed.json",
+    "sha256": "c3232e962eded913f73ff50ccd7593dae6af4a93ce0a5dd2cb8e3ec79dcefa13"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-07/validation-results.json",
+    "sha256": "361de6ac5c315de48d38811a7c809b236d6c6fc4fbfe933073fea0880c96af55"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-07/webhooks.yaml",
+    "sha256": "857922ad445aa03d98b2da283d6f602dd498a43b5508aa52149b8e93d1795200"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-08/artifact-install.log",
+    "sha256": "d436a7e277c15655c5081148736e6a41c46657336d2e0654c786d1382b27651a"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-08/chart-default-values.yaml",
+    "sha256": "27b54e3b40210592c00534aab90850d1bbe75dd69114602ce17ee265043a0e0e"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-08/chart-source.json",
+    "sha256": "cecb5c62a2301670734ee17cc89f3b1aab94cfa9615b233599d796da75f11be6"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-08/cleanup-state.json",
+    "sha256": "386dfd9f05c7c607f7be552ca7582f1d1b3834400b15e8f7f973c56027a3a7c6"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-08/control-events.log",
+    "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-08/correlation.json",
+    "sha256": "412e5529d266b03e7f60cc14c01562baae063002ba3dd94e55745774b96f614f"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-08/daemonset.yaml",
+    "sha256": "b9f21168dc36c25d47ad28ebe0745417ba95f652174f5544f7718c598ba7d999"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-08/falco-config-effective.yaml",
+    "sha256": "9e669c0b9dfaa055fa28a1cfbdde6ac9357ff1a105965ad5510e61efeb8d8c07"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-08/falco-pod.json",
+    "sha256": "1121bda4879556fa9a6e21395c7aa28933c5ca80898d8a82d8d27bfbc303c8b6"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-08/falco-rendered.yaml",
+    "sha256": "c26c1e769d9b3c48e663be27370ec904e92e96bac5bbc85c9bcead9675a205a9"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-08/falco-rules-effective.yaml",
+    "sha256": "32c2a016b39793665d0a8483be564782123b74f2e63acc79409964cd6c40ecc5"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-08/falco-startup.log",
+    "sha256": "680bd907f2cb669d9cb207268b241844d634259f9ab542ad8ffccba42646cb84"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-08/helm-effective-values.yaml",
+    "sha256": "40415d229b6979550d83b6bc7b006429af4f514856fa97e607c8727392006f1c"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-08/helm-install.log",
+    "sha256": "0c12090152f18e499b6f1ffc5dee0494378c5d7f16bd19699f0d6e39896a66bd"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-08/helm-releases.txt",
+    "sha256": "a6e9918c079e975140d6a3a9ad43f2da447ce5860aae631afba70414ae3ee77b"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-08/kyverno-final-policies.json",
+    "sha256": "6a9ca2931e69e1f3ff61236daea5631046242129ad2d86cd055f53d46a50090d"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-08/laboratorio4-final-pods.json",
+    "sha256": "564c74d7f676865e28bce852b988681fd110ac1d997dfa7fb465519140d38059"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-08/matched-event.json",
+    "sha256": "08037630e8f7aaf4649e8649ded01251c0c66fe482ba711eb5a5c3292caa35ad"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-08/nodes.txt",
+    "sha256": "a6ce9d67b29ebefa623c405c7a7fbb90be05b2c3e8e3081017969a171f714563"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-08/prior-reports-integrity.json",
+    "sha256": "446030649b689aace5e5ba59b1aae7cf03d62543a31632eab0e2f4c4a5699d18"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-08/test-pod.json",
+    "sha256": "c9da79de449845b80c169eb192d819f52ad7ce2f5e510a39d8294d36c6c74652"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-08/test-window-events.log",
+    "sha256": "125c4f543bc231846b0dc8aa491b0873d96d3df610f62a8682b3afbaee725edf"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/diagnostic-no-credential.log",
+    "sha256": "bb2b6db2d072c11d7970f78b9bb01928e2dce6967fa52c91c1e1db10efe947e2"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/maven-diagnostic.log",
+    "sha256": "3b8bb4c590f4d25b610bfda014f2f128c216a069067886f727ca320d6e4ed9ca"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/python-packages.txt",
+    "sha256": "8c5e195f028cd8fb35870f6f3ec9a2aec9ba8f41d6862c2facd1d77d7c545f02"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/snyk-help-diagnostic.log",
+    "sha256": "978c228d14e28d1301424ac7bd5b96f01bb56f441d59590f4b481f2524f43f90"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/tools-install.log",
+    "sha256": "584927c9125711597ca6b48cb0d4b794bde1ed62834ec3fa15ad467e025971c2"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/access-closed.json",
+    "sha256": "3561042e787a745a06102b120664d7b5b4bdcaaccdf1ff1f48754a0693e70bcd"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/access-final.log",
+    "sha256": "69643481f6a0af9d616589ed2a765c30f6b6daaf8d9cf0122aeba5b488774ae5"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/access-test.log",
+    "sha256": "accafc1fc7c28c52a86885125d8138db826385c34a51a93804e9fc03b378c5e7"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/final-docker.txt",
+    "sha256": "1b1dc3f4e69a3af723cf2b0e39fe8c68d5ce817cbb6ce5f5ff03af9a28fdafc5"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/final-failure-trap.log",
+    "sha256": "9239b9365fc4d85c65fea64709d40e0ce93821345f86b6fc41956c11cee6a887"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/final-main.json",
+    "sha256": "178d0d34454c58025acf0c8352be9fa6af96280d8cf35a3421c86ee205f05a26"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/final-pods.json",
+    "sha256": "add36ff3e1a3dc4c7070fead832acf9a1d912b473228670d752ab96c64c10aab"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/final-policies.json",
+    "sha256": "6a9ca2931e69e1f3ff61236daea5631046242129ad2d86cd055f53d46a50090d"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/final-releases.json",
+    "sha256": "dc596acafc6c23ed556cf239f3c82b49266eaef52945c6ec8af1014e186d44bc"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/final-verification.json",
+    "sha256": "98b2bf3f0e3e4c4899c527db2bd36877d3b4accd3a980e57e8a579e09a0086de"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/initial-tunnels-retired.json",
+    "sha256": "9cecb77c62b0d67fedd298e5aea79e5685a5d5059e8c452a480425686782d019"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/scripts-sha256.json",
+    "sha256": "7df2c6f4a20aa26b281f194d2637c45ac0fb3519ad0ac4be20f75059a03493b9"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/security-start-final.log",
+    "sha256": "de4db2418191e1980a97dff60630f32c90e0f3f5dee355f47386b9779cebb5b5"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/traffic-final-closed.json",
+    "sha256": "a6acf4a55c970fda89e70021c342e0c2dc07d2ccc65c33c3dff1c0cdaf2c5373"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/traffic-final.log",
+    "sha256": "5879c131c36ac7ae258af97617114bb5c4b538647d9944ab557be2d9cd649ab7"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/VERIFICACION.md",
+    "sha256": "9d0ca2023eb0d3f347e69ccc33316272600bb68690eeae2afdcf85d9aca8c29d"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b02-componentes.md",
+    "sha256": "53e633620834274bacfa57eb2bbc27e0367b71047296a54e0e4446d0f7038bcb"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b03-helm.md",
+    "sha256": "6671433b03ab373a39a7f41522414679a3b67f33c5a7fb2798e917c6e9cf1e2e"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04-reproduccion.md",
+    "sha256": "ea616c39bb93d8e987af369a123b6792aa91294d866c5fe8ccc6b363cc6abddc"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/COMANDOS.md",
+    "sha256": "fcd24451b1d99a85efb30eb69a8e9f4d239411b516548cdb26b240dd11ccf89f"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/dive-ci-exit.txt",
+    "sha256": "5f2bb1b52b93ecda505bbe52c3470fb3ba89a943d156701d1d69f04b248cfda0"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/dive-ci.txt",
+    "sha256": "26bc127caa1df08f1cc8aecc811a28b805189cee8867ad67582510aa33ffb931"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/dive-ejecucion.txt",
+    "sha256": "e3356915152293c59cd3fc06a637c94adddf5d7c133de62575a18a6b7b1b5ccd"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/dive-exit.txt",
+    "sha256": "5f2bb1b52b93ecda505bbe52c3470fb3ba89a943d156701d1d69f04b248cfda0"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/dive.json",
+    "sha256": "b40fde00d9c00f2423dba8af5443c32f71664348bf3ee1bfbeb4689aebb40a3e"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/image-analysis.md",
+    "sha256": "f3579520cb97b243a0b7a5f64fdb9dbb73fd8eea0193a06bbbff60c503f566f1"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/resumen.json",
+    "sha256": "58ab43b53b52d5ab6189f5524be0ff5138dfe2e4362d8460857c32b9d83230a0"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/trivy-convert-exit.txt",
+    "sha256": "5f2bb1b52b93ecda505bbe52c3470fb3ba89a943d156701d1d69f04b248cfda0"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/trivy-ejecucion.txt",
+    "sha256": "e2a6b799a569a95f2af906081e23db6590be39dc4e7ef71e13c7f6e05f7fe3e1"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/trivy-exit.txt",
+    "sha256": "5f2bb1b52b93ecda505bbe52c3470fb3ba89a943d156701d1d69f04b248cfda0"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/trivy-version.txt",
+    "sha256": "cad35a7e8113a19428c61a96713658fb78ef902ee48fa2f0a9b14180b9d56348"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/trivyreport.json",
+    "sha256": "0afb4a9915829cf9bb82f78c38ca61b44a91b3a410b0c69ae8fab005dd4fabb4"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/trivyreport.txt",
+    "sha256": "5e0aaacff23ae4331a53191c2912b3eb3335dbb5c6c94ac6b601b244c9b105c0"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c01/audit-final.json",
+    "sha256": "181150b50d307497121d806d99880ba466795bdae9e0065ac0bfabd83e05da6e"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c01/buildkit-smoke-initial.log",
+    "sha256": "962eb19e651061c95484f7eb0b1e7145b3b89d17875b52d73279c1f9d3063db9"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c01/buildkit-smoke.log",
+    "sha256": "d98c9b7e3ab7bd5e971ed71cafedcb8305a3ebb6bcf2066a119a590adcddafec"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c01/buildx-build.log",
+    "sha256": "8059e813b5c1a8ec8d31356a9adf6dc9c7f0f138b483ff277b66f3767d024007"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c01/cold-after-agent.txt",
+    "sha256": "622fedc2facfbd67cc09f23c4096582a35e5f61d579939c6b5773ae50a3a12d2"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c01/cold-after-controller.txt",
+    "sha256": "74512f721bb2f6ba40da65712201ffff16c2fdde410c87429938164924525e1c"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c01/cold-before-agent.txt",
+    "sha256": "19cd54071ba9c65fd5efbd0df40049dc8c57824abde7418983053d9803d4ac2b"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c01/cold-before-controller.txt",
+    "sha256": "74512f721bb2f6ba40da65712201ffff16c2fdde410c87429938164924525e1c"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c01/cold-start.log",
+    "sha256": "4d3b7ccf28eaf524d9a3e6592403650af035f457bd10010824af97737943519e"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c01/cold-stop.log",
+    "sha256": "27e26ec6e1ba99e15ca0d0989ab02e1eac4775be4e461d9ba16f3a11cb7fb41c"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c01/final-containers.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c01/final-images.txt",
+    "sha256": "c4dac0226a55ec042f5cd1076d2f54accb03d392ebe4ae96604b0850a0f9f6db"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c01/final-start.log",
+    "sha256": "97cae4967cfdd5a6de1913aebbdddc6d51cfe458f6b1603202b9b33397bfbea6"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c01/first-boot.log",
+    "sha256": "0959d840e0e0df95bfcebe4a02342654f923657d1bf1625290fa7bc278d04ce7"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c01/fresh-final-start.log",
+    "sha256": "b87434221aad3989aa5f906894805aa364f703a0f33d85cde0bf6ea67a6fd668"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c01/fresh-final-state.json",
+    "sha256": "8fe496b2792a302759c7fc6b37aa44dee9ffa1b3ecba1dce95c97dcc5e882dd7"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c01/initial-start.log",
+    "sha256": "007ea6ab3f14120bf53f9dc536750750a06f6cd9fc7b083492e353355465f564"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c01/original-jenkins-after.txt",
+    "sha256": "1c62f38a09433b4ecace2ba1e69407b3ba11fdf4bad57a163624cafc4028fbe7"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c01/original-jenkins-final.txt",
+    "sha256": "1c62f38a09433b4ecace2ba1e69407b3ba11fdf4bad57a163624cafc4028fbe7"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c01/override-build.log",
+    "sha256": "a91d9f3723deb35bca261668b7f48efbd560170c505e47afc9b6bc18fba63c48"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c01/primary-final-boot.log",
+    "sha256": "221bd39b46d22905f3b4af991f7a2bee065c2af14e4388e89a72bd66a01003dd"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c01/repro-final-stop.log",
+    "sha256": "a8fb604ec0eb69128cc5dc2555c23158d6e9c513cdc41292aa6ff2e3c4b91b00"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c01/shell-syntax.txt",
+    "sha256": "73d9f474ddc92469fd8d3719b3748c693ebfb555485fc90f2c2a0ac768af9774"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c01/VERIFICACION.md",
+    "sha256": "086c9da9e80bee04360f0643a47f541c9153a0927c15576c496c3eb824b1015a"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c02/verificacion.json",
+    "sha256": "65d1ceb489b9bfaf01563c26cc05f6a5738351ab43a3b999aafcb4372fe420c7"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c02/VERIFICACION.md",
+    "sha256": "8a4ee4329c2a5929a036714d2d68cb3fa61dab4d49b9851505d7fd55d9033ee4"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c02/verificar_documentacion.py",
+    "sha256": "2322d9751ff2b71840fd56406e89e8b21c99c6368d7fc9879a219a47fe82ab3c"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c03/after-purge.txt",
+    "sha256": "a48fbba6b51386bb7545edd157745bc049e9c0a0e7aa0b89ea9f1508975550e7"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c03/agent-before.txt",
+    "sha256": "a1c13f234216dfabedff3f48bd84aebbea04d798becd059d5d28e5da4267aab6"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c03/archive-check-v2.json",
+    "sha256": "3bcbe936cbffcac0e12bb59fd26cc25719a7025d0812c8e7bc2b438c56050d65"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c03/archive-check.json",
+    "sha256": "4c89565d45a47583237727b4cd463b7c91aa432ae8a8910822ede8c2687d6557"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c03/backup-integrity-after-purge.txt",
+    "sha256": "60cbe7248e4d8ee557d3fea0dc0d6fdf6161f0d3ad5dd94f62940ba294253532"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c03/backup-integrity-v2.txt",
+    "sha256": "60cbe7248e4d8ee557d3fea0dc0d6fdf6161f0d3ad5dd94f62940ba294253532"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c03/backup-integrity.txt",
+    "sha256": "60cbe7248e4d8ee557d3fea0dc0d6fdf6161f0d3ad5dd94f62940ba294253532"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c03/backup-primary-v2.txt",
+    "sha256": "cde0c9a644212eccc92f52ea43707afaaa8818c1a198c93520a3258f4fd22063"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c03/backup-primary.txt",
+    "sha256": "9138ada9d2689e4980bbbf31577df340169f71982353c7a797e6fbfdbce98dc4"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c03/before-purge.txt",
+    "sha256": "e0aadd996cae4ea208440f4e71ab31838c0a9e6bccffb2eae41d254375fbefc3"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c03/collect-preflight.py",
+    "sha256": "3d2b8869049299a6cbf0e1d53b613a7c127e3bdc05adcafa1929b6da11a26191"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c03/controller-before.txt",
+    "sha256": "66f304682559d9280050e20dfe0d88e1410d27bb535a3302ad1714b607223830"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c03/destination-empty.txt",
+    "sha256": "a48fbba6b51386bb7545edd157745bc049e9c0a0e7aa0b89ea9f1508975550e7"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c03/docker-after.json",
+    "sha256": "e885a9bc45f105948fe45eb1d637a1e11c8caa19b78a2a942185855b845c4df0"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c03/docker-before.json",
+    "sha256": "4244484b655b428f5fee1351a8905342d22776918577b7a577cee4bc88910541"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c03/document-check-before-close.json",
+    "sha256": "f6bccdae31438a8edb18f0bc6288a1717f62d80b64bd9bb6fec72685b679f279"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c03/estado-evidencias-before.md",
+    "sha256": "59e8e080a9525f114a924cca614e35aafd6f26fb9cd6511f7e5e0a3453cfb588"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c03/final-document-check.json",
+    "sha256": "6fc69e3d601b5da0905f359205be14a3684cd1182817b6b2d7f88169345e866c"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c03/final-resources.json",
+    "sha256": "527d13b159795d174622443228c3b9f48c82bd3fa1674af22991001357b5793b"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c03/intento-inicial.md",
+    "sha256": "675691499f7ad0747dd6e284809420e8718f08e0b75bfa007f2c7060065b16ae"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c03/preserved-before.json",
+    "sha256": "465dbfeaa3c2f1de6420015c84ed982e1d5bb1b3b2a24a851231ea7a099c5aba"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c03/purge.txt",
+    "sha256": "113130aa02e509b38623086c6ee610151640d57d0c32bed90a176e995fd4efc9"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c03/reject-default.txt",
+    "sha256": "1f0efe2e98f759976605fa8cc678a3bd5a680bc4ad389c75419b8d3e60413631"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c03/reject-existing-destination.txt",
+    "sha256": "a79de2b5ac517e2ff756fb0944f0fe0b96b9b3bb0158ade85a28f4f19a4cbd8c"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c03/reject-missing-confirmation.txt",
+    "sha256": "e3aee36f3519d6bd4207ada62feabbec23d4b7b706b635db6b7ceefcc171cdfc"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c03/restore-v2.txt",
+    "sha256": "e3c05f4801ba3e25a0007fbdba68981d53eb3ab9ad2556d0c5ad4246dcd09ae7"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c03/safety-tests.txt",
+    "sha256": "615e2a692b8ea9c65023cf358b6d5c707cac07981a0c0d9fb3d435786fed9b1a"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c03/SHA256SUMS.json",
+    "sha256": "0b9a7917c0afe1446412d20362b560a8c652864234a61e6f38286a4622a0784e"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c03/start-primary-v2.txt",
+    "sha256": "733a2ade97dfdfa898769f4270835770837e4e86f694436e2908d39339dc9796"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c03/start-primary.txt",
+    "sha256": "733a2ade97dfdfa898769f4270835770837e4e86f694436e2908d39339dc9796"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c03/start-restored-v2.txt",
+    "sha256": "da03e8a235e1215936f860d729b8738e933a49d38bd217a25c283bb5d196d527"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c03/unrelated-before-purge.json",
+    "sha256": "adef24f154eea670711d352031f3bc9b414d0c7b2b589bddb5ec9bb5775615d2"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c03/VERIFICACION.md",
+    "sha256": "5286382334d2c7c137b4d9fb4282eadf98e58028e2167094b16a3e971c5f5d6e"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c03/verify-recovery.py",
+    "sha256": "9609db0c01a7dfbb3add881ada6af2c4796c02beead097da0324a8a0b1cf8c56"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c04/CRITERIO-DOCKERFILES.md",
+    "sha256": "36473b2ce446a86f4a97393145befa739cb0bec02f6b22292d6c98049fc7eb74"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c04/preservacion-antes.json",
+    "sha256": "b58cb2f0244f0693748b95993cdd892234e7561e81ff1120071b4b8d945789d5"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c04/verificacion.json",
+    "sha256": "8c92da0081a2a31b1b61e42fe23a859d628a4de3a9d22b34d8b2bfc5fe3efde9"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c04/VERIFICACION.md",
+    "sha256": "37097c2e8414aa9d8476e5f490c5b36fd1e7e8a6b28c18701208e7110573a4aa"
+  },
+  {
+    "path": "EntregableDevops2/reports/repeticion/trivyreport.json",
+    "sha256": "8ee53763cfea778f8a9ec1bd3d5e517646ea734f9277d707caa47819cc89503a"
+  },
+  {
+    "path": "EntregableDevops2/reports/repeticion/trivyreport.txt",
+    "sha256": "ddda789d0a1f58d2268c9e6364356949c01d16cfc62f33cef482e8095837752c"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/gate-tests/results.json",
+    "sha256": "04a7ce0109e72859a42e4010c112f0fa779bd7a1b3b5b19e40b10f26a6e4d0a6"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/helm-recovery-6/api-health.json",
+    "sha256": "f5d81755935209a3ae596d4553d269cbbe8d08a27dd95b05fe0b7c544eb7ed71"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/helm-recovery-6/api-metrics.txt",
+    "sha256": "990f4dfe9947255b2d49c402e3148f1f7bc9fdf65f1304e7062a64fed1e46027"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/helm-recovery-6/clusterrole-after.json",
+    "sha256": "7bc6f84071ae365454bdc2c97dae6e0d4efdf40ca513a1fb7a7220ca6d2dc15d"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/helm-recovery-6/clusterrole-before.json",
+    "sha256": "7bc6f84071ae365454bdc2c97dae6e0d4efdf40ca513a1fb7a7220ca6d2dc15d"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/helm-recovery-6/clusterrolebinding-after.json",
+    "sha256": "1a93a8702a6b4ebcfe9a4e6eaadaacc8bc132f74fbc596e64cc8b61690f514b0"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/helm-recovery-6/clusterrolebinding-before.json",
+    "sha256": "1a93a8702a6b4ebcfe9a4e6eaadaacc8bc132f74fbc596e64cc8b61690f514b0"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/helm-recovery-6/helm-rendered.yaml",
+    "sha256": "7be48f24b834aafdd0ba008b42ad5b36a1650d7cc020a4a23a7dd96b81bb5f27"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/helm-recovery-6/helm-status.txt",
+    "sha256": "4d17874adc72804bd3c7a3e441f8d49e2904f1ee4278846d386cbaf1aa55643b"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/helm-recovery-6/helm-values.yaml",
+    "sha256": "15841a9ebe0246f28208fcfc5de69318bcbc4ff3353d4703b78460260ab41349"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/helm-recovery-6/kubernetes.txt",
+    "sha256": "0ce381318c8788b8b177e1cc23a1308105d23474c694e27bbbc8f606dd2b0d65"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/helm-recovery-6/port-forward.log",
+    "sha256": "dff2d0f75bdffd284431d9d1a5e95b675b3b77de1ddda7aba087e538400d14b8"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/helm-recovery-6/rbac-preservation.json",
+    "sha256": "2fcfd873b4a43de35ff378bcc98f5da578d13c6cfc3ba516c6188dc2904f9b88"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/helm-recovery-6/recovery.log",
+    "sha256": "6ba8561709a9fb5e008a0ba73deddcf9a0710df287db571bcbbd49839e1a3052"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-4/jenkins-console.raw.log",
+    "sha256": "89e0506ff9d12921475166312881ddde1a627976c257377dd84a238468e3a2aa"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-4/jenkins-console.txt",
+    "sha256": "a3fe22882a09e37d7765eb2f7fd8a236edd84191af3065f5ae15792eaad6f0b7"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-5/commit.txt",
+    "sha256": "9aef813083578270321197c686b3cb50254410db4078e34bd91a8165b53dea54"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-5/dependency-tree.txt",
+    "sha256": "a201a98798dd2f4d18989656a7eed0a39706f6266db3eee317e6afd41a1d41ed"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-5/docker-build.log",
+    "sha256": "352359d198f9771599564b5522e1e253772ea638af2d24100f08cf7a43785571"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-5/docker-login.txt",
+    "sha256": "149e9239bac24270724ad8340cb1f1204a311a57e3d536854c41e244f6154f32"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-5/docker-push.log",
+    "sha256": "0c7049f2c12e66b3c3cbdc29b5df3c9c469f820361427449b2f377d361570286"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-5/gate-summary.json",
+    "sha256": "71bc69a0228a99f61de1fc60999212f93b77151071b23388dc317c4b1203c4eb"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-5/herramientas.log",
+    "sha256": "07c852e725fc1067cbffb7ade96df02d1193659fba9135633f7098c2e1e2e27d"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-5/image-id.txt",
+    "sha256": "a412ac26b4be489c86210e9fccb7607aae0a45452178f00e49a0b77da64f18eb"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-5/jenkins-console.raw.log",
+    "sha256": "8a35a2d25286a2e1139f786b9b8b3965c5f1a1b7d99051958c829eced8cc94bd"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-5/jenkins-console.txt",
+    "sha256": "3eccaf3f20a670ec184870de6e204cd6474b1cdb1ec6129e1e1c4a813a2e6d09"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-5/maven.log",
+    "sha256": "74d8687efb273fa3f52880f2fc2707d52690a55f77e0baf39f4402d45e12c600"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-5/semgrep.json",
+    "sha256": "5231c6fa626b30dedd820c1def6a9954815f02fed5b9a514aac38bf5eec7edfc"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-5/semgrep.log",
+    "sha256": "d3047ed5c7221ff1f75d252d682fa9d622bb8881ffeb6b055154d4e2cb4cff9e"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-5/semgrep.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-5/snyk-exit.txt",
+    "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-5/snyk-output.txt",
+    "sha256": "c3e159a9cc5ff76101cd39c6d5d24653a2db818d155ec6e27a6bc58bd1666c11"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-5/snyk.json",
+    "sha256": "345f017e7a1f608b7a79591c8fa9ecf860c7a26ade9d4ec0de0304784654c34e"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-5/source-sha256.txt",
+    "sha256": "bc899af3d08e6ec41220694f37daa436939f6f0c5e59dc84b9fbbf084ed467c4"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-5/source-status.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-6/commit.txt",
+    "sha256": "964d1a20dd2c180db047c94714b13a15d22fb51b1532cb39c81e6d920cc66c87"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-6/dependency-tree.txt",
+    "sha256": "8902c07eb8f26253bf8ec1eca17a2965f3924e542ea1e8aa267a9764dfdb3417"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-6/docker-build.log",
+    "sha256": "c79dafbf91c2ff18ae890a3fd1fc117fd9cfa2a42c6f8087f10fbefe3663a9bf"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-6/docker-login.txt",
+    "sha256": "ffce43493c5c0dc583aee18c84ba1ae8c793e74dbbce2501ff28151198b90c51"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-6/docker-push.log",
+    "sha256": "f094399fc2c7a5a2b124611181c5f87c1106f2f9ea239cbed774e767de2a52ba"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-6/gate-summary.json",
+    "sha256": "71bc69a0228a99f61de1fc60999212f93b77151071b23388dc317c4b1203c4eb"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-6/helm-rendered.yaml",
+    "sha256": "7be48f24b834aafdd0ba008b42ad5b36a1650d7cc020a4a23a7dd96b81bb5f27"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-6/helm.log",
+    "sha256": "a36b94f7b1cd6deecf934b670c636aad29910a556d70dfd791538f92d874aae1"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-6/herramientas.log",
+    "sha256": "07c852e725fc1067cbffb7ade96df02d1193659fba9135633f7098c2e1e2e27d"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-6/image-digests.json",
+    "sha256": "f4db6c4509ab95f022e97289b07d6e9c0a51337b646d5ce9ec46bf75756caac4"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-6/image-id.txt",
+    "sha256": "a412ac26b4be489c86210e9fccb7607aae0a45452178f00e49a0b77da64f18eb"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-6/image-tag.txt",
+    "sha256": "715ab1a9d5eddba2cc671ce3fc08495f193828b0486df733d9c53e41810ec9d3"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-6/jenkins-console.raw.log",
+    "sha256": "39fc54f0a16229b347ab9ceca1e06c669b0882d39201a1d4d4fb8d2f98846b32"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-6/jenkins-console.txt",
+    "sha256": "ccf8e835ac80159462a0793783949473bf91490275164f4467101c88a7ed4191"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-6/maven.log",
+    "sha256": "793953eae54c7ab25fe40a4ce3cc34846bf03f833a7e9ea0af35dad4bbc7a0e5"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-6/semgrep.json",
+    "sha256": "7ae0f649d52f3bf1942d0714b8a5236bf835b8305e4290daca0aec7fc48409e9"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-6/semgrep.log",
+    "sha256": "d3047ed5c7221ff1f75d252d682fa9d622bb8881ffeb6b055154d4e2cb4cff9e"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-6/semgrep.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-6/snyk-exit.txt",
+    "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-6/snyk-output.txt",
+    "sha256": "c3e159a9cc5ff76101cd39c6d5d24653a2db818d155ec6e27a6bc58bd1666c11"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-6/snyk.json",
+    "sha256": "345f017e7a1f608b7a79591c8fa9ecf860c7a26ade9d4ec0de0304784654c34e"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-6/source-sha256.txt",
+    "sha256": "bc899af3d08e6ec41220694f37daa436939f6f0c5e59dc84b9fbbf084ed467c4"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-6/source-status.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-7/api-health.json",
+    "sha256": "f5d81755935209a3ae596d4553d269cbbe8d08a27dd95b05fe0b7c544eb7ed71"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-7/api-metrics.txt",
+    "sha256": "3e8a15cf53e8e77098da172aac9c85b8852d71c2e1062a0c5e9b60fbc710e0d7"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-7/artifact-sha256.json",
+    "sha256": "c68d5e01b75f4028966cae305098e84bc006cee9b1df515589ccf80a1e6655de"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-7/commit.txt",
+    "sha256": "93d7b5461d132f22e9284debb9ac2b91a1a2cd35d029fadf45d37537642b820c"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-7/dependency-tree.txt",
+    "sha256": "f24dcabcd6ad8880017c78676790faafd7bf81ac56799df60f3477fc63238a29"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-7/docker-build.log",
+    "sha256": "049a04bd2e8b9bdb63d7fcddef7ea96e003fd771908c73d5976865c304780a3c"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-7/docker-login.txt",
+    "sha256": "6688b3080028310d22a384e02f2a89d2c288f2a2b864e98d12de20efd34aeffc"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-7/docker-push.log",
+    "sha256": "722d11ba5250da809bb6c6f5fb725ea3acfae758c010f6e53b117530255fa57d"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-7/gate-summary.json",
+    "sha256": "71bc69a0228a99f61de1fc60999212f93b77151071b23388dc317c4b1203c4eb"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-7/helm-rendered.yaml",
+    "sha256": "a48999ac809b0b7e34630b5d4cfbc61014f1225fca04c40ad1937acafc6c11c9"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-7/helm-status.txt",
+    "sha256": "4870dffc38977b87a0ac860aa3ee4e74581eec3fbe5612ca5280cb3ca2aa90e8"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-7/helm-values.yaml",
+    "sha256": "0f80e1bc5040410f37b22c614461a6150e64de643fcff97b61adca4d233e2591"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-7/helm.log",
+    "sha256": "3933bdc5f801ff3c0310b26c87bdd46f7cf0ec193010b135e3e16f4ace89d70a"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-7/herramientas.log",
+    "sha256": "07c852e725fc1067cbffb7ade96df02d1193659fba9135633f7098c2e1e2e27d"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-7/image-digests.json",
+    "sha256": "f4db6c4509ab95f022e97289b07d6e9c0a51337b646d5ce9ec46bf75756caac4"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-7/image-id.txt",
+    "sha256": "a412ac26b4be489c86210e9fccb7607aae0a45452178f00e49a0b77da64f18eb"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-7/image-tag.txt",
+    "sha256": "d150e0965debcf3bad85b0d8de6053cdde3ccd23f4a5697f6814749404c8f18a"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-7/jenkins-console.raw.log",
+    "sha256": "72326818b65b6606a41bdd6a724a1cd50a050bb7dd95b35d48d9e2dceded3776"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-7/jenkins-console.txt",
+    "sha256": "44409a685e5e852bd237aa9430f7276e851ee4956681152f3533e24fa6c874de"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-7/kubernetes-final.json",
+    "sha256": "799bcd8b8f11963a2072d8a7cab2da0c8fe694ff99560e9e0aae6a733c33bf38"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-7/kubernetes.txt",
+    "sha256": "93a7cecda3001de3f14ee674ac568256973e0767ee59a58891e4b78edaf689d0"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-7/maven.log",
+    "sha256": "a66f574e244924d46429ffd2738c476c655dfff94562e945fadfe41af64886b2"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-7/port-forward.log",
+    "sha256": "dff2d0f75bdffd284431d9d1a5e95b675b3b77de1ddda7aba087e538400d14b8"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-7/semgrep.json",
+    "sha256": "f039c8f8497b1421efed7c76716957a1a8e9d12d02bb37e4b9cc799a6188c8b2"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-7/semgrep.log",
+    "sha256": "d3047ed5c7221ff1f75d252d682fa9d622bb8881ffeb6b055154d4e2cb4cff9e"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-7/semgrep.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-7/snyk-exit.txt",
+    "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-7/snyk-output.txt",
+    "sha256": "c3e159a9cc5ff76101cd39c6d5d24653a2db818d155ec6e27a6bc58bd1666c11"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-7/snyk.json",
+    "sha256": "345f017e7a1f608b7a79591c8fa9ecf860c7a26ade9d4ec0de0304784654c34e"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-7/source-sha256.txt",
+    "sha256": "bc899af3d08e6ec41220694f37daa436939f6f0c5e59dc84b9fbbf084ed467c4"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-7/source-status.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-7/verification.json",
+    "sha256": "fb487c1b3625be5a2bb5f348b51d2b468c79d5ce311f6b6828c03d5d45b279a1"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/preflight-1/commit-remoto.txt",
+    "sha256": "163cafcb9b705a740f1b3dc5238b774cd6cb28d402bc6a6cc9262f0d8eb6541d"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/preflight-1/docker.txt",
+    "sha256": "0e389c393a5325146ff1d77736dee3ce0818fcde0caa11b9bbdacece94a2778d"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/preflight-1/herramientas.txt",
+    "sha256": "a22b2394ba71bcb4a2d99e4498316784eaa3907b60095034d0d64eabb6985eb6"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/preflight-1/jenkins-console.raw.log",
+    "sha256": "a483bdb4f34a188278bf9ca52b0883639aa888faabb9032482b0f8a821ea945f"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/security-2/commit.txt",
+    "sha256": "163cafcb9b705a740f1b3dc5238b774cd6cb28d402bc6a6cc9262f0d8eb6541d"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/security-2/herramientas.log",
+    "sha256": "07c852e725fc1067cbffb7ade96df02d1193659fba9135633f7098c2e1e2e27d"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/security-2/jenkins-console.raw.log",
+    "sha256": "6fe0a3e02c002bcacc6442c928f87ba4e3e650227bd86a6b2cabfe9c5b08af4a"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/security-2/snyk-exit.txt",
+    "sha256": "53c234e5e8472b6ac51c1ae1cab3fe06fad053beb8ebfd8977b010655bfdd3c3"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/security-2/snyk-output.txt",
+    "sha256": "bcc4aff6b2091fd8c51de582fafd91bf6477dc4bff5a38b72a05dd14d777769a"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/security-3/commit.txt",
+    "sha256": "163cafcb9b705a740f1b3dc5238b774cd6cb28d402bc6a6cc9262f0d8eb6541d"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/security-3/gate-summary.json",
+    "sha256": "1650079df192ac2c45dd744e50d777fa8f36610fda5cd142f33c9819225d13b1"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/security-3/herramientas.log",
+    "sha256": "07c852e725fc1067cbffb7ade96df02d1193659fba9135633f7098c2e1e2e27d"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/security-3/jenkins-console.raw.log",
+    "sha256": "7641c4f7484684ea518844dd415d0dfb31070c280d2e9bbe7b9f1145031e9118"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/security-3/snyk-exit.txt",
+    "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/security-3/snyk-output.txt",
+    "sha256": "69f5d1e69deec3761358355adb89cb758400c10a14e7fa699208dac3e4837535"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/security-3/snyk.json",
+    "sha256": "e10e7e723aa8f3f2d5ad20eb5d8dcc64ed6972291581c6146248eedbc238db8a"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/gate-tests/historical-critical/gate-output.txt",
+    "sha256": "49360595293a0972f5991a33e23409e9bf2427a97c97d2ab33df466a067f90a3"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/gate-tests/historical-critical/gate-summary.json",
+    "sha256": "49360595293a0972f5991a33e23409e9bf2427a97c97d2ab33df466a067f90a3"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/gate-tests/historical-critical/snyk.json",
+    "sha256": "f0b3909c7812d45b2c9b14f3b54fda5697311a317317a174ad0c41e7f46ea851"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/gate-tests/synthetic-auth-error/gate-output.txt",
+    "sha256": "25ecb7d86ed5474d7b05fc24856d37d3b9c108d2f46b0b71a62067841233fbb4"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/gate-tests/synthetic-auth-error/snyk.json",
+    "sha256": "3207c16eecb57a924c0a357fa2ad77ce0c2454730ee96c1aab7fddb5dac9bdaf"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/gate-tests/synthetic-clean/gate-output.txt",
+    "sha256": "0d94d932bf1b8d365daab622dd0511861b1bdfc92680944077ca743f8362c2f0"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/gate-tests/synthetic-clean/gate-summary.json",
+    "sha256": "0d94d932bf1b8d365daab622dd0511861b1bdfc92680944077ca743f8362c2f0"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/gate-tests/synthetic-clean/snyk.json",
+    "sha256": "c2c1f4707dfa1b523911c19121ea71769299d014ee551267c4ae9680b8cc2bb6"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/gate-tests/synthetic-high-only/gate-output.txt",
+    "sha256": "85195ffcf414134a42df53b45e12c54eba696752e6be304402dc03b6f7aab99a"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/gate-tests/synthetic-high-only/gate-summary.json",
+    "sha256": "85195ffcf414134a42df53b45e12c54eba696752e6be304402dc03b6f7aab99a"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/gate-tests/synthetic-high-only/snyk.json",
+    "sha256": "f828f8f3353452d656471d0720c6b471db979256764c02d4087a35ce3bb65216"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/gate-tests/synthetic-invalid-json/gate-output.txt",
+    "sha256": "1e3c6e9983e0f7c61693252b26d690813ed53c0c459d75b7c376928a8a2b1e49"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/gate-tests/synthetic-invalid-json/snyk.json",
+    "sha256": "021fb596db81e6d02bf3d2586ee3981fe519f275c0ac9ca76bbcf2ebb4097d96"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/gate-tests/synthetic-missing-findings/gate-output.txt",
+    "sha256": "d09e42169390c38ca5c576370d69d05ee35d3c4adfe832db33c0740c812712d1"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/gate-tests/synthetic-missing-findings/snyk.json",
+    "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/helm-recovery-6/attempt-1/recovery.log",
+    "sha256": "83c562431f938aee4c65e3ad755cf56945c648c4a2b4a6cc4dc182efb7b19e1a"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-7/junit/com.pedidos.pedidos_api.PedidosApiApplicationTests.txt",
+    "sha256": "083918fbd3d60fe1500e2e4f85329e6b0f3ed5675a844cefcc8680545a494f62"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-09/integral-7/junit/TEST-com.pedidos.pedidos_api.PedidosApiApplicationTests.xml",
+    "sha256": "d3dd8f8a312b3685e2cea2b99d6d6c9d628fea01ee9e4c3f9468960c40e99ee7"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175412Z-start-2011/forward-api.log",
+    "sha256": "bb858083e3aaa84b742b365fc32efac61c667c2679f730ae21552c6edb4559e6"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175412Z-start-2011/forward-grafana.log",
+    "sha256": "5bc190e5cbb51493bbc913284970f7056bd1857418cd0dbf376cb1c104325af9"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175412Z-start-2011/forward-prometheus.log",
+    "sha256": "16317740f2e69f8c59679c2497cb5afbb61fc6037a0195cb4cb3e30a07cec628"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175412Z-start-2011/grafana-health.json",
+    "sha256": "7bfa00958a821e29e37b70effacab48b4ef69ca05ffaf920935c89fb72d35929"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175412Z-start-2011/health.json",
+    "sha256": "f5d81755935209a3ae596d4553d269cbbe8d08a27dd95b05fe0b7c544eb7ed71"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175412Z-start-2011/helm-lint.txt",
+    "sha256": "98cc7aa15988ff46cdeee7774f57efad3d6e965617acca21def8cf95b31fabb2"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175412Z-start-2011/helm-upgrade.txt",
+    "sha256": "0b957fe479f380d0d0ba9dbdf5ba10a53b33cf61be4d2a0ad0664fb33bd030f2"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175412Z-start-2011/helm-values.yaml",
+    "sha256": "0f80e1bc5040410f37b22c614461a6150e64de643fcff97b61adca4d233e2591"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175412Z-start-2011/jenkins.txt",
+    "sha256": "c324ca45aa8b6f18f12f0a538970f9d7fdffd7d65b71617dc06df26091f80a3e"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175412Z-start-2011/prometheus-ready.txt",
+    "sha256": "6ae2244847eb26de55cd1ebd355f656a5824b2b8a8a66d8d19cf6b1517c4831b"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175412Z-start-2011/resources.txt",
+    "sha256": "9e0c204842bb0db7acb31cf8bb661f1cb02568bbe2abb7f99409a82e92b71a2b"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175412Z-start-2011/result.txt",
+    "sha256": "c26de83abdc9496cd1301470918ec39ecca1cf389ef0ae1c6504da1800d1c431"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175412Z-start-2011/scope.txt",
+    "sha256": "31c313a70de50eac2760eec833985f0faed84fdd432324dbf81b626396207ae3"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175439Z-traffic-2075/forward-api.log",
+    "sha256": "daf8a15dde3eb91e147f4ee5f92f1cdae06b2b09e7ed8e08ccb4b329707f9078"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175439Z-traffic-2075/health.json",
+    "sha256": "f5d81755935209a3ae596d4553d269cbbe8d08a27dd95b05fe0b7c544eb7ed71"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175439Z-traffic-2075/metrics-after.txt",
+    "sha256": "c0d17e4282d3d58dce996952d66a42f410d5db3e1d7c8d042a8875c0f414d765"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175439Z-traffic-2075/metrics-before.txt",
+    "sha256": "152a48214e0a20dcb7271cfeed59d033426242df97e1830182ed03ae23c5338f"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175439Z-traffic-2075/order-1.json",
+    "sha256": "c88a2ee32bd8f75ff0d97e03a61882b54e6862ff7f6eab487da4b95a4dfbc505"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175439Z-traffic-2075/order-10.json",
+    "sha256": "77f31ae5e2e99ccac424eceb77dbe34623e5f807bc8a60686f6ce58950c0061d"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175439Z-traffic-2075/order-11.json",
+    "sha256": "9c3fb1bfc7ed1169ede4465274d939ac37b9aee0e06531072b3505d13234d3db"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175439Z-traffic-2075/order-12.json",
+    "sha256": "4d1a68ab4088891157426934bf14bbc587e0e12aec0885f9a8f2921502d96389"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175439Z-traffic-2075/order-13.json",
+    "sha256": "de13558f48c2f7a1f1b68c4bc5f07cd025cf2b5c79e74c77fe9d6ae923344a4b"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175439Z-traffic-2075/order-14.json",
+    "sha256": "8c97282d9e225ee6fc08bb17f596fa56a707a8f06c129a0bf9da6d3393fc68c9"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175439Z-traffic-2075/order-15.json",
+    "sha256": "e3a80fb71292c6dfc972e8f233f2e12ec7d411af85be736cdfd9d24316ae46e1"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175439Z-traffic-2075/order-16.json",
+    "sha256": "b724f4b4419969151ad1e137b7a88a304d09609568f745e008bfe58b6fa9d05e"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175439Z-traffic-2075/order-17.json",
+    "sha256": "222ac013ed79574cf442d354689d6c69fba71ea09ab64a8d8632d3de3ac85c94"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175439Z-traffic-2075/order-18.json",
+    "sha256": "e6b6bc9d698e57ed241733dcff75316cb613ad250eb21cc5e4d2f6b7f3d32a71"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175439Z-traffic-2075/order-19.json",
+    "sha256": "5967ef5b5180aa3611a19cbc164c788e59ef48cbd8d5e3da56bea9fa2c108560"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175439Z-traffic-2075/order-2.json",
+    "sha256": "ff447e0f86e7a158545b00f1248b5359a69de5071a2399bb275aac8026a3ca36"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175439Z-traffic-2075/order-20.json",
+    "sha256": "21cb7c3fc899ea5c238c163e9043112fe757320d0211491af2473fac5ca8772a"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175439Z-traffic-2075/order-3.json",
+    "sha256": "90dfc0cf6659e3da80d862e9f9194c185345b9e300084f23e74e266e5420bcc7"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175439Z-traffic-2075/order-4.json",
+    "sha256": "aae66bca334e3c242084e7b85d66d3bec15d3cb43b3738beae6bd3d2822f6429"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175439Z-traffic-2075/order-5.json",
+    "sha256": "4b5df580b3315e23551e68c4689936ae48e09dfc880596b2443284f10b7bd46e"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175439Z-traffic-2075/order-6.json",
+    "sha256": "90f991308dd62f8ff7ef733b10dab251fe0acc3424841fc3584f1eb45e208c3e"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175439Z-traffic-2075/order-7.json",
+    "sha256": "aa95d796bf83785a42a9ca21adda4fdfd359a10405cd9b93d943aa05e5bcda6e"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175439Z-traffic-2075/order-8.json",
+    "sha256": "d037a582e6a2d46e05693aba29db9e194842d72717e7e1f8ebec9e7e97abd43c"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175439Z-traffic-2075/order-9.json",
+    "sha256": "6caca235361811dbf5d76282fd43e65ac0ab1d7bc68d596dc1d5435b81cefba8"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175439Z-traffic-2075/product-created.json",
+    "sha256": "84637a9e95a93b06dbcc826acac4eeec5fb4e0450fc13eb4fb35447dd597e921"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175439Z-traffic-2075/products-before.json",
+    "sha256": "1d5f2616a4afcb245d7b47b913fed16084c78b860d68ff994c1d7ba833956aca"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175439Z-traffic-2075/result.txt",
+    "sha256": "c26de83abdc9496cd1301470918ec39ecca1cf389ef0ae1c6504da1800d1c431"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175439Z-traffic-2075/scope.txt",
+    "sha256": "152f1ec6fa20294f383ff186edfb79f59cc5de7a293aed0972faefa235417f3f"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175439Z-traffic-2075/summary.json",
+    "sha256": "09b94aba2a5062880c4d01d3e5cae319594a6e9a1142840e5cac6dc248bcc1db"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175502Z-start-2179/forward-api.log",
+    "sha256": "0715885acfeb202d5b6359ee9db4821d27e854db247034401cdd3a9b4713e744"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175502Z-start-2179/forward-grafana.log",
+    "sha256": "38b07217e287d4b52726925196def51223d1426183d8299770632a50583da605"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175502Z-start-2179/forward-prometheus.log",
+    "sha256": "62632ce97013818c1d60bbe6f7b285771452ef7e306887d34f1222784cab6f04"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175502Z-start-2179/grafana-health.json",
+    "sha256": "7bfa00958a821e29e37b70effacab48b4ef69ca05ffaf920935c89fb72d35929"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175502Z-start-2179/health.json",
+    "sha256": "f5d81755935209a3ae596d4553d269cbbe8d08a27dd95b05fe0b7c544eb7ed71"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175502Z-start-2179/helm-lint.txt",
+    "sha256": "98cc7aa15988ff46cdeee7774f57efad3d6e965617acca21def8cf95b31fabb2"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175502Z-start-2179/helm-upgrade.txt",
+    "sha256": "bae4e72a9ff08f4f129e02a44bb8b81f98d1cadea69315437837ea277d6cfe32"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175502Z-start-2179/helm-values.yaml",
+    "sha256": "87426f818476dc681a6dc540150f0ac34a10e58e2c1e1cad03aa3c907b53f83d"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175502Z-start-2179/prometheus-ready.txt",
+    "sha256": "6ae2244847eb26de55cd1ebd355f656a5824b2b8a8a66d8d19cf6b1517c4831b"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175502Z-start-2179/resources.txt",
+    "sha256": "7fbee28b5acdbe28d6ede5cc5c0278d87f723937251e6550d75ef50c16b994a1"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175502Z-start-2179/result.txt",
+    "sha256": "c26de83abdc9496cd1301470918ec39ecca1cf389ef0ae1c6504da1800d1c431"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175502Z-start-2179/scope.txt",
+    "sha256": "5edff4f56bd1670a36342d48670bf798ef0776169b150fb2f37466236363ee89"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175650Z-clean-2269/plan.txt",
+    "sha256": "65c64d18c23b1f04f3002fa7df0b8717d44cdf044a527cc50288f8d75e1ea414"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175650Z-clean-2269/scope.txt",
+    "sha256": "406f01dfa3c18e851a906275a0532aaf46595eee06e6d02f4ec73910c53731e1"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175651Z-traffic-2283/forward-api.log",
+    "sha256": "0bb149d6be8cee4e300b873262998b03e82637f007ef991ee246e33ed669d970"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175651Z-traffic-2283/health.json",
+    "sha256": "f5d81755935209a3ae596d4553d269cbbe8d08a27dd95b05fe0b7c544eb7ed71"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175651Z-traffic-2283/metrics-after.txt",
+    "sha256": "cdd0fc1b690b59aa1053bf3239c7d79e2d5fdd693e8a0355cc1e3b6a2b906e4e"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175651Z-traffic-2283/metrics-before.txt",
+    "sha256": "c85c290c9c1f863b18d954347bcc63575c1518af09573645a7e973a487c6b3e3"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175651Z-traffic-2283/order-1.json",
+    "sha256": "7c13ba04493a84747ee7829bc43916a01d4ca177fc00ce1426d842b029a173e1"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175651Z-traffic-2283/order-2.json",
+    "sha256": "6769752df25ffff204eb31e0cafd4ecab252b982001ccf720a0f95213f39b650"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175651Z-traffic-2283/order-3.json",
+    "sha256": "0e2418fb0799163ab58a13a17d4cab85410ceffe59b4ea31f9fc4559fceed496"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175651Z-traffic-2283/order-4.json",
+    "sha256": "745e6b2bfa3309a971614cf862e7da4e8f391a0d7c43e4baf73a8b7b4da029d7"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175651Z-traffic-2283/order-5.json",
+    "sha256": "47e2382194b350ab525f93af643f04641931633d5bb977f3b0f078b187614349"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175651Z-traffic-2283/product-created.json",
+    "sha256": "7ee7bba2a9c647f9035574b738dd58e64d52c1411d0637e083f3298a7bccd69d"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175651Z-traffic-2283/products-before.json",
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175651Z-traffic-2283/result.txt",
+    "sha256": "c26de83abdc9496cd1301470918ec39ecca1cf389ef0ae1c6504da1800d1c431"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175651Z-traffic-2283/scope.txt",
+    "sha256": "3d47204dc0563e9f3b2b3462d30697c34401d34cf3c9afd49558423aa46ed81e"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175651Z-traffic-2283/summary.json",
+    "sha256": "13430202cac9098629bfe7b5993f97d5c93a531b8e50358da6d26f0fcd5aa374"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175700Z-clean-2336/plan.txt",
+    "sha256": "65c64d18c23b1f04f3002fa7df0b8717d44cdf044a527cc50288f8d75e1ea414"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175700Z-clean-2336/result.txt",
+    "sha256": "3d155ed94ba3b1ccb06031df2e2d18cc185307083fede414975096417a7549ba"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175700Z-clean-2336/scope.txt",
+    "sha256": "c9f3ab202842f46992ce109cecc1f4bf2b6e28a4a1dd3f1e3c3833a838cda523"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175700Z-clean-2348/plan.txt",
+    "sha256": "65c64d18c23b1f04f3002fa7df0b8717d44cdf044a527cc50288f8d75e1ea414"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175700Z-clean-2348/scope.txt",
+    "sha256": "c9f3ab202842f46992ce109cecc1f4bf2b6e28a4a1dd3f1e3c3833a838cda523"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175731Z-clean-2371/plan.txt",
+    "sha256": "65c64d18c23b1f04f3002fa7df0b8717d44cdf044a527cc50288f8d75e1ea414"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175731Z-clean-2371/scope.txt",
+    "sha256": "13277297ae45925c00e5a50ad4fa19df21b4bacbb49c24fa177124f4f91cd767"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175732Z-traffic-2385/forward-api.log",
+    "sha256": "d929c063b5a448d8e4d9d8c3dc20462b93c0e07951d7578a1dcbfc55b97bca28"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175732Z-traffic-2385/health.json",
+    "sha256": "f5d81755935209a3ae596d4553d269cbbe8d08a27dd95b05fe0b7c544eb7ed71"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175732Z-traffic-2385/metrics-after.txt",
+    "sha256": "790904b95e5b7e3e814bc4b11b53bea0dfc536998f1041ef383f3707b4a063c1"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175732Z-traffic-2385/metrics-before.txt",
+    "sha256": "61f4f53bf2ca1bf1154623928da2566618d3a360518d40e7a7224748bbd0ca61"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175732Z-traffic-2385/order-1.json",
+    "sha256": "6490294d948b41d6c3ff26bcc3f450f741669225953b2d963d6a636b30172939"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175732Z-traffic-2385/order-2.json",
+    "sha256": "34ead89ff10c6bfa22d69e8e3dc9c1bb11618455ba4d7044f418c106a2ee348d"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175732Z-traffic-2385/order-3.json",
+    "sha256": "98c03b2af66de58403d08603f1aa470b156a5dd96fbc3e05df0ebc3cc13cf0ab"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175732Z-traffic-2385/order-4.json",
+    "sha256": "d0dc3ce8d50c7bd1acadf09ecd15d9c0cb76231c80f1e258ddc5942aef7ade43"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175732Z-traffic-2385/order-5.json",
+    "sha256": "7d8755aa76812425faeb6d2f115553280d1028b75ef19399970c8692008d28b5"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175732Z-traffic-2385/products-before.json",
+    "sha256": "a82f4a7686f7cca32d85e0fe32e9f587a82e276e21b83e6e5f1071cbf87078dc"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175732Z-traffic-2385/result.txt",
+    "sha256": "c26de83abdc9496cd1301470918ec39ecca1cf389ef0ae1c6504da1800d1c431"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175732Z-traffic-2385/scope.txt",
+    "sha256": "9cbae80be92f84a5daba370b7747c02749e5d69e9ecb5eda6614353fcb9430fc"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175732Z-traffic-2385/summary.json",
+    "sha256": "caa591c14ce94aed117811211019da4a9e9b654e7342bce5347690d99125cb1a"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175740Z-clean-2436/plan.txt",
+    "sha256": "65c64d18c23b1f04f3002fa7df0b8717d44cdf044a527cc50288f8d75e1ea414"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175740Z-clean-2436/result.txt",
+    "sha256": "3d155ed94ba3b1ccb06031df2e2d18cc185307083fede414975096417a7549ba"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175740Z-clean-2436/scope.txt",
+    "sha256": "3e8552e498ed1a4d2347af053f0aac3030db1606fc6b020e5fc97b77537e9c6c"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175741Z-clean-2448/plan.txt",
+    "sha256": "65c64d18c23b1f04f3002fa7df0b8717d44cdf044a527cc50288f8d75e1ea414"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175741Z-clean-2448/pvc-after.txt",
+    "sha256": "63bcb75f7e9ced7a29855af76acf44686c52d3bc9091f95a08b221a6fce4e874"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175741Z-clean-2448/result.txt",
+    "sha256": "c26de83abdc9496cd1301470918ec39ecca1cf389ef0ae1c6504da1800d1c431"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175741Z-clean-2448/scope.txt",
+    "sha256": "1d47b701c3d8ba08c7d07c38f02a5d2a43e175e1c9eef318e7d4c2a347be0095"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175741Z-clean-2448/uninstall.txt",
+    "sha256": "ad15f4358ce61d8fec056ba5138a6781d965dde0d1657a43b0e1a07681cb0e7d"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175743Z-start-2466/forward-api.log",
+    "sha256": "80556e6f2b62c2ea8aa7bcf53b288dd866bad4c1b4b02ce9b8a59ac8e5fc4377"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175743Z-start-2466/forward-grafana.log",
+    "sha256": "1f53887e880c3d28ea82b31e46b86a7f083cfec1a1f9e8a83785bb574297740d"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175743Z-start-2466/forward-prometheus.log",
+    "sha256": "0cd45af53798d2139a9a1a1f1d52eec3d5c4364baf91045e2c7354669cdee473"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175743Z-start-2466/grafana-health.json",
+    "sha256": "7bfa00958a821e29e37b70effacab48b4ef69ca05ffaf920935c89fb72d35929"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175743Z-start-2466/health.json",
+    "sha256": "f5d81755935209a3ae596d4553d269cbbe8d08a27dd95b05fe0b7c544eb7ed71"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175743Z-start-2466/helm-lint.txt",
+    "sha256": "98cc7aa15988ff46cdeee7774f57efad3d6e965617acca21def8cf95b31fabb2"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175743Z-start-2466/helm-upgrade.txt",
+    "sha256": "cdf09178585bc5ba54d08519564e1428e8d823124424393158ddc0017f6e5cb7"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175743Z-start-2466/helm-values.yaml",
+    "sha256": "87426f818476dc681a6dc540150f0ac34a10e58e2c1e1cad03aa3c907b53f83d"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175743Z-start-2466/prometheus-ready.txt",
+    "sha256": "6ae2244847eb26de55cd1ebd355f656a5824b2b8a8a66d8d19cf6b1517c4831b"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175743Z-start-2466/resources.txt",
+    "sha256": "d17057b7b9a38a97d930026e3c8e74b5bccfe57e04e50c1739980602191f7bab"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175743Z-start-2466/result.txt",
+    "sha256": "c26de83abdc9496cd1301470918ec39ecca1cf389ef0ae1c6504da1800d1c431"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175743Z-start-2466/scope.txt",
+    "sha256": "4e58d5a0a1d307b43e249ee5d8a5d1a152f48e63575ad82fbe441df8e1f7163b"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175752Z-access-2482/forward-api.log",
+    "sha256": "73b8fbe1c54c24df46b606493c5c5e5ca86e4bb84b6fc41d9fc5b8015f7bfa7a"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175752Z-access-2482/forward-grafana.log",
+    "sha256": "6d00146da6056849cffdec7fba707693039ae414ad6d1a17a8302e59fac9a9a7"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175752Z-access-2482/forward-prometheus.log",
+    "sha256": "b0ebcba8d7839337e8ad6b70ebf9451fd07d3d57ce9c36064efee72e9c9b1e4f"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175752Z-access-2482/scope.txt",
+    "sha256": "eb09809d46b4b131fd8342daefc5ea20fa01c5ffb4c1b0ebef8814739df002f8"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175812Z-traffic-2560/forward-api.log",
+    "sha256": "6928cf39b44f4dd77a12703083a91d10aea94afbef08a160ffb4dbc9b2b4b3ef"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175812Z-traffic-2560/health.json",
+    "sha256": "f5d81755935209a3ae596d4553d269cbbe8d08a27dd95b05fe0b7c544eb7ed71"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175812Z-traffic-2560/metrics-after.txt",
+    "sha256": "adec8e993782b53f9d28045a07e19bd28911f907be23fbb71916d819bf5dc7f6"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175812Z-traffic-2560/metrics-before.txt",
+    "sha256": "66168a6c78be9643f4b5b6b4a9f8ba03ccc793f046093f626ceec7a97f3012fb"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175812Z-traffic-2560/order-1.json",
+    "sha256": "2f216d1db426e1df302c56a61c72a4a7d58824d7e8288a90a5d3907a6f7ae124"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175812Z-traffic-2560/order-2.json",
+    "sha256": "b567f175c40e52d623c5e82b72608d21e6520f5c4d5d556ab4af8bb91fe9ed01"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175812Z-traffic-2560/order-3.json",
+    "sha256": "ac79d16031e3d61cd5b3912d58d94881825019afe681d59cbaabbd4224c8aaf6"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175812Z-traffic-2560/products-before.json",
+    "sha256": "a82f4a7686f7cca32d85e0fe32e9f587a82e276e21b83e6e5f1071cbf87078dc"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175812Z-traffic-2560/result.txt",
+    "sha256": "c26de83abdc9496cd1301470918ec39ecca1cf389ef0ae1c6504da1800d1c431"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175812Z-traffic-2560/scope.txt",
+    "sha256": "24b46b0340cf49b8c48d09a30f9072fbb7aaede7428f36976e8e02e37a308cf4"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175812Z-traffic-2560/summary.json",
+    "sha256": "f7a20f90eb6510d7fdc22b13dddc2611eced9ba10063e23fd6c50062f744fb71"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175818Z-clean-2601/plan.txt",
+    "sha256": "f983975a7308e51cefb8d83966ba8f8ea6a45dba6c8932c13474fe86e230dda8"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175818Z-clean-2601/pvc-after.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175818Z-clean-2601/result.txt",
+    "sha256": "c26de83abdc9496cd1301470918ec39ecca1cf389ef0ae1c6504da1800d1c431"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175818Z-clean-2601/scope.txt",
+    "sha256": "540bc412d085b0d9b4e4cfb8c54ceaf435906298990694564058d49848ee4a7f"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175818Z-clean-2601/uninstall.txt",
+    "sha256": "ad15f4358ce61d8fec056ba5138a6781d965dde0d1657a43b0e1a07681cb0e7d"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175823Z-clean-2625/plan.txt",
+    "sha256": "f983975a7308e51cefb8d83966ba8f8ea6a45dba6c8932c13474fe86e230dda8"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175823Z-clean-2625/pvc-after.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175823Z-clean-2625/result.txt",
+    "sha256": "c26de83abdc9496cd1301470918ec39ecca1cf389ef0ae1c6504da1800d1c431"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175823Z-clean-2625/scope.txt",
+    "sha256": "300498588ec7f372e0dc80ffef377830d22324c1783b977a58bdd1e1eb5561b0"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175834Z-start-2646/scope.txt",
+    "sha256": "913ffce0bc9a2608d311e3d30d5ab918e14c2e1f31eddbe53f96a8cdb1de876f"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175932Z-clean-2661/plan.txt",
+    "sha256": "611930395ed6981795755c5eb4f09a29cafff3c3d7de3300e08a750c502f61cf"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175932Z-clean-2661/result.txt",
+    "sha256": "3d155ed94ba3b1ccb06031df2e2d18cc185307083fede414975096417a7549ba"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T175932Z-clean-2661/scope.txt",
+    "sha256": "ad6b72cf84d59d4c88a73b62aa09616851e2124255d374e424f7d9dbbcb51a95"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T180027Z-start-2679/forward-api.log",
+    "sha256": "2f24351d8ab60876300af21b7974da2514b03cdd7ce36ccb393a6afe9ac90202"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T180027Z-start-2679/forward-grafana.log",
+    "sha256": "24681f2b24efbf859ce45dceedc78e88bef4fe21b930fa1ce945823ad9bd5611"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T180027Z-start-2679/forward-prometheus.log",
+    "sha256": "d7aeb5aba0e29c10ca87aec48e379f81f554b635a8865767c188e2346e7fcdaa"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T180027Z-start-2679/grafana-health.json",
+    "sha256": "7bfa00958a821e29e37b70effacab48b4ef69ca05ffaf920935c89fb72d35929"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T180027Z-start-2679/health.json",
+    "sha256": "f5d81755935209a3ae596d4553d269cbbe8d08a27dd95b05fe0b7c544eb7ed71"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T180027Z-start-2679/helm-lint.txt",
+    "sha256": "98cc7aa15988ff46cdeee7774f57efad3d6e965617acca21def8cf95b31fabb2"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T180027Z-start-2679/helm-upgrade.txt",
+    "sha256": "bd5baf2cffe7a4a720364cbc47cb5ea030d6230af4a249ab836b3f6caacd3bd2"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T180027Z-start-2679/helm-values.yaml",
+    "sha256": "0f80e1bc5040410f37b22c614461a6150e64de643fcff97b61adca4d233e2591"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T180027Z-start-2679/prometheus-ready.txt",
+    "sha256": "6ae2244847eb26de55cd1ebd355f656a5824b2b8a8a66d8d19cf6b1517c4831b"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T180027Z-start-2679/resources.txt",
+    "sha256": "472c05b8791077c997509a0b2abc249434ca16124662be47ce0122ef45a07cac"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T180027Z-start-2679/result.txt",
+    "sha256": "c26de83abdc9496cd1301470918ec39ecca1cf389ef0ae1c6504da1800d1c431"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T180027Z-start-2679/scope.txt",
+    "sha256": "8dbeca82f617ba8e780a88be00e4c89beca3370e280d3d1737cad20b79665ad2"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T180055Z-clean-2691/plan.txt",
+    "sha256": "0084fd7901ebe54c50183ba6a3d0069963bba5cc2655b76dd1f656fd1fd9a978"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T180055Z-clean-2691/result.txt",
+    "sha256": "0db3ca732682df8dd2ed469be8aa15f4cfcf99f2b6cbc15581e5fe702da3cded"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T180055Z-clean-2691/scope.txt",
+    "sha256": "1343301550c88cd93e6aea809a34ab5d9789d5a2daabf2f26e97e20aac7f90bf"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T180148Z-access-2751/forward-api.log",
+    "sha256": "47236099afea8607c7fd9d55b2034fa0a3bbc7c3d224024d202d352866c79f5b"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T180148Z-access-2751/forward-grafana.log",
+    "sha256": "9255ab5909bd9d4276d23e8ed2c944fdea355998a56a54d53d92bfc4bbf9a4f0"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T180148Z-access-2751/forward-prometheus.log",
+    "sha256": "8ae522ef5b60480d21f5abb5fed5f011f5a8862dbbf91c04e5d03080b6ecb7a4"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T180148Z-access-2751/result.txt",
+    "sha256": "33f66641334f5e4935b330bd2952ad7ab8659f9a4c5167e241bc7fcdee49890d"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T180148Z-access-2751/scope.txt",
+    "sha256": "c2adcab90eb894d94283873ecff6c35a8756851b7ec40b2665910160e2023e82"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T180230Z-traffic-1615/forward-api.log",
+    "sha256": "8c6e385b5405eeb64119729dc101e34b84902ee6889a16e6e797e4e6b8d89dba"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T180230Z-traffic-1615/health.json",
+    "sha256": "f5d81755935209a3ae596d4553d269cbbe8d08a27dd95b05fe0b7c544eb7ed71"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T180230Z-traffic-1615/metrics-after.txt",
+    "sha256": "62eab74723e18a24b3761c19912fde670c48a03f308f27c4adaec71080a89708"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T180230Z-traffic-1615/metrics-before.txt",
+    "sha256": "4aa89e92f566c7c574e39f377ab888c19b3130dddacb03e911d47db192958f84"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T180230Z-traffic-1615/order-1.json",
+    "sha256": "e07eb60ba328093968148fb837f1a30ee1bef74224c26d2462776e593b153344"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T180230Z-traffic-1615/products-before.json",
+    "sha256": "5745a6f9e497bb5cb25708cd01fa5dc1d9a6ba9f28c95d679d79ffa824c240bd"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T180230Z-traffic-1615/result.txt",
+    "sha256": "c26de83abdc9496cd1301470918ec39ecca1cf389ef0ae1c6504da1800d1c431"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T180230Z-traffic-1615/scope.txt",
+    "sha256": "3107df441fc644769093f166530b87e493659596fe526fa68565c2a6eeaaad40"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T180230Z-traffic-1615/summary.json",
+    "sha256": "6834dedf7480c406ca3d47e116fcd5b8d1e1121e0be794e6c1da0ab901bb762d"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T184722Z-start-1026/result.txt",
+    "sha256": "c9b289b4ed31e242869d40e8c5341cf26e9aa55279ee48baa753b20bf4254dde"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/20261111T184722Z-start-1026/scope.txt",
+    "sha256": "67abb6cd3acb4012f8d931aa450adb7f1e615694933b32fbf7c7a42f42194ef8"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/integration/bad-context.log",
+    "sha256": "a79748776f47fd5e395c222337f65d6f605c8e904abe338aa8799ce36db4eaa6"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/integration/bad-namespace.log",
+    "sha256": "5cbfb3d6e7a24ba3ced7d0eeab8425088c0e2b3b9dc69d19a0b4b817c97f0fa9"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/integration/existing-evidence.log",
+    "sha256": "4357649e636e20e956550b0454a25037d2f88d1e8672139698d3a781a43d2c08"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/integration/invalid-traffic.log",
+    "sha256": "a9f46e9837946a37512f59214321d44bf85a1dc05fd09fca9d6349195e6ff49b"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/integration/keep-data.log",
+    "sha256": "dc7c1b53bf5ede9d21789610bc28dbc2f8cb9eb041df734b9395b0997f0c9001"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/integration/main-before.json",
+    "sha256": "1846585ec5be1276962f053179678ec2853acec674a10ca230accdf836a39906"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/integration/needs-confirmation.log",
+    "sha256": "2439980bf52501756375e04e47df039ee49ac19624d74f2d0fa3fbaf30bc4fd0"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/integration/plan-only.log",
+    "sha256": "eef8a133216d4d661205da1f54b5d566d3f62dfac61f3af0f07e906f0eb0b360"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/integration/previous-hashes.json",
+    "sha256": "181b2c0f552780243667e2b31fbc4ed389bb40b4bc5f972fc30d8efb5bd883fa"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/integration/pvc-before.json",
+    "sha256": "d03c3ffc195491756739010e2986d06f50609f6aa04dbe6ab3db7ebbd1e0eaa1"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/integration/results.json",
+    "sha256": "7a08466a37ad2985c46439c1eb035920f8b2bb6403d73763413c007e0e0a758f"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/integration/test-traffic.log",
+    "sha256": "3309c275b045bb1df5b8fb7429d4697db62466939cb4b46aef57dc843306d3ab"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/integration-final/bad-context.log",
+    "sha256": "a79748776f47fd5e395c222337f65d6f605c8e904abe338aa8799ce36db4eaa6"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/integration-final/bad-namespace.log",
+    "sha256": "5cbfb3d6e7a24ba3ced7d0eeab8425088c0e2b3b9dc69d19a0b4b817c97f0fa9"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/integration-final/existing-evidence.log",
+    "sha256": "12a6edf10574deb4cf516e853cd9c790a43747ef57b2a6f9fae07c45c78efa51"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/integration-final/invalid-traffic.log",
+    "sha256": "a9f46e9837946a37512f59214321d44bf85a1dc05fd09fca9d6349195e6ff49b"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/integration-final/keep-data.log",
+    "sha256": "d00fcbc25f42609f2354f6fa58b9f00109dc69e2868d6122509604468714a555"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/integration-final/main-after.json",
+    "sha256": "1846585ec5be1276962f053179678ec2853acec674a10ca230accdf836a39906"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/integration-final/main-before.json",
+    "sha256": "1846585ec5be1276962f053179678ec2853acec674a10ca230accdf836a39906"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/integration-final/needs-confirmation.log",
+    "sha256": "40d21f802b8faa31a629522e868990b265a72218dbc3e04bdeec13ea871d40a8"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/integration-final/plan-only.log",
+    "sha256": "74fa1d1ad8ba4e53b0b23c3de5f134810384da153a9f476f0a91cd7af483b80e"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/integration-final/previous-hashes.json",
+    "sha256": "181b2c0f552780243667e2b31fbc4ed389bb40b4bc5f972fc30d8efb5bd883fa"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/integration-final/purge-test.log",
+    "sha256": "777493c1a07cbe543a491d638ab65e16d666b3a564ab1d39f3026a3c62c946bb"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/integration-final/pvc-before.json",
+    "sha256": "d03c3ffc195491756739010e2986d06f50609f6aa04dbe6ab3db7ebbd1e0eaa1"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/integration-final/pvc-retained.json",
+    "sha256": "0565a00f11d3b194700cced2cc19c823666acfdbd88a6a9c594f2166ad39fb82"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/integration-final/reinstall-retained.log",
+    "sha256": "0c79cb0278413354d5121a4dd6ccaabf66131af70c470c5f32a26068f572346c"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/integration-final/results.json",
+    "sha256": "61d5d21dacc3a868fa023cf7b3830d086b2c6f2df31b1bce7149aa48ec688579"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/integration-final/second-clean.log",
+    "sha256": "8ff93aa89ba5cb7e257ded9fd56b681ccf087444819b2303c88ad11ba4cc6e06"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/integration-final/test-after.json",
+    "sha256": "add513bf884f0663ec9c1db065325b01021e5d0c594563bdc31c7c0bef6dddfb"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/integration-final/test-rbac-after.txt",
+    "sha256": "33c9735172f43ab58745964731d0e04f205b6b853f4d55ce5982275d26fef358"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/integration-final/test-traffic.log",
+    "sha256": "ef4714081768e9505aad48835989f61e7773323be283488d9d550ef3d039ae71"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/integration-final/traffic-after-reinstall.log",
+    "sha256": "b4f7134c15ff36d2b508dc8d5891236e5812474e349def6927fffa339ffd2c1e"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-10/integration-final/verification.json",
+    "sha256": "9c7912b595e394cec1946300d79ba0433cee12a970c3cc81015f7cd601f94805"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b02/api-user.txt",
+    "sha256": "02b57a363babc8c0cf7128156a20c819e5541165182a1f838cf2d3b057ab7b31"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b02/bash-syntax.txt",
+    "sha256": "f184d1cadfad6b7b314198f7f105b9ed3b9762b324ba9382b50d28576d9756f7"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b02/falco-user.txt",
+    "sha256": "ee38543425b2ac5254f52e6b785a8c559335f404ad783d92ff7acde34384df1a"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b02/grafana-user.txt",
+    "sha256": "799bbcf7bbea67bd93792e91461ac6aaaf8e6ebc55880e796553b80538227ddb"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b02/inventario.json",
+    "sha256": "5099ad3a91858570050354ec1c2494825abadbfd8a6634cb822fbf8b4d1a42f0"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b02/jenkins-container.txt",
+    "sha256": "6c2179a0a21eae1cf868c5ff82f18ba442f90b7c84c5cc2e710ccf41585c42df"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b02/jenkins-core.txt",
+    "sha256": "ce5aacec8c1ddd4eb7e230e854389766e361341ded646872b1796ace157b2de3"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b02/jenkins-image.txt",
+    "sha256": "10735fc68b54292f410ca2a406420e6d2e81a4708e3983cd58c63664c2f9df5e"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b02/jenkins-lock-check.txt",
+    "sha256": "8b9b38735ee7e952b273d4d92b35f71a4f262493f4029ab2608fa278b545b90a"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b02/jenkins-lock-rechazo-intento.txt",
+    "sha256": "fe0d302dda675bafff3f38c2212d4ed7c66811d9a71a46bf37fa1d58c73a6857"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b02/jenkins-lock-rechazo.txt",
+    "sha256": "54670ac7253af6a705de90707f191e67ff8fc6acdd582403f70c7f2b6873d920"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b02/jenkins-user.txt",
+    "sha256": "d9cabd4d194e5c622cab722295edebb2da80591363785ae53cbb49c4b27ab1dc"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b02/kyverno-user-attempt.txt",
+    "sha256": "f6ad89ddc1c6f041a93042a499feeba5363b288b89e06cd517feead44bec547f"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b02/pods.txt",
+    "sha256": "da5bcdbf75a2cb203eb6dc331c68204872e3faea9d7f52ca76936f829b62e926"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b02/preservacion-antes.json",
+    "sha256": "8ad89206ba97a2fcf843f96bf7577a2e35a76c70813c9c1813c61c6cbeaea66d"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b02/preservacion-resultado.json",
+    "sha256": "09ad842774f19af8843422fd19bd9318030fcdee94b6d1487af3c5a887a6fc93"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b02/prometheus-user.txt",
+    "sha256": "ccc691b35bca3e5c947d08a2fdc6239b08d3e380480594fcee92bffef2f3f0a0"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b03/alternate.txt",
+    "sha256": "75cec421a54de553efe9f002ad4a9b7c6021d1a0a5a637e4f4b91a4fbc22a51f"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b03/alternate.yaml",
+    "sha256": "f2e5c4b880d2f35e5793e85ab5a4965ccf996e18d2b945f990415867138085fd"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b03/bash-syntax-access.txt",
+    "sha256": "f184d1cadfad6b7b314198f7f105b9ed3b9762b324ba9382b50d28576d9756f7"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b03/bash-syntax-pass.txt",
+    "sha256": "f184d1cadfad6b7b314198f7f105b9ed3b9762b324ba9382b50d28576d9756f7"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b03/bash-syntax-start.txt",
+    "sha256": "f184d1cadfad6b7b314198f7f105b9ed3b9762b324ba9382b50d28576d9756f7"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b03/bash-syntax-traffic.txt",
+    "sha256": "f184d1cadfad6b7b314198f7f105b9ed3b9762b324ba9382b50d28576d9756f7"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b03/bash-syntax.txt",
+    "sha256": "f184d1cadfad6b7b314198f7f105b9ed3b9762b324ba9382b50d28576d9756f7"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b03/cleanup-result.json",
+    "sha256": "26946f2950b000d5fde4a3d67baf564c42f7c4a0d530b92dbd1b8f0f74596122"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b03/default.txt",
+    "sha256": "59030ccce9164f8cf371e9adba668ee1772f953d3efbae5f74f90cf7abe63171"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b03/default.yaml",
+    "sha256": "e23528c1274143d67afec1b4b72f98c76ae0d1ff35b8d12cc9127168bfd8ab9e"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b03/delete-temporary-pvcs.txt",
+    "sha256": "98916ecdaf97da252599e38bbd3a9afa2f1d64551436422e6b2e0d955ad0740b"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b03/dev.txt",
+    "sha256": "58cbcb3162620de19898f9f30bab0a5675cc1e87d6472019206bcb88047c2456"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b03/dev.yaml",
+    "sha256": "3a60f564903f8497f84cae044e7214c4a05c883c377fb2816bebf3333e7b5fcd"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b03/forward-api.txt",
+    "sha256": "3a532aafafc04d481504ddb6a2ef1173ab994d1479893ba688429f62d0bb2b19"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b03/forward-grafana.txt",
+    "sha256": "3d1df71ed2c8a43843aa91193cd220c6af69685f81ff122d7e5a32799507c89c"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b03/forward-prometheus.txt",
+    "sha256": "e2524d43e76daa05d52508c832c67f9e1714233c4195ddcb61833429f0c7cb6b"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b03/install.txt",
+    "sha256": "47b160ca797a25375da7882cc1f7da9f32cc5535a265603a368797d847ed8ce5"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b03/lint-alt.txt",
+    "sha256": "0bfc507bb388dba3207afa5bdca9a909be9b54b828b1e2b0fac45f9cfc9eeffc"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b03/lint-default.txt",
+    "sha256": "0bfc507bb388dba3207afa5bdca9a909be9b54b828b1e2b0fac45f9cfc9eeffc"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b03/lint-dev.txt",
+    "sha256": "0bfc507bb388dba3207afa5bdca9a909be9b54b828b1e2b0fac45f9cfc9eeffc"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b03/local-result.json",
+    "sha256": "dd6f298da71a71bb8df16868bfee2be6882fc787ab8fbf49faec982a8163f474"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b03/original-after.txt",
+    "sha256": "ba192272bab6d51b5dbeea2d0a644cc6283c3dc6a81e9d6c3fe9fe4a69bc4484"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b03/original-before.txt",
+    "sha256": "ba192272bab6d51b5dbeea2d0a644cc6283c3dc6a81e9d6c3fe9fe4a69bc4484"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b03/paused.txt",
+    "sha256": "481de346fa0d33a7ae2d2a5c7477b6a629e0807de98e6addc12f6f89306ef547"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b03/paused.yaml",
+    "sha256": "93ceda14eaf5d489aaafce2c97ef120b383f672eb0d23599789705148ef57254"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b03/powershell-syntax.txt",
+    "sha256": "60ffb6b668a8c0bd6e23af0f27dd2a23a34613cc2e3b32318398f9af130feab0"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b03/preflight-api.txt",
+    "sha256": "f184d1cadfad6b7b314198f7f105b9ed3b9762b324ba9382b50d28576d9756f7"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b03/preflight-grafana.txt",
+    "sha256": "f184d1cadfad6b7b314198f7f105b9ed3b9762b324ba9382b50d28576d9756f7"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b03/preflight-prometheus.txt",
+    "sha256": "f184d1cadfad6b7b314198f7f105b9ed3b9762b324ba9382b50d28576d9756f7"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b03/preservacion-antes.json",
+    "sha256": "1833edcfe3d3f2739dcc98e19be11b0343cbfb46481b64073a5bd0ad14d2b21a"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b03/preservacion-resultado.json",
+    "sha256": "bdc06a326829867abbb1fbeb78d3e87c9c985b59cc3e60d213c1a39a545ed6d1"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b03/reject-api-port-65536.txt",
+    "sha256": "cfc931ae0892a9dcb5aab38f161765acc33cec4a723ebfdf14c28120fe353cf1"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b03/reject-api-port-80.txt",
+    "sha256": "d380444c35a6c3ba9187188e06da7a09c4c87002ea846c81edc44e3e4d8fe218"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b03/reject-api-port-text.txt",
+    "sha256": "85c077145cb702abe95e3580201cc7e48d0d7006756fb52589c85346e4f6a5fb"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b03/reject-api-replicas--1.txt",
+    "sha256": "be327dd1c6240ca59af7f86d77c2d2ea68d6d181015d15d9107d4a5ad1f059c1"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b03/reject-api-replicas-2.txt",
+    "sha256": "31e92471d2da3c589bba42fa20732c59e4916c6865a4d02f3d2bd6afc063a8bc"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b03/reject-grafana-port-65536.txt",
+    "sha256": "04b6aed465450ecba113a58a48c4d26f6d8ea6f87bc7437fbda9864d33f96926"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b03/reject-grafana-port-80.txt",
+    "sha256": "a8e83898e819fd69a806d8e0c4fe24e0c489236be16120fef0fb669df61c3395"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b03/reject-grafana-port-text.txt",
+    "sha256": "2d9697ea2b77161437391555e6ec9fbb69c42e7bf5b2aeff48cebc143eb72eac"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b03/reject-grafana-replicas--1.txt",
+    "sha256": "128d6768a3f32173833b2d2e2fe49897539a5af42bf5ccdbda79c77a59bbca49"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b03/reject-grafana-replicas-2.txt",
+    "sha256": "7a3697b6588fb093b80bf852318321310c04bcbb669bdda17dfdc17cccac5f79"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b03/reject-prometheus-port-65536.txt",
+    "sha256": "49e0ca9c05a2e1396616516e65f9699f503c98649dbfb92d75a619d3cea28dff"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b03/reject-prometheus-port-80.txt",
+    "sha256": "472ad1170e5da675a66fc9de91e0fc924349137988c64de1321ee2a286a760aa"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b03/reject-prometheus-port-text.txt",
+    "sha256": "c74134bd8e873a62fc33d079eb25bca265214d0a68c9e05b45ef10dc19e68b8b"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b03/reject-prometheus-replicas--1.txt",
+    "sha256": "126231a6f5039420b89d1e594793b128c722b70ce8bf1e8b5c5223d67812ee47"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b03/reject-prometheus-replicas-2.txt",
+    "sha256": "23b0c8a78d993cef9c649d774172ba59b53979e1a65aac3c2c2519be9095ea36"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b03/release-after.txt",
+    "sha256": "6b64213ce7594df675afc5a8af1138e0b99cf80938a5a976af25f4d21fab7b21"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b03/release-before.txt",
+    "sha256": "35e3abcdb876e9725afc56983b6c5619ff894cb14a7ff7771fb502692aed89d2"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b03/releases-before-intento-flag.txt",
+    "sha256": "a687fe1e58f035f6e32643f2122b10f179176eb1e6135cb7e6f669c1e622ef60"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b03/releases-before.txt",
+    "sha256": "5b0f50636609a2b8f8175d3ed137e049dd4be78b9f326e14f5b8a68055e634a7"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b03/resources-after.txt",
+    "sha256": "90be516df8b21746ee997a8a43814ed9fcd5d753cb6593fe5da5c307bf2d5145"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b03/runtime-result.json",
+    "sha256": "0bd0a21a90826692bb5a68e9a9d898ba26ab708fbd3ddaf53c8009ed65a6a954"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b03/server-dry-run-alt.txt",
+    "sha256": "b141ab613fb328c0546b763e0089935c489da1280679ec741e02e93f4ba9256d"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b03/server-dry-run-default.txt",
+    "sha256": "b141ab613fb328c0546b763e0089935c489da1280679ec741e02e93f4ba9256d"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b03/temporary-remaining.txt",
+    "sha256": "ba27fb04d90bbeff362b0dc443f6e1732fb780424bb2f4b1f5ceeeb132d7769a"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b03/temporary-resources.txt",
+    "sha256": "54b0581062ca7006baca6aeab6ab826fab018d282e2db9319d18668c54816f76"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b03/uninstall.txt",
+    "sha256": "851edd5e5e07799e8883b563adba5daeb767311692d8238e1fd324f900785702"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b03/values-alt.yaml",
+    "sha256": "dec0d9fd228bd8f177f8d18937b4a586f3d4be7fd396d021c98e8bbb7d74300e"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/after-clean-cluster-rbac.txt",
+    "sha256": "736df570a61bb68969491e249f857a65fe9df205022bd68265c53c3a5562af07"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/after-clean-policies.txt",
+    "sha256": "c4e366e6384c98c11c28c64e254d8c431d7ee36cd154a53f87cd406b6fe474c6"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/after-clean-policy-crd.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/after-clean.txt",
+    "sha256": "d2338444f2f60130014dffc2dc654fdd8d9605534f9561af0714f643d9e5fe78"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/clean-idempotent.txt",
+    "sha256": "45dd74017e5ea5d7d5a149e2b05b669f4f74b5e2a76fa45c2a0e14d0ec460be7"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/clean-security-data.txt",
+    "sha256": "c127d247a203f4b3e76bb5e60581eb38142a8267c73f760c003119e15b16ce76"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/cold-restart.txt",
+    "sha256": "db596f33edd066020e738b5e657c73506a84b3ecb562942676cb71779a85e3ec"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/cold-stop.txt",
+    "sha256": "cfe4105311d1d8086e4fec10d25615c763a6e375d894e12781061f56ebdacef3"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/containers-after.txt",
+    "sha256": "89f8f5fe2bb50cdedadfb295a52c6ee39fcea047b0b80eff74d3ae5541563c79"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/context-restored.txt",
+    "sha256": "5086431107cae0151fdd8a231177374dfd063cb427d03273af07d527a23c27d0"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/create.txt",
+    "sha256": "bbfd34adfe18a42a75a45a057916eca4fc04d06a1c9af53db73b4b793df4ac2a"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/created.json",
+    "sha256": "1c213442d4e3ef6f9b8bed5bf8731c7258f4ee1d7ba8c87d35baaa92450b74ad"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/default-plan.txt",
+    "sha256": "2e331aa90825793afb497a11a2055db4d66b6bdbb697c43894db748bde0b4b10"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/delete-profile.txt",
+    "sha256": "86c40d54917a8998fd8e7283f2ec14663ebf67f257cd8b6c47a51570943207ef"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/final-containers.txt",
+    "sha256": "f345e723fb74fe1ab6622b09c5ee5d6ded3236e35b4c95b1a7b22b4365060d0e"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/final-create.txt",
+    "sha256": "c20090a832522b7a1c12fafc22c44db5d608dc175c0386aad86ce596fcbc57ef"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/final-cycle.json",
+    "sha256": "b88d379edf204174041c96580b5e9110049cbe8ee477522a17d0386381fa83c4"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/final-delete.txt",
+    "sha256": "79fd7940c8ba0b62251c65e64938509cba6d28ff7398c0d1cd1d491a23c0f74b"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/final-main-app.txt",
+    "sha256": "cc8905f2a4c63964598ffd58fc29ff5a8f1017a4862478949280f84f48e69e01"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/final-main-current-context.txt",
+    "sha256": "161e0def216e591b690713b9193a88c74350a76c84b6e182ec6c0abb371ec546"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/final-main-jenkins.txt",
+    "sha256": "2705c2a0433ccb2eb69f4fd38df962dda085d676ebdb3d3992ce01ccd39ce6f5"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/final-main-security.txt",
+    "sha256": "a4f8813e81398e0f6aa941e9abde65e799b09a406d6b8a59b5aa1cf848a3706e"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/final-volumes.txt",
+    "sha256": "47098a64ae08017c20e3b90b7740eaa7e637e4be7d4da824096bb5e7ec8daca3"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/foreign-pvc-fixture.txt",
+    "sha256": "6f687227e31cf5c694611b055e8620e326cb25e88cff2b637cad6b8b6ca27aa2"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/foreign-pvc-rejected.txt",
+    "sha256": "634071eeb32efbd12a236abe64f4acbbe69e415bf9f1b2ab9ebf29c49935c5ac"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/fresh-forward.txt",
+    "sha256": "eab4408f31d1c925e98762e5b2df9bfd882a028739d535f61e19cd5756282066"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/fresh-pods.txt",
+    "sha256": "64e31facceb02853818f41efb8d142996d7be7b405dedbffc81c47656607d538"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/fresh-policies.txt",
+    "sha256": "ac8bcad39c5658939d594d768f48ec586cb84c06e130ca2c365d88e76dfc6310"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/fresh-start-retry.txt",
+    "sha256": "a582220e371cfee7d93891dc95b743abc321895bd139fdb4a4f11a1d0a502420"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/fresh-targets.json",
+    "sha256": "767043695f81eac2402d672f484aa42066934ed105b65101b604395fe788d056"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/isolated-jenkins-rejected.txt",
+    "sha256": "0c2e77c0f3dc7fd860ed62f99c39283d803f8bddf762ebed9f835a3c645507b5"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/main-after-app.txt",
+    "sha256": "651706238a4af2d9fb8d07d0bb5b2b078ea790fe5cb4ba86b181ef856505fe8a"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/main-after-current-context.txt",
+    "sha256": "a159eab3c8ba33783acf18fe2b0142531719bd9a0febee54b40d03095a88d864"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/main-after-jenkins.txt",
+    "sha256": "513de0a4ac72511c20530b9ed538cf0de346ee5d1b8be745e68bd7893fe5e31e"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/main-after-security.txt",
+    "sha256": "6c165fff79a7b4fe24c6994c2b471282abd1908bdd72ad3a92fd06f19579fe0a"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/main-before-app.txt",
+    "sha256": "651706238a4af2d9fb8d07d0bb5b2b078ea790fe5cb4ba86b181ef856505fe8a"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/main-before-current-context.txt",
+    "sha256": "51b1347a695d73cc8aa50cbc145d4ef70e0ef60a42c43a1959314c5e6466a612"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/main-before-jenkins.txt",
+    "sha256": "513de0a4ac72511c20530b9ed538cf0de346ee5d1b8be745e68bd7893fe5e31e"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/main-before-security.txt",
+    "sha256": "6c165fff79a7b4fe24c6994c2b471282abd1908bdd72ad3a92fd06f19579fe0a"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/main-confirmation-rejected.txt",
+    "sha256": "300c35ead7b79d4bb62e44cd4714ceb7b3a72d4bff8945e552cfadbb8d3899b0"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/main-release-final.json",
+    "sha256": "6431ca71bc6b7b7e8322a48b06a1608047c8f7e317102127f4828d698c48a66b"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/needs-confirmation.txt",
+    "sha256": "2b177b8e4a87479c38f5c967a67b328e6e2135e2b653e621bf2cf8208a56ead8"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/preflight-deploy-after.txt",
+    "sha256": "e9b86a9fd342b579bcb1025982dc78e56ff7297207ad890588655413f851e0a5"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/preflight-deploy-before.txt",
+    "sha256": "e9b86a9fd342b579bcb1025982dc78e56ff7297207ad890588655413f851e0a5"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/previous-hashes.json",
+    "sha256": "e50f4645f118e90110dbbedb9b65040a13ed1664ed9bddf154c074e3397f0701"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/profiles-before.txt",
+    "sha256": "8f512ea8e579349485455f7745eef9419d78b4d4b9da9e5c0028873c19ca5cb0"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/recovered-forward.txt",
+    "sha256": "ec9f37743be6d9fae7b32d5806442ffdea4cccfb367d1f6e1b738c132a4a9313"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/recovered-pods.txt",
+    "sha256": "568ae9d25f00fb359bcdedede6e88c56e87065691f392219e148748b2c21dc69"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/recovered-policies.txt",
+    "sha256": "ac8bcad39c5658939d594d768f48ec586cb84c06e130ca2c365d88e76dfc6310"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/recovered-targets.json",
+    "sha256": "3929bc6ca9a553d98e0772da09aa5281136bf6eb2679bb74b111f5661486dff8"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/restart-app.txt",
+    "sha256": "80090338f20a2e09e4474223079ecea2e78f3c15f32b1270955d8201397c1eaf"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/restart-ready-falco.txt",
+    "sha256": "234391014fb071b795e94165d0d55330005557987fbd16b256e5cab5ddeeedfa"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/restart-ready-kyverno.txt",
+    "sha256": "b016d875aed69d2becd21c362026e441a1c618dddb85de4d50b73395d39cde3d"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/restore-pvc-owner.txt",
+    "sha256": "6f687227e31cf5c694611b055e8620e326cb25e88cff2b637cad6b8b6ca27aa2"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/scripts-final-sha256.json",
+    "sha256": "de556445e90d911d4ccbe1c92d7eb6eb860ca9f65b4dd252a2086997d5ba3f67"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/syntax-access.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/syntax-clean.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/syntax-common.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/syntax-sandbox.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/syntax-start.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/syntax-traffic.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/syntax-verify-jenkins.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/traffic-fresh.txt",
+    "sha256": "0bd033db96bee6ce22161da757b07fc0b69570093fc1fb13167854a14cec19bc"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/traffic-recovered.txt",
+    "sha256": "0b98678618dabee6c54a73fdcaf43c81b68c4e0e6fe62d9c98e16fae0e0c2ca6"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/tunnels-closed.json",
+    "sha256": "00a483ad8c0b0f673dceea78dc07b8189128047408f283ad7b333415bf134d30"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/unknown-context.txt",
+    "sha256": "9853f9f2621e71197c4f5a4e0ef492ffe1bd65796ca4dd55b14fc88a0d9b226c"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/verification-initial-error.txt",
+    "sha256": "a369cbf2167b645c9d9d38257c208380a0b86e9380d181424bb01619724ea8ac"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/verification.json",
+    "sha256": "f283ea9382db6f5d56090c977b1d9ca4ffda6ba539408b190b411cdc7b825b12"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/volumes-after.txt",
+    "sha256": "db05d8dd641cb0ec60d4e3b6b20dcf0fb1e26f427d041a49ec6591d48a595ca1"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/wrong-profile-id-rejected.txt",
+    "sha256": "cbfd4252102858718bef67f3fe52f6b5c541e20330bcd582fc168f39912bf4eb"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b05/configuracion-scm.json",
+    "sha256": "34eb44e14ea874ad0797bafe13e99b40a9624ece061e72f5ec832bf036184328"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b05/CONSOLIDACION.md",
+    "sha256": "c9bca72e16955a894aafb85dd660582c218616250ae3f87c494729d7b7fc3ced"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b05/fuente-remota-jenkins.json",
+    "sha256": "2dab124bc14492f9e9163e4de9f1d51001df43b431c4ca30ef2788fb40cdd72e"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b05/verificacion-local.json",
+    "sha256": "8a60d1cbcefc5f86437953088813b43789e7f0d073ca1d97757b6c3bfa2f4267"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b08/antes-HANDOFF_MAESTRO.md",
+    "sha256": "ede1429d58b52d8721689001eb40b4ee50f42b851bd294955e562582637728a8"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b08/antes-MAPA_LABORATORIO_4_EVIDENCIAS.md",
+    "sha256": "4372de1378c00c5445db0c05b9fc8fb2fdeebd12b85ada5cc1cdf7f49a990af5"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b08/antes-PLAN_TRABAJO_LABORATORIO_4.md",
+    "sha256": "17071afa9947ddd07f839e58f86a4e95e8d88b6914e8b435bff47be3641bca68"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b08/preservacion-antes.json",
+    "sha256": "b1f07575b4fab88e05e6a2debfe7311484da14460b8c0ffb403d4b5805383fbe"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b08/preservacion-resultado.json",
+    "sha256": "89e0d01a0c75485be220ff9ff9854ae4d017d95e9b243e45b1567e7f4c81c477"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b08/snyk-comparison.json",
+    "sha256": "145bf95a49d618abbb4dfeed89b575b4f9d7aee450871f62f7cd6fd36d8f4831"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b03/antes/Chart.yaml",
+    "sha256": "5914f0195d846b54dd012b627f13b67e983c81238e87126d12190324f35f197a"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b03/antes/README.md",
+    "sha256": "5cd8cb7f42146915847580ed9a67264ae1682fdc9b4528be1e1439127ee7af3c"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b03/antes/values.schema.json",
+    "sha256": "b47c9b52e5cb6d5bf5bac7db5ea03cabb3b9322c60f6c7588103928053b449be"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b03/antes/values.yaml",
+    "sha256": "886e479974befb7ab218efbf79f80b59fb2982a8bdbad3ae6f490910ec3b272a"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b03/antes/templates/configmaps.yaml",
+    "sha256": "e16154ee32d2b7d105925d625c9ae260609472d49d9afebd014d78e019d2b4a0"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b03/antes/templates/workloads.yaml",
+    "sha256": "b8b033dafe146270dc5222e4f757ed4d0fef95044d9adeddeea9638d1bd61863"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/clean-idempotent/plan.txt",
+    "sha256": "be9da80e2b2ed4b68547e530e28d334d84683b5e6ce752b04e9a2d15700d5290"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/clean-idempotent/pvc-after.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/clean-idempotent/result.txt",
+    "sha256": "c26de83abdc9496cd1301470918ec39ecca1cf389ef0ae1c6504da1800d1c431"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/clean-idempotent/scope.txt",
+    "sha256": "8b08e4aa7b149036cd55378b9edc355b8f424a5b5540ecf9b14c8e0f8373451a"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/clean-security-data/plan.txt",
+    "sha256": "be9da80e2b2ed4b68547e530e28d334d84683b5e6ce752b04e9a2d15700d5290"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/clean-security-data/pvc-after.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/clean-security-data/result.txt",
+    "sha256": "c26de83abdc9496cd1301470918ec39ecca1cf389ef0ae1c6504da1800d1c431"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/clean-security-data/scope.txt",
+    "sha256": "8d0861333eb097666edcc84744b93379b56f547ba958d92f3ab3ac325a45b005"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/clean-security-data/uninstall.txt",
+    "sha256": "57fbfe157898d02101af724cb7f014b132db81494724dc383452598924f6c89d"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/create/container-id.txt",
+    "sha256": "c9256f7f7a160ff680c53688fd15a266bfcb11e11102010c057a860b656ef68e"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/create/plan.txt",
+    "sha256": "fd4b699d356d27b56fa27e6c7cb005ae843e38f1f095a1aeee5b4776b1ed9f37"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/create/profile-start.txt",
+    "sha256": "8faf34ac56b516b5e464ca724a71bccb77bd6c65ebaa71dd1a0c33db895eba7f"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/create/profiles-before.json",
+    "sha256": "8f512ea8e579349485455f7745eef9419d78b4d4b9da9e5c0028873c19ca5cb0"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/create/result.txt",
+    "sha256": "c9b289b4ed31e242869d40e8c5341cf26e9aa55279ee48baa753b20bf4254dde"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/create/scope.txt",
+    "sha256": "62aeae2f14aa3a1309eaf84f34ac70ed9494a6fc9b3f30ffa3afcf2ff64ac16b"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/default-plan/plan.txt",
+    "sha256": "fd4b699d356d27b56fa27e6c7cb005ae843e38f1f095a1aeee5b4776b1ed9f37"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/default-plan/result.txt",
+    "sha256": "3d155ed94ba3b1ccb06031df2e2d18cc185307083fede414975096417a7549ba"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/default-plan/scope.txt",
+    "sha256": "59f5ae68c9a4361ba70ae32b4a19bb63308a67c18e096170816f0dac00a96a46"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/delete-profile/container-id.txt",
+    "sha256": "c9256f7f7a160ff680c53688fd15a266bfcb11e11102010c057a860b656ef68e"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/delete-profile/owner-deleted.json",
+    "sha256": "33d51af5e3b22113a8a389ad692503eb6f3c77e302473791b49ed881662b549b"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/delete-profile/plan.txt",
+    "sha256": "fd4b699d356d27b56fa27e6c7cb005ae843e38f1f095a1aeee5b4776b1ed9f37"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/delete-profile/profile-delete.txt",
+    "sha256": "d0070a050d86229ac6a24470ca4f9d2c1fe906a943bdd6f198e729e09e26cfa5"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/delete-profile/profiles-after.json",
+    "sha256": "2b1276961b0dd027e79a164fb7ec09da2ceb3b1ee03a34bb70c249dc4b582443"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/delete-profile/profiles-before.json",
+    "sha256": "df4f58bb1b6a75a462efedc2095a250c19f5f6ecc33e55e7d6f7fb596fcd7aef"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/delete-profile/result.txt",
+    "sha256": "c26de83abdc9496cd1301470918ec39ecca1cf389ef0ae1c6504da1800d1c431"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/delete-profile/scope.txt",
+    "sha256": "c189c23122dd21c35838e20bee61124de182cc9d76b6a7416d42b206d642952b"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/final-create/container-id.txt",
+    "sha256": "97cfcd591f16d4b850d5268431a4abb565301778f454c0bf61c37994505273b5"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/final-create/plan.txt",
+    "sha256": "fd4b699d356d27b56fa27e6c7cb005ae843e38f1f095a1aeee5b4776b1ed9f37"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/final-create/profile-start.txt",
+    "sha256": "8faf34ac56b516b5e464ca724a71bccb77bd6c65ebaa71dd1a0c33db895eba7f"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/final-create/profiles-before.json",
+    "sha256": "8f512ea8e579349485455f7745eef9419d78b4d4b9da9e5c0028873c19ca5cb0"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/final-create/result.txt",
+    "sha256": "c26de83abdc9496cd1301470918ec39ecca1cf389ef0ae1c6504da1800d1c431"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/final-create/scope.txt",
+    "sha256": "c8fb6853eece8649dca4437eb51970263099fe9e18d8e2e6e310a62dd2866851"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/final-delete/container-id.txt",
+    "sha256": "97cfcd591f16d4b850d5268431a4abb565301778f454c0bf61c37994505273b5"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/final-delete/context-restored.txt",
+    "sha256": "5a05a33f7d964554fa6c93af29a495517ddaf971f1f9a8c23948beda3b6e9838"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/final-delete/owner-deleted.json",
+    "sha256": "7bd18696f8d94a3e4669b4e4b4704f851be4d0207f55c6f3db273b6617771c70"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/final-delete/plan.txt",
+    "sha256": "fd4b699d356d27b56fa27e6c7cb005ae843e38f1f095a1aeee5b4776b1ed9f37"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/final-delete/profile-delete.txt",
+    "sha256": "d0070a050d86229ac6a24470ca4f9d2c1fe906a943bdd6f198e729e09e26cfa5"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/final-delete/profiles-after.json",
+    "sha256": "8f512ea8e579349485455f7745eef9419d78b4d4b9da9e5c0028873c19ca5cb0"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/final-delete/profiles-before.json",
+    "sha256": "25e88b7a897927fd22048031e548333f044ee61b7b02351a44847fedffb7732f"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/final-delete/result.txt",
+    "sha256": "c26de83abdc9496cd1301470918ec39ecca1cf389ef0ae1c6504da1800d1c431"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/final-delete/scope.txt",
+    "sha256": "caf4e2d47b6e0f68ac45476065e0d68981aec2ccfcc588f3794326bf040cae94"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/foreign-pvc-rejected/plan.txt",
+    "sha256": "66de7ab32546c0a17667e3bf3e2fc1091018aaf733a1ff6ae85a599df6e46f58"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/foreign-pvc-rejected/result.txt",
+    "sha256": "0db3ca732682df8dd2ed469be8aa15f4cfcf99f2b6cbc15581e5fe702da3cded"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/foreign-pvc-rejected/scope.txt",
+    "sha256": "406ebe047f059329ca497b95485869c1009edab6bfcaab892f081bf0ae8270bd"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/fresh-start-retry/forward-api.log",
+    "sha256": "81def82e7e65bc52f699d8d3f6fd2e599e5e275cf9900d0306f5c2d491667aca"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/fresh-start-retry/forward-grafana.log",
+    "sha256": "8e76b3c19571fe5fb0364f95dae4eacadc34eb3cc08083bb9654802555e74d42"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/fresh-start-retry/forward-prometheus.log",
+    "sha256": "34ae51065cd495c56fc21f1f00ed4f2a6d3f9a31710566c68a9415f196eab840"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/fresh-start-retry/grafana-health.json",
+    "sha256": "7bfa00958a821e29e37b70effacab48b4ef69ca05ffaf920935c89fb72d35929"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/fresh-start-retry/health.json",
+    "sha256": "f5d81755935209a3ae596d4553d269cbbe8d08a27dd95b05fe0b7c544eb7ed71"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/fresh-start-retry/helm-lint.txt",
+    "sha256": "98cc7aa15988ff46cdeee7774f57efad3d6e965617acca21def8cf95b31fabb2"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/fresh-start-retry/helm-upgrade.txt",
+    "sha256": "7816f8b2475fbd67278f422fd7af77c2705e8e378d07d6f7f458434c00e880ab"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/fresh-start-retry/helm-values.yaml",
+    "sha256": "11d2e4c2a83b6680151eabeaf1495aa4d0bd2d731af4e53db868efa839a01897"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/fresh-start-retry/prometheus-ready.txt",
+    "sha256": "6ae2244847eb26de55cd1ebd355f656a5824b2b8a8a66d8d19cf6b1517c4831b"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/fresh-start-retry/resources.txt",
+    "sha256": "f1efad5908108e282c8f94b7a7ed9583d6350ff80442e3be918f164b2a5fe0e1"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/fresh-start-retry/result.txt",
+    "sha256": "c26de83abdc9496cd1301470918ec39ecca1cf389ef0ae1c6504da1800d1c431"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/fresh-start-retry/scope.txt",
+    "sha256": "70dfcb0c97cb8e9119be5a3f123bcab7c8edc1c21fd975bb7abe594fef96dc72"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/main-confirmation-rejected/plan.txt",
+    "sha256": "fd4b699d356d27b56fa27e6c7cb005ae843e38f1f095a1aeee5b4776b1ed9f37"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/main-confirmation-rejected/result.txt",
+    "sha256": "0db3ca732682df8dd2ed469be8aa15f4cfcf99f2b6cbc15581e5fe702da3cded"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/main-confirmation-rejected/scope.txt",
+    "sha256": "676c8432a9946f935fc74eceefe1649717098d75263e3f9204ff379bd289dab4"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/needs-confirmation/plan.txt",
+    "sha256": "fd4b699d356d27b56fa27e6c7cb005ae843e38f1f095a1aeee5b4776b1ed9f37"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/needs-confirmation/result.txt",
+    "sha256": "0db3ca732682df8dd2ed469be8aa15f4cfcf99f2b6cbc15581e5fe702da3cded"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/needs-confirmation/scope.txt",
+    "sha256": "59f5ae68c9a4361ba70ae32b4a19bb63308a67c18e096170816f0dac00a96a46"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/restart-app/forward-api.log",
+    "sha256": "808b2df069e457ea3b6b89ab138370c8e562c0a3302bbf8fb6c9c43248bf7848"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/restart-app/forward-grafana.log",
+    "sha256": "988968fe6201e9559639893ce861ce2d82109600acd728508a42fe71e49f2d5a"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/restart-app/forward-prometheus.log",
+    "sha256": "5f0fdbf500494659a643c9604e7e82e51ce850f68fba9cfefd3664cec73e9ce1"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/restart-app/grafana-health.json",
+    "sha256": "7bfa00958a821e29e37b70effacab48b4ef69ca05ffaf920935c89fb72d35929"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/restart-app/health.json",
+    "sha256": "f5d81755935209a3ae596d4553d269cbbe8d08a27dd95b05fe0b7c544eb7ed71"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/restart-app/helm-lint.txt",
+    "sha256": "98cc7aa15988ff46cdeee7774f57efad3d6e965617acca21def8cf95b31fabb2"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/restart-app/helm-upgrade.txt",
+    "sha256": "13f39c80d122424b9f54ed44f1607eab6ef3c54a51b240b306f6eea9d891d087"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/restart-app/helm-values.yaml",
+    "sha256": "11d2e4c2a83b6680151eabeaf1495aa4d0bd2d731af4e53db868efa839a01897"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/restart-app/prometheus-ready.txt",
+    "sha256": "6ae2244847eb26de55cd1ebd355f656a5824b2b8a8a66d8d19cf6b1517c4831b"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/restart-app/resources.txt",
+    "sha256": "41d4073af48d4545a7a5b72c1f14d59fa1976723d0fe38f75c41504eed1021e1"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/restart-app/result.txt",
+    "sha256": "c26de83abdc9496cd1301470918ec39ecca1cf389ef0ae1c6504da1800d1c431"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/restart-app/scope.txt",
+    "sha256": "a9a7bf12e95cd983ab1d8b8af4f38178141595a80ff07ea701cc0f334ac4f217"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/traffic-fresh/forward-api.log",
+    "sha256": "fcfec0ce51e25300f3569a88eb03e81de81b41388349e9635d3d14b3b3951a38"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/traffic-fresh/health.json",
+    "sha256": "f5d81755935209a3ae596d4553d269cbbe8d08a27dd95b05fe0b7c544eb7ed71"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/traffic-fresh/metrics-after.txt",
+    "sha256": "9270fdd3587420233d439fef94803c2f3bc64333fa40cd41cf982ba0726be929"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/traffic-fresh/metrics-before.txt",
+    "sha256": "cb568ae66334dab82c20588eb93293a14585ac32b090aa05dfe6f726e24836c6"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/traffic-fresh/order-1.json",
+    "sha256": "e7b3f42f1ca098fc4b783ccd205ec9dcfcbd72a068b543e156f2a90e0ecffe85"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/traffic-fresh/order-2.json",
+    "sha256": "0dd947a5d59b5a82d92814d4a517fce1106fd58cc55be5769d7d7f7e54444526"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/traffic-fresh/product-created.json",
+    "sha256": "7ee7bba2a9c647f9035574b738dd58e64d52c1411d0637e083f3298a7bccd69d"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/traffic-fresh/products-before.json",
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/traffic-fresh/result.txt",
+    "sha256": "c26de83abdc9496cd1301470918ec39ecca1cf389ef0ae1c6504da1800d1c431"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/traffic-fresh/scope.txt",
+    "sha256": "1d10b57b343e104e6b2c5f393963af505dcfa771857c393a61efe1d5c4cb6a57"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/traffic-fresh/summary.json",
+    "sha256": "e1ff581bb34d42b9dd31bc5ddd49c2e033df4a5bf34339511489a572c296cd3a"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/traffic-recovered/forward-api.log",
+    "sha256": "a94f76173e290d16e06c7763b1867d9fb72b4305c2d4ebec80311c3a08d282a6"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/traffic-recovered/health.json",
+    "sha256": "f5d81755935209a3ae596d4553d269cbbe8d08a27dd95b05fe0b7c544eb7ed71"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/traffic-recovered/metrics-after.txt",
+    "sha256": "5f74306491d18736a90028f35a12d7d0e2859dcfee2df1642678c7edc62fe974"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/traffic-recovered/metrics-before.txt",
+    "sha256": "5288216af2888a75ac4c34150eeb19c614b0fdaba92728e54685f8cae6a45f8e"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/traffic-recovered/order-1.json",
+    "sha256": "e6e97751fe58b4358b702c81c9a16e11f0e230143b4c6a4e4c690fe88003c3c4"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/traffic-recovered/products-before.json",
+    "sha256": "a82f4a7686f7cca32d85e0fe32e9f587a82e276e21b83e6e5f1071cbf87078dc"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/traffic-recovered/result.txt",
+    "sha256": "c26de83abdc9496cd1301470918ec39ecca1cf389ef0ae1c6504da1800d1c431"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/traffic-recovered/scope.txt",
+    "sha256": "f2a999b49931ffa1086954194f59830018c65fd629fd21fe0f333cb200cc5d49"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/traffic-recovered/summary.json",
+    "sha256": "67015820855f5d00fe56498e21af803dd022b90a6401376373ebd9efd0d0f765"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/wrong-profile-id-rejected/container-id.txt",
+    "sha256": "c9256f7f7a160ff680c53688fd15a266bfcb11e11102010c057a860b656ef68e"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/wrong-profile-id-rejected/plan.txt",
+    "sha256": "fd4b699d356d27b56fa27e6c7cb005ae843e38f1f095a1aeee5b4776b1ed9f37"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/wrong-profile-id-rejected/profiles-before.json",
+    "sha256": "25e88b7a897927fd22048031e548333f044ee61b7b02351a44847fedffb7732f"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/wrong-profile-id-rejected/result.txt",
+    "sha256": "0db3ca732682df8dd2ed469be8aa15f4cfcf99f2b6cbc15581e5fe702da3cded"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/wrong-profile-id-rejected/scope.txt",
+    "sha256": "46c0a4034446a2748bb2ab0cbfe97310a2871d80baf9bcec8c3ba44146d70f22"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/final-create/start/forward-api.log",
+    "sha256": "b12426ff3d34b87b7a4b902bf2f5b416dacb99b8ed1059b1586472097f78cc79"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/final-create/start/forward-grafana.log",
+    "sha256": "fdb8cb04a47e298259a409ac1ca0b26bb7cabb7d3fd8abcad2253daef456e77c"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/final-create/start/forward-prometheus.log",
+    "sha256": "a1bebe16d0ae42fe6499bcce960493215109d4d1c24e4a96c7952f31766647f2"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/final-create/start/grafana-health.json",
+    "sha256": "7bfa00958a821e29e37b70effacab48b4ef69ca05ffaf920935c89fb72d35929"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/final-create/start/health.json",
+    "sha256": "f5d81755935209a3ae596d4553d269cbbe8d08a27dd95b05fe0b7c544eb7ed71"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/final-create/start/helm-lint.txt",
+    "sha256": "98cc7aa15988ff46cdeee7774f57efad3d6e965617acca21def8cf95b31fabb2"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/final-create/start/helm-upgrade.txt",
+    "sha256": "6ce6e40316b656c1ce78d1c358333a66ba63be40600d1b194be4326e8534ed07"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/final-create/start/helm-values.yaml",
+    "sha256": "11d2e4c2a83b6680151eabeaf1495aa4d0bd2d731af4e53db868efa839a01897"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/final-create/start/prometheus-ready.txt",
+    "sha256": "6ae2244847eb26de55cd1ebd355f656a5824b2b8a8a66d8d19cf6b1517c4831b"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/final-create/start/resources.txt",
+    "sha256": "5c72e1ba9c0efd8e7135f648ddf76979d3268d317724078f2a7ab4f3014bf34b"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/final-create/start/result.txt",
+    "sha256": "c26de83abdc9496cd1301470918ec39ecca1cf389ef0ae1c6504da1800d1c431"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b04/final-create/start/scope.txt",
+    "sha256": "c64a9a4bc271b28bf89d65537a561511a32db5ecad048003c083f860be2b2b8d"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b08/antes/EntregableDevops2/ReadMe.md",
+    "sha256": "c84b3305bc6f60c26c9a665fa191c1068377256b80cfec338acbe6c0080483ed"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b08/antes/EntregableDevops2/reports/snyk-report.txt",
+    "sha256": "8c218905da9d675e96d30b48e4db5a40850bbe713219d6f8dce418687d4d99db"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b08/antes/EntregableDevops2/pedidos-api/pedidos-api/L4-01-BASE.md",
+    "sha256": "70e726600806feb9ef97f68a3a27985b34cb791f8b145e131cf45deac828b2c9"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b08/antes/EntregableDevops2/pedidos-api/pedidos-api/OBSERVABILIDAD-L4.md",
+    "sha256": "1ac31b447853d9c59a175052e797615cc846646ba9cb410f34deab8fa3513e03"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b08/antes/EntregableDevops2/pedidos-api/pedidos-api/helm-chart/README.md",
+    "sha256": "4f7ddc4da535327c09327f896a6ab02c1bc36d2ba3172edbe7e1df506ec5eeb0"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b08/antes/EntregableDevops2/pedidos-api/pedidos-api/security/falco/README.md",
+    "sha256": "5b97524eacf0c896d4b06d29251e35f6fe77bf4f45b8a86b18b2c534f1f29408"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b08/antes/EntregableDevops2/pedidos-api/pedidos-api/security/kyverno/README.md",
+    "sha256": "fba76a607c0354e52191c70053490995958da1fb54dc373b3fde8224e5e0be7e"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-11b/b08/antes/EntregableDevops2/scripts/l4/GUIA.md",
+    "sha256": "838612b66f66aee04ee08d4dd04bbb922f673f22a1cd76c88cfadb17f0b52d9d"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c01/preflight-1/build.xml",
+    "sha256": "b816cf1d759da1e1789663fa67bbd6eb4b9efb6643c795950dea67320a741df0"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c01/preflight-1/jenkins-console.raw.log",
+    "sha256": "5cb6247ccf13c21d2b076a415bbda04316126b4ca785182a559a74a9f518910e"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c01/preflight-1/jenkins-console.txt",
+    "sha256": "6d20155f3bd4cbfd3d985a93862981e3d177153fe76daf18a998c5ab133a9ed2"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c01/preflight-1/result.json",
+    "sha256": "0a23dc1bba7b30028c07e04db17658d4e79298917c849013dcf2eccf9324326f"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c01/preflight-1/SHA256SUMS.txt",
+    "sha256": "57ab40ffa3d80146220fc78ae7599273338d873bcd7eb755fbf406324f9d7597"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c01/verification-before-restart/apt-packages.txt",
+    "sha256": "807cee57d761bc77450996c1294dc5f0885b3e5def9e904ca5b77f4b99a4a5ed"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c01/verification-before-restart/base-tools.txt",
+    "sha256": "9f59cd5760c5ffed8e1d6cdec81b52a31539a87cfb93b45954856acd70e48f03"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c01/verification-before-restart/containers.json",
+    "sha256": "6eaa13bc61b40061e5572050032f4f0a2bc2f206fbfa5788e15a105fe49e4435"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c01/verification-before-restart/docker-version.txt",
+    "sha256": "c4b393238b8015cdede18ad2f3e7e09500c5fc88c131d70b8242e94d81157de3"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c01/verification-before-restart/jenkins-state.json",
+    "sha256": "ac3fa480a5c0886b0876b3335b71f747045fa8c5ee62274b33fe578c09d8ec33"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c01/verification-before-restart/python-packages.txt",
+    "sha256": "b29a61b5c32babcc245c29617c7e109fbb57f5a823cd573c846904c435e4726f"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c01/verification-before-restart/result.json",
+    "sha256": "341e601e6ec1cd9de9c4ef4ab84153e361859ff8cdda91c76beec08701467f57"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c01/verification-before-restart/tools.txt",
+    "sha256": "cd509271655a325e3006676784166257a3031ffb725c08254981031a41920718"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c01/verification-before-restart/version-negative.txt",
+    "sha256": "ccfdd1361ce87c72e4b995872f35fe0ddaa46e39bd884a41706b9e28eb8dbfcb"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c01/verification-final-after-cold/apt-packages.txt",
+    "sha256": "807cee57d761bc77450996c1294dc5f0885b3e5def9e904ca5b77f4b99a4a5ed"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c01/verification-final-after-cold/base-tools.txt",
+    "sha256": "9f59cd5760c5ffed8e1d6cdec81b52a31539a87cfb93b45954856acd70e48f03"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c01/verification-final-after-cold/buildx-version.txt",
+    "sha256": "6ea85dd676925c1e5c2ee841a2be5eda8ea922327e5e5d440def2c270a1baf1c"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c01/verification-final-after-cold/containers.json",
+    "sha256": "b7f489782250b2608ed11aa61e97cc9d45f6c21c0ca09d871ab56cd3df9f3ff5"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c01/verification-final-after-cold/docker-version.txt",
+    "sha256": "c4b393238b8015cdede18ad2f3e7e09500c5fc88c131d70b8242e94d81157de3"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c01/verification-final-after-cold/jenkins-state.json",
+    "sha256": "ac3fa480a5c0886b0876b3335b71f747045fa8c5ee62274b33fe578c09d8ec33"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c01/verification-final-after-cold/python-packages.txt",
+    "sha256": "b29a61b5c32babcc245c29617c7e109fbb57f5a823cd573c846904c435e4726f"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c01/verification-final-after-cold/result.json",
+    "sha256": "bf648090d850896f9b4cfe7bc1ea17eaeef1bab2205a1e097dd616ac67a0eb96"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c01/verification-final-after-cold/tools.txt",
+    "sha256": "cd509271655a325e3006676784166257a3031ffb725c08254981031a41920718"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c01/verification-final-after-cold/version-negative.txt",
+    "sha256": "ccfdd1361ce87c72e4b995872f35fe0ddaa46e39bd884a41706b9e28eb8dbfcb"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c01/verification-fresh-final/apt-packages.txt",
+    "sha256": "807cee57d761bc77450996c1294dc5f0885b3e5def9e904ca5b77f4b99a4a5ed"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c01/verification-fresh-final/base-tools.txt",
+    "sha256": "9f59cd5760c5ffed8e1d6cdec81b52a31539a87cfb93b45954856acd70e48f03"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c01/verification-fresh-final/containers.json",
+    "sha256": "dc9fe8d13c0b467699828d177e5c6476c0e54cd6d806a40299b836a92ce5980a"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c01/verification-fresh-final/docker-version.txt",
+    "sha256": "c4b393238b8015cdede18ad2f3e7e09500c5fc88c131d70b8242e94d81157de3"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c01/verification-fresh-final/jenkins-state.json",
+    "sha256": "ac3fa480a5c0886b0876b3335b71f747045fa8c5ee62274b33fe578c09d8ec33"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c01/verification-fresh-final/python-packages.txt",
+    "sha256": "b29a61b5c32babcc245c29617c7e109fbb57f5a823cd573c846904c435e4726f"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c01/verification-fresh-final/result.json",
+    "sha256": "de0a363b234d6df789fa127fdb326e30b53244119d060676bd8c8378a9356fd5"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c01/verification-fresh-final/tools.txt",
+    "sha256": "cd509271655a325e3006676784166257a3031ffb725c08254981031a41920718"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c01/verification-fresh-final/version-negative.txt",
+    "sha256": "ccfdd1361ce87c72e4b995872f35fe0ddaa46e39bd884a41706b9e28eb8dbfcb"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c01/verification-primary-final/apt-packages.txt",
+    "sha256": "807cee57d761bc77450996c1294dc5f0885b3e5def9e904ca5b77f4b99a4a5ed"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c01/verification-primary-final/base-tools.txt",
+    "sha256": "9f59cd5760c5ffed8e1d6cdec81b52a31539a87cfb93b45954856acd70e48f03"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c01/verification-primary-final/buildx-version.txt",
+    "sha256": "6ea85dd676925c1e5c2ee841a2be5eda8ea922327e5e5d440def2c270a1baf1c"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c01/verification-primary-final/containers.json",
+    "sha256": "24668476a100bdfb338ea1d9b3a631aba6bec7f0d53301b2e4df438558876cf1"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c01/verification-primary-final/docker-version.txt",
+    "sha256": "c4b393238b8015cdede18ad2f3e7e09500c5fc88c131d70b8242e94d81157de3"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c01/verification-primary-final/jenkins-state.json",
+    "sha256": "ac3fa480a5c0886b0876b3335b71f747045fa8c5ee62274b33fe578c09d8ec33"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c01/verification-primary-final/python-packages.txt",
+    "sha256": "b29a61b5c32babcc245c29617c7e109fbb57f5a823cd573c846904c435e4726f"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c01/verification-primary-final/result.json",
+    "sha256": "4a17b50c604d1af833da2fd65d9374195c23ab45fa8290f9f860f7a0ecfdebb6"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c01/verification-primary-final/tools.txt",
+    "sha256": "cd509271655a325e3006676784166257a3031ffb725c08254981031a41920718"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c01/verification-primary-final/version-negative.txt",
+    "sha256": "ccfdd1361ce87c72e4b995872f35fe0ddaa46e39bd884a41706b9e28eb8dbfcb"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c01/preflight-1/evidence/build.txt",
+    "sha256": "c07f1e25114a758d48a660139847faebb90791a29595529a1e4210ee58fb8ab1"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c01/preflight-1/evidence/commit.txt",
+    "sha256": "4f3f803149c51c24b5fbb7440b471a4e3b62004cbc01f5a8c3428aaaf4c568c2"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c01/preflight-1/evidence/docker.txt",
+    "sha256": "67193be28083b10d474ac1015553afa7a12a697b236ceee3c14ae8f1ffe37006"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c01/preflight-1/evidence/identity.txt",
+    "sha256": "14aa9b799546a132ff49c616aa1c2d4ca56342a8ce58f5639f565420bea6a601"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c01/preflight-1/evidence/image.txt",
+    "sha256": "a759590f84d711df70665a904c81b6628a8bdea8443bb6e1f2f9927d0d33a8d1"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c01/preflight-1/evidence/java.txt",
+    "sha256": "be1800b7f19fb365c7621be91a49e3fa9f0984372bc25797d699b746a905ab12"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c01/preflight-1/evidence/persistence.txt",
+    "sha256": "b8a9077cef6a3fa9e7a6ddadd3ba98d01854e9975ee383911ed21c0f61065b43"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c01/preflight-1/evidence/python.txt",
+    "sha256": "01870de7caca112afeefd77b3c3b4c5e263cf5539a33af3f3411100727fad7d3"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c01/preflight-1/evidence/tools.txt",
+    "sha256": "1e1a0b11f8eb4ac4802d552e643f005172218530bc97bb7f13fb79ba5b92cae1"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c03/primary-after-restart/controller-files.txt",
+    "sha256": "66f304682559d9280050e20dfe0d88e1410d27bb535a3302ad1714b607223830"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c03/primary-after-restart/result.json",
+    "sha256": "2794e743ba3fe621388d3ac7c4ce006b8922613e637fe9bd2c95685fabd383c5"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c03/primary-after-restart/tools.txt",
+    "sha256": "9f95adcb6bf875a081f0248ad0e0b0f249c6f70b9314a8e26092280386fd5595"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c03/primary-final/controller-files.txt",
+    "sha256": "66f304682559d9280050e20dfe0d88e1410d27bb535a3302ad1714b607223830"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c03/primary-final/result.json",
+    "sha256": "2794e743ba3fe621388d3ac7c4ce006b8922613e637fe9bd2c95685fabd383c5"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c03/primary-final/tools.txt",
+    "sha256": "9f95adcb6bf875a081f0248ad0e0b0f249c6f70b9314a8e26092280386fd5595"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c03/restored-before-build/controller-files.txt",
+    "sha256": "66f304682559d9280050e20dfe0d88e1410d27bb535a3302ad1714b607223830"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c03/restored-before-build/result.json",
+    "sha256": "1aba356d61d0c3a6c21f666457ef47d1ebb1266b1baf89a12cfef3904375d1f9"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c03/restored-before-build/tools.txt",
+    "sha256": "9f95adcb6bf875a081f0248ad0e0b0f249c6f70b9314a8e26092280386fd5595"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c03/restored-preflight-2/build.xml",
+    "sha256": "2283a41f848c5fb3a1c048fe6869020a96e80b0236f963f1b1afaf84ee490ace"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c03/restored-preflight-2/console.txt",
+    "sha256": "b800800fa3da5b4ce7b45c571719a1093a01dc6f310a4f5dd8d3e2cc65591e87"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c03/restored-preflight-2/result.json",
+    "sha256": "4f44c28b5832c5508b1925b6cdc71a5b628cac4b3504d646c0875e190d888444"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c03/restored-preflight-2/sha256.json",
+    "sha256": "bb855c2985013181d8cff1dd440bf7caa042e18878cd43412975f716482687a6"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c03/restored-preflight-2/evidence/build.txt",
+    "sha256": "46bd9370da86487c79289027dd9955ebad1d0908203c8da2f0643f93e1389811"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c03/restored-preflight-2/evidence/commit.txt",
+    "sha256": "4f3f803149c51c24b5fbb7440b471a4e3b62004cbc01f5a8c3428aaaf4c568c2"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c03/restored-preflight-2/evidence/docker.txt",
+    "sha256": "a1dc24a3c26b97c8b0ce11d1bd97ca09ee9be6455676054cb889f24b805eaf51"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c03/restored-preflight-2/evidence/identity.txt",
+    "sha256": "14aa9b799546a132ff49c616aa1c2d4ca56342a8ce58f5639f565420bea6a601"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c03/restored-preflight-2/evidence/image.txt",
+    "sha256": "a759590f84d711df70665a904c81b6628a8bdea8443bb6e1f2f9927d0d33a8d1"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c03/restored-preflight-2/evidence/java.txt",
+    "sha256": "be1800b7f19fb365c7621be91a49e3fa9f0984372bc25797d699b746a905ab12"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c03/restored-preflight-2/evidence/persistence.txt",
+    "sha256": "fc98501a7c1c92f9b5e8fce14fcfbe2f9c7a4b6a437a746a8a335d521d42f493"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c03/restored-preflight-2/evidence/python.txt",
+    "sha256": "01870de7caca112afeefd77b3c3b4c5e263cf5539a33af3f3411100727fad7d3"
+  },
+  {
+    "path": "EntregableDevops2/reports/l4-c03/restored-preflight-2/evidence/tools.txt",
+    "sha256": "1e1a0b11f8eb4ac4802d552e643f005172218530bc97bb7f13fb79ba5b92cae1"
+  },
+  {
+    "path": "EntregableDevops2/README.md",
+    "sha256": "c1ea28635a694230a4b15d347affb45d93112072e365122553bdff70353b8c10"
+  },
+  {
+    "path": "Entregable 3 - Informe redactado.docx",
+    "sha256": "9685261322cfd3e7046bcc2c5191052463d21c3c14b6a04fe6c75298d47af4e7"
+  },
+  {
+    "path": "Entregable 3 - Informe.docx",
+    "sha256": "11641cf22fa37a092c84d9b8c5112bb8cc3bde266fbf10e65d534927c1fa580c"
+  },
+  {
+    "path": "Entregable 3 DevSecOps(1).docx",
+    "sha256": "6a1e1cf708f7ac15391177176eab1f35db5937a37e9db652f2ad2ec3b6c8ecc4"
+  },
+  {
+    "path": "Laboratorio 4.pdf",
+    "sha256": "d355c1c189addf227f2ea440bc31a81c263a7236766d4f7fc0490ad4a34a6c29"
+  },
+  {
+    "path": "EntregableDevops2/pedidos-api/pedidos-api/security/kyverno/policies.yaml",
+    "sha256": "bdd2ca25fe78ffab3827a5c2b2a480960985baa9f91aeefc7f6e3550245b6e16"
+  },
+  {
+    "path": "EntregableDevops2/pedidos-api/pedidos-api/security/kyverno/README.md",
+    "sha256": "0af1370e0eab98c65f48a2fe93e97114d83e746618687154e744867209d82450"
+  },
+  {
+    "path": "EntregableDevops2/pedidos-api/pedidos-api/security/kyverno/values-minikube.yaml",
+    "sha256": "d06870294b827508aa42b6eaf13ccaa4dad455a4a5bf5963353f9e820812ec24"
+  },
+  {
+    "path": "EntregableDevops2/pedidos-api/pedidos-api/security/kyverno/tests/cases.json",
+    "sha256": "6f224ea7b888a4a10b355129df47cfb629c766d230f6bfb146c04746310ccf5a"
+  },
+  {
+    "path": "EntregableDevops2/pedidos-api/pedidos-api/security/kyverno/tests/conforme.json",
+    "sha256": "30762bd1adb25bd48875c3f1cd1039b84720ae70aab57af7b2e94f934b9b35f4"
+  },
+  {
+    "path": "EntregableDevops2/pedidos-api/pedidos-api/security/kyverno/tests/containers-latest.json",
+    "sha256": "e01547313c2d9ebc14a2f9fb13f9b475cd5444a85002ee15fb9b01e4484d3c50"
+  },
+  {
+    "path": "EntregableDevops2/pedidos-api/pedidos-api/security/kyverno/tests/containers-privileged.json",
+    "sha256": "02bf822f9ae98b9019d79d8db49954c043057c0a0fccb05a98317e458d3ed918"
+  },
+  {
+    "path": "EntregableDevops2/pedidos-api/pedidos-api/security/kyverno/tests/containers-resources.json",
+    "sha256": "b8a37a90aba3ea247474dbd828e17121b0d4244bee8da1041e7d810905008843"
+  },
+  {
+    "path": "EntregableDevops2/pedidos-api/pedidos-api/security/kyverno/tests/containers-root.json",
+    "sha256": "21e948661bb7f04fb96516d33227549714a93f29693bccb3138a6186fd718665"
+  },
+  {
+    "path": "EntregableDevops2/pedidos-api/pedidos-api/security/kyverno/tests/containers-sin-tag.json",
+    "sha256": "80f9c756c746889baeaa44ad77534cb1e2dbf87742a18da0821de255791e3055"
+  },
+  {
+    "path": "EntregableDevops2/pedidos-api/pedidos-api/security/kyverno/tests/containers-uid-zero.json",
+    "sha256": "88b1888eff664b0448c1e07c7abd7ed90f61ac2de1d9204294d0bb8ad6df8c73"
+  },
+  {
+    "path": "EntregableDevops2/pedidos-api/pedidos-api/security/kyverno/tests/herencia-pod-conforme.json",
+    "sha256": "8001d85c31e313d432e2b2e6db5e456e83f17d4b752cebf1bf2bb34bf983b62f"
+  },
+  {
+    "path": "EntregableDevops2/pedidos-api/pedidos-api/security/kyverno/tests/init-conforme.json",
+    "sha256": "d9f65f5b4eedf41ed199650cf22a23bed0a3fa9a69b97e94d921decb0b59a8d2"
+  },
+  {
+    "path": "EntregableDevops2/pedidos-api/pedidos-api/security/kyverno/tests/initcontainers-latest.json",
+    "sha256": "cb8acc047ec117bacc876cacbfae036e642401653e6f4da3ed382ead410345c7"
+  },
+  {
+    "path": "EntregableDevops2/pedidos-api/pedidos-api/security/kyverno/tests/initcontainers-privileged.json",
+    "sha256": "d4115baf9893aec41e56d533e0295cc921451adb242272423a735b9fdddb27c1"
+  },
+  {
+    "path": "EntregableDevops2/pedidos-api/pedidos-api/security/kyverno/tests/initcontainers-resources.json",
+    "sha256": "64d692743088701df1eb2655ce3a2c1712ebbc0c053dec5dd507abaf8035d080"
+  },
+  {
+    "path": "EntregableDevops2/pedidos-api/pedidos-api/security/kyverno/tests/initcontainers-root.json",
+    "sha256": "7f5bf01c4d0123dca2e0edc15f1d83d04f8580ab3598626fc58392974316d487"
+  },
+  {
+    "path": "EntregableDevops2/pedidos-api/pedidos-api/security/kyverno/tests/initcontainers-sin-tag.json",
+    "sha256": "7bc6728af19c0bf6ea6ec89137c9fa95f931f63299c8258aea57207a06894a92"
+  },
+  {
+    "path": "EntregableDevops2/pedidos-api/pedidos-api/security/kyverno/tests/initcontainers-uid-zero.json",
+    "sha256": "54c52c631097a84b5b36608b0883ae1e85afbc454d964a2d6470b96632d7486c"
+  },
+  {
+    "path": "EntregableDevops2/pedidos-api/pedidos-api/security/kyverno/tests/override-false.json",
+    "sha256": "a8d0cc09d3765602c415239fc4ae04f5f89b999c3a5be1e8d47eecb1bef1bf8f"
+  }
+]

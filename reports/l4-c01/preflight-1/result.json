@@ -1,0 +1,12 @@
+{
+  "build": 1,
+  "result": "SUCCESS",
+  "durationMs": 22337,
+  "trigger": "Bruno mediante UI",
+  "agentUid": 1000,
+  "commit": "50a0eb53e7a1152fbe0e4f26252fac2380403fc3",
+  "evidenceFiles": 9,
+  "scope": "preflight herramientas/Git/build Docker local; sin push/scan/despliegue",
+  "persistenceInBuild": "PERSISTENCE_CREATED",
+  "coldRestartPersistence": "Verificada por comandos en instalacion secundaria; no se afirma un segundo build de Jenkins"
+}

@@ -1,0 +1,510 @@
+{
+  "date": "2026-11-14",
+  "originDates": "2026-11-11 (no new scan)",
+  "snyk": [
+    {
+      "id": "SNYK-JAVA-CHQOSLOGBACK-19882330",
+      "severity": "medium",
+      "package": "ch.qos.logback:logback-classic",
+      "version": "1.5.38",
+      "title": "Directory Traversal",
+      "fixedIn": [
+        "1.6.3"
+      ],
+      "path": [
+        "com.pedidos:pedidos-api@0.0.1-SNAPSHOT",
+        "org.springframework.boot:spring-boot-starter-actuator@4.1.1",
+        "org.springframework.boot:spring-boot-starter@4.1.1",
+        "org.springframework.boot:spring-boot-starter-logging@4.1.1",
+        "ch.qos.logback:logback-classic@1.5.38"
+      ]
+    },
+    {
+      "id": "SNYK-JAVA-CHQOSLOGBACK-20824362",
+      "severity": "medium",
+      "package": "ch.qos.logback:logback-classic",
+      "version": "1.5.38",
+      "title": "Directory Traversal",
+      "fixedIn": [
+        "1.6.5"
+      ],
+      "path": [
+        "com.pedidos:pedidos-api@0.0.1-SNAPSHOT",
+        "org.springframework.boot:spring-boot-starter-actuator@4.1.1",
+        "org.springframework.boot:spring-boot-starter@4.1.1",
+        "org.springframework.boot:spring-boot-starter-logging@4.1.1",
+        "ch.qos.logback:logback-classic@1.5.38"
+      ]
+    },
+    {
+      "id": "SNYK-JAVA-NETMINIDEV-21715438",
+      "severity": "medium",
+      "package": "net.minidev:json-smart",
+      "version": "2.6.0",
+      "title": "Improper Neutralization",
+      "fixedIn": [
+        "2.6.1"
+      ],
+      "path": [
+        "com.pedidos:pedidos-api@0.0.1-SNAPSHOT",
+        "org.springframework.boot:spring-boot-starter-actuator-test@4.1.1",
+        "org.springframework.boot:spring-boot-starter-test@4.1.1",
+        "net.minidev:json-smart@2.6.0"
+      ]
+    },
+    {
+      "id": "SNYK-JAVA-ORGGLASSFISHJAXB-20883142",
+      "severity": "high",
+      "package": "org.glassfish.jaxb:jaxb-core",
+      "version": "4.0.9",
+      "title": "XML External Entity (XXE) Injection",
+      "fixedIn": [],
+      "path": [
+        "com.pedidos:pedidos-api@0.0.1-SNAPSHOT",
+        "org.springframework.boot:spring-boot-starter-data-jpa@4.1.1",
+        "org.springframework.boot:spring-boot-data-jpa@4.1.1",
+        "org.springframework.boot:spring-boot-hibernate@4.1.1",
+        "org.hibernate.orm:hibernate-core@7.4.5.Final",
+        "org.glassfish.jaxb:jaxb-runtime@4.0.9",
+        "org.glassfish.jaxb:jaxb-core@4.0.9"
+      ]
+    },
+    {
+      "id": "SNYK-JAVA-ORGOBJENESIS-21755439",
+      "severity": "low",
+      "package": "org.objenesis:objenesis",
+      "version": "3.3",
+      "title": "Symbolic Name not Mapping to Correct Object",
+      "fixedIn": [
+        "3.6"
+      ],
+      "path": [
+        "com.pedidos:pedidos-api@0.0.1-SNAPSHOT",
+        "org.springframework.boot:spring-boot-starter-actuator-test@4.1.1",
+        "org.springframework.boot:spring-boot-starter-test@4.1.1",
+        "org.mockito:mockito-core@5.23.0",
+        "org.objenesis:objenesis@3.3"
+      ]
+    },
+    {
+      "id": "SNYK-JAVA-ORGOW2ASM-21715439",
+      "severity": "medium",
+      "package": "org.ow2.asm:asm",
+      "version": "9.7.1",
+      "title": "Inefficient Algorithmic Complexity",
+      "fixedIn": [
+        "9.11"
+      ],
+      "path": [
+        "com.pedidos:pedidos-api@0.0.1-SNAPSHOT",
+        "org.springframework.boot:spring-boot-starter-actuator-test@4.1.1",
+        "org.springframework.boot:spring-boot-starter-test@4.1.1",
+        "net.minidev:json-smart@2.6.0",
+        "net.minidev:accessors-smart@2.6.0",
+        "org.ow2.asm:asm@9.7.1"
+      ]
+    },
+    {
+      "id": "SNYK-JAVA-ORGOW2ASM-21715442",
+      "severity": "medium",
+      "package": "org.ow2.asm:asm",
+      "version": "9.7.1",
+      "title": "Memory Allocation with Excessive Size Value",
+      "fixedIn": [
+        "9.11"
+      ],
+      "path": [
+        "com.pedidos:pedidos-api@0.0.1-SNAPSHOT",
+        "org.springframework.boot:spring-boot-starter-actuator-test@4.1.1",
+        "org.springframework.boot:spring-boot-starter-test@4.1.1",
+        "net.minidev:json-smart@2.6.0",
+        "net.minidev:accessors-smart@2.6.0",
+        "org.ow2.asm:asm@9.7.1"
+      ]
+    },
+    {
+      "id": "SNYK-JAVA-ORGOW2ASM-21715445",
+      "severity": "medium",
+      "package": "org.ow2.asm:asm",
+      "version": "9.7.1",
+      "title": "Uncontrolled Recursion",
+      "fixedIn": [
+        "9.11"
+      ],
+      "path": [
+        "com.pedidos:pedidos-api@0.0.1-SNAPSHOT",
+        "org.springframework.boot:spring-boot-starter-actuator-test@4.1.1",
+        "org.springframework.boot:spring-boot-starter-test@4.1.1",
+        "net.minidev:json-smart@2.6.0",
+        "net.minidev:accessors-smart@2.6.0",
+        "org.ow2.asm:asm@9.7.1"
+      ]
+    },
+    {
+      "id": "SNYK-JAVA-ORGOW2ASM-21715448",
+      "severity": "medium",
+      "package": "org.ow2.asm:asm",
+      "version": "9.7.1",
+      "title": "Memory Allocation with Excessive Size Value",
+      "fixedIn": [
+        "9.11"
+      ],
+      "path": [
+        "com.pedidos:pedidos-api@0.0.1-SNAPSHOT",
+        "org.springframework.boot:spring-boot-starter-actuator-test@4.1.1",
+        "org.springframework.boot:spring-boot-starter-test@4.1.1",
+        "net.minidev:json-smart@2.6.0",
+        "net.minidev:accessors-smart@2.6.0",
+        "org.ow2.asm:asm@9.7.1"
+      ]
+    },
+    {
+      "id": "SNYK-JAVA-ORGOW2ASM-21715452",
+      "severity": "medium",
+      "package": "org.ow2.asm:asm",
+      "version": "9.7.1",
+      "title": "Inefficient Algorithmic Complexity",
+      "fixedIn": [
+        "9.11"
+      ],
+      "path": [
+        "com.pedidos:pedidos-api@0.0.1-SNAPSHOT",
+        "org.springframework.boot:spring-boot-starter-actuator-test@4.1.1",
+        "org.springframework.boot:spring-boot-starter-test@4.1.1",
+        "net.minidev:json-smart@2.6.0",
+        "net.minidev:accessors-smart@2.6.0",
+        "org.ow2.asm:asm@9.7.1"
+      ]
+    }
+  ],
+  "trivy": [
+    {
+      "id": "CVE-2026-109518",
+      "severity": "HIGH",
+      "package": "apt",
+      "version": "2.4.14",
+      "fixedIn": "2.4.15ubuntu0.1",
+      "title": "apt: apt: Remote code execution via hard link reuse during package download retries"
+    },
+    {
+      "id": "CVE-2026-102473",
+      "severity": "MEDIUM",
+      "package": "dash",
+      "version": "0.5.11+git20210903+057cd650a4ed-3build1",
+      "fixedIn": "",
+      "title": "dash: dash: Super-polynomial backtracking in pmatch when libc fnmatch is disabled"
+    },
+    {
+      "id": "CVE-2026-102474",
+      "severity": "MEDIUM",
+      "package": "dash",
+      "version": "0.5.11+git20210903+057cd650a4ed-3build1",
+      "fixedIn": "",
+      "title": "dash: dash: Heap out-of-bounds write in conv_escape via undersized Unicode escape reservation"
+    },
+    {
+      "id": "CVE-2022-27943",
+      "severity": "LOW",
+      "package": "gcc-12-base",
+      "version": "12.3.0-1ubuntu1~22.04.3",
+      "fixedIn": "",
+      "title": "binutils: libiberty/rust-demangle.c in GNU GCC 11.2 allows stack exhaustion in demangle_const"
+    },
+    {
+      "id": "CVE-2026-109518",
+      "severity": "HIGH",
+      "package": "libapt-pkg6.0",
+      "version": "2.4.14",
+      "fixedIn": "2.4.15ubuntu0.1",
+      "title": "apt: apt: Remote code execution via hard link reuse during package download retries"
+    },
+    {
+      "id": "CVE-2025-66382",
+      "severity": "MEDIUM",
+      "package": "libexpat1",
+      "version": "2.4.7-1ubuntu0.9",
+      "fixedIn": "",
+      "title": "libexpat: libexpat: Denial of service via crafted file processing"
+    },
+    {
+      "id": "CVE-2026-93990",
+      "severity": "MEDIUM",
+      "package": "libexpat1",
+      "version": "2.4.7-1ubuntu0.9",
+      "fixedIn": "",
+      "title": "expat: Expat: XML Injection via Malformed UTF-16 Input"
+    },
+    {
+      "id": "CVE-2022-27943",
+      "severity": "LOW",
+      "package": "libgcc-s1",
+      "version": "12.3.0-1ubuntu1~22.04.3",
+      "fixedIn": "",
+      "title": "binutils: libiberty/rust-demangle.c in GNU GCC 11.2 allows stack exhaustion in demangle_const"
+    },
+    {
+      "id": "CVE-2026-67693",
+      "severity": "MEDIUM",
+      "package": "libgnutls30",
+      "version": "3.7.3-4ubuntu1.9",
+      "fixedIn": "",
+      "title": "gnutls: gnutls: Information disclosure via contradictory Key Usage and Extended Key Usage extensions"
+    },
+    {
+      "id": "CVE-2026-88647",
+      "severity": "MEDIUM",
+      "package": "libgnutls30",
+      "version": "3.7.3-4ubuntu1.9",
+      "fixedIn": "",
+      "title": "gnutls: gnutls: Information disclosure via hostname verification bypass"
+    },
+    {
+      "id": "CVE-2026-88648",
+      "severity": "MEDIUM",
+      "package": "libgnutls30",
+      "version": "3.7.3-4ubuntu1.9",
+      "fixedIn": "",
+      "title": "gnutls: gnutls: Cross-domain certificate restriction bypass via incomplete X.509 validation"
+    },
+    {
+      "id": "CVE-2026-95184",
+      "severity": "MEDIUM",
+      "package": "libgnutls30",
+      "version": "3.7.3-4ubuntu1.9",
+      "fixedIn": "",
+      "title": "gnutls: gnutls: legitimate user certificates incorrectly rejected causing denial of service"
+    },
+    {
+      "id": "CVE-2026-95210",
+      "severity": "MEDIUM",
+      "package": "libgnutls30",
+      "version": "3.7.3-4ubuntu1.9",
+      "fixedIn": "",
+      "title": "gnutls: gnutls: certificates with invalid extensions incorrectly accepted"
+    },
+    {
+      "id": "CVE-2023-50495",
+      "severity": "LOW",
+      "package": "libncurses6",
+      "version": "6.3-2ubuntu0.3",
+      "fixedIn": "",
+      "title": "ncurses: segmentation fault via _nc_wrap_entry()"
+    },
+    {
+      "id": "CVE-2023-50495",
+      "severity": "LOW",
+      "package": "libncursesw6",
+      "version": "6.3-2ubuntu0.3",
+      "fixedIn": "",
+      "title": "ncurses: segmentation fault via _nc_wrap_entry()"
+    },
+    {
+      "id": "CVE-2026-103111",
+      "severity": "MEDIUM",
+      "package": "libpcre2-8-0",
+      "version": "10.39-3ubuntu0.1",
+      "fixedIn": "10.39-3ubuntu0.2",
+      "title": "pcre2: pcre2: Out-of-bounds write via crafted regular expression"
+    },
+    {
+      "id": "CVE-2026-86145",
+      "severity": "MEDIUM",
+      "package": "libpcre2-8-0",
+      "version": "10.39-3ubuntu0.1",
+      "fixedIn": "10.39-3ubuntu0.2",
+      "title": "pcre2: PCRE2: Out-of-bounds write allows arbitrary code execution via crafted regular expressions"
+    },
+    {
+      "id": "CVE-2026-89156",
+      "severity": "MEDIUM",
+      "package": "libpcre2-8-0",
+      "version": "10.39-3ubuntu0.1",
+      "fixedIn": "10.39-3ubuntu0.2",
+      "title": "PCRE2: PCRE2: Out-of-bounds read via invalid UTF data during JIT fallback"
+    },
+    {
+      "id": "CVE-2026-89157",
+      "severity": "MEDIUM",
+      "package": "libpcre2-8-0",
+      "version": "10.39-3ubuntu0.1",
+      "fixedIn": "10.39-3ubuntu0.2",
+      "title": "pcre2: PCRE2: Out-of-bounds write via large pattern input"
+    },
+    {
+      "id": "CVE-2026-89158",
+      "severity": "MEDIUM",
+      "package": "libpcre2-8-0",
+      "version": "10.39-3ubuntu0.1",
+      "fixedIn": "10.39-3ubuntu0.2",
+      "title": "PCRE2: PCRE2: Out-of-bounds write via integer overflow on 32-bit platforms"
+    },
+    {
+      "id": "CVE-2026-89160",
+      "severity": "MEDIUM",
+      "package": "libpcre2-8-0",
+      "version": "10.39-3ubuntu0.1",
+      "fixedIn": "10.39-3ubuntu0.2",
+      "title": "pcre2: PCRE2: Denial of Service via out-of-bounds read during invalid UTF matching"
+    },
+    {
+      "id": "CVE-2026-89161",
+      "severity": "MEDIUM",
+      "package": "libpcre2-8-0",
+      "version": "10.39-3ubuntu0.1",
+      "fixedIn": "10.39-3ubuntu0.2",
+      "title": "pcre2: PCRE2: Memory corruption vulnerability in pcre2_jit_match"
+    },
+    {
+      "id": "CVE-2022-41409",
+      "severity": "LOW",
+      "package": "libpcre2-8-0",
+      "version": "10.39-3ubuntu0.1",
+      "fixedIn": "",
+      "title": "pcre2: negative repeat value in a pcre2test subject line leads to inifinite loop"
+    },
+    {
+      "id": "CVE-2026-107161",
+      "severity": "MEDIUM",
+      "package": "libsasl2-2",
+      "version": "2.1.27+dfsg2-3ubuntu1.2",
+      "fixedIn": "",
+      "title": "cyrus-sasl: Heap buffer overflow in cyrus-sasl add_to_challenge() allows malicious server to crash or compromise DIGEST-MD5 clients"
+    },
+    {
+      "id": "CVE-2026-107161",
+      "severity": "MEDIUM",
+      "package": "libsasl2-modules-db",
+      "version": "2.1.27+dfsg2-3ubuntu1.2",
+      "fixedIn": "",
+      "title": "cyrus-sasl: Heap buffer overflow in cyrus-sasl add_to_challenge() allows malicious server to crash or compromise DIGEST-MD5 clients"
+    },
+    {
+      "id": "CVE-2022-27943",
+      "severity": "LOW",
+      "package": "libstdc++6",
+      "version": "12.3.0-1ubuntu1~22.04.3",
+      "fixedIn": "",
+      "title": "binutils: libiberty/rust-demangle.c in GNU GCC 11.2 allows stack exhaustion in demangle_const"
+    },
+    {
+      "id": "CVE-2026-40228",
+      "severity": "LOW",
+      "package": "libsystemd0",
+      "version": "249.11-0ubuntu3.23",
+      "fixedIn": "",
+      "title": "systemd: systemd-journald: Unintended output to user terminals via logger command"
+    },
+    {
+      "id": "CVE-2023-50495",
+      "severity": "LOW",
+      "package": "libtinfo6",
+      "version": "6.3-2ubuntu0.3",
+      "fixedIn": "",
+      "title": "ncurses: segmentation fault via _nc_wrap_entry()"
+    },
+    {
+      "id": "CVE-2026-40228",
+      "severity": "LOW",
+      "package": "libudev1",
+      "version": "249.11-0ubuntu3.23",
+      "fixedIn": "",
+      "title": "systemd: systemd-journald: Unintended output to user terminals via logger command"
+    },
+    {
+      "id": "CVE-2022-4899",
+      "severity": "LOW",
+      "package": "libzstd1",
+      "version": "1.4.8+dfsg-3build1",
+      "fixedIn": "",
+      "title": "zstd: mysql: buffer overrun in util.c"
+    },
+    {
+      "id": "CVE-2023-29383",
+      "severity": "LOW",
+      "package": "login",
+      "version": "1:4.8.1-2ubuntu2.2",
+      "fixedIn": "",
+      "title": "shadow: Improper input validation in shadow-utils package utility chfn"
+    },
+    {
+      "id": "CVE-2024-56433",
+      "severity": "LOW",
+      "package": "login",
+      "version": "1:4.8.1-2ubuntu2.2",
+      "fixedIn": "",
+      "title": "shadow-utils: Default subordinate ID configuration in /etc/login.defs could lead to compromise"
+    },
+    {
+      "id": "CVE-2023-50495",
+      "severity": "LOW",
+      "package": "ncurses-base",
+      "version": "6.3-2ubuntu0.3",
+      "fixedIn": "",
+      "title": "ncurses: segmentation fault via _nc_wrap_entry()"
+    },
+    {
+      "id": "CVE-2023-50495",
+      "severity": "LOW",
+      "package": "ncurses-bin",
+      "version": "6.3-2ubuntu0.3",
+      "fixedIn": "",
+      "title": "ncurses: segmentation fault via _nc_wrap_entry()"
+    },
+    {
+      "id": "CVE-2023-29383",
+      "severity": "LOW",
+      "package": "passwd",
+      "version": "1:4.8.1-2ubuntu2.2",
+      "fixedIn": "",
+      "title": "shadow: Improper input validation in shadow-utils package utility chfn"
+    },
+    {
+      "id": "CVE-2024-56433",
+      "severity": "LOW",
+      "package": "passwd",
+      "version": "1:4.8.1-2ubuntu2.2",
+      "fixedIn": "",
+      "title": "shadow-utils: Default subordinate ID configuration in /etc/login.defs could lead to compromise"
+    },
+    {
+      "id": "CVE-2026-48962",
+      "severity": "MEDIUM",
+      "package": "perl-base",
+      "version": "5.34.0-3ubuntu1.9",
+      "fixedIn": "",
+      "title": "perl-IO-Compress: perl-IO-Compress: Arbitrary code execution via attacker-controlled output glob"
+    },
+    {
+      "id": "CVE-2026-82560",
+      "severity": "MEDIUM",
+      "package": "perl-base",
+      "version": "5.34.0-3ubuntu1.9",
+      "fixedIn": "",
+      "title": "Pod::Text versions before 6.1.1 for Perl allow CPU and memory exhausti ..."
+    },
+    {
+      "id": "CVE-2026-18477",
+      "severity": "MEDIUM",
+      "package": "tar",
+      "version": "1.34+dfsg-1ubuntu0.1.22.04.6",
+      "fixedIn": "",
+      "title": "tar: tar: TOCTOU in incremental dumpdir 'X' rename handling allows restore path escape"
+    },
+    {
+      "id": "CVE-2026-18508",
+      "severity": "MEDIUM",
+      "package": "tar",
+      "version": "1.34+dfsg-1ubuntu0.1.22.04.6",
+      "fixedIn": "",
+      "title": "tar: tar: --one-top-level hardlink targets not confined to top-level directory enabling arbitrary file overwrite"
+    },
+    {
+      "id": "CVE-2021-31879",
+      "severity": "MEDIUM",
+      "package": "wget",
+      "version": "1.21.2-2ubuntu1.5",
+      "fixedIn": "",
+      "title": "wget: authorization header disclosure on redirect"
+    }
+  ]
+}

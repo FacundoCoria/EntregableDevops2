@@ -1,0 +1,56 @@
+pipeline {
+    agent { label 'l4-dedicated' }
+    options { skipDefaultCheckout(true); disableConcurrentBuilds(); timeout(time: 15, unit: 'MINUTES') }
+    stages {
+        stage('Identidad y herramientas') {
+            steps {
+                sh '''
+                    set -eu
+                    mkdir -p evidence
+                    test "$(id -u)" = 1000
+                    test ! -S /var/run/docker.sock
+                    id | tee evidence/identity.txt
+                    sh /opt/l4/bootstrap-tools.sh > evidence/tools.txt 2>&1
+                    cat evidence/tools.txt
+                    java -version 2> evidence/java.txt
+                    python3 --version > evidence/python.txt
+                    docker version > evidence/docker.txt
+                    docker info --format '{{.Name}} {{.DockerRootDir}}' >> evidence/docker.txt
+                '''
+            }
+        }
+        stage('Fuente publicada') {
+            steps {
+                dir('source') {
+                    deleteDir()
+                    sh '''
+                        set -eu
+                        git clone https://github.com/FacundoCoria/EntregableDevops2.git .
+                        git checkout --detach 50a0eb53e7a1152fbe0e4f26252fac2380403fc3
+                        git rev-parse HEAD > ../evidence/commit.txt
+                    '''
+                }
+            }
+        }
+        stage('Build Docker local y persistencia') {
+            steps {
+                sh '''
+                    set -eu
+                    mkdir -p smoke
+                    printf 'FROM scratch\nLABEL l4.c01="smoke"\n' > smoke/Dockerfile
+                    docker build -t l4-c01-smoke:local smoke > evidence/build.txt 2>&1
+                    docker image inspect --format '{{.Id}}' l4-c01-smoke:local > evidence/image.txt
+                    marker=/var/jenkins_home/c01-persistence.txt
+                    if [ -f "$marker" ]; then
+                        echo PERSISTENCE_REUSED | tee evidence/persistence.txt
+                        cat "$marker" >> evidence/persistence.txt
+                    else
+                        date -u +%FT%TZ > "$marker"
+                        echo PERSISTENCE_CREATED | tee evidence/persistence.txt
+                    fi
+                '''
+            }
+        }
+    }
+    post { always { archiveArtifacts artifacts: 'evidence/**', allowEmptyArchive: true } }
+}

@@ -1,0 +1,42 @@
+agent-1       | Nov 13, 2026 6:58:57 PM org.jenkinsci.remoting.engine.WorkDirManager initializeWorkDir
+agent-1       | INFO: Using /var/jenkins_home/remoting as a remoting work directory
+agent-1       | Nov 13, 2026 6:58:57 PM org.jenkinsci.remoting.engine.WorkDirManager setupLogging
+agent-1       | INFO: Both error and output logs will be printed to /var/jenkins_home/remoting
+agent-1       | Nov 13, 2026 6:58:57 PM hudson.remoting.Launcher createEngine
+agent-1       | INFO: Setting up agent: l4-agent
+agent-1       | Nov 13, 2026 6:58:57 PM hudson.remoting.Engine startEngine
+agent-1       | INFO: Using Remoting version: 3386.v353e57a_1b_ea_0
+agent-1       | Nov 13, 2026 6:58:57 PM org.jenkinsci.remoting.engine.WorkDirManager initializeWorkDir
+agent-1       | INFO: Using /var/jenkins_home/remoting as a remoting work directory
+controller-1  | Running from: /usr/share/jenkins/jenkins.war
+agent-1       | Nov 13, 2026 6:58:57 PM hudson.remoting.Launcher$CuiListener status
+agent-1       | INFO: WebSocket connection open
+controller-1  | webroot: /var/jenkins_home/war
+controller-1  | 2026-11-13 18:51:48.214+0000 [id=1]	INFO	winstone.Logger#logInternal: Beginning extraction from war file
+controller-1  | 2026-11-13 18:51:48.299+0000 [id=1]	WARNING	o.e.j.ee9.nested.ContextHandler#setContextPath: Empty contextPath
+agent-1       | Nov 13, 2026 6:58:57 PM hudson.remoting.Launcher$CuiListener status
+agent-1       | INFO: Connected
+controller-1  | 2026-11-13 18:51:48.366+0000 [id=1]	INFO	org.eclipse.jetty.server.Server#doStart: jetty-12.1.14; built: 2026-10-02T05:48:05.032Z; git: 15cecbd757a2f6b0fdc6a8944f4c6d0020b17da0; jvm 21.0.13+9-LTS
+controller-1  | 2026-11-13 18:51:48.824+0000 [id=1]	INFO	o.e.j.e.w.StandardDescriptorProcessor#visitServlet: NO JSP Support for /, did not find org.eclipse.jetty.ee9.jsp.JettyJspServlet
+controller-1  | 2026-11-13 18:51:48.872+0000 [id=1]	INFO	o.e.j.s.DefaultSessionIdManager#doStart: Session workerName=node0
+controller-1  | 2026-11-13 18:51:49.273+0000 [id=1]	INFO	hudson.WebAppMain#contextInitialized: Jenkins home directory: /var/jenkins_home found at: EnvVars.masterEnvVars.get("JENKINS_HOME")
+controller-1  | 2026-11-13 18:51:49.364+0000 [id=1]	INFO	o.e.j.s.handler.ContextHandler#doStart: Started oeje9n.ContextHandler$CoreContextHandler@68ba310d{Jenkins v2.580.2,/,b=file:///var/jenkins_home/war/,a=AVAILABLE,h=oeje9n.ContextHandler$CoreContextHandler$CoreToNestedHandler@153f66e7{STARTED}}
+controller-1  | 2026-11-13 18:51:49.374+0000 [id=1]	INFO	o.e.j.server.AbstractConnector#doStart: Started oejs.ServerConnector@4aaf8893{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+controller-1  | 2026-11-13 18:51:49.375+0000 [id=1]	INFO	org.eclipse.jetty.server.Server#doStart: Started oejs.Server@73ba6fe6{STARTING}[12.1.14,sto=0] @1011ms
+controller-1  | 2026-11-13 18:51:49.376+0000 [id=43]	INFO	winstone.Logger#logInternal: Winstone Servlet Engine running: controlPort=disabled
+controller-1  | 2026-11-13 18:51:49.490+0000 [id=42]	INFO	jenkins.model.Jenkins#<init>: Starting version 2.580.2
+controller-1  | 2026-11-13 18:51:49.582+0000 [id=50]	INFO	jenkins.InitReactorRunner$1#onAttained: Started initialization
+controller-1  | 2026-11-13 18:51:49.725+0000 [id=58]	INFO	jenkins.InitReactorRunner$1#onAttained: Listed all plugins
+controller-1  | 2026-11-13 18:51:52.113+0000 [id=53]	INFO	jenkins.InitReactorRunner$1#onAttained: Prepared all plugins
+controller-1  | 2026-11-13 18:51:52.134+0000 [id=64]	INFO	jenkins.InitReactorRunner$1#onAttained: Started all plugins
+controller-1  | 2026-11-13 18:51:52.136+0000 [id=62]	INFO	jenkins.InitReactorRunner$1#onAttained: Augmented all extensions
+controller-1  | 2026-11-13 18:51:52.748+0000 [id=58]	INFO	jenkins.InitReactorRunner$1#onAttained: System config loaded
+controller-1  | 2026-11-13 18:51:52.749+0000 [id=54]	INFO	jenkins.InitReactorRunner$1#onAttained: System config adapted
+controller-1  | 2026-11-13 18:51:52.790+0000 [id=72]	INFO	jenkins.InitReactorRunner$1#onAttained: Loaded all jobs
+controller-1  | 2026-11-13 18:51:52.802+0000 [id=72]	INFO	jenkins.InitReactorRunner$1#onAttained: Configuration for all jobs updated
+controller-1  | 2026-11-13 18:51:52.808+0000 [id=59]	INFO	j.util.groovy.GroovyHookScript#execute: Executing /var/jenkins_home/init.groovy.d/l4.groovy
+controller-1  | L4_C01_CONFIGURED: controller executors=0; agent executors=1; integral disabled
+controller-1  | 2026-11-13 18:51:53.393+0000 [id=71]	INFO	jenkins.InitReactorRunner$1#onAttained: Completed initialization
+controller-1  | 2026-11-13 18:51:53.424+0000 [id=42]	INFO	hudson.lifecycle.Lifecycle#onReady: Jenkins is fully up and running
+controller-1  | 2026-11-13 18:58:55.745+0000 [id=32]	INFO	j.s.DefaultJnlpSlaveReceiver#channelClosed: Jetty (winstone)-32 for l4-agent terminated: java.nio.channels.ClosedChannelException
+controller-1  | 2026-11-13 18:58:55.747+0000 [id=32]	INFO	j.s.DefaultJnlpSlaveReceiver#channelClosed: Jetty (winstone)-32 for l4-agent terminated: java.nio.channels.ClosedChannelException

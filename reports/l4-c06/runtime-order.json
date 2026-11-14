@@ -1,0 +1,13 @@
+{
+  "cliente": null,
+  "producto": {
+    "nombre": "C06-persistencia",
+    "precio": 25.5,
+    "id": 1
+  },
+  "precioUnitario": 25.5,
+  "estado": "Pendiente",
+  "minutosEspera": 3,
+  "fechaCreacion": "2026-11-14T21:09:04.990179235",
+  "id": 1
+}

@@ -1,0 +1,14 @@
+{
+  "build.xml": "2283a41f848c5fb3a1c048fe6869020a96e80b0236f963f1b1afaf84ee490ace",
+  "console.txt": "b800800fa3da5b4ce7b45c571719a1093a01dc6f310a4f5dd8d3e2cc65591e87",
+  "result.json": "4f44c28b5832c5508b1925b6cdc71a5b628cac4b3504d646c0875e190d888444",
+  "evidence/build.txt": "46bd9370da86487c79289027dd9955ebad1d0908203c8da2f0643f93e1389811",
+  "evidence/commit.txt": "4f3f803149c51c24b5fbb7440b471a4e3b62004cbc01f5a8c3428aaaf4c568c2",
+  "evidence/docker.txt": "a1dc24a3c26b97c8b0ce11d1bd97ca09ee9be6455676054cb889f24b805eaf51",
+  "evidence/identity.txt": "14aa9b799546a132ff49c616aa1c2d4ca56342a8ce58f5639f565420bea6a601",
+  "evidence/image.txt": "a759590f84d711df70665a904c81b6628a8bdea8443bb6e1f2f9927d0d33a8d1",
+  "evidence/java.txt": "be1800b7f19fb365c7621be91a49e3fa9f0984372bc25797d699b746a905ab12",
+  "evidence/persistence.txt": "fc98501a7c1c92f9b5e8fce14fcfbe2f9c7a4b6a437a746a8a335d521d42f493",
+  "evidence/python.txt": "01870de7caca112afeefd77b3c3b4c5e263cf5539a33af3f3411100727fad7d3",
+  "evidence/tools.txt": "1e1a0b11f8eb4ac4802d552e643f005172218530bc97bb7f13fb79ba5b92cae1"
+}

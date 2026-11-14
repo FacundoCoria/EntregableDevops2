@@ -31,7 +31,25 @@
 		<!-- L4-09: critical fixes, same Tomcat/Jackson release lines. -->
 		<tomcat.version>11.0.27</tomcat.version>
 		<jackson-bom.version>3.1.8</jackson-bom.version>
+		<!-- C06: published fixes; JAXB 4.0.9 has no released fix yet. -->
+		<logback.version>1.6.5</logback.version>
+		<json-smart.version>2.6.1</json-smart.version>
 	</properties>
+	<dependencyManagement>
+		<dependencies>
+			<!-- Transitive test tools, not included in the runtime JAR. -->
+			<dependency>
+				<groupId>org.ow2.asm</groupId>
+				<artifactId>asm</artifactId>
+				<version>9.11.1</version>
+			</dependency>
+			<dependency>
+				<groupId>org.objenesis</groupId>
+				<artifactId>objenesis</artifactId>
+				<version>3.6</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

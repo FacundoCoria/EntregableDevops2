@@ -1,0 +1,136 @@
+[
+  {
+    "networks": [
+      "l4-c01-repro_control"
+    ],
+    "id": "e0fca6431c8e8e732fb8ac1db5bf0223c0657541d6922d10c298abbcc9d6c826",
+    "service": "controller",
+    "privileged": false,
+    "user": "1000:1000",
+    "restartCount": 0,
+    "ports": {
+      "8080/tcp": [
+        {
+          "HostIp": "127.0.0.1",
+          "HostPort": "18081"
+        }
+      ]
+    },
+    "image": "sha256:fab01bd4b4cedd727aba1760879227e561d1268999a13ce6c0248c2112b99699",
+    "mounts": [
+      {
+        "Type": "volume",
+        "Name": "l4-c01-repro_controller-home",
+        "Source": "l4-c01-repro_controller-home",
+        "Destination": "/var/jenkins_home",
+        "Driver": "local",
+        "Mode": "rw",
+        "RW": true,
+        "Propagation": ""
+      },
+      {
+        "Type": "volume",
+        "Name": "l4-c01-repro_agent-secret",
+        "Source": "l4-c01-repro_agent-secret",
+        "Destination": "/run/l4-agent",
+        "Driver": "local",
+        "Mode": "rw",
+        "RW": true,
+        "Propagation": ""
+      },
+      {
+        "Type": "bind",
+        "Source": "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\ci\\jenkins\\.local\\admin-password.txt",
+        "Destination": "/run/secrets/admin_password",
+        "Mode": "",
+        "RW": false,
+        "Propagation": "rprivate"
+      }
+    ]
+  },
+  {
+    "networks": [
+      "l4-c01-repro_builds",
+      "l4-c01-repro_control"
+    ],
+    "id": "9386ea420b416d875c1a1d16ccd4702ea0333b62736c4be1605590643fbeaeda",
+    "service": "agent",
+    "privileged": false,
+    "user": "1000:1000",
+    "restartCount": 0,
+    "ports": {
+      "50000/tcp": null,
+      "8080/tcp": null
+    },
+    "image": "sha256:1a9cd13eeff7dc0550a7aab614a16b8ded1464baee430d0b20bd45ac01c998be",
+    "mounts": [
+      {
+        "Type": "volume",
+        "Name": "l4-c01-repro_agent-secret",
+        "Source": "l4-c01-repro_agent-secret",
+        "Destination": "/run/l4-agent",
+        "Driver": "local",
+        "Mode": "ro",
+        "RW": false,
+        "Propagation": ""
+      },
+      {
+        "Type": "volume",
+        "Name": "l4-c01-repro_docker-client-certs",
+        "Source": "l4-c01-repro_docker-client-certs",
+        "Destination": "/certs/client",
+        "Driver": "local",
+        "Mode": "ro",
+        "RW": false,
+        "Propagation": ""
+      },
+      {
+        "Type": "volume",
+        "Name": "l4-c01-repro_agent-home",
+        "Source": "l4-c01-repro_agent-home",
+        "Destination": "/var/jenkins_home",
+        "Driver": "local",
+        "Mode": "rw",
+        "RW": true,
+        "Propagation": ""
+      }
+    ]
+  },
+  {
+    "networks": [
+      "l4-c01-repro_builds"
+    ],
+    "id": "934e6d2e5e5504f516c770161162e15ef876ecb05001d830dbed15b360dbb83a",
+    "service": "docker",
+    "privileged": true,
+    "user": "",
+    "restartCount": 0,
+    "ports": {
+      "2375/tcp": null,
+      "2376/tcp": null
+    },
+    "image": "sha256:6acc6aaf783ac1c1100822e542534c3dab3f1d38782760b0bdcb688280574d9e",
+    "mounts": [
+      {
+        "Type": "volume",
+        "Name": "l4-c01-repro_docker-client-certs",
+        "Source": "l4-c01-repro_docker-client-certs",
+        "Destination": "/certs/client",
+        "Driver": "local",
+        "Mode": "rw",
+        "RW": true,
+        "Propagation": ""
+      },
+      {
+        "Type": "volume",
+        "Name": "l4-c01-repro_docker-data",
+        "Source": "l4-c01-repro_docker-data",
+        "Destination": "/var/lib/docker",
+        "Driver": "local",
+        "Mode": "rw",
+        "RW": true,
+        "Propagation": ""
+      }
+    ]
+  }
+]

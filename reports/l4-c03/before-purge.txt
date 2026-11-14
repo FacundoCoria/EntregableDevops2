@@ -1,0 +1,18 @@
+{
+  "containers": [
+    "/l4-c01-c03-restore-controller-1",
+    "/l4-c01-c03-restore-agent-1",
+    "/l4-c01-c03-restore-docker-1"
+  ],
+  "volumes": [
+    "l4-c01-c03-restore_controller-home",
+    "l4-c01-c03-restore_agent-home",
+    "l4-c01-c03-restore_agent-secret",
+    "l4-c01-c03-restore_docker-data",
+    "l4-c01-c03-restore_docker-client-certs"
+  ],
+  "networks": [
+    "l4-c01-c03-restore_control",
+    "l4-c01-c03-restore_builds"
+  ]
+}

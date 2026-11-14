@@ -1,0 +1,41 @@
+{
+  "dateUruguay": "2026-11-14",
+  "pass": true,
+  "baselineFiles": 1164,
+  "originalFilesUnchanged": 1159,
+  "expectedChanges": [
+    "EntregableDevops2/reports/ESTADO-EVIDENCIAS-L4.md",
+    "EntregableDevops2/pedidos-api/pedidos-api/Dockerfile",
+    "EntregableDevops2/pedidos-api/pedidos-api/pom.xml",
+    "EntregableDevops2/pedidos-api/pedidos-api/src/main/java/com/pedidos/pedidos_api/controller/PedidoController.java",
+    "EntregableDevops2/pedidos-api/pedidos-api/src/main/java/com/pedidos/pedidos_api/controller/ProductoController.java"
+  ],
+  "newDocsLocalLinksChecked": 24,
+  "originalContainersPreserved": 12,
+  "containerComparedFields": [
+    "ID",
+    "Names",
+    "Image",
+    "State",
+    "HealthStatus",
+    "Networks",
+    "Mounts",
+    "Ports"
+  ],
+  "cleanup": [
+    "l4-c06-api",
+    "l4-c06-data",
+    "l4-c06-trivy-cache"
+  ],
+  "buildAndRuntimeJarIdentical": true,
+  "tests": 3,
+  "httpChecks": 20,
+  "imagePublished": false,
+  "mainClusterModified": false,
+  "residualsOpen": [
+    "C06-R1 JAXB HIGH",
+    "C06-R2 17 MEDIUM/16 LOW Ubuntu"
+  ],
+  "branch": "lab4/c01-jenkins-reproducible",
+  "head": "50a0eb53e7a1152fbe0e4f26252fac2380403fc3"
+}

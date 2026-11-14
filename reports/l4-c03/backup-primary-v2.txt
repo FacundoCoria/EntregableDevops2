@@ -1,0 +1,13 @@
+{
+  "result": "BACKUP_PASS",
+  "id": "c03-primary-v2-20261114",
+  "project": "l4-c01",
+  "state": "stopped",
+  "sizes": {
+    "agent-home.tar.gz": 156145427,
+    "controller-home.tar.gz": 175522629,
+    "manifest.json": 2023,
+    "sha256.json": 368,
+    "source.tar.gz": 20826
+  }
+}

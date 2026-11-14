@@ -1,0 +1,219 @@
+{
+  "context": "minikube-l4-c05",
+  "suite": "subresources",
+  "results": [
+    {
+      "case": "laboratorio4-ephemeral-conforme",
+      "expected": "ACCEPT",
+      "policy": null,
+      "exitCode": 0,
+      "passed": true
+    },
+    {
+      "case": "laboratorio4-ephemeral-latest-digest",
+      "expected": "DENY",
+      "policy": "l4-ephemeral-images",
+      "exitCode": 1,
+      "passed": true
+    },
+    {
+      "case": "laboratorio4-ephemeral-no-tag",
+      "expected": "DENY",
+      "policy": "l4-ephemeral-images",
+      "exitCode": 1,
+      "passed": true
+    },
+    {
+      "case": "laboratorio4-ephemeral-root",
+      "expected": "DENY",
+      "policy": "l4-ephemeral-nonroot",
+      "exitCode": 1,
+      "passed": true
+    },
+    {
+      "case": "laboratorio4-ephemeral-uid-zero",
+      "expected": "DENY",
+      "policy": "l4-ephemeral-nonroot",
+      "exitCode": 1,
+      "passed": true
+    },
+    {
+      "case": "laboratorio4-ephemeral-privileged",
+      "expected": "DENY",
+      "policy": "l4-ephemeral-privileged",
+      "exitCode": 1,
+      "passed": true
+    },
+    {
+      "case": "laboratorio4-ephemeral-resources-api",
+      "expected": "API_REJECT",
+      "policy": null,
+      "exitCode": 1,
+      "passed": true
+    },
+    {
+      "case": "laboratorio4-ephemeral-real-denied",
+      "expected": "DENY",
+      "policy": "l4-ephemeral-images",
+      "exitCode": 1,
+      "passed": true
+    },
+    {
+      "case": "laboratorio4-resize-conforme",
+      "expected": "ACCEPT",
+      "policy": null,
+      "exitCode": 0,
+      "passed": true
+    },
+    {
+      "case": "laboratorio4-resize-missing-memory",
+      "expected": "API_REJECT_LIMITS",
+      "policy": null,
+      "exitCode": 1,
+      "passed": true
+    },
+    {
+      "case": "default-ephemeral-conforme",
+      "expected": "ACCEPT",
+      "policy": null,
+      "exitCode": 0,
+      "passed": true
+    },
+    {
+      "case": "default-ephemeral-latest-digest",
+      "expected": "DENY",
+      "policy": "l4-ephemeral-images",
+      "exitCode": 1,
+      "passed": true
+    },
+    {
+      "case": "default-ephemeral-no-tag",
+      "expected": "DENY",
+      "policy": "l4-ephemeral-images",
+      "exitCode": 1,
+      "passed": true
+    },
+    {
+      "case": "default-ephemeral-root",
+      "expected": "DENY",
+      "policy": "l4-ephemeral-nonroot",
+      "exitCode": 1,
+      "passed": true
+    },
+    {
+      "case": "default-ephemeral-uid-zero",
+      "expected": "DENY",
+      "policy": "l4-ephemeral-nonroot",
+      "exitCode": 1,
+      "passed": true
+    },
+    {
+      "case": "default-ephemeral-privileged",
+      "expected": "DENY",
+      "policy": "l4-ephemeral-privileged",
+      "exitCode": 1,
+      "passed": true
+    },
+    {
+      "case": "default-ephemeral-resources-api",
+      "expected": "API_REJECT",
+      "policy": null,
+      "exitCode": 1,
+      "passed": true
+    },
+    {
+      "case": "default-ephemeral-real-denied",
+      "expected": "DENY",
+      "policy": "l4-ephemeral-images",
+      "exitCode": 1,
+      "passed": true
+    },
+    {
+      "case": "default-resize-conforme",
+      "expected": "ACCEPT",
+      "policy": null,
+      "exitCode": 0,
+      "passed": true
+    },
+    {
+      "case": "default-resize-missing-memory",
+      "expected": "API_REJECT_LIMITS",
+      "policy": null,
+      "exitCode": 1,
+      "passed": true
+    },
+    {
+      "case": "c05-second-ephemeral-conforme",
+      "expected": "ACCEPT",
+      "policy": null,
+      "exitCode": 0,
+      "passed": true
+    },
+    {
+      "case": "c05-second-ephemeral-latest-digest",
+      "expected": "DENY",
+      "policy": "l4-ephemeral-images",
+      "exitCode": 1,
+      "passed": true
+    },
+    {
+      "case": "c05-second-ephemeral-no-tag",
+      "expected": "DENY",
+      "policy": "l4-ephemeral-images",
+      "exitCode": 1,
+      "passed": true
+    },
+    {
+      "case": "c05-second-ephemeral-root",
+      "expected": "DENY",
+      "policy": "l4-ephemeral-nonroot",
+      "exitCode": 1,
+      "passed": true
+    },
+    {
+      "case": "c05-second-ephemeral-uid-zero",
+      "expected": "DENY",
+      "policy": "l4-ephemeral-nonroot",
+      "exitCode": 1,
+      "passed": true
+    },
+    {
+      "case": "c05-second-ephemeral-privileged",
+      "expected": "DENY",
+      "policy": "l4-ephemeral-privileged",
+      "exitCode": 1,
+      "passed": true
+    },
+    {
+      "case": "c05-second-ephemeral-resources-api",
+      "expected": "API_REJECT",
+      "policy": null,
+      "exitCode": 1,
+      "passed": true
+    },
+    {
+      "case": "c05-second-ephemeral-real-denied",
+      "expected": "DENY",
+      "policy": "l4-ephemeral-images",
+      "exitCode": 1,
+      "passed": true
+    },
+    {
+      "case": "c05-second-resize-conforme",
+      "expected": "ACCEPT",
+      "policy": null,
+      "exitCode": 0,
+      "passed": true
+    },
+    {
+      "case": "c05-second-resize-missing-memory",
+      "expected": "API_REJECT_LIMITS",
+      "policy": null,
+      "exitCode": 1,
+      "passed": true
+    }
+  ],
+  "cleanup": true,
+  "passed": 30,
+  "total": 30
+}

@@ -1,0 +1,8 @@
+validatingpolicy.policies.kyverno.io/l4-deny-latest-images configured
+validatingpolicy.policies.kyverno.io/l4-require-container-resources configured
+validatingpolicy.policies.kyverno.io/l4-disallow-root-containers configured
+validatingpolicy.policies.kyverno.io/l4-disallow-privileged-containers configured
+validatingpolicy.policies.kyverno.io/l4-ephemeral-images created
+validatingpolicy.policies.kyverno.io/l4-ephemeral-nonroot created
+validatingpolicy.policies.kyverno.io/l4-ephemeral-privileged created
+validatingpolicy.policies.kyverno.io/l4-resize-resources created

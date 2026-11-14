@@ -1,0 +1,71 @@
+name: l4-c01
+services:
+  controller:
+    image: l4-c01-controller:2.580.2
+    build:
+      context: ../..
+      dockerfile: ci/jenkins/Dockerfile.controller
+      args:
+        JENKINS_BASE: ${JENKINS_BASE:?}
+    user: '1000:1000'
+    environment:
+      JAVA_OPTS: '-Xmx768m -Djenkins.install.runSetupWizard=false'
+    ports: ['127.0.0.1:${JENKINS_HTTP_PORT:-18080}:8080']
+    volumes:
+      - controller-home:/var/jenkins_home
+      - agent-secret:/run/l4-agent
+    secrets: [admin_password]
+    networks: [control]
+    restart: unless-stopped
+    security_opt: ['no-new-privileges:true']
+    cap_drop: [ALL]
+    healthcheck:
+      test: ['CMD-SHELL', 'test -s /var/jenkins_home/c01-configured.json && curl -fsS http://localhost:8080/login > /dev/null']
+      interval: 10s
+      timeout: 5s
+      retries: 18
+      start_period: 60s
+  agent:
+    image: l4-c01-agent:2.580.2
+    build:
+      context: ../..
+      dockerfile: ci/jenkins/Dockerfile.agent
+      args:
+        JENKINS_BASE: ${JENKINS_BASE:?}
+        DOCKER_CLI_BASE: ${DOCKER_CLI_BASE:?}
+    user: '1000:1000'
+    environment:
+      DOCKER_HOST: tcp://docker:2376
+      DOCKER_TLS_VERIFY: '1'
+      DOCKER_CERT_PATH: /certs/client
+    volumes:
+      - agent-home:/var/jenkins_home
+      - agent-secret:/run/l4-agent:ro
+      - docker-client-certs:/certs/client:ro
+    depends_on: [controller, docker]
+    networks: [control, builds]
+    restart: unless-stopped
+    security_opt: ['no-new-privileges:true']
+    cap_drop: [ALL]
+  docker:
+    image: ${DOCKER_DIND_IMAGE:?}
+    privileged: true
+    environment:
+      DOCKER_TLS_CERTDIR: /certs
+    volumes:
+      - docker-data:/var/lib/docker
+      - docker-client-certs:/certs/client
+    networks: [builds]
+    restart: unless-stopped
+secrets:
+  admin_password:
+    file: .local/admin-password.txt
+volumes:
+  controller-home:
+  agent-home:
+  agent-secret:
+  docker-data:
+  docker-client-certs:
+networks:
+  control:
+  builds:

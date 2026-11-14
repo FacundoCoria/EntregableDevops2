@@ -1,0 +1,90 @@
+Started by user bruno
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on l4-agent in /var/jenkins_home/workspace/L4-C01-preflight
+[Pipeline] {
+[Pipeline] timeout
+Timeout set to expire in 15 min
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Identidad y herramientas)
+[Pipeline] sh
++ set -eu
++ mkdir -p evidence
++ id -u
++ test 1000 = 1000
++ test ! -S /var/run/docker.sock
++ id
++ tee evidence/identity.txt
+uid=1000(jenkins) gid=1000(jenkins) groups=1000(jenkins)
++ sh /opt/l4/bootstrap-tools.sh
++ cat evidence/tools.txt
+== Maven 3.9.16 ==
+== Snyk 1.1308.4 ==
+== Helm 4.3.1 ==
+== kubectl 1.37.0 ==
+== Semgrep 1.184.0 ==
+Apache Maven 3.9.16 (2bdd9fddda4b155ebf8000e807eb73fd829a51d5)
+Maven home: /opt/l4-tools/apache-maven-3.9.16
+Java version: 21.0.13, vendor: Eclipse Adoptium, runtime: /opt/java/openjdk
+Default locale: en, platform encoding: UTF-8
+OS name: "linux", version: "6.6.87.2-microsoft-standard-wsl2", arch: "amd64", family: "unix"
+1.1308.4
+v4.3.1+gc0d08d0
+Client Version: v1.37.0
+Kustomize Version: v5.8.1
+1.184.0
+L4_TOOLS_READY
++ java -version
++ python3 --version
++ docker version
++ docker info --format {{.Name}} {{.DockerRootDir}}
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Fuente publicada)
+[Pipeline] dir
+Running in /var/jenkins_home/workspace/L4-C01-preflight/source
+[Pipeline] {
+[Pipeline] deleteDir
+[Pipeline] sh
++ set -eu
++ git clone https://github.com/FacundoCoria/EntregableDevops2.git .
+Cloning into '.'...
++ git checkout --detach 50a0eb53e7a1152fbe0e4f26252fac2380403fc3
+HEAD is now at 50a0eb5 Completar informe y diagramas del trabajo integrador 4 para revision
++ git rev-parse HEAD
+[Pipeline] }
+[Pipeline] // dir
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Build Docker local y persistencia)
+[Pipeline] sh
++ set -eu
++ mkdir -p smoke
++ printf FROM scratch
+LABEL l4.c01="smoke"
+
++ docker build -t l4-c01-smoke:local smoke
++ docker image inspect --format {{.Id}} l4-c01-smoke:local
++ marker=/var/jenkins_home/c01-persistence.txt
++ [ -f /var/jenkins_home/c01-persistence.txt ]
++ date -u +%FT%TZ
++ echo PERSISTENCE_CREATED
++ tee evidence/persistence.txt
+PERSISTENCE_CREATED
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Declarative: Post Actions)
+[Pipeline] archiveArtifacts
+Archiving artifacts
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // timeout
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS

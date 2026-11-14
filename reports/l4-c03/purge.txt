@@ -1,0 +1,1 @@
+PURGE_PASS: solo tres contenedores/dos redes/cinco volumenes propios; copias/imagenes/clave local conservadas

@@ -1,0 +1,53 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 1.33kB 0.0s done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/eclipse-temurin:21.0.13_9-jdk-jammy@sha256:4b1a74fbffbe6b4e7b6f0171a472478282fb463790a51edf10e465d578f22b69
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 126B done
+#3 DONE 0.0s
+
+#4 [build 1/7] FROM docker.io/library/eclipse-temurin:21.0.13_9-jdk-jammy@sha256:4b1a74fbffbe6b4e7b6f0171a472478282fb463790a51edf10e465d578f22b69
+#4 resolve docker.io/library/eclipse-temurin:21.0.13_9-jdk-jammy@sha256:4b1a74fbffbe6b4e7b6f0171a472478282fb463790a51edf10e465d578f22b69 0.0s done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 1.81kB 0.0s done
+#5 DONE 0.0s
+
+#6 [build 3/7] COPY .mvn/ .mvn/
+#6 CACHED
+
+#7 [build 6/7] COPY src/ src/
+#7 CACHED
+
+#8 [build 2/7] WORKDIR /workspace
+#8 CACHED
+
+#9 [build 4/7] COPY mvnw pom.xml ./
+#9 CACHED
+
+#10 [build 5/7] RUN chmod +x mvnw
+#10 CACHED
+
+#11 [build 7/7] RUN ./mvnw -B -ntp -Dspring.datasource.url=jdbc:h2:mem:buildtest clean verify
+#11 CACHED
+
+#12 exporting to image
+#12 exporting layers
+#12 exporting layers 12.5s done
+#12 exporting manifest sha256:a0044d8907b50ae7421742ab30fa7fb6a2fb1a0621a6b2ba79c459348669003a 0.0s done
+#12 exporting config sha256:dd215babbdd5a2e12230ccd58ee8197febb5230388152c11777a9f1bdbf69040 0.0s done
+#12 exporting attestation manifest sha256:8a428dd827053fc36731f0d486f52b6f645bc113a9fa7af2d785d8a792e2bd40
+#12 exporting attestation manifest sha256:8a428dd827053fc36731f0d486f52b6f645bc113a9fa7af2d785d8a792e2bd40 0.0s done
+#12 exporting manifest list sha256:4a9a4249adf8cf7aae5b206d57e01afc989f24c2c961ec5ffa5f5ddb38158bd7 0.0s done
+#12 naming to docker.io/library/pedidos-api:l4-c06-build done
+#12 unpacking to docker.io/library/pedidos-api:l4-c06-build
+#12 unpacking to docker.io/library/pedidos-api:l4-c06-build 5.3s done
+#12 DONE 18.2s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/961lk3k81sp1tf9kbjd704a43

@@ -1,0 +1,22 @@
+
+Testing C:\Users\Bruno\PARA System\1- Projects\Entregable 3 - Devops\EntregableDevops2\pedidos-api\pedidos-api...
+
+Tested 130 dependencies for known issues, found 1 issue, 1 vulnerable path.
+
+
+Issues with no direct upgrade or patch:
+  ✗ XML External Entity (XXE) Injection [High Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGGLASSFISHJAXB-20883142] in org.glassfish.jaxb:jaxb-core@4.0.9
+    introduced by org.springframework.boot:spring-boot-starter-data-jpa@4.1.1 > org.springframework.boot:spring-boot-data-jpa@4.1.1 > org.springframework.boot:spring-boot-hibernate@4.1.1 > org.hibernate.orm:hibernate-core@7.4.5.Final > org.glassfish.jaxb:jaxb-runtime@4.0.9 > org.glassfish.jaxb:jaxb-core@4.0.9
+  No upgrade or patch available
+
+
+
+Organization:      pela311
+Package manager:   maven
+Target file:       pom.xml
+Project name:      com.pedidos:pedidos-api
+Open source:       no
+Project path:      C:\Users\Bruno\PARA System\1- Projects\Entregable 3 - Devops\EntregableDevops2\pedidos-api\pedidos-api
+Licenses:          enabled
+
+

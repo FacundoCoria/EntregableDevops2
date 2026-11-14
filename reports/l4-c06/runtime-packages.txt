@@ -1,0 +1,8 @@
+uid=10001(usuario) gid=10001(appgroup) groups=10001(appgroup)
+apt	2.4.15ubuntu0.1
+libapt-pkg6.0:amd64	2.4.15ubuntu0.1
+libc-bin	2.35-0ubuntu3.18
+libc6:amd64	2.35-0ubuntu3.18
+libpcre2-8-0:amd64	10.39-3ubuntu0.2
+locales	2.35-0ubuntu3.18
+perl-base	5.34.0-3ubuntu1.10

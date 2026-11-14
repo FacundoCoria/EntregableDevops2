@@ -26,12 +26,12 @@ public class ProductoController {
         return productoRepository.findById(id).orElse(null);
     }
 
-    @PostMapping
+    @PostMapping(consumes = "application/json")
     public Producto crearProducto(@RequestBody Producto producto) {
         return productoRepository.save(producto);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping(value = "/{id}", consumes = "application/json")
     public Producto modificarProducto(
             @PathVariable Long id,
             @RequestBody Producto producto) {

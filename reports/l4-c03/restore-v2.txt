@@ -1,0 +1,6 @@
+{
+  "result": "RESTORE_PASS",
+  "project": "l4-c01-c03-restore",
+  "backup": "c03-primary-v2-20261114",
+  "state": "homes restored; start separately with a free loopback port"
+}

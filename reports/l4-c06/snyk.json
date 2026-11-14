@@ -1,0 +1,372 @@
+{
+  "vulnerabilities": [
+    {
+      "id": "SNYK-JAVA-ORGGLASSFISHJAXB-20883142",
+      "title": "XML External Entity (XXE) Injection",
+      "CVSSv3": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:L",
+      "credit": [
+        "Huzaifa Sidhpurwala"
+      ],
+      "semver": {
+        "vulnerable": [
+          "[4.0.0-M4,]"
+        ]
+      },
+      "exploit": "Not Defined",
+      "fixedIn": [],
+      "patches": [],
+      "insights": {
+        "triageAdvice": null
+      },
+      "language": "java",
+      "severity": "high",
+      "cvssScore": 8.3,
+      "functions": [],
+      "malicious": false,
+      "isDisputed": false,
+      "moduleName": "org.glassfish.jaxb:jaxb-core",
+      "references": [
+        {
+          "url": "https://github.com/eclipse-ee4j/jaxb-ri/commit/abf8c9707046d78bd3b7e834596feb3d3c21dbcb",
+          "title": "GitHub Commit"
+        },
+        {
+          "url": "https://github.com/eclipse-ee4j/jaxb-ri/commit/c08fde59",
+          "title": "GitHub Commit"
+        },
+        {
+          "url": "https://github.com/eclipse-ee4j/jaxb-ri/pull/2013",
+          "title": "GitHub PR"
+        },
+        {
+          "url": "https://gitlab.eclipse.org/security/cve-assignment/-/work_items/310",
+          "title": "GitLab Work Item"
+        }
+      ],
+      "cvssDetails": [],
+      "cvssSources": [
+        {
+          "type": "primary",
+          "vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:N/VA:L/SC:N/SI:N/SA:N",
+          "assigner": "Snyk",
+          "severity": "high",
+          "baseScore": 8.3,
+          "cvssVersion": "4.0",
+          "modificationTime": "2026-10-13T14:40:59.053810Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:L",
+          "assigner": "Snyk",
+          "severity": "medium",
+          "baseScore": 6.5,
+          "cvssVersion": "3.1",
+          "modificationTime": "2026-10-13T14:40:59.053810Z"
+        }
+      ],
+      "description": "## Overview\n\nAffected versions of this package are vulnerable to XML External Entity (XXE) Injection in the `createParserFactory` and `createDocumentBuilderFactory` methods of the `XmlFactory` class, which set only `XMLConstants.FEATURE_SECURE_PROCESSING` on the factory and leave `disallow-doctype-decl`, `external-general-entities`, `external-parameter-entities`, and `load-external-dtd` at their defaults. An attacker can read local files out of band by submitting XML containing an external entity declaration to an application that unmarshals untrusted documents. Exploitation depends on the JAXP implementation in use, because secure processing alone does not block external entity resolution on every implementation.\n\n## Details\nXXE Injection is a type of attack against an application that parses XML input.\nXML is a markup language that defines a set of rules for encoding documents in a format that is both human-readable and machine-readable. By default, many XML processors allow specification of an external entity, a URI that is dereferenced and evaluated during XML processing. When an XML document is being parsed, the parser can make a request and include the content at the specified URI inside of the XML document.\n\nAttacks can include disclosing local files, which may contain sensitive data such as passwords or private user data, using file: schemes or relative paths in the system identifier.\n\nFor example, below is a sample XML document, containing an XML element- username.\n\n```\n<xml>\n<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?>\n   <username>John</username>\n</xml>\n```\n\nAn external XML entity - `xxe`, is defined using a system identifier and present within a DOCTYPE header. These entities can access local or remote content. For example the below code contains an external XML entity that would fetch the content of  `/etc/passwd` and display it to the user rendered by `username`.\n\n```\n<xml>\n<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?>\n<!DOCTYPE foo [\n   <!ENTITY xxe SYSTEM \"file:///etc/passwd\" >]>\n   <username>&xxe;</username>\n</xml>\n```\n\nOther XXE Injection attacks can access local resources that may not stop returning data, possibly impacting application availability and leading to Denial of Service.\n\n## Remediation\nA fix was pushed into the `master` branch but not yet published.\n## References\n- [GitHub Commit](https://github.com/eclipse-ee4j/jaxb-ri/commit/abf8c9707046d78bd3b7e834596feb3d3c21dbcb)\n- [GitHub Commit](https://github.com/eclipse-ee4j/jaxb-ri/commit/c08fde59)\n- [GitHub PR](https://github.com/eclipse-ee4j/jaxb-ri/pull/2013)\n- [GitLab Work Item](https://gitlab.eclipse.org/security/cve-assignment/-/work_items/310)\n",
+      "epssDetails": {
+        "percentile": "0.17041",
+        "probability": "0.00265",
+        "modelVersion": "v2026.06.15"
+      },
+      "identifiers": {
+        "CVE": [
+          "CVE-2026-92877"
+        ],
+        "CWE": [
+          "CWE-611"
+        ]
+      },
+      "packageName": "org.glassfish.jaxb:jaxb-core",
+      "proprietary": false,
+      "creationTime": "2026-10-13T14:40:58.767662Z",
+      "functions_new": [],
+      "alternativeIds": [],
+      "disclosureTime": "2026-10-12T14:44:11.378000Z",
+      "exploitDetails": {
+        "sources": [],
+        "maturityLevels": [
+          {
+            "type": "secondary",
+            "level": "Not Defined",
+            "format": "CVSSv3"
+          },
+          {
+            "type": "primary",
+            "level": "Not Defined",
+            "format": "CVSSv4"
+          }
+        ]
+      },
+      "packageManager": "maven",
+      "mavenModuleName": {
+        "groupId": "org.glassfish.jaxb",
+        "artifactId": "jaxb-core"
+      },
+      "publicationTime": "2026-10-13T14:40:58.917729Z",
+      "severityBasedOn": "CVSS",
+      "modificationTime": "2026-10-13T14:40:59.053810Z",
+      "socialTrendAlert": false,
+      "severityWithCritical": "high",
+      "from": [
+        "com.pedidos:pedidos-api@0.0.1-SNAPSHOT",
+        "org.springframework.boot:spring-boot-starter-data-jpa@4.1.1",
+        "org.springframework.boot:spring-boot-data-jpa@4.1.1",
+        "org.springframework.boot:spring-boot-hibernate@4.1.1",
+        "org.hibernate.orm:hibernate-core@7.4.5.Final",
+        "org.glassfish.jaxb:jaxb-runtime@4.0.9",
+        "org.glassfish.jaxb:jaxb-core@4.0.9"
+      ],
+      "upgradePath": [],
+      "isUpgradable": false,
+      "isPatchable": false,
+      "name": "org.glassfish.jaxb:jaxb-core",
+      "version": "4.0.9"
+    }
+  ],
+  "ok": false,
+  "dependencyCount": 130,
+  "org": "pela311",
+  "policy": "# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.\nversion: v1.25.1\nignore: {}\npatch: {}\n",
+  "isPrivate": true,
+  "licensesPolicy": {
+    "severities": {},
+    "orgLicenseRules": {
+      "AGPL-1.0": {
+        "licenseType": "AGPL-1.0",
+        "severity": "high",
+        "instructions": ""
+      },
+      "AGPL-3.0": {
+        "licenseType": "AGPL-3.0",
+        "severity": "high",
+        "instructions": ""
+      },
+      "Artistic-1.0": {
+        "licenseType": "Artistic-1.0",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "Artistic-2.0": {
+        "licenseType": "Artistic-2.0",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "CDDL-1.0": {
+        "licenseType": "CDDL-1.0",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "CPOL-1.02": {
+        "licenseType": "CPOL-1.02",
+        "severity": "high",
+        "instructions": ""
+      },
+      "EPL-1.0": {
+        "licenseType": "EPL-1.0",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "GPL-2.0": {
+        "licenseType": "GPL-2.0",
+        "severity": "high",
+        "instructions": ""
+      },
+      "GPL-3.0": {
+        "licenseType": "GPL-3.0",
+        "severity": "high",
+        "instructions": ""
+      },
+      "LGPL-2.0": {
+        "licenseType": "LGPL-2.0",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "LGPL-2.1": {
+        "licenseType": "LGPL-2.1",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "LGPL-3.0": {
+        "licenseType": "LGPL-3.0",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "MPL-1.1": {
+        "licenseType": "MPL-1.1",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "MPL-2.0": {
+        "licenseType": "MPL-2.0",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "MS-RL": {
+        "licenseType": "MS-RL",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "SimPL-2.0": {
+        "licenseType": "SimPL-2.0",
+        "severity": "high",
+        "instructions": ""
+      }
+    }
+  },
+  "packageManager": "maven",
+  "ignoreSettings": {
+    "adminOnly": false,
+    "reasonRequired": false,
+    "disregardFilesystemIgnores": false,
+    "autoApproveIgnores": false,
+    "approvalWorkflowEnabled": false
+  },
+  "summary": "1 vulnerable dependency path",
+  "remediation": {
+    "unresolved": [
+      {
+        "id": "SNYK-JAVA-ORGGLASSFISHJAXB-20883142",
+        "title": "XML External Entity (XXE) Injection",
+        "CVSSv3": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:L",
+        "credit": [
+          "Huzaifa Sidhpurwala"
+        ],
+        "semver": {
+          "vulnerable": [
+            "[4.0.0-M4,]"
+          ]
+        },
+        "exploit": "Not Defined",
+        "fixedIn": [],
+        "patches": [],
+        "insights": {
+          "triageAdvice": null
+        },
+        "language": "java",
+        "severity": "high",
+        "cvssScore": 8.3,
+        "functions": [],
+        "malicious": false,
+        "isDisputed": false,
+        "moduleName": "org.glassfish.jaxb:jaxb-core",
+        "references": [
+          {
+            "url": "https://github.com/eclipse-ee4j/jaxb-ri/commit/abf8c9707046d78bd3b7e834596feb3d3c21dbcb",
+            "title": "GitHub Commit"
+          },
+          {
+            "url": "https://github.com/eclipse-ee4j/jaxb-ri/commit/c08fde59",
+            "title": "GitHub Commit"
+          },
+          {
+            "url": "https://github.com/eclipse-ee4j/jaxb-ri/pull/2013",
+            "title": "GitHub PR"
+          },
+          {
+            "url": "https://gitlab.eclipse.org/security/cve-assignment/-/work_items/310",
+            "title": "GitLab Work Item"
+          }
+        ],
+        "cvssDetails": [],
+        "cvssSources": [
+          {
+            "type": "primary",
+            "vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:N/VA:L/SC:N/SI:N/SA:N",
+            "assigner": "Snyk",
+            "severity": "high",
+            "baseScore": 8.3,
+            "cvssVersion": "4.0",
+            "modificationTime": "2026-10-13T14:40:59.053810Z"
+          },
+          {
+            "type": "secondary",
+            "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:L",
+            "assigner": "Snyk",
+            "severity": "medium",
+            "baseScore": 6.5,
+            "cvssVersion": "3.1",
+            "modificationTime": "2026-10-13T14:40:59.053810Z"
+          }
+        ],
+        "description": "## Overview\n\nAffected versions of this package are vulnerable to XML External Entity (XXE) Injection in the `createParserFactory` and `createDocumentBuilderFactory` methods of the `XmlFactory` class, which set only `XMLConstants.FEATURE_SECURE_PROCESSING` on the factory and leave `disallow-doctype-decl`, `external-general-entities`, `external-parameter-entities`, and `load-external-dtd` at their defaults. An attacker can read local files out of band by submitting XML containing an external entity declaration to an application that unmarshals untrusted documents. Exploitation depends on the JAXP implementation in use, because secure processing alone does not block external entity resolution on every implementation.\n\n## Details\nXXE Injection is a type of attack against an application that parses XML input.\nXML is a markup language that defines a set of rules for encoding documents in a format that is both human-readable and machine-readable. By default, many XML processors allow specification of an external entity, a URI that is dereferenced and evaluated during XML processing. When an XML document is being parsed, the parser can make a request and include the content at the specified URI inside of the XML document.\n\nAttacks can include disclosing local files, which may contain sensitive data such as passwords or private user data, using file: schemes or relative paths in the system identifier.\n\nFor example, below is a sample XML document, containing an XML element- username.\n\n```\n<xml>\n<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?>\n   <username>John</username>\n</xml>\n```\n\nAn external XML entity - `xxe`, is defined using a system identifier and present within a DOCTYPE header. These entities can access local or remote content. For example the below code contains an external XML entity that would fetch the content of  `/etc/passwd` and display it to the user rendered by `username`.\n\n```\n<xml>\n<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?>\n<!DOCTYPE foo [\n   <!ENTITY xxe SYSTEM \"file:///etc/passwd\" >]>\n   <username>&xxe;</username>\n</xml>\n```\n\nOther XXE Injection attacks can access local resources that may not stop returning data, possibly impacting application availability and leading to Denial of Service.\n\n## Remediation\nA fix was pushed into the `master` branch but not yet published.\n## References\n- [GitHub Commit](https://github.com/eclipse-ee4j/jaxb-ri/commit/abf8c9707046d78bd3b7e834596feb3d3c21dbcb)\n- [GitHub Commit](https://github.com/eclipse-ee4j/jaxb-ri/commit/c08fde59)\n- [GitHub PR](https://github.com/eclipse-ee4j/jaxb-ri/pull/2013)\n- [GitLab Work Item](https://gitlab.eclipse.org/security/cve-assignment/-/work_items/310)\n",
+        "epssDetails": {
+          "percentile": "0.17041",
+          "probability": "0.00265",
+          "modelVersion": "v2026.06.15"
+        },
+        "identifiers": {
+          "CVE": [
+            "CVE-2026-92877"
+          ],
+          "CWE": [
+            "CWE-611"
+          ]
+        },
+        "packageName": "org.glassfish.jaxb:jaxb-core",
+        "proprietary": false,
+        "creationTime": "2026-10-13T14:40:58.767662Z",
+        "functions_new": [],
+        "alternativeIds": [],
+        "disclosureTime": "2026-10-12T14:44:11.378000Z",
+        "exploitDetails": {
+          "sources": [],
+          "maturityLevels": [
+            {
+              "type": "secondary",
+              "level": "Not Defined",
+              "format": "CVSSv3"
+            },
+            {
+              "type": "primary",
+              "level": "Not Defined",
+              "format": "CVSSv4"
+            }
+          ]
+        },
+        "packageManager": "maven",
+        "mavenModuleName": {
+          "groupId": "org.glassfish.jaxb",
+          "artifactId": "jaxb-core"
+        },
+        "publicationTime": "2026-10-13T14:40:58.917729Z",
+        "severityBasedOn": "CVSS",
+        "modificationTime": "2026-10-13T14:40:59.053810Z",
+        "socialTrendAlert": false,
+        "packagePopularityRank": 99,
+        "from": [
+          "com.pedidos:pedidos-api@0.0.1-SNAPSHOT",
+          "org.springframework.boot:spring-boot-starter-data-jpa@4.1.1",
+          "org.springframework.boot:spring-boot-data-jpa@4.1.1",
+          "org.springframework.boot:spring-boot-hibernate@4.1.1",
+          "org.hibernate.orm:hibernate-core@7.4.5.Final",
+          "org.glassfish.jaxb:jaxb-runtime@4.0.9",
+          "org.glassfish.jaxb:jaxb-core@4.0.9"
+        ],
+        "upgradePath": [],
+        "isUpgradable": false,
+        "isPatchable": false,
+        "isPinnable": false,
+        "isRuntime": false,
+        "name": "org.glassfish.jaxb:jaxb-core",
+        "version": "4.0.9",
+        "severityWithCritical": "high"
+      }
+    ],
+    "upgrade": {},
+    "patch": {},
+    "ignore": {},
+    "pin": {}
+  },
+  "filesystemPolicy": false,
+  "filtered": {
+    "ignore": [],
+    "patch": []
+  },
+  "uniqueCount": 1,
+  "projectName": "com.pedidos:pedidos-api",
+  "displayTargetFile": "pom.xml",
+  "hasUnknownVersions": false,
+  "path": "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\pedidos-api\\pedidos-api"
+}

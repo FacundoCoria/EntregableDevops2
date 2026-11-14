@@ -1,0 +1,1 @@
+d6cf935170fc6b62a4a2112dcf5e466aef8cdcd73726ab4e2ac1765ea3b8926a  /var/jenkins_home/c01-persistence.txt

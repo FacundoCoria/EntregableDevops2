@@ -1,5 +1,9 @@
 # B04 — reproducción y limpieza en un perfil descartable
 
+Para preparar una máquina nueva y añadir Jenkins dedicado, empezar por
+[instalación portable C02](../../docs/INSTALACION-L4.md). Esta guía conserva
+el ciclo Kubernetes probado en B04.
+
 Este ciclo crea un clúster Kubernetes independiente llamado `minikube-l4-b04`.
 Instala API/H2, Prometheus, Grafana, Kyverno, sus cuatro políticas y Falco con
 los archivos del repositorio. No opera interfaces ni crea Jenkins.
@@ -63,9 +67,11 @@ capacidades implementadas y de las pruebas anteriores L4-10.
 
 ## Límites de reproducción
 
-Una instalación nueva de Jenkins con plugins, jobs y credenciales sigue
-pendiente de B02/B05. `--jenkins-existing` verifica/reutiliza el contenedor
-heredado; no lo reproduce. No se declara una máquina nueva totalmente
+El límite histórico B04 de instalación Jenkins se trató después en
+[C01](../../ci/jenkins/README.md), probado por separado; su conexión Kubernetes
+e integral final siguen pendientes de verificación en vivo C07.
+`--jenkins-existing` verifica/reutiliza el contenedor heredado; no lo reproduce
+ni inicia el dedicado C01. No se declara una máquina nueva totalmente
 aprovisionada ni limpieza de recursos ajenos en `default` del principal.
 Las versiones de charts están fijadas; imágenes/reglas transitivas de seguridad
 no son todas inmutables. Esta guía operativa no es el informe final.

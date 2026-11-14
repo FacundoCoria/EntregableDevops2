@@ -1,0 +1,60 @@
+{
+  "result": "PASS",
+  "project": "l4-c01-c03-restore",
+  "core": "2.580.2",
+  "pluginsChecked": 67,
+  "controllerAndAgentUid": 1000,
+  "agentOnline": true,
+  "integralDisabled": true,
+  "build1": {
+    "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+    "artifacts": [
+      {
+        "fileName": "build.txt",
+        "relativePath": "evidence/build.txt"
+      },
+      {
+        "fileName": "commit.txt",
+        "relativePath": "evidence/commit.txt"
+      },
+      {
+        "fileName": "docker.txt",
+        "relativePath": "evidence/docker.txt"
+      },
+      {
+        "fileName": "identity.txt",
+        "relativePath": "evidence/identity.txt"
+      },
+      {
+        "fileName": "image.txt",
+        "relativePath": "evidence/image.txt"
+      },
+      {
+        "fileName": "java.txt",
+        "relativePath": "evidence/java.txt"
+      },
+      {
+        "fileName": "persistence.txt",
+        "relativePath": "evidence/persistence.txt"
+      },
+      {
+        "fileName": "python.txt",
+        "relativePath": "evidence/python.txt"
+      },
+      {
+        "fileName": "tools.txt",
+        "relativePath": "evidence/tools.txt"
+      }
+    ],
+    "building": false,
+    "duration": 22337,
+    "number": 1,
+    "result": "SUCCESS"
+  },
+  "jobsUsersHashesMatchBefore": true,
+  "markerHashMatchesBefore": true,
+  "tls": true,
+  "hostDockerId": "d76327d3-d973-4f51-9734-bb1ef9f38606",
+  "dedicatedDockerId": "25da6d86-028a-420b-95c4-559f485480cd",
+  "dedicatedImages": []
+}

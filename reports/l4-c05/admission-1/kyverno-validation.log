@@ -1,0 +1,781 @@
+
+CASE: connection
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "get", "nodes"]
+EXPECTED: ACCEPT 
+EXIT: 0
+NAME              STATUS   ROLES           AGE    VERSION
+minikube-l4-c05   Ready    control-plane   3m6s   v1.37.0
+
+PASS: True
+
+CASE: regression-conforme
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "create", "--dry-run=server", "-f", "-"]
+EXPECTED: ACCEPT 
+EXIT: 0
+pod/c05-regression-conforme created (server dry run)
+
+PASS: True
+
+CASE: regression-containers-latest
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "create", "--dry-run=server", "-f", "-"]
+EXPECTED: DENY l4-deny-latest-images
+EXIT: 1
+Error from server: error when creating "STDIN": admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-deny-latest-images failed: Se requiere tag explicito distinto de latest o digest SHA256 valido; latest@digest tambien se rechaza.
+
+PASS: True
+
+CASE: regression-containers-sin-tag
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "create", "--dry-run=server", "-f", "-"]
+EXPECTED: DENY l4-deny-latest-images
+EXIT: 1
+Error from server: error when creating "STDIN": admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-deny-latest-images failed: Se requiere tag explicito distinto de latest o digest SHA256 valido; latest@digest tambien se rechaza.
+
+PASS: True
+
+CASE: regression-containers-resources
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "create", "--dry-run=server", "-f", "-"]
+EXPECTED: DENY l4-require-container-resources
+EXIT: 1
+Error from server: error when creating "STDIN": admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-require-container-resources failed: Cada contenedor requiere requests y limits de CPU y memoria.
+
+PASS: True
+
+CASE: regression-containers-root
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "create", "--dry-run=server", "-f", "-"]
+EXPECTED: DENY l4-disallow-root-containers
+EXIT: 1
+Error from server: error when creating "STDIN": admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-disallow-root-containers failed: runAsNonRoot efectivo debe ser true y runAsUser no puede ser 0.
+
+PASS: True
+
+CASE: regression-containers-uid-zero
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "create", "--dry-run=server", "-f", "-"]
+EXPECTED: DENY l4-disallow-root-containers
+EXIT: 1
+Error from server: error when creating "STDIN": admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-disallow-root-containers failed: runAsNonRoot efectivo debe ser true y runAsUser no puede ser 0.
+
+PASS: True
+
+CASE: regression-containers-privileged
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "create", "--dry-run=server", "-f", "-"]
+EXPECTED: DENY l4-disallow-privileged-containers
+EXIT: 1
+Error from server: error when creating "STDIN": admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-disallow-privileged-containers failed: No se permiten contenedores privilegiados.
+
+PASS: True
+
+CASE: regression-initcontainers-latest
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "create", "--dry-run=server", "-f", "-"]
+EXPECTED: DENY l4-deny-latest-images
+EXIT: 1
+Error from server: error when creating "STDIN": admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-deny-latest-images failed: Se requiere tag explicito distinto de latest o digest SHA256 valido; latest@digest tambien se rechaza.
+
+PASS: True
+
+CASE: regression-initcontainers-sin-tag
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "create", "--dry-run=server", "-f", "-"]
+EXPECTED: DENY l4-deny-latest-images
+EXIT: 1
+Error from server: error when creating "STDIN": admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-deny-latest-images failed: Se requiere tag explicito distinto de latest o digest SHA256 valido; latest@digest tambien se rechaza.
+
+PASS: True
+
+CASE: regression-initcontainers-resources
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "create", "--dry-run=server", "-f", "-"]
+EXPECTED: DENY l4-require-container-resources
+EXIT: 1
+Error from server: error when creating "STDIN": admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-require-container-resources failed: Cada contenedor requiere requests y limits de CPU y memoria.
+
+PASS: True
+
+CASE: regression-initcontainers-root
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "create", "--dry-run=server", "-f", "-"]
+EXPECTED: DENY l4-disallow-root-containers
+EXIT: 1
+Error from server: error when creating "STDIN": admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-disallow-root-containers failed: runAsNonRoot efectivo debe ser true y runAsUser no puede ser 0.
+
+PASS: True
+
+CASE: regression-initcontainers-uid-zero
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "create", "--dry-run=server", "-f", "-"]
+EXPECTED: DENY l4-disallow-root-containers
+EXIT: 1
+Error from server: error when creating "STDIN": admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-disallow-root-containers failed: runAsNonRoot efectivo debe ser true y runAsUser no puede ser 0.
+
+PASS: True
+
+CASE: regression-initcontainers-privileged
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "create", "--dry-run=server", "-f", "-"]
+EXPECTED: DENY l4-disallow-privileged-containers
+EXIT: 1
+Error from server: error when creating "STDIN": admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-disallow-privileged-containers failed: No se permiten contenedores privilegiados.
+
+PASS: True
+
+CASE: regression-herencia-pod-conforme
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "create", "--dry-run=server", "-f", "-"]
+EXPECTED: ACCEPT 
+EXIT: 0
+pod/c05-regression-herencia-pod-conforme created (server dry run)
+
+PASS: True
+
+CASE: regression-override-false
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "create", "--dry-run=server", "-f", "-"]
+EXPECTED: DENY l4-disallow-root-containers
+EXIT: 1
+Error from server: error when creating "STDIN": admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-disallow-root-containers failed: runAsNonRoot efectivo debe ser true y runAsUser no puede ser 0.
+
+PASS: True
+
+CASE: regression-init-conforme
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "create", "--dry-run=server", "-f", "-"]
+EXPECTED: ACCEPT 
+EXIT: 0
+pod/c05-regression-init-conforme created (server dry run)
+
+PASS: True
+
+CASE: containers-latest-digest
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "create", "--dry-run=server", "-f", "-"]
+EXPECTED: DENY l4-deny-latest-images
+EXIT: 1
+Error from server: error when creating "STDIN": admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-deny-latest-images failed: Se requiere tag explicito distinto de latest o digest SHA256 valido; latest@digest tambien se rechaza.
+
+PASS: True
+
+CASE: containers-digest
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "create", "--dry-run=server", "-f", "-"]
+EXPECTED: ACCEPT 
+EXIT: 0
+pod/c05-containers-digest created (server dry run)
+
+PASS: True
+
+CASE: containers-tag-digest
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "create", "--dry-run=server", "-f", "-"]
+EXPECTED: ACCEPT 
+EXIT: 0
+pod/c05-containers-tag-digest created (server dry run)
+
+PASS: True
+
+CASE: containers-repo-named-latest
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "create", "--dry-run=server", "-f", "-"]
+EXPECTED: ACCEPT 
+EXIT: 0
+pod/c05-containers-repo-named-latest created (server dry run)
+
+PASS: True
+
+CASE: containers-port-no-tag
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "create", "--dry-run=server", "-f", "-"]
+EXPECTED: DENY l4-deny-latest-images
+EXIT: 1
+Error from server: error when creating "STDIN": admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-deny-latest-images failed: Se requiere tag explicito distinto de latest o digest SHA256 valido; latest@digest tambien se rechaza.
+
+PASS: True
+
+CASE: containers-malformed-digest
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "create", "--dry-run=server", "-f", "-"]
+EXPECTED: DENY l4-deny-latest-images
+EXIT: 1
+Error from server: error when creating "STDIN": admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-deny-latest-images failed: Se requiere tag explicito distinto de latest o digest SHA256 valido; latest@digest tambien se rechaza.
+
+PASS: True
+
+CASE: initcontainers-latest-digest
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "create", "--dry-run=server", "-f", "-"]
+EXPECTED: DENY l4-deny-latest-images
+EXIT: 1
+Error from server: error when creating "STDIN": admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-deny-latest-images failed: Se requiere tag explicito distinto de latest o digest SHA256 valido; latest@digest tambien se rechaza.
+
+PASS: True
+
+CASE: initcontainers-digest
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "create", "--dry-run=server", "-f", "-"]
+EXPECTED: ACCEPT 
+EXIT: 0
+pod/c05-initcontainers-digest created (server dry run)
+
+PASS: True
+
+CASE: initcontainers-tag-digest
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "create", "--dry-run=server", "-f", "-"]
+EXPECTED: ACCEPT 
+EXIT: 0
+pod/c05-initcontainers-tag-digest created (server dry run)
+
+PASS: True
+
+CASE: initcontainers-repo-named-latest
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "create", "--dry-run=server", "-f", "-"]
+EXPECTED: ACCEPT 
+EXIT: 0
+pod/c05-initcontainers-repo-named-latest created (server dry run)
+
+PASS: True
+
+CASE: initcontainers-port-no-tag
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "create", "--dry-run=server", "-f", "-"]
+EXPECTED: DENY l4-deny-latest-images
+EXIT: 1
+Error from server: error when creating "STDIN": admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-deny-latest-images failed: Se requiere tag explicito distinto de latest o digest SHA256 valido; latest@digest tambien se rechaza.
+
+PASS: True
+
+CASE: initcontainers-malformed-digest
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "create", "--dry-run=server", "-f", "-"]
+EXPECTED: DENY l4-deny-latest-images
+EXIT: 1
+Error from server: error when creating "STDIN": admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-deny-latest-images failed: Se requiere tag explicito distinto de latest o digest SHA256 valido; latest@digest tambien se rechaza.
+
+PASS: True
+
+CASE: sidecar-latest-digest
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "create", "--dry-run=server", "-f", "-"]
+EXPECTED: DENY l4-deny-latest-images
+EXIT: 1
+Error from server: error when creating "STDIN": admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-deny-latest-images failed: Se requiere tag explicito distinto de latest o digest SHA256 valido; latest@digest tambien se rechaza.
+
+PASS: True
+
+CASE: sidecar-digest
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "create", "--dry-run=server", "-f", "-"]
+EXPECTED: ACCEPT 
+EXIT: 0
+pod/c05-sidecar-digest created (server dry run)
+
+PASS: True
+
+CASE: sidecar-tag-digest
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "create", "--dry-run=server", "-f", "-"]
+EXPECTED: ACCEPT 
+EXIT: 0
+pod/c05-sidecar-tag-digest created (server dry run)
+
+PASS: True
+
+CASE: sidecar-repo-named-latest
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "create", "--dry-run=server", "-f", "-"]
+EXPECTED: ACCEPT 
+EXIT: 0
+pod/c05-sidecar-repo-named-latest created (server dry run)
+
+PASS: True
+
+CASE: sidecar-port-no-tag
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "create", "--dry-run=server", "-f", "-"]
+EXPECTED: DENY l4-deny-latest-images
+EXIT: 1
+Error from server: error when creating "STDIN": admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-deny-latest-images failed: Se requiere tag explicito distinto de latest o digest SHA256 valido; latest@digest tambien se rechaza.
+
+PASS: True
+
+CASE: sidecar-malformed-digest
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "create", "--dry-run=server", "-f", "-"]
+EXPECTED: DENY l4-deny-latest-images
+EXIT: 1
+Error from server: error when creating "STDIN": admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-deny-latest-images failed: Se requiere tag explicito distinto de latest o digest SHA256 valido; latest@digest tambien se rechaza.
+
+PASS: True
+
+CASE: laboratorio4-latest
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "create", "--dry-run=server", "-f", "-"]
+EXPECTED: DENY l4-deny-latest-images
+EXIT: 1
+Error from server: error when creating "STDIN": admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-deny-latest-images failed: Se requiere tag explicito distinto de latest o digest SHA256 valido; latest@digest tambien se rechaza.
+
+PASS: True
+
+CASE: laboratorio4-resources
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "create", "--dry-run=server", "-f", "-"]
+EXPECTED: DENY l4-require-container-resources
+EXIT: 1
+Error from server: error when creating "STDIN": admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-require-container-resources failed: Cada contenedor requiere requests y limits de CPU y memoria.
+
+PASS: True
+
+CASE: laboratorio4-root
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "create", "--dry-run=server", "-f", "-"]
+EXPECTED: DENY l4-disallow-root-containers
+EXIT: 1
+Error from server: error when creating "STDIN": admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-disallow-root-containers failed: runAsNonRoot efectivo debe ser true y runAsUser no puede ser 0.
+
+PASS: True
+
+CASE: laboratorio4-privileged
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "create", "--dry-run=server", "-f", "-"]
+EXPECTED: DENY l4-disallow-privileged-containers
+EXIT: 1
+Error from server: error when creating "STDIN": admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-disallow-privileged-containers failed: No se permiten contenedores privilegiados.
+
+PASS: True
+
+CASE: default-latest
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "create", "--dry-run=server", "-f", "-"]
+EXPECTED: DENY l4-deny-latest-images
+EXIT: 1
+Error from server: error when creating "STDIN": admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-deny-latest-images failed: Se requiere tag explicito distinto de latest o digest SHA256 valido; latest@digest tambien se rechaza.
+
+PASS: True
+
+CASE: default-resources
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "create", "--dry-run=server", "-f", "-"]
+EXPECTED: DENY l4-require-container-resources
+EXIT: 1
+Error from server: error when creating "STDIN": admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-require-container-resources failed: Cada contenedor requiere requests y limits de CPU y memoria.
+
+PASS: True
+
+CASE: default-root
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "create", "--dry-run=server", "-f", "-"]
+EXPECTED: DENY l4-disallow-root-containers
+EXIT: 1
+Error from server: error when creating "STDIN": admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-disallow-root-containers failed: runAsNonRoot efectivo debe ser true y runAsUser no puede ser 0.
+
+PASS: True
+
+CASE: default-privileged
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "create", "--dry-run=server", "-f", "-"]
+EXPECTED: DENY l4-disallow-privileged-containers
+EXIT: 1
+Error from server: error when creating "STDIN": admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-disallow-privileged-containers failed: No se permiten contenedores privilegiados.
+
+PASS: True
+
+CASE: c05-second-latest
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "create", "--dry-run=server", "-f", "-"]
+EXPECTED: DENY l4-deny-latest-images
+EXIT: 1
+Error from server: error when creating "STDIN": admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-deny-latest-images failed: Se requiere tag explicito distinto de latest o digest SHA256 valido; latest@digest tambien se rechaza.
+
+PASS: True
+
+CASE: c05-second-resources
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "create", "--dry-run=server", "-f", "-"]
+EXPECTED: DENY l4-require-container-resources
+EXIT: 1
+Error from server: error when creating "STDIN": admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-require-container-resources failed: Cada contenedor requiere requests y limits de CPU y memoria.
+
+PASS: True
+
+CASE: c05-second-root
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "create", "--dry-run=server", "-f", "-"]
+EXPECTED: DENY l4-disallow-root-containers
+EXIT: 1
+Error from server: error when creating "STDIN": admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-disallow-root-containers failed: runAsNonRoot efectivo debe ser true y runAsUser no puede ser 0.
+
+PASS: True
+
+CASE: c05-second-privileged
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "create", "--dry-run=server", "-f", "-"]
+EXPECTED: DENY l4-disallow-privileged-containers
+EXIT: 1
+Error from server: error when creating "STDIN": admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-disallow-privileged-containers failed: No se permiten contenedores privilegiados.
+
+PASS: True
+
+CASE: exception-kube-system
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "create", "--dry-run=server", "-f", "-"]
+EXPECTED: ACCEPT 
+EXIT: 0
+pod/c05-exception-kube-system created (server dry run)
+
+PASS: True
+
+CASE: exception-kube-public
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "create", "--dry-run=server", "-f", "-"]
+EXPECTED: ACCEPT 
+EXIT: 0
+pod/c05-exception-kube-public created (server dry run)
+
+PASS: True
+
+CASE: exception-kube-node-lease
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "create", "--dry-run=server", "-f", "-"]
+EXPECTED: ACCEPT 
+EXIT: 0
+pod/c05-exception-kube-node-lease created (server dry run)
+
+PASS: True
+
+CASE: exception-kyverno
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "create", "--dry-run=server", "-f", "-"]
+EXPECTED: ACCEPT 
+EXIT: 0
+pod/c05-exception-kyverno created (server dry run)
+
+PASS: True
+
+CASE: exception-falco
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "create", "--dry-run=server", "-f", "-"]
+EXPECTED: ACCEPT 
+EXIT: 0
+pod/c05-exception-falco created (server dry run)
+
+PASS: True
+
+CASE: deployment-conforme
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "create", "--dry-run=server", "-f", "-"]
+EXPECTED: ACCEPT 
+EXIT: 0
+deployment.apps/c05-deployment-conforme created (server dry run)
+
+PASS: True
+
+CASE: deployment-latest-digest
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "create", "--dry-run=server", "-f", "-"]
+EXPECTED: DENY l4-deny-latest-images
+EXIT: 1
+Error from server: error when creating "STDIN": admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-deny-latest-images failed: Se requiere tag explicito distinto de latest o digest SHA256 valido; latest@digest tambien se rechaza.
+
+PASS: True
+
+CASE: deployment-resources
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "create", "--dry-run=server", "-f", "-"]
+EXPECTED: DENY l4-require-container-resources
+EXIT: 1
+Error from server: error when creating "STDIN": admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-require-container-resources failed: Cada contenedor requiere requests y limits de CPU y memoria.
+
+PASS: True
+
+CASE: deployment-root
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "create", "--dry-run=server", "-f", "-"]
+EXPECTED: DENY l4-disallow-root-containers
+EXIT: 1
+Error from server: error when creating "STDIN": admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-disallow-root-containers failed: runAsNonRoot efectivo debe ser true y runAsUser no puede ser 0.
+
+PASS: True
+
+CASE: deployment-privileged
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "create", "--dry-run=server", "-f", "-"]
+EXPECTED: DENY l4-disallow-privileged-containers
+EXIT: 1
+Error from server: error when creating "STDIN": admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-disallow-privileged-containers failed: No se permiten contenedores privilegiados.
+
+PASS: True
+
+CASE: fixture-laboratorio4
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "create", "-f", "-"]
+EXPECTED: ACCEPT 
+EXIT: 0
+pod/c05-subresources created
+
+PASS: True
+
+CASE: laboratorio4-ephemeral-conforme
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "patch", "pod", "c05-subresources", "-n", "laboratorio4", "--subresource=ephemeralcontainers", "--type=merge", "--dry-run=server", "--patch-file", "-"]
+EXPECTED: ACCEPT 
+EXIT: 1
+error: unable to read patch file: open -: The system cannot find the file specified.
+
+PASS: False
+
+CASE: laboratorio4-ephemeral-latest-digest
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "patch", "pod", "c05-subresources", "-n", "laboratorio4", "--subresource=ephemeralcontainers", "--type=merge", "--dry-run=server", "--patch-file", "-"]
+EXPECTED: DENY l4-ephemeral-images
+EXIT: 1
+error: unable to read patch file: open -: The system cannot find the file specified.
+
+PASS: False
+
+CASE: laboratorio4-ephemeral-no-tag
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "patch", "pod", "c05-subresources", "-n", "laboratorio4", "--subresource=ephemeralcontainers", "--type=merge", "--dry-run=server", "--patch-file", "-"]
+EXPECTED: DENY l4-ephemeral-images
+EXIT: 1
+error: unable to read patch file: open -: The system cannot find the file specified.
+
+PASS: False
+
+CASE: laboratorio4-ephemeral-root
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "patch", "pod", "c05-subresources", "-n", "laboratorio4", "--subresource=ephemeralcontainers", "--type=merge", "--dry-run=server", "--patch-file", "-"]
+EXPECTED: DENY l4-ephemeral-nonroot
+EXIT: 1
+error: unable to read patch file: open -: The system cannot find the file specified.
+
+PASS: False
+
+CASE: laboratorio4-ephemeral-uid-zero
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "patch", "pod", "c05-subresources", "-n", "laboratorio4", "--subresource=ephemeralcontainers", "--type=merge", "--dry-run=server", "--patch-file", "-"]
+EXPECTED: DENY l4-ephemeral-nonroot
+EXIT: 1
+error: unable to read patch file: open -: The system cannot find the file specified.
+
+PASS: False
+
+CASE: laboratorio4-ephemeral-privileged
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "patch", "pod", "c05-subresources", "-n", "laboratorio4", "--subresource=ephemeralcontainers", "--type=merge", "--dry-run=server", "--patch-file", "-"]
+EXPECTED: DENY l4-ephemeral-privileged
+EXIT: 1
+error: unable to read patch file: open -: The system cannot find the file specified.
+
+PASS: False
+
+CASE: laboratorio4-ephemeral-resources-api
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "patch", "pod", "c05-subresources", "-n", "laboratorio4", "--subresource=ephemeralcontainers", "--type=merge", "--dry-run=server", "--patch-file", "-"]
+EXPECTED: API_REJECT 
+EXIT: 1
+error: unable to read patch file: open -: The system cannot find the file specified.
+
+PASS: False
+
+CASE: laboratorio4-resize-conforme
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "patch", "pod", "c05-subresources", "-n", "laboratorio4", "--subresource=resize", "--type=strategic", "--dry-run=server", "--patch-file", "-"]
+EXPECTED: ACCEPT 
+EXIT: 1
+error: unable to read patch file: open -: The system cannot find the file specified.
+
+PASS: False
+
+CASE: laboratorio4-resize-missing-memory
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "patch", "pod", "c05-subresources", "-n", "laboratorio4", "--subresource=resize", "--type=strategic", "--dry-run=server", "--patch-file", "-"]
+EXPECTED: DENY l4-resize-resources
+EXIT: 1
+error: unable to read patch file: open -: The system cannot find the file specified.
+
+PASS: False
+
+CASE: fixture-default
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "create", "-f", "-"]
+EXPECTED: ACCEPT 
+EXIT: 0
+pod/c05-subresources created
+
+PASS: True
+
+CASE: default-ephemeral-conforme
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "patch", "pod", "c05-subresources", "-n", "default", "--subresource=ephemeralcontainers", "--type=merge", "--dry-run=server", "--patch-file", "-"]
+EXPECTED: ACCEPT 
+EXIT: 1
+error: unable to read patch file: open -: The system cannot find the file specified.
+
+PASS: False
+
+CASE: default-ephemeral-latest-digest
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "patch", "pod", "c05-subresources", "-n", "default", "--subresource=ephemeralcontainers", "--type=merge", "--dry-run=server", "--patch-file", "-"]
+EXPECTED: DENY l4-ephemeral-images
+EXIT: 1
+error: unable to read patch file: open -: The system cannot find the file specified.
+
+PASS: False
+
+CASE: default-ephemeral-no-tag
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "patch", "pod", "c05-subresources", "-n", "default", "--subresource=ephemeralcontainers", "--type=merge", "--dry-run=server", "--patch-file", "-"]
+EXPECTED: DENY l4-ephemeral-images
+EXIT: 1
+error: unable to read patch file: open -: The system cannot find the file specified.
+
+PASS: False
+
+CASE: default-ephemeral-root
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "patch", "pod", "c05-subresources", "-n", "default", "--subresource=ephemeralcontainers", "--type=merge", "--dry-run=server", "--patch-file", "-"]
+EXPECTED: DENY l4-ephemeral-nonroot
+EXIT: 1
+error: unable to read patch file: open -: The system cannot find the file specified.
+
+PASS: False
+
+CASE: default-ephemeral-uid-zero
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "patch", "pod", "c05-subresources", "-n", "default", "--subresource=ephemeralcontainers", "--type=merge", "--dry-run=server", "--patch-file", "-"]
+EXPECTED: DENY l4-ephemeral-nonroot
+EXIT: 1
+error: unable to read patch file: open -: The system cannot find the file specified.
+
+PASS: False
+
+CASE: default-ephemeral-privileged
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "patch", "pod", "c05-subresources", "-n", "default", "--subresource=ephemeralcontainers", "--type=merge", "--dry-run=server", "--patch-file", "-"]
+EXPECTED: DENY l4-ephemeral-privileged
+EXIT: 1
+error: unable to read patch file: open -: The system cannot find the file specified.
+
+PASS: False
+
+CASE: default-ephemeral-resources-api
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "patch", "pod", "c05-subresources", "-n", "default", "--subresource=ephemeralcontainers", "--type=merge", "--dry-run=server", "--patch-file", "-"]
+EXPECTED: API_REJECT 
+EXIT: 1
+error: unable to read patch file: open -: The system cannot find the file specified.
+
+PASS: False
+
+CASE: default-resize-conforme
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "patch", "pod", "c05-subresources", "-n", "default", "--subresource=resize", "--type=strategic", "--dry-run=server", "--patch-file", "-"]
+EXPECTED: ACCEPT 
+EXIT: 1
+error: unable to read patch file: open -: The system cannot find the file specified.
+
+PASS: False
+
+CASE: default-resize-missing-memory
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "patch", "pod", "c05-subresources", "-n", "default", "--subresource=resize", "--type=strategic", "--dry-run=server", "--patch-file", "-"]
+EXPECTED: DENY l4-resize-resources
+EXIT: 1
+error: unable to read patch file: open -: The system cannot find the file specified.
+
+PASS: False
+
+CASE: fixture-c05-second
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "create", "-f", "-"]
+EXPECTED: ACCEPT 
+EXIT: 0
+pod/c05-subresources created
+
+PASS: True
+
+CASE: c05-second-ephemeral-conforme
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "patch", "pod", "c05-subresources", "-n", "c05-second", "--subresource=ephemeralcontainers", "--type=merge", "--dry-run=server", "--patch-file", "-"]
+EXPECTED: ACCEPT 
+EXIT: 1
+error: unable to read patch file: open -: The system cannot find the file specified.
+
+PASS: False
+
+CASE: c05-second-ephemeral-latest-digest
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "patch", "pod", "c05-subresources", "-n", "c05-second", "--subresource=ephemeralcontainers", "--type=merge", "--dry-run=server", "--patch-file", "-"]
+EXPECTED: DENY l4-ephemeral-images
+EXIT: 1
+error: unable to read patch file: open -: The system cannot find the file specified.
+
+PASS: False
+
+CASE: c05-second-ephemeral-no-tag
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "patch", "pod", "c05-subresources", "-n", "c05-second", "--subresource=ephemeralcontainers", "--type=merge", "--dry-run=server", "--patch-file", "-"]
+EXPECTED: DENY l4-ephemeral-images
+EXIT: 1
+error: unable to read patch file: open -: The system cannot find the file specified.
+
+PASS: False
+
+CASE: c05-second-ephemeral-root
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "patch", "pod", "c05-subresources", "-n", "c05-second", "--subresource=ephemeralcontainers", "--type=merge", "--dry-run=server", "--patch-file", "-"]
+EXPECTED: DENY l4-ephemeral-nonroot
+EXIT: 1
+error: unable to read patch file: open -: The system cannot find the file specified.
+
+PASS: False
+
+CASE: c05-second-ephemeral-uid-zero
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "patch", "pod", "c05-subresources", "-n", "c05-second", "--subresource=ephemeralcontainers", "--type=merge", "--dry-run=server", "--patch-file", "-"]
+EXPECTED: DENY l4-ephemeral-nonroot
+EXIT: 1
+error: unable to read patch file: open -: The system cannot find the file specified.
+
+PASS: False
+
+CASE: c05-second-ephemeral-privileged
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "patch", "pod", "c05-subresources", "-n", "c05-second", "--subresource=ephemeralcontainers", "--type=merge", "--dry-run=server", "--patch-file", "-"]
+EXPECTED: DENY l4-ephemeral-privileged
+EXIT: 1
+error: unable to read patch file: open -: The system cannot find the file specified.
+
+PASS: False
+
+CASE: c05-second-ephemeral-resources-api
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "patch", "pod", "c05-subresources", "-n", "c05-second", "--subresource=ephemeralcontainers", "--type=merge", "--dry-run=server", "--patch-file", "-"]
+EXPECTED: API_REJECT 
+EXIT: 1
+error: unable to read patch file: open -: The system cannot find the file specified.
+
+PASS: False
+
+CASE: c05-second-resize-conforme
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "patch", "pod", "c05-subresources", "-n", "c05-second", "--subresource=resize", "--type=strategic", "--dry-run=server", "--patch-file", "-"]
+EXPECTED: ACCEPT 
+EXIT: 1
+error: unable to read patch file: open -: The system cannot find the file specified.
+
+PASS: False
+
+CASE: c05-second-resize-missing-memory
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "patch", "pod", "c05-subresources", "-n", "c05-second", "--subresource=resize", "--type=strategic", "--dry-run=server", "--patch-file", "-"]
+EXPECTED: DENY l4-resize-resources
+EXIT: 1
+error: unable to read patch file: open -: The system cannot find the file specified.
+
+PASS: False
+
+CASE: real-latest
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "create", "-f", "-"]
+EXPECTED: DENY l4-deny-latest-images
+EXIT: 1
+Error from server: error when creating "STDIN": admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-deny-latest-images failed: Se requiere tag explicito distinto de latest o digest SHA256 valido; latest@digest tambien se rechaza.
+
+PASS: True
+
+CASE: real-resources
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "create", "-f", "-"]
+EXPECTED: DENY l4-require-container-resources
+EXIT: 1
+Error from server: error when creating "STDIN": admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-require-container-resources failed: Cada contenedor requiere requests y limits de CPU y memoria.
+
+PASS: True
+
+CASE: real-root
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "create", "-f", "-"]
+EXPECTED: DENY l4-disallow-root-containers
+EXIT: 1
+Error from server: error when creating "STDIN": admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-disallow-root-containers failed: runAsNonRoot efectivo debe ser true y runAsUser no puede ser 0.
+
+PASS: True
+
+CASE: real-privileged
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "create", "-f", "-"]
+EXPECTED: DENY l4-disallow-privileged-containers
+EXIT: 1
+Error from server: error when creating "STDIN": admission webhook "vpol.validate.kyverno.svc-fail" denied the request: Policy l4-disallow-privileged-containers failed: No se permiten contenedores privilegiados.
+
+PASS: True
+
+CASE: cleanup-laboratorio4-c05-subresources
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "delete", "pod", "c05-subresources", "-n", "laboratorio4", "--ignore-not-found", "--wait=false"]
+EXPECTED: ACCEPT 
+EXIT: 0
+pod "c05-subresources" deleted from laboratorio4 namespace
+
+PASS: True
+
+CASE: cleanup-default-c05-subresources
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "delete", "pod", "c05-subresources", "-n", "default", "--ignore-not-found", "--wait=false"]
+EXPECTED: ACCEPT 
+EXIT: 0
+pod "c05-subresources" deleted from default namespace
+
+PASS: True
+
+CASE: cleanup-c05-second-c05-subresources
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "delete", "pod", "c05-subresources", "-n", "c05-second", "--ignore-not-found", "--wait=false"]
+EXPECTED: ACCEPT 
+EXIT: 0
+pod "c05-subresources" deleted from c05-second namespace
+
+PASS: True
+
+CASE: cleanup-default-c05-real-latest
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "delete", "pod", "c05-real-latest", "-n", "default", "--ignore-not-found", "--wait=false"]
+EXPECTED: ACCEPT 
+EXIT: 0
+
+PASS: True
+
+CASE: cleanup-default-c05-real-resources
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "delete", "pod", "c05-real-resources", "-n", "default", "--ignore-not-found", "--wait=false"]
+EXPECTED: ACCEPT 
+EXIT: 0
+
+PASS: True
+
+CASE: cleanup-default-c05-real-root
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "delete", "pod", "c05-real-root", "-n", "default", "--ignore-not-found", "--wait=false"]
+EXPECTED: ACCEPT 
+EXIT: 0
+
+PASS: True
+
+CASE: cleanup-default-c05-real-privileged
+COMMAND: ["kubectl", "--context", "minikube-l4-c05", "--request-timeout=30s", "delete", "pod", "c05-real-privileged", "-n", "default", "--ignore-not-found", "--wait=false"]
+EXPECTED: ACCEPT 
+EXIT: 0
+
+PASS: True

@@ -1,0 +1,617 @@
+{
+  "context": "minikube-l4-c05",
+  "results": [
+    {
+      "case": "regression-conforme",
+      "expected": "ACCEPT",
+      "policy": null,
+      "exitCode": 0,
+      "passed": true
+    },
+    {
+      "case": "regression-containers-latest",
+      "expected": "DENY",
+      "policy": "l4-deny-latest-images",
+      "exitCode": 1,
+      "passed": true
+    },
+    {
+      "case": "regression-containers-sin-tag",
+      "expected": "DENY",
+      "policy": "l4-deny-latest-images",
+      "exitCode": 1,
+      "passed": true
+    },
+    {
+      "case": "regression-containers-resources",
+      "expected": "DENY",
+      "policy": "l4-require-container-resources",
+      "exitCode": 1,
+      "passed": true
+    },
+    {
+      "case": "regression-containers-root",
+      "expected": "DENY",
+      "policy": "l4-disallow-root-containers",
+      "exitCode": 1,
+      "passed": true
+    },
+    {
+      "case": "regression-containers-uid-zero",
+      "expected": "DENY",
+      "policy": "l4-disallow-root-containers",
+      "exitCode": 1,
+      "passed": true
+    },
+    {
+      "case": "regression-containers-privileged",
+      "expected": "DENY",
+      "policy": "l4-disallow-privileged-containers",
+      "exitCode": 1,
+      "passed": true
+    },
+    {
+      "case": "regression-initcontainers-latest",
+      "expected": "DENY",
+      "policy": "l4-deny-latest-images",
+      "exitCode": 1,
+      "passed": true
+    },
+    {
+      "case": "regression-initcontainers-sin-tag",
+      "expected": "DENY",
+      "policy": "l4-deny-latest-images",
+      "exitCode": 1,
+      "passed": true
+    },
+    {
+      "case": "regression-initcontainers-resources",
+      "expected": "DENY",
+      "policy": "l4-require-container-resources",
+      "exitCode": 1,
+      "passed": true
+    },
+    {
+      "case": "regression-initcontainers-root",
+      "expected": "DENY",
+      "policy": "l4-disallow-root-containers",
+      "exitCode": 1,
+      "passed": true
+    },
+    {
+      "case": "regression-initcontainers-uid-zero",
+      "expected": "DENY",
+      "policy": "l4-disallow-root-containers",
+      "exitCode": 1,
+      "passed": true
+    },
+    {
+      "case": "regression-initcontainers-privileged",
+      "expected": "DENY",
+      "policy": "l4-disallow-privileged-containers",
+      "exitCode": 1,
+      "passed": true
+    },
+    {
+      "case": "regression-herencia-pod-conforme",
+      "expected": "ACCEPT",
+      "policy": null,
+      "exitCode": 0,
+      "passed": true
+    },
+    {
+      "case": "regression-override-false",
+      "expected": "DENY",
+      "policy": "l4-disallow-root-containers",
+      "exitCode": 1,
+      "passed": true
+    },
+    {
+      "case": "regression-init-conforme",
+      "expected": "ACCEPT",
+      "policy": null,
+      "exitCode": 0,
+      "passed": true
+    },
+    {
+      "case": "containers-latest-digest",
+      "expected": "DENY",
+      "policy": "l4-deny-latest-images",
+      "exitCode": 1,
+      "passed": true
+    },
+    {
+      "case": "containers-digest",
+      "expected": "ACCEPT",
+      "policy": null,
+      "exitCode": 0,
+      "passed": true
+    },
+    {
+      "case": "containers-tag-digest",
+      "expected": "ACCEPT",
+      "policy": null,
+      "exitCode": 0,
+      "passed": true
+    },
+    {
+      "case": "containers-repo-named-latest",
+      "expected": "ACCEPT",
+      "policy": null,
+      "exitCode": 0,
+      "passed": true
+    },
+    {
+      "case": "containers-port-no-tag",
+      "expected": "DENY",
+      "policy": "l4-deny-latest-images",
+      "exitCode": 1,
+      "passed": true
+    },
+    {
+      "case": "containers-malformed-digest",
+      "expected": "DENY",
+      "policy": "l4-deny-latest-images",
+      "exitCode": 1,
+      "passed": true
+    },
+    {
+      "case": "initcontainers-latest-digest",
+      "expected": "DENY",
+      "policy": "l4-deny-latest-images",
+      "exitCode": 1,
+      "passed": true
+    },
+    {
+      "case": "initcontainers-digest",
+      "expected": "ACCEPT",
+      "policy": null,
+      "exitCode": 0,
+      "passed": true
+    },
+    {
+      "case": "initcontainers-tag-digest",
+      "expected": "ACCEPT",
+      "policy": null,
+      "exitCode": 0,
+      "passed": true
+    },
+    {
+      "case": "initcontainers-repo-named-latest",
+      "expected": "ACCEPT",
+      "policy": null,
+      "exitCode": 0,
+      "passed": true
+    },
+    {
+      "case": "initcontainers-port-no-tag",
+      "expected": "DENY",
+      "policy": "l4-deny-latest-images",
+      "exitCode": 1,
+      "passed": true
+    },
+    {
+      "case": "initcontainers-malformed-digest",
+      "expected": "DENY",
+      "policy": "l4-deny-latest-images",
+      "exitCode": 1,
+      "passed": true
+    },
+    {
+      "case": "sidecar-latest-digest",
+      "expected": "DENY",
+      "policy": "l4-deny-latest-images",
+      "exitCode": 1,
+      "passed": true
+    },
+    {
+      "case": "sidecar-digest",
+      "expected": "ACCEPT",
+      "policy": null,
+      "exitCode": 0,
+      "passed": true
+    },
+    {
+      "case": "sidecar-tag-digest",
+      "expected": "ACCEPT",
+      "policy": null,
+      "exitCode": 0,
+      "passed": true
+    },
+    {
+      "case": "sidecar-repo-named-latest",
+      "expected": "ACCEPT",
+      "policy": null,
+      "exitCode": 0,
+      "passed": true
+    },
+    {
+      "case": "sidecar-port-no-tag",
+      "expected": "DENY",
+      "policy": "l4-deny-latest-images",
+      "exitCode": 1,
+      "passed": true
+    },
+    {
+      "case": "sidecar-malformed-digest",
+      "expected": "DENY",
+      "policy": "l4-deny-latest-images",
+      "exitCode": 1,
+      "passed": true
+    },
+    {
+      "case": "laboratorio4-latest",
+      "expected": "DENY",
+      "policy": "l4-deny-latest-images",
+      "exitCode": 1,
+      "passed": true
+    },
+    {
+      "case": "laboratorio4-resources",
+      "expected": "DENY",
+      "policy": "l4-require-container-resources",
+      "exitCode": 1,
+      "passed": true
+    },
+    {
+      "case": "laboratorio4-root",
+      "expected": "DENY",
+      "policy": "l4-disallow-root-containers",
+      "exitCode": 1,
+      "passed": true
+    },
+    {
+      "case": "laboratorio4-privileged",
+      "expected": "DENY",
+      "policy": "l4-disallow-privileged-containers",
+      "exitCode": 1,
+      "passed": true
+    },
+    {
+      "case": "default-latest",
+      "expected": "DENY",
+      "policy": "l4-deny-latest-images",
+      "exitCode": 1,
+      "passed": true
+    },
+    {
+      "case": "default-resources",
+      "expected": "DENY",
+      "policy": "l4-require-container-resources",
+      "exitCode": 1,
+      "passed": true
+    },
+    {
+      "case": "default-root",
+      "expected": "DENY",
+      "policy": "l4-disallow-root-containers",
+      "exitCode": 1,
+      "passed": true
+    },
+    {
+      "case": "default-privileged",
+      "expected": "DENY",
+      "policy": "l4-disallow-privileged-containers",
+      "exitCode": 1,
+      "passed": true
+    },
+    {
+      "case": "c05-second-latest",
+      "expected": "DENY",
+      "policy": "l4-deny-latest-images",
+      "exitCode": 1,
+      "passed": true
+    },
+    {
+      "case": "c05-second-resources",
+      "expected": "DENY",
+      "policy": "l4-require-container-resources",
+      "exitCode": 1,
+      "passed": true
+    },
+    {
+      "case": "c05-second-root",
+      "expected": "DENY",
+      "policy": "l4-disallow-root-containers",
+      "exitCode": 1,
+      "passed": true
+    },
+    {
+      "case": "c05-second-privileged",
+      "expected": "DENY",
+      "policy": "l4-disallow-privileged-containers",
+      "exitCode": 1,
+      "passed": true
+    },
+    {
+      "case": "exception-kube-system",
+      "expected": "ACCEPT",
+      "policy": null,
+      "exitCode": 0,
+      "passed": true
+    },
+    {
+      "case": "exception-kube-public",
+      "expected": "ACCEPT",
+      "policy": null,
+      "exitCode": 0,
+      "passed": true
+    },
+    {
+      "case": "exception-kube-node-lease",
+      "expected": "ACCEPT",
+      "policy": null,
+      "exitCode": 0,
+      "passed": true
+    },
+    {
+      "case": "exception-kyverno",
+      "expected": "ACCEPT",
+      "policy": null,
+      "exitCode": 0,
+      "passed": true
+    },
+    {
+      "case": "exception-falco",
+      "expected": "ACCEPT",
+      "policy": null,
+      "exitCode": 0,
+      "passed": true
+    },
+    {
+      "case": "deployment-conforme",
+      "expected": "ACCEPT",
+      "policy": null,
+      "exitCode": 0,
+      "passed": true
+    },
+    {
+      "case": "deployment-latest-digest",
+      "expected": "DENY",
+      "policy": "l4-deny-latest-images",
+      "exitCode": 1,
+      "passed": true
+    },
+    {
+      "case": "deployment-resources",
+      "expected": "DENY",
+      "policy": "l4-require-container-resources",
+      "exitCode": 1,
+      "passed": true
+    },
+    {
+      "case": "deployment-root",
+      "expected": "DENY",
+      "policy": "l4-disallow-root-containers",
+      "exitCode": 1,
+      "passed": true
+    },
+    {
+      "case": "deployment-privileged",
+      "expected": "DENY",
+      "policy": "l4-disallow-privileged-containers",
+      "exitCode": 1,
+      "passed": true
+    },
+    {
+      "case": "laboratorio4-ephemeral-conforme",
+      "expected": "ACCEPT",
+      "policy": null,
+      "exitCode": 1,
+      "passed": false
+    },
+    {
+      "case": "laboratorio4-ephemeral-latest-digest",
+      "expected": "DENY",
+      "policy": "l4-ephemeral-images",
+      "exitCode": 1,
+      "passed": false
+    },
+    {
+      "case": "laboratorio4-ephemeral-no-tag",
+      "expected": "DENY",
+      "policy": "l4-ephemeral-images",
+      "exitCode": 1,
+      "passed": false
+    },
+    {
+      "case": "laboratorio4-ephemeral-root",
+      "expected": "DENY",
+      "policy": "l4-ephemeral-nonroot",
+      "exitCode": 1,
+      "passed": false
+    },
+    {
+      "case": "laboratorio4-ephemeral-uid-zero",
+      "expected": "DENY",
+      "policy": "l4-ephemeral-nonroot",
+      "exitCode": 1,
+      "passed": false
+    },
+    {
+      "case": "laboratorio4-ephemeral-privileged",
+      "expected": "DENY",
+      "policy": "l4-ephemeral-privileged",
+      "exitCode": 1,
+      "passed": false
+    },
+    {
+      "case": "laboratorio4-ephemeral-resources-api",
+      "expected": "API_REJECT",
+      "policy": null,
+      "exitCode": 1,
+      "passed": false
+    },
+    {
+      "case": "laboratorio4-resize-conforme",
+      "expected": "ACCEPT",
+      "policy": null,
+      "exitCode": 1,
+      "passed": false
+    },
+    {
+      "case": "laboratorio4-resize-missing-memory",
+      "expected": "DENY",
+      "policy": "l4-resize-resources",
+      "exitCode": 1,
+      "passed": false
+    },
+    {
+      "case": "default-ephemeral-conforme",
+      "expected": "ACCEPT",
+      "policy": null,
+      "exitCode": 1,
+      "passed": false
+    },
+    {
+      "case": "default-ephemeral-latest-digest",
+      "expected": "DENY",
+      "policy": "l4-ephemeral-images",
+      "exitCode": 1,
+      "passed": false
+    },
+    {
+      "case": "default-ephemeral-no-tag",
+      "expected": "DENY",
+      "policy": "l4-ephemeral-images",
+      "exitCode": 1,
+      "passed": false
+    },
+    {
+      "case": "default-ephemeral-root",
+      "expected": "DENY",
+      "policy": "l4-ephemeral-nonroot",
+      "exitCode": 1,
+      "passed": false
+    },
+    {
+      "case": "default-ephemeral-uid-zero",
+      "expected": "DENY",
+      "policy": "l4-ephemeral-nonroot",
+      "exitCode": 1,
+      "passed": false
+    },
+    {
+      "case": "default-ephemeral-privileged",
+      "expected": "DENY",
+      "policy": "l4-ephemeral-privileged",
+      "exitCode": 1,
+      "passed": false
+    },
+    {
+      "case": "default-ephemeral-resources-api",
+      "expected": "API_REJECT",
+      "policy": null,
+      "exitCode": 1,
+      "passed": false
+    },
+    {
+      "case": "default-resize-conforme",
+      "expected": "ACCEPT",
+      "policy": null,
+      "exitCode": 1,
+      "passed": false
+    },
+    {
+      "case": "default-resize-missing-memory",
+      "expected": "DENY",
+      "policy": "l4-resize-resources",
+      "exitCode": 1,
+      "passed": false
+    },
+    {
+      "case": "c05-second-ephemeral-conforme",
+      "expected": "ACCEPT",
+      "policy": null,
+      "exitCode": 1,
+      "passed": false
+    },
+    {
+      "case": "c05-second-ephemeral-latest-digest",
+      "expected": "DENY",
+      "policy": "l4-ephemeral-images",
+      "exitCode": 1,
+      "passed": false
+    },
+    {
+      "case": "c05-second-ephemeral-no-tag",
+      "expected": "DENY",
+      "policy": "l4-ephemeral-images",
+      "exitCode": 1,
+      "passed": false
+    },
+    {
+      "case": "c05-second-ephemeral-root",
+      "expected": "DENY",
+      "policy": "l4-ephemeral-nonroot",
+      "exitCode": 1,
+      "passed": false
+    },
+    {
+      "case": "c05-second-ephemeral-uid-zero",
+      "expected": "DENY",
+      "policy": "l4-ephemeral-nonroot",
+      "exitCode": 1,
+      "passed": false
+    },
+    {
+      "case": "c05-second-ephemeral-privileged",
+      "expected": "DENY",
+      "policy": "l4-ephemeral-privileged",
+      "exitCode": 1,
+      "passed": false
+    },
+    {
+      "case": "c05-second-ephemeral-resources-api",
+      "expected": "API_REJECT",
+      "policy": null,
+      "exitCode": 1,
+      "passed": false
+    },
+    {
+      "case": "c05-second-resize-conforme",
+      "expected": "ACCEPT",
+      "policy": null,
+      "exitCode": 1,
+      "passed": false
+    },
+    {
+      "case": "c05-second-resize-missing-memory",
+      "expected": "DENY",
+      "policy": "l4-resize-resources",
+      "exitCode": 1,
+      "passed": false
+    },
+    {
+      "case": "real-latest",
+      "expected": "DENY",
+      "policy": "l4-deny-latest-images",
+      "exitCode": 1,
+      "passed": true
+    },
+    {
+      "case": "real-resources",
+      "expected": "DENY",
+      "policy": "l4-require-container-resources",
+      "exitCode": 1,
+      "passed": true
+    },
+    {
+      "case": "real-root",
+      "expected": "DENY",
+      "policy": "l4-disallow-root-containers",
+      "exitCode": 1,
+      "passed": true
+    },
+    {
+      "case": "real-privileged",
+      "expected": "DENY",
+      "policy": "l4-disallow-privileged-containers",
+      "exitCode": 1,
+      "passed": true
+    }
+  ],
+  "cleanup": true,
+  "passed": 60,
+  "total": 87
+}

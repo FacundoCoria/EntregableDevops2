@@ -1,0 +1,414 @@
+{
+  "containers": [
+    {
+      "Id": "6d12e325cd57cc46f099b3dac4c388ea985b9fe67df932f203a3a0aac8318c21",
+      "Name": "/l4-c01-agent-1",
+      "Image": "sha256:1a9cd13eeff7dc0550a7aab614a16b8ded1464baee430d0b20bd45ac01c998be",
+      "RestartCount": 0,
+      "Mounts": [
+        {
+          "Type": "volume",
+          "Name": "l4-c01_docker-client-certs",
+          "Source": "l4-c01_docker-client-certs",
+          "Destination": "/certs/client",
+          "Driver": "local",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": ""
+        },
+        {
+          "Type": "volume",
+          "Name": "l4-c01_agent-secret",
+          "Source": "l4-c01_agent-secret",
+          "Destination": "/run/l4-agent",
+          "Driver": "local",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": ""
+        },
+        {
+          "Type": "volume",
+          "Name": "l4-c01_agent-home",
+          "Source": "l4-c01_agent-home",
+          "Destination": "/var/jenkins_home",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        }
+      ],
+      "running": true,
+      "status": "running",
+      "networks": [
+        "l4-c01_builds",
+        "l4-c01_control"
+      ]
+    },
+    {
+      "Id": "9386ea420b416d875c1a1d16ccd4702ea0333b62736c4be1605590643fbeaeda",
+      "Name": "/l4-c01-repro-agent-1",
+      "Image": "sha256:1a9cd13eeff7dc0550a7aab614a16b8ded1464baee430d0b20bd45ac01c998be",
+      "RestartCount": 0,
+      "Mounts": [
+        {
+          "Type": "volume",
+          "Name": "l4-c01-repro_agent-secret",
+          "Source": "l4-c01-repro_agent-secret",
+          "Destination": "/run/l4-agent",
+          "Driver": "local",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": ""
+        },
+        {
+          "Type": "volume",
+          "Name": "l4-c01-repro_agent-home",
+          "Source": "l4-c01-repro_agent-home",
+          "Destination": "/var/jenkins_home",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        },
+        {
+          "Type": "volume",
+          "Name": "l4-c01-repro_docker-client-certs",
+          "Source": "l4-c01-repro_docker-client-certs",
+          "Destination": "/certs/client",
+          "Driver": "local",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": ""
+        }
+      ],
+      "running": false,
+      "status": "exited",
+      "networks": [
+        "l4-c01-repro_builds",
+        "l4-c01-repro_control"
+      ]
+    },
+    {
+      "Id": "e0fca6431c8e8e732fb8ac1db5bf0223c0657541d6922d10c298abbcc9d6c826",
+      "Name": "/l4-c01-repro-controller-1",
+      "Image": "sha256:fab01bd4b4cedd727aba1760879227e561d1268999a13ce6c0248c2112b99699",
+      "RestartCount": 0,
+      "Mounts": [
+        {
+          "Type": "volume",
+          "Name": "l4-c01-repro_agent-secret",
+          "Source": "l4-c01-repro_agent-secret",
+          "Destination": "/run/l4-agent",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        },
+        {
+          "Type": "bind",
+          "Source": "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\ci\\jenkins\\.local\\admin-password.txt",
+          "Destination": "/run/secrets/admin_password",
+          "Mode": "",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "volume",
+          "Name": "l4-c01-repro_controller-home",
+          "Source": "l4-c01-repro_controller-home",
+          "Destination": "/var/jenkins_home",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        }
+      ],
+      "running": false,
+      "status": "exited",
+      "networks": [
+        "l4-c01-repro_control"
+      ]
+    },
+    {
+      "Id": "934e6d2e5e5504f516c770161162e15ef876ecb05001d830dbed15b360dbb83a",
+      "Name": "/l4-c01-repro-docker-1",
+      "Image": "sha256:6acc6aaf783ac1c1100822e542534c3dab3f1d38782760b0bdcb688280574d9e",
+      "RestartCount": 0,
+      "Mounts": [
+        {
+          "Type": "volume",
+          "Name": "l4-c01-repro_docker-data",
+          "Source": "l4-c01-repro_docker-data",
+          "Destination": "/var/lib/docker",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        },
+        {
+          "Type": "volume",
+          "Name": "l4-c01-repro_docker-client-certs",
+          "Source": "l4-c01-repro_docker-client-certs",
+          "Destination": "/certs/client",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        }
+      ],
+      "running": false,
+      "status": "exited",
+      "networks": [
+        "l4-c01-repro_builds"
+      ]
+    },
+    {
+      "Id": "59ebd7aae9c82a0252f1743200c85fbc5a478cbbe49861a24d320d382c49e252",
+      "Name": "/l4-c01-controller-1",
+      "Image": "sha256:fab01bd4b4cedd727aba1760879227e561d1268999a13ce6c0248c2112b99699",
+      "RestartCount": 0,
+      "Mounts": [
+        {
+          "Type": "bind",
+          "Source": "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\ci\\jenkins\\.local\\admin-password.txt",
+          "Destination": "/run/secrets/admin_password",
+          "Mode": "",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "volume",
+          "Name": "l4-c01_controller-home",
+          "Source": "l4-c01_controller-home",
+          "Destination": "/var/jenkins_home",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        },
+        {
+          "Type": "volume",
+          "Name": "l4-c01_agent-secret",
+          "Source": "l4-c01_agent-secret",
+          "Destination": "/run/l4-agent",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        }
+      ],
+      "running": true,
+      "status": "running",
+      "networks": [
+        "l4-c01_control"
+      ]
+    },
+    {
+      "Id": "2e542afc89b52b28d620cfc6016ffbe452880c0e5c4070a26690c70ea77ea4ec",
+      "Name": "/l4-c01-docker-1",
+      "Image": "sha256:6acc6aaf783ac1c1100822e542534c3dab3f1d38782760b0bdcb688280574d9e",
+      "RestartCount": 0,
+      "Mounts": [
+        {
+          "Type": "volume",
+          "Name": "l4-c01_docker-client-certs",
+          "Source": "l4-c01_docker-client-certs",
+          "Destination": "/certs/client",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        },
+        {
+          "Type": "volume",
+          "Name": "l4-c01_docker-data",
+          "Source": "l4-c01_docker-data",
+          "Destination": "/var/lib/docker",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        }
+      ],
+      "running": true,
+      "status": "running",
+      "networks": [
+        "l4-c01_builds"
+      ]
+    },
+    {
+      "Id": "7690d885867971acedb3dd67284004638376fc769c4c4cd7e745a1bd236e5fd2",
+      "Name": "/ejerciciolaboratorio-main-front-1",
+      "Image": "sha256:8e570e965a489561871a47ae038a063806f50f610643aee1ce79d52346f3c278",
+      "RestartCount": 0,
+      "Mounts": [],
+      "running": false,
+      "status": "exited",
+      "networks": [
+        "ejerciciolaboratorio-main_default"
+      ]
+    },
+    {
+      "Id": "22f7b04fecda87ef285c199a8dd78e435dd5c5c55ba3b0cc6fba7953ec4e853a",
+      "Name": "/ejerciciolaboratorio-main-back-1",
+      "Image": "sha256:c3a36ab5455eab1424613067ba844e4948ae428f548e0095eae9592f6a239f41",
+      "RestartCount": 0,
+      "Mounts": [
+        {
+          "Type": "volume",
+          "Name": "ejerciciolaboratorio-main_labdata",
+          "Source": "/var/lib/docker/volumes/ejerciciolaboratorio-main_labdata/_data",
+          "Destination": "/data",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        }
+      ],
+      "running": false,
+      "status": "exited",
+      "networks": [
+        "ejerciciolaboratorio-main_default"
+      ]
+    },
+    {
+      "Id": "d83d1c0334e908d546eb19de7c0ba813f9491ef056aa4281a343b4cf14c6065e",
+      "Name": "/lab-inventario-app-1",
+      "Image": "sha256:cd29be188c4ebec11769d10c4853c7c7d57ef9dc12026da8398ed439fad9582c",
+      "RestartCount": 0,
+      "Mounts": [
+        {
+          "Type": "volume",
+          "Name": "lab-inventario_labdata",
+          "Source": "/var/lib/docker/volumes/lab-inventario_labdata/_data",
+          "Destination": "/data",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        }
+      ],
+      "running": false,
+      "status": "exited",
+      "networks": [
+        "lab-inventario_default"
+      ]
+    },
+    {
+      "Id": "d70aedf9e47bc8b601013fc6d0ed899fdccc9781e435ed565e61a737e7c7f7ab",
+      "Name": "/jenkins",
+      "Image": "sha256:99ea0037369f4639f495e5646bfef6b1820aa1b714a95b0e23e2edea1da76702",
+      "RestartCount": 0,
+      "Mounts": [
+        {
+          "Type": "volume",
+          "Name": "00-setup_jenkins_home",
+          "Source": "00-setup_jenkins_home",
+          "Destination": "/var/jenkins_home",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        },
+        {
+          "Type": "bind",
+          "Source": "/var/run/docker.sock",
+          "Destination": "/var/run/docker.sock",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": "rprivate"
+        }
+      ],
+      "running": true,
+      "status": "running",
+      "networks": [
+        "jenkins_net",
+        "minikube"
+      ]
+    },
+    {
+      "Id": "027f3527b417bf148d9136ad2bf37257d461e49d82bc215ee9f39a469872a70a",
+      "Name": "/minikube",
+      "Image": "sha256:4a1c825b61479e6c898851ea66f13c620aaeab6002746e95067fc2c4b38a0b24",
+      "RestartCount": 0,
+      "Mounts": [
+        {
+          "Type": "volume",
+          "Name": "minikube",
+          "Source": "/var/lib/docker/volumes/minikube/_data",
+          "Destination": "/var",
+          "Driver": "local",
+          "Mode": "z",
+          "RW": true,
+          "Propagation": ""
+        },
+        {
+          "Type": "bind",
+          "Source": "/lib/modules",
+          "Destination": "/lib/modules",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        }
+      ],
+      "running": false,
+      "status": "exited",
+      "networks": [
+        "minikube"
+      ]
+    },
+    {
+      "Id": "565a762008c0e481e64dd76f99438f9942c21a2fc0372eb2d5aa54ef71ef6310",
+      "Name": "/DenTech-n8n",
+      "Image": "sha256:53004142b0e93de1e9e31943e601ed9bd4b24ca82a307864ccadf1820b627e5e",
+      "RestartCount": 0,
+      "Mounts": [
+        {
+          "Type": "bind",
+          "Source": "C:\\Users\\Bruno\\Desktop\\n8n-data",
+          "Destination": "/home/node/.n8n",
+          "Mode": "",
+          "RW": true,
+          "Propagation": "rprivate"
+        }
+      ],
+      "running": false,
+      "status": "exited",
+      "networks": []
+    }
+  ],
+  "volumes": [
+    "00-setup_jenkins_home",
+    "ejerciciolaboratorio-main_labdata",
+    "entregable3-trivy-cache",
+    "l4-c01-repro_agent-home",
+    "l4-c01-repro_agent-secret",
+    "l4-c01-repro_controller-home",
+    "l4-c01-repro_docker-client-certs",
+    "l4-c01-repro_docker-data",
+    "l4-c01_agent-home",
+    "l4-c01_agent-secret",
+    "l4-c01_controller-home",
+    "l4-c01_docker-client-certs",
+    "l4-c01_docker-data",
+    "lab-inventario_labdata",
+    "minikube",
+    "self-hosted-ai-starter-kit_n8n_storage",
+    "self-hosted-ai-starter-kit_ollama_storage",
+    "self-hosted-ai-starter-kit_postgres_storage",
+    "self-hosted-ai-starter-kit_qdrant_storage"
+  ],
+  "networks": [
+    "bridge",
+    "ejerciciolaboratorio-main_default",
+    "host",
+    "jenkins_net",
+    "l4-c01-repro_builds",
+    "l4-c01-repro_control",
+    "l4-c01_builds",
+    "l4-c01_control",
+    "lab-inventario_default",
+    "minikube",
+    "none"
+  ]
+}

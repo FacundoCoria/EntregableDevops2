@@ -2,6 +2,7 @@
 *.sh text eol=lf
 *.py text eol=lf
 Jenkinsfile* text eol=lf
+/ci/jenkins/** text eol=lf
 # Original evidence keeps its exact bytes and recorded SHA256.
 /reports/** -text -whitespace
 /pedidos-api/pedidos-api/reports/** -text -whitespace

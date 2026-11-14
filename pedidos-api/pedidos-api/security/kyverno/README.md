@@ -1,10 +1,64 @@
-# Kyverno — L4-07
+# Kyverno — ampliación C05
+
+**14/11/2026: variante local C05 implementada y probada en clúster descartable.**
+Bruno eligió ampliar y probar aislado. `policies.yaml` contiene siete
+ValidatingPolicy: cuatro objetivos sobre Pods y tres reglas sobre el subrecurso
+`pods/ephemeralcontainers`. Sin commit/push. El principal no recibió esta variante;
+conserva el antecedente L4-07 de cuatro políticas para `laboratorio4`.
+
+- Se rechaza `latest` también antes de `@sha256:...`. Se admite tag explícito
+  distinto de latest o digest SHA256 de 64 caracteres hexadecimales; no verifica
+  firma, procedencia ni existencia de la imagen.
+- Se cubren namespaces de aplicaciones, incluidos `default` y espacios nuevos
+  sin etiqueta opt-in. Se exceptúan expresamente `kube-system`, `kube-public`,
+  `kube-node-lease`, `kyverno` y `falco`. **Conformidad literal global parcial**:
+  la aceptación docente de estas excepciones queda pendiente C05-A.
+- Contenedores normales e init, incluidos sidecars nativos: imagen, recursos,
+  no root y no privileged. Se conserva la autogeneración para controladores;
+  Deployment conforme y cuatro rechazos comprobados.
+- Contenedores efímeros: imagen, no root y no privileged mediante tres reglas
+  separadas. Kubernetes prohíbe sus recursos propios. En `pods/resize`, la API
+  admitió un cambio válido y rechazó retirar límites; ese rechazo no es Kyverno.
+- Candidato v1.20.0-rc.4/chart 3.10.0-rc.4 y una réplica conservados para aislar
+  esta corrección; actualización/HA son mejoras separadas. No afirmar estabilidad
+  productiva ni cobertura retroactiva/universal. No se cubren Pods estáticos
+  fuera de admisión ni se ensaya cada subrecurso posible de Kubernetes.
+
+[Alcance, excepciones y reproducción C05](../../../../reports/l4-c05/ALCANCE.md),
+[verificación](../../../../reports/l4-c05/VERIFICACION.md) y
+[JSON consolidado](../../../../reports/l4-c05/verificacion.json).
+90 casos distintos con resultado esperado: 60 del primer pase y 30 finales de
+subrecursos, con procedencia por caso. Intentos fallidos separados y preservados.
+Incluye siete rechazos reales (cuatro creates y tres updates efímeros). Los
+fixtures conformes fueron Pods sin ejecución; el chart de 16 recursos pasó
+server dry-run. No equivale a ejecución de la aplicación ni al integral C07.
+
+Para repetir, usar el perfil nuevo/descartable `minikube-l4-c05`, nunca el
+principal, y una carpeta de resultados nueva. El verificador Python 3 usa solo
+la biblioteca estándar y no instala políticas ni servicios:
+
+```powershell
+python pedidos-api/pedidos-api/scripts/verify-kyverno-c05.py --report-dir reports/c05-nueva-ejecucion
+```
+
+La preparación completa está en el alcance enlazado. La ejecución final completa
+espera 90 resultados; esta sesión consolidó los grupos sin repetir 60 pruebas
+ya válidas. El log original `reports/kyverno-validation.log` sigue intacto y
+la nueva evidencia está en `reports/l4-c05/`. C09 mantiene el informe/publicación;
+C07 mantiene la aplicación al destino final. E3 pausado.
+
+## Antecedente L4-07 — estado del 11/11/2026
+
+**Todo lo siguiente describe la implementación anterior, no la variante C05.**
+Sus pruebas y límites se conservan para comparación. La entrega previa fue
+publicada posteriormente en trabajo-integrador-4/50a0eb5 el 13/11; las referencias
+a archivos locales sin publicar corresponden al momento original de L4-07.
 
 Implementación local comprobada el 11/11/2026: Kubernetes 1.37.0,
 Kyverno v1.20.0-rc.4, chart 3.10.0-rc.4. Es un candidato de lanzamiento,
 instalación de laboratorio de una réplica, sin alta disponibilidad.
 
-## Políticas vigentes
+### Políticas probadas en L4-07
 
 `policies.yaml` contiene cuatro `policies.kyverno.io/v1 ValidatingPolicy` con
 `validationActions: [Deny]` y `failurePolicy: Fail`:

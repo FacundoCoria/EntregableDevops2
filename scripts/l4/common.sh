@@ -11,7 +11,7 @@ py() { "$PYTHON" "$@"; }
 fail() { echo "ERROR: $*" >&2; exit 1; }
 need() { command -v "$1" >/dev/null || fail "Falta $1 en PATH"; }
 scope() {
-  [[ "$CONTEXT" == minikube || "$CONTEXT" == minikube-l4-b04 ]] || fail 'Solo se admite minikube o minikube-l4-b04'
+  [[ "$CONTEXT" == minikube || "$CONTEXT" == minikube-l4-b04 || "$CONTEXT" == minikube-l4-c07 ]] || fail 'Contexto fuera de los perfiles del laboratorio'
   [[ "$NS" == laboratorio4 || "$NS" =~ ^laboratorio4-l4test[a-z0-9-]*$ ]] || fail 'Namespace fuera del laboratorio'
   [[ "$RELEASE" =~ ^l4(-[a-z0-9]+)*$ && ${#RELEASE} -le 25 ]] || fail 'Release inválido (l4 o l4-..., máximo 25 caracteres)'
 }

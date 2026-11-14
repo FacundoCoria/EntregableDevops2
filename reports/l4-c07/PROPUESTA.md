@@ -1,0 +1,128 @@
+> Acuerdo posterior de Bruno, 14/11/2026: ciclo completo autorizado,
+> con cambios GitHub exclusivamente en **trabajo-integrador-4**, conservando
+> main. Verificar fuentes oficiales de descargas. La rama nueva sugerida abajo
+> queda sustituida; el resto describe la propuesta de referencia.
+
+# C07 â€” fuente y ejecuciÃ³n integral propuestas
+
+14/11/2026, Uruguay. **PreparaciÃ³n documental; pendiente de acuerdo de Bruno.**
+No es evidencia de ejecuciÃ³n ni de reproducciÃ³n integral completada.
+
+## Fuente concreta
+
+- Repositorio: `https://github.com/FacundoCoria/EntregableDevops2.git`.
+- Base local comprobada: rama `lab4/c01-jenkins-reproducible`, HEAD
+  `50a0eb53e7a1152fbe0e4f26252fac2380403fc3`, con cambios C01â€“C06 sin commit.
+- Consulta remota de esta sesiÃ³n: `trabajo-integrador-4` sigue en `50a0eb5`,
+  `main` en `ee6bc9333506ddaec1ecb3803bdb812eda0a94ff`.
+  `lab4/c01-jenkins-reproducible` y `lab4/c07-integral-final` no aparecen
+  en la consulta de heads. No se hizo fetch, pull ni integraciÃ³n.
+- Propuesta: crear **`lab4/c07-integral-final`** desde el trabajo local actual,
+  incorporar C01â€“C06 y los ajustes C07 descritos abajo, revisar archivos/secretos
+  y publicar un commit candidato. No integrar main ni `mÃ©tricas-nuevas`.
+- Verificar despuÃ©s un clon limpio contra ese commit, con inventario/hash de
+  archivos; instalar y ejecutar desde el clon. Registrar el SHA real una vez
+  creado: todavÃ­a no existe un commit C07 ni se inventa su identificador.
+- Usar el mismo SHA completo en SCM del trabajo y en `SOURCE_REF` del build.
+  Comprobar Jenkinsfile y cÃ³digo de aplicaciÃ³n; no confundir la rama de revisiÃ³n
+  con una fuente acadÃ©mica final aceptada por el compaÃ±ero (C08 pendiente).
+
+## Destino y publicaciÃ³n propuestos
+
+| Elemento | Destino propuesto |
+|---|---|
+| Jenkins nuevo | Proyecto Compose `l4-c07`, puerto local `18083`, volÃºmenes propios |
+| Trabajo | `L4-integral`, solo en ese Jenkins nuevo, iniciado por Bruno |
+| Perfil/contexto Kubernetes | `minikube-l4-c07`, nuevo y con identidad registrada |
+| Namespace / release | `laboratorio4` / `l4` dentro de ese perfil |
+| Chart | `pedidos-api/pedidos-api/helm-chart`, versiÃ³n local 0.3.0 |
+| Nodo observado | `minikube-l4-c07`, pasado explÃ­citamente al chart |
+| Registro | `brunovitola/pedidos-api-l4`, sujeto a credencial de Bruno |
+| Tag | Ãšnico para C07 y cada intento, con build y SHA; evitar colisiÃ³n con #1 de otros Jenkins |
+| Evidencias | `reports/l4-c07/`, subcarpeta nueva por intento |
+
+La imagen se construirÃ¡ de nuevo desde el commit publicado; no se presentarÃ¡
+el ID local C06 como digest publicado. Guardar tag, digest remoto, configuraciÃ³n
+y digest efectivo desplegado. Propuesta: desplegar por digest tras el push.
+La limpieza local conservarÃ¡ la rama y la imagen remotas como evidencia;
+no se propone borrar tags remotos ni infraestructura previa.
+
+## Ajustes necesarios antes de publicar el candidato
+
+La inspecciÃ³n de archivos identificÃ³ estos puntos; **todavÃ­a no implementados**:
+
+1. `Jenkinsfile`: defaults B05 y tag basado solo en build/SHA. Preparar defaults
+   de candidato, tag C07 Ãºnico y publicaciÃ³n/despliegue con identidad verificable.
+   Mantener gate Snyk real: error o crÃ­ticos impiden continuar.
+2. `ci/deploy.sh`: namespace/release/nombres estÃ¡n fijados y el nodo queda en
+   `minikube` por defecto. Hacer explÃ­cito el destino C07 y comprobarlo antes de
+   mutar; pasar `observability.nodeName` y registrar la identidad desplegada.
+3. `ci/jenkins/connect-kubernetes.ps1`: selecciona Compose sin parÃ¡metro de
+   proyecto. AÃ±adir selecciÃ³n explÃ­cita de `l4-c07`, red/API del perfil nuevo,
+   token de 24 h y pruebas de permisos, sin tocar al agente C01.
+4. `ci/jenkins/init.groovy`: el integral nace deshabilitado en `50a0eb5`.
+   Preparar la fuente candidata para instalaciones nuevas; Bruno fijarÃ¡ el SHA
+   publicado en el formulario/SCM antes del primer build. El init conserva jobs
+   existentes: modificar el archivo no actualiza automÃ¡ticamente esos trabajos.
+5. `scripts/l4/common.sh` y `sandbox.sh`: admiten perfiles principal/B04, y
+   sandbox fija B04. Incorporar C07 con comprobaciones de propiedad y sin
+   reutilizar/sobrescribir el marcador histÃ³rico B04. Separar instalaciÃ³n de
+   seguridad/permisos de la instalaciÃ³n de la API que realizarÃ¡ el pipeline.
+6. El chart crea ClusterRole/ClusterRoleBinding de monitoreo, mientras el rol
+   Jenkins solo puede leerlos por nombre. Preparar **solo ese RBAC de monitoreo**
+   desde el chart final con la cuenta local administradora en el perfil C07;
+   comprobar nombres, ownership Helm y nodo. No dar permiso global de creaciÃ³n
+   de roles a Jenkins para sortear el problema.
+7. Verificar scripts/render/Compose y exclusiones Git/Docker. Revisar secretos,
+   copias privadas y archivos grandes antes del commit/push; `.local/` excluido.
+   No convertir auxiliares externos de sesiÃ³n en requisitos del clon entregado.
+
+## Secuencia y condiciones de cierre
+
+1. Tras el acuerdo, implementar y verificar los ajustes anteriores, revisar el
+   candidato y publicar la rama acordada. Cotejar un clon limpio y registrar SHA.
+2. Inventariar recursos previos. Crear perfil y Jenkins nuevos desde el clon,
+   registrar identidades y versiones; instalar Kyverno C05 y Falco en ese perfil.
+   Preparar namespace y RBAC de monitoreo antes del despliegue por Jenkins.
+3. Bruno entra a Jenkins `http://localhost:18083`, inicia sesiÃ³n y crea las
+   credenciales `l4-snyk-token` y `l4-dockerhub`. Guiar cada acciÃ³n en el momento
+   necesario; no copiar credenciales del curso/C01 ni operarlas por interfaz.
+   El agente prepara por comandos la conexiÃ³n limitada al perfil nuevo.
+4. Bruno fija SCM y parÃ¡metros al SHA candidato, habilita el trabajo y lo inicia.
+   Cotejar parÃ¡metros efectivos y commit; Semgrep â†’ Snyk/gate â†’ Maven â†’ build/
+   push â†’ Helm. Guardar intentos fallidos aparte y no ocultar hallazgos.
+5. Comprobar API y trÃ¡fico con datos exclusivos C07, mÃ©tricas/targets y seis
+   paneles; Bruno realiza la comprobaciÃ³n visual guiada. Verificar polÃ­ticas
+   C05 operativas y salud de Falco; reutilizar las pruebas de seguridad previas
+   que no hayan cambiado, sin atribuirles una ejecuciÃ³n nueva.
+6. Analizar con Trivy la imagen efectivamente publicada; si difiere de C06,
+   comparar alcance/catÃ¡logo y residuales. Snyk sigue enviando metadatos al
+   servicio externo segÃºn la autorizaciÃ³n previa C06. No afirmar cero global.
+7. Reiniciar en frÃ­o los destinos propios, comprobar historial Jenkins, datos
+   H2, servicios y observabilidad; renovar conexiÃ³n/red solo si corresponde.
+8. Guardar artefactos y retirar Ãºnicamente los recursos nuevos identificados
+   de C07 (tÃºneles, perfil y proyecto/volÃºmenes de ensayo). Antes de borrar,
+   cotejar propiedad/IDs. Verificar conservaciÃ³n de los recursos anteriores.
+9. Handoff y registros con resultados reales. El commit ensayado queda fijo;
+   evidencias posteriores y coherencia del README/informe se publican mediante
+   el alcance C09, sin mover silenciosamente la fuente declarada del ensayo.
+
+## LÃ­mites y evidencia de esta preparaciÃ³n
+
+Consulta Docker en vivo: doce contenedores; C01 controlador/agente/DinD activos,
+controlador saludable; `jenkins` del curso activo; `minikube` detenido. Los tres
+contenedores C01-repro y los otros cinco contenedores estÃ¡n detenidos.
+No se arrancÃ³/detuvo ningÃºn servicio. La primera consulta Docker sin elevaciÃ³n
+fallÃ³ por permisos; la consulta de lectura posterior obtuvo el inventario.
+
+C06 conserva, segÃºn evidencia del 14/11, JAXB HIGH mitigado sin parche acreditado
+y 17 MEDIUM/16 LOW Ubuntu sin fix informado en ese scan. **No se volviÃ³ a
+consultar proveedores ni a escanear en esta preparaciÃ³n.** C06-R1/R2 deben
+reevaluarse con el candidato antes de declarar el ciclo concluido; no quedan
+cerrados por este plan. C04-A/C05-A aceptaciÃ³n acadÃ©mica y C08 revisiÃ³n/merge
+siguen pendientes. No equivalen a una prohibiciÃ³n tÃ©cnica de ensayo aislado.
+
+El acuerdo solicitado comprende ajustes locales, commit/push del candidato,
+creaciÃ³n de recursos C07, controles, publicaciÃ³n de imagen, despliegue,
+reinicio y limpieza exclusiva del ensayo. No incluye redacciÃ³n del informe,
+merge, contacto con terceros ni modificaciÃ³n del entorno principal.

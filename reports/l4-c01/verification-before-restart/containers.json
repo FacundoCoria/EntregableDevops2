@@ -1,0 +1,136 @@
+[
+  {
+    "networks": [
+      "l4-c01_control"
+    ],
+    "id": "59ebd7aae9c82a0252f1743200c85fbc5a478cbbe49861a24d320d382c49e252",
+    "service": "controller",
+    "mounts": [
+      {
+        "Type": "volume",
+        "Name": "l4-c01_agent-secret",
+        "Source": "l4-c01_agent-secret",
+        "Destination": "/run/l4-agent",
+        "Driver": "local",
+        "Mode": "rw",
+        "RW": true,
+        "Propagation": ""
+      },
+      {
+        "Type": "volume",
+        "Name": "l4-c01_controller-home",
+        "Source": "l4-c01_controller-home",
+        "Destination": "/var/jenkins_home",
+        "Driver": "local",
+        "Mode": "rw",
+        "RW": true,
+        "Propagation": ""
+      },
+      {
+        "Type": "bind",
+        "Source": "C:\\Users\\Bruno\\PARA System\\1- Projects\\Entregable 3 - Devops\\EntregableDevops2\\ci\\jenkins\\.local\\admin-password.txt",
+        "Destination": "/run/secrets/admin_password",
+        "Mode": "",
+        "RW": false,
+        "Propagation": "rprivate"
+      }
+    ],
+    "privileged": false,
+    "ports": {
+      "8080/tcp": [
+        {
+          "HostIp": "127.0.0.1",
+          "HostPort": "18080"
+        }
+      ]
+    },
+    "user": "1000:1000",
+    "restartCount": 0,
+    "image": "sha256:fab01bd4b4cedd727aba1760879227e561d1268999a13ce6c0248c2112b99699"
+  },
+  {
+    "networks": [
+      "l4-c01_builds",
+      "l4-c01_control"
+    ],
+    "id": "8fd1c54a1b08287d8ad403bbcf75f87e00917db0f03361a6adcb37ef02aa1669",
+    "service": "agent",
+    "mounts": [
+      {
+        "Type": "volume",
+        "Name": "l4-c01_docker-client-certs",
+        "Source": "l4-c01_docker-client-certs",
+        "Destination": "/certs/client",
+        "Driver": "local",
+        "Mode": "ro",
+        "RW": false,
+        "Propagation": ""
+      },
+      {
+        "Type": "volume",
+        "Name": "l4-c01_agent-home",
+        "Source": "l4-c01_agent-home",
+        "Destination": "/var/jenkins_home",
+        "Driver": "local",
+        "Mode": "rw",
+        "RW": true,
+        "Propagation": ""
+      },
+      {
+        "Type": "volume",
+        "Name": "l4-c01_agent-secret",
+        "Source": "l4-c01_agent-secret",
+        "Destination": "/run/l4-agent",
+        "Driver": "local",
+        "Mode": "ro",
+        "RW": false,
+        "Propagation": ""
+      }
+    ],
+    "privileged": false,
+    "ports": {
+      "50000/tcp": null,
+      "8080/tcp": null
+    },
+    "user": "1000:1000",
+    "restartCount": 0,
+    "image": "sha256:2812eea0a0852edb18b67265cbf4fac06b3bb2b788647264e50e044ad356f5e1"
+  },
+  {
+    "networks": [
+      "l4-c01_builds"
+    ],
+    "id": "2e542afc89b52b28d620cfc6016ffbe452880c0e5c4070a26690c70ea77ea4ec",
+    "service": "docker",
+    "mounts": [
+      {
+        "Type": "volume",
+        "Name": "l4-c01_docker-data",
+        "Source": "l4-c01_docker-data",
+        "Destination": "/var/lib/docker",
+        "Driver": "local",
+        "Mode": "rw",
+        "RW": true,
+        "Propagation": ""
+      },
+      {
+        "Type": "volume",
+        "Name": "l4-c01_docker-client-certs",
+        "Source": "l4-c01_docker-client-certs",
+        "Destination": "/certs/client",
+        "Driver": "local",
+        "Mode": "rw",
+        "RW": true,
+        "Propagation": ""
+      }
+    ],
+    "privileged": true,
+    "ports": {
+      "2375/tcp": null,
+      "2376/tcp": null
+    },
+    "user": "",
+    "restartCount": 0,
+    "image": "sha256:6acc6aaf783ac1c1100822e542534c3dab3f1d38782760b0bdcb688280574d9e"
+  }
+]

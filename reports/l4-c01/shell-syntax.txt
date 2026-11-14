@@ -1,0 +1,4 @@
+PASS sh -n agent-entrypoint.sh
+PASS sh -n start.sh
+PASS sh -n test-versions.sh
+PASS sh -n bootstrap-tools.sh

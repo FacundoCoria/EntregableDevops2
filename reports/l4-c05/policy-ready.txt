@@ -1,0 +1,8 @@
+validatingpolicy.policies.kyverno.io/l4-deny-latest-images condition met
+validatingpolicy.policies.kyverno.io/l4-require-container-resources condition met
+validatingpolicy.policies.kyverno.io/l4-disallow-root-containers condition met
+validatingpolicy.policies.kyverno.io/l4-disallow-privileged-containers condition met
+validatingpolicy.policies.kyverno.io/l4-ephemeral-images condition met
+validatingpolicy.policies.kyverno.io/l4-ephemeral-nonroot condition met
+validatingpolicy.policies.kyverno.io/l4-ephemeral-privileged condition met
+validatingpolicy.policies.kyverno.io/l4-resize-resources condition met

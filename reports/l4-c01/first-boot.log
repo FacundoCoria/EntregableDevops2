@@ -1,0 +1,43 @@
+controller-1  | Running from: /usr/share/jenkins/jenkins.war
+controller-1  | webroot: /var/jenkins_home/war
+controller-1  | 2026-11-13 18:50:25.454+0000 [id=1]	INFO	winstone.Logger#logInternal: Beginning extraction from war file
+controller-1  | 2026-11-13 18:50:26.082+0000 [id=1]	WARNING	o.e.j.ee9.nested.ContextHandler#setContextPath: Empty contextPath
+controller-1  | 2026-11-13 18:50:26.151+0000 [id=1]	INFO	org.eclipse.jetty.server.Server#doStart: jetty-12.1.14; built: 2026-10-02T05:48:05.032Z; git: 15cecbd757a2f6b0fdc6a8944f4c6d0020b17da0; jvm 21.0.13+9-LTS
+controller-1  | 2026-11-13 18:50:26.591+0000 [id=1]	INFO	o.e.j.e.w.StandardDescriptorProcessor#visitServlet: NO JSP Support for /, did not find org.eclipse.jetty.ee9.jsp.JettyJspServlet
+controller-1  | 2026-11-13 18:50:26.656+0000 [id=1]	INFO	o.e.j.s.DefaultSessionIdManager#doStart: Session workerName=node0
+controller-1  | 2026-11-13 18:50:27.101+0000 [id=1]	INFO	hudson.WebAppMain#contextInitialized: Jenkins home directory: /var/jenkins_home found at: EnvVars.masterEnvVars.get("JENKINS_HOME")
+agent-1       | Nov 13, 2026 6:50:34 PM org.jenkinsci.remoting.engine.WorkDirManager initializeWorkDir
+agent-1       | INFO: Using /var/jenkins_home/remoting as a remoting work directory
+controller-1  | 2026-11-13 18:50:27.203+0000 [id=1]	INFO	o.e.j.s.handler.ContextHandler#doStart: Started oeje9n.ContextHandler$CoreContextHandler@12d1f1d4{Jenkins v2.580.2,/,b=file:///var/jenkins_home/war/,a=AVAILABLE,h=oeje9n.ContextHandler$CoreContextHandler$CoreToNestedHandler@75fa1be3{STARTED}}
+controller-1  | 2026-11-13 18:50:27.212+0000 [id=1]	INFO	o.e.j.server.AbstractConnector#doStart: Started oejs.ServerConnector@5defb406{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+controller-1  | 2026-11-13 18:50:27.213+0000 [id=1]	INFO	org.eclipse.jetty.server.Server#doStart: Started oejs.Server@706fe5c6{STARTING}[12.1.14,sto=0] @1064ms
+controller-1  | 2026-11-13 18:50:27.214+0000 [id=43]	INFO	winstone.Logger#logInternal: Winstone Servlet Engine running: controlPort=disabled
+agent-1       | Nov 13, 2026 6:50:34 PM org.jenkinsci.remoting.engine.WorkDirManager setupLogging
+agent-1       | INFO: Both error and output logs will be printed to /var/jenkins_home/remoting
+controller-1  | 2026-11-13 18:50:27.328+0000 [id=42]	INFO	jenkins.model.Jenkins#<init>: Starting version 2.580.2
+agent-1       | Nov 13, 2026 6:50:34 PM hudson.remoting.Launcher createEngine
+controller-1  | 2026-11-13 18:50:27.410+0000 [id=51]	INFO	jenkins.InitReactorRunner$1#onAttained: Started initialization
+controller-1  | 2026-11-13 18:50:29.253+0000 [id=53]	INFO	jenkins.InitReactorRunner$1#onAttained: Listed all plugins
+agent-1       | INFO: Setting up agent: l4-agent
+agent-1       | Nov 13, 2026 6:50:34 PM hudson.remoting.Engine startEngine
+agent-1       | INFO: Using Remoting version: 3386.v353e57a_1b_ea_0
+controller-1  | 2026-11-13 18:50:31.418+0000 [id=63]	INFO	jenkins.InitReactorRunner$1#onAttained: Prepared all plugins
+controller-1  | 2026-11-13 18:50:31.430+0000 [id=71]	INFO	jenkins.InitReactorRunner$1#onAttained: Started all plugins
+agent-1       | Nov 13, 2026 6:50:34 PM org.jenkinsci.remoting.engine.WorkDirManager initializeWorkDir
+controller-1  | 2026-11-13 18:50:31.432+0000 [id=57]	INFO	jenkins.InitReactorRunner$1#onAttained: Augmented all extensions
+agent-1       | INFO: Using /var/jenkins_home/remoting as a remoting work directory
+controller-1  | 2026-11-13 18:50:32.235+0000 [id=59]	INFO	jenkins.InitReactorRunner$1#onAttained: System config loaded
+agent-1       | Nov 13, 2026 6:50:34 PM hudson.remoting.Launcher$CuiListener status
+agent-1       | INFO: WebSocket connection open
+agent-1       | Nov 13, 2026 6:50:34 PM hudson.remoting.Launcher$CuiListener status
+agent-1       | INFO: Connected
+controller-1  | 2026-11-13 18:50:32.236+0000 [id=56]	INFO	jenkins.InitReactorRunner$1#onAttained: System config adapted
+controller-1  | 2026-11-13 18:50:32.237+0000 [id=56]	INFO	jenkins.InitReactorRunner$1#onAttained: Loaded all jobs
+controller-1  | 2026-11-13 18:50:32.246+0000 [id=66]	INFO	jenkins.InitReactorRunner$1#onAttained: Configuration for all jobs updated
+controller-1  | 2026-11-13 18:50:32.250+0000 [id=69]	INFO	j.util.groovy.GroovyHookScript#execute: Executing /var/jenkins_home/init.groovy.d/l4.groovy
+controller-1  | 2026-11-13 18:50:32.258+0000 [id=86]	INFO	hudson.util.Retrier#start: Attempt #1 to do the action check updates server
+controller-1  | L4_C01_CONFIGURED: controller executors=0; agent executors=1; integral disabled
+controller-1  | 2026-11-13 18:50:33.072+0000 [id=69]	INFO	jenkins.InitReactorRunner$1#onAttained: Completed initialization
+controller-1  | 2026-11-13 18:50:33.097+0000 [id=42]	INFO	hudson.lifecycle.Lifecycle#onReady: Jenkins is fully up and running
+controller-1  | 2026-11-13 18:50:38.597+0000 [id=86]	INFO	h.m.DownloadService$Downloadable#load: Obtained the updated data file for hudson.tasks.Maven.MavenInstaller
+controller-1  | 2026-11-13 18:50:38.598+0000 [id=86]	INFO	hudson.util.Retrier#start: Performed the action check updates server successfully at the attempt #1

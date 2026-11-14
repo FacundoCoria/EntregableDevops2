@@ -1,0 +1,4 @@
+La primera auditoría final comparó las cadenas Mounts/Networks de docker ps
+sin normalizar el orden. La comparación falló para l4-c01-agent-1 porque el mismo
+conjunto se enumeró en otro orden. ID/imagen/estado no difirieron. Se corrigió
+el comparador para ordenar listas separadas por comas; no se modificó Docker.

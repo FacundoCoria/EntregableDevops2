@@ -1,0 +1,368 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 1.33kB done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/eclipse-temurin:21.0.13_9-jre-jammy@sha256:d4cbe963bb4f3a769d56473b32db2bfb46b0d4b29797c152815da692d9f9aab5
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/eclipse-temurin:21.0.13_9-jdk-jammy@sha256:4b1a74fbffbe6b4e7b6f0171a472478282fb463790a51edf10e465d578f22b69
+#3 DONE 0.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 126B done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 DONE 0.0s
+
+#6 [build 1/7] FROM docker.io/library/eclipse-temurin:21.0.13_9-jdk-jammy@sha256:4b1a74fbffbe6b4e7b6f0171a472478282fb463790a51edf10e465d578f22b69
+#6 resolve docker.io/library/eclipse-temurin:21.0.13_9-jdk-jammy@sha256:4b1a74fbffbe6b4e7b6f0171a472478282fb463790a51edf10e465d578f22b69
+#6 resolve docker.io/library/eclipse-temurin:21.0.13_9-jdk-jammy@sha256:4b1a74fbffbe6b4e7b6f0171a472478282fb463790a51edf10e465d578f22b69 0.0s done
+#6 DONE 0.0s
+
+#7 [runtime 1/5] FROM docker.io/library/eclipse-temurin:21.0.13_9-jre-jammy@sha256:d4cbe963bb4f3a769d56473b32db2bfb46b0d4b29797c152815da692d9f9aab5
+#7 resolve docker.io/library/eclipse-temurin:21.0.13_9-jre-jammy@sha256:d4cbe963bb4f3a769d56473b32db2bfb46b0d4b29797c152815da692d9f9aab5 0.0s done
+#7 CACHED
+
+#5 [internal] load build context
+#5 transferring context: 5.03kB 0.0s done
+#5 DONE 0.0s
+
+#8 [build 2/7] WORKDIR /workspace
+#8 CACHED
+
+#9 [build 3/7] COPY .mvn/ .mvn/
+#9 CACHED
+
+#10 [build 4/7] COPY mvnw pom.xml ./
+#10 DONE 0.7s
+
+#11 [runtime 2/5] RUN apt-get update     && apt-get install -y --no-install-recommends --only-upgrade         apt=2.4.15ubuntu0.1 libapt-pkg6.0=2.4.15ubuntu0.1 libpcre2-8-0=10.39-3ubuntu0.2     && rm -rf /var/lib/apt/lists/*
+#11 ...
+
+#12 [build 5/7] RUN chmod +x mvnw
+#12 DONE 0.3s
+
+#13 [build 6/7] COPY src/ src/
+#13 DONE 0.1s
+
+#11 [runtime 2/5] RUN apt-get update     && apt-get install -y --no-install-recommends --only-upgrade         apt=2.4.15ubuntu0.1 libapt-pkg6.0=2.4.15ubuntu0.1 libpcre2-8-0=10.39-3ubuntu0.2     && rm -rf /var/lib/apt/lists/*
+#11 1.254 Get:1 http://archive.ubuntu.com/ubuntu jammy InRelease [270 kB]
+#11 1.254 Get:2 http://security.ubuntu.com/ubuntu jammy-security InRelease [129 kB]
+#11 2.188 Get:3 http://archive.ubuntu.com/ubuntu jammy-updates InRelease [128 kB]
+#11 2.249 Get:4 http://security.ubuntu.com/ubuntu jammy-security/main amd64 Packages [4,521 kB]
+#11 2.405 Get:5 http://archive.ubuntu.com/ubuntu jammy-backports InRelease [127 kB]
+#11 2.628 Get:6 http://archive.ubuntu.com/ubuntu jammy/main amd64 Packages [1,792 kB]
+#11 3.213 Get:7 http://archive.ubuntu.com/ubuntu jammy/restricted amd64 Packages [164 kB]
+#11 3.213 Get:8 http://archive.ubuntu.com/ubuntu jammy/multiverse amd64 Packages [266 kB]
+#11 3.234 Get:9 http://archive.ubuntu.com/ubuntu jammy/universe amd64 Packages [17.5 MB]
+#11 3.376 Get:10 http://security.ubuntu.com/ubuntu jammy-security/multiverse amd64 Packages [96.7 kB]
+#11 3.393 Get:11 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 Packages [1,328 kB]
+#11 3.531 Get:12 http://security.ubuntu.com/ubuntu jammy-security/restricted amd64 Packages [8,086 kB]
+#11 4.923 Get:13 http://archive.ubuntu.com/ubuntu jammy-updates/restricted amd64 Packages [8,373 kB]
+#11 5.370 Get:14 http://archive.ubuntu.com/ubuntu jammy-updates/multiverse amd64 Packages [104 kB]
+#11 5.488 Get:15 http://archive.ubuntu.com/ubuntu jammy-updates/universe amd64 Packages [1,631 kB]
+#11 5.611 Get:16 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 Packages [4,847 kB]
+#11 5.983 Get:17 http://archive.ubuntu.com/ubuntu jammy-backports/main amd64 Packages [82.9 kB]
+#11 5.988 Get:18 http://archive.ubuntu.com/ubuntu jammy-backports/universe amd64 Packages [35.6 kB]
+#11 6.943 Fetched 49.5 MB in 6s (8,114 kB/s)
+#11 6.943 Reading package lists...
+#11 8.999 Reading package lists...
+#11 10.45 Building dependency tree...
+#11 10.74 Reading state information...
+#11 11.11 Suggested packages:
+#11 11.11   apt-doc aptitude | synaptic | wajig dpkg-dev powermgmt-base
+#11 11.18 The following packages will be upgraded:
+#11 11.18   apt libapt-pkg6.0 libpcre2-8-0
+#11 ...
+
+#14 [build 7/7] RUN ./mvnw -B -ntp -Dspring.datasource.url=jdbc:h2:mem:buildtest clean verify
+#14 4.065 [INFO] Scanning for projects...
+#14 8.742 [INFO] 
+#14 8.742 [INFO] ----------------------< com.pedidos:pedidos-api >-----------------------
+#14 8.742 [INFO] Building  0.0.1-SNAPSHOT
+#14 8.743 [INFO]   from pom.xml
+#14 8.743 [INFO] --------------------------------[ jar ]---------------------------------
+#14 ...
+
+#11 [runtime 2/5] RUN apt-get update     && apt-get install -y --no-install-recommends --only-upgrade         apt=2.4.15ubuntu0.1 libapt-pkg6.0=2.4.15ubuntu0.1 libpcre2-8-0=10.39-3ubuntu0.2     && rm -rf /var/lib/apt/lists/*
+#11 11.55 3 upgraded, 0 newly installed, 0 to remove and 5 not upgraded.
+#11 11.55 Need to get 2,815 kB of archives.
+#11 11.55 After this operation, 1,024 B of additional disk space will be used.
+#11 11.55 Get:1 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libapt-pkg6.0 amd64 2.4.15ubuntu0.1 [1,068 kB]
+#11 12.81 Get:2 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 apt amd64 2.4.15ubuntu0.1 [1,525 kB]
+#11 13.01 Get:3 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libpcre2-8-0 amd64 10.39-3ubuntu0.2 [222 kB]
+#11 13.25 debconf: delaying package configuration, since apt-utils is not installed
+#11 13.31 Fetched 2,815 kB in 2s (1,536 kB/s)
+#11 13.36 (Reading database ... 
+(Reading database ... 5%
+(Reading database ... 10%
+(Reading database ... 15%
+(Reading database ... 20%
+(Reading database ... 25%
+(Reading database ... 30%
+(Reading database ... 35%
+(Reading database ... 40%
+(Reading database ... 45%
+(Reading database ... 50%
+(Reading database ... 55%
+(Reading database ... 60%
+(Reading database ... 65%
+(Reading database ... 70%
+(Reading database ... 75%
+(Reading database ... 80%
+(Reading database ... 85%
+(Reading database ... 90%
+(Reading database ... 95%
+(Reading database ... 100%
+(Reading database ... 7914 files and directories currently installed.)
+#11 13.42 Preparing to unpack .../libapt-pkg6.0_2.4.15ubuntu0.1_amd64.deb ...
+#11 13.45 Unpacking libapt-pkg6.0:amd64 (2.4.15ubuntu0.1) over (2.4.14) ...
+#11 13.61 Setting up libapt-pkg6.0:amd64 (2.4.15ubuntu0.1) ...
+#11 13.70 (Reading database ... 
+(Reading database ... 5%
+(Reading database ... 10%
+(Reading database ... 15%
+(Reading database ... 20%
+(Reading database ... 25%
+(Reading database ... 30%
+(Reading database ... 35%
+(Reading database ... 40%
+(Reading database ... 45%
+(Reading database ... 50%
+(Reading database ... 55%
+(Reading database ... 60%
+(Reading database ... 65%
+(Reading database ... 70%
+(Reading database ... 75%
+(Reading database ... 80%
+(Reading database ... 85%
+(Reading database ... 90%
+(Reading database ... 95%
+(Reading database ... 100%
+(Reading database ... 7914 files and directories currently installed.)
+#11 13.72 Preparing to unpack .../apt_2.4.15ubuntu0.1_amd64.deb ...
+#11 13.80 Unpacking apt (2.4.15ubuntu0.1) over (2.4.14) ...
+#11 14.15 Setting up apt (2.4.15ubuntu0.1) ...
+#11 14.51 (Reading database ... 
+(Reading database ... 5%
+(Reading database ... 10%
+(Reading database ... 15%
+(Reading database ... 20%
+(Reading database ... 25%
+(Reading database ... 30%
+(Reading database ... 35%
+(Reading database ... 40%
+(Reading database ... 45%
+(Reading database ... 50%
+(Reading database ... 55%
+(Reading database ... 60%
+(Reading database ... 65%
+(Reading database ... 70%
+(Reading database ... 75%
+(Reading database ... 80%
+(Reading database ... 85%
+(Reading database ... 90%
+(Reading database ... 95%
+(Reading database ... 100%
+(Reading database ... 7914 files and directories currently installed.)
+#11 14.53 Preparing to unpack .../libpcre2-8-0_10.39-3ubuntu0.2_amd64.deb ...
+#11 14.55 Unpacking libpcre2-8-0:amd64 (10.39-3ubuntu0.2) over (10.39-3ubuntu0.1) ...
+#11 14.65 Setting up libpcre2-8-0:amd64 (10.39-3ubuntu0.2) ...
+#11 14.70 Processing triggers for libc-bin (2.35-0ubuntu3.15) ...
+#11 DONE 15.0s
+
+#14 [build 7/7] RUN ./mvnw -B -ntp -Dspring.datasource.url=jdbc:h2:mem:buildtest clean verify
+#14 ...
+
+#15 [runtime 3/5] WORKDIR /app
+#15 DONE 0.1s
+
+#16 [runtime 4/5] RUN groupadd --gid 10001 appgroup     && useradd --uid 10001 --gid appgroup --no-create-home --shell /usr/sbin/nologin usuario     && mkdir /data && chown 10001:10001 /data
+#16 DONE 0.5s
+
+#14 [build 7/7] RUN ./mvnw -B -ntp -Dspring.datasource.url=jdbc:h2:mem:buildtest clean verify
+#14 22.13 [INFO] 
+#14 22.13 [INFO] --- clean:3.5.0:clean (default-clean) @ pedidos-api ---
+#14 22.27 [INFO] 
+#14 22.27 [INFO] --- resources:3.5.0:resources (default-resources) @ pedidos-api ---
+#14 23.10 [INFO] Copying 1 resource from src/main/resources to target/classes
+#14 23.11 [INFO] Copying 0 resource from src/main/resources to target/classes
+#14 23.11 [INFO] 
+#14 23.11 [INFO] --- compiler:3.15.0:compile (default-compile) @ pedidos-api ---
+#14 24.32 [INFO] Recompiling the module because of changed source code.
+#14 24.33 [INFO] Compiling 8 source files with javac [debug parameters release 21] to target/classes
+#14 25.22 [INFO] 
+#14 25.22 [INFO] --- resources:3.5.0:testResources (default-testResources) @ pedidos-api ---
+#14 25.23 [INFO] skip non existing resourceDirectory /workspace/src/test/resources
+#14 25.23 [INFO] 
+#14 25.23 [INFO] --- compiler:3.15.0:testCompile (default-testCompile) @ pedidos-api ---
+#14 25.24 [INFO] Recompiling the module because of changed dependency.
+#14 25.24 [INFO] Compiling 2 source files with javac [debug parameters release 21] to target/test-classes
+#14 25.61 [INFO] 
+#14 25.61 [INFO] --- surefire:3.5.6:test (default-test) @ pedidos-api ---
+#14 26.79 [INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+#14 27.34 [INFO] 
+#14 27.34 [INFO] -------------------------------------------------------
+#14 27.34 [INFO]  T E S T S
+#14 27.34 [INFO] -------------------------------------------------------
+#14 28.14 [INFO] Running com.pedidos.pedidos_api.PedidosApiApplicationTests
+#14 28.42 21:02:20.217 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.pedidos.pedidos_api.PedidosApiApplicationTests]: PedidosApiApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+#14 28.52 21:02:20.322 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.pedidos.pedidos_api.PedidosApiApplication for test class com.pedidos.pedidos_api.PedidosApiApplicationTests
+#14 28.62 21:02:20.437 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.pedidos.pedidos_api.PedidosApiApplicationTests]: PedidosApiApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+#14 28.62 21:02:20.439 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.pedidos.pedidos_api.PedidosApiApplication for test class com.pedidos.pedidos_api.PedidosApiApplicationTests
+#14 28.92 
+#14 28.92   .   ____          _            __ _ _
+#14 28.92  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+#14 28.92 ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+#14 28.92  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+#14 28.92   '  |____| .__|_| |_|_| |_\__, | / / / /
+#14 28.92  =========|_|==============|___/=/_/_/_/
+#14 28.92 
+#14 28.92  :: Spring Boot ::                (v4.1.1)
+#14 28.92 
+#14 28.92 2026-11-14T21:02:20.796Z  INFO 227 --- [pedidos-api] [           main] c.p.p.PedidosApiApplicationTests         : Starting PedidosApiApplicationTests using Java 21.0.13 with PID 227 (started by root in /workspace)
+#14 28.92 2026-11-14T21:02:20.799Z  INFO 227 --- [pedidos-api] [           main] c.p.p.PedidosApiApplicationTests         : No active profile set, falling back to 1 default profile: "default"
+#14 29.72 2026-11-14T21:02:21.594Z  INFO 227 --- [pedidos-api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+#14 29.82 2026-11-14T21:02:21.652Z  INFO 227 --- [pedidos-api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 49 ms. Found 2 JPA repository interfaces.
+#14 30.42 2026-11-14T21:02:22.282Z  INFO 227 --- [pedidos-api] [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+#14 30.52 2026-11-14T21:02:22.347Z  INFO 227 --- [pedidos-api] [           main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.5.Final
+#14 31.02 2026-11-14T21:02:22.835Z  INFO 227 --- [pedidos-api] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+#14 31.02 2026-11-14T21:02:22.862Z  INFO 227 --- [pedidos-api] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+#14 31.22 2026-11-14T21:02:23.030Z  INFO 227 --- [pedidos-api] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:buildtest user=SA
+#14 31.22 2026-11-14T21:02:23.032Z  INFO 227 --- [pedidos-api] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+#14 31.22 2026-11-14T21:02:23.079Z  INFO 227 --- [pedidos-api] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+#14 31.22 	Database JDBC URL [jdbc:h2:mem:buildtest]
+#14 31.22 	Database driver: H2 JDBC Driver
+#14 31.22 	Database dialect: H2Dialect
+#14 31.22 	Database version: 2.4.240
+#14 31.22 	Default catalog/schema: BUILDTEST/PUBLIC
+#14 31.22 	Autocommit mode: undefined/unknown
+#14 31.22 	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+#14 31.22 	JDBC fetch size: 100
+#14 31.22 	Pool: DataSourceConnectionProvider
+#14 31.22 	Minimum pool size: undefined/unknown
+#14 31.22 	Maximum pool size: undefined/unknown
+#14 32.03 2026-11-14T21:02:23.847Z  INFO 227 --- [pedidos-api] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+#14 32.03 Hibernate: create table pedido (id bigint generated by default as identity, cliente varchar(255), estado varchar(255), fecha_creacion timestamp(6), minutos_espera integer, precio_unitario float(53), producto_id bigint, primary key (id))
+#14 32.03 Hibernate: create table producto (id bigint generated by default as identity, nombre varchar(255), precio float(53), primary key (id))
+#14 32.03 Hibernate: alter table if exists pedido add constraint FKsoggxhdxr3wnhv3kdkka1nmvy foreign key (producto_id) references producto
+#14 32.03 2026-11-14T21:02:23.918Z  INFO 227 --- [pedidos-api] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+#14 32.23 2026-11-14T21:02:24.039Z  INFO 227 --- [pedidos-api] [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+#14 32.53 2026-11-14T21:02:24.354Z  WARN 227 --- [pedidos-api] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+#14 33.03 2026-11-14T21:02:24.882Z  INFO 227 --- [pedidos-api] [           main] o.s.b.h.a.H2ConsoleAutoConfiguration     : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:buildtest'
+#14 33.23 2026-11-14T21:02:25.046Z  INFO 227 --- [pedidos-api] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 4 endpoints beneath base path '/actuator'
+#14 33.23 2026-11-14T21:02:25.123Z  INFO 227 --- [pedidos-api] [           main] c.p.p.PedidosApiApplicationTests         : Started PedidosApiApplicationTests in 4.62 seconds (process running for 5.824)
+#14 33.43 Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
+#14 33.61 OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+#14 33.63 WARNING: A Java agent has been loaded dynamically (/root/.m2/repository/net/bytebuddy/byte-buddy-agent/1.18.11/byte-buddy-agent-1.18.11.jar)
+#14 33.63 WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+#14 33.63 WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+#14 33.63 WARNING: Dynamic loading of agents will be disallowed by default in a future release
+#14 33.73 [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.564 s -- in com.pedidos.pedidos_api.PedidosApiApplicationTests
+#14 33.73 [INFO] Running com.pedidos.pedidos_api.JsonContractTests
+#14 33.73 2026-11-14T21:02:25.599Z  INFO 227 --- [pedidos-api] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.pedidos.pedidos_api.JsonContractTests]: JsonContractTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+#14 33.73 2026-11-14T21:02:25.602Z  INFO 227 --- [pedidos-api] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.pedidos.pedidos_api.PedidosApiApplication for test class com.pedidos.pedidos_api.JsonContractTests
+#14 33.73 2026-11-14T21:02:25.604Z  INFO 227 --- [pedidos-api] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.pedidos.pedidos_api.JsonContractTests]: JsonContractTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+#14 33.73 2026-11-14T21:02:25.606Z  INFO 227 --- [pedidos-api] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.pedidos.pedidos_api.PedidosApiApplication for test class com.pedidos.pedidos_api.JsonContractTests
+#14 33.93 
+#14 33.93   .   ____          _            __ _ _
+#14 33.93  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+#14 33.93 ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+#14 33.93  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+#14 33.93   '  |____| .__|_| |_|_| |_\__, | / / / /
+#14 33.93  =========|_|==============|___/=/_/_/_/
+#14 33.93 
+#14 33.93  :: Spring Boot ::                (v4.1.1)
+#14 33.93 
+#14 33.93 2026-11-14T21:02:25.798Z  INFO 227 --- [pedidos-api] [           main] c.pedidos.pedidos_api.JsonContractTests  : Starting JsonContractTests using Java 21.0.13 with PID 227 (started by root in /workspace)
+#14 33.93 2026-11-14T21:02:25.798Z  INFO 227 --- [pedidos-api] [           main] c.pedidos.pedidos_api.JsonContractTests  : No active profile set, falling back to 1 default profile: "default"
+#14 34.13 2026-11-14T21:02:25.968Z  INFO 227 --- [pedidos-api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+#14 34.13 2026-11-14T21:02:25.979Z  INFO 227 --- [pedidos-api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 2 JPA repository interfaces.
+#14 34.34 2026-11-14T21:02:26.192Z  INFO 227 --- [pedidos-api] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 0 (http)
+#14 34.34 2026-11-14T21:02:26.210Z  INFO 227 --- [pedidos-api] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+#14 34.34 2026-11-14T21:02:26.210Z  INFO 227 --- [pedidos-api] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.27]
+#14 34.44 2026-11-14T21:02:26.258Z  INFO 227 --- [pedidos-api] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 457 ms
+#14 34.54 2026-11-14T21:02:26.358Z  INFO 227 --- [pedidos-api] [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+#14 34.54 2026-11-14T21:02:26.379Z  INFO 227 --- [pedidos-api] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+#14 34.54 2026-11-14T21:02:26.380Z  INFO 227 --- [pedidos-api] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+#14 34.54 2026-11-14T21:02:26.384Z  INFO 227 --- [pedidos-api] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:jsoncontract user=SA
+#14 34.54 2026-11-14T21:02:26.385Z  INFO 227 --- [pedidos-api] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+#14 34.54 2026-11-14T21:02:26.385Z  INFO 227 --- [pedidos-api] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+#14 34.54 	Database JDBC URL [jdbc:h2:mem:jsoncontract]
+#14 34.54 	Database driver: H2 JDBC Driver
+#14 34.54 	Database dialect: H2Dialect
+#14 34.54 	Database version: 2.4.240
+#14 34.54 	Default catalog/schema: JSONCONTRACT/PUBLIC
+#14 34.54 	Autocommit mode: undefined/unknown
+#14 34.54 	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+#14 34.54 	JDBC fetch size: 100
+#14 34.54 	Pool: DataSourceConnectionProvider
+#14 34.54 	Minimum pool size: undefined/unknown
+#14 34.54 	Maximum pool size: undefined/unknown
+#14 34.54 2026-11-14T21:02:26.426Z  INFO 227 --- [pedidos-api] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+#14 34.54 Hibernate: create table pedido (id bigint generated by default as identity, cliente varchar(255), estado varchar(255), fecha_creacion timestamp(6), minutos_espera integer, precio_unitario float(53), producto_id bigint, primary key (id))
+#14 34.54 Hibernate: create table producto (id bigint generated by default as identity, nombre varchar(255), precio float(53), primary key (id))
+#14 34.54 Hibernate: alter table if exists pedido add constraint FKsoggxhdxr3wnhv3kdkka1nmvy foreign key (producto_id) references producto
+#14 34.64 2026-11-14T21:02:26.434Z  INFO 227 --- [pedidos-api] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+#14 34.64 2026-11-14T21:02:26.487Z  WARN 227 --- [pedidos-api] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+#14 34.74 2026-11-14T21:02:26.602Z  INFO 227 --- [pedidos-api] [           main] o.s.b.h.a.H2ConsoleAutoConfiguration     : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:jsoncontract'
+#14 34.75 2026-11-14T21:02:26.623Z  INFO 227 --- [pedidos-api] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 4 endpoints beneath base path '/actuator'
+#14 34.82 2026-11-14T21:02:26.698Z  INFO 227 --- [pedidos-api] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 41681 (http) with context path '/'
+#14 34.82 2026-11-14T21:02:26.704Z  INFO 227 --- [pedidos-api] [           main] c.pedidos.pedidos_api.JsonContractTests  : Started JsonContractTests in 0.933 seconds (process running for 7.406)
+#14 34.94 2026-11-14T21:02:26.834Z  INFO 227 --- [pedidos-api] [o-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+#14 34.94 2026-11-14T21:02:26.835Z  INFO 227 --- [pedidos-api] [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+#14 34.94 2026-11-14T21:02:26.837Z  INFO 227 --- [pedidos-api] [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+#14 35.14 Hibernate: insert into producto (nombre,precio,id) values (?,?,default)
+#14 35.24 2026-11-14T21:02:27.125Z  WARN 227 --- [pedidos-api] [o-auto-1-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content-Type 'application/xml' is not supported]
+#14 35.34 2026-11-14T21:02:27.153Z  WARN 227 --- [pedidos-api] [o-auto-1-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content-Type 'application/xml' is not supported]
+#14 35.34 2026-11-14T21:02:27.164Z  WARN 227 --- [pedidos-api] [o-auto-1-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content-Type 'text/xml' is not supported]
+#14 35.34 2026-11-14T21:02:27.175Z  WARN 227 --- [pedidos-api] [o-auto-1-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content-Type 'text/xml' is not supported]
+#14 35.34 2026-11-14T21:02:27.183Z  WARN 227 --- [pedidos-api] [o-auto-1-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content-Type 'application/problem+xml' is not supported]
+#14 35.34 2026-11-14T21:02:27.192Z  WARN 227 --- [pedidos-api] [o-auto-1-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content-Type 'application/problem+xml' is not supported]
+#14 35.34 2026-11-14T21:02:27.201Z  WARN 227 --- [pedidos-api] [o-auto-1-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content-Type 'application/xml' is not supported]
+#14 35.34 2026-11-14T21:02:27.209Z  WARN 227 --- [pedidos-api] [o-auto-1-exec-9] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content-Type 'application/xml' is not supported]
+#14 35.34 2026-11-14T21:02:27.217Z  WARN 227 --- [pedidos-api] [-auto-1-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content-Type 'text/xml' is not supported]
+#14 35.34 2026-11-14T21:02:27.224Z  WARN 227 --- [pedidos-api] [o-auto-1-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content-Type 'text/xml' is not supported]
+#14 35.34 2026-11-14T21:02:27.231Z  WARN 227 --- [pedidos-api] [o-auto-1-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content-Type 'application/problem+xml' is not supported]
+#14 35.34 2026-11-14T21:02:27.237Z  WARN 227 --- [pedidos-api] [o-auto-1-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content-Type 'application/problem+xml' is not supported]
+#14 35.37 [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.648 s -- in com.pedidos.pedidos_api.JsonContractTests
+#14 35.78 [INFO] 
+#14 35.78 [INFO] Results:
+#14 35.78 [INFO] 
+#14 35.78 [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0
+#14 35.78 [INFO] 
+#14 35.78 [INFO] 
+#14 35.78 [INFO] --- jar:3.5.1:jar (default-jar) @ pedidos-api ---
+#14 38.07 [INFO] Building jar: /workspace/target/pedidos-api-0.0.1-SNAPSHOT.jar
+#14 38.13 [INFO] 
+#14 38.13 [INFO] --- spring-boot:4.1.1:repackage (repackage) @ pedidos-api ---
+#14 41.34 [INFO] Replacing main artifact /workspace/target/pedidos-api-0.0.1-SNAPSHOT.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
+#14 41.34 [INFO] The original artifact has been renamed to /workspace/target/pedidos-api-0.0.1-SNAPSHOT.jar.original
+#14 41.34 [INFO] ------------------------------------------------------------------------
+#14 41.34 [INFO] BUILD SUCCESS
+#14 41.34 [INFO] ------------------------------------------------------------------------
+#14 41.34 [INFO] Total time:  37.326 s
+#14 41.34 [INFO] Finished at: 2026-11-14T21:02:33Z
+#14 41.34 [INFO] ------------------------------------------------------------------------
+#14 DONE 42.0s
+
+#17 [runtime 5/5] COPY --from=build --chown=10001:10001 /workspace/target/pedidos-api-0.0.1-SNAPSHOT.jar app.jar
+#17 DONE 0.3s
+
+#18 exporting to image
+#18 exporting layers
+#18 exporting layers 2.1s done
+#18 exporting manifest sha256:3abc01a67613ff7247689ab95cf735500fd93e5bd7138543924b47cda1897513 0.0s done
+#18 exporting config sha256:52e11690ed9f572e200cfa66d9e38dba7d782e89e8921160b2e432743663c4cd 0.0s done
+#18 exporting attestation manifest sha256:431cfabf87027bc5db80dfe386bd602fcedf6303884a1101390e06b91f2d88cb 0.0s done
+#18 exporting manifest list sha256:e74530355da4285739b70e8a4c62ca9b68edc03ebff12de55e6b6dec9ece8df9
+#18 exporting manifest list sha256:e74530355da4285739b70e8a4c62ca9b68edc03ebff12de55e6b6dec9ece8df9 0.0s done
+#18 naming to docker.io/library/pedidos-api:l4-c06 done
+#18 unpacking to docker.io/library/pedidos-api:l4-c06
+#18 unpacking to docker.io/library/pedidos-api:l4-c06 0.6s done
+#18 DONE 2.9s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/thj9f7y39hm2mqo2vtfhd0iue

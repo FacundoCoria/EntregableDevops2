@@ -1,0 +1,1041 @@
+apiVersion: v1
+items:
+- apiVersion: policies.kyverno.io/v1
+  kind: ValidatingPolicy
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"policies.kyverno.io/v1","kind":"ValidatingPolicy","metadata":{"annotations":{},"name":"l4-deny-latest-images"},"spec":{"autogen":{"validatingAdmissionPolicy":{"enabled":false}},"evaluation":{"admission":{"enabled":true},"background":{"enabled":true}},"failurePolicy":"Fail","matchConstraints":{"namespaceSelector":{"matchExpressions":[{"key":"kubernetes.io/metadata.name","operator":"NotIn","values":["kube-system","kube-public","kube-node-lease","kyverno","falco"]}]},"resourceRules":[{"apiGroups":[""],"apiVersions":["v1"],"operations":["CREATE","UPDATE"],"resources":["pods"]}]},"validationActions":["Deny"],"validations":[{"expression":"(object.spec.containers + (has(object.spec.initContainers) ? object.spec.initContainers : [])).all(c, !c.image.split('@')[0].endsWith(':latest') \u0026\u0026\n(c.image.matches('^[^@]+@sha256:[a-fA-F0-9]{64}$') ||\n(!c.image.contains('@') \u0026\u0026 c.image.split('/')[c.image.split('/').size()-1].contains(':'))))","message":"Se requiere tag explicito distinto de latest o digest SHA256 valido; latest@digest tambien se rechaza."}]}}
+    creationTimestamp: "2026-11-14T20:27:45Z"
+    generation: 2
+    name: l4-deny-latest-images
+    resourceVersion: "938"
+    uid: 8a8f4763-c9eb-4463-9cec-49ab6108db74
+  spec:
+    autogen:
+      validatingAdmissionPolicy:
+        enabled: false
+    evaluation:
+      admission:
+        enabled: true
+      background:
+        enabled: true
+    failurePolicy: Fail
+    matchConstraints:
+      namespaceSelector:
+        matchExpressions:
+        - key: kubernetes.io/metadata.name
+          operator: NotIn
+          values:
+          - kube-system
+          - kube-public
+          - kube-node-lease
+          - kyverno
+          - falco
+      resourceRules:
+      - apiGroups:
+        - ""
+        apiVersions:
+        - v1
+        operations:
+        - CREATE
+        - UPDATE
+        resources:
+        - pods
+    validationActions:
+    - Deny
+    validations:
+    - expression: |-
+        (object.spec.containers + (has(object.spec.initContainers) ? object.spec.initContainers : [])).all(c, !c.image.split('@')[0].endsWith(':latest') &&
+        (c.image.matches('^[^@]+@sha256:[a-fA-F0-9]{64}$') ||
+        (!c.image.contains('@') && c.image.split('/')[c.image.split('/').size()-1].contains(':'))))
+      message: Se requiere tag explicito distinto de latest o digest SHA256 valido;
+        latest@digest tambien se rechaza.
+  status:
+    autogen:
+      configs:
+        cronjobs:
+          spec:
+            autogen:
+              validatingAdmissionPolicy:
+                enabled: false
+            evaluation:
+              admission:
+                enabled: true
+              background:
+                enabled: true
+            failurePolicy: Fail
+            matchConstraints:
+              namespaceSelector:
+                matchExpressions:
+                - key: kubernetes.io/metadata.name
+                  operator: NotIn
+                  values:
+                  - kube-system
+                  - kube-public
+                  - kube-node-lease
+                  - kyverno
+                  - falco
+              resourceRules:
+              - apiGroups:
+                - batch
+                apiVersions:
+                - v1
+                operations:
+                - CREATE
+                - UPDATE
+                resources:
+                - cronjobs
+            validationActions:
+            - Deny
+            validations:
+            - expression: |-
+                (object.spec.jobTemplate.spec.template.spec.containers + (has(object.spec.jobTemplate.spec.template.spec.initContainers) ? object.spec.jobTemplate.spec.template.spec.initContainers : [])).all(c, !c.image.split('@')[0].endsWith(':latest') &&
+                (c.image.matches('^[^@]+@sha256:[a-fA-F0-9]{64}$') ||
+                (!c.image.contains('@') && c.image.split('/')[c.image.split('/').size()-1].contains(':'))))
+              message: Se requiere tag explicito distinto de latest o digest SHA256
+                valido; latest@digest tambien se rechaza.
+          targets:
+          - group: batch
+            kind: CronJob
+            resource: cronjobs
+            version: v1
+        defaults:
+          spec:
+            autogen:
+              validatingAdmissionPolicy:
+                enabled: false
+            evaluation:
+              admission:
+                enabled: true
+              background:
+                enabled: true
+            failurePolicy: Fail
+            matchConstraints:
+              namespaceSelector:
+                matchExpressions:
+                - key: kubernetes.io/metadata.name
+                  operator: NotIn
+                  values:
+                  - kube-system
+                  - kube-public
+                  - kube-node-lease
+                  - kyverno
+                  - falco
+              resourceRules:
+              - apiGroups:
+                - apps
+                apiVersions:
+                - v1
+                operations:
+                - CREATE
+                - UPDATE
+                resources:
+                - daemonsets
+                - deployments
+                - replicasets
+                - statefulsets
+              - apiGroups:
+                - batch
+                apiVersions:
+                - v1
+                operations:
+                - CREATE
+                - UPDATE
+                resources:
+                - jobs
+            validationActions:
+            - Deny
+            validations:
+            - expression: |-
+                (object.spec.template.spec.containers + (has(object.spec.template.spec.initContainers) ? object.spec.template.spec.initContainers : [])).all(c, !c.image.split('@')[0].endsWith(':latest') &&
+                (c.image.matches('^[^@]+@sha256:[a-fA-F0-9]{64}$') ||
+                (!c.image.contains('@') && c.image.split('/')[c.image.split('/').size()-1].contains(':'))))
+              message: Se requiere tag explicito distinto de latest o digest SHA256
+                valido; latest@digest tambien se rechaza.
+          targets:
+          - group: apps
+            kind: DaemonSet
+            resource: daemonsets
+            version: v1
+          - group: apps
+            kind: Deployment
+            resource: deployments
+            version: v1
+          - group: apps
+            kind: ReplicaSet
+            resource: replicasets
+            version: v1
+          - group: apps
+            kind: StatefulSet
+            resource: statefulsets
+            version: v1
+          - group: batch
+            kind: Job
+            resource: jobs
+            version: v1
+    conditionStatus:
+      conditions:
+      - lastTransitionTime: "2026-11-14T20:27:46Z"
+        message: Webhook configured.
+        reason: Succeeded
+        status: "True"
+        type: WebhookConfigured
+      - lastTransitionTime: "2026-11-14T20:27:46Z"
+        message: Policy is ready for reporting.
+        reason: Succeeded
+        status: "True"
+        type: RBACPermissionsGranted
+      message: 'skip generating ValidatingAdmissionPolicy: not enabled.'
+      ready: true
+    generated: false
+- apiVersion: policies.kyverno.io/v1
+  kind: ValidatingPolicy
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"policies.kyverno.io/v1","kind":"ValidatingPolicy","metadata":{"annotations":{},"name":"l4-disallow-privileged-containers"},"spec":{"autogen":{"validatingAdmissionPolicy":{"enabled":false}},"evaluation":{"admission":{"enabled":true},"background":{"enabled":true}},"failurePolicy":"Fail","matchConstraints":{"namespaceSelector":{"matchExpressions":[{"key":"kubernetes.io/metadata.name","operator":"NotIn","values":["kube-system","kube-public","kube-node-lease","kyverno","falco"]}]},"resourceRules":[{"apiGroups":[""],"apiVersions":["v1"],"operations":["CREATE","UPDATE"],"resources":["pods"]}]},"validationActions":["Deny"],"validations":[{"expression":"(object.spec.containers + (has(object.spec.initContainers) ? object.spec.initContainers : [])).all(c, !has(c.securityContext) || !has(c.securityContext.privileged) || !c.securityContext.privileged)","message":"No se permiten contenedores privilegiados."}]}}
+    creationTimestamp: "2026-11-14T20:27:45Z"
+    generation: 2
+    name: l4-disallow-privileged-containers
+    resourceVersion: "962"
+    uid: c714f05a-b43b-4aed-ba7e-28b620463148
+  spec:
+    autogen:
+      validatingAdmissionPolicy:
+        enabled: false
+    evaluation:
+      admission:
+        enabled: true
+      background:
+        enabled: true
+    failurePolicy: Fail
+    matchConstraints:
+      namespaceSelector:
+        matchExpressions:
+        - key: kubernetes.io/metadata.name
+          operator: NotIn
+          values:
+          - kube-system
+          - kube-public
+          - kube-node-lease
+          - kyverno
+          - falco
+      resourceRules:
+      - apiGroups:
+        - ""
+        apiVersions:
+        - v1
+        operations:
+        - CREATE
+        - UPDATE
+        resources:
+        - pods
+    validationActions:
+    - Deny
+    validations:
+    - expression: '(object.spec.containers + (has(object.spec.initContainers) ? object.spec.initContainers
+        : [])).all(c, !has(c.securityContext) || !has(c.securityContext.privileged)
+        || !c.securityContext.privileged)'
+      message: No se permiten contenedores privilegiados.
+  status:
+    autogen:
+      configs:
+        cronjobs:
+          spec:
+            autogen:
+              validatingAdmissionPolicy:
+                enabled: false
+            evaluation:
+              admission:
+                enabled: true
+              background:
+                enabled: true
+            failurePolicy: Fail
+            matchConstraints:
+              namespaceSelector:
+                matchExpressions:
+                - key: kubernetes.io/metadata.name
+                  operator: NotIn
+                  values:
+                  - kube-system
+                  - kube-public
+                  - kube-node-lease
+                  - kyverno
+                  - falco
+              resourceRules:
+              - apiGroups:
+                - batch
+                apiVersions:
+                - v1
+                operations:
+                - CREATE
+                - UPDATE
+                resources:
+                - cronjobs
+            validationActions:
+            - Deny
+            validations:
+            - expression: '(object.spec.jobTemplate.spec.template.spec.containers
+                + (has(object.spec.jobTemplate.spec.template.spec.initContainers)
+                ? object.spec.jobTemplate.spec.template.spec.initContainers : [])).all(c,
+                !has(c.securityContext) || !has(c.securityContext.privileged) || !c.securityContext.privileged)'
+              message: No se permiten contenedores privilegiados.
+          targets:
+          - group: batch
+            kind: CronJob
+            resource: cronjobs
+            version: v1
+        defaults:
+          spec:
+            autogen:
+              validatingAdmissionPolicy:
+                enabled: false
+            evaluation:
+              admission:
+                enabled: true
+              background:
+                enabled: true
+            failurePolicy: Fail
+            matchConstraints:
+              namespaceSelector:
+                matchExpressions:
+                - key: kubernetes.io/metadata.name
+                  operator: NotIn
+                  values:
+                  - kube-system
+                  - kube-public
+                  - kube-node-lease
+                  - kyverno
+                  - falco
+              resourceRules:
+              - apiGroups:
+                - apps
+                apiVersions:
+                - v1
+                operations:
+                - CREATE
+                - UPDATE
+                resources:
+                - daemonsets
+                - deployments
+                - replicasets
+                - statefulsets
+              - apiGroups:
+                - batch
+                apiVersions:
+                - v1
+                operations:
+                - CREATE
+                - UPDATE
+                resources:
+                - jobs
+            validationActions:
+            - Deny
+            validations:
+            - expression: '(object.spec.template.spec.containers + (has(object.spec.template.spec.initContainers)
+                ? object.spec.template.spec.initContainers : [])).all(c, !has(c.securityContext)
+                || !has(c.securityContext.privileged) || !c.securityContext.privileged)'
+              message: No se permiten contenedores privilegiados.
+          targets:
+          - group: apps
+            kind: DaemonSet
+            resource: daemonsets
+            version: v1
+          - group: apps
+            kind: Deployment
+            resource: deployments
+            version: v1
+          - group: apps
+            kind: ReplicaSet
+            resource: replicasets
+            version: v1
+          - group: apps
+            kind: StatefulSet
+            resource: statefulsets
+            version: v1
+          - group: batch
+            kind: Job
+            resource: jobs
+            version: v1
+    conditionStatus:
+      conditions:
+      - lastTransitionTime: "2026-11-14T20:27:47Z"
+        message: Webhook configured.
+        reason: Succeeded
+        status: "True"
+        type: WebhookConfigured
+      - lastTransitionTime: "2026-11-14T20:27:47Z"
+        message: Policy is ready for reporting.
+        reason: Succeeded
+        status: "True"
+        type: RBACPermissionsGranted
+      message: 'skip generating ValidatingAdmissionPolicy: not enabled.'
+      ready: true
+    generated: false
+- apiVersion: policies.kyverno.io/v1
+  kind: ValidatingPolicy
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"policies.kyverno.io/v1","kind":"ValidatingPolicy","metadata":{"annotations":{},"name":"l4-disallow-root-containers"},"spec":{"autogen":{"validatingAdmissionPolicy":{"enabled":false}},"evaluation":{"admission":{"enabled":true},"background":{"enabled":true}},"failurePolicy":"Fail","matchConstraints":{"namespaceSelector":{"matchExpressions":[{"key":"kubernetes.io/metadata.name","operator":"NotIn","values":["kube-system","kube-public","kube-node-lease","kyverno","falco"]}]},"resourceRules":[{"apiGroups":[""],"apiVersions":["v1"],"operations":["CREATE","UPDATE"],"resources":["pods"]}]},"validationActions":["Deny"],"validations":[{"expression":"(object.spec.containers + (has(object.spec.initContainers) ? object.spec.initContainers : [])).all(c, (has(c.securityContext) \u0026\u0026 has(c.securityContext.runAsNonRoot) ? c.securityContext.runAsNonRoot : (has(object.spec.securityContext) \u0026\u0026 has(object.spec.securityContext.runAsNonRoot) \u0026\u0026 object.spec.securityContext.runAsNonRoot)) \u0026\u0026 (has(c.securityContext) \u0026\u0026 has(c.securityContext.runAsUser) ? c.securityContext.runAsUser != 0 : (!has(object.spec.securityContext) || !has(object.spec.securityContext.runAsUser) || object.spec.securityContext.runAsUser != 0)))","message":"runAsNonRoot efectivo debe ser true y runAsUser no puede ser 0."}]}}
+    creationTimestamp: "2026-11-14T20:27:45Z"
+    generation: 2
+    name: l4-disallow-root-containers
+    resourceVersion: "957"
+    uid: e08feea5-2f44-4c5d-948f-307ca87c6621
+  spec:
+    autogen:
+      validatingAdmissionPolicy:
+        enabled: false
+    evaluation:
+      admission:
+        enabled: true
+      background:
+        enabled: true
+    failurePolicy: Fail
+    matchConstraints:
+      namespaceSelector:
+        matchExpressions:
+        - key: kubernetes.io/metadata.name
+          operator: NotIn
+          values:
+          - kube-system
+          - kube-public
+          - kube-node-lease
+          - kyverno
+          - falco
+      resourceRules:
+      - apiGroups:
+        - ""
+        apiVersions:
+        - v1
+        operations:
+        - CREATE
+        - UPDATE
+        resources:
+        - pods
+    validationActions:
+    - Deny
+    validations:
+    - expression: '(object.spec.containers + (has(object.spec.initContainers) ? object.spec.initContainers
+        : [])).all(c, (has(c.securityContext) && has(c.securityContext.runAsNonRoot)
+        ? c.securityContext.runAsNonRoot : (has(object.spec.securityContext) && has(object.spec.securityContext.runAsNonRoot)
+        && object.spec.securityContext.runAsNonRoot)) && (has(c.securityContext) &&
+        has(c.securityContext.runAsUser) ? c.securityContext.runAsUser != 0 : (!has(object.spec.securityContext)
+        || !has(object.spec.securityContext.runAsUser) || object.spec.securityContext.runAsUser
+        != 0)))'
+      message: runAsNonRoot efectivo debe ser true y runAsUser no puede ser 0.
+  status:
+    autogen:
+      configs:
+        cronjobs:
+          spec:
+            autogen:
+              validatingAdmissionPolicy:
+                enabled: false
+            evaluation:
+              admission:
+                enabled: true
+              background:
+                enabled: true
+            failurePolicy: Fail
+            matchConstraints:
+              namespaceSelector:
+                matchExpressions:
+                - key: kubernetes.io/metadata.name
+                  operator: NotIn
+                  values:
+                  - kube-system
+                  - kube-public
+                  - kube-node-lease
+                  - kyverno
+                  - falco
+              resourceRules:
+              - apiGroups:
+                - batch
+                apiVersions:
+                - v1
+                operations:
+                - CREATE
+                - UPDATE
+                resources:
+                - cronjobs
+            validationActions:
+            - Deny
+            validations:
+            - expression: '(object.spec.jobTemplate.spec.template.spec.containers
+                + (has(object.spec.jobTemplate.spec.template.spec.initContainers)
+                ? object.spec.jobTemplate.spec.template.spec.initContainers : [])).all(c,
+                (has(c.securityContext) && has(c.securityContext.runAsNonRoot) ? c.securityContext.runAsNonRoot
+                : (has(object.spec.jobTemplate.spec.template.spec.securityContext)
+                && has(object.spec.jobTemplate.spec.template.spec.securityContext.runAsNonRoot)
+                && object.spec.jobTemplate.spec.template.spec.securityContext.runAsNonRoot))
+                && (has(c.securityContext) && has(c.securityContext.runAsUser) ? c.securityContext.runAsUser
+                != 0 : (!has(object.spec.jobTemplate.spec.template.spec.securityContext)
+                || !has(object.spec.jobTemplate.spec.template.spec.securityContext.runAsUser)
+                || object.spec.jobTemplate.spec.template.spec.securityContext.runAsUser
+                != 0)))'
+              message: runAsNonRoot efectivo debe ser true y runAsUser no puede ser
+                0.
+          targets:
+          - group: batch
+            kind: CronJob
+            resource: cronjobs
+            version: v1
+        defaults:
+          spec:
+            autogen:
+              validatingAdmissionPolicy:
+                enabled: false
+            evaluation:
+              admission:
+                enabled: true
+              background:
+                enabled: true
+            failurePolicy: Fail
+            matchConstraints:
+              namespaceSelector:
+                matchExpressions:
+                - key: kubernetes.io/metadata.name
+                  operator: NotIn
+                  values:
+                  - kube-system
+                  - kube-public
+                  - kube-node-lease
+                  - kyverno
+                  - falco
+              resourceRules:
+              - apiGroups:
+                - apps
+                apiVersions:
+                - v1
+                operations:
+                - CREATE
+                - UPDATE
+                resources:
+                - daemonsets
+                - deployments
+                - replicasets
+                - statefulsets
+              - apiGroups:
+                - batch
+                apiVersions:
+                - v1
+                operations:
+                - CREATE
+                - UPDATE
+                resources:
+                - jobs
+            validationActions:
+            - Deny
+            validations:
+            - expression: '(object.spec.template.spec.containers + (has(object.spec.template.spec.initContainers)
+                ? object.spec.template.spec.initContainers : [])).all(c, (has(c.securityContext)
+                && has(c.securityContext.runAsNonRoot) ? c.securityContext.runAsNonRoot
+                : (has(object.spec.template.spec.securityContext) && has(object.spec.template.spec.securityContext.runAsNonRoot)
+                && object.spec.template.spec.securityContext.runAsNonRoot)) && (has(c.securityContext)
+                && has(c.securityContext.runAsUser) ? c.securityContext.runAsUser
+                != 0 : (!has(object.spec.template.spec.securityContext) || !has(object.spec.template.spec.securityContext.runAsUser)
+                || object.spec.template.spec.securityContext.runAsUser != 0)))'
+              message: runAsNonRoot efectivo debe ser true y runAsUser no puede ser
+                0.
+          targets:
+          - group: apps
+            kind: DaemonSet
+            resource: daemonsets
+            version: v1
+          - group: apps
+            kind: Deployment
+            resource: deployments
+            version: v1
+          - group: apps
+            kind: ReplicaSet
+            resource: replicasets
+            version: v1
+          - group: apps
+            kind: StatefulSet
+            resource: statefulsets
+            version: v1
+          - group: batch
+            kind: Job
+            resource: jobs
+            version: v1
+    conditionStatus:
+      conditions:
+      - lastTransitionTime: "2026-11-14T20:27:47Z"
+        message: Webhook configured.
+        reason: Succeeded
+        status: "True"
+        type: WebhookConfigured
+      - lastTransitionTime: "2026-11-14T20:27:47Z"
+        message: Policy is ready for reporting.
+        reason: Succeeded
+        status: "True"
+        type: RBACPermissionsGranted
+      message: 'skip generating ValidatingAdmissionPolicy: not enabled.'
+      ready: true
+    generated: false
+- apiVersion: policies.kyverno.io/v1
+  kind: ValidatingPolicy
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"policies.kyverno.io/v1","kind":"ValidatingPolicy","metadata":{"annotations":{},"name":"l4-ephemeral-images"},"spec":{"autogen":{"podControllers":{"controllers":[]},"validatingAdmissionPolicy":{"enabled":false}},"evaluation":{"admission":{"enabled":true},"background":{"enabled":false}},"failurePolicy":"Fail","matchConstraints":{"namespaceSelector":{"matchExpressions":[{"key":"kubernetes.io/metadata.name","operator":"NotIn","values":["kube-system","kube-public","kube-node-lease","kyverno","falco"]}]},"resourceRules":[{"apiGroups":[""],"apiVersions":["v1"],"operations":["UPDATE"],"resources":["pods/ephemeralcontainers"]}]},"validationActions":["Deny"],"validations":[{"expression":"(has(object.spec.ephemeralContainers) ? object.spec.ephemeralContainers : []).all(c, !c.image.split('@')[0].endsWith(':latest') \u0026\u0026\n(c.image.matches('^[^@]+@sha256:[a-fA-F0-9]{64}$') ||\n(!c.image.contains('@') \u0026\u0026 c.image.split('/')[c.image.split('/').size()-1].contains(':'))))","message":"Se requiere tag explicito distinto de latest o digest SHA256 valido; latest@digest tambien se rechaza."}]}}
+    creationTimestamp: "2026-11-14T20:28:04Z"
+    generation: 1
+    name: l4-ephemeral-images
+    resourceVersion: "958"
+    uid: ba7408dc-3c2b-47ae-b5f2-5920e16a4447
+  spec:
+    autogen:
+      podControllers:
+        controllers: []
+      validatingAdmissionPolicy:
+        enabled: false
+    evaluation:
+      admission:
+        enabled: true
+      background:
+        enabled: false
+    failurePolicy: Fail
+    matchConstraints:
+      namespaceSelector:
+        matchExpressions:
+        - key: kubernetes.io/metadata.name
+          operator: NotIn
+          values:
+          - kube-system
+          - kube-public
+          - kube-node-lease
+          - kyverno
+          - falco
+      resourceRules:
+      - apiGroups:
+        - ""
+        apiVersions:
+        - v1
+        operations:
+        - UPDATE
+        resources:
+        - pods/ephemeralcontainers
+    validationActions:
+    - Deny
+    validations:
+    - expression: |-
+        (has(object.spec.ephemeralContainers) ? object.spec.ephemeralContainers : []).all(c, !c.image.split('@')[0].endsWith(':latest') &&
+        (c.image.matches('^[^@]+@sha256:[a-fA-F0-9]{64}$') ||
+        (!c.image.contains('@') && c.image.split('/')[c.image.split('/').size()-1].contains(':'))))
+      message: Se requiere tag explicito distinto de latest o digest SHA256 valido;
+        latest@digest tambien se rechaza.
+  status:
+    autogen: {}
+    conditionStatus:
+      conditions:
+      - lastTransitionTime: "2026-11-14T20:28:05Z"
+        message: Webhook configured.
+        reason: Succeeded
+        status: "True"
+        type: WebhookConfigured
+      - lastTransitionTime: "2026-11-14T20:28:05Z"
+        message: Background scanning disabled; reporting permissions not required.
+        reason: Succeeded
+        status: "True"
+        type: RBACPermissionsGranted
+      message: 'skip generating ValidatingAdmissionPolicy: not enabled.'
+      ready: true
+    generated: false
+- apiVersion: policies.kyverno.io/v1
+  kind: ValidatingPolicy
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"policies.kyverno.io/v1","kind":"ValidatingPolicy","metadata":{"annotations":{},"name":"l4-ephemeral-nonroot"},"spec":{"autogen":{"podControllers":{"controllers":[]},"validatingAdmissionPolicy":{"enabled":false}},"evaluation":{"admission":{"enabled":true},"background":{"enabled":false}},"failurePolicy":"Fail","matchConstraints":{"namespaceSelector":{"matchExpressions":[{"key":"kubernetes.io/metadata.name","operator":"NotIn","values":["kube-system","kube-public","kube-node-lease","kyverno","falco"]}]},"resourceRules":[{"apiGroups":[""],"apiVersions":["v1"],"operations":["UPDATE"],"resources":["pods/ephemeralcontainers"]}]},"validationActions":["Deny"],"validations":[{"expression":"(has(object.spec.ephemeralContainers) ? object.spec.ephemeralContainers : []).all(c, (has(c.securityContext) \u0026\u0026 has(c.securityContext.runAsNonRoot) ? c.securityContext.runAsNonRoot : (has(object.spec.securityContext) \u0026\u0026 has(object.spec.securityContext.runAsNonRoot) \u0026\u0026 object.spec.securityContext.runAsNonRoot)) \u0026\u0026 (has(c.securityContext) \u0026\u0026 has(c.securityContext.runAsUser) ? c.securityContext.runAsUser != 0 : (!has(object.spec.securityContext) || !has(object.spec.securityContext.runAsUser) || object.spec.securityContext.runAsUser != 0)))","message":"runAsNonRoot efectivo debe ser true y runAsUser no puede ser 0."}]}}
+    creationTimestamp: "2026-11-14T20:28:04Z"
+    generation: 1
+    name: l4-ephemeral-nonroot
+    resourceVersion: "961"
+    uid: 172582ac-e81e-46a0-b4c5-acc272504044
+  spec:
+    autogen:
+      podControllers:
+        controllers: []
+      validatingAdmissionPolicy:
+        enabled: false
+    evaluation:
+      admission:
+        enabled: true
+      background:
+        enabled: false
+    failurePolicy: Fail
+    matchConstraints:
+      namespaceSelector:
+        matchExpressions:
+        - key: kubernetes.io/metadata.name
+          operator: NotIn
+          values:
+          - kube-system
+          - kube-public
+          - kube-node-lease
+          - kyverno
+          - falco
+      resourceRules:
+      - apiGroups:
+        - ""
+        apiVersions:
+        - v1
+        operations:
+        - UPDATE
+        resources:
+        - pods/ephemeralcontainers
+    validationActions:
+    - Deny
+    validations:
+    - expression: '(has(object.spec.ephemeralContainers) ? object.spec.ephemeralContainers
+        : []).all(c, (has(c.securityContext) && has(c.securityContext.runAsNonRoot)
+        ? c.securityContext.runAsNonRoot : (has(object.spec.securityContext) && has(object.spec.securityContext.runAsNonRoot)
+        && object.spec.securityContext.runAsNonRoot)) && (has(c.securityContext) &&
+        has(c.securityContext.runAsUser) ? c.securityContext.runAsUser != 0 : (!has(object.spec.securityContext)
+        || !has(object.spec.securityContext.runAsUser) || object.spec.securityContext.runAsUser
+        != 0)))'
+      message: runAsNonRoot efectivo debe ser true y runAsUser no puede ser 0.
+  status:
+    autogen: {}
+    conditionStatus:
+      conditions:
+      - lastTransitionTime: "2026-11-14T20:28:05Z"
+        message: Webhook configured.
+        reason: Succeeded
+        status: "True"
+        type: WebhookConfigured
+      - lastTransitionTime: "2026-11-14T20:28:05Z"
+        message: Background scanning disabled; reporting permissions not required.
+        reason: Succeeded
+        status: "True"
+        type: RBACPermissionsGranted
+      message: 'skip generating ValidatingAdmissionPolicy: not enabled.'
+      ready: true
+    generated: false
+- apiVersion: policies.kyverno.io/v1
+  kind: ValidatingPolicy
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"policies.kyverno.io/v1","kind":"ValidatingPolicy","metadata":{"annotations":{},"name":"l4-ephemeral-privileged"},"spec":{"autogen":{"podControllers":{"controllers":[]},"validatingAdmissionPolicy":{"enabled":false}},"evaluation":{"admission":{"enabled":true},"background":{"enabled":false}},"failurePolicy":"Fail","matchConstraints":{"namespaceSelector":{"matchExpressions":[{"key":"kubernetes.io/metadata.name","operator":"NotIn","values":["kube-system","kube-public","kube-node-lease","kyverno","falco"]}]},"resourceRules":[{"apiGroups":[""],"apiVersions":["v1"],"operations":["UPDATE"],"resources":["pods/ephemeralcontainers"]}]},"validationActions":["Deny"],"validations":[{"expression":"(has(object.spec.ephemeralContainers) ? object.spec.ephemeralContainers : []).all(c, !has(c.securityContext) || !has(c.securityContext.privileged) || !c.securityContext.privileged)","message":"No se permiten contenedores privilegiados."}]}}
+    creationTimestamp: "2026-11-14T20:28:04Z"
+    generation: 1
+    name: l4-ephemeral-privileged
+    resourceVersion: "963"
+    uid: d63ca96b-60f3-41c2-8a49-02ee741e2c26
+  spec:
+    autogen:
+      podControllers:
+        controllers: []
+      validatingAdmissionPolicy:
+        enabled: false
+    evaluation:
+      admission:
+        enabled: true
+      background:
+        enabled: false
+    failurePolicy: Fail
+    matchConstraints:
+      namespaceSelector:
+        matchExpressions:
+        - key: kubernetes.io/metadata.name
+          operator: NotIn
+          values:
+          - kube-system
+          - kube-public
+          - kube-node-lease
+          - kyverno
+          - falco
+      resourceRules:
+      - apiGroups:
+        - ""
+        apiVersions:
+        - v1
+        operations:
+        - UPDATE
+        resources:
+        - pods/ephemeralcontainers
+    validationActions:
+    - Deny
+    validations:
+    - expression: '(has(object.spec.ephemeralContainers) ? object.spec.ephemeralContainers
+        : []).all(c, !has(c.securityContext) || !has(c.securityContext.privileged)
+        || !c.securityContext.privileged)'
+      message: No se permiten contenedores privilegiados.
+  status:
+    autogen: {}
+    conditionStatus:
+      conditions:
+      - lastTransitionTime: "2026-11-14T20:28:05Z"
+        message: Webhook configured.
+        reason: Succeeded
+        status: "True"
+        type: WebhookConfigured
+      - lastTransitionTime: "2026-11-14T20:28:05Z"
+        message: Background scanning disabled; reporting permissions not required.
+        reason: Succeeded
+        status: "True"
+        type: RBACPermissionsGranted
+      message: 'skip generating ValidatingAdmissionPolicy: not enabled.'
+      ready: true
+    generated: false
+- apiVersion: policies.kyverno.io/v1
+  kind: ValidatingPolicy
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"policies.kyverno.io/v1","kind":"ValidatingPolicy","metadata":{"annotations":{},"name":"l4-require-container-resources"},"spec":{"autogen":{"validatingAdmissionPolicy":{"enabled":false}},"evaluation":{"admission":{"enabled":true},"background":{"enabled":true}},"failurePolicy":"Fail","matchConstraints":{"namespaceSelector":{"matchExpressions":[{"key":"kubernetes.io/metadata.name","operator":"NotIn","values":["kube-system","kube-public","kube-node-lease","kyverno","falco"]}]},"resourceRules":[{"apiGroups":[""],"apiVersions":["v1"],"operations":["CREATE","UPDATE"],"resources":["pods"]}]},"validationActions":["Deny"],"validations":[{"expression":"(object.spec.containers + (has(object.spec.initContainers) ? object.spec.initContainers : [])).all(c, has(c.resources) \u0026\u0026 has(c.resources.requests) \u0026\u0026 has(c.resources.limits) \u0026\u0026 ['cpu','memory'].all(k, k in c.resources.requests \u0026\u0026 k in c.resources.limits))","message":"Cada contenedor requiere requests y limits de CPU y memoria."}]}}
+    creationTimestamp: "2026-11-14T20:27:45Z"
+    generation: 2
+    name: l4-require-container-resources
+    resourceVersion: "948"
+    uid: 30a46aa4-e212-4d86-8bf5-00bc2bccd55b
+  spec:
+    autogen:
+      validatingAdmissionPolicy:
+        enabled: false
+    evaluation:
+      admission:
+        enabled: true
+      background:
+        enabled: true
+    failurePolicy: Fail
+    matchConstraints:
+      namespaceSelector:
+        matchExpressions:
+        - key: kubernetes.io/metadata.name
+          operator: NotIn
+          values:
+          - kube-system
+          - kube-public
+          - kube-node-lease
+          - kyverno
+          - falco
+      resourceRules:
+      - apiGroups:
+        - ""
+        apiVersions:
+        - v1
+        operations:
+        - CREATE
+        - UPDATE
+        resources:
+        - pods
+    validationActions:
+    - Deny
+    validations:
+    - expression: '(object.spec.containers + (has(object.spec.initContainers) ? object.spec.initContainers
+        : [])).all(c, has(c.resources) && has(c.resources.requests) && has(c.resources.limits)
+        && [''cpu'',''memory''].all(k, k in c.resources.requests && k in c.resources.limits))'
+      message: Cada contenedor requiere requests y limits de CPU y memoria.
+  status:
+    autogen:
+      configs:
+        cronjobs:
+          spec:
+            autogen:
+              validatingAdmissionPolicy:
+                enabled: false
+            evaluation:
+              admission:
+                enabled: true
+              background:
+                enabled: true
+            failurePolicy: Fail
+            matchConstraints:
+              namespaceSelector:
+                matchExpressions:
+                - key: kubernetes.io/metadata.name
+                  operator: NotIn
+                  values:
+                  - kube-system
+                  - kube-public
+                  - kube-node-lease
+                  - kyverno
+                  - falco
+              resourceRules:
+              - apiGroups:
+                - batch
+                apiVersions:
+                - v1
+                operations:
+                - CREATE
+                - UPDATE
+                resources:
+                - cronjobs
+            validationActions:
+            - Deny
+            validations:
+            - expression: '(object.spec.jobTemplate.spec.template.spec.containers
+                + (has(object.spec.jobTemplate.spec.template.spec.initContainers)
+                ? object.spec.jobTemplate.spec.template.spec.initContainers : [])).all(c,
+                has(c.resources) && has(c.resources.requests) && has(c.resources.limits)
+                && [''cpu'',''memory''].all(k, k in c.resources.requests && k in c.resources.limits))'
+              message: Cada contenedor requiere requests y limits de CPU y memoria.
+          targets:
+          - group: batch
+            kind: CronJob
+            resource: cronjobs
+            version: v1
+        defaults:
+          spec:
+            autogen:
+              validatingAdmissionPolicy:
+                enabled: false
+            evaluation:
+              admission:
+                enabled: true
+              background:
+                enabled: true
+            failurePolicy: Fail
+            matchConstraints:
+              namespaceSelector:
+                matchExpressions:
+                - key: kubernetes.io/metadata.name
+                  operator: NotIn
+                  values:
+                  - kube-system
+                  - kube-public
+                  - kube-node-lease
+                  - kyverno
+                  - falco
+              resourceRules:
+              - apiGroups:
+                - apps
+                apiVersions:
+                - v1
+                operations:
+                - CREATE
+                - UPDATE
+                resources:
+                - daemonsets
+                - deployments
+                - replicasets
+                - statefulsets
+              - apiGroups:
+                - batch
+                apiVersions:
+                - v1
+                operations:
+                - CREATE
+                - UPDATE
+                resources:
+                - jobs
+            validationActions:
+            - Deny
+            validations:
+            - expression: '(object.spec.template.spec.containers + (has(object.spec.template.spec.initContainers)
+                ? object.spec.template.spec.initContainers : [])).all(c, has(c.resources)
+                && has(c.resources.requests) && has(c.resources.limits) && [''cpu'',''memory''].all(k,
+                k in c.resources.requests && k in c.resources.limits))'
+              message: Cada contenedor requiere requests y limits de CPU y memoria.
+          targets:
+          - group: apps
+            kind: DaemonSet
+            resource: daemonsets
+            version: v1
+          - group: apps
+            kind: Deployment
+            resource: deployments
+            version: v1
+          - group: apps
+            kind: ReplicaSet
+            resource: replicasets
+            version: v1
+          - group: apps
+            kind: StatefulSet
+            resource: statefulsets
+            version: v1
+          - group: batch
+            kind: Job
+            resource: jobs
+            version: v1
+    conditionStatus:
+      conditions:
+      - lastTransitionTime: "2026-11-14T20:27:46Z"
+        message: Webhook configured.
+        reason: Succeeded
+        status: "True"
+        type: WebhookConfigured
+      - lastTransitionTime: "2026-11-14T20:27:46Z"
+        message: Policy is ready for reporting.
+        reason: Succeeded
+        status: "True"
+        type: RBACPermissionsGranted
+      message: 'skip generating ValidatingAdmissionPolicy: not enabled.'
+      ready: true
+    generated: false
+- apiVersion: policies.kyverno.io/v1
+  kind: ValidatingPolicy
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"policies.kyverno.io/v1","kind":"ValidatingPolicy","metadata":{"annotations":{},"name":"l4-resize-resources"},"spec":{"autogen":{"podControllers":{"controllers":[]},"validatingAdmissionPolicy":{"enabled":false}},"evaluation":{"admission":{"enabled":true},"background":{"enabled":false}},"failurePolicy":"Fail","matchConstraints":{"namespaceSelector":{"matchExpressions":[{"key":"kubernetes.io/metadata.name","operator":"NotIn","values":["kube-system","kube-public","kube-node-lease","kyverno","falco"]}]},"resourceRules":[{"apiGroups":[""],"apiVersions":["v1"],"operations":["UPDATE"],"resources":["pods/resize"]}]},"validationActions":["Deny"],"validations":[{"expression":"(object.spec.containers + (has(object.spec.initContainers) ? object.spec.initContainers : [])).all(c, has(c.resources) \u0026\u0026 has(c.resources.requests) \u0026\u0026 has(c.resources.limits) \u0026\u0026 ['cpu','memory'].all(k, k in c.resources.requests \u0026\u0026 k in c.resources.limits))","message":"Cada contenedor requiere requests y limits de CPU y memoria."}]}}
+    creationTimestamp: "2026-11-14T20:28:04Z"
+    generation: 1
+    name: l4-resize-resources
+    resourceVersion: "964"
+    uid: b7d0673a-d159-4d28-9b83-c939a9388072
+  spec:
+    autogen:
+      podControllers:
+        controllers: []
+      validatingAdmissionPolicy:
+        enabled: false
+    evaluation:
+      admission:
+        enabled: true
+      background:
+        enabled: false
+    failurePolicy: Fail
+    matchConstraints:
+      namespaceSelector:
+        matchExpressions:
+        - key: kubernetes.io/metadata.name
+          operator: NotIn
+          values:
+          - kube-system
+          - kube-public
+          - kube-node-lease
+          - kyverno
+          - falco
+      resourceRules:
+      - apiGroups:
+        - ""
+        apiVersions:
+        - v1
+        operations:
+        - UPDATE
+        resources:
+        - pods/resize
+    validationActions:
+    - Deny
+    validations:
+    - expression: '(object.spec.containers + (has(object.spec.initContainers) ? object.spec.initContainers
+        : [])).all(c, has(c.resources) && has(c.resources.requests) && has(c.resources.limits)
+        && [''cpu'',''memory''].all(k, k in c.resources.requests && k in c.resources.limits))'
+      message: Cada contenedor requiere requests y limits de CPU y memoria.
+  status:
+    autogen: {}
+    conditionStatus:
+      conditions:
+      - lastTransitionTime: "2026-11-14T20:28:05Z"
+        message: Webhook configured.
+        reason: Succeeded
+        status: "True"
+        type: WebhookConfigured
+      - lastTransitionTime: "2026-11-14T20:28:05Z"
+        message: Background scanning disabled; reporting permissions not required.
+        reason: Succeeded
+        status: "True"
+        type: RBACPermissionsGranted
+      message: 'skip generating ValidatingAdmissionPolicy: not enabled.'
+      ready: true
+    generated: false
+kind: List
+metadata:
+  resourceVersion: ""

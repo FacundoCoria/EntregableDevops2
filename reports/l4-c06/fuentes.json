@@ -1,0 +1,52 @@
+[
+  {
+    "component": "APT",
+    "url": "https://ubuntu.com/security/CVE-2026-109518",
+    "consultedUruguay": "2026-11-14"
+  },
+  {
+    "component": "glibc",
+    "url": "https://ubuntu.com/security/CVE-2026-18374",
+    "consultedUruguay": "2026-11-14"
+  },
+  {
+    "component": "Perl",
+    "url": "https://ubuntu.com/security/CVE-2026-82560",
+    "consultedUruguay": "2026-11-14"
+  },
+  {
+    "component": "JAXB",
+    "url": "https://security.snyk.io/vuln/SNYK-JAVA-ORGGLASSFISHJAXB-20883142",
+    "consultedUruguay": "2026-11-14"
+  },
+  {
+    "component": "JAXB upstream",
+    "url": "https://github.com/eclipse-ee4j/jaxb-ri/pull/2013",
+    "consultedUruguay": "2026-11-14"
+  },
+  {
+    "component": "JAXP",
+    "url": "https://docs.oracle.com/en/java/javase/21/security/java-api-xml-processing-jaxp-security-guide.html",
+    "consultedUruguay": "2026-11-14"
+  },
+  {
+    "component": "Logback",
+    "url": "https://security.snyk.io/vuln/SNYK-JAVA-CHQOSLOGBACK-20824362",
+    "consultedUruguay": "2026-11-14"
+  },
+  {
+    "component": "json-smart",
+    "url": "https://security.snyk.io/vuln/SNYK-JAVA-NETMINIDEV-21715438",
+    "consultedUruguay": "2026-11-14"
+  },
+  {
+    "component": "ASM",
+    "url": "https://security.snyk.io/vuln/SNYK-JAVA-ORGOW2ASM-21715451",
+    "consultedUruguay": "2026-11-14"
+  },
+  {
+    "component": "Objenesis",
+    "url": "https://security.snyk.io/vuln/SNYK-JAVA-ORGOBJENESIS-21755439",
+    "consultedUruguay": "2026-11-14"
+  }
+]

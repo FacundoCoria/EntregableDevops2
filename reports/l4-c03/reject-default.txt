@@ -1,0 +1,1 @@
+ERROR: Solo proyectos dedicados l4-c01[-sufijo]; nunca curso/default

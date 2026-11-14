@@ -1,0 +1,233 @@
+{
+  "date": "2026-11-14",
+  "result": "PASS",
+  "scope": "documental; sin servicios ni controles nuevos",
+  "academic_acceptance": "pendiente C04-A",
+  "previous_files": 1000,
+  "unchanged_files": 999,
+  "expected_changes": [
+    "EntregableDevops2/reports/ESTADO-EVIDENCIAS-L4.md"
+  ],
+  "local_links_checked": 50,
+  "links": [
+    {
+      "file": "EntregableDevops2/reports/l4-c04/CRITERIO-DOCKERFILES.md",
+      "target": "../../pedidos-api/pedidos-api/Dockerfile"
+    },
+    {
+      "file": "EntregableDevops2/reports/l4-c04/CRITERIO-DOCKERFILES.md",
+      "target": "../../ci/jenkins/Dockerfile.controller"
+    },
+    {
+      "file": "EntregableDevops2/reports/l4-c04/CRITERIO-DOCKERFILES.md",
+      "target": "../../ci/jenkins/Dockerfile.agent"
+    },
+    {
+      "file": "EntregableDevops2/reports/l4-c04/CRITERIO-DOCKERFILES.md",
+      "target": "../l4-11b/b02-componentes.md"
+    },
+    {
+      "file": "EntregableDevops2/reports/l4-c04/CRITERIO-DOCKERFILES.md",
+      "target": "../l4-11b/b02/inventario.json"
+    },
+    {
+      "file": "EntregableDevops2/reports/l4-c04/CRITERIO-DOCKERFILES.md",
+      "target": "../l4-c01/VERIFICACION.md"
+    },
+    {
+      "file": "EntregableDevops2/reports/l4-c04/CRITERIO-DOCKERFILES.md",
+      "target": "../l4-c01/verification-final-after-cold/containers.json"
+    },
+    {
+      "file": "EntregableDevops2/reports/l4-c04/CRITERIO-DOCKERFILES.md",
+      "target": "../l4-c03/primary-final/result.json"
+    },
+    {
+      "file": "EntregableDevops2/reports/l4-c04/CRITERIO-DOCKERFILES.md",
+      "target": "../../ci/jenkins/compose.yaml"
+    },
+    {
+      "file": "EntregableDevops2/reports/l4-c04/CRITERIO-DOCKERFILES.md",
+      "target": "../../ci/jenkins/images.env"
+    },
+    {
+      "file": "EntregableDevops2/reports/l4-c04/CRITERIO-DOCKERFILES.md",
+      "target": "../../pedidos-api/pedidos-api/security/falco/values-minikube.yaml"
+    },
+    {
+      "file": "EntregableDevops2/reports/l4-c04/CRITERIO-DOCKERFILES.md",
+      "target": "../falco-event.md"
+    },
+    {
+      "file": "EntregableDevops2/reports/l4-c04/CRITERIO-DOCKERFILES.md",
+      "target": "VERIFICACION.md"
+    },
+    {
+      "file": "EntregableDevops2/reports/l4-c04/CRITERIO-DOCKERFILES.md",
+      "target": "verificacion.json"
+    },
+    {
+      "file": "EntregableDevops2/reports/l4-c04/VERIFICACION.md",
+      "target": "verificacion.json"
+    },
+    {
+      "file": "EntregableDevops2/reports/l4-c04/VERIFICACION.md",
+      "target": "preservacion-antes.json"
+    },
+    {
+      "file": "handoffs/HANDOFF_L4_C04_DOCKERFILES_EXCEPCIONES_2026-11-14.md",
+      "target": "../EntregableDevops2/reports/l4-c04/CRITERIO-DOCKERFILES.md"
+    },
+    {
+      "file": "handoffs/HANDOFF_L4_C04_DOCKERFILES_EXCEPCIONES_2026-11-14.md",
+      "target": "../EntregableDevops2/reports/l4-c04/VERIFICACION.md"
+    },
+    {
+      "file": "handoffs/HANDOFF_L4_C04_DOCKERFILES_EXCEPCIONES_2026-11-14.md",
+      "target": "../EntregableDevops2/reports/l4-c04/verificacion.json"
+    },
+    {
+      "file": "handoffs/HANDOFF_L4_C04_DOCKERFILES_EXCEPCIONES_2026-11-14.md",
+      "target": "../EntregableDevops2/reports/l4-c04/preservacion-antes.json"
+    },
+    {
+      "file": "EntregableDevops2/reports/ESTADO-EVIDENCIAS-L4.md",
+      "target": "l4-c04/CRITERIO-DOCKERFILES.md"
+    },
+    {
+      "file": "EntregableDevops2/reports/ESTADO-EVIDENCIAS-L4.md",
+      "target": "l4-c04/VERIFICACION.md"
+    },
+    {
+      "file": "EntregableDevops2/reports/ESTADO-EVIDENCIAS-L4.md",
+      "target": "../ci/jenkins/RECUPERACION.md"
+    },
+    {
+      "file": "EntregableDevops2/reports/ESTADO-EVIDENCIAS-L4.md",
+      "target": "l4-c03/VERIFICACION.md"
+    },
+    {
+      "file": "EntregableDevops2/reports/ESTADO-EVIDENCIAS-L4.md",
+      "target": "../docs/INSTALACION-L4.md"
+    },
+    {
+      "file": "EntregableDevops2/reports/ESTADO-EVIDENCIAS-L4.md",
+      "target": "../README.md"
+    },
+    {
+      "file": "EntregableDevops2/reports/ESTADO-EVIDENCIAS-L4.md",
+      "target": "../docs/arquitectura-l4.png"
+    },
+    {
+      "file": "EntregableDevops2/reports/ESTADO-EVIDENCIAS-L4.md",
+      "target": "../scripts/l4/GUIA.md"
+    },
+    {
+      "file": "EntregableDevops2/reports/ESTADO-EVIDENCIAS-L4.md",
+      "target": "../scripts/l4/B04-REPRODUCCION.md"
+    },
+    {
+      "file": "EntregableDevops2/reports/ESTADO-EVIDENCIAS-L4.md",
+      "target": "l4-11b/b04-reproduccion.md"
+    },
+    {
+      "file": "EntregableDevops2/reports/ESTADO-EVIDENCIAS-L4.md",
+      "target": "../pedidos-api/pedidos-api/helm-chart/README.md"
+    },
+    {
+      "file": "EntregableDevops2/reports/ESTADO-EVIDENCIAS-L4.md",
+      "target": "l4-11b/b03-helm.md"
+    },
+    {
+      "file": "EntregableDevops2/reports/ESTADO-EVIDENCIAS-L4.md",
+      "target": "l4-11b/image-analysis.md"
+    },
+    {
+      "file": "EntregableDevops2/reports/ESTADO-EVIDENCIAS-L4.md",
+      "target": "image-analysis.md"
+    },
+    {
+      "file": "EntregableDevops2/reports/ESTADO-EVIDENCIAS-L4.md",
+      "target": "snyk-comparison.md"
+    },
+    {
+      "file": "EntregableDevops2/reports/ESTADO-EVIDENCIAS-L4.md",
+      "target": "snyk-report.txt"
+    },
+    {
+      "file": "EntregableDevops2/reports/ESTADO-EVIDENCIAS-L4.md",
+      "target": "l4-09/integral-7/verification.json"
+    },
+    {
+      "file": "EntregableDevops2/reports/ESTADO-EVIDENCIAS-L4.md",
+      "target": "l4-09/security-3/gate-summary.json"
+    },
+    {
+      "file": "EntregableDevops2/reports/ESTADO-EVIDENCIAS-L4.md",
+      "target": "l4-11b/b05/CONSOLIDACION.md"
+    },
+    {
+      "file": "EntregableDevops2/reports/ESTADO-EVIDENCIAS-L4.md",
+      "target": "l4-c04/CRITERIO-DOCKERFILES.md"
+    },
+    {
+      "file": "EntregableDevops2/reports/ESTADO-EVIDENCIAS-L4.md",
+      "target": "l4-11b/b02-componentes.md"
+    },
+    {
+      "file": "EntregableDevops2/reports/ESTADO-EVIDENCIAS-L4.md",
+      "target": "../pedidos-api/pedidos-api/OBSERVABILIDAD-L4.md"
+    },
+    {
+      "file": "EntregableDevops2/reports/ESTADO-EVIDENCIAS-L4.md",
+      "target": "../grafana/dashboard.json"
+    },
+    {
+      "file": "EntregableDevops2/reports/ESTADO-EVIDENCIAS-L4.md",
+      "target": "semgrep-report.txt"
+    },
+    {
+      "file": "EntregableDevops2/reports/ESTADO-EVIDENCIAS-L4.md",
+      "target": "../pedidos-api/pedidos-api/security/kyverno/README.md"
+    },
+    {
+      "file": "EntregableDevops2/reports/ESTADO-EVIDENCIAS-L4.md",
+      "target": "kyverno-validation.log"
+    },
+    {
+      "file": "EntregableDevops2/reports/ESTADO-EVIDENCIAS-L4.md",
+      "target": "../pedidos-api/pedidos-api/security/falco/README.md"
+    },
+    {
+      "file": "EntregableDevops2/reports/ESTADO-EVIDENCIAS-L4.md",
+      "target": "falco-event.md"
+    },
+    {
+      "file": "EntregableDevops2/reports/ESTADO-EVIDENCIAS-L4.md",
+      "target": "falco-event.log"
+    },
+    {
+      "file": "EntregableDevops2/reports/ESTADO-EVIDENCIAS-L4.md",
+      "target": "l4-10/VERIFICACION.md"
+    }
+  ],
+  "dockerfiles": {
+    "pedidos-api/pedidos-api/Dockerfile": {
+      "stages": 2,
+      "final_user": "10001:10001"
+    },
+    "ci/jenkins/Dockerfile.controller": {
+      "stages": 1,
+      "final_user": "1000:1000"
+    },
+    "ci/jenkins/Dockerfile.agent": {
+      "stages": 2,
+      "final_user": "1000:1000"
+    }
+  },
+  "previous_evidence_checked": [
+    "B02 2026-11-11 Falco runtime/context",
+    "C03 2026-11-14 primary-final PASS/UID/TLS/integralDisabled"
+  ],
+  "readme_word_dockerfiles_previous_results_preserved": true
+}
