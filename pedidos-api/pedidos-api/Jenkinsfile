@@ -9,9 +9,7 @@ pipeline {
 
     environment {
         APP_DIR = 'pedidos-api/pedidos-api'
-        IMAGE   = 'facundocoria/pedidos-api'
-        // El application.properties usa /data/pedidos, que no existe en Jenkins.
-        // Esta variable lo pisa solo durante el build/test.
+        // Pisa /data/pedidos (no existe en Jenkins) solo durante build/test.
         SPRING_DATASOURCE_URL = 'jdbc:h2:mem:testdb'
     }
 
@@ -36,32 +34,5 @@ pipeline {
                 archiveArtifacts artifacts: "${env.APP_DIR}/target/*.jar", fingerprint: true
             }
         }
-
-        stage('Docker build') {
-            steps {
-                dir(env.APP_DIR) {
-                    sh "docker build -t ${IMAGE}:${BUILD_NUMBER} -t ${IMAGE}:latest ."
-                }
-            }
-        }
-
-        stage('Docker push') {
-            when {
-                expression { env.BRANCH_NAME == 'main' || env.GIT_BRANCH == 'origin/main' }
-            }
-            steps {
-                withCredentials([usernamePassword(credentialsId: 'dockerhub',
-                                                  usernameVariable: 'DH_USER',
-                                                  passwordVariable: 'DH_PASS')]) {
-                    sh 'echo "$DH_PASS" | docker login -u "$DH_USER" --password-stdin'
-                    sh "docker push ${IMAGE}:${BUILD_NUMBER}"
-                    sh "docker push ${IMAGE}:latest"
-                }
-            }
-        }
-    }
-
-    post {
-        always { sh 'docker logout || true' }
     }
 }
