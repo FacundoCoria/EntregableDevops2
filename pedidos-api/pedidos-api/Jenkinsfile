@@ -2,6 +2,7 @@ pipeline {
     agent any
 
     options {
+        skipDefaultCheckout(true)   // el checkout lo hace la primera etapa, de forma explícita
         timestamps()
         disableConcurrentBuilds()
         buildDiscarder(logRotator(numToKeepStr: '10'))
@@ -9,12 +10,55 @@ pipeline {
 
     environment {
         APP_DIR = 'pedidos-api/pedidos-api'
-        // Pisa /data/pedidos (no existe en Jenkins) solo durante build/test.
+        IMAGE   = 'facundocoria/pedidos-api'
+        // application.properties usa /data/pedidos, que no existe en Jenkins.
+        // Esta variable lo pisa solo durante build/test.
         SPRING_DATASOURCE_URL = 'jdbc:h2:mem:testdb'
     }
 
     stages {
-        stage('Build & Test') {
+
+        stage('Clonación del repositorio') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Análisis estático (Semgrep)') {
+            steps {
+                dir(env.APP_DIR) {
+                    // --error: devuelve exit code 1 si hay hallazgos de severidad ERROR -> corta el pipeline
+                    sh '''
+                        mkdir -p reports
+                        set +e
+                        semgrep scan --config p/java --metrics=off --severity ERROR --error --output reports/semgrep-ci.txt src
+                        rc=$?
+                        cat reports/semgrep-ci.txt
+                        exit $rc
+                    '''
+                }
+            }
+        }
+
+        stage('Vulnerabilidades de dependencias (Snyk)') {
+            steps {
+                withCredentials([string(credentialsId: 'snyk-token', variable: 'SNYK_TOKEN')]) {
+                    dir(env.APP_DIR) {
+                        // --severity-threshold=critical: solo falla (exit 1) si hay vulnerabilidades críticas
+                        sh '''
+                            mkdir -p reports
+                            set +e
+                            snyk test --file=pom.xml --severity-threshold=critical > reports/snyk-ci.txt 2>&1
+                            rc=$?
+                            cat reports/snyk-ci.txt
+                            exit $rc
+                        '''
+                    }
+                }
+            }
+        }
+
+        stage('Construcción y test') {
             steps {
                 dir(env.APP_DIR) {
                     sh 'chmod +x mvnw'
@@ -26,13 +70,52 @@ pipeline {
                     junit allowEmptyResults: true,
                           testResults: "${env.APP_DIR}/target/surefire-reports/*.xml"
                 }
+                success {
+                    archiveArtifacts artifacts: "${env.APP_DIR}/target/*.jar", fingerprint: true
+                }
             }
         }
 
-        stage('Archivar JAR') {
+        stage('Imagen Docker (build y push)') {
             steps {
-                archiveArtifacts artifacts: "${env.APP_DIR}/target/*.jar", fingerprint: true
+                dir(env.APP_DIR) {
+                    sh 'docker build -t ${IMAGE}:${BUILD_NUMBER} .'
+                }
+                withCredentials([usernamePassword(credentialsId: 'dockerhub',
+                                                  usernameVariable: 'DH_USER',
+                                                  passwordVariable: 'DH_PASS')]) {
+                    sh 'echo "$DH_PASS" | docker login -u "$DH_USER" --password-stdin'
+                    sh 'docker push ${IMAGE}:${BUILD_NUMBER}'
+                }
             }
+        }
+
+        stage('Despliegue en Kubernetes') {
+            steps {
+                withCredentials([file(credentialsId: 'kubeconfig', variable: 'KUBECONFIG')]) {
+                    dir(env.APP_DIR) {
+                        // Kyverno prohíbe :latest, así que se despliega con el tag del build.
+                        sh '''
+                            kubectl apply -f k8s/configmap.yaml -f k8s/h2-persistente.yaml -f k8s/service.yaml
+                            sed "s|image: .*pedidos-api:.*|image: ${IMAGE}:${BUILD_NUMBER}|" k8s/deployment.yaml | kubectl apply -f -
+                            kubectl rollout status deployment/pedidos-api --timeout=180s
+                        '''
+                    }
+                }
+            }
+        }
+    }
+
+    post {
+        always {
+            archiveArtifacts artifacts: "${env.APP_DIR}/reports/*-ci.txt", allowEmptyArchive: true
+            sh 'docker logout || true'
+        }
+        success {
+            echo "Pipeline OK: imagen ${env.IMAGE}:${env.BUILD_NUMBER} desplegada en Kubernetes."
+        }
+        failure {
+            echo 'Pipeline DETENIDO por un error (vulnerabilidad crítica, test fallido o falla de despliegue). Revisá la etapa marcada en rojo.'
         }
     }
 }
