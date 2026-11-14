@@ -38,7 +38,7 @@ Push-Location $PSScriptRoot
 try {
     docker compose --env-file images.env -f compose.yaml -f compose.c07.yaml -p l4-c07 up -d --build --wait --wait-timeout 300 *> "$out/jenkins-start.log"; Check
 } finally { Pop-Location }
-& "$PSScriptRoot/connect-kubernetes.ps1" -ProjectName l4-c07 -Context minikube-l4-c07 -DockerNetwork minikube -ApiServer https://minikube-l4-c07:8443
+& "$PSScriptRoot/connect-kubernetes.ps1" -ProjectName l4-c07 -Context minikube-l4-c07 -DockerNetwork minikube-l4-c07 -ApiServer https://minikube-l4-c07:8443
 kubectl --context minikube-l4-c07 get pods -A -o wide | Set-Content "$out/pods.txt"; Check
 'C07_SETUP_READY; Jenkins http://localhost:18083; job still disabled' | Set-Content "$out/result.txt"
 Write-Output 'C07_SETUP_READY; account bruno; password is local, never print it'
