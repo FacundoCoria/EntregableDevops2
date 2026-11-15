@@ -11,6 +11,7 @@ pipeline {
     environment {
         APP_DIR = 'pedidos-api/pedidos-api'
         IMAGE   = 'facundocoria/pedidos-api'
+        K8S_NAMESPACE = 'obligatorio-grupo4'
         // application.properties usa /data/pedidos, que no existe en Jenkins.
         // Esta variable lo pisa solo durante build/test.
         SPRING_DATASOURCE_URL = 'jdbc:h2:mem:testdb'
@@ -97,9 +98,11 @@ pipeline {
                     dir(env.APP_DIR) {
                         // Kyverno prohíbe :latest, así que se despliega con el tag del build.
                         sh '''
-                            kubectl apply -f k8s/configmap.yaml -f k8s/h2-persistente.yaml -f k8s/service.yaml
-                            sed "s|image: .*pedidos-api:.*|image: ${IMAGE}:${BUILD_NUMBER}|" k8s/deployment.yaml | kubectl apply -f -
-                            kubectl rollout status deployment/pedidos-api --timeout=180s
+                            kubectl cluster-info
+                            kubectl apply -n ${K8S_NAMESPACE} -f k8s/configmap.yaml -f k8s/h2-persistente.yaml -f k8s/service.yaml
+                            sed "s|image: .*pedidos-api:.*|image: ${IMAGE}:${BUILD_NUMBER}|" k8s/deployment.yaml | kubectl apply -n ${K8S_NAMESPACE} -f -
+                            kubectl rollout status deployment/pedidos-api -n ${K8S_NAMESPACE} --timeout=180s
+                            kubectl get deployment pedidos-api -n ${K8S_NAMESPACE} -o jsonpath="{.spec.template.spec.containers[0].image}"
                         '''
                     }
                 }
