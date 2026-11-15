@@ -98,7 +98,7 @@ pipeline {
                     dir(env.APP_DIR) {
                         // Kyverno prohíbe :latest, así que se despliega con el tag del build.
                         sh '''
-                            kubectl cluster-info
+                            kubectl config view --minify -o jsonpath="{.clusters[0].cluster.server}"; echo
                             kubectl apply -n ${K8S_NAMESPACE} -f k8s/configmap.yaml -f k8s/h2-persistente.yaml -f k8s/service.yaml
                             sed "s|image: .*pedidos-api:.*|image: ${IMAGE}:${BUILD_NUMBER}|" k8s/deployment.yaml | kubectl apply -n ${K8S_NAMESPACE} -f -
                             kubectl rollout status deployment/pedidos-api -n ${K8S_NAMESPACE} --timeout=180s
